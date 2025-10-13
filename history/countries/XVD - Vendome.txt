@@ -1,0 +1,55 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = cosmopolitan_french
+religion = catholic
+technology_group = western
+capital = 6380
+fixed_capital = 6380
+
+1393.1.1 = {
+	monarch = {
+		name = "Louis I"
+		dynasty = "de Bourbon"
+		birth_date = 1376.1.1
+		adm = 2
+		dip = 4
+		mil = 4
+	}
+}
+1424.1.1 = {
+	queen = {
+		name = "Jeanne"
+		dynasty = "de Laval"
+		birth_date = 1405.10.1
+		death_date = 1468.12.18
+		adm = 2
+		dip = 2
+		mil = 2
+		female = yes
+		country_of_origin = BRI
+	}
+}
+1425.1.1 = {
+	heir = {
+		name = "Jean"
+		monarch_name = "Jean VIII"
+		dynasty = "de Bourbon"
+		birth_date = 1425.1.1
+		death_date = 1477.1.6 
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1446.12.21 = {
+	monarch = {
+		name = "Jean VIII"
+		dynasty = "de Bourbon"
+		birth_date = 1425.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

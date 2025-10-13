@@ -1,0 +1,17 @@
+#3193 - Zhifu
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = shandong_culture
+religion = confucianism
+capital = "Zhifu"
+trade_goods = fish
+hre = no
+base_tax = 11
+base_production = 11
+base_manpower = 8
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = QIC

@@ -1,0 +1,15 @@
+#2266 - Bilanga
+
+owner = WGD
+controller = WGD
+add_core = WGD
+is_city = yes
+culture = mossi 
+religion = shamanism #Fetishism
+capital = "Bilanga"
+trade_goods = grain
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+discovered_by = sub_saharan

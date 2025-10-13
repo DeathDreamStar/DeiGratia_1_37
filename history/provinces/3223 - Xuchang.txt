@@ -1,0 +1,17 @@
+#3223 - Xuchang
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = zhongyuan
+religion = confucianism
+capital = "Xuchang"
+trade_goods = tea
+hre = no
+base_tax = 13
+base_production = 13
+base_manpower = 9
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = LNG

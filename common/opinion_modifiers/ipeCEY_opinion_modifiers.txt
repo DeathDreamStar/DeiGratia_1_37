@@ -1,0 +1,11 @@
+offered_protection = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+withheld_protection = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}

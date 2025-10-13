@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = gond_kingdom
+government_rank = 1
+primary_culture = gondi
+religion = animism
+technology_group = indian
+capital = 4445	# Kanker
+fixed_capital = 4445 # Cannot move capital away from this province & no power cost to move to it
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Satkarni Deo"
+		dynasty = "Satavahana"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

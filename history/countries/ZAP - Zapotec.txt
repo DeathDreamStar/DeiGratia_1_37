@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = zapotek
+add_accepted_culture = mixtec
+religion = zapotec_religion
+technology_group = mesoamerican
+capital = 844
+fixed_capital = 844
+
+
+1422.1.1 = {
+	monarch = {
+		name = "Penobiya"
+		dynasty = "Xipe"
+		birth_date = 1380.1.1
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+
+1422.1.2 = {
+	heir = {
+		name = "Cosijopii"
+		monarch_name = "Cosijopii"
+		dynasty = "Xipe" 
+		birth_date = 1400.3.17
+		death_date = 1459.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

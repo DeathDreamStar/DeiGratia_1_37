@@ -1,0 +1,331 @@
+huitzilopochtli = {
+	land_morale = 0.05 # god of war
+	army_tradition = 0.5 # god of war
+	
+	potential = {
+		OR = {
+			religion = nahuatl
+			religion = mixtec_religion
+			religion = purepecha_religion
+			religion = zapotec_religion
+		}
+		OR = {
+			tag = AZT
+			is_subject_of = AZT
+			owns = 852
+		}
+	}
+	sprite = 13
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+tezcatlipoca = {
+	infantry_power = 0.05 # god of war
+	legitimacy = 1 # ceremonies legitimized Aztec monarchs' right to rule
+	devotion = 1
+	republican_tradition = 0.3
+	horde_unity = 1
+	
+	potential = { religion = nahuatl }
+	sprite = 14
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+quetzalcoatl = {
+	build_cost = -0.1 # god of craftsmen
+	global_institution_spread = 0.25 # god of learning
+
+	potential = { religion = nahuatl }
+	sprite = 15
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}	
+	}
+}
+
+coatlicue = {
+	development_cost = -0.1 # goddess of fertility
+	state_maintenance_modifier = -0.15 # goddess of the earth
+
+	potential = { religion = nahuatl }
+	sprite = 16
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+tonatiuh = {
+	discipline = 0.025 # god of war
+	monthly_splendor = 1 # god of the calendar
+
+	potential = {
+		OR = {
+			religion = nahuatl
+			religion = mixtec_religion
+		}
+	}
+	sprite = 17
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+tlaloc = {
+	global_trade_goods_size_modifier = 0.1 # god of rain
+	hostile_attrition = 1 # god of weather
+
+	potential = { religion = nahuatl }
+	sprite = 18
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+chalchiuhtlicue = {
+	heir_chance = 0.5 # goddess of childbirth
+	navy_tradition = 0.5 # goddess of the sea
+
+	potential = { religion = nahuatl }
+	sprite = 19
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+xipe_totec = {
+	war_exhaustion = -0.03 # god of renewal
+	monarch_lifespan = 0.1 # protector against disease
+
+	potential = {
+		religion = nahuatl
+		NOT = {
+			tag = TLX
+		}
+	}
+	sprite = 20
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+camaxtli = {
+	war_exhaustion = -0.03 # god of renewal
+	monarch_lifespan = 0.1 # protector against disease
+
+	potential = {
+		religion = nahuatl
+		tag = TLX
+	}
+	sprite = 20
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+mictlantecutli = {
+	nobles_loyalty_modifier = 0.05 # ritual cannibalism
+	church_loyalty_modifier = 0.05 # ritual cannibalism
+
+	potential = {
+		OR = {
+			religion = nahuatl
+			religion = mixtec_religion
+		}
+	}
+	sprite = 35
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+xiuhtecuhtli = {
+	fire_damage = 0.1 # god of fire
+	tolerance_heretic = 1 # one of the most revered old gods
+
+	potential = { religion = nahuatl }
+	sprite = 36
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+mixcoatl = {
+	movement_speed = 0.1 # god of the hunt
+	land_attrition = -0.1 # god of the hunt
+
+	potential = { religion = nahuatl }
+	sprite = 37
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+centeotl = {
+	production_efficiency = 0.1 # god of corn
+	global_unrest = -1 # festivals
+
+	potential = { religion = nahuatl }
+	sprite = 38
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}	
+	}
+}

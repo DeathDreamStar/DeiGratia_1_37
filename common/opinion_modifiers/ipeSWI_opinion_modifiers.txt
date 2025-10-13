@@ -1,0 +1,5 @@
+seized_thurgau = {
+    opinion = -50
+    years = 50
+    yearly_decay = 1
+}

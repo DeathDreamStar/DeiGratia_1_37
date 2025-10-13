@@ -1,0 +1,18 @@
+#6138 - Betsiboka
+
+owner = SKA
+controller = SKA
+add_core = SKA
+culture = madagasque #Malagasy
+religion = shamanism #Fetishism
+capital = "Betsiboka"
+native_size = 90
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+discovered_by = east_african
+add_local_autonomy = 40
+
+1500.9.1 = { discovered_by = POR } # Diego Dias

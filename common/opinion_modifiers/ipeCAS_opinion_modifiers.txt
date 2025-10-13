@@ -1,0 +1,14 @@
+stole_the_canaries = {
+    opinion = -100
+    yearly_decay = 5
+}
+
+returned_the_canaries = {
+    opinion = 100
+    yearly_decay = 5
+}
+
+treaty_of_alcacovas = {
+    opinion = 200
+    yearly_decay = 2
+}

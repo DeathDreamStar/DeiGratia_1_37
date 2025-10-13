@@ -1,0 +1,84 @@
+sirhind_missions = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = SRH
+		dynasty = "Lodi"
+		is_subject_of = DLH
+	}
+
+	sayyid_decline = {
+		icon = mission_persian_soldiers
+		required_missions = {  }
+		
+		provinces_to_highlight = {
+			owner = {
+				tag = DLH
+				capital_scope = {
+					region = hindusthan_region
+				}
+			}
+		}
+		
+		trigger = {
+			army_size_percentage = 0.85
+		}
+		
+		effect = {
+			custom_tooltip = sayyid_decline.tooltip
+			DLH = {
+				country_event = {
+					id = flavor_dlh.5
+				}
+			}
+		}
+	}
+
+	capture_of_delhi = {
+		icon = mission_empire
+		required_missions = { sayyid_decline }
+
+		provinces_to_highlight = {
+			OR = {
+				owned_by = DLH
+				area = delhi_doab_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				AND = {
+					is_subject = no
+					is_neighbor_of = DLH
+					DLH = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+				delhi_doab_area = {
+					type = all
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					is_subject = no
+					is_neighbor_of = DLH
+					DLH = {
+						capital_scope = {
+							controlled_by = ROOT
+						}
+					}
+				}
+				country_event = {
+					id = annexation.20
+				}
+			}	
+			add_prestige = 50
+		}
+	}
+}

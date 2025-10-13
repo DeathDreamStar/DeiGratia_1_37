@@ -1,0 +1,91 @@
+namespace = ipeKOR
+
+# The Plot of the Hall of Worthies
+country_event = {
+    id = ipeKOR.3
+    title = ipeKOR.3.t
+    desc = ipeKOR.3.d
+    picture = REFORM_eventPicture
+
+    trigger = {
+        tag = KOR
+        has_country_modifier = hall_of_worthies
+        NOT = {
+            adm = 2
+            dip = 2
+            mil = 2
+        }
+        has_regency = no
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.5
+            ruler_has_personality = cruel_personality
+        }
+        modifier = {
+            factor = 0.5
+            ruler_has_personality = malevolent_personality
+        }
+        modifier = {
+            factor = 0.5
+            NOT = {
+                legitimacy_equivalent = 50
+            }
+        }
+    }
+
+    option = { # We must heed the advice of the Hall of Worthies!
+        name = ipeKOR.3.a
+        ai_chance = {
+            factor = 20
+        }
+        kill_ruler = yes
+        add_stability = -6
+    }
+
+    option = { # Crush this intransigence!
+        name = ipeKOR.3.b
+        ai_chance = {
+            factor = 80
+        }
+        remove_country_modifier = hall_of_worthies
+        add_stability = 1
+    }
+}
+
+# Heo Jun
+country_event = {
+    id = ipeKOR.4
+    title = ipeKOR.4.t
+    desc = ipeKOR.4.d
+    picture = ADVISOR_eventPicture
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = KOR
+        is_year = 1550
+        NOT = {
+            is_year = 1600
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+    }
+
+    option = { # He will make an excellent court physician.
+        name = ipeKOR.4.a
+        define_advisor = {
+            type = natural_scientist
+            name = "Heo Jun"
+            skill = 3
+            culture = korean
+            discount = yes
+            location = 735
+        }
+        add_prestige = 10
+    }
+}

@@ -1,0 +1,42 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = eastphalian
+religion = catholic
+capital = 1758 # Hannover
+
+
+1432.1.1 = {
+	monarch = {
+		name = "Wilhelm"
+		dynasty = "von Welf"
+		birth_date = 1392.1.1
+		adm = 3
+		dip = 3
+		mil = 5
+	}
+	add_ruler_personality = bold_fighter_personality
+	add_ruler_personality = conqueror_personality
+
+	queen = {
+		country_of_origin = BRA
+		name = "Cecilia"
+		dynasty = "von Hohenzollern"
+		birth_date = 1405.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	add_queen_personality = calm_personality
+
+	heir = {
+		name = "Friedrich"
+		monarch_name = "Friedrich III"
+		dynasty = "von Welf"
+		birth_date = 1424.1.1
+		adm = 0
+		dip = 0
+		mil = 2
+	}
+}

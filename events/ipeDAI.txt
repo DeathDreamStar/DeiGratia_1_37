@@ -1,0 +1,791 @@
+namespace = ipeDAI
+normal_or_historical_nations = yes
+
+# Nam Tiên
+country_event = {
+	id = ipeDAI.1
+	title = ipeDAI.1.t
+	desc = ipeDAI.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		primary_culture = vietnamese
+		any_owned_province = {
+			OR = {
+				area = vietnam_area
+				area = champa_area
+				area = southern_champa_area
+				area = tay_nguyen_area
+				area = dong_nam_bo_area
+				area = mekong_area
+			}
+			OR = {
+				culture = cham
+				culture = khmer
+			}
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			has_country_modifier = enforcing_heritage
+		}
+	}
+
+	option = { # But the march south goes on.
+		name = ipeDAI.1.a
+		random_owned_province = {
+			limit = {
+				OR = {
+					area = vietnam_area
+					area = champa_area
+					area = southern_champa_area
+					area = tay_nguyen_area
+					area = dong_nam_bo_area
+					area = mekong_area
+				}
+				OR = {
+					culture = cham
+					culture = khmer
+				}
+			}
+			change_culture = vietnamese
+			change_religion = root
+		}
+	}
+}
+
+# Dynastic Crisis in Vietnam
+country_event = {
+	id = ipeDAI.2
+	title = ipeDAI.2.t
+	desc = ipeDAI.2.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		is_emperor_of_china = yes
+		OR = {
+			exists = TOK
+			exists = ANN
+		}
+		exists = DAI
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Support the claimants in Tonkin.
+		name = ipeDAI.2.a
+		trigger = {
+			exists = TOK
+		}
+		TOK = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_our_vietnamese_dynasty
+			}
+			country_event = {
+				id = ipeDAI.3
+			}
+		}
+		DAI = {
+			add_opinion = {
+				who = ROOT
+				modifier = opposed_our_vietnamese_dynasty
+			}
+			country_event = {
+				id = ipeDAI.4
+			}
+		}
+		add_manpower = -5
+	}
+
+	option = { # Support the claimants in Annam.
+		name = ipeDAI.2.b
+		trigger = {
+			exists = ANN
+		}
+		ANN = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_our_vietnamese_dynasty
+			}
+			country_event = {
+				id = ipeDAI.3
+			}
+		}
+		DAI = {
+			add_opinion = {
+				who = ROOT
+				modifier = opposed_our_vietnamese_dynasty
+			}
+			country_event = {
+				id = ipeDAI.4
+			}
+		}
+		add_manpower = -5
+	}
+
+	option = { # Support the claimants in Dai Viêt.
+		name = ipeDAI.2.c
+		DAI = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_our_vietnamese_dynasty
+			}
+			country_event = {
+				id = ipeDAI.3
+			}
+		}
+		if = {
+			limit = {
+				exists = TOK
+			}
+			TOK = {
+				add_opinion = {
+					who = ROOT
+					modifier = opposed_our_vietnamese_dynasty
+				}
+				country_event = {
+					id = ipeDAI.4
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = ANN
+			}
+			ANN = {
+				add_opinion = {
+					who = ROOT
+					modifier = opposed_our_vietnamese_dynasty
+				}
+				country_event = {
+					id = ipeDAI.4
+				}
+			}
+		}
+		add_manpower = -5
+	}
+
+	option = { # Keep out of this petty conflict.
+		name = ipeDAI.2.e
+		add_prestige = 10
+	}
+}
+
+# The Emperor of China Supports Our Dynasty!
+country_event = {
+	id = ipeDAI.3
+	title = ipeDAI.3.t
+	desc = ipeDAI.3.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Emperor of China has not made an incorrect judgment.
+		name = ipeDAI.3.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = supported_our_vietnamese_dynasty
+			}
+		}
+		add_manpower = 5
+		add_prestige = 10
+	}
+}
+
+# The Emperor of China Opposes Our Dynasty!
+country_event = {
+	id = ipeDAI.4
+	title = ipeDAI.4.t
+	desc = ipeDAI.4.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # One day we will also oppose them.
+		name = ipeDAI.4.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = opposed_our_vietnamese_dynasty
+			}
+		}
+		add_prestige = -10
+	}
+}
+
+
+
+# The Empress Dowager
+country_event = {
+	id = ipeDAI.5
+	title = ipeDAI.5.t
+	desc = ipeDAI.5.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = DAI
+		has_ruler_flag = empress_dowager
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # We must remain steadfast.
+		name = ipeDAI.5.a
+		custom_tooltip = ipeDAI.5.a.tooltip
+	}
+}
+
+# The Death of Lê Bang Co
+country_event = {
+	id = ipeDAI.6
+	title = ipeDAI.6.t
+	desc = ipeDAI.6.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = DAI
+		has_ruler = "Thi Anh"
+		dynasty = "Nguyên"
+		has_ruler_flag = empress_dowager
+		NOT = {
+			has_heir = "Bang Co"
+		}
+		NOT = {
+			has_country_flag = empress_dowager_dying
+		}
+		is_year = 1457
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = {
+		name = ipeDAI.6.a
+		ai_chance = {
+			factor = 100
+		}
+		define_ruler = {
+			name = "Tu Thành"
+			dynasty = "Lê"
+			adm = 5
+			dip = 4
+			mil = 5
+			age = 20
+		}
+		hidden_effect = {
+			add_ruler_personality = lawgiver_personality
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+	}
+
+	option = {
+		name = ipeDAI.6.b
+		ai_chance = {
+			factor = 0
+		}
+		add_stability = -3
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Tu Thành"
+				leader_dynasty = "Lê"
+			}
+		}
+		if = {
+			limit = {
+				religion_group = eastern
+			}
+			set_karma = -100
+		}
+	}
+}
+
+# The Plot Against the Empress Dowager
+country_event = {
+	id = ipeDAI.7
+	title = ipeDAI.7.t
+	desc = ipeDAI.7.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = DAI
+		has_ruler = "Thi Anh"
+		dynasty = "Nguyên"
+		has_ruler_flag = empress_dowager
+		is_year = 1459
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		set_country_flag = empress_dowager_dying
+	}
+
+	option = { # But do we gain in trading one unjust ruler for yet another?
+		name = ipeDAI.7.a
+		add_stability = -3
+		kill_ruler = yes
+		define_ruler = {
+			name = "Nghi Dân"
+			dynasty = "Lê"
+			adm = 0
+			dip = 0
+			mil = 0 
+			age = 20
+		}
+		hidden_effect = {
+			hidden_effect = {
+				add_ruler_personality = cruel_personality
+			}
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		if = {
+			limit = {
+				religion_group = eastern
+			}
+			set_karma = -100
+		}
+		set_ruler_flag = dai_viet_coup
+		clr_country_flag = empress_dowager_dying
+	}
+}
+
+# The Downfall of Lê Nghi Dân
+country_event = {
+	id = ipeDAI.8
+	title = ipeDAI.8.t
+	desc = ipeDAI.8.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = DAI
+		has_ruler_flag = dai_viet_coup
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # The blood of tainted monarchs must be spilt!
+		name = ipeDAI.8.a
+		ai_chance = {
+			factor = 100
+		}
+		kill_ruler = yes
+		define_ruler = {
+			name = "Tu Thành"
+			dynasty = "Lê"
+			adm = 5
+			dip = 4
+			mil = 5
+			age = 20
+		}
+		hidden_effect = {
+			add_ruler_personality = lawgiver_personality
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+	}
+
+	option = { # Lê Thu Thành will perish!
+		name = ipeDAI.8.b
+		ai_chance = {
+			factor = 0
+		}
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Tu Thành"
+				leader_dynasty = "Lê"
+			}
+		}
+	}
+}
+
+# The Death of Lê Bang Co (Early)
+country_event = {
+	id = ipeDAI.9
+	title = ipeDAI.6.t
+	desc = ipeDAI.9.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = DAI
+		has_ruler_flag = empress_dowager
+		NOT = {
+			has_heir = "Bang Co"
+		}
+		NOT = {
+			is_year = 1457
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = ipeDAI.9.a
+		ai_chance = {
+			factor = 75
+		}
+		kill_ruler = yes
+		define_ruler = {
+			name = "Nghi Dân"
+			dynasty = "Lê"
+			adm = 0
+			dip = 0
+			mil = 0 
+			age = 20
+		}
+		hidden_effect = {
+			add_ruler_personality = cruel_personality
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		set_country_flag = the_cruelty_of_le_nghi_dan
+	}
+
+	option = {
+		name = ipeDAI.9.b
+		ai_chance = {
+			factor = 25
+		}
+		add_stability = -3
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Nghi Dân"
+				leader_dynasty = "Lê"
+			}
+		}
+	}
+}
+
+# The Downfall of Lê Nghi Dân (Early)
+country_event = {
+	id = ipeDAI.10
+	title = ipeDAI.8.t
+	desc = ipeDAI.10.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = DAI
+		has_ruler = "Nghi Dân"
+		dynasty = "Lê"
+		has_country_flag = the_cruelty_of_le_nghi_dan
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		clr_country_flag = the_cruelty_of_le_nghi_dan
+	}
+
+	option = { # We welcome Lê Tu Thành!
+		name = ipeDAI.6.a
+		ai_chance = {
+			factor = 100
+		}
+		kill_ruler = yes
+		define_ruler = {
+			name = "Tu Thành"
+			dynasty = "Lê"
+			adm = 5
+			dip = 4
+			mil = 5
+			age = 20
+		}
+		hidden_effect = {
+			add_ruler_personality = lawgiver_personality
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+	}
+
+	option = { # Lê Tu Thành will perish!
+		name = ipeDAI.8.b
+		ai_chance = {
+			factor = 0
+		}
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Tu Thành"
+				leader_dynasty = "Lê"
+			}
+		}
+	}
+}
+
+# Lê Bang Co Comes of Age
+country_event = {
+	id = ipeDAI.11
+	title = ipeDAI.11.t
+	desc = ipeDAI.11.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = DAI
+		has_ruler_flag = empress_dowager
+		has_heir = "Bang Co"
+		heir_age = 15
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # It is time to step down.
+		name = ipeDAI.11.a
+		ai_chance = {
+			factor = 0
+		}
+		kill_ruler = yes
+		add_stability_or_adm_power = yes
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 15
+		}
+	}
+
+	option = { # The nobility's whims are to be defied.
+		name = ipeDAI.11.b
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -1
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -15
+		}
+	}
+}
+
+# The Destruction of Vijaya
+country_event = {
+	id = ipeDAI.12
+	title = ipeDAI.12.t
+	desc = ipeDAI.12.d
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	major = yes
+
+	option = { # We do what we must.
+		name = ipeDAI.12.a
+		set_global_flag = fall_of_champa
+		607 = {
+			add_base_tax = -5
+			add_base_production = -5
+			add_base_manpower = -5
+		}
+		capital_scope = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					exists = CHA
+				}
+				CHA = {
+					country_event = {
+						id = ipeDAI.13
+					}
+				}
+			}
+		}
+	}
+}
+
+# The Destruction of Vijaya
+country_event = {
+	id = ipeDAI.13
+	title = ipeDAI.12.t
+	desc = ipeDAI.13.d
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will pay for this.
+		name = ipeDAI.13.a
+		add_stability = -1
+		tooltip = {
+			607 = {
+				add_base_tax = -5
+				add_base_production = -5
+				add_base_manpower = -5
+				add_devastation = 50
+			}
+			FROM = {
+				capital_scope = {
+					add_base_tax = 2
+					add_base_production = 2
+					add_base_manpower = 2
+				}
+			}
+		}
+	}
+}
+
+# The Sultanate of Aceh
+country_event = {
+	id = ipeDAI.14
+	title = ipeDAI.14.t
+	desc = ipeDAI.14.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		owns = 6733
+		NOT = {
+			capital = 6733
+			exists = ATJ
+		}
+		6733 = {
+			culture = acehnese
+			is_core = ATJ
+			religion = sunni
+		}
+		has_global_flag = fall_of_champa
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		clr_global_flag = fall_of_champa
+		hidden_effect = {
+			release = ATJ
+			ATJ = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1
+						light_ship = 0.5
+						galley = 0.5
+					}
+					add_province_modifier = {
+						name = encouraged_growth_tax
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_production
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_manpower
+						duration = 18250
+					}
+				}
+				define_ruler = {
+					dynasty = Mugàyat
+				}
+				change_government = monarchy
+				add_government_reform = plutocratic_reform
+				adopt_reform_progress = ROOT
+			}
+			vassalize = ATJ
+		}
+	}
+
+	option = { # We will have to deal with them.
+		name = ipeDAI.14.a
+		ai_chance = {
+			factor = 100
+		}
+		tooltip = {
+			release = ATJ
+			ATJ = {
+				capital_scope = {
+					add_province_modifier = {
+						name = encouraged_growth_tax
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_production
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_manpower
+						duration = 18250
+					}
+				}
+			}
+			vassalize = ATJ
+		}
+	}
+
+	option = { # Play as Aceh.
+		name = ipeDAI.14.b
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = ATJ
+	}
+}

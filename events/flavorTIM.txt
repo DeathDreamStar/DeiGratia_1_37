@@ -1,0 +1,184 @@
+########################################
+# Flavor Events for Timurid
+#
+# written by Sara Wendel-Örtqvist
+# Events rewritten and adapted for patch 1.22 by Henrik Lohmander
+########################################
+
+namespace = flavor_tim
+normal_or_historical_nations = yes
+
+# Muhammad Baysonqor's Rebellion
+country_event = {
+	id = flavor_tim.0
+	title = "flavor_tim.0.t"
+	desc = "flavor_tim.0.d"
+	picture = OVEREXTENSION_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TIM
+		exists = QOM
+		has_ruler = "Shah Rukh"
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = { 
+		name = "flavor_tim.0.a" #
+		custom_tooltip = flavor_tim.0.a.tt
+		
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					OR = {
+						is_neighbor_of = ROOT
+						dynasty = Gurkani
+						any_owned_province = {
+							is_core = TIM
+						}
+						any_neighbor_country = {
+							dynasty = Gurkani
+						}
+					}
+				}
+				country_event = { id = flavor_tim.4 }
+			}
+		}
+	}
+}
+
+# Death of Shah Rukh
+country_event = {
+	id = flavor_tim.1
+	title = "flavor_tim.1.t"
+	desc = "flavor_tim.1.d"
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TIM
+		NOT = { has_global_flag = death_of_shah_rukh }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = { set_global_flag = death_of_shah_rukh }
+	
+	option = { 
+		name = "flavor_tim.1.a" # My time has come!
+		custom_tooltip = flavor_tim.1.a.tt
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					OR = {
+						is_neighbor_of = ROOT
+						dynasty = Gurkani
+						any_owned_province = {
+							is_core = TIM
+						}
+						any_neighbor_country = {
+							dynasty = Gurkani
+						}
+					}
+				}
+				country_event = { id = flavor_tim.2 }
+			}
+			if = {
+				limit = {
+					QAR = {
+						is_subject_of = TIM
+					}
+				}
+				QAR = {
+					grant_independence = yes
+				}
+			}
+			QAR = {
+				country_event = {
+					id = ipeQAR.6
+				}
+			}
+		}
+	}
+}
+
+# Death of Shah Rukh
+country_event = {
+	id = flavor_tim.2
+	title = "flavor_tim.2.t"
+	desc = "flavor_tim.2.d"
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "flavor_tim.2.a" # My time has come!
+		trigger = { dynasty = Gurkani }
+		every_province = {
+			limit = {
+				is_core = TIM
+			}
+			add_core = ROOT
+		}
+		if = {
+			limit = {
+				is_subject_of_type = vassal
+				OR = {
+					dynasty = "Gurkani"
+					tag = CTA
+				}
+			}
+			grant_independence = yes
+		}
+		custom_tooltip = flavor_tim.2.a.tt
+	}
+	option = {
+		name = "flavor_tim.2.b" #
+		trigger = { NOT = { dynasty = Gurkani } }
+		custom_tooltip = flavor_tim.2.a.tt
+		if = {
+			limit = {
+				NOT = { dynasty = "Gurkani" }
+				government = monarchy
+				NOT = { tag = HLR }
+				NOT = { tag = ROM }
+				NOT = { tag = MUG }
+				NOT = { tag = PER }
+				OR = {
+					culture_group = iranian
+					primary_culture = uzbehk
+					primary_culture = turkmeni
+				}
+				NOT = { primary_culture = azerbaijani }
+				NOT = { has_reform = tribal_federation }
+				NOT = { has_reform = oghuz_confederation }
+				religion_group = muslim
+			}
+		custom_tooltip = flavor_tim.2.b.tt
+		}
+	}
+}
+
+country_event = {
+	id = flavor_tim.4
+	title = "flavor_tim.0.t"
+	desc = "flavor_tim.0.d"
+	picture = OVEREXTENSION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = "flavor_tim.0.a" # My time has come!
+		custom_tooltip = flavor_tim.0.a.tt
+	}
+}

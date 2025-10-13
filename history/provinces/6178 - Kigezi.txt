@@ -1,0 +1,15 @@
+#6178 - Kigezi
+
+owner = NKO
+controller = NKO
+add_core = NKO
+culture = ganda
+religion = shamanism #Fetishism
+capital = "Kigezi"
+trade_goods = livestock
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+discovered_by = central_african

@@ -1,0 +1,194 @@
+namespace = ipeAJU
+normal_or_historical_nations = yes
+
+#Toob Menadir
+country_event = {
+	id = ipeAJU.2
+	title = ipeAJU.2.t
+	desc = ipeAJU.2.d
+	picture = HARBOUR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = AJU
+			tag = MDI
+		}
+		owns_core_province = 1205
+		is_at_war = no
+		is_year = 1500
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = ipeAJU.2.a
+		ai_chance = {
+			factor = 95
+		}
+		1205 = {
+			add_province_modifier = {
+				name = ipe_toob_menadir
+				duration = -1
+			}
+		}
+		MAM = {
+			country_event = { id = ipeAJU.3 }
+		}
+		SYR = {
+			country_event = { id = ipeAJU.3 }
+		}
+		if = {
+			limit = {
+				TUR = {
+					OR = {
+						owns_core_province = 382
+						owns_core_province = 361
+					}
+				}
+			}
+			country_event = { id = ipeAJU.3 }
+		}
+	}
+	option = {
+		name = ipeAJU.2.b
+		ai_chance = {
+			factor = 5
+		}
+		add_prestige = 15
+	}
+}
+
+# Toob Menadir Trade
+country_event = {
+	id = ipeAJU.3
+	title = ipeAJU.3.t
+	desc = ipeAJU.3.d
+	picture = HARBOUR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_opinion = {
+			who = FROM
+			value = -10
+		}
+	}
+
+	option = {
+		name = ipeAJU.3.a
+		add_years_of_income = 0.5
+		add_opinion = {
+			who = FROM
+			modifier = ipe_toob_menadir_trade
+		}
+	}
+}
+
+# Ajuuraan Army
+country_event = {
+	id = ipeAJU.4
+	title = ipeAJU.4.t
+	desc = ipeAJU.4.d
+	picture = LAND_MILITARY_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = AJU
+		is_year = 1480
+	}
+	
+	mean_time_to_happen = {
+		months = 240
+	}
+	
+	option = {
+		name = ipeAJU.4.a
+		add_stability = -1
+		add_piety = 0.1
+		add_country_modifier = {
+			name = ipeAJU_army
+			duration = -1
+		}
+	}
+
+	option = {
+		name = ipeAJU.4.b
+		add_stability_or_adm_power = yes
+		add_years_of_income = -1
+		add_country_modifier = {
+			name = ipeAJU_mercenary
+			duration = -1
+		}
+	}
+}
+
+# Islamic Immigration
+country_event = {
+	id = ipeAJU.5
+	title = ipeAJU.5.t
+	desc = ipeAJU.5.d
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		tag = AJU
+		any_country = {
+			capital_scope = {
+				region = arabia_region
+			}
+			religion_group = muslim
+			war_exhaustion = 5
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = ipeAJU.5.a
+		define_advisor = {
+			type = theologian
+			skill = 2
+			discount = yes
+		}
+		define_advisor = {
+			type = diplomat
+			skill = 2
+			discount = yes
+		}
+		add_piety = 0.1
+		add_prestige = 10
+		add_adm_power = 25
+	}
+
+	option = {
+		name = ipeAJU.5.b
+		create_general = {
+			tradition = 40
+		}
+		add_piety = -0.1
+		add_prestige = 10
+		add_mil_power = 25
+	}
+
+	option = {
+		name = ipeAJU.5.c
+		capital_scope = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+		}
+		add_prestige = 10
+		add_dip_power = 25
+	}
+}

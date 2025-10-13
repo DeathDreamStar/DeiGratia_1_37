@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+technology_group = indian
+religion = animism
+primary_culture = munda
+capital = 6750	# Dhenkanal
+
+1444.1.1 = {
+	monarch = { # fictional
+		name = "Dhenka"
+		dynasty = "Bhanj"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,18 @@
+#6954 - Kusel
+
+capital = "Kusel"
+culture = moselle
+religion = catholic
+trade_goods = cloth
+owner = ZWB
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+controller = ZWB
+add_core = ZWB
+hre = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman

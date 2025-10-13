@@ -1,0 +1,77 @@
+country_decisions = {
+	siamese_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_siam_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = SIA }
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+					NOT = { exists = SIA }
+				}
+			}
+			culture_group = thai_group
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 601
+				province_id = 600
+				province_id = 593
+				province_id = 589
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+		
+		allow = {
+			NOT = { exists = SIA }
+			adm_tech = 20
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			owns_core_province = 601
+			owns_core_province = 600
+			owns_core_province = 593
+			owns_core_province = 589
+		}
+		
+		effect = {
+			change_tag = SIA
+			indo_china_region = {
+				limit = {
+					NOT = {
+						owned_by = ROOT
+					}
+				}
+				add_permanent_claim = ROOT
+			}
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_siam_flag
+		}		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

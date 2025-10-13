@@ -1,0 +1,20 @@
+#3050 - Landak
+
+owner = LDA
+controller = LDA
+add_core = LDA
+culture = dayak
+religion = animism
+capital = "Landak"
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+
+
+
+discovered_by = chinese
+discovered_by = indian
+
+1521.1.1 = { discovered_by = POR }

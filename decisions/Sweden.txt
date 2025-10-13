@@ -1,0 +1,55 @@
+country_decisions = {
+
+	union_over_norway = {
+		major = yes
+		potential = {
+			OR = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = DAN
+					casus_belli = cb_restore_personal_union
+				}
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = DAN
+					casus_belli = cb_claim_throne
+				}
+			}
+			NOR = {
+				is_subject_of = DAN
+				is_lesser_in_union = yes
+			}
+		}
+		provinces_to_highlight = {
+			owned_by = NOR
+			continent = europe
+			province_is_on_an_island = no
+			NOT = {
+				controlled_by = SWE
+			}
+		}
+		allow = {
+			NOR = {
+				NOT = {
+					any_owned_province = {
+						continent = europe
+						province_is_on_an_island = no
+						NOT = {
+							controller = {
+								OR = {
+									tag = SWE
+									is_subject_of = SWE
+									alliance_with = SWE
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			create_union = NOR
+			white_peace = DAN
+		}
+	}
+}

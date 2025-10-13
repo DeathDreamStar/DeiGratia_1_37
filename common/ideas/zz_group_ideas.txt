@@ -1,0 +1,4063 @@
+# These ideas are loaded after all country ideas, but before default idea.
+
+client_ideas = {
+	start = {
+		land_morale = 0.1
+		core_creation = -0.10
+	}
+	
+	bonus = {
+		build_cost = -0.1
+	}
+	
+	trigger = {
+		is_client_nation = yes
+	}
+	free = yes
+		
+	client_self_rule = {
+		global_unrest = -1
+	}
+	foreign_tax_collectors = {	
+		global_tax_modifier = 0.10
+	}
+	fortified_borders = {
+		defensiveness = 0.15
+	}
+	magnate_landowners = {
+		nobles_loyalty_modifier = 0.1
+	}	
+	mercantile_privileges = {
+		global_prov_trade_power_modifier = 0.1
+	}
+	mercenary_recruitment_center = {
+		merc_maintenance_modifier = -0.15
+	}
+	foreign_advisors_client = {
+		advisor_pool = 1
+	}
+}
+
+
+colonial_ideas = {
+	start = {
+		development_cost = -0.1
+		tolerance_heretic = 3
+	}
+	
+	bonus = {
+		land_morale = 0.10
+	}
+	
+	trigger = {
+		is_colonial_nation = yes
+	}
+	free = yes
+	
+	founding_fathers = {
+		republican_tradition = 0.5
+	}
+	continental_trade = {
+		global_prov_trade_power_modifier = 0.1
+	}
+	manufacturing_center = {
+		build_cost = -0.1
+	}
+	free_thinkers = {
+		idea_cost = -0.1
+	}
+	colonial_militia = {
+		global_regiment_cost = -0.1
+	}
+	new_frontiers = {
+		auto_explore_adjacent_to_colony = yes
+		global_colonial_growth = 15
+	}
+	liberty_heroes = {
+		free_leader_pool = 1
+	}
+}
+
+barbary_pirate_ideas = {
+	start = {
+		galley_power = 0.2
+		privateer_efficiency = 0.2
+	}
+	bonus = {
+		republican_tradition = 0.5
+		legitimacy = 1
+	}
+	trigger = {
+		has_reform = pirate_republic_reform
+		OR = {
+			culture_group = maghrebi
+			primary_culture = moroccan
+			primary_culture = algerian
+			primary_culture = tunisian
+			primary_culture = andalusi
+			primary_culture = maltese
+			tag = TET
+			tag = SLE
+		}
+	}
+	free = yes
+	barbary_slave_trade = {
+		trade_efficiency = 0.1
+	}
+	galley_slaves = {
+		global_sailors_modifier = 0.25
+		galley_cost = -0.2
+	}
+	vengeful_refugees = {
+		own_coast_naval_combat_bonus = 1
+	}
+	mazmorras = {
+		diplomatic_reputation = 1
+	}
+	barbary_fortified_strongholds = {
+		defensiveness = 0.2
+	}
+	heirs_of_al_andalus = {
+		unjustified_demands = -0.1
+	}
+	barbary_board_of_captains = {
+		pr_captains_influence = 0.1
+		possible_mil_policy = 1
+	}
+}
+
+pirate_ideas = {
+	start = {
+		navy_tradition = 0.5
+		free_leader_pool = 1
+	}
+	bonus = {
+		unjustified_demands = -0.1
+	}
+	trigger = {
+		has_reform = pirate_republic_reform
+		NOT = { culture_group = maghrebi }
+		NOT = { tag = TET }
+		NOT = { tag = SLE }
+	}
+	free = yes
+	
+	pirates_religious_apathy = {
+		no_religion_penalty = yes
+	}	
+	pirates_plunder = {
+		loot_amount = 0.25
+	}
+	pirates_bucanneers_ideas = {	
+		infantry_cost = -0.1
+	}
+	pirates_sail_in_consort = {
+		global_naval_engagement_modifier = 0.1
+	}
+	pirates_elected_quartermasters = {
+		naval_morale = 0.1
+	}
+	pirate_bays = {
+		ship_durability = 0.05
+	}
+	pirate_life_of_liberty = {
+		rebel_support_efficiency = 0.25
+		sailors_recovery_speed = 0.1
+	}
+}
+
+cossack_ideas = {
+	start = {
+		global_unrest = -1
+		loot_amount = 0.25
+	}
+	bonus = {
+		shock_damage = 0.1
+	}
+	trigger = {
+		has_reform = cossacks_reform
+	}
+	free = yes
+	cossacks_escaped_serfs = {
+		manpower_recovery_speed = 0.2
+	}
+	cossacks_hetmanate = {
+		republican_tradition = 0.5
+	}
+	zaz_steppe_riders = {
+		# as the ZAZ idea, land attrition
+	}
+	cossacks_insults = {
+		power_projection_from_insults = 1
+	}
+	cossacks_military_society = {
+		army_tradition = 0.5
+	}
+	cossacks_free_the_serfs = {
+		years_of_nationalism = -5
+	}
+	cossacks_registered = {
+		possible_mil_policy = 1
+	}
+}
+
+
+berber_ideas = {
+	start = {
+		cavalry_power = 0.1
+		hostile_attrition = 1
+	}
+	
+	bonus = {
+		global_trade_power = 0.10
+	}
+	
+	trigger = {
+		culture_group = maghrebi
+		NOT = {
+			tag = TJU
+		}
+	}
+	free = yes
+	
+	ber_barbary_pirates = {
+		global_sailors_modifier = 0.25
+	}
+	desert_warfare = {
+		land_attrition = -0.1
+	}
+	trans_saharan_trade = {
+		trade_efficiency = 0.1
+		caravan_power = 0.25
+	}
+	corsairs = {
+		navy_tradition = 0.5
+	}
+	tuareg_cavalry = {
+		cavalry_cost = -0.10
+		loot_amount = 0.10
+	}
+	dual_diplomacy = {
+		diplomatic_upkeep = 1
+	}
+	brothers_barbarossa = {
+		galley_power = 0.20
+	}
+}	
+
+
+rajput_ideas = {
+	start = {
+		diplomatic_reputation = 1
+		manpower_recovery_speed = 0.1
+	}
+	
+	bonus = {
+		discipline = 0.05
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = rajput
+			primary_culture = malvi
+		}
+		NOT = { religion_group = muslim }
+	}
+	free = yes
+
+	clan_loyalties = {
+		global_manpower_modifier = 0.15
+	}
+	fortifying_rajputana = {
+		defensiveness = 0.15
+	}
+	marwari_horses = {
+		#Same as RJP ideas.
+	}
+	rajput_resistance = {
+		war_exhaustion = -0.03
+	}
+	rajput_painting_school = {
+		prestige = 1
+	}
+	rajput_martial_ethos = {
+		leader_land_fire = 1
+	}
+	marwari_trading_houses = {
+		trade_efficiency = 0.10
+	}
+}
+
+
+
+telugu_ideas = { #Telugu Ideas
+	start = {
+		defensiveness = 0.2
+		merc_maintenance_modifier = -0.15
+	}
+
+	bonus = {
+		global_manpower_modifier = 0.15
+	}
+	
+	trigger = {
+		primary_culture = telegu
+	}
+	free = yes
+	
+	yor_patronize_telugu_literature = {
+		prestige = 1
+	}
+	yor_telugu_warrior_aristocrats = {
+		army_tradition = 0.5
+	}
+	yor_kakatiya_legacy = {
+		global_tax_modifier = 0.1
+	}
+	yor_great_forts_of_the_east = {
+		fort_maintenance_modifier = -0.15
+	}
+	yor_legend_of_prataparudra = {
+		legitimacy = 1
+	}
+	yor_diamond_mines_of_kollur = {
+		production_efficiency = 0.1
+	}
+	yor_encourage_coromandel_trade = {
+		global_own_trade_power = 0.1
+	}
+}
+
+dravidian_ideas = {
+	start = {
+		religious_unity = 0.25
+		production_efficiency = 0.1
+	}
+
+	bonus = {
+		trade_efficiency = 0.10
+	}
+	
+	trigger = {
+		culture_group = dravidian
+		NOT = { primary_culture = malayalam }
+		religion = hinduism
+	}
+	free = yes
+	
+	merchants_of_southern_india = {
+		trade_range_modifier = 0.25
+	}
+	water_tanks_and_canals = {	
+		global_tax_modifier = 0.10
+	}
+	polygar_system = {
+		global_manpower_modifier = 0.1
+	}
+	south_indian_mercenaries = {
+		merc_maintenance_modifier = -0.15
+	}
+	patronage_of_temples = {
+		legitimacy = 1
+	}
+	south_indian_literature = {
+		prestige = 1
+	}
+	merchant_capitalists = {
+		merchants = 1
+	}
+}
+
+
+bengali_ideas = {
+	start = {
+		merchants = 1
+		infantry_power = 0.1
+	}
+	
+	bonus = {
+		prestige = 1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = bengali
+			TAG = KMT
+			TAG = KAC
+		}
+	}
+    free = yes       #will be added at load.
+    
+	hindu_sufi_syncretism = {            
+		religious_unity = 0.25
+	}
+	ganges_brahmaputra_confluence = {                    
+		trade_efficiency = 0.1
+	}
+	rice_fields = {                
+		global_manpower_modifier = 0.2
+	}
+	mustard_oil_ilish_mach = {                             
+		war_exhaustion_cost = -0.10
+	}
+	jute_production = {
+		#production_efficiency = 0.1 #Uses bonus from Tripuran ideas
+	}
+	opium_fields = {
+		global_tax_modifier = 0.1
+	}
+	bengali_renaissance = {
+		global_institution_spread = 0.1
+	}
+}
+
+gujarati_ideas = {
+	start = {
+		merchants = 1
+		fort_maintenance_modifier = -0.15
+	}
+	
+	bonus = {
+		trade_efficiency = 0.1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = gujarati
+			primary_culture = saurashtri
+			primary_culture = bhil
+		}
+	}
+	free = yes
+	
+	guj_kathiawari_horses = {
+		cavalry_power = 0.1
+	}
+	guj_trading_outposts = {
+		global_own_trade_power = 0.1
+	}
+	guj_jain_bankers = {
+		interest = -0.5
+	}
+	guj_rajput_dynasties = {
+		diplomatic_reputation = 1
+	}
+	guj_protect_dwarkadhish_temple = {
+		tolerance_own = 1
+	}
+	guj_ashapura_mata = {
+		legitimacy = 1
+	}
+	guj_african_trade = {
+		trade_range_modifier = 0.25
+	}
+}
+
+hausa_ideas = {
+	start = {
+		global_own_trade_power = 0.1
+		merchants = 1
+	}
+	
+	bonus = {
+		development_cost = -0.1
+	}
+	
+	trigger = {
+		primary_culture = hausa
+	}
+	
+	free = yes		#will be added at load.
+	
+	heirs_of_bayajida = {
+		diplomatic_upkeep = 1
+	}
+	
+	regnal_chronicles = { 
+		prestige = 1
+	}
+	
+	sarakunan_babba = {
+		production_efficiency = 0.1
+	}
+	
+	sarakunan_kasuwa = {
+		caravan_power = 0.1
+	}
+	
+	sarkin_yaki = {
+		shock_damage_received = -0.1
+	}
+
+	sarkin_bayi = {
+		build_cost = -0.1
+	}
+	
+	borno_refugees = { 
+		global_institution_spread = 0.1
+	}
+}
+
+MIX_ideas = {
+	start = {
+		global_autonomy = -0.05
+		inflation_reduction = 0.05
+	}
+	
+	bonus = {
+		global_unrest = -1
+	}
+	
+	trigger = {
+		primary_culture = mixtec
+	}
+	free = yes
+	
+	remember_eight_dear_jaguar_claw = {
+		legitimacy = 1
+	}
+	three_traditional_mixtec_groups = {
+		global_manpower_modifier = 0.15
+	}
+	foremost_goldsmiths = {
+		prestige = 1.0
+		diplomatic_reputation = 1
+	}
+	resistant_mixtec_city_states = {
+		army_tradition_decay = -0.01
+	}
+	reform_the_mixtec_codices = {
+		idea_cost = -0.10
+	}
+	mastery_of_jewelery_and_mosaic_crafting = {
+		global_trade_power = 0.10
+		trade_steering = 0.10
+	}
+	the_state_of_la_mixteca = {
+		manpower_recovery_speed = 0.1
+	}
+}
+
+OTO_ideas = {
+	start = {
+		legitimacy = 1
+	}
+	
+	bonus = {
+		global_autonomy = -0.05
+		shock_damage = 0.10
+	}
+	
+	trigger = {
+		primary_culture = otomi
+	}
+	free = yes
+	
+	blacksmiths_of_mesoamerica = {
+		production_efficiency = 0.10
+	}
+	elders_of_mesoamerica = {
+		prestige_decay = -0.01
+	}
+	subjected_to_the_triple_alliance = {
+		land_morale = 0.10
+		global_manpower_modifier = 0.10
+	}
+	rivals_of_the_aztec_triple_alliance = {
+		ae_impact = -0.10
+	}
+	adopt_the_otomi_military_order = {
+		discipline = 0.05
+	}
+	consolidate_otomi_lands = {
+		development_cost = -0.10
+	}
+	evolving_the_otomi_state = {
+		technology_cost = -0.10
+	}
+}
+
+ZAP_ideas = {
+	start = {
+		core_creation = -0.10
+		global_unrest = -1
+	}
+	
+	bonus = {
+		governing_capacity_modifier = 0.10
+	}
+	
+	trigger = {
+		primary_culture = zapotek
+	}
+	free = yes
+	
+	meomries_of_our_old_empire = {
+		army_tradition_decay = -0.01
+	}
+	monte_alban_our_old_heart = {
+		prestige_decay = -0.01
+	}
+	destroy_regional_powers_and_unite = {
+		stability_cost_modifier = -0.1
+	}
+	reform_zapotec_writing_and_language = {
+		adm_tech_cost_modifier = -0.10
+	}
+	trading_in_obsidian_and_jade = {
+		trade_efficiency = 0.10
+	}
+	religious_reformations_at_mitla = {
+		tolerance_own = 1
+		global_missionary_strength = 0.02
+	}
+	rise_of_the_zapotec_empire = {
+		global_regiment_cost = -0.10
+	}
+}
+
+HST_ideas = {
+	start = {
+		war_exhaustion = -0.02
+		land_attrition = -0.1
+	}
+	
+	bonus = {
+		legitimacy = 1
+	}
+	
+	trigger = {
+		primary_culture = wastek
+	}
+	free = yes
+	
+	copper_alloys = {
+		trade_goods_size_modifier = 0.10
+	}
+	mayan_roots = {
+		prestige_decay = -0.01
+	}
+	learning_from_tribute_payments = {
+		reduced_liberty_desire = 10
+		vassal_income = 0.25
+	}
+	nahuatl_religious_practices = {
+		religious_unity = 0.25
+	}
+	platform_mounds_and_temples = {
+		build_cost = -0.1
+	}
+	our_own_path = {
+		global_manpower_modifier = 0.15
+	}
+	huastec_identity = {
+		manpower_recovery_speed = 0.1
+	}
+}
+
+TOT_ideas = {
+	start = {
+		build_cost = -0.1
+		global_prov_trade_power_modifier = 0.1
+	}
+	
+	bonus = {
+		diplomats = 1
+	}
+	
+	trigger = {
+		primary_culture = totonac
+	}
+	free = yes
+	
+	three_hearts_three_cities = {
+		global_unrest = -1
+		global_tax_modifier = 0.10
+	}
+	perfection_of_ceramics_sculpting_architecture = {
+		production_efficiency = 0.10
+	}
+	ceremonial_centers = {
+		global_missionary_strength = 0.02
+	}
+	non_human_sacrifices = {
+		development_cost = -0.10
+	}
+	preserving_totonac_culture = {
+		advisor_cost = -0.1
+	}
+	against_the_aztecs = {
+		land_morale = 0.10
+	}
+	rebuilding_taijin = {
+		global_autonomy = -0.05
+	}
+}
+
+TLA_ideas = {
+	start = {
+		hostile_attrition = 1.0
+		leader_land_manuever = 1
+	}
+	
+	bonus = {
+		culture_conversion_cost = -0.20
+	}
+	
+	trigger = {
+		primary_culture = tlapanec
+	}
+	free = yes
+	
+	nagualism_in_our_religion = {
+		tolerance_own = 1
+		tolerance_heretic = 2
+	}
+	taking_in_surrounding_cultures = {
+		num_accepted_cultures = 1
+	}
+	cultivation_of_cotton_garments = {
+		production_efficiency = 0.1
+	}
+	fighting_the_aztecs = {
+		infantry_power = 0.10
+	}
+	cultivate_larger_dominions = {
+		global_manpower_modifier = 0.15
+	}
+	taking_what_is_rightfully_tlapanec = {
+		development_cost = -0.10
+	}
+	an_integrated_tlapanec_state = {
+		global_institution_spread = 0.1
+	}
+}
+
+MAT_ideas = {
+	start = {
+		land_attrition = -0.15
+		diplomatic_upkeep = 1
+	}
+	
+	bonus = {
+		num_accepted_cultures = 2
+	}
+	
+	trigger = {
+		primary_culture = matlatzinca
+	}
+	free = yes
+	
+	speakers_of_four_languages = {
+		diplomatic_reputation = 1
+	}
+	memories_of_the_tepanec_empire = {
+		reduced_liberty_desire = 10
+	}
+	fending_off_purepechas_and_aztecs = {
+		land_morale = 0.10
+	}
+	fortify_toluca_valley_and_possessions = {
+		defensiveness = 0.10
+		fort_maintenance_modifier = -0.10
+	}
+	tight_administrative_structure = {
+		state_maintenance_modifier = -0.25
+	}
+	develop_matlatzinco = {
+		development_cost = -0.10
+	}
+	city_states_to_nationhood = {
+		legitimacy = 1.0
+	}
+}
+
+
+nahua_ideas = {
+	start = {
+		army_tradition = 0.5
+		idea_cost = -0.05
+	}
+	
+	bonus = {
+		land_morale = 0.10
+	}
+	
+	trigger = {
+		primary_culture = aztek
+	}
+	free = yes
+	
+	calpulli_system = {
+		global_regiment_recruit_speed = -0.1
+		global_regiment_cost = -0.1
+	}
+	
+	pochteca_networks = {
+		trade_efficiency = 0.1
+		spy_offence = 0.2
+	}
+	
+	nahua_engineering = {
+		production_efficiency = 0.10
+	}
+	
+	poets_philosophers = { 
+		idea_cost = -0.05
+	}
+	
+	military_orders = {
+		infantry_power = 0.10
+	}
+	
+	altepetl_diplomacy = {
+		improve_relation_modifier = 0.1
+	}
+	
+	great_cultural_legacy = {
+		legitimacy = 1
+	}
+}
+
+KAM_ideas = {
+	start = {
+		global_manpower_modifier = 0.1
+		global_missionary_strength = 0.02
+	}
+	
+	bonus = {
+		defensiveness = 0.2
+	}
+	
+	trigger = {
+		primary_culture = kham
+	}
+	free = yes
+	
+	gongchen_monastery = {
+		legitimacy = 1
+		devotion = 1
+	}
+	monastery_and_works_of_thang_tong_gyalpo = {
+		missionary_maintenance_cost = -0.1
+		prestige_decay = -0.01
+	}
+	spiritual_works_of_thang_tong_gyalpo = {
+		tolerance_own = 1
+		global_unrest = -1
+	}
+	uphold_dege = {
+		trade_steering = 0.1
+	}
+	uphold_tibetan_literature = {
+		idea_cost = -0.10
+	}
+	formalize_derge_districts = {
+		global_autonomy = -0.05
+	}
+	chinese_contacts = {
+		trade_efficiency = 0.10
+	}
+}
+
+indian_muslim_ideas = {
+	start = {
+		cavalry_cost = -0.1
+		cavalry_power = 0.1
+	}
+	
+	bonus = {
+		infantry_power = 0.1
+	}
+	
+	trigger = {
+		religion_group = muslim
+		OR = {
+			culture_group = hindusthani
+			culture_group = eastern_aryan
+			culture_group = western_aryan
+		}
+		NOT = {
+			primary_culture = marathi
+		}
+	}
+	free = yes
+	
+	tolerate_idol_worshippers_i = {
+		religious_unity = 0.25
+	}
+	persian_court = {
+		global_unrest = -1
+	}
+	comphrehensive_land_survey = {
+		global_tax_modifier = 0.10
+	}
+	counting_the_people = {
+		global_manpower_modifier = 0.10
+	}
+	equality_under_law = {
+		global_trade_power = 0.1
+	}
+	high_court_culture = {
+		prestige = 1
+	}
+	sultanate_bureaucracy = {
+		stability_cost_modifier = -0.1
+	}
+	
+}
+
+
+mindanao_ideas = {
+	start = {
+		may_perform_slave_raid = yes
+		infantry_power = 0.1
+	}
+	bonus = {
+		global_manpower_modifier = 0.1
+	}
+	
+	trigger = {
+		religion_group = muslim
+		primary_culture = visayan
+	}
+	
+	free = yes
+	
+	mindanao_an_islamicized_barangay = {
+		global_missionary_strength = 0.02
+	}
+	mindanao_unite_the_datus = {
+		global_tax_modifier = 0.1
+	}
+	mindanao_protect_the_riches_of_mindanao = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	mindanao_moro_sailors = {
+		naval_morale = 0.10
+		navy_tradition_decay = -0.01
+	}
+	mindanao_fortify_our_ports = {
+		defensiveness = 0.2
+	}
+	mindanao_guerilla_warfare = {
+		land_morale = 0.1
+	}
+	mindanao_pirates_of_mindanao = {
+		embargo_efficiency = 0.1	
+		privateer_efficiency = 0.15
+	}
+}
+
+
+horde_ideas = {
+	start = {
+		ae_impact = -0.10
+		years_of_nationalism = -5
+	}
+	
+	bonus = {
+		stability_cost_modifier = -0.10
+	}
+	
+	trigger = {
+		has_reform = steppe_horde
+	}
+	free = yes
+	
+	life_of_steppe_warrior = {
+		#land_attrition = -0.20 (effect taken in OIR_ideas)
+	}
+	traditions_of_the_great_khan = {
+		cavalry_power = 0.15
+	}
+	horse_supplies = {
+		land_maintenance_modifier = -0.1
+	}
+	steppe_leaders = {
+		leader_land_shock = 1
+	}
+	tradition_of_conquest = {
+		#core_creation = -0.15 (effect taken in CHG_ideas)
+	}
+	logistics_of_khan = {
+		#manpower_recovery_speed = 0.1 (effect taken in GLH_ideas)
+	}
+	glory_of_conquest = {
+		#global_manpower_modifier = 0.2 (effect taken in OIR_ideas)
+	}
+}
+
+
+theocracy_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+		missionaries = 1
+	}
+	
+	bonus = {
+		culture_conversion_cost = -0.1
+	}
+	
+	trigger = {
+		government = theocracy
+		religion_group = christian
+	}
+	free = yes
+	
+	holy_order = {
+		discipline = 0.05
+	}
+	church_administration = {
+		stability_cost_modifier = -0.10
+		core_creation = -0.10
+	}
+	true_defender_of_the_faith = {
+		defensiveness = 0.25
+	}
+	no_witches = {
+		global_missionary_strength = 0.02
+	}
+	onward_christian_soldiers = {
+		global_garrison_growth = 0.1
+		garrison_size = 0.1
+	}
+	turn_the_other_cheek = {
+		hostile_attrition = 1
+	}
+	render_unto_ceasar = {
+		global_tax_modifier = 0.10
+	}
+}
+
+
+anatolian_beyliks_ideas = {
+	start = {
+		discipline = 0.05
+		cavalry_power = 0.15
+	}
+	
+	bonus = {
+		army_tradition = 0.5
+	}
+	
+	trigger = {
+		primary_culture = turkish
+	}
+	free = yes
+	
+	travelling_ozan = {
+		global_unrest = -1
+	}
+	seljuq_marches = {
+		global_manpower_modifier = 0.15
+	}
+	akinci_cavalry = {
+		cavalry_cost = -0.1
+		loot_amount = 0.10
+	}
+	ghazi = {
+		#uses ottoman ideas
+	}
+	caravanserais = {
+		trade_efficiency = 0.1
+	}
+	anatolian_architecture = {
+		build_cost = -0.10
+	}
+	legacy_seljuqs_empire = {
+		core_creation = -0.15
+		prestige = 1
+	}
+}		
+
+
+daimyo_ideas = {
+	start = {
+		spy_offence = 0.2
+		land_maintenance_modifier = -0.1
+	}
+	
+	bonus = {
+		army_tradition = 0.5
+	}
+	
+	trigger = {
+		OR = {
+			has_reform = daimyo
+			has_reform = indep_daimyo
+			has_reform = shogunate
+		}
+	}
+	free = yes		#will be added at load.
+	
+	bushido = {
+		discipline = 0.05
+	}
+	bun_and_bu = {
+		idea_cost = -0.1
+	}
+	honor_ancestors = {
+		legitimacy = 1
+	}
+	five_rings = {
+		land_morale = 0.10
+	}
+	wandering_ronin = {
+		merc_maintenance_modifier = -0.15
+	}
+	daimyo_idea = {
+		global_manpower_modifier = 0.15
+	}
+	honor_unto_death = {
+		prestige = 1
+	}
+}
+
+BAV_ideas = {
+	start = {
+		cavalry_power = 0.1
+		heir_chance = 0.5
+	}
+	
+	bonus = {
+		development_cost = -0.1
+	}
+	
+	trigger = {
+		primary_culture = bavarian
+	}
+	free = yes
+	
+	everlating_succeession = {
+		legitimacy = 1
+		devotion = 1
+		republican_tradition = 0.3
+	}
+	bavarian_purity_law = {
+		production_efficiency = 0.1
+	}
+	bavarian_state_orchestra = {
+		prestige = 1
+	}
+	geistlicher_rat = {
+		global_heretic_missionary_strength = 0.03
+		papal_influence = 1
+	}
+	brewmaster_general = {
+		global_tax_modifier = 0.1
+	}
+	professional_army = {
+		discipline = 0.05
+	}
+	royal_order_of_st_george = {
+		army_tradition = 0.5
+	}
+}
+
+swabian_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+		merc_maintenance_modifier = -0.15
+	}
+	bonus = {
+		improve_relation_modifier = 0.2
+	}
+	trigger = {
+		primary_culture = swabian
+	}
+	free = yes
+
+	swabian_mercenaries = {
+		mercenary_manpower = 0.4
+	}
+	swabian_river_iller = {
+		defensiveness = 0.2
+	}
+	swabian_bavarian_resistance = {
+		land_morale = 0.1
+	}
+	swabian_decapole = {
+		diplomatic_upkeep = 1
+	}
+	swabian_reclaiming_the_duchy = {
+		ae_impact = -0.1
+	}
+	swabian_thorn_of_the_empire = {
+		legitimacy = 1
+	}
+	swabian_habsburg_league = {
+		global_unrest = -1
+	}
+}
+
+
+german_ideas = {
+	start = {
+		infantry_power = 0.1
+		merc_maintenance_modifier = -0.15
+	}
+	
+	bonus = {
+		technology_cost = -0.05
+	}
+	
+	trigger = {
+		culture_group = germanic
+	}
+	free = yes        #will be added at load.
+	
+	zunft = {
+        burghers_loyalty_modifier = 0.1
+	}
+	fruhlings_und_herbstmesse = {
+		global_own_trade_power = 0.10
+		trade_efficiency = 0.05
+	}
+	reichskreis = {
+		diplomatic_reputation = 1
+	}
+	polizeiordnung = {
+		global_unrest = -1
+	}
+	cuius_regio_eius_religio = {
+		global_missionary_strength = 0.01
+	}
+	thurn_und_taxis = {
+		diplomatic_upkeep = 1
+	}
+	residenzstadt = {
+		prestige = 1
+	}
+}
+
+
+malayan_ideas = {
+	start = {
+		global_trade_power = 0.1
+		trade_steering = 0.1
+	}
+	
+	bonus = {
+		naval_tradition_from_battle = 0.5
+	}
+	
+	trigger = {
+		religion_group = muslim
+		primary_culture = malayan
+	}
+	free = yes
+	
+	indian_ocean_trade = {
+		merchants = 1
+	}
+	sufi_legacy = {
+		tolerance_heathen = 2
+	}
+	mal_spice_islands = {
+		production_efficiency = 0.1
+	}
+	classical_malay = {
+		idea_cost = -0.05
+	}
+	trading_fleets = {
+		naval_maintenance_modifier = -0.1
+		sailor_maintenance_modifer = -0.1
+	}
+	heirs_of_pasai = {
+		prestige = 1
+	}
+	settle_the_islands = {
+		global_colonial_growth = 15
+	}
+}
+
+
+HED_ideas = {
+	start = {
+		cavalry_power = 0.15
+		global_manpower_modifier = 0.1
+	}
+	
+	bonus = {
+		cavalry_cost = -0.1
+	}
+	
+	trigger = {
+		primary_culture = hejazi_culture
+	}
+	free = yes
+	
+	custodian_of_the_two_holy_cities = {
+		tolerance_own = 1
+	}
+	hed_red_sea_trade = {
+		global_own_trade_power = 0.1
+	}
+	sharifs_of_mecca = {
+		ae_impact = -0.1
+	}
+	hed_desert_warfare = {
+		land_attrition = -0.10
+	}
+	cradle_of_gold = {
+		global_tax_modifier = 0.1
+	}
+	hajj = {
+		global_missionary_strength = 0.02
+	}
+	successor_to_the_caliphate = {
+		prestige = 1
+		monthly_piety = 0.001
+	}
+}
+
+
+arabian_ideas = {
+	start = {
+		cavalry_power = 0.1
+		land_attrition = -0.15
+	}
+	
+	bonus = {
+		leader_land_shock = 1
+	}
+	
+	trigger = {
+		culture_group = turko_semitic
+	}
+	free = yes
+	
+	arab_indian_ocean_trade = {
+		trade_steering = 0.1
+	}
+	arabian_horses = {
+		cavalry_cost = -0.1
+	}
+	land_of_the_prophet = {
+		global_unrest = -1
+	}
+	spreading_the_prophets_word = {
+		global_missionary_strength = 0.01
+	}
+	bedouin_traders = {
+		global_trade_power = 0.1
+	}
+	arab_clan_loyalties = {
+		global_manpower_modifier = 0.1
+	}
+	arabia = {
+		prestige = 1
+	}
+}
+
+SAR_ideas = {
+	start = {
+		idea_cost = -0.1
+		naval_forcelimit_modifier = 0.2
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.1
+	}
+	
+	trigger = {
+		primary_culture = sardinian
+	}
+	free = yes		#will be added at load.
+	
+	SAR_judicate = {
+		land_morale = 0.1
+	}
+	SAR_papal_restoration = {
+		tolerance_own = 1
+		papal_influence = 1
+	}
+	SAR_viceroyalty = {
+		global_unrest = -1
+	}
+	SAR_and_COR = {
+		ae_impact = -0.1
+	}
+	SAR_piedmontese_ambition = {
+		core_creation = -0.1
+	}
+	SAR_cathedrals = {
+		build_cost = -0.1
+	}
+	SAR_saint_maurice = {
+		discipline = 0.05
+	}
+}
+
+latin_ideas = {
+	start = {
+		papal_influence = 2
+		trade_efficiency = 0.1
+	}
+	
+	bonus = {
+		legitimacy = 1
+		republican_tradition = 0.3
+	}
+	
+	trigger = {
+		culture_group = latin
+		capital_scope = { region = italy_region }
+	}
+	free = yes
+	
+	italian_renaissance = {
+		idea_cost = -0.05
+	}
+	italian_condottieri = {
+		merc_maintenance_modifier = -0.15
+	}
+	italian_aristocracy = {
+		global_spy_defence = 0.2
+ 	}
+	tracee_italienne = {
+		defensiveness = 0.05
+		garrison_size = 0.1
+	}
+	high_renaissance_art_and_architecture = {
+		prestige = 1
+	}
+	italian_diplomacy = {
+		diplomatic_upkeep = 1
+		spy_offence = 0.1
+	}
+	commedia_del_arte = {
+		stability_cost_modifier = -0.10
+	}
+}
+
+taino_ideas = {
+	start = {
+		stability_cost_modifier = -0.1
+		development_cost = -0.1
+	}
+
+	bonus = {
+		land_morale = 0.20
+	}
+
+	trigger = {
+		primary_culture = arawak
+	}
+	free = yes
+
+	cacicazgo = {
+		global_manpower_modifier = 0.1
+	}
+	taino_agriculture = {
+		production_efficiency = 0.1	
+	}
+	ways_of_the_behiques = {
+		global_unrest = -1
+	}
+	the_mountains_of_hispaniola = {
+		leader_land_manuever = 1
+	}
+	worship_the_zemis = {
+		prestige = 1
+	}
+	the_taino_spirit = {
+		discipline = 0.05
+	}
+	standardize_the_taino_language = {
+		technology_cost = -0.05
+	}
+}
+
+MPC_ideas = {
+	start = {
+		hostile_attrition = 1
+		global_manpower_modifier = 0.2
+	}
+	bonus = {
+		diplomats = 1
+	}
+	trigger = {
+		primary_culture = mapuche
+	}
+	free = yes		#will be added at load.
+		
+	mpc_idea_1 = {
+		defensiveness = 0.15
+	}
+	mpc_idea_2 = {
+		discipline = 0.05
+	}
+	mpc_idea_3 = {
+		army_tradition_from_battle = 0.5
+	}
+	mpc_idea_4 = {
+		trade_steering = 0.1
+	}
+	mpc_idea_5 = {
+		global_unrest = -1
+	}
+	mpc_idea_6 = {
+		diplomatic_reputation = 1
+	}
+	mpc_idea_7 = {
+		prestige = 1
+	}
+}
+
+
+central_indic_ideas = { #Gond Ideas
+	start = {
+		tolerance_heathen = 3
+		global_manpower_modifier = 0.15
+	}
+
+	bonus = {
+		merchants = 1
+	}
+	
+	trigger = {
+		primary_culture = gondi
+	}
+	free = yes
+	
+	securing_defenses_central_indic = {
+		fort_maintenance_modifier = -0.2
+	}
+	tribal_religion_central_indic = {
+		religious_unity = 0.25
+	}
+	tigers_and_elephants_central_indic = {
+		hostile_attrition = 1.0
+	}
+	flexible_caste_central_indic = {
+		num_accepted_cultures = 1
+	}
+	raiding_the_plains_central_indic = {
+		infantry_power = 0.1
+	}
+	ancient_roots_central_indic = {
+		legitimacy = 1
+	}
+	formalize_relations_with_cheifs_central_indic = {
+		global_tax_modifier = 0.1
+	}
+}
+
+swahili_ideas = {
+	start = {
+		light_ship_cost = -0.2
+		trade_range_modifier = 0.25
+	}
+
+	bonus = {
+		global_trade_power = 0.1
+	}
+
+	trigger = {
+		primary_culture = swahili
+	}
+	free = yes
+
+	swa_indian_ocean_trade = {
+		trade_efficiency = 0.1
+		sailor_maintenance_modifer = -0.1
+	}
+	monsoon_season = {
+		leader_naval_manuever = 1
+	}
+	great_mosque_of_kilwa = {
+		tolerance_own = 1
+	}
+	indian_ocean_melting_pot = {
+		idea_cost = -0.05
+	}
+	recruit_the_unbelievers = {
+		merc_maintenance_modifier = -0.15
+	}
+	ivory_trade = {
+		production_efficiency = 0.1
+	}
+	familiar_presence_abroad = {
+		diplomatic_reputation = 1
+		diplomatic_upkeep = 1
+	}
+}
+
+sumatran_ideas = {
+	start = {
+		production_efficiency = 0.10
+		trade_range_modifier = 0.25
+	}
+	
+	bonus = {
+		defensiveness = 0.20
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = sumatran
+			primary_culture = musi
+			primary_culture = batak
+			primary_culture = minangkabau
+			primary_culture = acehnese
+			primary_culture = jambi
+			primary_culture = deli
+		}
+	}
+	free = yes
+
+	reliance_on_trade = {
+		trade_efficiency = 0.10
+	}
+	faithful_of_sumatra = {
+		global_missionary_strength = 0.02
+	}
+	spice_pirates = {
+		light_ship_power = 0.10
+		privateer_efficiency = 0.15
+	}
+	center_of_scholarship = {
+		advisor_cost = -0.1
+	}
+	merchants_of_the_indian_ocean = {
+		merchants = 1
+	}
+	legacy_of_srivijaya = {
+		prestige = 1
+	}
+	rule_of_the_sea = {
+		naval_forcelimit_modifier = 0.25
+	}
+}
+
+KUT_ideas = {
+	start = {
+		global_prov_trade_power_modifier = 0.1
+		trade_steering = 0.1
+	}
+
+	bonus = {
+		global_own_trade_power = 0.1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = bornean
+			primary_culture = sabahan
+			primary_culture = pontianak
+			primary_culture = banjar
+			primary_culture = kutai
+			primary_culture = berau
+			primary_culture = dayak
+		}
+	}
+	free = yes
+	
+	kut_earliest_indic_state = {
+		trade_efficiency = 0.1
+	}
+	kut_muslim_trading_communities = {
+		merchants = 1
+	}
+	kut_riches_of_borneo = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	kut_anti_piracy_measures = {
+		defensiveness = 0.1
+	}
+	kut_encourage_immigration = {
+		development_cost = -0.1
+	}
+	kut_consolidation_of_kutai = {
+		global_tax_modifier = 0.1
+	}
+	kut_subdue_the_inlands = {
+		global_unrest = -1
+	}
+}
+
+javan_ideas = {
+	start = {
+		tolerance_heathen = 2
+		prestige_decay = -0.01	
+	}
+	
+	bonus = {
+		naval_maintenance_modifier = -0.1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = javanese
+			primary_culture = sundanese
+		}
+	}
+	free = yes
+	
+	candi_shrines = {
+		religious_unity = 0.25
+	}
+	indianization = {
+		global_institution_spread = 0.1
+	}
+	dharmasastra = {
+		global_missionary_strength = 0.02
+	}
+	pan_asian_trade = {
+		merchants = 1
+		trade_steering = 0.10
+	}
+	bi_yearly_harvest = {
+		global_trade_goods_size_modifier = 0.10
+	}
+	modernized_shipbuilding = {
+		global_ship_cost = -0.10
+	}
+	terracotta_banking = {
+		trade_efficiency = 0.1
+	}
+}
+
+evenk_ideas = {
+	start = {
+		hostile_attrition = 1
+		province_warscore_cost = -0.1
+	}
+	
+	bonus = {
+		trade_efficiency = 0.1
+	}
+	
+	trigger = {
+		primary_culture = evenk
+	}
+	free = yes
+	
+	evenk_family_brigades = {
+		land_attrition = -0.1
+		movement_speed = 0.05
+	}
+	evenk_reindeer_herds = {
+		trade_range_modifier = 0.25
+	}
+	event_self_sufficiency = {
+		global_unrest = -1
+	}
+	evenk_siberian_resources = {
+		build_cost = -0.1
+	}
+	evenk_mongolian_deel = {
+		mercenary_manpower = 0.25
+		merc_maintenance_modifier = -0.1
+	}
+	evenk_love_of_the_forest = {
+		leader_land_manuever = 2
+	}
+	evenk_new_ways_to_hunt = {
+		fire_damage = 0.1
+	}
+}
+
+siberian_ideas = {
+	start = {
+		unjustified_demands = -0.1
+		land_attrition = -0.15
+	}
+	
+	bonus = {
+		war_exhaustion = -0.05
+	}
+	
+	trigger = {
+		has_reform = siberian_tribe
+	}
+
+	free = yes
+	
+	siberian_hunt_north = {
+		hostile_attrition = 1
+	}
+	siberian_fur_trade = {
+		global_own_trade_power = 0.1
+	}
+	siberian_enslave_captives = {
+		manpower_recovery_speed = 0.1
+	}
+	siberian_backwoods = {
+		defensiveness = 0.15
+	}
+	siberian_land_bought_with_blood = {
+		prestige_from_land = 1.0
+	}
+	siberian_raids = {
+		global_manpower_modifier = 0.1
+	}
+	siberian_hunting_expansion = {
+		global_colonial_growth = 15
+	}
+}
+
+mesoamerican_ideas = {
+	start = {
+		heir_chance = 0.5
+		vassal_income = 0.25
+	}
+	
+	bonus = {
+		defensiveness = 0.2
+	}
+	
+	trigger = {
+		OR = {
+			religion = nahuatl
+			religion = zapotec_religion
+			religion = mixtec_religion
+			primary_culture = chichimecan
+		}
+	}
+	
+	free = yes		#will be added at load.
+	
+	olmec_legacy = {
+		idea_cost = -0.1
+	}
+	
+	altepetl = { 
+		global_trade_power = 0.1
+	}
+	
+	ball_game = {
+		diplomatic_reputation = 1
+	}
+	
+	feathered_serpent = {
+		global_unrest = -1
+	}
+	
+	ritual_bloodletting = {
+		legitimacy = 1
+	}
+
+	pyramid_architecture = {
+		build_cost = -0.1
+	}
+	
+	obsidian_and_jade = { 
+		trade_range_modifier = 0.25
+		trade_efficiency = 0.05
+	}
+}
+
+TIB_ideas = {
+	start = {
+		global_unrest = -1
+		global_missionary_strength = 0.01
+	}
+	
+	bonus = {
+		advisor_cost = -0.10
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = tibetan
+			primary_culture = amdo
+			primary_culture = limbu
+			primary_culture = sikkimese
+		}
+		religion = vajrayana 
+	}
+	free = yes       #will be added at load.
+	
+	vajrayana_buddhism  = {                    
+		stability_cost_modifier = -0.10
+		monthly_karma = 0.001
+	}
+	bon_influence = {                
+		leader_land_shock = 1
+	}
+	yaks = {
+		production_efficiency = 0.1
+	}
+	way_of_virtue= {            
+		tolerance_heretic = 1
+		tolerance_heathen = 1
+	}
+	potala_palace = {                             
+		diplomatic_reputation = 1
+	}
+	way_of_ancients = {
+		discipline = 0.05
+	}
+	pale_earth = {
+		idea_cost = -0.1
+	}
+}
+
+west_african_ideas = {
+	start = {
+		global_manpower_modifier = 0.1
+		loot_amount = 0.20
+	}
+	
+	bonus = {
+		diplomats = 1
+	}
+	
+	trigger = {
+		technology_group = sub_saharan
+		NOT = {
+			tag = LOA
+			tag = NDO
+		}
+	}
+	free = yes
+	
+	west_african_idea_1 = {
+		advisor_pool = 1
+	}
+	west_african_idea_2 = {
+		global_trade_goods_size_modifier = 0.10
+	}
+	west_african_idea_3 = {
+		global_trade_power = 0.1
+	}
+	west_african_idea_4 = {
+		religious_unity = 0.25
+	}
+	west_african_idea_5 = {
+		cavalry_cost = -0.1
+	}
+	west_african_idea_6 = {
+		trade_efficiency = 0.05
+		envoy_travel_time = -0.25
+	}
+	west_african_idea_7 = {
+		num_accepted_cultures = 1
+	}
+}
+
+andean_ideas = {
+	start = {
+		legitimacy = 1
+		heir_chance = 0.5
+	}
+	
+	bonus = {
+		trade_efficiency = 0.1
+	}
+	
+	trigger = {
+		technology_group = andean
+		NOT = { primary_culture = aimara }
+	}
+	free = yes
+	
+	andean_idea_1 = {
+		global_tax_modifier = 0.1
+	}
+	andean_idea_2 = {
+		global_prov_trade_power_modifier = 0.1
+	}
+	andean_idea_3 = {
+		inflation_reduction = 0.1
+	}
+	andean_idea_4 = {
+		production_efficiency = 0.10
+	}
+	andean_idea_5 = {
+		development_cost = -0.1
+	}
+	andean_idea_6 = {
+		defensiveness = 0.1
+	}
+	andean_idea_7 = {
+		prestige = 1
+	}
+}
+
+aymaran_ideas = {
+	start = {
+		production_efficiency = 0.10
+		defensiveness = 0.15
+	}
+	
+	bonus = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	trigger = {
+		primary_culture = aimara
+	}
+	free = yes
+	
+	aym_idea_1 = {
+		idea_cost = -0.1
+	}
+	aym_idea_2 = {
+		advisor_pool = 1	
+	}
+	aym_idea_3 = {
+		land_attrition = -0.10
+	}
+	aym_idea_4 = {
+		prestige = 1
+	}
+	aym_idea_5 = {
+		land_morale = 0.1
+	}
+	aym_idea_6 = {
+		stability_cost_modifier = -0.15
+	}
+	aym_idea_7 = {
+		global_regiment_recruit_speed = -0.10
+	}
+}
+
+tupi_ideas = {
+	start = {
+		reinforce_speed = 0.1
+		manpower_recovery_speed = 0.1	
+	}
+	
+	bonus = {
+		infantry_cost = -0.10		
+	}
+	
+	trigger = {
+		primary_culture = tupinamba
+	}
+	free = yes
+	
+	patrilinear_society = {
+		stability_cost_modifier = -0.1
+	}	
+	two_tribes_myth = {
+		prestige_decay = -0.01
+	}
+	warrior_tribes = {
+		infantry_power = 0.1	
+	}
+	splash_and_burn = {
+		global_manpower_modifier = 0.1
+	}
+	cultivate_the_land = {
+		production_efficiency = 0.10
+	}
+	head_hunters = {
+		army_tradition_decay = -0.01
+	}
+	wall_builders = {
+		defensiveness = 0.10
+	}
+}
+
+caucasus_ideas = {
+	start = {
+		hostile_attrition = 1
+		global_manpower_modifier = 0.1
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.10
+	}
+	
+	trigger = {
+		OR = {
+			culture_group = caucasian
+			culture_group = east_caucasian
+			culture_group = northwest_caucasian
+			primary_culture = azerbaijani
+			primary_culture = tat
+		}
+	}
+	free = yes
+	
+	crossroads_of_cultures = {
+		num_accepted_cultures = 1
+	}
+	alan_mercenaries = {
+		merc_maintenance_modifier = -0.10
+		mercenary_manpower = 0.15
+	}
+	caucasus_hit_and_run = {
+		leader_land_manuever = 1		
+	}
+	persian_poetry = {
+		prestige = 1
+	}
+	highland_khans = {
+		legitimacy = 1
+	}
+	eastern_influence = {
+		army_tradition = 0.5
+	}
+	caucasus_cavalry_armies = {
+		cavalry_power = 0.1
+	}
+}
+
+ruthenian_ideas = {
+	start = {
+		global_manpower_modifier = 0.2
+		tolerance_heretic = 3
+	}
+
+	bonus = {
+		discipline = 0.05
+	}
+ 
+	trigger = {
+		OR = {
+			primary_culture = ruthenian
+			primary_culture = byelorussian
+		}
+	}
+	free = yes
+ 
+	mother_of_russian_cities = { #Mother of Russian States
+		legitimacy = 0.5
+		prestige = 0.5
+	}
+	international_influences = {
+		religious_unity = 0.25
+	}
+	zaporizhian_cossacs = {
+		cavalry_power = 0.15
+	}
+	east_and_west = {
+		global_trade_power = 0.1
+	}
+	legacy_of_ancient_rus = {
+		stability_cost_modifier = -0.1
+	}
+	reuniting_rus = {
+		global_unrest = -1
+	}
+	birth_of_russian_orthodoxy = {
+		tolerance_own = 1
+	}
+}
+
+guajiro_ideas = {
+	start = {
+		stability_cost_modifier = -0.1
+		global_regiment_cost = -0.1
+	}
+	
+	bonus = {
+		land_maintenance_modifier = -0.1
+	}
+	
+	trigger = {
+		primary_culture = guajiro #Lokono
+	}
+	free = yes
+	
+	guajiro_warrior_culture = {
+		infantry_cost = -0.10
+	}
+	guajiro_land_cultivation = {
+		production_efficiency = 0.1	
+	}
+	orinoco_trade = {
+		global_trade_power = 0.1
+	}
+	tribal_tolerance = {
+		num_accepted_cultures = 1
+		tolerance_heretic = 1		
+	}
+	guajiro_raiders = {
+		infantry_power = 0.1
+	}
+	guajiro_enemy_of_my_enemy = {
+		diplomatic_reputation = 1
+	}
+	guajiro_jungle_warfare = {
+		leader_land_shock = 1
+	}
+}
+
+shan_ideas = {
+	start = {
+		heir_chance = 0.5
+		num_accepted_cultures = 1
+	}
+	
+	bonus = {
+		manpower_recovery_speed = 0.15
+	}
+	
+	trigger = {
+		primary_culture = shan
+	}
+	free = yes
+	
+	shan_fortified_cities = {
+		defensiveness = 0.15
+	}
+	shan_wet_rice = {
+		production_efficiency = 0.10
+	}
+	sao_pha = {
+		global_unrest = -1
+	}
+	shan_control_of_the_gem_trade = {
+		global_own_trade_power = 0.1
+	}
+	shan_raiders = {
+		leader_land_shock = 1
+		loot_amount = 0.10
+	}
+	shan_chronicles = {
+		legitimacy = 1
+	}
+	shan_expansionism = {
+		global_manpower_modifier = 0.1
+	}
+}
+
+chinese_ideas = {
+	start = {
+		manpower_recovery_speed = 0.1
+		adm_tech_cost_modifier = -0.05
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.2
+	}
+	
+	trigger = {
+		OR = {
+			culture_group = east_asian #Chinese
+			tag = CGS #Changsheng
+		}
+	}
+	free = yes
+	
+	keju_examination = {
+		advisor_pool = 1
+	}
+	scholar_gentry = {
+		stability_cost_modifier = -0.1
+	}
+	order_of_four_occupations = {
+		burghers_loyalty_modifier = 0.1
+	}
+	nation_of_rites_and_etiquette = {
+		prestige = 1
+	}
+	firearm_training = {
+		infantry_power = 0.1
+	}
+	son_of_heaven = {
+		legitimacy = 1
+		imperial_mandate = 0.05
+	}
+	middle_kingdom = {
+		diplomatic_reputation = 1
+	}
+}
+
+vindhyan_ideas = {
+	start = {
+		num_accepted_cultures = 1
+		fort_maintenance_modifier = -0.2
+	}
+	
+	bonus = {
+		cavalry_power = 0.10 #Marathi Alliance
+	}
+	
+	trigger = {
+		OR = {
+			tag = BND
+			tag = BGL
+			tag = PAN
+			AND = {
+				tag = GWA
+				NOT = { primary_culture = marathi }
+			}
+		}
+	}
+	free = yes
+	
+	bundelkhandi_rajput_connections = {
+		diplomatic_reputation = 1
+	}
+	forts_of_bundelkhand = {
+		defensiveness = 0.15
+	}
+	bundelkhandi_sacred_land = {
+		tolerance_own = 1
+	}
+	bundeli_kalam = {
+		prestige = 1
+	}
+	untamed_bundelkhand = {
+		hostile_attrition = 1
+	}
+	bundelkhandi_diamonds = { #Panna, etc
+		trade_efficiency = 0.1
+	}
+	candella_legacy = {
+		legitimacy = 1
+	}
+}
+
+kurdish_ideas = {
+	start = {
+		diplomats = 1
+		defensiveness = 0.15
+	}
+	
+	bonus = {
+		free_leader_pool = 1
+	}
+	
+	trigger = {
+		primary_culture = kurdish
+	}
+	free = yes
+	
+	kurdish_warriors = {
+		hostile_attrition = 1
+	}
+	li_gora_gawiri_kurd_misilman = {
+		tolerance_heretic = 2
+	}
+	kurdish_tribes = {
+		global_manpower_modifier = 0.1
+	}
+	kurdish_diplomacy = {
+		diplomatic_upkeep = 1
+	}
+	kurdish_mercenaries = {
+		merc_maintenance_modifier = -0.15
+	}
+	legacy_of_the_kurdish_dynasties = {
+		legitimacy = 1
+	}
+	gorani_literature = {
+		prestige_decay = -0.01
+	}
+}
+
+laotian_ideas = {
+	start = {
+		land_forcelimit_modifier = 0.33
+		tolerance_heathen = 3
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.1
+	}
+	
+	trigger = {
+		primary_culture = lao
+	}
+	free = yes
+	
+	lao_phra_lak_phra_lam = {
+		stability_cost_modifier = -0.1
+	}
+	lao_elephant_cavalry = {
+		cavalry_power = 0.15
+	}
+	lao_nithan_khun_borom = {
+		prestige = 1
+	}
+	lao_satsana_phi = {
+		global_unrest = -1
+	}
+	lao_ethnic_diversity = {
+		#Uses Lan Xang Ideas
+	}
+	lao_southern_silk_road = {
+		trade_efficiency = 0.1
+	}
+	lao_hill_warriors = {
+		defensiveness = 0.2
+	}
+}
+
+somali_ideas = {
+	start = {
+		global_trade_power = 0.1
+		navy_tradition = 0.5
+	}
+	
+	bonus = {
+		merchants = 1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = somali
+			primary_culture = harari
+			primary_culture = afar
+		}
+	}
+	free = yes
+	
+	somali_maritime_heritage = {
+		light_ship_cost = -0.20
+	}
+	somali_qalqads = {
+		fort_maintenance_modifier = -0.2
+	}
+	somali_clans = {
+		global_manpower_modifier = 0.1
+	}
+	somali_offensive_warfare = {
+		infantry_power = 0.1
+	}
+	somali_indian_ocean_trade = {
+		trade_efficiency = 0.1
+		trade_steering = 0.1
+	}
+	somali_corsairs_of_the_red_sea = {
+		light_ship_power = 0.1
+	}
+	somali_perso_arab_influx = {
+		advisor_cost = -0.1
+	}
+}
+
+sulawesi_ideas = {
+	start = {
+		naval_forcelimit_modifier = 0.25
+		sailor_maintenance_modifer = -0.1
+	}
+	
+	bonus = {
+		trade_efficiency = 0.1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = sulawesi
+			primary_culture = buginese
+		}
+	}
+	free = yes
+	
+	sulawesi_intra_asian_trade = {
+		trade_steering = 0.1
+	}
+	sulawesi_bajau = {
+		navy_tradition_decay = -0.01
+	}
+	sulawesi_prau = {
+		light_ship_cost = -0.2
+	}
+	sulawesi_unification = {
+		global_tax_modifier = 0.1
+	}
+	sulawesi_learning_from_outsiders = {
+		global_institution_spread = 0.1
+	}
+	sulawesi_entrepot = {
+		global_trade_power = 0.1
+	}
+	sulawesi_assymetrical_warfare = {
+		hostile_attrition = 1
+	}
+}
+
+mayan_ideas = {
+	start = {
+		global_unrest = -1
+		defensiveness = 0.15
+	}
+	
+	bonus = {
+		infantry_power = 0.1
+	}
+	
+	trigger = {
+		religion = mesoamerican_religion
+	}
+	free = yes
+	
+	mayan_sacred_cenote = {
+		stability_cost_modifier = -0.1
+	}
+	mayan_building_traditions = {
+		development_cost = -0.1
+	}
+	mayan_ancient_feuds = {
+		ae_impact = -0.10
+	}
+	mayan_shipwreck_survivors = {
+		technology_cost = -0.05
+	}
+	mayan_kuchkabal = {
+		global_tax_modifier = 0.1
+	}
+	mayan_remote_isolation = {
+		hostile_attrition = 1.0
+	}
+	mayan_caste_war = {
+		land_morale = 0.1
+	}
+}
+
+moluccan_ideas = {
+	start = {
+		global_trade_goods_size_modifier = 0.1
+		production_efficiency = 0.1
+	}
+	
+	bonus = {
+		sailor_maintenance_modifer = -0.1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = moluccan
+			primary_culture = halmahera
+		}
+	}
+	free = yes
+	
+	moluccan_spice_islands = {
+		trade_efficiency = 0.1
+	}
+	moluccan_cultural_heritage = {
+		legitimacy = 1
+	}
+	moluccan_agents_of_trade = {
+		merchants = 1
+	}
+	moluccan_four_kingdoms = {
+		global_unrest = -1
+	}
+	moluccan_dominance_over_the_outer_islands = {
+		global_colonial_growth = 15
+	}
+	moluccan_ally_papuan_raiders = {
+		light_ship_power = 0.15
+	}
+	moluccan_pragmatic_diplomacy = {
+		diplomats = 1
+	}
+}
+
+greek_ideas = {
+	start = {
+		galley_power = 0.2
+		global_sailors_modifier = 0.25
+	}
+	
+	bonus = {
+		core_creation = -0.1 #Megali Idea
+	}
+	
+	trigger = {
+		primary_culture = greek
+	}
+	free = yes
+	
+	greek_orthodox_faith = {
+		tolerance_own = 1
+	}
+	greek_maritime_heritage = {
+		navy_tradition = 0.5
+	}
+	greek_klephtic_irregulars = {
+		infantry_power = 0.1
+	}
+	greek_phanariotes = {
+		advisor_cost = -0.1
+	}
+	greek_strengthen_control_over_the_trade_routes = {
+		trade_efficiency = 0.1
+	}
+	greek_philhellenism = {
+		diplomatic_reputation = 1
+		diplomatic_upkeep = 1
+	}
+	greek_enlightenment = {
+		idea_cost = -0.1
+	}
+}
+
+nubian_ideas = {
+	start = {
+		global_tax_modifier = 0.1
+		diplomatic_upkeep = 1
+	}
+	
+	bonus = {
+		land_maintenance_modifier = -0.1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = nubian
+			primary_culture = beja
+		}
+	}
+	free = yes
+	
+	nubian_nile = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	nubian_heritage = {
+		stability_cost_modifier = -0.1
+	}
+	nubian_sahara = {
+		hostile_attrition = 1
+	}
+	nubian_long_distance_trade = {
+		caravan_power = 0.25
+	}
+	nubian_religious_struggles = {
+		global_missionary_strength = 0.02
+	}
+	nubian_desert_cavalry = {
+		cavalry_power = 0.10
+	}
+	nubian_fortified_strongholds = {
+		fort_maintenance_modifier = -0.1
+	}
+}
+
+french_culture_ideas = {
+	start = {
+		fort_maintenance_modifier = -0.1
+		cavalry_cost = -0.1
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.1
+	}
+	
+	trigger = {
+		culture_group = french
+	}
+	free = yes
+	
+	french_men_of_trade = {
+		global_own_trade_power = 0.10
+	}
+	french_renaissance_palaces = {
+		prestige_decay = -0.01 
+	}
+	french_qui_ruit_et_lethum = {
+		infantry_power = 0.1
+	}
+	french_religious_conviction = {
+		tolerance_own = 1
+	}
+	french_cuisine = {
+		prestige = 1
+	}
+	french_enlightenment = {
+		diplomatic_upkeep = 1
+	}
+	french_la_petite_nation = {
+		land_morale = 0.1
+	}
+}
+
+african_great_lakes_ideas = {
+	start = {
+		loot_amount = 0.25
+		hostile_attrition = 1.0
+	}
+	
+	bonus = {
+		merchants = 1
+	}
+	
+	
+	trigger = {
+		OR = {
+			primary_culture = rwandan
+			primary_culture = hunde
+			primary_culture = ganda
+			primary_culture = haya
+			primary_culture = soga
+			primary_culture = sukuma
+		}
+	}
+	free = yes
+	
+	source_of_the_nile = {
+		global_manpower_modifier = 0.1
+	}
+	heirs_of_kitara = {
+		prestige = 1
+	}
+	no_illegitimate_children = {
+		heir_chance = 0.5
+	}
+	cwezy_religion = {
+		tolerance_own = 1
+	}
+	emitwe = { #Umuheto
+		infantry_cost = -0.1
+	}
+	unity_of_clans = {
+		infantry_power = 0.1
+	}
+	development_of_clientship = {
+		global_tax_modifier = 0.1
+	}
+}
+
+malagasy_ideas = {
+	start = {
+		stability_cost_modifier = -0.1
+		light_ship_cost = -0.2
+	}
+	
+	bonus = {
+		naval_forcelimit_modifier = 0.25
+	}
+	
+	
+	trigger = {
+		primary_culture = madagasque
+	}
+	free = yes
+	
+	malagasy_fortify_coastline = {
+		defensiveness = 0.15
+	}
+	malagasy_zafivolemena = {
+		legitimacy = 1
+	}
+	malagasy_pirate_ports = {
+		#Effects from BTS Ideas
+		#embargo_efficiency = 0.1
+		#privateer_efficiency = 0.15
+	}
+	malagasy_raid_warfare = {
+		global_manpower_modifier = 0.1
+	}
+	malagasy_sacred_law = {
+		global_unrest = -1
+	}
+	malagasy_foreign_traders = {
+		trade_efficiency = 0.1
+	}
+	malagasy_permanent_taxation_system = {
+		global_tax_modifier = 0.1
+	}
+}
+
+zambezi_ideas = { #Above all based on the Bororo/Lundu.
+	start = {
+		infantry_power = 0.1
+		global_manpower_modifier = 0.1
+	}
+	
+	bonus = {
+		vassal_income = 0.20
+	}
+	
+	
+	trigger = {
+		OR = {
+			primary_culture = nyasa
+			primary_culture = makua
+		}
+	}
+	free = yes
+	
+	zambezi_warrior_culture = {
+		merc_maintenance_modifier = -0.15
+	}
+	zambezi_maravi_influences = {
+		#Effect from TBK_ideas
+	}
+	zambezi_control_the_zambezi_trade = {
+		global_own_trade_power = 0.1
+	}
+	zambezi_strengthen_the_chieftaincies = {
+		global_unrest = -1
+	}
+	zambezi_centralizing_the_mbona_cult = {
+		legitimacy = 1
+		devotion = 1
+	}
+	zambezi_wealth_of_the_shire_valley = {
+		diplomatic_annexation_cost = -0.1
+	}
+	zambezi_loyal_local_representatives = {
+		global_tax_modifier = 0.1
+	}
+}
+
+congolese_minor_ideas = {
+	start = {
+		hostile_attrition = 1.0
+		land_attrition = -0.1
+	}
+	
+	bonus = {
+		free_leader_pool = 1
+	}
+	
+	
+	trigger = {
+		culture_group = kongo_group
+	}
+	free = yes
+	
+	congolese_minor_isolated_lands = {
+		defensiveness = 0.1
+	}
+	congolese_minor_elephant_hunts = {
+		global_manpower_modifier = 0.1
+	}
+	congolese_minor_aristocratic_merit = {
+		stability_cost_modifier = -0.1
+	}
+	congolese_minor_intiation_rites = {
+		infantry_cost = -0.1
+	}
+	congolese_minor_aggressive_migrations = {
+		culture_conversion_cost = -0.1
+	}
+	congolese_minor_subordinate_chiefs = {
+		global_unrest = -1
+	}
+	congolese_minor_ivory_trade = {
+		trade_efficiency = 0.1
+	}
+}
+
+caspian_ideas = {
+	start = {
+		merc_maintenance_modifier = -0.15
+		development_cost = -0.1
+	}
+	
+	bonus = {
+		prestige = 1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = mazandarani
+			primary_culture = talysh
+		}
+	}
+	free = yes
+	
+	caspian_riches_of_tabarestan = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	caspian_time_of_turmoil = {
+		infantry_power = 0.1
+	}
+	caspian_silk = {
+		production_efficiency = 0.1
+	}
+	caspian_sea_trade = {
+		caravan_power = 0.25
+	}
+	caspian_unite_minor_states = {
+		global_tax_modifier = 0.1
+	}
+	caspian_safe_haven = {
+		defensiveness = 0.2
+	}
+	caspian_promote_foreign_trade = {
+		merchants = 1
+	}
+}
+
+luzon_ideas = {
+	start = {
+		global_trade_goods_size_modifier = 0.1
+		navy_tradition = 0.5
+	}
+	bonus = {
+		naval_morale = 0.2
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = filipino
+			primary_culture = pangasinan
+			primary_culture = cordilleran
+			primary_culture = ifugao
+			primary_culture = bikolano
+		}
+	}
+	
+	free = yes
+	
+	luzon_barangay = {
+		naval_maintenance_modifier = -0.2
+		sailor_maintenance_modifer = -0.1
+	}
+	luzon_conquest_of_paradise = {
+		hostile_attrition = 1
+	}
+	luzon_sino_philippine_trade = {
+		global_ship_trade_power = 0.1
+	}
+	luzon_tagalog_syncretism = {
+		tolerance_heathen = 2
+	}
+	luzon_sailors = {
+		navy_tradition_decay = -0.01
+	}
+	luzon_a_safe_haven = {
+		advisor_cost = -0.1
+	}
+	luzon_expand_the_sugar_production = {
+		production_efficiency = 0.1
+	}
+}
+
+highland_scottish_ideas = {
+	start = {
+		garrison_size = 0.25
+		heir_chance = 0.5
+	}
+	bonus = {
+		manpower_recovery_speed = 0.1
+	}
+	
+	trigger = {
+		primary_culture = highland_scottish
+	}
+	
+	free = yes
+	hsc_the_wallace = {
+		land_morale = 0.15
+	}
+	hsc_highland_clans = {
+		hostile_attrition = 1
+	}
+	hsc_storm_the_castle = {
+		siege_ability = 0.10
+	}
+	hsc_episcopalianism = {
+		religious_unity = 0.25
+	}
+	hsc_highland_charge = {
+		shock_damage = 0.15
+	}
+	hsc_arming_act = {
+		global_manpower_modifier = 0.1
+	}
+	hsc_ossian = {
+		prestige = 1
+	}
+}
+
+deccani_muslim_ideas = {
+	start = {
+		cavalry_power = 0.2
+		advisor_cost = -0.1
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.15
+	}
+	
+	trigger = {
+		religion_group = muslim
+		OR = {
+			primary_culture = marathi
+			culture_group = dravidian
+		}
+	}
+	free = yes
+	
+	dec_legacy_of_bahmanis = {
+		legitimacy = 1
+	}
+	dec_deccani_identity = {
+		idea_cost = -0.10
+	}
+	dec_brahmin_administrators = {
+		stability_cost_modifier = -0.1
+	}
+	dec_habshis = {	
+		infantry_power = 0.1
+	}
+	dec_bargi_giri = {
+		cavalry_flanking = 0.5
+	}
+	dec_marathi_cultivators = {
+		production_efficiency = 0.1
+	}
+	dec_marathi_habshi_state = {
+		advisor_pool = 1
+	}
+}
+
+nepalese_minor_ideas = {
+	start = {
+		land_morale = 0.10
+		manpower_recovery_speed = 0.1
+	}
+	
+	bonus = {
+		infantry_power = 0.1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = pahari
+			primary_culture = nepali
+		}
+	}
+	free = yes
+	
+	nep_construct_temples = {
+		build_cost = -0.1
+	}
+	nep_kashmiri_traders = {
+		merchants = 1
+	}
+	nep_new_festivals = {
+		tolerance_own = 1
+	}
+	nep_kavindra = {
+		prestige = 1
+	}
+	nep_seize_mountain_passes = {
+		defensiveness = 0.15
+	}
+	nep_judicial_reforms = {
+		stability_cost_modifier = -0.1
+	}
+	nep_end_division_of_domains = {
+		global_autonomy = -0.05
+	}
+}
+
+garjati_ideas = {
+	start = {
+		tolerance_heathen = 3
+		global_tax_modifier = 0.1
+	}
+	
+	bonus = {
+		stability_cost_modifier = -0.1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = oriya
+			tag = SBR
+		}
+	}
+	free = yes
+	
+	securing_defenses_central_indic = {
+		#Same as Gond Ideas
+	}
+	garjati_ancient_mandalas = {
+		legitimacy = 1
+	}
+	garjati_tribal_feudatories = {
+		global_manpower_modifier = 0.15
+	}
+	garjati_extend_tanks_and_reservoirs = {
+		development_cost = -0.1
+	}
+	garjati_jungle_warfare = {
+		infantry_power = 0.1
+	}
+	garjati_jagannath_cult = {
+		tolerance_own = 1
+	}
+	garjati_patronize_economic_growth = {
+		global_trade_goods_size_modifier = 0.1
+	}
+}
+
+malabari_ideas = {
+	start = {
+		global_trade_goods_size_modifier = 0.1
+		merc_maintenance_modifier = -0.15
+	}
+	
+	bonus = {
+		global_trade_power = 0.1
+	}
+	
+	trigger = {
+		primary_culture = malayalam
+	}
+	free = yes
+	
+	merchants_of_southern_india = {
+		#Same as South Indian
+	}
+	malabari_cultural_melting_pot = {
+		advisor_cost = -0.1
+	}
+	malabari_kerala_school = {
+		technology_cost = -0.05
+	}
+	malabari_trade_factors = {
+		merchants = 1
+	}
+	malabari_control_inland = {
+		global_prov_trade_power_modifier = 0.15
+	}
+	malabari_mapilla_sailors = {
+		navy_tradition = 0.5
+	}
+	malabari_land_of_elephants = {
+		global_unrest = -1
+	}
+}
+
+PUE_ideas = {
+	start = {
+		advisor_cost = -0.1
+		global_garrison_growth = 0.25
+	}
+	
+	bonus = {
+		land_morale = 0.1
+	}
+	
+	trigger = {
+		primary_culture = pueblo
+	}
+	free = yes		# will be added at load
+	
+	ancient_pueblo_legacy = {
+		war_exhaustion = -0.03
+	}
+	adobe_architecture = {
+		build_cost = -0.1
+	}
+	mesa_settlements = {
+		defensiveness = 0.15
+	}
+	cotton_weaving = {
+		trade_efficiency = 0.1
+	}
+	kachina_dolls = {
+		stability_cost_modifier = -0.1
+	}
+	clown_societies = {
+		tolerance_own = 1
+	}
+	legend_of_cibola = {
+		prestige = 1
+	}
+}
+
+nw_native_ideas = {
+	start = {
+		manpower_recovery_speed = 0.1
+		heir_chance = 0.5
+	}
+	
+	bonus = {
+		army_tradition_decay = -0.01
+	}
+	
+	trigger = {
+		OR = {	
+			primary_culture = salish
+			primary_culture = chinook
+			primary_culture = haida
+		}	
+	}
+	free = yes
+	
+	raid_warfare_nw = {
+		army_tradition_from_battle = 0.5
+	}
+	brother_salmon = {
+		tolerance_own = 1
+	}
+	potlatch = {
+		improve_relation_modifier = 0.1
+	}
+	mother_and_father = {
+		advisor_pool = 1
+		female_advisor_chance = 0.1
+	}
+	totem_poles_nw = {
+		stability_cost_modifier = -0.1
+	}
+	canoe_people = {
+		leader_land_manuever = 1
+	}
+	division_as_a_strength_nw = {
+		global_unrest = -1
+	}
+}
+
+plains_native_ideas = {
+	start = {
+		tolerance_own = 1
+		state_maintenance_modifier = -0.25
+	}
+	
+	bonus = {
+		infantry_cost = -0.10
+	}
+	
+	trigger = {
+		OR = {
+			AND = {
+				culture_group = siouan
+				NOT = {
+					primary_culture = catawba
+					primary_culture = quapaw
+				}
+			}
+			primary_culture = arapaho
+			primary_culture = blackfoot
+			primary_culture = cheyenne
+			primary_culture = kiowa
+			primary_culture = pawnee
+			primary_culture = shoshone
+			primary_culture = wichita
+			tag = NEH
+		}
+	}
+	free = yes
+	
+	dwellers_of_tipis = {
+		envoy_travel_time = -0.2
+		movement_speed = 0.10
+	}
+	bow_archery = {
+		fire_damage = 0.10
+	}
+	bison_hunters = {
+		land_attrition = -0.10
+	}
+	peaceful_people = {
+		diplomatic_reputation = 1
+	}
+	sun_dance = {
+		global_unrest = -1
+	}
+	plains_sign_language = {
+		prestige = 0.5
+	}
+	horse_riders = {
+		cavalry_power = 0.1
+	}
+}
+
+california_native_ideas = {
+	start = {
+		manpower_recovery_speed = 0.1
+		advisor_cost = -0.1
+	}
+	
+	bonus = {
+		global_unrest = -1
+	}
+	
+	trigger = {
+		primary_culture = yokuts
+	}
+	free = yes
+	
+	division_as_a_strength_cf = {
+		num_accepted_cultures = 1
+	}
+	basketweaving = {
+		production_efficiency = 0.1
+	}
+	tribelets = {
+		diplomatic_upkeep = 1
+		stability_cost_modifier = -0.10
+	}
+	forest_gardening = {
+		build_cost = -0.1
+	}
+	kuksu_cult = {
+		religious_unity = 0.25
+	}
+	rock_art = {
+		prestige_decay = -0.01
+	}
+	medicine_men = {
+		land_attrition = -0.10
+	}
+}
+
+ne_native_ideas = {
+	start = {
+		production_efficiency = 0.1
+		navy_tradition = 0.5
+	}
+	bonus = {
+		diplomatic_upkeep = 1
+	}
+	trigger = {
+		government = native
+		OR = {
+			AND = {
+				culture_group = algonquian
+				NOT = {
+					primary_culture = arapaho
+					primary_culture = blackfoot
+					primary_culture = cheyenne
+					tag = NEH
+				}
+			}
+			AND = {
+				culture_group = iroquoian
+				NOT = {
+					primary_culture = cherokee
+				}
+			}
+		}
+	}
+	free = yes
+	ne_turtle_clan = {
+		defensiveness = 0.1
+	}
+	ne_deer_clan = {
+		prestige = 1
+	}
+	ne_bear_clan = {
+		manpower_recovery_speed = 0.1
+	}
+	ne_wolf_clan = {
+		diplomatic_reputation = 1
+	}
+	ne_marten_clan = { 
+		infantry_power = 0.1
+	}
+	ne_eagle_clan = {
+		improve_relation_modifier = 0.1
+	}
+	ne_crane_clan = { 
+		free_leader_pool = 1
+	}
+}
+
+se_native_ideas = {
+	start = {
+		global_tax_modifier = 0.1
+		global_unrest = -1
+	}
+	bonus = {
+		hostile_attrition = 1
+	}
+	trigger = {
+		government = native
+		OR = {
+			culture_group = muskogean
+			culture_group = natchez_group
+			culture_group = tunica_group
+			primary_culture = caddo
+			primary_culture = catawba
+			primary_culture = cherokee
+			primary_culture = quapaw
+			primary_culture = yuchi
+		}
+	}
+	free = yes
+	se_mississippian_legacy = {
+		prestige = 1
+	}
+	se_matrilineal_lineage = {
+		may_recruit_female_generals = yes
+		stability_cost_modifier = -0.1
+	}
+	se_refined_ceramics = {
+		trade_efficiency = 0.1
+	}
+	se_cultivation_of_the_earth = {
+		production_efficiency = 0.1
+	}
+	se_mound_builders = {
+		build_cost = -0.1
+	}
+	se_exogamous_marriages = {
+		improve_relation_modifier = 0.1
+	}
+	se_stomp_dancers = {
+		prestige_decay = -0.01
+	}
+}
+
+sw_native_ideas = {
+	start = {
+		prestige_from_land = 1.0
+		land_attrition = -0.1
+	}
+	bonus = {
+		army_tradition = 0.5
+	}
+	trigger = {
+		government = native
+		OR = {
+			culture_group = keres_group
+			culture_group = tanoan
+			culture_group = zuni_group
+			primary_culture = apache
+			primary_culture = cahitan
+			primary_culture = lipan
+			primary_culture = mescalero
+			primary_culture = navajo
+			primary_culture = piman
+		}
+		NOT = {
+			primary_culture = kiowa
+		}
+	}
+	free = yes
+	sw_the_old_tales = {
+		idea_cost = -0.1
+	}
+	sw_four_clans = {
+		reinforce_speed = 0.1
+	}
+	sw_raiding_nomads = {
+		manpower_recovery_speed = 0.1
+	}
+	sw_prosperous_sedentarism = {
+		production_efficiency = 0.1
+	}
+	sw_the_grand_canyon = {
+		defensiveness = 0.1
+	}
+	sw_into_the_desert = {
+		hostile_attrition = 1.0
+	}
+	sw_far_west = {
+		movement_speed = 0.1
+	}
+}
+
+hawaiian_ideas = { #Credit to James Beaumont
+	start = {
+		light_ship_power = 0.2
+		navy_tradition = 0.5
+	}
+
+	bonus = {
+		may_explore = yes
+		global_colonial_growth = 15
+	}
+	
+	trigger = {
+		OR = {
+			tag = HAW
+			tag = KAA
+			tag = MAU
+			tag = OAH
+			tag = UHW
+		}
+	}
+	free = yes		#will be added at load.
+
+	kapu_system = {
+		global_missionary_strength = 0.01
+		tolerance_own = 1
+	}
+	alii_nui = {
+		legitimacy = 1
+	}
+	hula_idea = {
+		prestige = 1
+	}
+	ohana = {
+		diplomatic_upkeep = 1
+	}
+	kanawai_mamalahoe = {
+		manpower_recovery_speed = 0.1
+	}
+	naha_prophecy = {
+		core_creation = -0.15
+	}
+	legendary_voyagers = {
+		leader_naval_manuever = 1
+	}
+}
+
+siouan_federation_ideas = {
+	start = {
+		tolerance_heathen = 2
+		manpower_recovery_speed = 0.15
+	}
+	
+	bonus = {
+		hostile_attrition = 1
+	}
+	
+	trigger = {
+		OR = {
+			AND = {
+				is_federation_nation = yes
+				primary_culture = dakota
+			}
+			tag = SIO
+		}
+	}
+	free = yes
+	
+	sio_great_spirit = {
+		tolerance_own = 1
+	}
+	sio_tioshpayes = {
+		diplomatic_upkeep = 1
+	}
+	sio_between_the_rivers = {
+		land_attrition = -0.1
+	}
+	sio_trade_fairs = {
+		merchants = 1
+	}
+	sio_oyate = {
+		advisor_cost = -0.1
+	}
+	sio_until_death_and_after = {
+		land_morale = 0.15
+	}
+	sio_across_the_land = {
+		movement_speed = 0.1
+		cavalry_power = 0.15
+	}
+}
+
+eastern_algonquian_federation_ideas = {
+	start = {
+		navy_tradition = 0.5
+		manpower_recovery_speed = 0.15
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.1
+	}
+	
+	trigger = {
+		is_federation_nation = yes
+		OR = {
+			primary_culture = delaware
+			primary_culture = abenaki
+			primary_culture = nipmuc
+			primary_culture = narragansett
+			primary_culture = wampanoag
+			primary_culture = nanticoke
+			primary_culture = mikmaq
+			primary_culture = maliseet
+			primary_culture = mahican
+			primary_culture = powhatan
+			primary_culture = pequot
+		}
+	}
+	free = yes
+	
+	ealg_corn_beans_and_squash = {
+		production_efficiency = 0.1
+	}
+	ealg_seasonal_economy = {
+		development_cost = -0.1
+	}
+	ealg_slash_and_burn = {
+		hostile_attrition = 1
+	}
+	ealg_fishing_habits = {
+		naval_maintenance_modifier = -0.1
+	}
+	ealg_whale_hunters = {
+		naval_morale = 0.1
+	}
+	ealg_white_tialed_deer = {
+		infantry_power = 0.1
+	}
+	ealg_back_before_spring = {
+		movement_speed = 0.1
+	}
+}
+
+central_algonquian_federation_ideas = {
+	start = {
+		navy_tradition = 0.5
+		manpower_recovery_speed = 0.15
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.1
+	}
+	
+	trigger = {
+		is_federation_nation = yes
+		OR = {
+			primary_culture = shawnee
+			primary_culture = illini
+			primary_culture = anishinabe
+			primary_culture = meskwaki
+			primary_culture = menominee
+			primary_culture = cree
+			primary_culture = beothuk
+			primary_culture = mesquakie
+		}
+	}
+	free = yes
+	
+	calg_fur_trade = {
+		global_own_trade_power = 0.1
+	}
+	calg_midewiwin = {
+		tolerance_own = 1
+	}
+	calg_medicinal_infusions = {
+		production_efficiency = 0.1
+	}
+	calg_teaching_scrolls = {
+		idea_cost = -0.1
+	}
+	calg_seven_fires_prophecy = {
+		global_institution_spread = 0.1
+	}
+	calg_copper_weaponry = {
+		infantry_power = 0.1
+	}
+	calg_land_of_the_dawn = {
+		movement_speed = 0.1
+	}
+}
+
+generic_federation_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+		army_tradition = 0.5
+	}
+	
+	bonus = {
+		diplomatic_reputation = 1
+	}
+	
+	trigger = { 
+		is_federation_nation = yes
+		NOT = {
+			primary_culture = iroquois
+			primary_culture = creek
+			culture_group = algonquian
+			primary_culture = dakota
+		}
+	}
+	free = yes
+	
+	fed_council_of_elders = {
+		global_manpower_modifier = 0.1
+	}
+	fed_great_chief = {
+		global_unrest = -1
+	}
+	fed_petroglyphs = {
+		tolerance_own = 1
+	}
+	fed_sign_language = {
+		idea_cost = -0.1
+	}
+	fed_gender_parity = {
+		stability_cost_modifier = -0.1
+		female_advisor_chance = 0.5
+	}
+	fed_little_brother_of_war = {
+		prestige_from_land = 1.0
+	}
+	fed_sunrise_invasion = {
+		movement_speed = 0.1
+		infantry_power = 0.1
+	}
+}
+
+lesser_sunda_ideas = {
+	start = {
+		global_own_trade_power = 0.1
+		sailor_maintenance_modifer = -0.1
+	}
+
+	bonus = {
+		trade_efficiency = 0.1
+	}
+
+	trigger = {
+		OR = {
+			primary_culture = bimanese
+			primary_culture = sumbawarese
+			primary_culture = sasak
+			primary_culture = sumbanese
+			primary_culture = manggarai
+			primary_culture = flores
+			primary_culture = timoric
+		}
+	}
+	free = yes
+
+	sulawesi_intra_asian_trade = {
+		#Same as Sulawesi
+	}
+
+	instate_the_renda = {
+		army_tradition = 0.5
+	}
+
+	sulawesi_prau = {
+		#Same as Sulawesi
+	}
+
+	mbojo_alphabet = {
+		technology_cost = -0.05
+	}
+
+	sulawesi_learning_from_outsiders = {
+		#Same as Sulawesi
+	}
+
+	sulawesi_entrepot = {
+		#Same as Sulawesi
+	}
+
+	sulawesi_assymetrical_warfare = {
+		#Same as Sulawesi
+	}		
+}
+
+malayan_nonmuslim_ideas = {
+	start = {
+		global_trade_power = 0.1
+		trade_steering = 0.1
+	}
+	
+	bonus = {
+		naval_tradition_from_battle = 0.5
+	}
+	
+	trigger = {
+		primary_culture = malayan
+	}
+	free = yes
+	
+	indian_ocean_trade = {
+		merchants = 1
+	}
+	intermingling_of_faiths = {
+		tolerance_heathen = 2
+	}
+	mal_spice_islands = {
+		production_efficiency = 0.1
+	}
+	classical_malay = {
+		idea_cost = -0.05
+	}
+	trading_fleets = {
+		naval_maintenance_modifier = -0.1
+		sailor_maintenance_modifer = -0.1
+	}
+	indianized_kingdoms = {
+		prestige = 1
+	}
+	malayan_nonmuslim_settle_the_islands = {
+		global_colonial_growth = 15
+	}
+}
+
+JIM_ideas = {
+	start = {
+		land_forcelimit_modifier = 0.25
+		war_exhaustion = -0.03
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.1
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = oromo
+			primary_culture = gedeo
+		}
+	}
+
+	free = yes
+
+	JIM_idea1 = {
+		movement_speed = 0.1
+		land_morale = 0.1
+	}
+
+	JIM_idea2 = {
+		global_unrest = -1
+	}
+	
+	JIM_idea3 = {
+		discipline = 0.05
+	}
+
+	JIM_idea4 = {
+		army_tradition = 0.5
+	}
+
+	JIM_idea5 = {
+		shock_damage_received = -0.1
+	}
+
+	JIM_idea6 = {
+		reduced_liberty_desire_on_same_continent = 15
+	}
+
+	JIM_idea7 = {
+		core_creation = -0.15
+	}
+}
+
+native_ideas = {
+	start = {
+		manpower_recovery_speed = 0.15
+		prestige_from_land = 1.0
+	}
+	
+	bonus = {
+		diplomatic_upkeep = 1
+	}
+	
+	trigger = {
+		government = native
+	}
+	free = yes
+	
+	
+	counting_coups = {
+		land_morale = 0.1
+	}
+	storytelling_tradition = {
+		idea_cost = -0.1
+	}
+	clan_mothers = {
+		stability_cost_modifier = -0.1
+	}
+	adopt_clan_totems = {
+		tolerance_own = 1
+	}
+	the_little_war = {
+		global_unrest = -1
+	}
+	war_and_peace_chiefs = {
+		global_manpower_modifier = 0.1
+	}
+	great_winter_hunts = {
+		global_colonial_growth = 15
+	}
+}
+
+CLJ_ideas = {
+	start = {
+		infantry_power = 0.1
+		trade_steering = 0.1
+	}
+	
+	bonus = {
+		global_manpower_modifier = 0.15
+	}
+
+	trigger = {
+		primary_culture = naxi
+	}
+	free = yes		#will be added at load.
+	
+	CLJ_agriculture = {	
+		production_efficiency = 0.1
+	}
+	cdl_tea_horse_route = { #from Dali
+		caravan_power = 0.1
+	}
+	CLJ_trade_rules = { 
+		trade_efficiency = 0.1
+	}
+	CLJ_dongba_script = {
+		global_unrest = -1
+	}
+	CLJ_chief_of_prefecture = {
+		global_tax_modifier = 0.1
+	}
+	CLJ_to_repay_the_debts_of_a_tree = {
+		prestige = 1
+	}
+	CLJ_ming_diplomacy = { 
+		improve_relation_modifier = 0.1
+		diplomatic_reputation = 1
+	}
+}
+
+BHU_ideas = { 
+	start = {
+		defensiveness = 0.2
+		global_tax_modifier = 0.1
+	}
+	
+	bonus = {
+		hostile_attrition = 1
+	}
+
+	trigger = {
+		primary_culture = bhutanese
+	}
+	free = yes		#will be added at load.
+	
+	bhu_drukpa_kagyu = {
+		tolerance_own = 1
+	}
+	bhu_dzongs = {
+		build_cost = -0.1
+	}
+	bhu_tsa_yig_chenmo = {
+		stability_cost_modifier = -0.1
+	}
+	bhu_unification = {
+		global_manpower_modifier = 0.15
+	}
+	bhu_penlops = {	
+		state_maintenance_modifier = -0.25
+	}
+	bhu_dual_government = {
+		legitimacy = 1
+		devotion = 1
+	}
+	bhu_hard_to_conquer = { 
+		discipline = 0.05
+	}
+}
+
+montagnard_ideas = {
+	start = {
+		defensiveness = 0.2
+		hostile_attrition = 1
+	}
+
+	bonus = {
+		land_attrition = -0.1
+	}
+
+	trigger = {
+		OR = {
+			tag = BHN
+			tag = JAR
+			tag = RHA
+			tag = KOH
+		}
+	}
+	free = yes		#will be added at load.
+
+	highland_harmony = {
+		production_efficiency = 0.1
+	}
+	diversity_of_the_montagnards = {
+		num_accepted_cultures = 1
+	}
+	communal_living = {
+		stability_cost_modifier = -0.1
+	}
+	matrilineal_inheritance = {
+		global_unrest = -1
+	}
+	bachelors_houses = {
+		global_manpower_modifier = 0.1
+	}
+	elephant_domestication = {
+		cavalry_cost = -0.1
+	}
+	preserving_a_way_of_life = {
+		shock_damage_received = -0.1
+	}
+}
+
+marcher_lord_ideas = {
+    start = {
+        spy_offence = 0.2
+		global_manpower_modifier = 0.15
+    }
+    bonus = {
+        army_tradition = 0.5
+    }
+    trigger = {
+		OR = {
+			tag = BRC
+			tag = DBG
+			tag = GLM
+			tag = GWR
+			tag = MNM
+			tag = MTE
+			tag = PMB
+		}
+    }
+    free = yes
+
+    marcher_lord_idea_1 = {
+        fort_maintenance_modifier = -0.1
+    }
+    marcher_lord_idea_2 = {
+        diplomatic_reputation = 1
+    }
+    marcher_lord_idea_3 = {
+        interest = -1
+    }
+    marcher_lord_idea_4 = {
+        leader_land_fire = 1
+    }
+    marcher_lord_idea_5 = {
+		manpower_recovery_speed = 0.1
+    }
+    marcher_lord_idea_6 = {
+		prestige = 1
+    }
+    marcher_lord_idea_7 = {
+        global_autonomy = -0.05
+    }
+}
+
+irish_clan_ideas = {
+    start = {
+        stability_cost_modifier = -0.1
+        prestige = 0.5
+    }
+    
+    bonus = {
+		manpower_recovery_speed = 0.1
+    }
+    
+    trigger = {
+		OR = {
+        	primary_culture = irish
+			tag = GLN
+		}
+    }
+    free = yes
+    
+    irish_clan_idea_1 = {
+        improve_relation_modifier = 0.1
+    }
+    irish_clan_idea_2 = {
+        diplomatic_reputation = 1
+    }
+    irish_clan_idea_3 = {
+        shock_damage_received = -0.15
+    }
+    irish_clan_idea_4 = {
+        tolerance_own = 1
+		papal_influence = 1
+    }
+    irish_clan_idea_5 = {
+		land_morale = 0.1
+    }
+    irish_clan_idea_6 = {
+        legitimacy = 1
+    }
+    irish_clan_idea_7 = {
+        global_autonomy = -0.05
+    }
+}

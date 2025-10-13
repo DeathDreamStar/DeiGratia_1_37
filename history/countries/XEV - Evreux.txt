@@ -1,0 +1,29 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = normand
+capital = 6194
+fixed_capital = 6194
+
+#Revolting captain
+1441.9.15 = {
+	monarch = {
+		name = "Pierre"
+		dynasty = "de Brézé"
+		birth_date = 1410.1.1
+		adm = 5
+		dip = 4
+		mil = 5
+	}
+
+	leader = {
+		name = "Robert de Flocques"
+		type = general
+		fire = 3
+		shock = 2
+		manuever = 2
+		siege = 5
+	}
+}

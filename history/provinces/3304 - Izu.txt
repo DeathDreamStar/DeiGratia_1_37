@@ -1,0 +1,16 @@
+#3304 - Izu
+
+owner = IMG
+controller = IMG
+culture = togoku
+religion = shinto
+capital = "Mishima"
+trade_goods = gold
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = IMG
+add_core = HJO
+discovered_by = chinese

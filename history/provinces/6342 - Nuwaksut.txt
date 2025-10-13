@@ -1,0 +1,14 @@
+#6342 - Nuwaksut
+
+add_core = SHD
+owner = SHD
+controller = SHD
+culture = mauritanian
+religion = sunni
+capital = "Nuwaksut"
+trade_goods = fish
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+discovered_by = sub_saharan

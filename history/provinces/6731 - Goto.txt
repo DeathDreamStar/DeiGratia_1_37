@@ -1,0 +1,20 @@
+#6731 - Goto
+
+owner = UKU
+controller = UKU
+culture = kyushuan
+religion = shinto
+capital = "Fukue"
+trade_goods = fish
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = UKU
+discovered_by = chinese
+
+1542.1.1   = { discovered_by = POR }
+1584.5.4 = { add_core = SMZ owner = SMZ controller = SMZ }
+#Battle of Okitanawate
+1587.5.15 = { owner = SHN controller = SHN remove_core = SMZ }#Hideyoshi's conquest of Kyushu

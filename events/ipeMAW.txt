@@ -1,0 +1,241 @@
+namespace = ipeMAW
+normal_or_historical_nations = yes
+
+# The Ambition of Bika Rathore
+country_event = {
+	id = ipeMAW.1
+	title = ipeMAW.1.t
+	desc = ipeMAW.1.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MAW
+		is_neighbor_of = JAN
+		is_at_war = no
+		is_subject = no
+		JAN = {
+			is_subject = no
+			owns = 512
+		}
+		ruler_age = 40
+		dynasty = "Rathore"
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = { # Support Bika Rathore's ambition to found his own kingdom.
+		name = ipeMAW.1.a
+		ai_chance = {
+			factor = 75
+		}
+		add_years_of_income = -0.25
+		custom_tooltip = ipeMAW.1.a.tooltip
+		JAN = {
+			country_event = {
+				id = ipeMAW.2
+				days = 30
+			}
+		}
+	}
+
+	option = { # Offer Bika Rathore the opportunity to govern Jangladesh as a part of Marwar.
+		name = ipeMAW.1.b
+		ai_chance = {
+			factor = 25
+		}
+		add_years_of_income = -0.25
+		JAN = {
+			every_owned_province = {
+				add_core = MAW
+			}
+		}
+	}
+
+	option = { # Ignore him.
+		name = ipeMAW.1.c
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -5
+	}
+}
+
+# The Ambition of Bika Rathore
+country_event = {
+	id = ipeMAW.2
+	title = ipeMAW.1.t
+	desc = ipeMAW.2.d
+	picture = MILITARY_CAMP_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We accept Bika Rathore.
+		name = ipeMAW.2.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				is_rival = MAW
+			}
+		}
+		define_ruler = {
+			name = Bika
+			dynasty = Rathore
+			adm = 4
+			dip = 4
+			mil = 5
+		}
+		hidden_effect = {
+			add_ruler_personality = righteous_personality
+		}
+		change_government = monarchy
+		add_government_reform = rajput_kingdom
+		adopt_reform_progress = FROM
+		override_country_name = BIKANER
+		512 = {
+			change_province_name = "Bikaner"
+			rename_capital = "Bikaner"
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+			add_building = fort_15th
+		}
+		set_capital = 512
+		set_government_rank = 2
+		add_opinion = {
+			who = FROM
+			modifier = embraced_bika_rathore
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = embraced_bika_rathore
+			}
+			country_event = {
+				id = ipeMAW.3
+			}
+		}
+	}
+
+	option = { # He is only an intruder.
+		name = ipeMAW.2.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				is_rival = MAW
+			}
+		}
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Bika Rathore"
+			}
+		}
+		every_owned_province = {
+			add_core = FROM
+		}
+		add_opinion = {
+			who = FROM
+			modifier = rejected_bika_rathore
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = rejected_bika_rathore
+			}
+			country_event = {
+				id = ipeMAW.4
+			}
+		}
+	}
+}
+
+# The Rise of Bikaner
+country_event = {
+	id = ipeMAW.3
+	title = ipeMAW.3.t
+	desc = ipeMAW.3.d
+	picture = FORT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Wonderful news.
+		name = ipeMAW.3.a
+		tooltip = {
+			FROM = {
+				define_ruler = {
+					name = Bika
+					dynasty = Rathore
+					adm = 3
+					dip = 2
+					mil = 2
+				}
+				change_government = monarchy
+				add_government_reform = rajput_kingdom
+				adopt_reform_progress = ROOT
+				override_country_name = BIKANER
+				set_government_rank = 2
+				add_opinion = {
+					who = ROOT
+					modifier = embraced_bika_rathore
+				}
+			}
+			add_opinion = {
+				who = FROM
+				modifier = embraced_bika_rathore
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# The Plight of Bika Rathore
+country_event = {
+	id = ipeMAW.4
+	title = ipeMAW.4.t
+	desc = ipeMAW.4.d
+	picture = FORT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Rathores will triumph!
+		name = ipeMAW.4.a
+		tooltip = {
+			FROM = {
+				capital_scope = {
+					spawn_rebels = {
+						type = pretender_rebels
+						size = 1
+						leader = "Bika Rathore"
+					}
+				}
+				every_owned_province = {
+					add_core = ROOT
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = rejected_bika_rathore
+				}
+			}
+			add_opinion = {
+				who = FROM
+				modifier = rejected_bika_rathore
+			}
+		}
+	}
+}

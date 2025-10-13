@@ -1,0 +1,115 @@
+country_decisions = {
+    abolish_production_of_banknotes = {
+        major = yes
+        potential = {
+			normal_or_historical_nations = yes
+            tag = MNG
+            has_country_modifier = da_ming_baochao
+        }
+        allow = {
+            adm_power = 600
+            adm_tech = 7
+        }
+        effect = {
+            add_adm_power = -600
+            remove_country_modifier = da_ming_baochao
+        }
+        ai_will_do = {
+            factor = 1
+        }
+		ai_importance = 400
+    }
+
+    crush_the_prince_of_ning = {
+        major = yes
+        potential = {
+			normal_or_historical_nations = yes
+            exists = NNG
+            has_country_flag = prince_of_ning_revolt_flag
+            is_emperor_of_china = yes
+        }
+        allow = {
+            NNG = {
+                capital_scope = {
+                    controlled_by = ROOT
+                }
+            }
+        }
+        effect = {
+            clr_country_flag = prince_of_ning_revolt_flag
+            NNG = {
+                white_peace = ROOT
+                every_owned_province = {
+                    cede_province = ROOT
+                }
+            }
+            add_mandate = 5
+        }
+        ai_will_do = {
+            factor = 1
+        }
+		ai_importance = 400
+    }
+
+    crush_the_shun_dynasty = {
+        major = yes
+        potential = {
+            normal_or_historical_nations = yes
+            exists = CSH
+            has_country_flag = shun_revolt_flag
+            is_emperor_of_china = yes
+        }
+        allow = {
+            CSH = {
+                capital_scope = {
+                    controlled_by = ROOT
+                }
+            }
+        }
+        effect = {
+            clr_country_flag = shun_revolt_flag
+            CSH = {
+                white_peace = ROOT
+                every_owned_province = {
+                    cede_province = ROOT
+                }
+            }
+            add_mandate = 5
+        }
+        ai_will_do = {
+            factor = 1
+        }
+		ai_importance = 400
+    }
+    
+    crush_the_xi_dynasty = {
+        major = yes
+        potential = {
+            normal_or_historical_nations = yes
+            exists = CXI
+            has_country_flag = xi_revolt_flag
+            is_emperor_of_china = yes
+        }
+        allow = {
+            CXI = {
+                capital_scope = {
+                    controlled_by = ROOT
+                }
+            }
+        }
+        effect = {
+            clr_country_flag = xi_revolt_flag
+            CXI = {
+                white_peace = ROOT
+                every_owned_province = {
+                    cede_province = ROOT
+                }
+            }
+            add_mandate = 5
+        }
+        ai_will_do = {
+            factor = 1
+        }
+		ai_importance = 400
+    }
+}

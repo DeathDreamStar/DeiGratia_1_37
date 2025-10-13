@@ -1,0 +1,200 @@
+namespace = ipeKAS
+normal_or_historical_nations = yes
+
+# The City of Yarkand
+country_event = {
+	id = ipeKAS.1
+	title = ipeKAS.1.t
+	desc = ipeKAS.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = KAS
+		owns = 2124 # Yarkand
+		2124 = {
+			NOT = {
+				is_capital = yes
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = { # A fitting new capital!
+		name = ipeKAS.1.a
+		ai_chance = {
+			factor = 90
+		}
+		2124 = {
+			move_capital_effect = yes
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+		add_years_of_income = -0.5
+		change_tag = YKD
+	}
+
+	option = { # We have more pressing concerns.
+		name = ipeKAS.1.b
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = 1
+	}
+}
+
+# Saniz Mirza (Subject)
+country_event = {
+	id = ipeKAS.2
+	title = ipeKAS.2.t
+	desc = ipeKAS.2.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = YKD
+		owns = 739 # Kashgar
+		739 = {
+			NOT = {
+				is_capital = yes
+			}
+		}
+		dynasty = "Dughlat"
+		OR = {
+			is_subject = no
+			is_subject_of_type = vassal
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Allow Saniz Mirza to rule Kashgar.
+		name = ipeKAS.2.a
+		add_stability = 1
+		739 = {
+			add_core = KAS
+		}
+		4210 = {
+			add_core = KAS
+		}
+		release = KAS
+		KAS = {
+			define_ruler = {
+				name = "Saniz Mirza"
+				dynasty = "Dughlat"
+				adm = 2
+				dip = 2
+				mil = 2
+				age = 20
+			}
+			hidden_effect = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				add_legitimacy = 30
+				add_ruler_personality = cruel_personality
+                change_government = monarchy
+				if = {
+					limit = {
+						ROOT = {
+							has_reform = iqta
+						}
+					}
+            	    add_government_reform = iqta
+				}
+				if = {
+					limit = {
+						ROOT = {
+							NOT = {
+								has_reform = iqta
+							}
+						}
+					}
+					add_government_reform = feudalism_reform
+				}
+                adopt_reform_progress = ROOT
+			}
+		}
+		if = {
+			limit = {
+				is_subject_of_type = vassal
+			}
+			overlord = {
+				create_subject = {
+					subject_type = vassal
+					subject = KAS
+				}
+				country_event = {
+					id = ipeKAS.3
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { # We will not pamper siblings.
+		name = ipeKAS.2.b
+		add_stability = -1
+		739 = {
+			add_core = KAS
+		}
+		2127 = {
+			add_core = KAS
+		}
+		3526 = {
+			add_core = KAS
+		}
+		4210 = {
+			add_core = KAS
+		}
+		739 = {
+			spawn_rebels = {
+				size = 1
+				type = nationalist_rebels
+				friend = KAS
+				leader = "Saniz Mirza"
+				leader_dynasty = "Dughlat"
+			}
+		}
+	}
+}
+
+# Saniz Mirza (Overlord)
+country_event = {
+	id = ipeKAS.3
+	title = ipeKAS.2.t
+	desc = ipeKAS.3.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # What an interesting state of affairs.
+		name = ipeKAS.3.a
+		tooltip = {
+			create_subject = {
+				subject_type = vassal
+				subject = KAS
+			}
+		}
+	}
+}

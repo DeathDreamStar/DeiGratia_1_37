@@ -1,0 +1,14 @@
+renewed_civil_war = {
+	opinion = -100
+	yearly_decay = 2
+}
+
+subjugated_qasim = {
+	opinion = 100
+	yearly_decay = 2
+}
+
+qasimi_dispute = {
+	opinion = -100
+	yearly_decay = 2
+}

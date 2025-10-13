@@ -1,0 +1,2156 @@
+namespace = ipe_startup
+
+# New Troops for Holy Roman Emperor
+country_event = {
+	id = ipe_startup.1
+	title = ipe_startup.1.t
+	desc = ipe_startup.1.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		is_emperor = yes
+	}
+
+	immediate = {
+		128 = {
+			cavalry = ROOT
+			cavalry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+		}
+		129 = {
+			cavalry = ROOT
+			cavalry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# New Troops for Electors
+country_event = {
+	id = ipe_startup.2
+	title = ipe_startup.2.t
+	desc = ipe_startup.2.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		is_emperor = yes
+	}
+
+	immediate = {
+		every_known_country = {
+			limit = {
+				is_elector = yes
+			}
+			capital_scope = {
+				infantry = PREV
+				infantry = PREV
+			}
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# New Troops for Oirat, Deleting Units
+country_event = {
+	id = ipe_startup.3
+	title = ipe_startup.3.t
+	desc = ipe_startup.3.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = OIR
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				controlled_by = ROOT
+			}
+			cavalry = ROOT
+			cavalry = ROOT
+			cavalry = ROOT
+			cavalry = ROOT
+		}
+		add_yearly_manpower = 2
+		every_country = {
+			limit = {
+				NOT = {
+					land_forcelimit = 3
+				}
+				is_at_war = no
+				OR = {
+					is_part_of_hre = yes
+					AND = {
+						is_subject_of_type = vassal
+						NOT = {
+							is_subject_of = ASK
+						}
+					}
+				}
+			}
+			capital_scope = {
+				kill_units = {
+					who = owner
+				}
+			}
+		}
+		MNG = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					infantry_in_province = MNG
+					NOT = {
+						heavy_ships_in_province = MNG
+					}
+				}
+				kill_units = {
+					who = owner
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					infantry_in_province = MNG
+					NOT = {
+						heavy_ships_in_province = MNG
+					}
+				}
+				kill_units = {
+					who = owner
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					infantry_in_province = MNG
+					NOT = {
+						heavy_ships_in_province = MNG
+					}
+				}
+				kill_units = {
+					who = owner
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					infantry_in_province = MNG
+					NOT = {
+						heavy_ships_in_province = MNG
+					}
+				}
+				kill_units = {
+					who = owner
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					infantry_in_province = MNG
+					NOT = {
+						heavy_ships_in_province = MNG
+					}
+				}
+				kill_units = {
+					who = owner
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					infantry_in_province = MNG
+					NOT = {
+						heavy_ships_in_province = MNG
+					}
+				}
+				kill_units = {
+					who = owner
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					infantry_in_province = MNG
+					NOT = {
+						heavy_ships_in_province = MNG
+					}
+				}
+				kill_units = {
+					who = owner
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					heavy_ships_in_province = MNG
+				}
+				kill_units = {
+					who = owner
+					type = heavy_ship
+					amount = 50
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					light_ships_in_province = MNG
+				}
+				kill_units = {
+					who = owner
+					type = light_ship
+					amount = 50
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					galleys_in_province = MNG
+				}
+				kill_units = {
+					who = owner
+					type = galley
+					amount = 50
+				}
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					transports_in_province = MNG
+				}
+				kill_units = {
+					who = owner
+					type = transport
+					amount = 50
+				}
+			}
+		}
+		VIJ = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					transports_in_province = VIJ
+				}
+				kill_units = {
+					who = owner
+					type = transport
+				}
+			}
+		}
+		NOR = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					heavy_ships_in_province = NOR
+				}
+				kill_units = {
+					who = owner
+					type = heavy_ship
+				}
+			}
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Ming Setup
+country_event = {
+	id = ipe_startup.4
+	title = ipe_startup.4.t
+	desc = ipe_startup.4.d
+	picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = MNG
+	}
+
+	immediate = {
+		add_inflation = 50
+		add_corruption = 55
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Manpower, Stability, and Corruption for All Countries
+country_event = {
+	id = ipe_startup.5
+	title = ipe_startup.5.t
+	desc = ipe_startup.5.d
+	picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = DAN
+	}
+
+	immediate = {
+		every_country = {
+			add_yearly_manpower = 3
+			add_stability = 1
+		}
+		every_country = {
+			limit = {
+				total_development = 500
+				NOT = {
+					tag = KOR
+					tag = DAI
+				}
+			}
+			add_corruption = 5
+		}
+		every_country = {
+			limit = {
+				total_development = 1000
+				NOT = {
+					tag = MNG
+				}
+			}
+			add_corruption = 5
+		}
+		MAM = {
+			add_corruption = 5
+		}
+		TUR = {
+			add_corruption = 5
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Persia Setup
+country_event = {
+	id = ipe_startup.6
+	title = ipe_startup.6.t
+	desc = ipe_startup.6.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = ARL
+	}
+
+	immediate = {
+		capital_scope = {
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+		}
+		SGD = {
+			define_heir = {
+				name = "Muhammad Qasim"
+				dynasty = "Gurkani"
+				max_random_adm = 0
+				max_random_dip = 0
+				max_random_mil = 0
+				birth_date = 1422.1.1
+			}
+			add_heir_personality = naive_personality
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Stability Reductions
+country_event = {
+	id = ipe_startup.7
+	title = ipe_startup.7.t
+	desc = ipe_startup.7.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	hidden = yes
+
+	trigger = {
+		tag = HUN
+	}
+
+	immediate = {
+		add_stability = -3
+		add_war_exhaustion = 5
+		CRO = {
+			add_stability = -3
+			add_war_exhaustion = 5
+		}
+		POL = {
+			add_stability = -3
+			add_war_exhaustion = 5
+		}
+		GZI = {
+			add_stability = -3
+			every_owned_province = {
+				add_province_modifier = {
+					name = peace_famine
+					duration = 730
+				}
+			}
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# New Troops for Burgundy
+country_event = {
+	id = ipe_startup.8
+	title = ipe_startup.8.t
+	desc = ipe_startup.8.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = BUR
+	}
+
+	immediate = {
+		capital_scope = {
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# New Troops for Portugal
+country_event = {
+	id = ipe_startup.10
+	title = ipe_startup.10.t
+	desc = ipe_startup.10.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = POR
+	}
+
+	immediate = {
+		capital_scope = {
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			artillery = ROOT
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Ottoman Military Power
+country_event = {
+	id = ipe_startup.13
+	title = ipe_startup.13.t
+	desc = ipe_startup.13.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = TUR
+	}
+
+	immediate = {
+		add_mil_power = 100
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# New Troops for Morocco
+country_event = {
+	id = ipe_startup.14
+	title = ipe_startup.14.t
+	desc = ipe_startup.14.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = MOR
+	}
+
+	immediate = {
+		capital_scope = {
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			cavalry = ROOT
+			cavalry = ROOT
+			cavalry = ROOT
+		}
+		TFL = {
+			capital_scope = {
+				infantry = PREV
+			}
+		}
+		MRK = {
+			capital_scope = {
+				infantry = PREV
+				infantry = PREV
+			}
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Corruption Modifiers
+country_event = {
+	id = ipe_startup.15
+	title = ipe_startup.15.t
+	desc = ipe_startup.15.d
+	picture = CORRUPTION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = MNG
+	}
+
+	immediate = {
+		every_country = {
+			if = {
+				limit = {
+					total_development = 500
+					NOT = {
+						total_development = 1000
+					}
+				}
+				add_country_modifier = {
+					name = 500_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 1000
+					NOT = {
+						total_development = 1500
+					}
+				}
+				add_country_modifier = {
+					name = 1000_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 1500
+					NOT = {
+						total_development = 2000
+					}
+				}
+				add_country_modifier = {
+					name = 1500_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 2000
+					NOT = {
+						total_development = 2500
+					}
+				}
+				add_country_modifier = {
+					name = 2500_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 2500
+					NOT = {
+						total_development = 3000
+					}
+				}
+				add_country_modifier = {
+					name = 2500_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 3000
+					NOT = {
+						total_development = 3500
+					}
+				}
+				add_country_modifier = {
+					name = 3000_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 3500
+					NOT = {
+						total_development = 4000
+					}
+				}
+				add_country_modifier = {
+					name = 3500_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 4000
+					NOT = {
+						total_development = 4500
+					}
+				}
+				add_country_modifier = {
+					name = 4000_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 4500
+					NOT = {
+						total_development = 5000
+					}
+				}
+				add_country_modifier = {
+					name = 4500_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 5000
+					NOT = {
+						total_development = 5500
+					}
+				}
+				add_country_modifier = {
+					name = 5000_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 6000
+					NOT = {
+						total_development = 6500
+					}
+				}
+				add_country_modifier = {
+					name = 6000_corruption
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 6500
+					NOT = {
+						total_development = 7000
+					}
+				}
+				add_country_modifier = {
+					name = 6500_corruption
+					duration = -1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# $FROMCOUNTRY$ Does Not Have a Religion!
+country_event = {
+	id = ipe_startup.16
+	title = ipe_startup.16.t
+	desc = ipe_startup.16.d
+	picture = RELIGION_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		ai = yes
+		NOT = {
+			religion_group = christian
+			religion_group = muslim
+			religion_group = eastern
+			religion_group = dharmic
+			religion_group = pagan
+			religion_group = mesoamerican_religion_group
+			religion_group = jewish_group
+			religion_group = zoroastrian_group
+			religion_group = druze_group
+			has_country_flag = no_religion_identified
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_country_flag = no_religion_identified
+		random_country = {
+			limit = {
+				ai = no
+			}
+			country_event = {
+				id = ipe_startup.17
+			}
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# $FROMCOUNTRY$ Does Not Have a Religion!
+country_event = {
+	id = ipe_startup.17
+	title = ipe_startup.17.t
+	desc = ipe_startup.17.d
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Will do!
+		name = ipe_startup.17.a
+		custom_tooltip = ipe_startup.17.a.tooltip
+	}
+}
+
+# Indonesian Province Discoveries
+country_event = {
+	id = ipe_startup.18
+	title = ipe_startup.18.t
+	desc = ipe_startup.18.d
+	picture = NATIVES_eventPicture
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = MKS
+			tag = TER
+			tag = TID
+			tag = JLO
+			tag = BAC
+			tag = WJO
+			tag = SPP
+			tag = BNE
+			tag = BTN
+			tag = BMA
+			tag = SBW
+			tag = LUW
+		}
+		NOT = {
+			has_country_flag = provinces_discovered
+		}
+	}
+
+	immediate = {
+		1245 = { # Manokwari
+			discover_country = ROOT
+		}
+		1350 = { # Coast of Aceh
+			discover_country = ROOT
+		}
+		1351 = { # Coast of Sumatra
+			discover_country = ROOT
+		}
+		1352 = { # Sunda Strait
+			discover_country = ROOT
+		}
+		1353 = { # Coast of Java
+			discover_country = ROOT
+		}
+		1354 = { # Coast of Blambangan
+			discover_country = ROOT
+		}
+		1355 = { # Straits of Lombok
+			discover_country = ROOT
+		}
+		1356 = { # Sawu Sea
+			discover_country = ROOT
+		}
+		1408 = { # Timor Sea
+			discover_country = ROOT
+		}
+		1410 = { # Gulf of Carpentaria
+			discover_country = ROOT
+		}
+		2718 = { # Fak-Fak
+			discover_country = ROOT
+		}
+		2722 = { # Daru
+			discover_country = ROOT
+		}
+		2723 = { # Tiuri
+			discover_country = ROOT
+		}
+		2724 = { # Asmat
+			discover_country = ROOT
+		}
+		2728 = { # Tiwi
+			discover_country = ROOT
+		}
+		2729 = { # Yolngu
+			discover_country = ROOT
+		}
+		2730 = { # Awngthim
+			discover_country = ROOT
+		}
+		3081 = { # Sorong
+			discover_country = ROOT
+		}
+		3082 = { # Rumbati
+			discover_country = ROOT
+		}
+		3083 = { # Kowiai
+			discover_country = ROOT
+		}
+		3084 = { # Numbay
+			discover_country = ROOT
+		}
+		3085 = { # Biak
+			discover_country = ROOT
+		}
+		3086 = { # Aiduma
+			discover_country = ROOT
+		}
+		3087 = { # Merauke
+			discover_country = ROOT
+		}
+		3625 = { # Papua
+			discover_country = ROOT
+		}
+		set_country_flag = provinces_discovered
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Horde Province Discoveries
+country_event = {
+	id = ipe_startup.19
+	title = ipe_startup.19.t
+	desc = ipe_startup.19.d
+	picture = NATIVES_eventPicture
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		technology_group = nomad_group
+		NOT = {
+			has_country_flag = provinces_discovered
+		}
+	}
+
+	immediate = {
+		balkan_region = {
+			discover_country = ROOT
+		}
+		baltic_region = {
+			discover_country = ROOT
+		}
+		carpathia_region = {
+			discover_country = ROOT
+		}
+		japan_region = {
+			discover_country = ROOT
+		}
+		poland_region = {
+			discover_country = ROOT
+		}
+		russia_region = {
+			discover_country = ROOT
+		}
+		taiwan_area = {
+			discover_country = ROOT
+		}
+		1256 = {
+			discover_country = ROOT
+		}
+		1260 = {
+			discover_country = ROOT
+		}
+		3601 = {
+			discover_country = ROOT
+		}
+		3627 = {
+			discover_country = ROOT
+		}
+		3628 = {
+			discover_country = ROOT
+		}
+		3629 = {
+			discover_country = ROOT
+		}
+		3848 = {
+			discover_country = ROOT
+		}
+		3862 = {
+			discover_country = ROOT
+		}
+		4001 = {
+			discover_country = ROOT
+		}
+		4235 = {
+			discover_country = ROOT
+		}
+		4522 = {
+			discover_country = ROOT
+		}
+		6370 = {
+			discover_country = ROOT
+		}
+		6371 = {
+			discover_country = ROOT
+		}
+		6372 = {
+			discover_country = ROOT
+		}
+		6633 = {
+			discover_country = ROOT
+		}
+		DAI = {
+			every_owned_province = {
+				discover_country = ROOT
+			}
+		}
+		set_country_flag = provinces_discovered
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Saharan Province Discoveries
+country_event = {
+	id = ipe_startup.20
+	title = ipe_startup.20.t
+	desc = ipe_startup.20.d
+	picture = NATIVES_eventPicture
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = MAQ
+			tag = SHD
+		}
+		NOT = {
+			has_country_flag = provinces_discovered
+		}
+	}
+
+	immediate = {
+		1648 = {
+			discover_country = ROOT
+		}
+		2251 = {
+			discover_country = ROOT
+		}
+		guinea_region = {
+			limit = {
+				NOT = {
+					province_id = 1306
+					province_id = 1165
+					province_id = 6334
+					province_id = 1164
+					province_id = 1097
+				}
+			}
+			discover_country = ROOT
+		}
+		niger_region = {
+			discover_country = ROOT
+		}
+		sahel_region = {
+			discover_country = ROOT
+		}
+		set_country_flag = provinces_discovered
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Muisca Province Discoveries
+country_event = {
+	id = ipe_startup.21
+	title = ipe_startup.21.t
+	desc = ipe_startup.21.d
+	picture = NATIVES_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = MCA
+	}
+
+	immediate = {
+		central_america_region = {
+			discover_country = ROOT
+		}
+		colombia_region = {
+			discover_country = ROOT
+		}
+		1515 = {
+			discover_country = ROOT
+		}
+		1517 = {
+			discover_country = ROOT
+		}
+		1519 = {
+			discover_country = ROOT
+		}
+		1520 = {
+			discover_country = ROOT
+		}
+		1548 = {
+			discover_country = ROOT
+		}
+		1657 = {
+			discover_country = ROOT
+		}
+		6560 = {
+			discover_country = ROOT
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Japanese Province Discoveries
+country_event = {
+	id = ipe_startup.22
+	title = ipe_startup.22.t
+	desc = ipe_startup.22.d
+	picture = NATIVES_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = ANU
+			culture_group = japanese_g
+		}
+		NOT = {
+			tag = RYU
+		}
+	}
+
+	immediate = {
+		1032 = {
+			discover_country = ROOT
+		}
+		1441 = {
+			discover_country = ROOT
+		}
+		3146 = {
+			discover_country = ROOT
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# The Inheritance of $COUNTRY$
+country_event = {
+	id = ipe_startup.23
+	title = ipe_startup.23.t
+	desc = ipe_startup.23.d
+	picture = KING_SICK_IN_BED_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		ai = no
+		has_country_flag = this_fief_will_die
+		has_ruler_flag = inheritable_fief
+		NOT = {
+			has_country_flag = inheritance_warning
+			is_year = 1445
+		}
+	}
+
+	immediate = {
+		set_country_flag = inheritance_warning
+	}
+
+	option = { # Good to know.
+		name = ipe_startup.23.a
+		custom_tooltip = ipe_startup.23.a.tooltip
+	}
+}
+
+# Inflation Modifiers (Gold)
+country_event = {
+    id = ipe_startup.24
+    title = ipe_startup.24.t
+    desc = ipe_startup.24.d
+    picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = {
+		trading_part = {
+			trade_goods = gold
+			value = 0.005
+		}
+	}
+
+	immediate = {
+		every_country = {
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.005
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.01
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 005_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.01
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.015
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 01_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.015
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.02
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 015_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.02
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.025
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 02_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.025
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.03
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 025_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.03
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.035
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 03_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.035
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.04
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 035_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.04
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.045
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 04_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.045
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.05
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 045_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.05
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.055
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 05_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.055
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.06
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 055_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.06
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.065
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 06_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.065
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.07
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 065_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.07
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.075
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 07_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.075
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.08
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 075_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.08
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.085
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 08_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.085
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.09
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 085_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.09
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.095
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 09_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.095
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = gold
+							value = 0.1
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 095_inflation
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = gold
+						value = 0.1
+					}
+				}
+				add_country_modifier = {
+					name = 1_inflation
+					duration = -1
+				}
+			}
+		}
+	}
+
+    option = {
+        name = none
+    }
+}
+
+# Inflation Modifiers (Silver)
+country_event = {
+    id = ipe_startup.25
+    title = ipe_startup.25.t
+    desc = ipe_startup.25.d
+    picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = {
+		trading_part = {
+			trade_goods = silver
+			value = 0.005
+		}
+	}
+
+	immediate = {
+		every_country = {
+        	if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.005
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.01
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 005_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.01
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.015
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 01_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.015
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.02
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 015_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.02
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.025
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 02_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.025
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.03
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 025_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.03
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.035
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 03_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.035
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.04
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 035_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.04
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.045
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 04_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.045
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.05
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 045_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.05
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.055
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 05_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.055
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.06
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 055_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.06
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.065
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 06_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.065
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.07
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 065_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.07
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.075
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 07_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.075
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.08
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 075_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.08
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.085
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 08_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.085
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.09
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 085_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.09
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.095
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 09_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.095
+					}
+					NOT = {
+						trading_part = {
+							trade_goods = silver
+							value = 0.1
+						}
+					}
+				}
+				add_country_modifier = {
+					name = 095_inflation_silver
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					trading_part = {
+						trade_goods = silver
+						value = 0.1
+					}
+				}
+				add_country_modifier = {
+					name = 1_inflation_silver
+					duration = -1
+				}
+			}
+		}
+	}
+
+    option = {
+        name = none
+    }
+}
+
+# Growing Commercial Ventures
+country_event = {
+	id = ipe_startup.26
+	title = ipe_startup.26.t
+	desc = ipe_startup.26.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	immediate = {
+		every_country = {
+			limit = {
+				total_development = 100
+			}
+			if = {
+				limit = {
+					total_development = 100
+					NOT = {
+						total_development = 300
+					}
+				}
+				add_country_modifier = {
+					name = growing_commercial_ventures_100
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 300
+					NOT = {
+						total_development = 1000
+					}
+				}
+				add_country_modifier = {
+					name = growing_commercial_ventures_300
+					duration = -1
+				}
+			}
+			if = {
+				limit = {
+					total_development = 1000
+				}
+				add_country_modifier = {
+					name = growing_commercial_ventures_1000
+					duration = -1
+				}
+			}
+		}
+	}
+
+	option = {
+		name = none
+	}
+}
+
+# Kashgar Province Discoveries
+country_event = {
+	id = ipe_startup.27
+	title = ipe_startup.27.t
+	desc = ipe_startup.27.d
+	picture = NATIVES_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = {
+		tag = KAS
+	}
+
+	immediate = {
+		khorasan_region = {
+			discover_country = ROOT
+		}
+		persia_region = {
+			limit = {
+				NOT = {
+					province_id = 2999
+				}
+			}
+			discover_country = ROOT
+		}
+		central_asia_region = {
+			discover_country = ROOT
+		}
+		455 = {
+			discover_country = ROOT
+		}
+		1327 = {
+			discover_country = ROOT
+		}
+		1653 = {
+			discover_country = ROOT
+		}
+		1893 = {
+			discover_country = ROOT
+		}
+		1906 = {
+			discover_country = ROOT
+		}
+		2200 = {
+			discover_country = ROOT
+		}
+		2206 = {
+			discover_country = ROOT
+		}
+		2217 = {
+			discover_country = ROOT
+		}
+		3016 = {
+			discover_country = ROOT
+		}
+		3590 = {
+			discover_country = ROOT
+		}
+		3591 = {
+			discover_country = ROOT
+		}
+		3592 = {
+			discover_country = ROOT
+		}
+		3594 = {
+			discover_country = ROOT
+		}
+		4170 = {
+			discover_country = ROOT
+		}
+		4172 = {
+			discover_country = ROOT
+		}
+		4177 = {
+			discover_country = ROOT
+		}
+		4328 = {
+			discover_country = ROOT
+		}
+		6211 = {
+			discover_country = ROOT
+		}
+		6217 = {
+			discover_country = ROOT
+		}
+		6349 = {
+			discover_country = ROOT
+		}
+		6350 = {
+			discover_country = ROOT
+		}
+		6352 = {
+			discover_country = ROOT
+		}
+	}
+
+	option = {
+		name = none
+	}
+}

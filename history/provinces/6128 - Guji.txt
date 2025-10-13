@@ -1,0 +1,24 @@
+#6128 - Guji
+
+owner = GJI
+controller = GJI
+add_core = GJI
+culture = oromo
+religion = shamanism
+capital = "Negele"
+native_size = 40
+native_ferocity = 4
+native_hostileness = 9 
+trade_goods = coffee
+is_city = yes
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+
+discovered_by = east_african
+discovered_by = muslim
+discovered_by = ottoman
+
+
+1550.1.1 = { discovered_by = TUR }

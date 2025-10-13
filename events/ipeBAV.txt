@@ -1,0 +1,49 @@
+#Bavarian Events
+
+namespace = ipeBAV
+
+# Dealing With the Robber Barons
+country_event = {
+	id = ipeBAV.1
+	title = ipeBAV.1.t
+	desc = ipeBAV.1.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BAV
+		NOT = { is_year = 1555}
+		owns_core_province = 65
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = ipeBAV.1.a
+		add_years_of_income = -1
+		add_manpower = -2
+		add_country_modifier = {
+			name = ipe_fought_robber_barons
+			duration = 3650
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -10
+		}
+		add_estate_influence_modifier = {
+			estate = estate_nobles
+			desc = fought_noble_barons
+			influence = -10
+			duration = 9125
+		}
+	}
+
+	option = {
+		name = ipeBAV.1.b
+		add_years_of_income = 5
+		add_stability = -1
+	}
+}

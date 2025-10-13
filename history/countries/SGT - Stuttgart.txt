@@ -1,0 +1,56 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = swabian
+capital = 70	# Stuttgart
+fixed_capital = 70
+
+1419.7.2 = {
+	monarch = {
+		name = "Ulrich V"
+		dynasty = "von Württemberg"
+		birth_date = 1413.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1441.4.23 = {
+	queen = {
+		country_of_origin = KLE
+		culture = hessian
+		name = "Margaret"
+		dynasty = "von der Mark"
+		birth_date = 1416.1.1
+		death_date = 1444.11.12
+		female = yes
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1447.2.1 = {
+	heir = {
+		name = "Eberhard"
+		monarch_name = "Eberhard II"
+		dynasty = "von Württemberg"
+		birth_date = 1447.2.1
+		death_date = 1504.2.17
+		claim = 95
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+1480.12.1 = {
+	monarch = {
+		name = "Eberhard II"
+		dynasty = "von Württemberg"
+		birth_date = 1447.2.1
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}

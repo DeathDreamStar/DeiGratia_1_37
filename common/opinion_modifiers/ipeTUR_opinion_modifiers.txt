@@ -1,0 +1,17 @@
+supported_sahkulu = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+executed_cem = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+mamluks_allowed_to_rule = {
+	opinion = 200
+	years = 100
+	yearly_decay = 2
+}

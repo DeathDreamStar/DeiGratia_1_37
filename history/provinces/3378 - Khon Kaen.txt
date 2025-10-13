@@ -1,0 +1,19 @@
+#3378 - Khon Kaen
+
+owner = LXA
+controller = LXA
+culture = lao
+religion = buddhism
+capital = "Khon Kaen"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = LXA
+
+
+
+discovered_by = chinese
+discovered_by = indian

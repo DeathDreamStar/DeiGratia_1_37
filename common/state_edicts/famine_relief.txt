@@ -1,0 +1,71 @@
+edict_famine_relief = {
+	potential = {
+		current_age = age_of_revolutions
+	}
+	
+	allow = {
+		custom_trigger_tooltip = {
+			tooltip = edict_famine_relief_tooltip
+			has_institution = industrialization
+		}
+		current_age = age_of_revolutions
+	}
+	
+	modifier = {
+		local_monthly_devastation = -0.25
+	}
+	
+	color = {  116 198 240  }
+	
+	
+	ai_will_do = {
+		factor = 50
+		modifier = {
+			factor = 0
+			AND = {
+				has_state_edict = edict_famine_relief
+				all_province_in_state = {
+					NOT = {
+						devastation = 1
+					}	
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			has_state_edict = edict_famine_relief
+		}
+		modifier = {
+			factor = 0
+			
+			AND = {
+				NOT = { has_state_edict = edict_famine_relief }
+				all_province_in_state = {
+					NOT = {
+						devastation = 2
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			
+			AND = {
+				NOT = { has_state_edict = edict_famine_relief }
+				all_province_in_state = {
+					devastation = 5
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			
+			AND = {
+				NOT = { has_state_edict = edict_famine_relief }
+				any_province_in_state = {
+					devastation = 10
+				}
+			}
+		}
+	}
+}

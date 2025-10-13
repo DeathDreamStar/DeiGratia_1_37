@@ -1,0 +1,28 @@
+government = monarchy
+add_government_reform = daimyo
+government_rank = 1
+primary_culture = japanese
+religion = shinto
+technology_group = chinese
+capital = 3321	# Otsu
+
+1444.1.1 = {
+	monarch = {
+		name = "Masayori"
+		dynasty = "Rokkaku"
+		birth_date = 1420.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+
+	heir = {
+		name = "Takayori"
+		dynasty = "Rokkaku"
+		birth_date = 1440.1.1
+		death_date = 1520.12.9
+		adm = 6
+		dip = 5
+		mil = 6
+	}
+}

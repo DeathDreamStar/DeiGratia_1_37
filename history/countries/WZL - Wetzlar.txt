@@ -1,0 +1,21 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+technology_group = western
+primary_culture = true_hessian
+religion = catholic
+capital = 6842	# Wetzlar
+fixed_capital = 6842 # Cannot move capital away from this province & no power cost to move to it
+
+
+#Free City
+1444.1.1 = {
+	monarch = {
+		name = "Stadtrat"
+		adm = 2
+		dip = 2
+		mil = 2
+		regent = yes
+	}
+}

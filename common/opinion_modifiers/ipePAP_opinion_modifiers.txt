@@ -1,0 +1,46 @@
+subjected_to_the_pope = {
+    opinion = 100
+    years = 100
+    yearly_decay = 1
+}
+
+resisted_the_pope = {
+    opinion = -50
+    years = 50
+    yearly_decay = 1
+}
+
+sanctioned_church_taxes = {
+    opinion = 25
+    years = 25
+}
+
+blessed_monarch = {
+    opinion = 25
+    years = 25
+}
+
+granted_indulgence = {
+    opinion = 25
+    years = 25
+}
+
+forgave_usury = {
+    opinion = 25
+    years = 25
+}
+
+proclaimed_holy_war = {
+    opinion = 25
+    years = 25
+}
+
+sent_papal_legate = {
+    opinion = 25
+    years = 25
+}
+
+beatified_saint = {
+    opinion = 50
+    years = 50
+}

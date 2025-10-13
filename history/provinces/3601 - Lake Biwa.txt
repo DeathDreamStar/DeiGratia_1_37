@@ -1,0 +1,3 @@
+#3601 - Lake Biwa
+
+discovered_by = chinese

@@ -1,0 +1,21 @@
+#3262 - Lang Son
+
+owner = DAI
+controller = DAI
+add_core = DAI
+culture = zhuang
+religion = animism
+capital = "Lang Son"
+trade_goods = tropical_wood
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman
+add_core = CGS
+add_local_autonomy = 50
+fort_15th = yes

@@ -1,0 +1,10 @@
+﻿l_english:
+ IMP_PROV_COST: "It will cost $VAL|Y$ Administrative, Diplomatic or Military Power to give §Y$PROV$§! the modifier §YEncouraged Growth§!, which increases the rate of natural development growth by §G100%§! for 50 years. Provinces producing Gold or Silver can have their Base Production improved manually."
+ IMP_PROV_COST_INFO_2: "that increases by $MUL|Y$ every time the province is improved."
+ IMPPR_DO: "Spend $COST|Y$ $TYPE$ Power to give $NAME$ the modifier §YEncouraged Growth§!, which increases the rate of natural development growth by §G100%§! for 50 years. Provinces producing Gold or Silver can have their Base Production improved manually."
+ IMP_BASE_TAX: "Encourage Growth"
+ IMP_BASE_PROD: "Encourage Growth"
+ IMP_BASE_MP: "Encourage Growth"
+ PP_BASE_TAX_VALUE2: "Base Tax is $VAL|Y$, with each level giving:\n  Yearly Tax Income: §G+1§!\n$EACH$"
+ PP_BASE_MP_VALUE: "Base Manpower is $VAL|Y$, with each level giving:\n  Maximum Manpower: §G+$EACH$§!\n$PROV$"
+ PP_BASE_PROD_VALUE: "Base Production is $VAL|Y$, with each level giving:\n$EACH$"

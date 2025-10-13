@@ -1,0 +1,301 @@
+namespace = ipeTUN
+normal_or_historical_nations = yes
+
+# The Subjugation of Tunis
+country_event = {
+	id = ipeTUN.1
+	title = ipeTUN.1.t
+	desc = ipeTUN.1.d
+	picture = NAVAL_MILITARY_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Excellent.
+		name = ipeTUN.1.a
+		tooltip = {
+			TUN = {
+				kill_ruler = yes
+			}
+			if = {
+				limit = {
+					tag = TUR
+					NOT = {
+						exists = TRP
+					}
+					354 = {
+						owned_by = TUN
+						is_core = TRP
+						is_capital = no
+					}
+				}
+				TUN = {
+					release = TRP
+				}
+				create_march = TRP
+			}
+			if = {
+				limit = {
+					tag = TUR
+					NOT = {
+						exists = ALG
+					}
+					338 = {
+						owned_by = TUN
+						is_core = ALG
+						is_capital = no
+					}
+				}
+				TUN = {
+					release = ALG
+				}
+				create_march = ALG
+			}
+		}
+		if = {
+			limit = {
+				tag = TUR
+				TUN = {
+					NOT = {
+						has_country_flag = tunis_name_changed
+					}
+				}
+			}
+			tooltip = {
+				TUN = {
+					override_country_name = EYALET_OF_TUNIS
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					TRP = {
+						is_subject_of = TUR	
+					}
+				}
+				TUN = {
+					every_owned_province = {
+						limit = {
+							is_core = TRP
+						}
+						cede_province = TRP
+					}
+				}
+			}
+			if = {
+				limit = {
+					ALG = {
+						is_subject_of = TUR
+					}
+				}
+				TUN = {
+					every_owned_province = {
+						limit = {
+							is_core = ALG
+						}
+						cede_province = ALG
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = TUR
+					NOT = {
+						exists = TRP
+					}
+					354 = {
+						owned_by = TUN
+						is_core = TRP
+						is_capital = no
+					}
+				}
+				TUN = {
+					release = TRP
+				}
+				TRP = {
+					change_religion = sunni
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 1
+							light_ship = 0.5
+							galley = 0.5
+						}
+					}
+					change_government = monarchy
+					add_government_reform = barbary_state
+					adopt_reform_progress = ROOT
+					set_government_rank = 2
+				}
+				TUR = {
+					create_subject = {
+						subject = TRP
+						subject_type = march
+					}
+				}
+			}
+			if = {
+				limit = {
+					tag = TUR
+					NOT = {
+						exists = ALG
+					}
+					338 = {
+						owned_by = TUN
+						is_core = ALG
+						is_capital = no
+					}
+				}
+				TUN = {
+					release = ALG
+				}
+				ALG = {
+					change_religion = sunni
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 1
+							light_ship = 0.5
+							galley = 0.5
+						}
+					}
+					change_government = monarchy
+					add_government_reform = barbary_state
+					adopt_reform_progress = ROOT
+					set_government_rank = 2
+				}
+				TUR = {
+					create_subject = {
+						subject = ALG
+						subject_type = march
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				TUN = {
+					is_subject = yes
+				}
+			}
+			TUN = {
+				hidden_effect = {
+					overlord = {
+						country_event = {
+							id = ipeTUN.3
+						}
+					}
+				}
+				grant_independence = yes
+			}
+		}
+		white_peace = TUN
+		create_subject = {
+			subject = TUN
+			subject_type = march
+		}
+		TUN = {
+			add_liberty_desire = -50
+		}
+		hidden_effect = {
+			TUN = {
+				country_event = {
+					id = ipeTUN.2
+				}
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				tag = TUR
+				ai = yes
+			}
+			every_owned_province = {
+				limit = {
+					is_core = TRP
+				}
+				cede_province = TRP
+			}
+		}
+		if = {
+			limit = {
+				tag = TUR
+				ai = yes
+			}
+			every_owned_province = {
+				limit = {
+					is_core = ALG
+				}
+				cede_province = ALG
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Subjugates Tunis
+country_event = {
+	id = ipeTUN.2
+	title = ipeTUN.2.t
+	desc = ipeTUN.2.d
+	picture = NAVAL_MILITARY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is not good.
+		name = ipeTUN.2.a
+		if = {
+			limit = {
+				FROM = {
+					tag = TUR
+				}
+				NOT = {
+					has_country_flag = tunis_name_changed
+				}
+			}
+			set_country_flag = tunis_name_changed
+			override_country_name = EYALET_OF_TUNIS
+		}
+		kill_ruler = yes
+		define_ruler = {
+			max_random_adm = 3
+			max_random_dip = 3
+			max_random_mil = 3
+		}
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject = TUN
+					subject_type = march
+				}
+			}
+			add_liberty_desire = -50
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Subjugates Tunis
+country_event = {
+	id = ipeTUN.3
+	title = ipeTUN.2.t
+	desc = ipeTUN.2.d
+	picture = NAVAL_MILITARY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is not good.
+		name = ipeTUN.2.a
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject = TUN
+					subject_type = march
+				}
+			}
+			TUN = {
+				add_liberty_desire = -50
+			}
+		}
+	}
+}

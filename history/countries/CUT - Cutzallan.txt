@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = aztek
+religion = nahuatl 
+technology_group = mesoamerican 
+capital = 6591
+fixed_capital = 6591
+
+1444.1.1 = {
+	monarch = {
+		name = "Axayacatl"
+		dynasty = "Cutzallan"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

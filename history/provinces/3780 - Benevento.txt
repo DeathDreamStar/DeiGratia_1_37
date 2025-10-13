@@ -1,0 +1,50 @@
+#3780 - Benevento
+
+owner = PAP
+controller = PAP
+culture = neapolitan
+religion = catholic
+hre = no
+base_tax = 2
+base_production = 2
+trade_goods = livestock
+base_manpower = 1
+capital = "Benevento"
+add_local_autonomy = 50
+is_city = yes# Estimated
+add_core = PAP
+add_core = NAP
+fort_15th = yes
+
+
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+
+
+1806.3.11 = {
+           controller = FRA
+} # France beats Neapolitan Army, whole Kingdom falls to French forces
+1806.3.30 = {
+           owner = FRA
+           add_core = FRA
+           add_core = SIC
+} # Napoleon places Joseph as King of Naples. Placing as direct control. Sicilian cores to represent Ferdinand and his claim
+1814.3.1 = {
+           owner = NAP
+           controller = NAP
+           remove_core = FRA
+} # Murat sides with Austrians against his brother-in-law
+1815.3.20 = {
+           owner = FRA
+           controller = FRA
+           add_core = FRA
+} # Murat re-aligns with Napoleon during his 100 Days
+1815.5.3 = {
+           owner = PAP
+           controller = PAP
+           add_core = PAP
+           remove_core = FRA
+           remove_core = SIC
+} # Murat removed. Ferdinand restored for second time

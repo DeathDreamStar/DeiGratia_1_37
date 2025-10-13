@@ -1,0 +1,386 @@
+alb_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		OR = {
+			tag = ALB
+			tag = DKG
+			tag = KST
+			tag = ARI
+			tag = XBT
+		}
+	}
+	has_country_shield = yes
+	
+	alb_skanderbeg_rebellion = {
+		icon = mission_italian_condottiere
+		required_missions = { }
+		trigger = {
+			is_subject = no
+			is_at_war = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = "skanderbeg_rebellion"
+				duration = 7300
+			}
+		}
+	}
+	alb_withstand_the_turks = {
+		icon = mission_non-western_soldiers
+		required_missions = { alb_skanderbeg_rebellion }
+		provinces_to_highlight = {
+			province_id = 6439 # Pukë
+			province_id = 4750 # Krujë
+			province_id = 3847 # Elbasan
+			province_id = 3846 # Berat
+			NOT = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						is_subject_of = ROOT
+						is_subject_of_type = league_associate
+					}
+				}
+			}
+		}
+		trigger = {
+			6439 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						is_subject_of = ROOT
+						is_subject_of_type = league_associate
+					}
+				}
+			}
+			4750 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						is_subject_of = ROOT
+						is_subject_of_type = league_associate
+					}
+				}
+			}
+			3847 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						is_subject_of = ROOT
+						is_subject_of_type = league_associate
+					}
+				}
+			}
+			3846 = {
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						is_subject_of = ROOT
+						is_subject_of_type = league_associate
+					}
+				}
+			}
+			is_subject = no
+		}
+		effect = {
+			add_country_modifier = {
+				name = "albanian_diplomacy"
+				duration = 7300
+			}
+			if = {
+				limit = {
+					NAP = {
+						is_subject = no
+					}
+					OR = {
+						143 = {
+                    		owned_by = TUR
+						}
+						3846 = {
+                    		owned_by = TUR
+						}
+						3847 = {
+                    		owned_by = TUR
+						}
+						4174 = {
+                    		owned_by = TUR
+						}
+						4175 = {
+                    		owned_by = TUR
+						}
+						4750 = {
+                    		owned_by = TUR
+						}
+						6439 = {
+                    		owned_by = TUR
+						}
+					}
+				}
+				NAP = {
+					country_event = {
+						id = ipeALB.1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					NAP = {
+						is_subject = yes
+					}
+					OR = {
+						143 = {
+                    		owned_by = TUR
+						}
+						3846 = {
+                    		owned_by = TUR
+						}
+						3847 = {
+                    		owned_by = TUR
+						}
+						4174 = {
+                    		owned_by = TUR
+						}
+						4175 = {
+                    		owned_by = TUR
+						}
+						4750 = {
+                    		owned_by = TUR
+						}
+						6439 = {
+                    		owned_by = TUR
+						}
+					}
+				}
+				NAP = {
+					overlord = {
+						country_event = {
+							id = ipeALB.1
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = PAP
+					religion = catholic
+				}
+				PAP = {
+					add_opinion = {
+						who = ROOT
+						modifier = opinion_pap_albania
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = POL
+					POL = { religion = catholic }
+				}
+				POL = {
+					add_opinion = {
+						who = ROOT
+						modifier = opinion_legacy_of_varna
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = HUN
+					HUN = { religion = catholic }
+				}
+				HUN = {
+					add_opinion = {
+						who = ROOT
+						modifier = opinion_legacy_of_varna
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = BOH
+					BOH = { religion = catholic }
+				}
+				BOH = {
+					add_opinion = {
+						who = ROOT
+						modifier = opinion_legacy_of_varna
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = LIT
+					LIT = { religion = catholic }
+				}
+				LIT = {
+					add_opinion = {
+						who = ROOT
+						modifier = opinion_legacy_of_varna
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = TEU
+					TEU = { religion = catholic }
+				}
+				TEU = {
+					add_opinion = {
+						who = ROOT
+						modifier = opinion_legacy_of_varna
+					}
+				}
+			}
+		}
+	}
+	alb_inspire_resistance = {
+		icon = mission_build_up_to_force_limit
+		required_missions = { alb_withstand_the_turks }
+		provinces_to_highlight = {
+			owned_by = TUR
+		}
+		trigger = {
+			if = {
+				limit = {
+					exists = TUR
+				}
+				custom_trigger_tooltip = {
+					tooltip = albanian_victory_tt
+					has_country_flag = albanian_victory
+				}
+			}
+			else = {
+				num_of_cities = 10
+			}
+			if = {
+				limit = {
+					exists = TUR
+					TUR = {
+						any_owned_province = {
+							continent = europe
+						}
+					}
+				}
+				has_spy_network_in = {
+					who = TUR
+					value = 50
+				}
+			}
+			else = {
+				any_rival_country = {
+					has_spy_network_from = {
+						who = ROOT
+						value = 50
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "alb_inspire_resistance"
+				duration = -1
+			}
+			custom_tooltip = albanian_inspiration_tt
+			hidden_effect = {
+				europe = {
+					limit = {
+						owned_by = TUR
+						religion_group = christian
+					}
+					add_unrest = 10
+				}
+			}
+		}
+	}
+	alb_lord_of_albania = {
+		icon = mission_empire
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				area = northern_albania_area
+				area = albania_area
+			}
+			OR = {
+				country_or_non_sovereign_subject_holds = ROOT
+				owner = {
+					is_subject_of = ROOT
+					is_subject_of_type = league_associate
+				}
+			}
+		}
+		trigger = {
+			northern_albania_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						is_subject_of = ROOT
+						is_subject_of_type = league_associate
+					}
+				}
+			}
+			albania_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					owner = {
+						is_subject_of = ROOT
+						is_subject_of_type = league_associate
+					}
+				}
+			}
+		}
+		effect = {
+			add_mil_power = 200
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = league_associate
+					has_country_flag = lezhe_league_member
+				}
+				ROOT = {
+					inherit = PREV
+				}
+			}
+		}
+	}
+	alb_end_turkish_rule = {
+		icon = mission_crusade_for_varna
+		required_missions = { alb_lord_of_albania }
+		provinces_to_highlight = {
+			continent = europe
+			OR = {
+				owned_by = TUR
+				owner = {
+					is_subject_of = TUR
+				}
+			}
+		}
+		trigger = {
+			europe = {
+				type = all
+				NOT = {
+					owned_by = TUR
+				}
+			}
+			europe = {
+				type = all
+				NOT = {
+					owner = {
+						is_subject_of = TUR
+					}
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			change_mil = 1
+			add_country_modifier = {
+				name = "legacy_of_skanderbeg"
+				duration = -1
+			}
+		}
+	}
+}

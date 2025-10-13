@@ -1,0 +1,587 @@
+namespace = ipeTIM
+normal_or_historical_nations = yes
+
+# The Timurid Renaissance (Timurids)
+country_event = {
+	id = ipeTIM.1
+	title = ipeTIM.1.t
+	desc = ipeTIM.1.d
+	picture = CITY_VIEW_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = TIM
+		owns = 446
+		NOT = {
+			is_year = 1470
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = {
+		name = ipeTIM.1.a
+		add_country_modifier = {
+			name = timurid_renaissance
+			duration = 9125
+		}
+		446 = {
+			add_institution_embracement = {
+				which = renaissance
+				value = 100
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					TRS = {
+						owns = 454
+					}
+				}
+				TRS = {
+					country_event = {
+						id = ipeTIM.2
+						days = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+# The Timurid Renaissance (Transoxiana)
+country_event = {
+	id = ipeTIM.2
+	title = ipeTIM.1.t
+	desc = ipeTIM.1.d
+	picture = CITY_VIEW_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = ipeTIM.1.a
+		add_country_modifier = {
+			name = timurid_renaissance
+			duration = 9125
+		}
+		454 = {
+			add_institution_embracement = {
+				which = renaissance
+				value = 100
+			}
+		}
+	}
+}
+
+# The Death of Ispend bin Yusuf
+country_event = {
+	id = ipeTIM.3
+	title = ipeTIM.3.t
+	desc = ipeTIM.3.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { # It is time to reunite the Black Sheep!
+		name = ipeTIM.3.a
+		IRQ = {
+			every_owned_province = {
+				add_core = QAR
+			}
+		}
+	}
+}
+
+# The Death of Ispend bin Yusuf
+country_event = {
+	id = ipeTIM.4
+	title = ipeTIM.4.t
+	desc = ipeTIM.4.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	hidden = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = IRQ
+		has_ruler_flag = death_of_ispend
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		kill_ruler = yes
+		QAR = {
+			country_event = {
+				id = ipeTIM.3
+			}
+		}
+	}
+
+	option = {
+		name = ipeTIM.4.a
+	}
+}
+
+# The Allegiance of Kerman
+country_event = {
+	id = ipeTIM.5
+	title = ipeTIM.5.t
+	desc = ipeTIM.5.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will remember this.
+		name = ipeTIM.5.a
+		trigger = {
+			tag = TIM
+		}
+		tooltip = {
+			QOM = {
+				create_subject = {
+					subject = KRM
+					subject_type = vassal
+				}
+			}
+			add_opinion = {
+				who = KRM
+				modifier = kermani_betrayal
+			}
+		}
+		add_legitimacy = -10
+	}
+
+	option = { # Their loyalty will be rewarded.
+		name = ipeTIM.5.b
+		tooltip = {
+			QOM = {
+				create_subject = {
+					subject = KRM
+					subject_type = vassal
+				}
+			}
+			add_opinion = {
+				who = KRM
+				modifier = loyal_to_ajam
+			}
+		}
+	}
+}
+
+# The Allegiance of Kerman
+country_event = {
+	id = ipeTIM.6
+	title = ipeTIM.5.t
+	desc = ipeTIM.6.d
+	picture = ACCUSATION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	major_trigger = {
+		dynasty = "Gurkani"
+	}
+
+	trigger = {
+		tag = KRM
+		is_subject_of = TIM
+		is_at_war = no
+		TIM = {
+			is_at_war = no
+			owns = 446
+		}
+		QOM = {
+			exists = yes
+			is_subject = no
+			is_at_war = no
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = { # We will side with Herat.
+		name = ipeTIM.6.a
+		ai_chance = {
+			factor = 0
+		}
+		TIM = {
+			add_opinion = {
+				who = ROOT
+				modifier = loyal_to_herat
+			}
+		}
+	}
+
+	option = { # We will side with Ajam.
+		name = ipeTIM.6.b
+		ai_chance = {
+			factor = 100
+		}
+		TIM = {
+			add_opinion = {
+				who = ROOT
+				modifier = kermani_betrayal
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeTIM.5
+				}
+			}
+		}
+		QOM = {
+			add_opinion = {
+				who = ROOT
+				modifier = loyal_to_ajam
+			}
+			create_subject = {
+				subject = ROOT
+				subject_type = vassal
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeTIM.5
+				}
+			}
+		}
+	}
+}
+
+# The Division of Khorasan
+country_event = {
+	id = ipeTIM.7
+	title = ipeTIM.7.t
+	desc = ipeTIM.7.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	major_trigger = {
+		dynasty = "Gurkani"
+	}
+
+	trigger = {
+		tag = TIM
+		NOT = {
+			exists = KHO
+			exists = MRV
+			has_ruler_modifier = shahrukhs_empire
+		}
+		any_owned_province = {
+			is_core = KHO
+			OR = {
+				province_id = 427
+				province_id = 2214
+				province_id = 2235
+				province_id = 2236
+				province_id = 3499
+			}
+		}
+		any_owned_province = {
+			is_core = MRV
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					is_core = KHO
+				}
+				set_province_flag = khorasani_core
+				remove_core = KHO
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						province_id = 427
+						province_id = 2214
+						province_id = 2235
+						province_id = 2236
+						province_id = 3499
+					}
+				}
+				add_core = KHO
+				clr_province_flag = khorasani_core
+			}
+			release = KHO
+			KHO = {
+				change_religion = sunni
+				capital_scope = {
+					build_to_forcelimit = {
+                        infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				define_ruler = {
+					name = "Babur bin Baysonqor"
+					dynasty = "Gurkani"
+					adm = 3
+					dip = 5
+					mil = 5
+					culture = uzbehk
+				}
+				add_ruler_personality = bold_fighter_personality
+                change_government = monarchy
+                add_government_reform = timurid_emirate
+                adopt_reform_progress = ROOT
+				set_government_rank = 2
+			}
+			every_owned_province = {
+				limit = {
+					has_province_flag = khorasani_core
+				}
+				add_core = KHO
+				clr_province_flag = khorasani_core
+			}
+			release = MRV
+			MRV = {
+				change_religion = sunni
+				capital_scope = {
+					build_to_forcelimit = {
+                        infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				define_ruler = {
+					name = "Sanjar bin Umar Shaikh"
+					dynasty = "Gurkani"
+					adm = 3
+					dip = 3
+					mil = 2
+					culture = uzbehk
+				}
+                change_government = monarchy
+                add_government_reform = timurid_emirate
+                adopt_reform_progress = ROOT
+				set_government_rank = 2
+			}
+			every_province = {
+				limit = {
+					is_core = TIM
+				}
+				add_core = KHO
+				add_core = MRV
+			}
+		}
+	}
+
+	option = { # Allow them to rule these lands as vassals.
+		name = ipeTIM.7.a
+		ai_chance = {
+			factor = 70
+		}
+		tooltip = {
+			release = KHO
+			release = MRV
+		}
+		create_subject = {
+			subject = KHO
+			subject_type = vassal
+		}
+		create_subject = {
+			subject = MRV
+			subject_type = vassal
+		}
+	}
+
+	option = { # The Timurid lands must stay united!
+		name = ipeTIM.7.b
+		ai_chance = {
+			factor = 30
+		}
+		tooltip = {
+			release = KHO
+			release = MRV
+		}
+		KHO = {
+			create_alliance = MRV
+		}
+		declare_war_with_cb = {
+			who = KHO
+			casus_belli = cb_civil_war
+		}
+	}
+
+	option = { # Play as Khorasan.
+		name = ipeTIM.7.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			create_subject = {
+				subject = KHO
+				subject_type = vassal
+			}
+			create_subject = {
+				subject = MRV
+				subject_type = vassal
+			}
+		}
+		switch_tag = KHO
+	}
+
+	option = { # Play as Merv.
+		name = ipeTIM.7.e
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			create_subject = {
+				subject = KHO
+				subject_type = vassal
+			}
+			create_subject = {
+				subject = MRV
+				subject_type = vassal
+			}
+		}
+		switch_tag = MRV
+	}
+}
+
+# The Death of Muhammad Juki
+country_event = {
+	id = ipeTIM.8
+	title = ipeTIM.8.t
+	desc = ipeTIM.8.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	hidden = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SGD
+		has_ruler_flag = death_of_juki
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		kill_ruler = yes
+		SGD = {
+			country_event = {
+				id = ipeTIM.9
+			}
+		}
+	}
+
+	option = {
+		name = ipeTIM.8.a
+	}
+}
+
+# The Death of Muhammad Juki
+country_event = {
+	id = ipeTIM.9
+	title = ipeTIM.9.t
+	desc = ipeTIM.9.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		hidden_effect = {
+			release = BDK
+			BDK = {
+				change_religion = sunni
+				capital_scope = {
+					build_to_forcelimit = {
+                        infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				define_ruler = {
+					name = "Abu Bakr"
+					dynasty = "Gurkani"
+					adm = 2
+					dip = 2
+					mil = 1
+					culture = uzbehk
+				}
+				add_ruler_personality = malevolent_personality
+                change_government = monarchy
+                add_government_reform = timurid_emirate
+                adopt_reform_progress = ROOT
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					is_subject_of = TIM
+					is_subject_of_type = vassal
+				}
+				TIM = {
+					create_subject = {
+						subject = BDK
+						subject_type = vassal
+					}
+				}
+			}
+			if = {
+				limit = {
+					is_subject_of = TIM
+					is_subject_of_type = march
+				}
+				TIM = {
+					create_subject = {
+						subject = BDK
+						subject_type = march
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_country = {
+							has_country_modifier = shahrukhs_empire
+						}
+					}
+				}
+				every_province = {
+					limit = {
+						is_core = TIM
+					}
+					add_core = BDK
+				}
+			}
+		}
+	}
+
+	option = { # Very well.
+		name = ipeTIM.9.a
+		tooltip = {
+			release = BDK
+		}
+	}
+
+	option = { # Play as Badakhshan.
+		name = ipeTIM.9.b
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = BDK
+	}
+}

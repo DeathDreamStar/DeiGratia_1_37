@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+religion = zapotec_religion 
+primary_culture = chinantec
+technology_group = mesoamerican 
+fixed_capital = 6789
+capital = 6789
+
+1444.1.1 = {
+	monarch = {
+		name = "Pinobeya"
+		dynasty = "Oxitlan"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

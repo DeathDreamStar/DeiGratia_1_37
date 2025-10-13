@@ -1,0 +1,96 @@
+ottoman_civil_war = {
+	potential = {
+		tag = TUR
+		normal_or_historical_nations = yes
+		is_free_or_tributary_trigger = yes
+		uses_doom = no
+		NOT = {
+			has_global_flag = had_ottoman_civil_war
+		}
+	}
+
+	can_start = {
+		current_age = age_of_discovery
+		has_any_disaster = no
+		has_regency = no
+		ruler_age = 40
+		is_at_war = no
+		owns = 151
+		owns = 149
+		owns = 1846
+		has_reform = ottoman_government
+		custom_trigger_tooltip = {
+			tooltip = ottoman_civil_war_start.tooltip
+			has_global_flag = ottoman_civil_war_possible
+			NOT = {
+				has_global_flag = cem_rebels
+				exists = AMS
+			}
+		}
+	}
+	
+	can_stop = {
+		OR = {
+			has_any_disaster = yes
+			is_subject = yes
+			is_at_war = yes
+			NOT = {
+				has_reform = ottoman_government
+			}
+		}
+	}
+
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = { legitimacy = 75 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { legitimacy = 50 }
+		}
+		modifier = {
+			factor = 1
+			NOT = { legitimacy = 25 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { ADM = 2 }
+		}		
+		modifier = {
+			factor = 0.5
+			NOT = { DIP = 2 }
+		}		
+		modifier = {
+			factor = 0.5
+			NOT = { MIL = 2 }
+		}
+	}
+
+	can_end = {
+		stability = 1
+		NOT = {
+			exists = AMS
+		}
+		NOT = {
+			exists = RME
+		}
+		NOT = {
+			exists = TEK
+		}
+		NOT = {
+			has_country_modifier = dishonorable_surrender
+		}
+	}
+	
+	modifier = {
+		legitimacy = -1
+	}	
+	
+	on_start = ottoman_civil_war.1
+	on_end = ottoman_civil_war.100
+}

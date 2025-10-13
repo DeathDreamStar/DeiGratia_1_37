@@ -1,0 +1,9 @@
+﻿l_english:
+ ipeTUN.1.t: "The Subjugation of Tunis"
+ ipeTUN.1.d: "The forces of $COUNTRY$ have captured the important seaport of Tunis, allowing us to overthrow [TUN.Monarch.GetName] [TUN.Monarch.GetTitle] and put a puppet ruler in his place. This will greatly expand our influence in the Mediterranean and allow us to project our naval power further than ever before."
+ ipeTUN.1.a: "Excellent."
+ EYALET_OF_TUNIS: "Tunis"
+ EYALET_OF_TUNIS_ADJ: "Tunisian"
+ ipeTUN.2.t: "$FROMCOUNTRY$ Subjugates Tunis"
+ ipeTUN.2.d: "To our great dismay, the forces of $FROMCOUNTRY$ have captured the important seaport of Tunis, overthrowing [TUN.Monarch.GetName] [TUN.Monarch.GetTitle] and putting a feeble puppet ruler in his place. This has greatly expanded $FROMCOUNTRY$’s influence in the Mediterranean, and will allow them to project their naval power further than ever before."
+ ipeTUN.2.a: "This is not good."

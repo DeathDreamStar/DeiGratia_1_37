@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_despotism
+government_rank = 1
+primary_culture = canarian
+religion = animism
+capital = 4565
+technology_group = macaronesian
+
+1444.11.11 = {
+	monarch = {
+		name = "Betzenuriya"
+		dynasty = "Adeje"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

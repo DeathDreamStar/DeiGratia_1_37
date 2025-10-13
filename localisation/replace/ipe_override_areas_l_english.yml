@@ -1,0 +1,682 @@
+﻿l_english:
+ aegean_archipelago_area: "Southern Aegean"
+ aegean_archipelago_area_adj: "Southern Aegean"
+ aegean_archipelago_area_name: "Southern Aegean"
+
+ algiers_area: "Tlemcen"
+ algiers_area_adj: "Tlemceni"
+ algiers_area_name: "Tlemcen"
+
+ andhra_area: "Southern Andhra"
+ andhra_area_adj: "Southern Andhran"
+ andhra_area_name: "Southern Andhra"
+
+ azbin_area: "Air"
+ azbin_area_adj: "Air"
+ azbin_area_name: "Air"
+
+ berar_area: "West Berar"
+ berar_area_adj: "West Berari"
+ berar_area_name: "West Berar"
+
+ bourgogne_area: "Franche-Comté"
+ bourgogne_area_adj: "Franche-Comté"
+ bourgogne_area_name: "Franche-Comté"
+
+ brittany_area: "Nantais"
+ brittany_area_adj: "Nantais"
+ brittany_area_name: "Nantais"
+
+ brunei_area: "Sarawak"
+ brunei_area_adj: "Sarawak"
+ brunei_area_name: "Sarawak"
+ 
+ bulgaria_area: "Southern Bulgaria"
+ bulgaria_area_adj: "Southern Bulgarian"
+ bulgaria_area_name: "Southern Bulgaria"
+
+ calabria_area: "Calabria-Lucania"
+ calabria_area_adj: "Calabrian-Lucanian"
+ calabria_area_name: "Calabria-Lucania"
+
+ cambodia_area: "Northwestern Cambodia"
+ cambodia_area_adj: "Northwestern Cambodian"
+ cambodia_area_name: "Northwestern Cambodia"
+
+ cape_of_good_hope_area: "Western Cape"
+ cape_of_good_hope_area_adj: "Western Cape"
+ cape_of_good_hope_area_name: "Western Cape"
+
+ carinthia_area: "Eastern Carniola"
+ carinthia_area_adj: "Eastern Carniolan"
+ carinthia_area_name: "Eastern Carniola"
+
+ castille_area: "Castilla la Vieja"
+ castille_area_adj: "Castilla la Vieja"
+ castille_area_name: "Castilla la Vieja"
+
+ central_ethiopia_area: "Gojjam"
+ central_ethiopia_area_adj: "Gojjam"
+ central_ethiopia_area_name: "Gojjam"
+
+ central_italy_area: "Marche"
+ central_italy_area_adj: "Marche"
+ central_italy_area_name: "Marche"
+
+ champagne_area: "Southern Champagne"
+ champagne_area_adj: "Southern Champenoise"
+ champagne_area_name: "Southern Champagne"
+
+ champa_area: "Northern Champa"
+ champa_area_adj: "Northern Champa"
+ champa_area_name: "Northern Champa"
+
+ corsica_sardinia_area: "Sardinia"
+ corsica_sardinia_area_adj: "Sardinian"
+ corsica_sardinia_area_name: "Sardinia"
+
+ cukurova_area: "Eastern Çukurova"
+ cukurova_area_adj: "Eastern Çukurova"
+ cukurova_area_name: "Eastern Çukurova"
+
+ djerba_area: "Southern Tunisia"
+ djerba_area_adj: "Southern Tunisian"
+ djerba_area_name: "Southern Tunisia"
+
+ east_azbin_area: "Damagaram"
+ east_azbin_area_adj: "Damagaram"
+ east_azbin_area_name: "Damagaram"
+
+ emilia_romagna_area: "Romagna"
+ emilia_romagna_area_adj: "Romagnan"
+ emilia_romagna_area_name: "Romagna"
+
+ finland_area: "Western Finland"
+ finland_area_adj: "Western Finnish"
+ finland_area_name: "Western Finland"
+
+ fujian_area: "Northern Fujian"
+ fujian_area_adj: "Northern Fujian"
+ fujian_area_name: "Northern Fujian"
+
+ guangxi_area: "Northern Guangxi"
+ guangxi_area_adj: "Northern Guangxi"
+ guangxi_area_name: "Northern Guangxi"
+
+ henan_area: "Southern Henan"
+ henan_area_adj: "Southern Henan"
+ henan_area_name: "Southern Henan"
+
+ hesse_area: "Northern Hesse"
+ hesse_area_adj: "Northern Hessian"
+ hesse_area_name: "Northern Hesse"
+
+ hokkaido_area: "Northern Hokkaido"
+ hokkaido_area_adj: "Northern Hokkaido"
+ hokkaido_area_name: "Northern Hokkaido"
+
+ hokuriku_area: "Southern Hokuriku"
+ hokuriku_area_adj: "Southern Hokuriku"
+ hokuriku_area_name: "Southern Hokuriku"
+
+ holstein_area: "Holstein"
+ holstein_area_adj: "Holsteiner"
+ holstein_area_name: "Holstein"
+
+ huguang_area: "Western Hubei"
+ huguang_area_adj: "Western Hubei"
+ huguang_area_name: "Western Hubei"
+
+ hunan_area: "Northern Hunan"
+ hunan_area_adj: "Northern Hunan"
+ hunan_area_name: "Northern Hunan"
+
+ ifat_area: "Harar"
+ ifat_area_adj: "Harari"
+ ifat_area_name: "Harar"
+
+ jiangxi_area: "Western Jiangxi"
+ jiangxi_area_adj: "Western Jiangxi"
+ jiangxi_area_name: "Western Jiangxi"
+
+ jubba_area: "Eastern Jubaland"
+ jubba_area_adj: "Eastern Juba"
+ jubba_area_name: "Eastern Jubaland"
+
+ kalimantan_area: "East Kalimantan"
+ kalimantan_area_adj: "East Kalimantan"
+ kalimantan_area_name: "East Kalimantan"
+
+ kinai_area: "Western Kansai"
+ kinai_area_adj: "Western Kansai"
+ kinai_area_name: "Western Kansai"
+
+ kongo_area: "Northern Kongo"
+ kongo_area_adj: "Northern Kongo"
+ kongo_area_name: "Northern Kongo"
+
+ lazio_area: "Lazio"
+ lazio_area_adj: "Lazio"
+ lazio_area_name: "Lazio"
+
+ liaoning_area: "Eastern Liaoning"
+ liaoning_area_adj: "Eastern Liaoning"
+ liaoning_area_name: "Eastern Liaoning"
+
+ lombardy_area: "Eastern Lombardy"
+ lombardy_area_adj: "Eastern Lombard"
+ lombardy_area_name: "Eastern Lombardy"
+
+ lower_andalucia_area: "Córdoba"
+ lower_andalucia_area_adj: "Córdoban"
+ lower_andalucia_area_name: "Córdoba"
+
+ lower_swabia_area: "Lower Swabia"
+ lower_swabia_area_adj: "Lower Swabian"
+ lower_swabia_area_name: "Lower Swabia"
+
+ lowlands_area: "Eastern Lowlands"
+ lowlands_area_adj: "Eastern Lowlands"
+ lowlands_area_name: "Eastern Lowlands"
+
+ makran_area: "Eastern Makran"
+ makran_area_adj: "Eastern Makrani"
+ makran_area_name: "Eastern Makran"
+
+ malaya_area: "Johor"
+ malaya_area_adj: "Johori"
+ malaya_area_name: "Johor"
+
+ malwa_area: "Western Malwa"
+ malwa_area_adj: "Western Malvi"
+ malwa_area_name: "Western Malwa"
+
+ manding_area: "Western Manding"
+ manding_area_adj: "Western Manding"
+ manding_area_name: "Western Manding"
+
+ mazovia_area: "Southern Mazovia"
+ mazovia_area_adj: "Southern Mazovian"
+ mazovia_area_name: "Southern Mazovia"
+
+ nepal_area: "Central Nepal"
+ nepal_area_adj: "Central Nepali"
+ nepal_area_name: "Central Nepal"
+
+ normandy_area: "Caux"
+ normandy_area_adj: "Caux"
+ normandy_area_name: "Caux"
+
+ northern_greece_area: "Epirus"
+ northern_greece_area_adj: "Epirote"
+ northern_greece_area_name: "Epirus"
+
+ north_henan_area: "Northern Henan"
+ north_henan_area_adj: "Northern Henan"
+ north_henan_area_name: "Northern Henan"
+
+ north_lowlands_area: "Northern Lowlands"
+ north_lowlands_area_adj: "Northern Lowlands"
+ north_lowlands_area_name: "Northern Lowlands"
+
+ north_tenasserim_area: "Tenasserim"
+ north_tenasserim_area_adj: "Tenasserim"
+ north_tenasserim_area_name: "Tenasserim"
+
+ north_westphalia_area: "Northern Westphalia"
+ north_westphalia_area_adj: "Northern Westphalian"
+ north_westphalia_area_name: "Northern Westphalia"
+
+ ogaden_area: "Northern Ogaden"
+ ogaden_area_adj: "Northern Ogadeni"
+ ogaden_area_name: "Northern Ogaden"
+
+ oudh_area: "Southern Oudh"
+ oudh_area_adj: "Southern Awadhi"
+ oudh_area_name: "Southern Oudh"
+
+ perm_area: "Western Perm"
+ perm_area_adj: "Western Permian"
+ perm_area_name: "Western Perm"
+
+ podlasie_area: "Northern Podlasie"
+ podlasie_area_adj: "Northern Podlasie"
+ podlasie_area_name: "Northern Podlasie"
+
+ saigoku_area: "Eastern Sanyodo"
+ saigoku_area_adj: "Eastern Sanyodo"
+ saigoku_area_name: "Eastern Sanyodo"
+
+ sanindo_area: "Eastern Sanindo"
+ sanindo_area_adj: "Eastern Sanindo"
+ sanindo_area_name: "Eastern Sanindo"
+
+ shaanxi_area: "Southern Shaanxi"
+ shaanxi_area_adj: "Southern Shaanxi"
+ shaanxi_area_name: "Southern Shaanxi"
+
+ shandong_area: "Western Shandong"
+ shandong_area_adj: "Western Shandong"
+ shandong_area_name: "Western Shandong"
+
+ shanxi_area: "Central Shanxi"
+ shanxi_area_adj: "Central Shanxi"
+ shanxi_area_name: "Central Shanxi"
+
+ silesia_area: "Opole"
+ silesia_area_adj: "Opole"
+ silesia_area_name: "Opole"
+
+ slovakia_area: "Western Slovakia"
+ slovakia_area_adj: "Western Slovak"
+ slovakia_area_name: "Western Slovakia"
+
+ somaliland_area: "Eastern Somaliland"
+ somaliland_area_adj: "Eastern Somali"
+ somaliland_area_name: "Eastern Somaliland"
+
+ southern_transylvania_area: "Temes"
+ southern_transylvania_area_adj: "Temes"
+ southern_transylvania_area_name: "Temes"
+
+ south_african_plateau_area: "Northern Cape"
+ south_african_plateau_area_adj: "Northern Cape"
+ south_african_plateau_area_name: "Northern Cape"
+
+ south_korea_area: "Jeolla"
+ south_korea_area_adj: "Jeolla"
+ south_korea_area_name: "Jeolla"
+
+ south_sulawesi_area: "South Peninsula"
+ south_sulawesi_area_adj: "South Peninsular"
+ south_sulawesi_area_name: "South Peninsula"
+
+ sulawesi_area: "East Peninsula"
+ sulawesi_area_adj: "East Peninsular"
+ sulawesi_area_name: "East Peninsula"
+
+ switzerland_area: "Western Switzerland"
+ switzerland_area_adj: "Western Swiss"
+ switzerland_area_name: "Western Switzerland"
+
+ syr_darya_area: "Turkestan"
+ syr_darya_area_adj: "Turkestani"
+ syr_darya_area_name: "Turkestan"
+
+ tabarestan_area: "Western Tabarestan"
+ tabarestan_area_adj: "Western Tabarestani"
+ tabarestan_area_name: "Western Tabarestan"
+
+ tanzania_area: "Tanganyika"
+ tanzania_area_adj: "Tanganyikan"
+ tanzania_area_name: "Tanganyika"
+
+ tenasserim_area: "Phuket"
+ tenasserim_area_adj: "Phuket"
+ tenasserim_area_name: "Phuket"
+
+ thohoku_area: "Northern Sanriku"
+ thohoku_area_adj: "Northern Sanriku"
+ thohoku_area_name: "Northern Sanriku"
+
+ thuringia_area: "Eastern Thuringia"
+ thuringia_area_adj: "Eastern Thuringian"
+ thuringia_area_name: "Eastern Thuringia"
+
+ transdanubia_area: "Northern Transdanubia"
+ transdanubia_area_adj: "Northern Transdanubian"
+ transdanubia_area_name: "Northern Transdanubia"
+
+ tunisia_area: "Northern Tunisia"
+ tunisia_area_adj: "Northern Tunisian"
+ tunisia_area_name: "Northern Tunisia"
+
+ tuscany_area: "Florence"
+ tuscany_area_adj: "Florentine"
+ tuscany_area_name: "Florence"
+
+ tver_area: "Eastern Tver"
+ tver_area_adj: "Eastern Tverian"
+ tver_area_name: "Eastern Tver"
+
+ upper_andalucia_area: "Granada"
+ upper_andalucia_area_adj: "Granadan"
+ upper_andalucia_area_name: "Granada"
+
+ upper_swabia_area: "Upper Swabia"
+ upper_swabia_area_adj: "Upper Swabian"
+ upper_swabia_area_name: "Upper Swabia"
+
+ ural_area: "Northern Ural"
+ ural_area_adj: "Northern Ural"
+ ural_area_name: "Northern Ural"
+
+ valencia_area: "Valéncia"
+ valencia_area_adj: "Valéncia"
+ valencia_area_name: "Valéncia"
+
+ venetia_area: "Eastern Venetia"
+ venetia_area_adj: "Eastern Venetian"
+ venetia_area_name: "Eastern Venetia"
+
+ vietnam_area: "Bac Trung Bô"
+ vietnam_area_adj: "Bac Trung Bô"
+ vietnam_area_name: "Bac Trung Bô"
+
+ wallachia_area: "Western Muntenia"
+ wallachia_area_adj: "Western Muntenian"
+ wallachia_area_name: "Western Muntenia"
+
+ westphalia_area: "Southern Westphalia"
+ westphalia_area_adj: "Southern Westphalian"
+ westphalia_area_name: "Southern Westphalia"
+
+ west_burgundy_area: "Bourgogne"
+ west_burgundy_area_adj: "Bourguignon"
+ west_burgundy_area_name: "Bourgogne"
+
+ zhejiang_area: "Ningbo"
+ zhejiang_area_adj: "Ningbo"
+ zhejiang_area_name: "Ningbo"
+
+ west_africa_coast_area: "Gold Coast"
+ west_africa_coast_area_adj: "Gold Coaster"
+
+ lower_niger_area: "Southern Nupe"
+ lower_niger_area_adj: "Southern Nupe"
+ lower_niger_area_name: "Southern Nupe"
+
+ jolof_area: "Eastern Jolof"
+ jolof_area_adj: "Eastern Jolof"
+ jolof_area_name: "Eastern Jolof"
+
+ provence_area: "Haute-Provence"
+ provence_area_adj: "Haute-Provençal"
+ provence_area_name: "Haute-Provence"
+
+ albania_area: "Southern Albania"
+ albania_area_adj: "Southern Albanian"
+ albania_area_name: "Southern Albania"
+
+ rayalaseema_area: "Vijayanagar"
+ rayalaseema_area_adj: "Vijayanagari"
+ rayalaseema_area_name: "Vijayanagar"
+
+ bosnia_area: "Western Bosnia"
+ bosnia_area_adj: "Western Bosnian"
+ bosnia_area_name: "Western Bosnia"
+
+ piedmont_area: "Western Piedmont"
+ piedmont_area_adj: "Western Piedmontese"
+ piedmont_area_name: "Western Piedmont"
+
+ huanuco_area: "Huánuco"
+ huanuco_area_adj: "Huánuco"
+ huanuco_area_name: "Huánuco"
+
+ sao_francisco_area: "Western Bahia"
+ sao_francisco_area_adj: "Western Bahia"
+ sao_francisco_area_name: "Western Bahia"
+
+ bahia_area: "Eastern Bahia"
+ bahia_area_adj: "Eastern Bahia"
+ bahia_area_name: "Eastern Bahia"
+
+ kuntisuyu_area: "Western Kuntisuyu"
+ kuntisuyu_area_adj: "Western Kuntisuyu"
+ kuntisuyu_area_name: "Western Kuntisuyu"
+
+ antisuyu_area: "Southern Antisuyu"
+ antisuyu_area_name: "Southern Antisuyu"
+ antisuyu_area_adj: "Southern Antisuyu"
+
+ greater_antilles_area: "Puerto Rico"
+ greater_antilles_area_name: "Puerto Rico"
+ greater_antilles_area_adj: "Puerto Rican"
+
+ leeward_islands_area: "Southern Leeward Islands"
+ leeward_islands_area_name: "Southern Leeward Islands"
+ leeward_islands_area_adj: "Southern Leeward Islander"
+ 
+ kathiawar_area: "Kutch"
+ kathiawar_area_name: "Kutch"
+ kathiawar_area_adj: "Kutchi"
+
+ guatemala_area: "Guatemalan Highlands"
+ guatemala_area_name: "Guatemalan Highlands"
+ guatemala_area_adj: "Guatemalan Highlander"
+
+ guatemala_lowlands_area: "Guatemalan Lowlands"
+ guatemala_lowlands_area_name: "Guatemalan Lowlands"
+ guatemala_lowlands_area_adj: "Guatemalan Lowlander"
+
+ nayarit_area: "Sinaloa"
+ nayarit_area_name: "Sinaloa"
+ nayarit_area_adj: "Sinaloan"
+
+ tierra_caliente_area: "Western Michoacán"
+ tierra_caliente_area_name: "Western Michoacán"
+ tierra_caliente_area_adj: "Western Michoacán"
+
+ michoacan_area: "Eastern Michoacán"
+ michoacan_area_name: "Eastern Michoacán"
+ michoacan_area_adj: "Eastern Michoacán"
+
+ guerrero_area: "Western Guerrero"
+ guerrero_area_name: "Western Guerrero"
+ guerrero_area_adj: "Western Guerrero"
+
+ appalachia_area: "West Virginia"
+ appalachia_area_name: "West Virginia"
+ appalachia_area_adj: "West Virginian"
+
+ american_georgia_area: "Lower Georgia"
+ american_georgia_area_name: "Lower Georgia"
+ american_georgia_area_adj: "Lower Georgian"
+
+ florida_area: "East Florida"
+ florida_area_name: "East Florida"
+ florida_area_adj: "East Floridian"
+
+ upper_louisiana_area: "Missouri"
+ upper_louisiana_area_name: "Missouri"
+ upper_louisiana_area_adj: "Missourian"
+
+ south_dakota_area_name: "Minnesota"
+ south_dakota_area_adj: "Minnesotan"
+
+ lower_plains_area: "Oklahoma"
+ lower_plains_area_name: "Oklahoma"
+ lower_plains_area_adj: "Oklahoman"
+
+ texas_area: "Gulf Texas"
+ texas_area_name: "Gulf Texas"
+ texas_area_adj: "Gulf Texan"
+
+ pecos_area: "West Texas"
+ pecos_area_name: "West Texas"
+ pecos_area_adj: "West Texan"
+
+ upper_missouri_area: "Montana"
+ upper_missouri_area_name: "Montana"
+ upper_missouri_area_adj: "Montanan"
+
+ california_area: "Central Coast"
+ california_area_name: "Central Coast"
+ california_area_adj: "Central Coaster"
+
+ snake_river_area: "Rockies"
+ snake_river_area_name: "Rockies"
+ snake_river_area_adj: "Rockies"
+
+ cote_nord_area: "Côte-Nord"
+ cote_nord_area_name: "Côte-Nord"
+ cote_nord_area_adj: "Côte-Nord"
+
+ notre_dame_mountains_area: "Bas-Saint-Laurent"
+ notre_dame_mountains_area_name: "Bas-Saint-Laurent"
+ notre_dame_mountains_area_adj: "Bas-Saint-Laurent"
+
+ huronia_area: "Western Ontario"
+ huronia_area_name: "Western Ontario"
+ huronia_area_adj: "Western Ontarian"
+
+ upper_canada_area: "Eastern Ontario"
+ upper_canada_area_name: "Eastern Ontario"
+ upper_canada_area_adj: "Eastern Ontarian"
+
+ upper_ontario_area: "Northern Ontario"
+ upper_ontario_area_name: "Northern Ontario"
+ upper_ontario_area_adj: "Northern Ontarian"
+
+ kham_area: "Western Kham"
+ kham_area_name: "Western Kham"
+ kham_area_adj: "Western Kham"
+
+ highlands_area: "Southern Highlands"
+ highlands_area_name: "Southern Highlands"
+ highlands_area_adj: "Southern Highlander"
+
+ yangtze_delta_area: "Yangtze River"
+ yangtze_delta_area_name: "Yangtze River"
+ yangtze_delta_area_adj: "Yangtze River"
+
+ guangdong_area: "Eastern Guangdong"
+ guangdong_area_name: "Eastern Guangdong"
+ guangdong_area_adj: "Eastern Guangdong"
+
+ west_guangdong_area: "Western Guangdong"
+ west_guangdong_area_name: "Western Guangdong"
+ west_guangdong_area_adj: "Western Guangdong"
+
+ anhui_area: "Northern Anhui"
+ anhui_area_name: "Northern Anhui"
+ anhui_area_adj: "Northern Anhui"
+
+ south_anhui_area: "Southern Anhui"
+ south_anhui_area_name: "Southern Anhui"
+ south_anhui_area_adj: "Southern Anhui"
+
+ jiangsu_area: "Northern Jiangsu"
+ jiangsu_area_name: "Northern Jiangsu"
+ jiangsu_area_adj: "Northern Jiangsu"
+
+ south_jiangsu_area: "Southern Jiangsu"
+ south_jiangsu_area_name: "Southern Jiangsu"
+ south_jiangsu_area_adj: "Southern Jiangsu"
+
+ gansu_area: "Eastern Gansu"
+ gansu_area_area_name: "Eastern Gansu"
+ gansu_area_adj: "Eastern Gansu"
+
+ west_gansu_area: "Western Gansu"
+ west_gansu_area_name: "Western Gansu"
+ west_gansu_area_adj: "Western Gansu"
+
+ north_sumatra_area: "Northern Aceh"
+ north_sumatra_area_name: "Northern Aceh"
+ north_sumatra_area_adj: "Northern Acehnese"
+
+ northern_polynesia_area: "Hawaii"
+ northern_polynesia_area_name: "Hawaii"
+ northern_polynesia_area_adj: "Hawaiian"
+
+ garjat_area: "Southern Garjat"
+ garjat_area_name: "Southern Garjat"
+ garjat_area_adj: "Southern Garjati"
+
+ orissa_area: "Northern Orissa"
+ orissa_area_name: "Northern Orissa"
+ orissa_area_adj: "Northern Orissa"
+
+ austria_proper_area: "Lower Austria"
+ austria_proper_area_name: "Lower Austria"
+ austria_proper_area_adj: "Lower Austrian"
+
+ calabria_area: "Calabria"
+ calabria_area_name: "Calabria"
+ calabria_area_adj: "Calabrian"
+
+ marrekesh_area: "Marrakech"
+ marrekesh_area_name: "Marrakech"
+ marrekesh_area_adj: "Marrakech"
+
+ atlas_area: "Fez"
+ atlas_area_name: "Fez"
+ atlas_area_adj: "Fez"
+
+ east_yucatan_area: "Eastern Yucatán"
+ east_yucatan_area_name: "Eastern Yucatán"
+ east_yucatan_area_adj: "Eastern Yucatán"
+
+ yucatan_area: "Western Yucatán"
+ yucatan_area_name: "Western Yucatán"
+ yucatan_area_adj: "Western Yucatán"
+
+ shikoku_area: "Eastern Shikoku"
+ shikoku_area_name: "Eastern Shikoku"
+ shikoku_area_adj: "Eastern Shikoku"
+
+ chubu_area: "Tokai"
+ chubu_area_name: "Tokai"
+ chubu_area_adj: "Tokai"
+
+ east_heilongjiang_area: "Northern Heilongjiangord"
+ east_heilongjiang_area_name: "Northern Heilongjiangord"
+ east_heilongjiang_area_adj: "Northern Heilongjiangord"
+
+ heilongjiang_area: "Southern Heilongjiangord"
+ heilongjiang_area_name: "Southern Heilongjiangord"
+ heilongjiang_area_adj: "Southern Heilongjiangord"
+
+ lanka_area: "Jaffna"
+ lanka_area_name: "Jaffna"
+ lanka_area_adj: "Jaffna"
+
+ south_lanka_area: "Kotte"
+ south_lanka_area_name: "Kotte"
+ south_lanka_area_adj: "Kotte"
+
+ nepal_area: "Nepal"
+ nepal_area_name: "Nepal"
+ nepal_area_adj: "Nepali"
+
+ wales_area: "Gwynedd"
+ wales_area_name: "Gwynedd"
+ wales_area_adj: "Gwynedd"
+
+ ulster_area: "Western Ulster"
+ ulster_area_name: "Western Ulster"
+ ulster_area_adj: "Western Ulster"
+
+ eastern_korea_area: "Gyeongsang"
+ eastern_korea_area_name: "Gyeongsang"
+ eastern_korea_area_adj: "Gyeongsang"
+
+ western_korea_area: "Gyeonggi"
+ western_korea_area_name: "Gyeonggi"
+ western_korea_area_adj: "Gyeonggi"
+
+ transylvania_area: "Western Transylvania"
+ transylvania_area_name: "Western Transylvania"
+ transylvania_area_adj: "Western Transylvanian"
+
+ mindanao_area: "Eastern Mindanao"
+ mindanao_area_name: "Eastern Mindanao"
+ mindanao_area_adj: "Eastern Mindanao"
+
+ west_mindanao_area: "Western Mindanao"
+ west_mindanao_area_name: "Western Mindanao"
+ west_mindanao_area_adj: "Western Mindanao"
+
+ south_dakota_area: "Minnesota"
+ south_dakota_area_name: "Minnesota"
+ south_dakota_area_adj: "Minnesotan"
+
+ dakota_area: "Dakota"
+ dakota_area_name: "Dakota"
+ dakota_area_adj: "Dakotan"
+
+ scottish_marches_area: "Northumberland"
+ scottish_marches_area_name: "Northumberland"
+ scottish_marches_area_adj: "Northumberlander"

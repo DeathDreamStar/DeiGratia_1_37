@@ -1,0 +1,66 @@
+#########################################
+# Events for Oyo
+#
+# scripted by Ogulcan Yildirim
+# Localization written by Roger Corominas
+#########################################
+
+namespace = flavor_oyo
+normal_or_historical_nations = yes
+
+#The Oyo Mesi force the ruler to abdicate
+country_event = {
+	id = flavor_oyo.4
+	title = flavor_oyo.4.t
+	desc = flavor_oyo.4.d
+	picture = AFRICAN_BAD_WITH_MONARCH_eventPicture
+	
+	trigger = {
+		tag = OYO
+		estate_influence = {
+			estate = estate_nobles
+			influence = 50
+		}
+		NOT = { stability = 0 }
+		OR = {
+			war_exhaustion = 5
+			num_of_rebel_armies = 3
+			num_of_rebel_controlled_provinces = 5
+			NOT = { stability = 2 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			NOT = { adm = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { dip = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { mil = 3 }
+		}
+		modifier = {
+			factor = 2
+			adm = 5
+		}
+		modifier = {
+			factor = 2
+			dip = 5
+		}
+		modifier = {
+			factor = 2
+			mil = 5
+		}
+	}
+
+	option = {	#Commit Soduku
+		name = flavor_oyo.4.a
+		kill_ruler = yes
+		add_stability = 3
+	}
+}

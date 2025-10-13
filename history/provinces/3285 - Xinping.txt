@@ -1,0 +1,20 @@
+#3285 - Xinping
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = yi
+religion = animism
+capital = "Xinping"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+discovered_by = indian
+add_core = CDL
+add_core = CYI
+add_local_autonomy = 75

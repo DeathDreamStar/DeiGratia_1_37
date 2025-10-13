@@ -1,0 +1,394 @@
+namespace = ipeNED
+normal_or_historical_nations = yes
+
+# The Spread of the Dutch Language
+country_event = {
+    id = ipeNED.1
+    title = ipeNED.1.t
+    desc = ipeNED.1.d
+    picture = CITY_VIEW_eventPicture
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = NED
+        OR = {
+            primary_culture = dutch
+            primary_culture = flemish
+        }
+        100 = { # Leeuwarden
+            owned_by = NED
+            controlled_by = NED
+            is_core = NED
+        }
+        3899 = { # Drenthe
+            owned_by = NED
+            controlled_by = NED
+            is_core = NED
+        }
+        4381 = { # Oversticht
+            owned_by = NED
+            controlled_by = NED
+            is_core = NED
+        }
+        4382 = { # Ommelanden
+            owned_by = NED
+            controlled_by = NED
+            is_core = NED
+        }
+        6921 = { # Groningen
+            owned_by = NED
+            controlled_by = NED
+            is_core = NED
+        }
+        OR = {
+            100 = {
+                culture = low_saxon
+            }
+            3899 = {
+                culture = low_saxon
+            }
+            4381 = {
+                culture = low_saxon
+            }
+            4382 = {
+                culture = low_saxon
+            }
+            6921 = {
+                culture = low_saxon
+            }
+        }
+        is_at_war = no
+    }
+
+    mean_time_to_happen = {
+        months = 240
+    }
+
+    option = {
+        name = ipeNED.1.a
+        if = {
+            limit = {
+                100 = {
+                    culture = low_saxon
+                }
+            }
+            100 = {
+                change_culture = dutch
+            }
+        }
+        if = {
+            limit = {
+                3899 = {
+                    culture = low_saxon
+                }
+            }
+            3899 = {
+                change_culture = dutch
+            }
+        }
+        if = {
+            limit = {
+                4381 = {
+                    culture = low_saxon
+                }
+            }
+            4381 = {
+               change_culture = dutch
+            }
+        }
+        if = {
+            limit = {
+                4382 = {
+                    culture = low_saxon
+                }
+            }
+            4382 = {
+                change_culture = dutch
+            }
+        }
+        if = {
+            limit = {
+                6921 = {
+                    culture = low_saxon
+                }
+            }
+            6921 = {
+                change_culture = dutch
+            }
+        }
+    }
+}
+
+# The Portuguese Empire
+country_event = {
+	id = ipeNED.2
+	title = ipeNED.2.t
+	desc = ipeNED.2.d
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Sharing is caring.
+		name = ipeNED.2.a
+		ai_chance = {
+			factor = 100
+		}
+		add_historical_rival = POR
+		POR = {
+			add_historical_rival = ROOT
+		}
+		custom_tooltip = ipeNED.2.a.tooltip
+		hidden_effect = {
+			POR = {
+				country_event = {
+					id = ipeNED.3
+				}
+				every_owned_province = {
+					limit = {
+						OR = {
+							trade_company_region = trade_company_west_africa
+							trade_company_region = trade_company_east_africa
+							trade_company_region = trade_company_west_india
+							trade_company_region = trade_company_east_india
+							trade_company_region = trade_company_burma
+							trade_company_region = trade_company_coromandel
+							trade_company_region = trade_company_deccan
+							trade_company_region = trade_company_north_india
+							trade_company_region = trade_company_indonesia
+							trade_company_region = trade_company_philippines
+							trade_company_region = trade_company_moluccas
+							trade_company_region = trade_company_indochina
+							trade_company_region = trade_company_south_china
+							trade_company_region = trade_company_east_china
+							trade_company_region = trade_company_north_china
+							trade_company_region = trade_company_hormuz
+							trade_company_region = trade_company_gulf_of_aden
+							trade_company_region = trade_company_katsina
+							trade_company_region = trade_company_timbuktu
+							trade_company_region = trade_company_kongo
+							trade_company_region = trade_company_great_lakes
+							trade_company_region = trade_company_zambezi
+							trade_company_region = trade_company_xian
+							trade_company_region = trade_company_chengdu
+							trade_company_region = trade_company_ethiopia
+							trade_company_region = trade_company_polynesia
+							trade_company_region = trade_company_melanesia
+							trade_company_region = trade_company_lahore
+							colonial_region = colonial_alaska
+							colonial_region = colonial_canada
+							colonial_region = colonial_eastern_america
+							colonial_region = colonial_louisiana
+							colonial_region = colonial_california
+							colonial_region = colonial_mexico
+							colonial_region = colonial_the_carribean
+							colonial_region = colonial_cuba
+							colonial_region = colonial_hispaniola
+							colonial_region = colonial_colombia
+							colonial_region = colonial_peru
+							colonial_region = colonial_la_plata
+							colonial_region = colonial_chile
+							colonial_region = colonial_brazil
+							colonial_region = colonial_australia
+							colonial_region = colonial_cape
+						}
+						is_core = POR
+					}
+					add_core = ROOT
+				}
+				every_subject_country = {
+					every_owned_province = {
+						limit = {
+							OR = {
+								trade_company_region = trade_company_west_africa
+								trade_company_region = trade_company_east_africa
+								trade_company_region = trade_company_west_india
+								trade_company_region = trade_company_east_india
+								trade_company_region = trade_company_burma
+								trade_company_region = trade_company_coromandel
+								trade_company_region = trade_company_deccan
+								trade_company_region = trade_company_north_india
+								trade_company_region = trade_company_indonesia
+								trade_company_region = trade_company_philippines
+								trade_company_region = trade_company_moluccas
+								trade_company_region = trade_company_indochina
+								trade_company_region = trade_company_south_china
+								trade_company_region = trade_company_east_china
+								trade_company_region = trade_company_north_china
+								trade_company_region = trade_company_hormuz
+								trade_company_region = trade_company_gulf_of_aden
+								trade_company_region = trade_company_katsina
+								trade_company_region = trade_company_timbuktu
+								trade_company_region = trade_company_kongo
+								trade_company_region = trade_company_great_lakes
+								trade_company_region = trade_company_zambezi
+								trade_company_region = trade_company_xian
+								trade_company_region = trade_company_chengdu
+								trade_company_region = trade_company_ethiopia
+								trade_company_region = trade_company_polynesia
+								trade_company_region = trade_company_melanesia
+								trade_company_region = trade_company_lahore
+								colonial_region = colonial_alaska
+								colonial_region = colonial_canada
+								colonial_region = colonial_eastern_america
+								colonial_region = colonial_louisiana
+								colonial_region = colonial_california
+								colonial_region = colonial_mexico
+								colonial_region = colonial_the_carribean
+								colonial_region = colonial_cuba
+								colonial_region = colonial_hispaniola
+								colonial_region = colonial_colombia
+								colonial_region = colonial_peru
+								colonial_region = colonial_la_plata
+								colonial_region = colonial_chile
+								colonial_region = colonial_brazil
+								colonial_region = colonial_australia
+								colonial_region = colonial_cape
+							}
+							is_core = PREV
+						}
+						add_core = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	option = { # We shouldn't.
+		name = ipeNED.2.b
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -10
+	}
+}
+
+# The Claims of $FROMCOUNTRY$
+country_event = {
+	id = ipeNED.3
+	title = ipeNED.3.t
+	desc = ipeNED.3.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is absurd!
+		name = ipeNED.3.a
+		tooltip = {
+			add_historical_rival = FROM
+			FROM = {
+				add_historical_rival = ROOT
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						trade_company_region = trade_company_west_africa
+						trade_company_region = trade_company_east_africa
+						trade_company_region = trade_company_west_india
+						trade_company_region = trade_company_east_india
+						trade_company_region = trade_company_burma
+						trade_company_region = trade_company_coromandel
+						trade_company_region = trade_company_deccan
+						trade_company_region = trade_company_north_india
+						trade_company_region = trade_company_indonesia
+						trade_company_region = trade_company_philippines
+						trade_company_region = trade_company_moluccas
+						trade_company_region = trade_company_indochina
+						trade_company_region = trade_company_south_china
+						trade_company_region = trade_company_east_china
+						trade_company_region = trade_company_north_china
+						trade_company_region = trade_company_hormuz
+						trade_company_region = trade_company_gulf_of_aden
+						trade_company_region = trade_company_katsina
+						trade_company_region = trade_company_timbuktu
+						trade_company_region = trade_company_kongo
+						trade_company_region = trade_company_great_lakes
+						trade_company_region = trade_company_zambezi
+						trade_company_region = trade_company_xian
+						trade_company_region = trade_company_chengdu
+						trade_company_region = trade_company_ethiopia
+						trade_company_region = trade_company_polynesia
+						trade_company_region = trade_company_melanesia
+						trade_company_region = trade_company_lahore
+						colonial_region = colonial_alaska
+						colonial_region = colonial_canada
+						colonial_region = colonial_eastern_america
+						colonial_region = colonial_louisiana
+						colonial_region = colonial_california
+						colonial_region = colonial_mexico
+						colonial_region = colonial_the_carribean
+						colonial_region = colonial_cuba
+						colonial_region = colonial_hispaniola
+						colonial_region = colonial_colombia
+						colonial_region = colonial_peru
+						colonial_region = colonial_la_plata
+						colonial_region = colonial_chile
+						colonial_region = colonial_brazil
+						colonial_region = colonial_australia
+						colonial_region = colonial_cape
+					}
+					is_core = POR
+				}
+				add_core = FROM
+			}
+			every_subject_country = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							trade_company_region = trade_company_west_africa
+							trade_company_region = trade_company_east_africa
+							trade_company_region = trade_company_west_india
+							trade_company_region = trade_company_east_india
+							trade_company_region = trade_company_burma
+							trade_company_region = trade_company_coromandel
+							trade_company_region = trade_company_deccan
+							trade_company_region = trade_company_north_india
+							trade_company_region = trade_company_indonesia
+							trade_company_region = trade_company_philippines
+							trade_company_region = trade_company_moluccas
+							trade_company_region = trade_company_indochina
+							trade_company_region = trade_company_south_china
+							trade_company_region = trade_company_east_china
+							trade_company_region = trade_company_north_china
+							trade_company_region = trade_company_hormuz
+							trade_company_region = trade_company_gulf_of_aden
+							trade_company_region = trade_company_katsina
+							trade_company_region = trade_company_timbuktu
+							trade_company_region = trade_company_kongo
+							trade_company_region = trade_company_great_lakes
+							trade_company_region = trade_company_zambezi
+							trade_company_region = trade_company_xian
+							trade_company_region = trade_company_chengdu
+							trade_company_region = trade_company_ethiopia
+							trade_company_region = trade_company_polynesia
+							trade_company_region = trade_company_melanesia
+							trade_company_region = trade_company_lahore
+							colonial_region = colonial_alaska
+							colonial_region = colonial_canada
+							colonial_region = colonial_eastern_america
+							colonial_region = colonial_louisiana
+							colonial_region = colonial_california
+							colonial_region = colonial_mexico
+							colonial_region = colonial_the_carribean
+							colonial_region = colonial_cuba
+							colonial_region = colonial_hispaniola
+							colonial_region = colonial_colombia
+							colonial_region = colonial_peru
+							colonial_region = colonial_la_plata
+							colonial_region = colonial_chile
+							colonial_region = colonial_brazil
+							colonial_region = colonial_australia
+							colonial_region = colonial_cape
+						}
+						is_core = PREV
+					}
+					add_core = FROM
+				}
+			}
+		}
+	}
+}

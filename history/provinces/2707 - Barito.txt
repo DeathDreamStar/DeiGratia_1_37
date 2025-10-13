@@ -1,0 +1,22 @@
+#2707 - Barito
+
+owner = BNJ
+controller = BNJ
+add_core = BNJ
+culture = banjar
+religion = hinduism
+capital = "Marabahan"
+trade_goods = spices
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+
+
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman
+
+1521.1.1 = { discovered_by = POR }

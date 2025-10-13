@@ -1,0 +1,185 @@
+namespace = ipeARA
+normal_or_historical_nations = yes
+
+# Isabella of Castile
+country_event = {
+	id = ipeARA.1
+	title = ipeARA.1.t
+	desc = ipeARA.1.d
+	picture = ROYAL_COUPLE_FUTURE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ARA
+		government = monarchy
+		has_regency = no
+		has_government_attribute = heir
+		is_subject = no
+		CAS = {
+			government = monarchy
+			has_regency = no
+			has_government_attribute = heir
+			is_subject = no
+		}
+		is_year = 1468
+		NOT = {
+			is_year = 1504
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Support the marriage of Ferdinand and Isabella.
+		name = ipeARA.1.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeARA.1.a.tooltip
+		CAS = {
+			country_event = {
+				id = women_history_events.11
+			}
+		}
+	}
+
+	option = { # Find other suitable spouses for Ferdinand.
+		name = ipeARA.1.b
+		ai_chance = {
+			factor = 0
+		}
+		add_legitimacy = 10
+	}
+}
+
+# The Marriage of Ferdinand and Isabella
+country_event = {
+	id = ipeARA.2
+	title = ipeARA.2.t
+	desc = ipeARA.2.d
+	picture = ROYAL_COUPLE_FUTURE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will soon be ruled as one.
+		name = ipeARA.2.a
+		tooltip = {
+			CAS = {
+				define_heir = {
+					name = "Isabel"
+					dynasty = "de Trastámara"
+					culture = castillian
+					claim = 95
+					adm = 5
+					dip = 6
+					mil = 3
+					birth_date = 1451.4.22
+					female = yes
+					block_disinherit = yes
+				}
+				add_opinion = {
+					who = ARA
+					modifier = spa_iberian_wedding
+				}
+			}
+			add_opinion = {
+				who = CAS
+				modifier = spa_iberian_wedding
+			}
+		}
+	}
+}
+
+# The Catalan Civil War
+country_event = {
+	id = ipeARA.3
+	title = ipeARA.3.t
+	desc = ipeARA.3.d
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ARA
+		valid_for_personal_unions_trigger = yes
+		has_ruler_flag = carlos_de_viana
+		owns = 213
+		any_owned_province = {
+			area = catalonia_area
+		}
+		ANJ = {
+			exists = yes
+			valid_for_personal_unions_trigger = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # Crush them!
+		name = ipeARA.3.a
+		213 = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Jean"
+				leader_dynasty = "de Valois"
+				win = yes
+			}
+		}
+		random_owned_province = {
+			limit = {
+				area = catalonia_area
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				win = yes
+			}
+		}
+		random_owned_province = {
+			limit = {
+				area = catalonia_area
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				win = yes
+			}
+		}
+		ANJ = {
+			add_casus_belli = {	
+				target = ARA
+				type = cb_restore_personal_union
+				months = 300
+			}	
+			country_event = {
+				id = ipeARA.4
+			}
+		}
+	}
+}
+
+# The Catalan Civil War
+country_event = {
+	id = ipeARA.4
+	title = ipeARA.3.t
+	desc = ipeARA.3.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We must exploit this opportunity.
+		name = ipeARA.4.a
+		tooltip = {
+			add_casus_belli = {	
+				target = ARA
+				type = cb_restore_personal_union
+				months = 300
+			}	
+		}
+	}
+}

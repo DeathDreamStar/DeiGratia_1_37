@@ -1,0 +1,115 @@
+namespace = ipeTIB
+normal_or_historical_nations = yes
+
+# The Rise of the Rinpungpa
+country_event = {
+	id = ipeTIB.1
+	title = ipeTIB.1.t
+	desc = ipeTIB.1.d
+	picture = BUDDHISM_LAMA_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = PHA
+		676 = {
+			owned_by = ROOT
+			is_core = UTS
+		}
+		4514 = {
+			owned_by = ROOT
+			is_core = UTS
+		}
+		4515 = {
+			owned_by = ROOT
+			is_core = UTS
+		}
+		4518 = {
+			owned_by = ROOT
+			is_core = UTS
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = UTS
+			UTS = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1
+					}
+				}
+				define_ruler = {
+					name = "Norzang"
+					dynasty = "Rinpungpa"
+					adm = 2
+					dip = 3
+					mil = 3
+				}
+				change_government = tribal
+				add_government_reform = tribal_kingdom
+				adopt_reform_progress = ROOT
+			}
+			if = {
+				limit = {
+					PHA = {
+						is_subject_of = MNG
+						is_subject_of_type = guard
+					}
+				}
+				MNG = {
+					create_subject = {
+						subject = UTS
+						subject_type = guard
+					}
+				}
+			}
+		}
+	}
+
+	option = { # We must end the Rinpungpa!
+		name = ipeTIB.1.a
+		ai_chance = {
+			factor = 10
+		}
+		tooltip = {
+			release = UTS
+		}
+		every_owned_province = {
+			add_core = UTS
+		}
+		declare_war_with_cb = {
+			who = UTS
+			casus_belli = cb_core
+			war_goal_province = 676
+		}
+	}
+
+	option = { # Back down.
+		name = ipeTIB.1.b
+		ai_chance = {
+			factor = 90
+		}
+		tooltip = {
+			release = UTS
+		}
+		vassalize = UTS
+		add_prestige = -20
+	}
+
+	option = { # Play as Tsang.
+		name = ipeTIB.1.c
+		switch_tag = UTS
+		hidden_effect = {
+			vassalize = UTS
+			add_prestige = -20
+		}
+	}
+}

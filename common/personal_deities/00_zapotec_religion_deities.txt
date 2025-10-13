@@ -1,0 +1,112 @@
+cocijo = {
+	global_trade_goods_size_modifier = 0.1 # god of rain
+	hostile_attrition = 1 # god of weather
+
+	potential = { religion = zapotec_religion }
+	sprite = 18
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+copijcha = {
+	discipline = 0.025 # god of war
+	monthly_splendor = 1 # god of the calendar
+
+	potential = {
+        religion = zapotec_religion
+	}
+	sprite = 17
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+cozobi = {
+	production_efficiency = 0.1 # god of corn
+	global_unrest = -1 # festivals
+
+	potential = { religion = zapotec_religion }
+	sprite = 38
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}	
+	}
+}
+
+yopi = {
+	war_exhaustion = -0.03 # god of renewal
+	monarch_lifespan = 0.1 # protector against disease
+
+	potential = { religion = zapotec_religion }
+	sprite = 20
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+bezelao = {
+	nobles_loyalty_modifier = 0.05 # ritual cannibalism
+	church_loyalty_modifier = 0.05 # ritual cannibalism
+
+	potential = { religion = zapotec_religion }
+	sprite = 35
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+	}
+}

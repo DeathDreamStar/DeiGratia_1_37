@@ -1,0 +1,100 @@
+government = tribal
+add_government_reform = tribal_federation
+government_rank = 1
+primary_culture = bedouin_arabic
+religion = sunni
+technology_group = muslim
+capital = 356
+religious_school = maliki_school
+
+1099.1.1 = {
+	monarch = {
+		name = "Mansûr"
+		dynasty = "Banû Sulaym"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1150.1.1 = {
+	monarch = {
+		name = "Ussayd"
+		dynasty = "Banû Sulaym"
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+}
+1200.1.1 = {
+	monarch = {
+		name = "Yazid"
+		dynasty = "Banû Sulaym"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1248.1.1 = {
+	monarch = {
+		name = "Yûsufuf"
+		dynasty = "Banû Sulaym"
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1300.1.1 = {
+	monarch = {
+		name = "Khâlid"
+		dynasty = "Banû Sulaym"
+		adm = 1
+		dip = 3
+		mil = 4
+	}
+}
+1350.1.1 = {
+	monarch = {
+		name = "Ahmad"
+		dynasty = "Banû Sulaym"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1399.1.1 = {
+	monarch = {
+		name = "‘Abd Allâh"
+		dynasty = "Banû Sulaym"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1440.1.1 = {
+	monarch = {
+		name = "Abdûlazzâ"
+		dynasty = "Banû Sulaym"
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+1485.1.1 = {
+	monarch = {
+		name = "Abdûlazzâ II"
+		dynasty = "Banû Sulaym"
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+1530.1.1 = {
+	monarch = {
+		name = "Abdûlazzâ III"
+		dynasty = "Banû Sulaym"
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+#done 1576

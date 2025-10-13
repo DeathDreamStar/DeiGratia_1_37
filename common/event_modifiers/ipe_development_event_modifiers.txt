@@ -1,0 +1,29 @@
+encouraged_growth_tax = {
+	local_tax_modifier = 0.1
+	local_monthly_devastation = -0.05
+	trade_goods_size = 0.001
+
+	picture = "local_tax_modifier"
+}
+
+encouraged_growth_production = {
+	local_production_efficiency = 0.1
+	local_monthly_devastation = -0.05
+	trade_goods_size = 0.001
+
+	picture = "local_production_efficiency"
+}
+
+encouraged_growth_manpower = {
+	local_manpower_modifier = 0.1
+	local_monthly_devastation = -0.05
+	trade_goods_size = 0.001
+
+	picture = "local_manpower_modifier"
+}
+
+devastated_province = {
+	local_tax_modifier = -0.1
+	local_production_efficiency = -0.1
+	local_manpower_modifier = -0.1
+}

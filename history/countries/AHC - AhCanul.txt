@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = yucatec
+religion = mesoamerican_religion
+technology_group = mesoamerican 
+capital = 2651
+fixed_capital = 2651
+
+1444.1.1 = {
+	monarch = {
+		name = "Ah Chac"
+		dynasty = "Canul"	
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

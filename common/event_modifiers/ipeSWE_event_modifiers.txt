@@ -1,0 +1,18 @@
+peak_production_of_copper = {
+	trade_goods_size = 25
+}
+
+swe_deluge = {
+	loot_amount = 1
+	movement_speed = 0.1
+}
+
+swedish_kalmar_union = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.2
+}
+
+victory_of_sweden = {
+	land_morale = 0.1
+	manpower_recovery_speed = 0.1
+}

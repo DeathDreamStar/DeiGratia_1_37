@@ -1,0 +1,19 @@
+#1115 - Brakna
+
+add_core = SHD
+owner = SHD
+controller = SHD
+culture = mauritanian
+capital = "Aligh"
+religion = sunni
+trade_goods = slaves
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 50
+native_ferocity = 4
+native_hostileness = 9
+discovered_by = sub_saharan
+
+1490.1.1 = { owner = FUL controller = FUL add_core = FUL is_city = yes } #Rise of Great Fulo

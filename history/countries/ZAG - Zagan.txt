@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = schlesian
+add_accepted_culture = lower_silesian
+religion = catholic
+capital = 6918
+fixed_capital = 6818
+
+1439.4.12 = {
+	monarch = {
+		name = "Baltazar I"
+		dynasty = "Piast"
+		birth_date = 1415.1.1
+		adm = 6
+		dip = 5
+		mil = 5
+	}
+}

@@ -1,0 +1,31 @@
+#6567 - Tlaxiaco
+
+owner = MIX
+controller = MIX
+culture = mixtec
+religion = mixtec_religion
+capital = "Tlaxiaco"
+trade_goods = cocoa
+hre = no
+base_tax = 6
+base_production = 6
+base_manpower = 4
+is_city = yes
+add_core = MIX
+
+
+
+discovered_by = mesoamerican
+
+1524.1.1 = {
+           discovered_by = SPA
+           owner = SPA
+           controller = SPA
+           add_core = SPA
+}
+1529.1.1 = {
+           culture = castillian
+           religion = catholic
+} # First settlers
+1810.9.16 = { owner = MEX add_core = MEX controller = SPA } # Mexican War of Independence
+1812.11.25 = { controller = MEX } # Conquered by José María Morelos

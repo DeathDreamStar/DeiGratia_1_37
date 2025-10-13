@@ -1,0 +1,84 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 46  55  56}
+
+historical_idea_groups = {
+	trade_ideas
+	innovativeness_ideas
+	aristocracy_ideas
+	administrative_ideas
+	economic_ideas
+	spy_ideas
+	diplomatic_ideas
+	quality_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	dutch_maurician
+	austrian_tercio
+	austrian_grenzer
+	austrian_hussar
+	austrian_white_coat
+	prussian_uhlan
+	austrian_jaeger
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+
+monarch_names = {
+	"Heinrich #9" = 100
+	
+	"Aleida #0" = -1
+	"Cordula #0" = -1
+	"Gundula #0" = -1
+	"Selma #0" = -1
+	"Ulrike #0" = -1
+	"Barbara #0" = -1
+	"Alexandra #0" = -1
+	"Christiane #0" = -1
+	"Emma #0" = -1
+	"Corinna #0" = -1
+	"Else #0" = -1
+	"Hedwig #0" = -1
+	"Sylvia #0" = -1
+	"Wilhelmine #0" = -1
+	"Alexis #0" = -1
+	"Evelyn #0" = -1
+	"Hannelore #0" = -1
+	"Irma #0" = -1
+	"Heinrike #0" = -1
+	"Ilona #0" = -1
+	"Andrea #0" = -1
+}
+
+leader_names = {
+	Söll Langheinrich Burgberg
+	Schmidt Bohn Möser Jauch
+	Bär Berndt Blochberger
+	Brosius Eisenschmid Hofmann
+	Gäbelein Grieser Grimm
+	Horn Meier Meisgeier Oswald
+	Rank Rauh Ritter Schilling
+	Schreuser Taut Brendelin 
+	Trögel Becher Eisenschmid 
+}
+
+ship_names = {
+	Marbod Katwalda "König Bisinus" "König Baderich"
+	"König Herminafried" "König Berthachar" "Herzog Radulf"
+	"Herzog Heden" "Markgraf Ekkehard I"
+	"Landgraf Hermann" "Heinrich Raspe"
+}
+
+army_names = {
+	"Armee von $PROVINCE$" 
+}

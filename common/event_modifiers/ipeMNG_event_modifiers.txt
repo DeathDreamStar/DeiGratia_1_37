@@ -1,0 +1,81 @@
+unsubdued_threats = {
+	discipline = -0.05
+	prestige = -1
+}
+
+secured_the_northern_frontier = {
+	imperial_mandate = 0.1
+}
+
+dilapidated_fortifications = {
+	discipline = -0.05
+	defensiveness = -0.25
+}
+
+upgraded_fortifications = {
+	defensiveness = 0.25
+}
+
+poor_military_leadership = {
+	discipline = -0.05
+	general_cost = 0.5
+}
+
+projected_chinese_power = {
+	army_tradition = 0.5
+}
+
+corrupt_officers = {
+	discipline = -0.05
+	reinforce_speed = -0.25
+}
+
+stamped_out_corruption = {
+	yearly_corruption = -0.1
+}
+
+guard_battalion_system = {
+	discipline = -0.05
+	army_tradition = -0.5
+}
+
+professionalized_the_army = {
+	manpower_recovery_speed = 0.2
+}
+
+reestablished_the_silk_road = {
+	trade_efficiency = 0.10
+	trade_steering = 0.10
+}
+
+da_ming_baochao = {
+	inflation_reduction = -0.1
+}
+
+banks_of_the_yellow_river = {
+	trade_goods_size_modifier = 0.2
+	local_friendly_movement_speed = 0.1
+	picture = "flood"
+}
+
+banks_of_the_yangtze_river = {
+	trade_goods_size_modifier = 0.1
+	local_friendly_movement_speed = 0.1
+	picture = "flood"
+}
+
+repaired_dikes = {
+}
+
+no_dikes = {
+}
+
+fishing_boats_prohibited = {
+	trade_goods_size_modifier = -0.5
+	local_unrest = 2
+}
+
+grand_canal_display = {
+	trade_goods_size_modifier = 0.05
+	local_friendly_movement_speed = 0.05
+}

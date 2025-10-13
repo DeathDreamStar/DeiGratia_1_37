@@ -1,0 +1,16 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = kham
+religion = vajrayana
+technology_group = chinese
+capital = 2131	# Qamdo
+
+1444.1.1 = {
+	monarch = {
+		name = "Jisaba Zangbu"
+		dynasty = "Guanjue"
+		adm = 3
+		dip = 2
+		mil = 0
+	}
+}

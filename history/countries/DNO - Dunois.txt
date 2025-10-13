@@ -1,0 +1,65 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = cosmopolitan_french
+religion = catholic
+technology_group = western
+capital = 3678
+fixed_capital = 3678
+
+1439.1.1 = {
+	government = monarchy
+	add_government_reform = feudalism_reform
+	monarch = {
+		name = "Jean I"
+		dynasty = "de Valois"
+		birth_date = 1402.11.23
+		adm = 5
+		dip = 5
+		mil = 6
+		leader = {	
+			name = "Jean de Dunois"		
+			type = general
+			fire = 4	
+			shock = 3	
+			manuever = 3	
+			siege = 1
+		}
+	}
+}
+1447.1.1 = {
+	heir = {
+		name = "François"
+		monarch_name = "François I"
+		dynasty = "de Valois"
+		birth_date = 1447.1.1
+		death_date = 1491.1.1
+		claim = 70
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1468.11.24 = {
+	monarch = {
+		name = "François I"
+		dynasty = "de Valois"
+		birth_date = 1447.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1478.1.1 = {
+	heir = {
+		name = "François"
+		monarch_name = "François II"
+		dynasty = "de Valois"
+		birth_date = 1478.1.1
+		death_date = 1513.1.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

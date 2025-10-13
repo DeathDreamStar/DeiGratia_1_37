@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = tribal_kingdom
+technology_group = chinese
+primary_culture = lao
+religion = animism
+capital = 2371	# Son La
+historical_friend = TDN
+government_rank = 1
+
+1444.1.1 = {
+	monarch = { # fictional
+		name = "Palani"
+		dynasty = "Tai Dam"
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}

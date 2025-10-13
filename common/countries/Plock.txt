@@ -1,0 +1,89 @@
+graphical_culture = easterngfx
+
+color = { 175  129  135 }
+
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas
+	offensive_ideas
+	diplomatic_ideas
+	economic_ideas
+	spy_ideas
+	innovativeness_ideas
+	administrative_ideas
+}
+
+historical_units = {
+	bardiche_infantry
+	eastern_knights
+	slavic_stradioti
+	eastern_militia
+	hungarian_hussar
+	polish_musketeer
+	polish_hussar
+	polish_tercio
+	polish_winged_hussar
+	russian_lancer
+	russian_cuirassier
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	russian_mass
+}
+
+monarch_names = {
+	"Janusz #0" = 10
+	"Boleslaw #0" = 10
+	"Konrad #0" = 10
+	"Stanislaw #0" = 10
+	"Kazimierz #0" = 10
+	"Ziemowit #0" = 10
+	"Trojden #0" = 10
+	"Albert #0" = 1
+	"Aleksy #0" = 1
+	"Andrzej #0" = 1
+	"Bartlomiej #0" = 1
+	"Bogumil #0" = 1
+	"Bronislaw #0" = 1
+	"Dawid #0" = 1
+	"Dominik #0" = 1
+	"Emil #0" = 1
+	"Eugeniusz #0" = 1
+	"Ferdynand #0" = 1
+	"Grzegorz #0" = 1
+	"Gustaw #0" = 1
+	"Igor #0" = 1
+	"Iwan #0" = 1
+	"Konstanty #0" = 1
+	"Krystian #0" = 1
+	"Lech #0" = 1
+	"Lucjusz #0" = 1
+	"Ludwik #0" = 1
+	"Lukasz #0" = 1
+	"Maksym #0" = 1
+	"Mariusz #0" = 1
+	"Mieszko #0" = 1
+	"Miroslaw #0" = 1
+	"Oskar #0" = 1
+	"Patryk #0" = 1
+	
+	"Anatola #0" = -1
+	"Jadzia #0" = -1
+	"Michalina #0" = -1
+}
+
+leader_names = { 
+	Jagiellon
+	Kedzierzawy
+	Leszczynski Lubomirski
+	Piast Poniatowski Premyslid
+	Radziwill
+	Sapieha
+	Wisniowiecki 
+}
+
+ship_names = {
+	Narew Wkra Wisla Bzura Pilica
+	Radomka Bug Liwiec Biebrza Warszawa
+	Lowicz Mlawa Kolno Wizna
+}

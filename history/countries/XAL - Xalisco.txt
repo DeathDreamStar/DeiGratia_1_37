@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = tepic
+religion = nahuatl
+technology_group = mesoamerican
+capital = 854
+
+
+1444.1.1 = {
+	monarch = {
+		name = "Coatl"
+		dynasty = "Xalisco"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}

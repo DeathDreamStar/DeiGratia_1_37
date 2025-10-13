@@ -1,0 +1,18 @@
+government = republic
+add_government_reform = veche_republic
+mercantilism = 50
+primary_culture = russian
+religion = orthodox
+technology_group = eastern
+capital = 1079
+government_rank = 1
+
+1444.1.1 = {
+	monarch = {
+		name = "Gorodskoy Sovet"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

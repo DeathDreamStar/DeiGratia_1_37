@@ -1,0 +1,79 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+technology_group = eastern
+religion = orthodox
+primary_culture = ryazanian
+capital = 3932
+fixed_capital = 3932
+
+1427.6.1 = {
+	monarch = {
+		name = "Fyodor I"
+		dynasty = "Rurik"
+		birth_date = 1399.1.1
+		adm = 4
+		dip = 4
+		mil = 1
+	}
+}
+1455.1.1 = {
+	monarch = {
+		name = "Mikhail I"
+		dynasty = "Rurik"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1483.1.1 = {
+	monarch = {
+		name = "Mikhail I"
+		dynasty = "Rurik"
+		adm = 1
+		dip = 0
+		mil = 2
+	}
+}
+1496.1.1 = {
+	monarch = {
+		name = "Semyon I"
+		dynasty = "Rurik"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1496.12.1 = {
+	monarch = {
+		name = "Ivan I"
+		dynasty = "Rurik"
+		adm = 3
+		dip = 3
+		mil = 6
+	}
+}
+1519.1.1 = {
+	heir = {
+		name = "Mikhail"
+		monarch_name = "Mikhail II"
+		dynasty = "Rurik"
+		birth_date = 1519.1.1
+		death_date = 1573.7.12
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 5
+	}
+}
+1535.1.1 = {
+	monarch = {
+		name = "Mikhail II"
+		dynasty = "Rurik"
+		birth_date = 1519.1.1
+		adm = 1
+		dip = 2
+		mil = 5
+	}
+}
+#1573.7.12

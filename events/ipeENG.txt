@@ -1,0 +1,327 @@
+namespace = ipeENG
+normal_or_historical_nations = yes
+
+# Margaret of Anjou
+country_event = {
+	id = ipeENG.1
+	title = ipeENG.1.t
+	desc = ipeENG.1.d
+	picture = wihgfx_FEMALE_RULER_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		has_ruler = "Henry VI"
+		dynasty = "Lancaster"
+		has_consort_flag = margaret_of_anjou
+		has_heir = yes
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # She will rule us!
+		name = ipeENG.1.a
+		ai_chance = {
+			factor = 100
+		}
+		exile_ruler_as = { name = henry_lancaster }
+	}
+
+	option = { # Women are not fit to rule!
+		name = ipeENG.1.b
+		ai_chance = {
+			factor = 0
+		}
+		add_legitimacy = 5
+	}
+}
+
+# Losing Historical Rivalry with England
+country_event = {
+	id = ipeENG.2
+	title = ipeENG.2.t
+	desc = ipeENG.2.d
+	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		OR = {
+			tag = CLN
+			tag = CNN
+			tag = EBR
+			tag = FLY
+			tag = FRG
+			tag = GLN
+			tag = IBR
+			tag = IVG
+			tag = LEI
+			tag = MCM
+			tag = MNS
+			tag = MOG
+			tag = MYO
+			tag = SLN
+			tag = TRY
+			tag = TYR
+			tag = UIM
+		}
+		NOT = {
+			has_reform = gaelic_overkingdom
+		}
+		historical_rival_with = ENG
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		remove_historical_rival = ENG
+	}
+
+	option = {
+		name = ipeENG.2.a
+	}
+}
+
+# The Great Fire of London
+country_event = {
+	id = ipeENG.3
+	title = ipeENG.3.t
+	desc = ipeENG.3.d
+	picture = BURNING_CITY_eventPicture
+	goto = 236
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 236
+		236 = {
+			has_province_flag = great_fire_of_london
+			development = 20
+			NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # London will be reborn more glorious than before...
+		name = ipeENG.3.a
+		add_stability = -1
+		add_years_of_income = -1
+		236 = {
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+			add_permanent_province_modifier = {
+				name = the_rebuilding_of_london
+				duration = -1
+			}
+			clr_province_flag = great_fire_of_london
+		}
+	}
+}
+
+# The Rebirth of London
+country_event = {
+	id = ipeENG.4
+	title = ipeENG.4.t
+	desc = ipeENG.4.d
+	picture = CITY_VIEW_eventPicture
+	goto = 236
+	
+	fire_only_once = yes
+
+	trigger = {
+		owns = 236
+		236 = {
+			has_province_modifier = the_rebuilding_of_london
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = { # Domine dirige nos.
+		name = ipeENG.4.a
+		add_stability_or_adm_power = yes
+		add_prestige = 25
+		236 = {
+			add_base_tax = 8
+			add_base_production = 8
+			add_base_manpower = 8
+			remove_province_modifier = the_rebuilding_of_london
+		}
+	}
+}
+
+# The Settlement of St. John's
+country_event = {
+	id = ipeENG.5
+	title = ipeENG.5.t
+	desc = ipeENG.5.d
+	picture = COLONIZATION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # We can do a lot of fishing here.
+		name = ipeENG.5.a
+		2573 = {
+			owner = {
+				hidden_effect = {
+					country_event = {
+						id = ipeENG.6
+					}
+				}
+			}
+			cede_province = ROOT
+			add_core = ROOT
+			change_culture = ROOT
+			change_religion = ROOT
+		}
+	}
+}
+
+# The Settlement of St. John's
+country_event = {
+	id = ipeENG.6
+	title = ipeENG.5.t
+	desc = ipeENG.6.d
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We shall see whether we can be friends.
+		name = ipeENG.6.a
+		tooltip = {
+			2573 = {
+				cede_province = FROM
+				add_core = FROM
+				change_culture = FROM
+				change_religion = FROM
+			}
+		}
+	}
+}
+
+# The Purchase of Surat
+country_event = {
+	id = ipeENG.7
+	title = ipeENG.7.t
+	desc = ipeENG.7.d
+	picture = SHIP_SAILING_eventPicture
+	goto = 517
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major_trigger = {
+		technology_group = indian
+	}
+
+	option = { # Let the English set up in Surat.
+		name = ipeENG.7.a
+		ai_chance = {
+			factor = 100
+		}
+		517 = {
+			cede_province = FROM
+			add_core = FROM
+			remove_core = ROOT
+		}
+		add_treasury = 1000
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeENG.8
+				}
+			}
+		}
+	}
+
+	option = { # Refuse them.
+		name = ipeENG.7.b
+		ai_chance = {
+			factor = 0
+		}
+		517 = {
+			add_core = FROM
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeENG.9
+				}
+			}
+		}
+	}
+}
+
+# The Purchase of Surat
+country_event = {
+	id = ipeENG.8
+	title = ipeENG.8.t
+	desc = ipeENG.8.d
+	picture = SHIP_SAILING_eventPicture
+	goto = 517
+
+	is_triggered_only = yes
+
+	option = { # An excellent addition to our empire.
+		name = ipeENG.8.a
+		tooltip = {
+			517 = {
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = FROM
+			}
+		}
+		add_treasury = -1000
+	}
+}
+
+# Surat Denied
+country_event = {
+	id = ipeENG.9
+	title = ipeENG.9.t
+	desc = ipeENG.9.d
+	picture = SHIP_SAILING_eventPicture
+	goto = 517
+
+	is_triggered_only = yes
+
+	option = { # We'll find a way to seize it.
+		name = ipeENG.9.a
+		tooltip = {
+			517 = {
+				add_core = ROOT
+			}
+		}
+	}
+}

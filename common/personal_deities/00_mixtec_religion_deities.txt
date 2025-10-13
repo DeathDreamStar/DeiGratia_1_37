@@ -1,0 +1,150 @@
+dzahui = {
+	global_trade_goods_size_modifier = 0.1 # god of rain
+	hostile_attrition = 1 # god of weather
+
+	potential = { religion = mixtec_religion }
+	sprite = 18
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+cohuy = {
+	production_efficiency = 0.1 # god of corn
+	global_unrest = -1 # festivals
+
+	potential = { religion = mixtec_religion }
+	sprite = 38
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}	
+	}
+}
+
+huehueteotl = {
+	fire_damage = 0.1 # god of fire
+	tolerance_heretic = 1 # one of the most revered old gods
+
+	potential = { religion = mixtec_religion }
+	sprite = 36
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+nuhu = {
+	build_cost = -0.1 # god of craftsmen
+	global_institution_spread = 0.25 # god of learning
+
+	potential = {
+        OR = {
+            religion = mixtec_religion
+            religion = zapotec_religion
+        }
+    }
+	sprite = 15
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}	
+	}
+}
+
+qhuav = {
+	movement_speed = 0.1 # god of the hunt
+	land_attrition = -0.1 # god of the hunt
+
+	potential = { religion = mixtec_religion }
+	sprite = 37
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+totec = {
+	war_exhaustion = -0.03 # god of renewal
+	monarch_lifespan = 0.1 # protector against disease
+
+	potential = { religion = mixtec_religion }
+	sprite = 20
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}

@@ -1,0 +1,36 @@
+government = monarchy
+add_government_reform = principality
+primary_culture = russian
+religion = orthodox
+technology_group = eastern
+capital = 1957
+fixed_capital = 1957 # Cannot move capital away from this province & no power cost to move to it
+government_rank = 1
+historical_rival = MOS
+
+
+1433.4.25 = {
+    monarch = {
+        name = "Dmitry Shemyaka"
+        dynasty = "Rurik"
+        birth_date = 1400.1.1
+        adm = 2
+        dip = 2
+        mil = 4
+
+        leader = {
+            name = "Dmitry Shemyaka"
+            type = general
+            fire = 3
+            shock = 4
+            manuever = 3
+            siege = 0
+            death_date = 1453.1.1
+        }
+    }
+	clear_scripted_personalities = yes
+	add_ruler_personality = cruel_personality
+	add_ruler_personality = malevolent_personality
+
+    set_country_flag = galich_inheritance
+}

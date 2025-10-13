@@ -1,0 +1,10 @@
+red_sea_fleet = {
+	naval_forcelimit_modifier = 0.25
+	global_sailors_modifier = 0.25
+}
+
+suez_dockyards = {
+	navy_tradition = 0.5
+	local_ship_cost = -0.2
+	local_ship_repair = 0.2
+}

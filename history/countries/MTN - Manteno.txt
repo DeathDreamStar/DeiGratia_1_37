@@ -1,0 +1,19 @@
+# MTN - Manteño
+
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = cara
+religion = inti
+technology_group = andean
+unit_type = south_american
+capital = 6484
+
+1444.1.1 = {
+	monarch = { # fictional
+		name = "Chikan"
+		dynasty = "Manteño"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}

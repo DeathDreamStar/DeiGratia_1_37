@@ -1,0 +1,244 @@
+namespace = ipe_religion
+
+# Harmonization of the Druze Faith
+country_event = {
+	id = ipe_religion.1
+	title = ipe_religion.1.t
+	desc = ipe_religion.1.d
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = ipe_religion.1.a
+		tooltip = {
+			add_country_modifier = {
+				name = harmonized_druze
+				duration = -1
+			}
+		}
+	}
+}
+
+# Mixtec reform
+country_event = {
+	id = ipe_religion.2
+	title = ipe_religion.2.t
+	desc = ipe_religion.2.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "El Dorado"
+		religion = mixtec_religion
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = { 
+			add_legitimacy = -20
+			add_stability = -2
+			every_subject_country = {
+				add_liberty_desire = 50
+			}
+		}
+	}
+	
+	option = {
+		name = ipe_religion.2.a
+		tooltip = {
+			add_legitimacy = -20
+			add_stability = -2
+			every_subject_country = {
+				add_liberty_desire = 50
+			}
+		}
+	}
+}
+
+# Purépecha reform
+country_event = {
+	id = ipe_religion.3
+	title = ipe_religion.2.t
+	desc = ipe_religion.3.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "El Dorado"
+		religion = purepecha_religion
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {		
+			add_authority = -100
+			add_stability = -2
+			
+			random_owned_province = {
+				limit = { 
+					is_in_capital_area = yes 
+					is_capital = no
+				}
+				set_province_flag = civil_war_prov_1
+			}		
+			random_owned_province = {
+				limit = { 
+					is_in_capital_area = yes
+					is_capital = no
+					NOT = { has_province_flag = civil_war_prov_1 }
+				}
+				set_province_flag = civil_war_prov_2
+			}
+			random_owned_province = {
+				limit = { 
+					is_in_capital_area = yes 
+					is_capital = no
+					NOT = { has_province_flag = civil_war_prov_1 }
+					NOT = { has_province_flag = civil_war_prov_2 }
+				}
+				set_province_flag = civil_war_prov_3
+			}			
+			
+			random_owned_province = {
+				limit = { has_province_flag = civil_war_prov_1 }
+				anti_tax_rebels = 4
+				clr_province_flag = civil_war_prov_1
+			}
+			random_owned_province = {
+				limit = { has_province_flag = civil_war_prov_2 }
+				anti_tax_rebels = 3
+				clr_province_flag = civil_war_prov_2
+			}
+			random_owned_province = {
+				limit = { has_province_flag = civil_war_prov_3 }
+				anti_tax_rebels = 3
+				clr_province_flag = civil_war_prov_3
+			}			
+		}
+		
+	}	
+	
+	option = {
+		name = ipe_religion.2.a
+		tooltip = {
+			add_stability = -2
+			add_authority = -100			
+		}		
+	}
+}
+
+# Zapotec reform
+country_event = {
+	id = ipe_religion.4
+	title = ipe_religion.2.t
+	desc = ipe_religion.2.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "El Dorado"
+		religion = zapotec_religion
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = { 
+			add_legitimacy = -20
+			add_stability = -2
+			every_subject_country = {
+				add_liberty_desire = 50
+			}
+		}
+	}
+	
+	option = {
+		name = ipe_religion.2.a
+		tooltip = {
+			add_legitimacy = -20
+			add_stability = -2
+			every_subject_country = {
+				add_liberty_desire = 50
+			}
+		}
+	}
+}
+
+# Harmonization of the Mesoamerican Religions
+country_event = {
+	id = ipe_religion.5
+	title = ipe_religion.5.t
+	desc = ipe_religion.5.d
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = ipe_religion.5.a
+		tooltip = {
+			add_country_modifier = {
+				name = harmonized_mesoamerican
+				duration = -1
+			}
+		}
+	}
+}
+
+# Harmonization of the Taoist Faith
+country_event = {
+	id = ipe_religion.6
+	title = ipe_religion.6.t
+	desc = ipe_religion.6.d
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			clr_country_flag = harmonization_shangdi_conflict
+			clr_country_flag = harmonization_han_kitab
+			clr_country_flag = harmonization_fate_of_advisor
+			clr_country_flag = harmonization_empowering_ceremonies
+		}
+	}
+	
+	option = {
+		name = ipe_religion.6.a
+		tooltip = {
+			add_country_modifier = {
+				name = harmonized_taoism
+				duration = -1
+			}
+		}
+	}
+}

@@ -1,0 +1,88 @@
+#Country Name: Please see filename.
+
+graphical_culture = asiangfx
+special_unit_culture = south_east_asian_special
+
+color = { 136  117  90 }
+
+historical_idea_groups = {
+	defensive_ideas
+	offensive_ideas
+	spy_ideas
+	trade_ideas
+	diplomatic_ideas
+	economic_ideas
+	religious_ideas
+	quantity_ideas
+}
+
+historical_units = {
+	east_asian_spearmen
+	eastern_bow
+	asian_arquebusier
+	asian_charge_cavalry
+	asian_mass_infantry
+	asian_musketeer
+	reformed_asian_musketeer
+	reformed_asian_cavalry
+}
+
+monarch_names = {
+	"An #0" = 10
+	"Quy Ly #0" = 10
+	"Hán Thuong #0" = 10
+	"Ngôi #0" = 10
+	"Quy Khoáng #0" = 10
+	"Loi #0" = 20
+	"Nguyên Long #0" = 20
+	"Bang Co #0" = 20
+	"Nghi Dân #0" = 20
+	"Tu Thành #0" = 20
+	"Tranh #0" = 20
+	"Thuân #0" = 20
+	"Tuân #0" = 20
+	"Oanh #0" = 20
+	"Y #0" = 20
+	"Xuân #0" = 20
+	"Dang Dung #0" = 20
+	"Dang Doanh #0" = 20
+	"Trang Tông #0" = 20
+	"Phúc Hai #0" = 20
+	"Phúc Nguyên #0" = 20
+	"Mâu Hop #0" = 20
+	"Kính Chì #0" = 20
+	"Kính Cung #0" = 20
+	"Kính Khoan #0" = 20
+	"Kính Vu #0" = 20
+	"Duy Duong #0" = 20
+	"Duy Phuong #0" = 20
+	"Duy Tuòng #0" = 20
+	"Duy Thân #0" = 20
+	"Duy Diêu #0" = 20
+	"Duy Khiêm #0" = 20
+	"Huê #0" = 10
+	"Quang Toan #0" = 10
+	"Duy Hop #0" = 20
+	
+	"Kim Anh #0" = -1
+	"Thùy Trâm #0" = -1
+	"Bích Ngoc #0" = -1
+	"Phuong Nga #0" = -1
+	"Thanh Thao #0" = -1
+}
+
+leader_names = {
+	Trân Hô Lê Ly Ngô Huynh Phan Pham Vu Dang Bùi Dô Duong
+	Bành Cào Châu Chu Chung Diêp Dàm Dào Dinh Doàn Giang Hà Hàn Kiêu Kim
+	La Lac Lam Liêu Luc Luong Luu Ma Mach Mai Nghiêm Phó Phùng Quách Quang
+	Quyên Ta Thach Thai Thi Thuy Tiêu Tô Tôn Trâng Triêu Truong Van Vinh Vuong
+}
+
+ship_names = {
+	"Trân Canh" "Trân Hoàng" "Trân Khâm" "Trân Thuyên"
+	"Trân Manh" "Trân Vuong" "Trân Hào" "Duong Nhât Lê"
+	"Trân Phu" "Trân Kính" "Trân Hiên" "Trân Ngung"
+	"Trân An" "Thái Tông" "Thánh Tông" "Nhân Tông"
+	"Anh Tông" "Minh Tông" "Hiên Tông" "Du Tông"
+	"Nghê Tông" "Duê Tông" "Thuân Tông"
+}

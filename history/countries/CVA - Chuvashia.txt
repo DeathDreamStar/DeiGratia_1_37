@@ -1,0 +1,7 @@
+government = tribal
+add_government_reform = tribal_despotism
+primary_culture = chuvash
+religion = sunni
+technology_group = nomad_group
+capital = 2422
+religious_school = hanafi_school

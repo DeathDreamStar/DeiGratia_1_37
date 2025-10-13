@@ -1,0 +1,15 @@
+#6181 - Gisaka
+
+owner = GKA
+controller = GKA
+add_core = GKA
+culture = rwandan
+religion = shamanism #Fetishism
+capital = "Gisaka"
+trade_goods = wool
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+discovered_by = central_african

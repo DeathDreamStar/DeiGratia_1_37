@@ -1,0 +1,62 @@
+graphical_culture = easterngfx
+
+color = { 113 11 11 }
+
+historical_idea_groups = {
+	administrative_ideas
+	plutocracy_ideas
+	trade_ideas
+	religious_ideas
+	offensive_ideas
+	maritime_ideas
+	economic_ideas
+	quality_ideas
+}
+
+historical_units = {
+	bardiche_infantry
+	eastern_knights
+	slavic_stradioti
+	eastern_militia
+	muscovite_musketeer
+	muscovite_caracolle
+	muscovite_soldaty
+	muscovite_cossack
+	russian_petrine
+	russian_lancer
+	russian_green_coat
+	russian_cuirassier
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	russian_mass
+}
+
+monarch_names = {
+	"Mohkku #0" = 20
+	"Mokci #0" = 20
+	"Náhkol #0" = 20
+	"Päevalemb #0" = 10
+	"Sulev #0" = 10
+	"Pivtsay #0" = 10
+	"Pokshayka #0" = 5
+	"Shypicha #0" = 5
+	"Irter #0" = 5
+	"Karuvald #0" = 5
+	
+	"Nyayka #0" = -1
+	"Vidyava #0" = -1
+	"Poshayka #0" = -1
+	"Satu #0" = -1
+}
+
+leader_names = {
+	Ubmeje Nuoráne Gájka Kaise Saiva Keite Sapmi Magga Guoládat
+	Azegis Gachegis Zhebegis Lunegis Zhunegis Irtegis Moshegis
+	Rategis Permyakis Yugra Syktyvkar Ozhegis Odegis Nydogis
+}
+
+ship_names = {
+	Noroava Olota Ordava Pemka Poshayka
+	Tekay Tetyava  Tundya Unzhutka Yalgava
+}

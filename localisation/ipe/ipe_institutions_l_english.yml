@@ -1,0 +1,56 @@
+﻿l_english:
+ # Renaissance
+ tooltip_renaissance_advisor: "Capital of country with a level 3 Philosopher, Natural Scientist, or Artist advisor"
+ tooltip_development_50: "European, Asian, or African 50 development province"
+ tooltip_banking_advisor: "Capital of country with a level 3 Master of Mint, Treasurer, or Trader advisor"
+
+ # Print Culture
+ tooltip_print_culture_printing_press: "Capital of a Country with the Idea Print Culture"
+ tooltip_printing_press_muslim: "Province is Sunni, Shia, or Ibadi and Print Culture is Banned"
+ ipe_institutions.4.t: "Opposition to the Printing Press"
+ ipe_institutions.4.d: "The arrival of a new invention in $CAPITAL$ has brought both amazement and dismay to the people of the country, as though they have received a new revelation in faith. This contraption, first crafted by German goldsmith Johannes Gutenburg, is the printing press, capable of mass producing the written word so that it may be read far and wide throughout the world.\n\nAlready, some forward-thinking inventors and engineers have taken stock of this curious machine, analyzing its workings and taking into consideration how it might be adapted to print in Arabic. However, not all reactions to the printing press have been positive. The ulema, whose scribes meticulously duplicate religious texts without error in the beauty of Islamic calligraphy, insists that to reproduce the Quran from the ink of a printing press would be no less than an act of sacrilege and blasphemy.\n\nThe ulema pleads to $MONARCHTITLE$ $MONARCH$ that the printing press should be abandoned, arguing against the great cultural changes that such an invention would bring about, and decrying the use of the printing press as being in discord with the tenets of Islam. Whether the scribe class is truly acting out of piety or in defense of its own purpose remains to be answered, but it is nonetheless certain that great turmoil would come to our country if we were to ignore the demands of the religious class."
+ ipe_institutions.4.a: "The word of God should not be surrendered to machines."
+ ipe_institutions.4.a.tooltip: "§RThe use of the printing press by Muslims in our country will be banned, preventing the spread of the Institution into any provinces of Muslim faith. Print Culture will still spread through our non-Muslim provinces, but it may not be accepted by Muslims in our country for centuries.§!"
+ banned_printing_press: "Banned the Printing Press"
+ desc_banned_printing_press: "As a result of vehement protests by the ulema and its scribes, the use of the printing press by Muslims has been banned in our country. It may take centuries before the ulema is finally willing to acquiesce over the use of the printing press."
+ church_banned_the_printing_press: "Banned the Printing Press"
+ ipe_institutions.4.b: "There is no better way to spread God's word."
+ accepted_printing_press: "Accepted the Printing Press"
+ desc_accepted_printing_press: "To the dismay of the ulema and its scribes, the use of the printing press by Muslims remains permitted in our country. Because of this development, the ulema are extremely belligerent, and will actively seek to stir rebellion against the government, whose actions they perceive as blasphemous."
+ church_refused_to_ban_the_printing_press: "Refused to Ban the Printing Press"
+ ipe_institutions.5.t: "Discontented Scribes"
+ ipe_institutions.5.d: "As the use of the printing press has spread throughout the country, the ulema’s scribe class finds itself increasingly disaffected by the changes, as their former work in reproducing religious texts is increasingly displaced by machines. Fearing both the loss of their own livelihoods and the decline of Islamic calligraphy, many scribes are now petitioning the government to slow the spread of the printing press and implement further limitations on its use."
+ ipe_institutions.5.a: "Appease the scribes."
+ ipe_institutions.5.b: "Offer no recourse."
+ ipe_institutions.6.t: "Dhimmi Printing"
+ ipe_institutions.6.d: "While the protests of the ulema have led $MONARCHTITLE$ $MONARCH$ to maintain a ban on the use of the printing press among Muslims, the dhimmi of our realm continue to print books in their native languages and reproduce texts of their faith. Seeing that the dhimmi are not Muslims, the government to this point has not placed restrictions on their ability to use the printing press.\n\nNonetheless, the ulema fear that the dhimmi may encourage Muslims to likewise use the printing press for reproducing texts in Arabic, including the Quran. Consequently, they have now come to $MONARCHTITLE$ $MONARCH$, demanding that the dhimmi also be prohibited from using the printing press."
+ ipe_institutions.6.a: "Allow non-Muslims to continue printing books in their native languages."
+ ipe_institutions.6.b: "There must be uniformity in our realm."
+ ipe_institutions.7.t: "The Ban on the Printing Press"
+ ipe_institutions.7.d: "Many years have passed since when the printing press was first banned in our empire. In the time since then, the printing press has spread throughout much of the world, encouraging the development of casual literacy and the dissemination of radical ideas, forever changing people’s way of life.\n\nOur refusal to allow Muslims to use the printing press has slowed down the ability of our country to advance, to the point that now even our clerical class admits that if we are to remain in league with the nations of the West, we must also adopt their technologies, and to a certain degree, the way of life they have created. Consequently, the ban on the printing press has been all but forgotten in our country."
+ ipe_institutions.7.a: "We must catch up with the West."
+
+ # Colonialism
+ tooltip_full_exploration: "Capital of Country with Full Exploration Ideas"
+
+ # Banking
+ banking: "Banking"
+ desc_banking: "The growth of international trade has aided the development of banking as an institution among the Italian city-states, with exorbitantly wealthy families offering loans to both merchants and sovereign states alike. Since then, banking has spread throughout the world, helping to finance various commercial and military ventures. Gradually, the great banking families of the world have come to exert increasing control over local and regional economies, fostering a significant rise in the prevalence of trade and commerce."
+ banking_date: "1550"
+ birthplace_of_banking: "Birthplace of Banking"
+ desc_birthplace_of_banking: "This province is home to one of the earliest modern banks."
+ tooltip_banking_embraced: "Has embraced Banking"
+ tooltip_neighbor_non_port_province_banking: "Neighboring province with §YBanking§!"
+ tooltip_neighbor_port_province_banking: "Port neighboring province with §YBanking§!"
+ tooltip_colonial_overlord_banking: "Port/Capital - Overlord has §YBanking§!"
+ tooltip_bankrupt_banking: "Is bankrupt"
+ tooltip_national_bank_banking: "Capital of a Country with the Idea National Bank"
+ tooltip_banking_burghers: "Adjacent has Banking & Loyal Burghers Present"
+
+ ipe_institutions.1.t: "The Advent of Banking"
+ ipe_institutions.1.d: "During the Middle Ages, merchant banks dealing in commercial loans and investment were developed by medieval traders who marketed various commodities, such as cloth, grain, and silk. Originally, these merchant banks served to facilitate and finance the production and trade of these commodities, but over time, the scope of their activities expanded to lending at interest and the issuance of insurance. With the expansion of non-agricultural wealth, many families have moved into banking as an occupation, beginning to underwrite bonds and originate foreign loans. The establishment of banks in major cities has fomented a commercial revolution unlike any other seen before, as influential state banks and banking families begin to partake in business activities throughout the world."
+ ipe_institutions.1.a.tooltip: "§YEmbracing§! the §YBanking§! Institution will be vital for future advancements in §YTechnology§!."
+ ipe_institutions.3.d: "Merchants arriving from unknown lands have informed us of a new aspect to international commerce, wherein many traders and affluent families have founded institutions by which to lend at interest, issue insurance, and accept monetary deposits. These merchants tell of a commercial revolution ongoing in these faraway regions, which have forever magnified the ease of business."
+
+ # Trade
+ tooltip_full_trade: "Capital of a Country with Full Trade Ideas"

@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = aimara
+add_accepted_culture = inca
+religion = inti
+technology_group = andean
+unit_type = south_american
+capital = 797 # Oruro
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Illapa"
+		dynasty = "Sora"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+#1476 annexed by Incas

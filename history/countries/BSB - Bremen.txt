@@ -1,0 +1,94 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 2
+technology_group = western
+religion = catholic
+primary_culture = low_saxon
+capital = 54
+
+1441.7.9 = {
+	monarch = {
+		name = "Gerhard III"
+		dynasty = "von Hoya"
+		birth_date = 1395.1.1
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+	set_ruler_flag = puppeted_bishopric
+}
+1463.4.15 = {
+	monarch = {
+		name = "Heinrich II"
+		dynasty = "von Schwarzburg"
+		birth_date = 1440.11.13
+		adm = 1
+		dip = 3
+		mil = 2
+	}
+}
+1496.12.25 = {
+	monarch = {
+		name = "Johann III Rode"
+		dynasty = "von Wale"
+		birth_date = 1445.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+#PU under VER
+1532.1.1 = { religion = protestant }
+1566.12.5 = {
+	monarch = {
+		name = "Heinrich III"
+		dynasty = "Askanier"
+		birth_date = 1550.11.1
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}
+1585.4.29 = {
+	monarch = {
+		name = "Johann Adolf I"
+		dynasty = "von Oldenburg"
+		birth_date = 1575.2.27
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1590.10.19 = {
+	monarch = {
+		name = "Johann Friedrich I"
+		dynasty = "von Oldenburg"
+		birth_date = 1579.9.1
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1625.5.9 = { join_league = protestant }
+1629.5.22 = { leave_league = protestant }
+1631.8.30 = { join_league = protestant }
+1634.9.4 = {
+	monarch = {
+		name = "Friedrich II"
+		dynasty = "von Oldenburg"
+		birth_date = 1609.3.18
+		adm = 0
+		dip = 0
+		mil = 3
+	}
+} #future king of Denmark
+1645.1.1 = {
+	monarch = {
+		name = "(Vacant)"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1648.10.24 = { leave_league = protestant }

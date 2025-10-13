@@ -1,0 +1,124 @@
+time_of_troubles = {
+	potential = {
+		NOT = { has_global_flag = time_of_troubles }
+		is_free_or_tributary_trigger = yes
+		tag = RUS
+		normal_or_historical_nations = yes
+	}
+
+	
+	
+	can_start = {
+		NOT = {
+			current_age = age_of_discovery
+		}
+		government = monarchy
+		has_any_disaster = no
+		any_owned_province = {
+			has_province_modifier = peace_famine
+		}
+	}
+	
+	
+	can_stop = {
+		OR = {
+			has_any_disaster = yes
+			NOT = { government = monarchy }
+			NOT = {
+				any_owned_province = {
+					has_province_modifier = peace_famine
+				}
+			}
+		}
+	}
+	
+	modifier = {
+		global_unrest = 5
+		brahmins_hindu_loyalty_modifier = -0.1
+		brahmins_muslim_loyalty_modifier = -0.1
+		brahmins_other_loyalty_modifier = -0.1
+		church_loyalty_modifier = -0.1
+		maratha_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		vaisyas_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		dhimmi_loyalty_modifier = -0.1
+		jains_loyalty_modifier = -0.1
+		rajput_loyalty_modifier = -0.1
+		janissaries_loyalty_modifier = -0.1
+		mamluks_loyalty_modifier = -0.1
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 5
+			num_of_owned_provinces_with = {
+				value = 50
+				has_province_modifier = peace_famine
+			}
+		}
+		modifier = {
+			factor = 5
+			num_of_owned_provinces_with = {
+				value = 100
+				has_province_modifier = peace_famine
+			}
+		}
+		modifier = {
+			factor = 5
+			num_of_owned_provinces_with = {
+				value = 150
+				has_province_modifier = peace_famine
+			}
+		}
+		modifier = {
+			factor = 5
+			num_of_owned_provinces_with = {
+				value = 200
+				has_province_modifier = peace_famine
+			}
+		}
+	}
+	
+	
+	can_end = {
+		NOT = {
+			num_of_rebel_controlled_provinces = 1
+		}
+		NOT = {
+			has_ruler_modifier = usurper_on_the_throne
+		}
+		NOT = {
+			is_in_war = {
+				defender_leader = ROOT
+				casus_belli = cb_fabricated_claims
+			}
+		}
+		NOT = {
+			any_owned_province = {
+				has_province_modifier = peace_famine
+			}
+		}
+		stability = 1
+		capital_scope = {
+			controlled_by = ROOT
+		}
+	}
+
+	
+	on_start = time_of_troubles.1
+	on_end = time_of_troubles.10
+	
+	on_monthly = {
+		events = {
+		}
+		
+		random_events = { 
+			1000 = 0
+			100 = time_of_troubles.5 # Brigands in $COUNTRY$
+		}
+	}
+}

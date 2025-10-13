@@ -1,0 +1,21 @@
+#6738 - Juan Fernández
+
+capital = "San Juan Bautista"
+trade_goods = unknown
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+native_size = 0
+native_ferocity = 0
+native_hostileness = 0
+
+1722.4.5 = {
+	discovered_by = NED	# Jacob Roggeveen
+}
+1770.11.15 = {
+	discovered_by = SPA	# The ships San Lorenzo and Santa Rosalia
+}
+1774.1.1 = {
+	discovered_by = GBR	# James Cook, date unknown
+}

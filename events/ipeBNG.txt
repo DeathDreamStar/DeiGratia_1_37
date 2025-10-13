@@ -1,0 +1,165 @@
+namespace = ipeBNG
+normal_or_historical_nations = yes
+
+# The Conspiracy of the Siddis
+country_event = {
+	id = ipeBNG.1
+	title = ipeBNG.1.t
+	desc = ipeBNG.1.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = BNG
+		NOT = {
+			legitimacy = 50
+		}
+		government = monarchy
+		has_regency = no
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # Dark times come for Bengal.
+		name = ipeBNG.1.a
+		kill_ruler = yes
+		add_stability = -1
+		define_ruler = {
+			name = "Shahzada Barbak"
+			dynasty = "Habshi"
+			culture = siddi
+			adm = 0
+			dip = 0
+			mil = 2
+			claim = 30
+		}
+		hidden_effect = {
+			add_ruler_personality = cruel_personality
+		}
+		set_ruler_flag = barbak_downfall
+	}
+}
+
+# The Downfall of Shahzada Barbak
+country_event = {
+	id = ipeBNG.2
+	title = ipeBNG.2.t
+	desc = ipeBNG.2.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = BNG
+		has_ruler_flag = barbak_downfall
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # A slave is not fit to be a king!
+		name = ipeBNG.2.a
+		kill_ruler = yes
+		add_stability = -1
+		define_ruler = {
+			name = "Sayf-ud-Din Firuz"
+			dynasty = "Habshi"
+			culture = siddi
+			adm = 0
+			dip = 0
+			mil = 1
+			claim = 30
+		}
+		hidden_effect = {
+			add_ruler_personality = cruel_personality
+		}
+		set_ruler_flag = sayf_downfall
+	}
+}
+
+# The Downfall of Sayf-ud-Din Firuz
+country_event = {
+	id = ipeBNG.3
+	title = ipeBNG.3.t
+	desc = ipeBNG.3.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = BNG
+		has_ruler_flag = sayf_downfall
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = { # Make it stop!
+		name = ipeBNG.3.a
+		kill_ruler = yes
+		add_stability = -1
+		define_ruler = {
+			name = "Shams ad-Din Muzaffar"
+			dynasty = "Habshi"
+			culture = siddi
+			adm = 0
+			dip = 0
+			mil = 1
+			claim = 30
+		}
+		hidden_effect = {
+			add_ruler_personality = cruel_personality
+		}
+		set_ruler_flag = shams_downfall
+	}
+}
+
+# The Demise of the Habshi Dynasty
+country_event = {
+	id = ipeBNG.4
+	title = ipeBNG.4.t
+	desc = ipeBNG.4.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+	
+	trigger = {
+		tag = BNG
+		has_ruler_flag = shams_downfall
+	}
+
+	mean_time_to_happen = {
+		months = 480
+	}
+
+	option = { # We wish him the best...
+		name = ipeBNG.4.a
+		kill_ruler = yes
+		add_stability = -1
+		define_ruler = {
+			name = "Ala-ud-din Husain"
+			dynasty = "Hussein Shah"
+			culture = hejazi_culture
+			adm = 5
+			dip = 5
+			mil = 5
+			claim = 30
+		}
+		hidden_effect = {
+			add_ruler_personality = strict_personality
+		}
+	}
+}

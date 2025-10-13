@@ -1,0 +1,31 @@
+#3177 - Uglich
+
+owner = GLC
+controller = GLC
+culture = russian
+religion = orthodox
+hre = no
+base_tax = 2
+base_production = 2
+trade_goods = naval_supplies
+base_manpower = 1
+capital = "Uglich"
+is_city = yes
+fort_15th = yes
+add_core = GLC
+discovered_by = eastern
+discovered_by = western
+discovered_by = nomad_group
+
+1450.1.1 = { discovered_by = SIB }
+1452.1.1 = {
+    owner = MOS
+    controller = MOS
+    add_core = MOS
+}
+1503.4.1 = {
+           owner = RUS
+           controller = RUS
+           add_core = RUS
+           remove_core = MOS
+}

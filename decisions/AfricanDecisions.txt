@@ -1,0 +1,145 @@
+country_decisions = {
+	send_the_shaman_to_a_foreign_country = {
+		potential = {
+			has_country_flag = can_choose_to_unlock_a_cult
+			religion = shamanism
+			has_dlc = "Rights of Man"
+		}
+		allow = {
+			uses_cults = yes
+		}
+		effect = {
+			hidden_effect = {
+				clr_country_flag = can_choose_to_unlock_a_cult
+			}
+			country_event = {
+				id = fetishist_flavor.601
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	swap_primary_cult = {
+		potential = {
+			has_country_flag = uses_primary_cult
+			has_country_flag = has_selected_a_primary_cult
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = swap_primary_cult_tt
+				NOT = { has_country_modifier = swapped_primary_cult }
+			}
+			stability = 0
+		}
+		effect = {
+			add_stability = -1
+			add_country_modifier = {
+				name = swapped_primary_cult
+				duration = 18250
+			}
+			country_event = {
+				id = fetishist_flavor.602
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	switch_active_cult_decision = {
+		potential = {
+			religion = shamanism
+			has_country_flag = enabled_cult_switching
+			NOT = { has_country_flag = swaps_cult_flag }
+			has_dlc = "Rights of Man"
+		}
+		allow = {
+			if = {
+				limit = {
+					government = republic
+				}
+				republican_tradition = 12
+			}
+			else = {
+				legitimacy_equivalent = 25
+			}
+			has_regency = no
+			custom_trigger_tooltip = {
+				tooltip = decision_once_every_twenty_years
+				OR = {
+					NOT = { has_country_flag = switched_active_cult_cooldown }
+					had_country_flag = {
+						flag = switched_active_cult_cooldown
+						days = 7300
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = has_adopted_any_cult
+				OR = {
+					has_adopted_cult = yemoja_cult
+					has_adopted_cult = roog_cult
+					has_adopted_cult = nyame_cult
+					has_adopted_cult = cwezi_cult
+					has_adopted_cult = central_african_ancestor_cult
+					has_adopted_cult = mwari_cult
+					has_adopted_cult = enkai_cult
+					has_adopted_cult = waaq_cult
+					has_adopted_cult = zanahary_cult
+					has_adopted_cult = christianity_cult
+					has_adopted_cult = islam_cult
+					has_adopted_cult = buddhism_cult
+					has_adopted_cult = dharmic_cult
+					has_adopted_cult = south_central_american_cult
+					has_adopted_cult = norse_cult
+					has_adopted_cult = jewish_cult
+					has_adopted_cult = zoroastrian_cult
+				}
+			}
+		}
+		effect = {
+			reduce_legitimacy_large_effect = yes
+			set_country_flag = swaps_cult_flag
+			clr_country_flag = switched_active_cult_cooldown
+			set_country_flag = switched_active_cult_cooldown
+			country_event = { id = fetishist_flavor.603 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	switch_permanent_scholar = {
+		potential = {
+			religion_group = muslim
+			has_country_flag = enabled_baseline_invite_scholar
+			NOT = { has_country_flag = swaps_scholar_flag }
+		}
+		allow = {
+			has_regency = no
+			custom_trigger_tooltip = {
+				tooltip = decision_once_every_twenty_years
+				OR = {
+					NOT = { has_country_flag = switched_permanent_scholar_cooldown }
+					had_country_flag = {
+						flag = switched_permanent_scholar_cooldown
+						days = 7300
+					}
+				}
+			}
+			piety = 0.25
+		}
+		effect = {
+			add_piety = -0.25
+			set_country_flag = swaps_scholar_flag
+			clr_country_flag = switched_permanent_scholar_cooldown
+			set_country_flag = switched_permanent_scholar_cooldown
+			country_event = { id = muslim_school_events.24 }
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

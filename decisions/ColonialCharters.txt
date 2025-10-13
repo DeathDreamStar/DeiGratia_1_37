@@ -1,0 +1,852 @@
+country_decisions = {
+	alaska_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = alaskan_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_alaska = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				1043 = { # Okhotsk
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1556 = { # California
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1376 = { # Nippon
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				684 = { # Hangzhou
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_alaska
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_alaska
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = alaskan_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	canada_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = canadian_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_canada = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				1490 = { # St Lawrence
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1975 = { # North Sea
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1276 = { # Bordeaux
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1284 = { # Irish Sea
+					trade_share = {
+						country = ROOT
+						share = 15
+					}				
+				}
+				capital_scope = {
+					colonial_region = colonial_canada
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_canada
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = canadian_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	eastern_america_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = eastern_american_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_eastern_america = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				1490 = { # St Lawrence
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1270 = { # English Channel
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1284 = { # Irish Sea
+					trade_share = {
+						country = ROOT
+						share = 15
+					}				
+				}
+				1500 = { # Chesapeake Bay
+					trade_share = {
+						country = ROOT
+						share = 15
+					}				
+				}
+				1975 = { # North Sea
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_eastern_america
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_eastern_america
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = eastern_american_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	louisiana_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = louisianan_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_louisiana = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				2526 = { # Ohio
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1516 = { # Caribbean
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1507 = { # Mississippi
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_louisiana
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_louisiana
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = louisianan_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	california_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = californian_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_california = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				1043 = { # Okhotsk
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1556 = { # California
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1376 = { # Nippon
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				684 = { # Hangzhou
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1507 = { # Mississippi
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1551 = { # Acapulco
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				2499 = { # Rio Grande
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_california
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_california
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = californian_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	mexico_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = mexican_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_mexico = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				1376 = { # Nippon
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				684 = { # Hangzhou
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1516 = { # Caribbean
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1551 = { # Acapulco
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				2499 = { # Rio Grande
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1509 = { # Mexico
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				835 = { # Panama
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_mexico
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_mexico
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = mexican_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	cuba_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = cuban_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_cuba = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				1516 = { # Caribbean
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_cuba
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_cuba
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = cuban_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	colombia_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = colombian_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_colombia = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				1516 = { # Caribbean
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				835 = { # Panama
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_colombia
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_colombia
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = colombian_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	peru_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = peruvian_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_peru = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				835 = { # Panama
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				809 = { # Lima
+					trade_share = {
+						country = ROOT
+						share = 15
+					}			
+				}
+				capital_scope = {
+					colonial_region = colonial_peru
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_peru
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = peruvian_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	la_plata_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = la_platan_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_la_plata = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				809 = { # Lima
+					trade_share = {
+						country = ROOT
+						share = 15
+					}			
+				}
+				1536 = { # La Plata
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1531 = { # Brazil
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_la_plata
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_la_plata
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = la_platan_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	chile_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = chilean_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_chile = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				809 = { # Lima
+					trade_share = {
+						country = ROOT
+						share = 15
+					}			
+				}
+				1536 = { # La Plata
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_chile
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_chile
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = chilean_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	brazil_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = brazilian_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_brazil = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				1531 = { # Brazil
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				2935 = { # Amazonas
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1516 = { # Caribbean
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1466 = { # Ivory Coast
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_brazil
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_brazil
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = brazilian_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	australia_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = australian_charter
+				technology_group = north_american
+				technology_group = mesoamerican
+				technology_group = south_american
+				technology_group = andean
+				technology_group = high_american
+				technology_group = caribbean
+			}
+			colonial_australia = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				1411 = { # Australia
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				1357 = { # Moluccas
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_australia
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_australia
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = australian_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	cape_charter = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_modifier = cape_charter
+			}
+			colonial_cape = {
+				has_discovered = ROOT
+				range = ROOT
+			}
+		}
+		allow = {
+			OR = {
+				1466 = { # Ivory Coast
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+				capital_scope = {
+					colonial_region = colonial_cape
+				}
+				any_subject_country = {
+					is_subject_of_type = colony
+					capital_scope = {
+						colonial_region = colonial_cape
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = cape_charter
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

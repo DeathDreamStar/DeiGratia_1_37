@@ -1,0 +1,11 @@
+protestant_scandinavia = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+no_protestant_scandinavia = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}

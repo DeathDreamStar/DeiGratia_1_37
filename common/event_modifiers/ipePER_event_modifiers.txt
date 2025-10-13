@@ -1,0 +1,14 @@
+cursing_caliphs = {
+	global_heretic_missionary_strength = 0.03
+	tolerance_heretic = -1
+}
+
+ottoman_opponent = {
+	shock_damage = 0.1
+	prestige = 1
+}
+
+disloyal_qizilbash = {
+	defensiveness = -0.5
+	global_unrest = 5
+}

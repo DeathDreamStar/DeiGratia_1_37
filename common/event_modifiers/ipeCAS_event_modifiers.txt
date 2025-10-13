@@ -1,0 +1,7 @@
+genovese_banking_spa = {
+	interest = -0.5
+}
+
+genovese_banking_gen = {
+	global_trade_power = 0.1
+}

@@ -1,0 +1,22 @@
+name = "Lorrainer Conquest of Metz"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 188
+}
+
+1444.9.10 = {
+	add_attacker = LOR
+	add_attacker = BAR
+	add_attacker = ANJ
+	add_attacker = TOL
+	add_defender = MTZ
+}
+
+1445.3.1 = {
+	rem_attacker = LOR
+	rem_attacker = BAR
+	rem_attacker = ANJ
+	rem_attacker = TOL
+	rem_defender = MTZ
+}

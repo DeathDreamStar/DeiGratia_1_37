@@ -1,0 +1,15 @@
+#Buzinza
+
+owner = BZN
+controller = BZN
+add_core = BZN
+culture = sukuma
+religion = shamanism #Fetishism
+capital = "Buzinza"
+trade_goods = iron
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+discovered_by = central_african

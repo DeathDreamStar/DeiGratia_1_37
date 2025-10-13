@@ -1,0 +1,139 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = hannoverian
+religion = catholic
+technology_group = western
+capital = 3988
+
+1160.1.1 = {
+	monarch = {
+		name = "Eberhard I"
+		dynasty = "von der Mark"
+		birth_date = 1130.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1180.1.23 = {
+	monarch = {
+		name = "Friedrich I"
+		dynasty = "von der Mark"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1182.1.1 = {
+	heir = {
+		name = "Adolf"
+		monarch_name = "Adolf I"
+		dynasty = "von der Mark"
+		birth_date = 1182.1.1
+		death_date = 1249.6.28
+		claim = 95
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+}
+1198.1.1 = {
+	monarch = {
+		name = "Adolf I"
+		dynasty = "von der Mark"
+		birth_date = 1182.1.1
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+}
+1218.1.1 = {
+	heir = {
+		name = "Engelbert"
+		monarch_name = "Engelbert I"
+		dynasty = "von der Mark"
+		birth_date = 1218.1.1
+		death_date = 1277.11.16
+		claim = 95
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+}
+1249.6.28 = {
+	monarch = {
+		name = "Engelbert I"
+		dynasty = "von der Mark"
+		birth_date = 1218.1.1
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+}
+1255.1.1 = {
+	heir = {
+		name = "Eberhard"
+		monarch_name = "Eberhard II"
+		dynasty = "von der Mark"
+		birth_date = 1255.1.1
+		death_date = 1308.1.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1277.11.16 = {
+	monarch = {
+		name = "Eberhard II"
+		dynasty = "von der Mark"
+		birth_date = 1255.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1308.1.1 = {
+	monarch = {
+		name = "Engelbert II"
+		dynasty = "von der Mark"
+		birth_date = 1282.1.1
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1328.7.18 = {
+	monarch = {
+		name = "Adolf II"
+		dynasty = "von der Mark"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1333.1.1 = {
+	heir = {
+		name = "Engelbert"
+		monarch_name = "Engelbert III"
+		dynasty = "von der Mark"
+		birth_date = 1333.1.1
+		death_date = 1391.12.21
+		claim = 95
+		adm = 2
+		dip = 5
+		mil = 3
+	}
+}
+1347.10.20 = {
+	monarch = {
+		name = "Engelbert III"
+		dynasty = "von der Mark"
+		birth_date = 1333.1.1
+		adm = 2
+		dip = 5
+		mil = 3
+	}
+}
+#1391.12.21 to KLE

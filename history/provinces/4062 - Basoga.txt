@@ -1,0 +1,15 @@
+#Basoga
+
+owner = BSG
+controller = BSG
+add_core = BSG
+culture = soga
+religion = shamanism #Fetishism
+capital = "Bukaleeba"
+trade_goods = fish
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+discovered_by = central_african

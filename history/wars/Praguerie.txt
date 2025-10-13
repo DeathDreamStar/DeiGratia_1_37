@@ -1,0 +1,60 @@
+name = "Praguerie"
+war_goal = {
+	type = defend_capital_independence
+	casus_belli = cb_independence_war
+	tag = BOU
+}
+
+1440.2.1 = {
+	add_attacker = BOU
+	add_attacker = AMG
+	add_attacker = BRI
+	add_attacker = XVD
+
+	add_defender = FRA
+	add_defender = ORL
+	add_defender = AUV
+	add_defender = FOI
+	add_defender = ADR
+	add_defender = ANG
+	add_defender = PGD
+	add_defender = MNE
+	add_defender = NRB
+	add_defender = CMN
+	add_defender = ABT
+	add_defender = XPT
+	add_defender = ATI
+	add_defender = DNO
+	add_defender = XLO
+	add_defender = XEV
+	add_defender = XTR
+	add_defender = LMR
+	add_defender = XTO
+}
+
+1440.7.1 = {
+	rem_attacker = BOU
+	rem_attacker = AMG
+	rem_attacker = BRI
+	rem_attacker = XVD
+
+	rem_defender = FRA
+	rem_defender = ORL
+	rem_defender = AUV
+	rem_defender = FOI
+	rem_defender = ADR
+	rem_defender = ANG
+	rem_defender = PGD
+	rem_defender = MNE
+	rem_defender = NRB
+	rem_defender = CMN
+	rem_defender = ABT
+	rem_defender = XPT
+	rem_defender = ATI
+	rem_defender = DNO
+	rem_defender = XLO
+	rem_defender = XEV
+	rem_defender = XTR
+	rem_defender = LMR
+	rem_defender = XTO
+}

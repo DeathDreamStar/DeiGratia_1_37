@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = bahnar
+religion = animism
+technology_group = chinese
+capital = 2375
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Yôi"
+		dynasty = "Koho"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

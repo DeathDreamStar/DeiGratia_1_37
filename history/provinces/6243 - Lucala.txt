@@ -1,0 +1,17 @@
+#6243 - Lucala
+
+owner = NDO
+controller = NDO
+add_core = NDO
+culture = mbundu
+religion = shamanism
+capital = "Lucala"
+trade_goods = livestock
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+
+discovered_by = sub_saharan
+discovered_by = central_african

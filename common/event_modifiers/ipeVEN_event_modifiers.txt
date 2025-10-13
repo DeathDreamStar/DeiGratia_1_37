@@ -1,0 +1,3 @@
+plague_doctors = {
+	local_monthly_devastation = -0.25
+}

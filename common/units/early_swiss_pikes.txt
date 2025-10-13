@@ -1,0 +1,23 @@
+# Early Swiss Pikes
+
+type = infantry
+unit_type = western
+
+maneuver = 1
+offensive_morale = 1
+defensive_morale = 1
+offensive_fire = 0
+defensive_fire = 0
+offensive_shock = 0
+defensive_shock = 2
+
+trigger = {
+	OR = {
+		tag = SWI # Switzerland
+		tag = FBS # Basel
+		tag = ZUR # Zürich
+		tag = TTL # Three Leagues
+		tag = SGA # St. Gallen
+		tag = FBO # Fribourg
+	}
+}

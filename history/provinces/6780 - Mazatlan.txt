@@ -1,0 +1,18 @@
+#6780 - Mazatlan
+
+culture = mixe
+owner = MXE
+controller = MXE
+add_core = MXE
+is_city = yes
+religion = zapotec_religion
+capital = "Mazatlan"
+trade_goods = cocoa
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+
+
+
+discovered_by = mesoamerican

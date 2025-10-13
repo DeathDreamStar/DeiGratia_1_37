@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = timurid_emirate
+technology_group = muslim
+religion = sunni
+primary_culture = uzbehk
+capital = 3520 #Andijan
+religious_school = hanafi_school
+
+1494.6.6 = {
+	monarch = {
+		name = "Bâbur"
+		dynasty = "Timurid"
+		adm = 5
+		dip = 5
+		mil = 6
+		leader = {	name = "Bâbur"	type = general	fire = 5	shock = 5	manuever = 3	siege = 1 }
+	}
+	leader = {	name = "Ustad Ali Quli"	type = general	fire = 2	shock = 2	manuever = 1	siege = 1 death_date = 1531.1.1 }
+	leader = {	name = "Chin Timur Khan" type = general	fire = 2	shock = 3	manuever = 1	siege = 0 death_date = 1531.1.1 }
+	leader = {	name = "Mustafa Rumi"	type = general	fire = 4	shock = 1	manuever = 1	siege = 0  death_date = 1531.1.1 }
+	leader = {	name = "Raja Sanghar Ali Khan" type = general	fire = 1	shock = 2	manuever = 1	siege = 1 death_date = 1531.1.1 }
+}

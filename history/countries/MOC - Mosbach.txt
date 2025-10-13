@@ -1,0 +1,49 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = franconian
+religion = catholic
+capital = 6759
+fixed_capital = 6759
+
+#Palatinate-Mosbach
+1410.5.18 = {
+	monarch = {
+		name = "Otto I"
+		dynasty = "von Wittelsbach"
+		birth_date = 1390.8.24
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+
+1430.1.1 = {
+	queen = {
+		country_of_origin = LBV
+		culture = bavarian
+		name = "Johanna"
+		dynasty = "von Wittelsbach"
+		birth_date = 1413.1.1
+		death_date = 1444.7.20
+		female = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1435.6.26 = {
+	heir = {
+		name = "Otto"
+		monarch_name = "Otto II"
+		dynasty = "von Wittelsbach"
+		birth_date = 1435.6.26
+		death_date = 1499.4.8
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

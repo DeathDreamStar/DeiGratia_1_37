@@ -1,0 +1,57 @@
+name = "Dutch-Hanseatic War"
+war_goal = {
+	type = blockade_ports
+	casus_belli = cb_trade_conflict
+}
+
+1438.4.7 = {
+	# Burgundy
+	add_attacker = BUR
+	add_attacker = HOL
+	add_attacker = BRB
+	add_attacker = FLA
+	add_attacker = NEV
+	add_attacker = CMB
+	add_attacker = VDD
+	add_attacker = BSC
+	add_attacker = XSP
+
+	add_defender = HSA
+	add_defender = LUN
+	add_defender = MKL
+	add_defender = STP
+	add_defender = STE
+	add_defender = WOL
+	add_defender = BRA
+	add_defender = SHL
+	add_defender = RIG
+	add_defender = HAM
+	add_defender = BRE
+	add_defender = BSB
+}
+
+1441.1.1 = {
+	# Burgundy
+	rem_attacker = BUR
+	rem_attacker = HOL
+	rem_attacker = BRB
+	rem_attacker = FLA
+	rem_attacker = NEV
+	rem_attacker = CMB
+	rem_attacker = VDD
+	rem_attacker = BSC
+	rem_attacker = XSP
+
+	rem_defender = HSA
+	rem_defender = LUN
+	rem_defender = MKL
+	rem_defender = STP
+	rem_defender = STE
+	rem_defender = WOL
+	rem_defender = BRA
+	rem_defender = SHL
+	rem_defender = RIG
+	rem_defender = HAM
+	rem_defender = BRE
+	rem_defender = BSB
+}

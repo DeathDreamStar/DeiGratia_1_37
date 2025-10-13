@@ -1,0 +1,19 @@
+government = tribal
+add_government_reform = tribal_kingdom
+technology_group = sub_saharan
+unlock_cult = yemoja_cult
+unlock_cult = roog_cult
+unlock_cult = nyame_cult
+religion = shamanism #Fetishism
+primary_culture = igbo
+capital = 6325 # Nri
+
+1391.1.1 = {
+	monarch = {
+		name = "Omalonyeso"
+		dynasty = "Nri"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

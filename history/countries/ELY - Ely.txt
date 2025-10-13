@@ -1,0 +1,19 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+technology_group = western
+primary_culture = english
+religion = catholic
+capital = 6944
+fixed_capital = 6944
+
+1443.1.1 = {
+	monarch = {
+		name = "Thomas"
+		dynasty = "Bourchier"
+		birth_date = 1411.1.1
+		dip = 3
+		adm = 3
+		mil = 2
+	}
+}

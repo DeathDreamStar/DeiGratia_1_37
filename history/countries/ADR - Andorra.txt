@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = feudalism_reform
+technology_group = western
+religion = catholic
+primary_culture = catalan
+capital = 6732
+fixed_capital = 6732
+government_rank = 1

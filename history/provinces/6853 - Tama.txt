@@ -1,0 +1,15 @@
+#6853 - Tama
+
+owner = UES
+controller = UES
+culture = togoku
+religion = shinto
+capital = "Fuchu"
+trade_goods = silk
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = UES
+discovered_by = chinese

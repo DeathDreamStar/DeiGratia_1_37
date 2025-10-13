@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = totonac
+religion = nahuatl
+technology_group = mesoamerican 
+capital = 2647
+fixed_capital = 2647
+
+1444.1.1 = {
+	monarch = {
+		name = "Huitzilihuitl"
+		dynasty = "Cuetlaxtlan"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

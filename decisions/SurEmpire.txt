@@ -1,0 +1,80 @@
+country_decisions = {
+    crush_the_suri_empire = {
+        major = yes
+        potential = {
+			normal_or_historical_nations = yes
+			tag = MUG
+            exists = SUR
+            has_country_flag = suri_empire_spawned
+        }
+        allow = {
+            SUR = {
+                capital_scope = {
+                    controlled_by = ROOT
+                }
+            }
+        }
+        effect = {
+            clr_country_flag = suri_empire_spawned
+			country_event = {
+				id = ipeMUG.5
+			}
+        }
+        ai_will_do = {
+            factor = 1
+        }
+		ai_importance = 400
+    }
+
+	vanquish_the_mughals = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			tag = SUR
+			exists = MUG
+			NOT = {
+				has_global_flag = suri_victory
+			}
+		}
+		allow = {
+			MUG = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			set_global_flag = suri_victory
+			country_event = {
+				id = ipeMUG.6
+			}
+		}
+        ai_will_do = {
+            factor = 1
+        }
+		ai_importance = 400
+	}
+
+	defeat_gujarat = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			tag = MUG
+			exists = GUJ
+			has_country_flag = gujarati_revolt
+		}
+		allow = {
+			GUJ = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			clr_country_flag = gujarati_revolt
+			country_event = {
+				id = ipeMUG.9
+			}
+		}
+	}
+}

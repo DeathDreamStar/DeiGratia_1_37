@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = kham
+religion = vajrayana
+technology_group = chinese
+capital = 3524	# Nangchen
+fixed_capital = 3524
+government_rank = 2
+
+1400.1.1 = { # fictional
+	monarch = {
+		name = "Trashi Tsewang"
+		dynasty = "Dorjé"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

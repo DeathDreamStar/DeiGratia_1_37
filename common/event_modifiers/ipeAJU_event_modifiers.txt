@@ -1,0 +1,12 @@
+ipe_toob_menadir = {
+	local_production_efficiency = 0.2
+}
+
+ipeAJU_army = {
+	global_manpower_modifier = 0.1
+}
+
+ipeAJU_mercenary = {
+	mercenary_cost = -0.1
+	merc_maintenance_modifier = -0.1
+}

@@ -1,0 +1,19 @@
+#6841 - Dillingen
+
+owner = AUG
+controller = AUG
+capital = "Dillingen"
+is_city = yes
+culture = swabian
+religion = catholic
+hre = yes
+base_tax = 1
+base_production = 1
+base_manpower = 1
+trade_goods = grain
+add_core = AUG
+
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman

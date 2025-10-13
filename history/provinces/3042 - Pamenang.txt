@@ -1,0 +1,21 @@
+#3042 - Pamenang
+
+owner = PLB
+controller = PLB
+add_core = PLB
+is_city = yes
+culture = musi
+religion = hinduism
+capital = "Pamenang"
+trade_goods = tropical_wood
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman
+
+1405.1.1 = { discovered_by = MNG }
+1509.1.1 = { discovered_by = POR }

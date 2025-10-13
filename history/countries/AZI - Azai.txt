@@ -1,0 +1,117 @@
+government = monarchy
+add_government_reform = daimyo
+government_rank = 1
+primary_culture = japanese
+religion = shinto
+technology_group = chinese
+capital = 3308	# Omi
+
+1523.8.25 = { 
+	monarch = {
+		name = "Sukemasa"
+		dynasty = "Azai"
+		birth_date = 1491.1.1
+		death_date = 1542.1.21
+		adm = 5
+		dip = 3
+		mil = 3
+	}
+}
+
+1536.4.7 = {
+	heir = {
+		name = "Hisamasa"
+		monarch_name = "Hisamasa"
+		dynasty = "Azai"
+		birth_date = 1526.1.1
+		death_date = 1573.9.26
+		claim = 90
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}
+
+1546.5.19 = { 
+	monarch = {
+		name = "Hisamasa"
+		dynasty = "Azai"
+		birth_date = 1526.1.1
+		death_date = 1573.9.26
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+	heir = {
+		name = "Nagamasa"
+		monarch_name = "Nagamasa"
+		dynasty = "Azai"
+		birth_date = 1545.1.1
+		death_date = 1573.9.26
+		claim = 90
+		adm = 2
+		dip = 3
+		mil = 6
+	}
+	leader = {
+		name = "Naotsune Endo"
+		type = general
+		fire = 3
+		shock = 2
+		manuever = 3
+		siege = 0
+		death_date = 1570.8.9
+	}
+	leader = {
+		name = "Kazumasa Isono"
+		type = general
+		fire = 2
+		shock = 4
+		manuever = 2
+		siege = 0
+		death_date = 1583.1.1
+	}
+}
+
+1569.10.10 = { 
+	monarch = {
+		name = "Nagamasa"
+		dynasty = "Azai"
+		birth_date = 1545.1.1
+		death_date = 1573.9.26
+		adm = 2
+		dip = 3
+		mil = 6
+		leader = {
+			name = "Nagamasa Azai"
+			type = general
+			fire = 5
+			shock = 5
+			manuever = 0
+			siege = 2
+			death_date = 1573.9.26
+		}
+	}
+	queen = {
+		country_of_origin = ODA
+		name = "Oichi"
+		dynasty = "Oda"
+		birth_date = 1547.1.1
+		death_date = 1583.6.14
+		female = yes
+		adm = 2
+		dip = 5
+		mil = 2
+	}
+}
+
+1615.1.1 = {
+	monarch = {
+		name = "Nagamasa"
+		dynasty = "Azai"
+		birth_date = 1545.1.1
+		adm = 2
+		dip = 3
+		mil = 6
+	}
+}

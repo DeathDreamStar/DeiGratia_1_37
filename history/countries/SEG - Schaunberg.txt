@@ -1,0 +1,136 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = austrian
+religion = catholic
+technology_group = western
+capital = 6755
+
+1190.1.1 = {
+	monarch = {
+		name = "Werinhard II"
+		dynasty = "von Julbach"
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+}
+1221.1.1 = {
+	monarch = {
+		name = "Heinrich I"
+		dynasty = "von Julbach"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1240.1.1 = {
+	monarch = {
+		name = "Heinrich II"
+		dynasty = "von Julbach"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1281.7.25 = {
+	monarch = {
+		name = "Heinrich III"
+		dynasty = "von Julbach"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1310.1.1 = {
+	monarch = {
+		name = "Heinrich IV"
+		dynasty = "von Julbach"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1327.3.1 = {
+	monarch = {
+		name = "Heinrich V"
+		dynasty = "von Julbach"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1355.1.1 = {
+	monarch = {
+		name = "Heinrich VI"
+		dynasty = "von Julbach"
+		adm = 2
+		dip = 1
+		mil = 5
+	}
+}
+1390.10.9 = {
+	monarch = {
+		name = "Georg I"
+		dynasty = "von Julbach"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1404.1.1 = {
+	monarch = {
+		name = "Johann I"
+		dynasty = "von Julbach"
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1453.11.16 = {
+	monarch = {
+		name = "Ulrich I"
+		dynasty = "von Julbach"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1472.1.1 = {
+	heir = {
+		name = "Georg"
+		monarch_name = "Georg II"
+		dynasty = "von Julbach"
+		birth_date = 1472.1.1
+		death_date = 1554.4.11
+		claim = 95
+		adm = 4
+		dip = 1
+		mil = 4
+	}
+}
+1484.12.27 = {
+	monarch = {
+		name = "Georg II"
+		dynasty = "von Julbach"
+		birth_date = 1472.1.1
+		adm = 4
+		dip = 1
+		mil = 4
+	}
+}
+1500.1.1 = {
+	heir = {
+		name = "Johann"
+		monarch_name = "Johann II"
+		dynasty = "von Julbach"
+		birth_date = 1500.1.1
+		death_date = 1551.5.31
+		claim = 90
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1544.1.1 = { religion = protestant }
+#1548 done

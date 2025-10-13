@@ -1,0 +1,532 @@
+# For specific government types
+# Will pick the first valid one it finds in list
+
+gov_eyalet = {
+	rank = {
+		1 = EYALET
+		2 = EYALET
+		3 = EYALET
+	}
+
+	ruler_male = {
+		1 = GRANDVIZIER
+		2 = GRANDVIZIER
+		3 = GRANDVIZIER
+	}
+
+	ruler_female = {
+		1 = GRANDVIZIER_fem
+		2 = GRANDVIZIER_fem
+		3 = GRANDVIZIER_fem
+	}
+
+	consort_male = {
+		1 = CONSORT
+		2 = CONSORT
+		3 = CONSORT
+	}
+
+	consort_female = {
+		1 = CONSORT
+		2 = CONSORT
+		3 = CONSORT
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	trigger = {
+		OR = {
+			tag = MAM
+			tag = EGY
+		}
+		is_subject_of = TUR
+	}
+}
+
+gov_dauphine = {
+	rank = {
+		1 = DAUPHINATE
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = DAUPHIN
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = DAUPHINE
+		2 = QUEEN
+		3 = EMPRESS
+	}
+
+	consort_male  = {
+		1 = DAUPHIN
+		2 = PRINCE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+
+	consort_female = {
+		1 = DAUPHINE
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	government_reform = monarchy_mechanic
+
+	trigger = {
+		has_reform = monarchy_mechanic
+		tag = DAU
+		NOT = { total_development = 50 }
+	}
+}
+
+gov_viscounty = {
+	rank = {
+		1 = VISCOUNTY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = VISCOUNT
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = VISCOUNTESS
+		2 = QUEEN
+		3 = EMPRESS
+	}
+
+	consort_male  = {
+		1 = PRINCE_CONSORT
+		2 = PRINCE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	government_reform = monarchy_mechanic
+
+	trigger = {
+		has_reform = monarchy_mechanic
+		OR = {
+			tag = NRB # Viscounty of Narbonne
+			tag = XTR # Viscounty of Turenne
+		}
+		NOT = { total_development = 50 }
+	}
+}
+
+gov_marquisate = {
+	rank = {
+		1 = MARQUISATE
+		2 = MARQUISATE
+		3 = MARQUISATE
+	}
+
+	ruler_male = {
+		1 = MARQUIS
+		2 = MARQUIS
+		3 = MARQUIS
+	}
+
+	ruler_female = {
+		1 = MARQUESS
+		2 = MARQUESS
+		3 = MARQUESS
+	}
+
+	consort_male = {
+		1 = MARQUIS
+		2 = MARQUIS
+		3 = MARQUIS
+	}
+
+	consort_female = {
+		1 = MARQUESS
+		2 = MARQUESS
+		3 = MARQUESS
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	government_reform = monarchy_mechanic
+
+	trigger = {
+		has_reform = monarchy_mechanic
+		OR = {
+			tag = FER # Marquisate of Ferrara
+			tag = MFA # Marquisate of Montferrat
+			tag = SZO # Marquisate of Saluzzo
+			tag = MSS # Marquisate of Massa
+		}
+		NOT = { total_development = 100 }
+	}
+}
+
+gov_principality = {
+	rank = {
+		1 = PRINCIPALITY
+		2 = GRAND_PRINCIPALITY
+		3 = GREAT_PRINCIPALITY
+	}
+
+	ruler_male = {
+		1 = PRINCE
+		2 = GRAND_PRINCE
+		3 = GREAT_PRINCE
+	}
+
+	ruler_female = {
+		1 = PRINCESS
+		2 = GRAND_PRINCESS
+		3 = GREAT_PRINCESS
+	}
+
+	consort_male = {
+		1 = PRINCE
+		2 = GRAND_PRINCE
+		3 = GREAT_PRINCE
+	}
+
+	consort_female = {
+		1 = PRINCESS
+		2 = GRAND_PRINCESS
+		3 = GREAT_PRINCESS
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	government_reform = monarchy_mechanic
+
+	trigger = {
+		has_reform = monarchy_mechanic
+		OR = {
+			tag = ANH # Principality of Anhalt
+			tag = CLB # Principality of Calenburg
+			tag = GBU # Principality of Grubenhagen
+			tag = GTT # Principality of Göttingen
+			tag = LUN # Principality of Lüneburg
+			tag = RUG # Principality of Rügen
+			tag = DKG # Principality of Dukagjini
+			tag = KST # Principality of Kastrioti
+			tag = ARI # Principality of Arianiti
+			tag = XBT # Principality of Muzaka
+		}
+	}
+}
+
+gov_margraviate = {
+	rank = {
+		1 = MARGRAVIATE
+		2 = MARGRAVIATE
+		3 = MARGRAVIATE
+	}
+
+	ruler_male = {
+		1 = MARGRAVE
+		2 = MARGRAVE
+		3 = MARGRAVE
+	}
+
+	ruler_female = {
+		1 = MARQUESS
+		2 = MARQUESS
+		3 = MARQUESS
+	}
+
+	consort_male = {
+		1 = MARGRAVE
+		2 = MARGRAVE
+		3 = MARGRAVE
+	}
+
+	consort_female = {
+		1 = MARQUESS
+		2 = MARQUESS
+		3 = MARQUESS
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	government_reform = monarchy_mechanic
+
+	trigger = {
+		has_reform = monarchy_mechanic
+		OR = {
+			AND = {
+				tag = BRA # Margraviate of Brandenburg
+				is_elector = no
+			}
+			AND = {
+				tag = MAN # Margraviate of Mantua
+				NOT = {
+					total_development = 25
+				}
+			}
+			AND = {
+				tag = ANS # Margraviate of Ansbach
+				NOT = {
+					total_development = 25
+				}
+			}
+			tag = MVA # Margraviate of Moravia
+			tag = MEI # Margraviate of Meissen
+		}
+	}
+}
+
+gov_landgraviate = {
+	rank = {
+		1 = LANDGRAVIATE
+		2 = LANDGRAVIATE
+		3 = LANDGRAVIATE
+	}
+
+	ruler_male = {
+		1 = LANDGRAVE
+		2 = LANDGRAVE
+		3 = LANDGRAVE
+	}
+
+	ruler_female = {
+		1 = LANDGRAVINE
+		2 = LANDGRAVINE
+		3 = LANDGRAVINE
+	}
+
+	consort_male = {
+		1 = LANDGRAVE
+		2 = LANDGRAVE
+		3 = LANDGRAVE
+	}
+
+	consort_female = {
+		1 = LANDGRAVINE
+		2 = LANDGRAVINE
+		3 = LANDGRAVINE
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	government_reform = monarchy_mechanic
+
+	trigger = {
+		has_reform = monarchy_mechanic
+		tag = HES # Landgraviate of Hesse
+		NOT = {
+			total_development = 50
+		}
+	}
+}
+
+gov_abbey = {
+	rank = {
+		1 = ABBEY
+		2 = ABBEY
+		3 = ABBEY
+	}
+
+	ruler_male = {
+		1 = ABBOT
+		2 = ABBOT
+		3 = ABBOT
+	}
+
+	ruler_female = {
+		1 = ABBESS
+		2 = ABBESS
+		3 = ABBESS
+	}
+
+	trigger = {
+		government = theocracy
+		tag = FLD
+		NOT = {
+			total_development = 50
+		}
+	}
+}
+
+gov_oirat = {
+	rank = {
+		1 = HORDE
+		2 = KHANATE
+		3 = KHAGANATE
+	}
+	
+	ruler_male = {
+		1 = TAISHI
+		2 = KHAN
+		3 = KHAGAN
+	}
+	
+	ruler_female = {
+		1 = TAISHI
+		2 = KHATUN
+		3 = GREAT_KHATUN
+	}
+	
+	consort_male = {
+		1 = BEILE
+		2 = KHAN
+		3 = KHAGAN
+	}
+
+	consort_female = {
+		1 = GEGE
+		2 = KHANUM
+		3 = KHANUM
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = KHANZADEH
+		3 = KHANZADEH
+	}
+
+	heir_female = {
+		1 = HEIR
+		2 = KHANUM
+		3 = KHANUM
+	}
+	
+	trigger = {
+		OR = {
+			has_reform = steppe_horde
+			has_reform = jurchen_tribe
+		}
+		tag = OIR
+	}
+}
+
+gov_wattasid_vizier = {
+	rank = {
+		1 = EMIRATE
+		2 = SULTANATE
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = EMIR
+		2 = VIZIER
+		3 = GRANDVIZIER
+	}
+
+	ruler_female = {
+		1 = EMIRA
+		2 = VIZIER
+		3 = GRANDVIZIER_fem
+	}
+
+	consort_male = {
+		1 = CONSORT
+		2 = CONSORT
+		3 = CONSORT
+	}
+
+	consort_female = {
+		1 = CONSORT
+		2 = CONSORT
+		3 = CONSORT
+	}
+
+	heir_male = {
+		1 = EMIR
+		2 = SULTAN
+		3 = GREAT_SULTAN
+	}
+	
+	heir_female = {
+		1 = EMIR
+		2 = SULTANA
+		3 = GREAT_SULTANA
+	}
+
+	trigger = {
+		has_ruler_flag = wattasid_vizier
+	}
+}

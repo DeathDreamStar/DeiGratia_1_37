@@ -1,0 +1,26 @@
+name = "Ethiopian Reconquest of Chiro"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 1210
+}
+
+1443.1.1 = {
+	add_attacker = ETH
+	add_attacker = ENA
+	add_attacker = HDY
+	add_attacker = MED
+	add_attacker = JJI
+	add_defender = ADA
+	add_defender = OGD
+}
+
+1445.1.1 = {
+	rem_attacker = ETH
+	rem_attacker = ENA
+	rem_attacker = HDY
+	rem_attacker = MED
+	rem_attacker = JJI
+	rem_defender = ADA
+	rem_defender = OGD
+}

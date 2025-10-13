@@ -1,0 +1,33 @@
+#3981 - Rottweil
+owner = RWI
+controller = RWI
+culture = swabian
+religion = catholic
+hre = yes
+base_tax = 2
+base_production = 2
+trade_goods = grain
+base_manpower = 1
+capital = "Rottweil"
+is_city = yes
+add_core = RWI
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = western
+discovered_by = muslim
+
+1803.2.25 = {
+           owner = WUR
+           controller = WUR
+           add_core = WUR
+           remove_core = RWI
+           base_tax = 3
+           base_production = 2
+           base_manpower = 3
+}
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+1871.1.18 = {
+           owner = PRU
+           controller = PRU
+           add_core = PRU
+}

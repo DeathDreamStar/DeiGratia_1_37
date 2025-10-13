@@ -1,0 +1,16 @@
+#6848 - Ji'an
+
+owner = DON
+controller = DON
+add_core = DON
+culture = manchu
+religion = confucianism
+capital = "Ji'an"
+trade_goods = iron
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group

@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+technology_group = eastern
+religion = orthodox
+primary_culture = russian
+capital = 4250
+fixed_capital = 4250
+
+1400.1.1 = {
+	monarch = {
+		name = "Pyotr Dmitryevich"
+		dynasty = "Rurik"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

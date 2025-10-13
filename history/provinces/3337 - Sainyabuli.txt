@@ -1,0 +1,17 @@
+# 3337 - Sainyabuli
+
+owner = LXA
+controller = LXA
+add_core = LXA
+add_core = LUA
+culture = lao
+religion = buddhism
+capital = "Sainyabuli"
+trade_goods = grain
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian

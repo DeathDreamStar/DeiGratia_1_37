@@ -1,0 +1,12 @@
+﻿l_english:
+ ipe_startup.17.t: "$FROMCOUNTRY$ Does Not Have a Religion!"
+ ipe_startup.17.d: "This is a bug report event stating that $FROMCOUNTRY$ does not have a religion. Countries with no religion can cause province discovery bugs in the game, so please report this to the modder."
+ ipe_startup.17.a: "Will do!"
+ ipe_startup.17.a.tooltip: "§GThanks for helping!§!"
+ ipe_startup.19.t: "$FROMCOUNTRY$ Discovered Patagonia Early!"
+ ipe_startup.19.d: "This is a bug report event stating that $FROMCOUNTRY$ discovered Patagonia early. This is a sign that the country may be the first to have a bugged discovery in game. Please report this to the modder."
+ ipe_startup.19.a: "Will do!"
+ ipe_startup.23.t: "The Inheritance of $COUNTRY$"
+ ipe_startup.23.d: "As a result of historical circumstances, $COUNTRY$ is due to be inherited by $OVERLORD$ upon the death of $MONARCHTITLE$ $MONARCH$. Consequently, if $MONARCHTITLE$ $MONARCH$ dies before you achieve independence, you will lose the game.\n\nIt is not recommended to play this country in Dei Gratia, unless you are up for an exceptional challenge."
+ ipe_startup.23.a: "Good to know."
+ ipe_startup.23.a.tooltip: "§RYour country will be inherited by its overlord if your monarch dies while you are still a Vassal.§!"

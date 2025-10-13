@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = chichimecan
+religion = nahuatl 
+technology_group = mesoamerican 
+capital = 4645
+fixed_capital = 4645
+
+1444.1.1 = {
+	monarch = {
+		name = "Tecolotl"
+		dynasty = "Xochipillan"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

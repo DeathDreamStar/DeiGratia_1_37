@@ -1,0 +1,423 @@
+namespace = ipe_development_display
+
+# Growth in [From.GetName] (Tax)
+country_event = {
+    id = ipe_development_display.1
+    title = ipe_development_display.1.t
+    desc = ipe_development_display.1.d
+    picture = CITY_DEVELOPMENT_eventPicture
+    goto = from
+
+    is_triggered_only = yes
+
+    option = { # Good to hear.
+        name = ipe_development_display.1.a
+        tooltip = {
+            FROM = {
+                add_base_tax = 1
+            }
+        }
+    }
+}
+
+# Growth in [From.GetName] (Production)
+country_event = {
+    id = ipe_development_display.2
+    title = ipe_development_display.2.t
+    desc = ipe_development_display.2.d
+    picture = CITY_DEVELOPMENT_eventPicture
+    goto = from
+
+    is_triggered_only = yes
+
+    option = { # Good to hear.
+        name = ipe_development_display.2.a
+        tooltip = {
+            FROM = {
+                add_base_production = 1
+            }
+        }
+    }
+}
+
+# Growth in [From.GetName] (Manpower)
+country_event = {
+    id = ipe_development_display.3
+    title = ipe_development_display.3.t
+    desc = ipe_development_display.3.d
+    picture = CITY_DEVELOPMENT_eventPicture
+    goto = from
+
+    is_triggered_only = yes
+
+    option = { # Good to hear.
+        name = ipe_development_display.3.a
+        tooltip = {
+            FROM = {
+                add_base_manpower = 1
+            }
+        }
+    }
+}
+
+# Decline in [From.GetName] (Tax)
+country_event = {
+    id = ipe_development_display.4
+    title = ipe_development_display.4.t
+    desc = ipe_development_display.4.d
+    picture = FAMINE_eventPicture
+    goto = from
+
+    is_triggered_only = yes
+
+    option = { # This is unfortunate news.
+        name = ipe_development_display.4.a
+        tooltip = {
+            FROM = {
+                add_base_tax = -1
+                add_devastation = -5
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        owner = {
+                            any_owned_province = {
+                                has_province_flag = tax_refugee_recipient
+                            }
+                        }
+                    }
+                }
+                FROM = {
+                    owner = {
+                        random_owned_province = {
+                            limit = {
+                                has_province_flag = tax_refugee_recipient
+                            }
+                            add_base_tax = 1
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    any_neighbor_country = {
+                        any_owned_province = {
+                            has_province_flag = international_tax_refugee_recipient
+                        }
+                    }
+                }
+                random_neighbor_country = {
+                    limit = {
+                        any_owned_province = {
+                            has_province_flag = international_tax_refugee_recipient
+                        }
+                    }
+                    random_owned_province = {
+                        limit = {
+                            has_province_flag = international_tax_refugee_recipient
+                        }
+                        add_base_tax = 1
+                    }
+                }
+            }
+        }
+        FROM = {
+            owner = {
+                random_owned_province = {
+                    limit = {
+                        has_province_flag = tax_refugee_recipient
+                    }
+                    clr_province_flag = tax_refugee_recipient
+                }
+            }
+        }
+    }
+}
+
+# Decline in [From.GetName] (Production)
+country_event = {
+    id = ipe_development_display.5
+    title = ipe_development_display.5.t
+    desc = ipe_development_display.5.d
+    picture = FAMINE_eventPicture
+    goto = from
+
+    is_triggered_only = yes
+
+    option = { # This is unfortunate news.
+        name = ipe_development_display.5.a
+        tooltip = {
+            FROM = {
+                add_base_production = -1
+                add_devastation = -5
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        owner = {
+                            any_owned_province = {
+                                has_province_flag = production_refugee_recipient
+                            }
+                        }
+                    }
+                }
+                FROM = {
+                    owner = {
+                        random_owned_province = {
+                            limit = {
+                                has_province_flag = production_refugee_recipient
+                            }
+                            add_base_production = 1
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    any_neighbor_country = {
+                        any_owned_province = {
+                            has_province_flag = international_production_refugee_recipient
+                        }
+                    }
+                }
+                random_neighbor_country = {
+                    limit = {
+                        any_owned_province = {
+                            has_province_flag = international_production_refugee_recipient
+                        }
+                    }
+                    random_owned_province = {
+                        limit = {
+                            has_province_flag = international_production_refugee_recipient
+                        }
+                        add_base_production = 1
+                    }
+                }
+            }
+        }
+        FROM = {
+            owner = {
+                random_owned_province = {
+                    limit = {
+                        has_province_flag = production_refugee_recipient
+                    }
+                    clr_province_flag = production_refugee_recipient
+                }
+            }
+        }
+    }
+}
+
+# Decline in [From.GetName] (Manpower)
+country_event = {
+    id = ipe_development_display.6
+    title = ipe_development_display.6.t
+    desc = ipe_development_display.6.d
+    picture = FAMINE_eventPicture
+    goto = from
+
+    is_triggered_only = yes
+
+    option = { # This is unfortunate news.
+        name = ipe_development_display.6.a
+        tooltip = {
+            FROM = {
+                add_base_manpower = -1
+                add_devastation = -5
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        owner = {
+                            any_owned_province = {
+                                has_province_flag = manpower_refugee_recipient
+                            }
+                        }
+                    }
+                }
+                FROM = {
+                    owner = {
+                        random_owned_province = {
+                            limit = {
+                                has_province_flag = manpower_refugee_recipient
+                            }
+                            add_base_manpower = 1
+                        }
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    any_neighbor_country = {
+                        any_owned_province = {
+                            has_province_flag = international_manpower_refugee_recipient
+                        }
+                    }
+                }
+                random_neighbor_country = {
+                    limit = {
+                        any_owned_province = {
+                            has_province_flag = international_manpower_refugee_recipient
+                        }
+                    }
+                    random_owned_province = {
+                        limit = {
+                            has_province_flag = international_manpower_refugee_recipient
+                        }
+                        add_base_manpower = 1
+                    }
+                }
+            }
+        }
+        FROM = {
+            owner = {
+                random_owned_province = {
+                    limit = {
+                        has_province_flag = manpower_refugee_recipient
+                    }
+                    clr_province_flag = manpower_refugee_recipient
+                }
+            }
+        }
+    }
+}
+
+# Old World Diseases
+country_event = {
+    id = ipe_development_display.7
+    title = ipe_development_display.7.t
+    desc = ipe_development_display.7.d
+    picture = PLAGUE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # Have mercy upon us all!
+        name = ipe_development_display.7.a
+        tooltip = {
+            if = {
+                limit = {
+                    FROM = {
+                        NOT = {
+                            development = 20
+                        }
+                    }
+                }
+                FROM = {
+                    add_permanent_province_modifier = {
+                        name = old_world_diseases_normal_2
+                        duration = 1825
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    FROM = {
+                        development = 20
+                    }
+                }
+                FROM = {
+                    add_permanent_province_modifier = {
+                        name = old_world_diseases_bad_2
+                        duration = 1825
+                    }
+                }
+            }
+        }
+    }
+}
+
+# Refugees from [From.GetName] (Tax)
+country_event = {
+    id = ipe_development_display.8
+    title = ipe_development_display.8.t
+    desc = ipe_development_display.8.d
+    picture = FAMINE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # They are welcome to stay.
+        name = ipe_development_display.8.a
+        tooltip = {
+            FROM = {
+                add_base_tax = -1
+                add_devastation = -5
+            }
+            random_owned_province = {
+                limit = {
+                    has_province_flag = international_tax_refugee_recipient
+                }
+                add_base_tax = 1
+            }
+        }
+        random_owned_province = {
+            limit = {
+                has_province_flag = international_tax_refugee_recipient
+            }
+            clr_province_flag = international_tax_refugee_recipient
+        }
+    }
+}
+
+# Refugees from [From.GetName] (Production)
+country_event = {
+    id = ipe_development_display.9
+    title = ipe_development_display.9.t
+    desc = ipe_development_display.9.d
+    picture = FAMINE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # They are welcome to stay.
+        name = ipe_development_display.9.a
+        tooltip = {
+            FROM = {
+                add_base_production = -1
+                add_devastation = -5
+            }
+            random_owned_province = {
+                limit = {
+                    has_province_flag = international_production_refugee_recipient
+                }
+                add_base_production = 1
+            }
+        }
+        random_owned_province = {
+            limit = {
+                has_province_flag = international_production_refugee_recipient
+            }
+            clr_province_flag = international_production_refugee_recipient
+        }
+    }
+}
+
+# Refugees from [From.GetName] (Manpower)
+country_event = {
+    id = ipe_development_display.10
+    title = ipe_development_display.10.t
+    desc = ipe_development_display.10.d
+    picture = FAMINE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # They are welcome to stay.
+        name = ipe_development_display.10.a
+        tooltip = {
+            FROM = {
+                add_base_manpower = -1
+                add_devastation = -5
+            }
+            random_owned_province = {
+                limit = {
+                    has_province_flag = international_manpower_refugee_recipient
+                }
+                add_base_manpower = 1
+            }
+        }
+        random_owned_province = {
+            limit = {
+                has_province_flag = international_manpower_refugee_recipient
+            }
+            clr_province_flag = international_manpower_refugee_recipient
+        }
+    }
+}

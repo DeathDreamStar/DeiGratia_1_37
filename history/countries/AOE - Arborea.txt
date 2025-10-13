@@ -1,0 +1,61 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = sardinian
+religion = catholic
+capital = 4735 # Arborea
+fixed_capital = 4735
+
+#March of Oristano
+1410.3.4 = {
+	monarch = {
+		name = "Leonardo I"
+		dynasty = "Cubello"
+		adm = 3
+		dip = 4
+		mil = 4
+	}
+}
+1427.1.1 = {
+	monarch = {
+		name = "Antonio"
+		dynasty = "Cubello"
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+1436.1.1 = {
+	heir = {
+		name = "Leonardo"
+		monarch_name = "Leonardo II"
+		dynasty = "Cubello"
+		birth_date = 1436.1.1
+		death_date = 1494.1.1
+		claim = 75
+		adm = 0
+		dip = 0
+		mil = 4
+	}
+}
+1455.1.1 = {
+	monarch = {
+		name = "Salvatore"
+		dynasty = "Cubello"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1470.1.1 = {
+	monarch = {
+		name = "Leonardo II"
+		dynasty = "Cubello"
+		birth_date = 1436.1.1
+		adm = 0
+		dip = 0
+		mil = 4
+	}
+}
+#done 1478.5.19

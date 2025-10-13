@@ -1,0 +1,79 @@
+old_world_diseases_normal = {
+	local_monthly_devastation = 1
+	province_trade_power_modifier = -0.5
+	local_manpower_modifier = -0.5
+	local_tax_modifier = -0.5
+	trade_goods_size = 0.001
+	picture = "devastating_plague"
+}
+
+old_world_diseases_bad = {
+	local_monthly_devastation = 2
+	province_trade_power_modifier = -0.5
+	local_manpower_modifier = -0.5
+	local_tax_modifier = -0.5
+	trade_goods_size = 0.001
+	picture = "devastating_plague"
+}
+
+old_world_diseases_normal_2 = {
+	local_monthly_devastation = 1
+	province_trade_power_modifier = -0.5
+	local_manpower_modifier = -0.5
+	local_tax_modifier = -0.5
+	trade_goods_size = 0.001
+	picture = "devastating_plague"
+}
+
+old_world_diseases_bad_2 = {
+	local_monthly_devastation = 2
+	province_trade_power_modifier = -0.5
+	local_manpower_modifier = -0.5
+	local_tax_modifier = -0.5
+	trade_goods_size = 0.001
+	picture = "devastating_plague"
+}
+
+war_famine = {
+	local_monthly_devastation = 0.5
+	trade_goods_size_modifier = -0.25
+	local_manpower_modifier = -0.25
+	local_tax_modifier = -0.25
+	trade_goods_size = 0.001
+	picture = "famine"
+}
+
+peace_plague = {
+	local_monthly_devastation = 1
+	province_trade_power_modifier = -0.25
+	local_manpower_modifier = -0.25
+	local_tax_modifier = -0.25
+	trade_goods_size = 0.001
+	picture = "plague"
+}
+
+peace_famine = {
+	local_monthly_devastation = 0.5
+	trade_goods_size_modifier = -0.25
+	local_manpower_modifier = -0.25
+	local_tax_modifier = -0.25
+	trade_goods_size = 0.001
+	picture = "famine"
+}
+
+quarantined_plague = {
+	local_monthly_devastation = 1
+	province_trade_power_modifier = -0.5
+	local_manpower_modifier = -0.5
+	local_tax_modifier = -0.5
+	trade_goods_size = 0.001
+	picture = "quarantined_plague"
+}
+
+earthquake = {
+	trade_goods_size_modifier = -0.75
+	local_manpower_modifier = -0.75
+	local_tax_modifier = -0.75
+	trade_goods_size = 0.001
+	picture = "earthquake"
+}

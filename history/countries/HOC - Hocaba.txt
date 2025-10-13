@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = yucatec
+religion = mesoamerican_religion
+technology_group = mesoamerican 
+capital = 6772
+fixed_capital = 6772
+
+1444.1.1 = {
+	monarch = {
+		name = "Nabatun"
+		dynasty = "Iuit"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

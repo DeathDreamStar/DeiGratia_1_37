@@ -1,0 +1,15 @@
+#3332 - Bitchu
+
+owner = HSK
+controller = HSK
+culture = japanese
+religion = shinto
+capital = "Kurashiki"
+trade_goods = fish
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = HSK
+discovered_by = chinese

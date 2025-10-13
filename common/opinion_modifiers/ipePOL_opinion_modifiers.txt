@@ -1,0 +1,47 @@
+jagiellonian_kinsman = {
+    opinion = 50
+    years = 50
+    yearly_decay = 1
+}
+
+denied_jagiellon = {
+    opinion = -50
+    years = 50
+    yearly_decay = 1
+}
+
+common_king_poland = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+secularized_teutonic_order = {
+    opinion = 200
+    years = 50
+    yearly_decay = 4
+}
+
+protestant_prussia = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+no_protestant_prussia = {
+    opinion = 25
+    years = 25
+    yearly_decay = 1
+}
+
+rejected_peace_of_thorn = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+mending_the_schism = {
+    opinion = 200
+    years = 200
+    yearly_decay = 1
+}

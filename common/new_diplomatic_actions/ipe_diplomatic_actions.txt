@@ -1,0 +1,713 @@
+reclaim_fief = {
+	category = influence
+	is_visible = {
+		NOT = {
+			AND = {
+				has_reform = papacy_reform
+				FROM = {
+					religion = catholic
+					is_subject_of = ROOT
+					is_subject_of_type = vassal
+				}
+			}
+		}
+		FROM = {
+			OR = {
+				government = monarchy
+				government = tribal
+			}
+			NOT = {
+				has_reform = mamluk_government
+				has_reform = states_general_reform
+			}
+			is_subject_of = ROOT
+			is_subject_of_type = vassal
+			NOT = {
+				has_ruler_flag = inheritable_fief
+				has_country_flag = rijekan_inheritance
+				has_country_flag = gorizian_inheritance
+				has_country_flag = angevin_inheritance
+			}
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			NOT = {
+				AND = {
+					has_reform = papacy_reform
+					FROM = {
+						religion = catholic
+						is_subject_of = ROOT
+						is_subject_of_type = vassal
+					}
+				}
+			}
+			FROM = {
+				OR = {
+					government = monarchy
+					government = tribal
+				}
+				NOT = {
+					has_reform = mamluk_government
+					has_reform = states_general_reform
+				}
+				is_subject_of = ROOT
+				is_subject_of_type = vassal
+				NOT = {
+					has_ruler_flag = inheritable_fief
+					has_country_flag = rijekan_inheritance
+					has_country_flag = gorizian_inheritance
+					has_country_flag = angevin_inheritance
+				}
+			}
+		}
+		legitimacy_equivalent = 70
+		is_at_war = no
+		FROM = {
+			is_at_war = no
+			OR = {
+				AND = {
+					has_heir = yes
+					has_regency = no
+					NOT = {
+						heir_claim = 70
+						liberty_desire = 50
+					}
+				}
+				AND = {
+					has_heir = no
+					NOT = {
+						legitimacy_equivalent = 50
+					}
+				}
+			}
+			NOT = {
+				total_development = 500
+			}
+		}
+		dip_power = 0
+	}
+	on_accept = {
+		FROM = {
+			set_ruler_flag = inheritable_fief
+			country_event = {
+				id = ipe_subject.1
+			}
+		}
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = vassal
+				government = monarchy
+			}
+			add_liberty_desire = 25
+			add_opinion = {
+				who = ROOT
+				modifier = claimed_fief
+			}
+		}
+	}
+	ai_will_do = {
+		all_subject_country = {
+			NOT = {
+				liberty_desire = 25
+			}
+		}
+		NOT = {
+			tag = QAR
+			FROM = {
+				tag = ARL
+			}
+		}
+	}
+}
+
+secularize_fief = {
+	category = influence
+	is_visible = {
+		NOT = {
+			AND = {
+				has_reform = papacy_reform
+				FROM = {
+					religion = catholic
+					is_subject_of = ROOT
+					is_subject_of_type = vassal
+				}
+			}
+		}
+		FROM = {
+			government = theocracy
+			is_subject_of = ROOT
+			is_subject_of_type = vassal
+		}
+	}
+	is_allowed = {
+		NOT = {
+			AND = {
+				has_reform = papacy_reform
+				FROM = {
+					religion = catholic
+					is_subject_of = ROOT
+					is_subject_of_type = vassal
+				}
+			}
+		}
+		hidden_trigger = {
+			FROM = {
+				government = theocracy
+				is_subject_of = ROOT
+				is_subject_of_type = vassal
+			}
+		}
+		legitimacy_equivalent = 70
+		NOT = {
+			government = theocracy
+		}
+		is_at_war = no
+		FROM = {
+			is_at_war = no
+			NOT = {
+				legitimacy_equivalent = 50
+				liberty_desire = 50
+			}
+			NOT = {
+				total_development = 500
+			}
+		}
+		dip_power = 0
+	}
+	on_accept = {
+		tooltip = {
+			inherit = FROM
+		}
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = vassal
+				government = theocracy
+			}
+			add_liberty_desire = 25
+			add_opinion = {
+				who = ROOT
+				modifier = claimed_fief
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ipe_subject.4
+			}
+		}
+	}
+	ai_will_do = {
+		NOT = {
+			ruler_has_personality_ancestor = { key = zealot }
+		}
+		all_subject_country = {
+			NOT = {
+				liberty_desire = 25
+			}
+		}
+		FROM = {
+			NOT = {
+				tag = KNI
+			}
+		}
+	}
+}
+
+depose_republic = {
+	category = influence
+	is_visible = {
+		NOT = {
+			AND = {
+				has_reform = papacy_reform
+				FROM = {
+					religion = catholic
+					is_subject_of = ROOT
+					is_subject_of_type = vassal
+				}
+			}
+		}
+		FROM = {
+			government = republic
+			is_subject_of = ROOT
+			is_subject_of_type = vassal
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			NOT = {
+				AND = {
+					has_reform = papacy_reform
+					FROM = {
+						religion = catholic
+						is_subject_of = ROOT
+						is_subject_of_type = vassal
+					}
+				}
+			}
+			FROM = {
+				government = republic
+				is_subject_of = ROOT
+				is_subject_of_type = vassal
+			}
+		}
+		legitimacy_equivalent = 70
+		is_at_war = no
+		FROM = {
+			is_at_war = no
+			NOT = {
+				legitimacy_equivalent = 50
+				liberty_desire = 50
+			}
+			NOT = {
+				total_development = 500
+			}
+		}
+		dip_power = 0
+	}
+	on_accept = {
+		tooltip = {
+			inherit = FROM
+		}
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = vassal
+				government = republic
+			}
+			add_liberty_desire = 25
+			add_opinion = {
+				who = ROOT
+				modifier = claimed_fief
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ipe_subject.6
+			}
+		}
+	}
+	ai_will_do = {
+		all_subject_country = {
+			NOT = {
+				liberty_desire = 25
+			}
+		}
+	}
+}
+
+papal_interdict = {
+	category = influence
+	is_visible = {
+		has_reform = papacy_reform
+		FROM = {
+			religion = catholic
+			is_subject_of = ROOT
+			is_subject_of_type = vassal
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			has_reform = papacy_reform
+			FROM = {
+				religion = catholic
+				is_subject_of = ROOT
+				is_subject_of_type = vassal
+			}
+		}
+		legitimacy_equivalent = 70
+		is_at_war = no
+		FROM = {
+			is_at_war = no
+			NOT = {
+				legitimacy_equivalent = 50
+				liberty_desire = 50
+			}
+			NOT = {
+				total_development = 500
+			}
+		}
+		dip_power = 0
+	}
+	on_accept = {
+		set_country_flag = papal_interdict_used
+		tooltip = {
+			inherit = FROM
+		}
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = vassal
+			}
+			add_liberty_desire = 25
+			add_opinion = {
+				who = ROOT
+				modifier = claimed_fief
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ipe_subject.8
+			}
+		}
+		add_devotion = -10
+		add_reform_desire = 0.005
+	}
+	ai_will_do = {
+		FROM = {
+			NOT = {
+				tag = KNI
+			}
+		}
+	}
+}
+
+appoint_bishop = {
+	category = influence
+	is_visible = {
+		religion_group = christian
+		OR = {
+			government = monarchy
+			government = republic
+			has_reform = papacy_reform
+		}
+		FROM = {
+			government = theocracy
+			has_reform = leading_clergy_reform
+			is_subject = no
+		}
+		is_revolution_target = no
+	}
+	is_allowed = {
+		hidden_trigger = {
+			religion_group = christian
+			OR = {
+				government = monarchy
+				government = republic
+				has_reform = papacy_reform
+			}
+			FROM = {
+				government = theocracy
+				has_reform = leading_clergy_reform
+				is_subject = no
+			}
+			is_revolution_target = no
+		}
+		is_at_war = no
+		OR = {
+			is_neighbor_of = FROM
+			any_subject_country = {
+				is_neighbor_of = FROM
+			}
+		}
+		total_development = 50
+		treasury = 200
+		FROM = {
+			has_matching_religion = ROOT
+			has_opinion = {
+				who = ROOT
+				value = 100
+			}
+			is_at_war = no
+			NOT = {
+				total_development = 50
+				is_elector = yes
+			}
+		}
+	}
+	on_accept = {
+		create_subject = {
+			subject_type = puppet_bishopric
+			subject = FROM
+		}
+		FROM = {
+			set_country_flag = puppeting_bishopric
+			country_event = {
+				id = ipe_subject.10
+			}
+		}
+		add_treasury = -200
+		if = {
+			limit = {
+				religion = catholic
+			}
+			add_papal_influence = 10
+			add_reform_desire = 0.005
+		}
+		if = {
+			limit = {
+				OR = {
+					religion = anglican
+					religion = hussite
+					religion = protestant
+				}
+			}
+			add_church_power = 10
+		}
+		if = {
+			limit = {
+				religion = reformed
+			}
+			add_fervor = 10
+		}
+		if = {
+			limit = {
+				religion = orthodox
+			}
+			add_patriarch_authority = 0.1
+		}
+	}
+	ai_will_do = {
+		NOT = {
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_hostile
+			}
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_outraged
+			}
+			ai_attitude = {
+				who = FROM
+				attitude = attitude_rivalry
+			}
+		}
+	}
+}
+
+inherit_electorate = {
+	category = influence
+	is_visible = {
+		is_part_of_hre = yes
+		is_elector = no
+		FROM = {
+			is_elector = yes
+			is_lesser_in_union = yes
+			is_subject_of = ROOT
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			is_part_of_hre = yes
+			is_elector = no
+			FROM = {
+				is_elector = yes
+				is_lesser_in_union = yes
+				is_subject_of = ROOT
+			}
+		}
+		FROM = {
+			years_in_union_under = {
+				who = ROOT
+				years = 50
+			}
+			has_opinion = {
+				who = ROOT
+				value = 190
+			}
+			NOT = {
+				liberty_desire = 50
+			}
+			is_at_war = no
+			capital_scope = {
+				controlled_by = THIS
+			}
+			NOT = {
+				total_development = 500
+			}
+		}
+		num_of_cities = FROM
+		legitimacy = 100
+		dip_power = 0
+	}
+	on_accept = {
+		FROM = {
+			country_event = {
+				id = ipeHRE.28
+			}
+		}
+	}
+}
+
+sever_foreign_ties = {
+	category = influence
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			any_ally = {
+				NOT = {
+					is_subject_of = ROOT
+				}
+			}
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				any_ally = {
+					NOT = {
+						is_subject_of = ROOT
+					}
+				}
+			}
+		}
+		is_at_war = no
+		FROM = {
+			NOT = {
+				liberty_desire = 50
+			}
+		}
+	}
+	on_accept = {
+		FROM = {
+			every_ally = {
+				limit = {
+					NOT = {
+						is_subject_of = ROOT
+					}
+				}
+				reverse_add_opinion = {
+					who = FROM
+					modifier = severed_foreign_ties
+				}
+			}
+			add_liberty_desire = 10
+		}
+	}
+	ai_will_do = {
+		FROM = {
+			any_ally = {
+				is_rival = ROOT
+			}
+			NOT = {
+				liberty_desire = 40
+			}
+		}
+	}
+}
+
+confiscate_fief = {
+	category = influence
+	is_visible = {
+		has_reform = shogunate
+		FROM = {
+			OR = {
+				is_subject_of_type = daimyo_vassal
+				is_subject_of_type = kanrei_vassal
+				is_subject_of_type = kubo_vassal
+			}
+			is_subject_of = ROOT
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			has_reform = shogunate
+			FROM = {
+				OR = {
+					is_subject_of_type = daimyo_vassal
+					is_subject_of_type = kanrei_vassal
+					is_subject_of_type = kubo_vassal
+				}
+				is_subject_of = ROOT
+			}
+		}
+		legitimacy_equivalent = 70
+		is_at_war = no
+		FROM = {
+			is_at_war = no
+			NOT = {
+				legitimacy_equivalent = 50
+				liberty_desire = 50
+			}
+			NOT = {
+				total_development = 500
+			}
+		}
+		dip_power = 0
+	}
+	on_accept = {
+		FROM = {
+			country_event = {
+				id = ipe_subject.20
+			}
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = daimyo_vassal
+					is_subject_of_type = kanrei_vassal
+					is_subject_of_type = kubo_vassal
+				}
+			}
+			add_liberty_desire = 25
+			add_opinion = {
+				who = ROOT
+				modifier = claimed_fief
+			}
+		}
+	}
+	ai_will_do = {
+		all_subject_country = {
+			NOT = {
+				liberty_desire = 25
+			}
+		}
+		FROM = {
+			NOT = {
+				total_development = ROOT
+			}
+		}
+	}
+}
+
+delegitimize_subject = {
+	category = influence
+	is_visible = {
+		FROM = {
+			is_subject_of = ROOT
+			is_subject_of_type = vassal
+			NOT = {
+				government = native
+			}
+		}
+	}
+	is_allowed = {
+		hidden_trigger = {
+			FROM = {
+				is_subject_of = ROOT
+				is_subject_of_type = vassal
+			}
+		}
+		is_at_war = no
+		FROM = {
+			NOT = {
+				liberty_desire = 50
+			}
+			years_in_vassalage_under = {
+				who = ROOT
+				years = 10
+			}
+		}
+		dip_power = 25
+	}
+	on_accept = {
+		add_dip_power = -25
+		FROM = {
+			add_legitimacy = -10
+			add_republican_tradition = -10
+			add_devotion = -10
+			add_horde_unity = -10
+			add_meritocracy = -10
+			add_liberty_desire = 10
+		}
+	}
+	ai_will_do = {
+		FROM = {
+			NOT = {
+				liberty_desire = 40
+			}
+			legitimacy_equivalent = 50
+			NOT = {
+				legitimacy_equivalent = 60
+			}
+		}
+	}
+}

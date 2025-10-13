@@ -1,0 +1,259 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = swabian
+religion = catholic
+technology_group = western
+capital = 3978
+
+1135.1.1 = {
+	monarch = {
+		name = "Heinrich I"
+		dynasty = "von Waldburg"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1147.1.1 = {
+	monarch = {
+		name = "Friedrich I"
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1183.1.1 = {
+	monarch = {
+		name = "Friedrich II"
+		dynasty = "von Waldburg"
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+1210.1.1 = {
+	monarch = {
+		name = "Eberhard I"
+		dynasty = "von Waldburg"
+		birth_date = 1170.1.1
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}
+1234.1.1 = {
+	monarch = {
+		name = "Otto I"
+		dynasty = "von Waldburg"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1268.10.29 = {
+	monarch = {
+		name = "Eberhard II"
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 6
+		mil = 3
+	}
+}
+1291.1.1 = {
+	monarch = {
+		name = "Johann I"
+		dynasty = "von Waldburg"
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1338.1.1 = {
+	monarch = {
+		name = "Eberhard III"
+		dynasty = "von Waldburg"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1344.1.1 = {
+	heir = {
+		name = "Johann"
+		monarch_name = "Johann II"
+		dynasty = "von Waldburg"
+		birth_date = 1344.1.1
+		death_date = 1424.3.31
+		claim = 95
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1361.1.1 = {
+	monarch = {
+		name = "Johann II"
+		dynasty = "von Waldburg"
+		birth_date = 1344.1.1
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1424.3.31 = {
+	monarch = {
+		name = "Jakob I"
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1460.1.1 = {
+	monarch = {
+		name = "Georg I"
+		dynasty = "von Waldburg"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1479.1.1 = {
+	monarch = {
+		name = "Georg II"
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1482.1.1 = {
+	monarch = {
+		name = "Johann III" #2
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1488.1.25 = {
+	heir = {
+		name = "Georg"
+		monarch_name = "Georg III"
+		dynasty = "von Waldburg"
+		birth_date = 1488.1.25
+		death_date = 1531.5.29
+		claim = 95
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1511.1.1 = {
+	monarch = {
+		name = "Georg III"
+		dynasty = "von Waldburg"
+		birth_date = 1488.1.25
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1531.5.29 = {
+	monarch = {
+		name = "Georg IV"
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1569.1.1 = {
+	monarch = {
+		name = "Jakob II"
+		dynasty = "von Waldburg"
+		adm = 1
+		dip = 1
+		mil = 2
+	}	
+}
+1589.1.1 = {
+	monarch = {
+		name = "Froben I"
+		dynasty = "von Waldburg"
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1602.1.1 = {
+	heir = {
+		name = "Johann Jakob"
+		monarch_name = "Johann Jakob I"
+		dynasty = "von Waldburg"
+		birth_date = 1602.1.1
+		death_date = 1674.1.1
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1614.1.1 = {
+	monarch = {
+		name = "Johann Jakob I"
+		dynasty = "von Waldburg"
+		birth_date = 1602.1.1
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1674.1.1 = {
+	monarch = {
+		name = "Paris Jakob"
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1684.1.1 = {
+	monarch = {
+		name = "Johann Christoff"
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1717.1.1 = {
+	monarch = {
+		name = "Johann Jakob II"
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1750.1.1 = {
+	monarch = {
+		name = "Franz Anton"
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1790.1.1 = {
+	monarch = {
+		name = "Maximilian Wunibald"
+		dynasty = "von Waldburg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+#done 1806

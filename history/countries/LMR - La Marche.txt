@@ -1,0 +1,33 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = limousin
+religion = catholic
+technology_group = western
+capital = 4697
+fixed_capital = 4697
+
+
+1425.1.1 = {
+	monarch = {
+		name = "Eléanore"
+		dynasty = "de Bourbon"
+		birth_date = 1407.11.7
+		dip = 2
+		adm = 2
+		mil = 2
+		female = yes
+	}
+}
+
+1433.1.1 = {
+	heir = {
+		name = "Jacques"
+		dynasty = "d'Armagnac"
+		birth_date = 1433.1.1
+		adm = 1
+		dip = 0
+		mil = 3
+		claim = 95
+	}
+}

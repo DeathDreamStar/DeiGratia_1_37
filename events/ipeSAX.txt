@@ -1,0 +1,275 @@
+namespace = ipeSAX
+
+# The Saxon Fratricidal War (Claimed Thuringia)
+country_event = {
+	id = ipeSAX.1
+	title = ipeSAX.1.t
+	desc = ipeSAX.1.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			release = THU
+			every_owned_province = {
+				limit = {
+					is_core = THU
+				}
+				cede_province = THU
+			}
+			THU = {
+				change_religion = catholic
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1
+					}
+				}
+				define_heir = {
+					name = "Wilhelm"
+					dynasty = "von Wettin"
+					adm = 3
+					dip = 1
+					mil = 3
+					birth_date = 1425.4.30
+				}
+				kill_ruler = yes
+				add_stability = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+			declare_war_with_cb = {
+				who = THU
+				casus_belli = cb_civil_war
+			}
+			random_list = {
+				50 = {
+					set_country_flag = sax_provoked_wilhelm_bad
+				}
+				50 = {
+					set_country_flag = sax_provoked_wilhelm_worse
+				}
+			}
+			every_owned_province = {
+				add_core = THU
+			}
+		}
+	}
+
+	option = { # To arms!
+		name = ipeSAX.1.a
+		ai_chance = {
+			factor = 100
+		}
+		tooltip = {
+			every_owned_province = {
+				add_core = THU
+			}
+		}
+		add_stability = -2
+	}
+
+	option = { # Play as Thuringia.
+		name = ipeSAX.1.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_stability = -2
+		}
+		switch_tag = THU
+	}
+}
+
+# The Divison of Altenburg
+country_event = {
+	id = ipeSAX.2
+	title = ipeSAX.2.t
+	desc = ipeSAX.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owns = 4743
+				}
+				set_capital = 4743
+			}
+			release = MEI
+			every_owned_province = {
+				limit = {
+					is_core = MEI
+				}
+				cede_province = MEI
+			}
+			MEI = {
+				change_religion = catholic
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1
+					}
+				}
+				define_heir = {
+					name = "Wilhelm"
+					dynasty = "von Wettin"
+					adm = 3
+					dip = 1
+					mil = 3
+					birth_date = 1425.4.30
+				}
+				kill_ruler = yes
+				add_stability = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				every_owned_province = {
+					remove_core = ROOT
+				}
+			}
+		}
+	}
+
+	option = { # All is well.
+		name = ipeSAX.2.a
+		add_stability_or_adm_power = yes
+	}
+}
+
+# The Saxon Fratricidal War (Claimed Meissen)
+country_event = {
+	id = ipeSAX.3
+	title = ipeSAX.1.t
+	desc = ipeSAX.3.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					owns = 4743
+				}
+				set_capital = 4743
+			}
+			release = MEI
+			every_owned_province = {
+				limit = {
+					is_core = MEI
+				}
+				cede_province = MEI
+			}
+			MEI = {
+				change_religion = catholic
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1
+					}
+				}
+				define_heir = {
+					name = "Wilhelm"
+					dynasty = "von Wettin"
+					adm = 3
+					dip = 1
+					mil = 3
+					birth_date = 1425.4.30
+				}
+				kill_ruler = yes
+				add_stability = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+			declare_war_with_cb = {
+				who = MEI
+				casus_belli = cb_civil_war
+			}
+			every_owned_province = {
+				add_core = MEI
+			}
+		}
+	}
+
+	option = { #To arms!
+		name = ipeSAX.1.a
+		ai_chance = {
+			factor = 100
+		}
+		tooltip = {
+			every_owned_province = {
+				add_core = MEI
+			}
+		}
+		add_stability = -2
+	}
+
+	option = { # Play as Meissen.
+		name = ipeSAX.3.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_stability = -2
+		}
+		switch_tag = MEI
+	}
+}
+
+# The Divison of Altenburg
+country_event = {
+	id = ipeSAX.4
+	title = ipeSAX.2.t
+	desc = ipeSAX.4.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			release = THU
+			every_owned_province = {
+				limit = {
+					is_core = THU
+				}
+				cede_province = THU
+			}
+			THU = {
+				change_religion = catholic
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1
+					}
+				}
+				define_heir = {
+					name = "Wilhelm"
+					dynasty = "von Wettin"
+					adm = 3
+					dip = 1
+					mil = 3
+					birth_date = 1425.4.30
+				}
+				kill_ruler = yes
+				add_stability = 1
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				every_owned_province = {
+					remove_core = ROOT
+				}
+			}
+		}
+	}
+
+	option = { # All is well.
+		name = ipeSAX.2.a
+		add_stability_or_adm_power = yes
+	}
+}

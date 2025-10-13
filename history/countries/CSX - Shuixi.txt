@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = miao
+religion = animism
+technology_group = chinese
+capital = 3257
+
+1444.1.1 = {
+    monarch = {
+        name = "Longfu"
+        dynasty = "An"
+        adm = 2
+        dip = 2
+        mil = 2
+    }
+}

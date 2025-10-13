@@ -1,0 +1,91 @@
+curicaueri = {
+	land_morale = 0.05 # god of war
+	fire_damage = 0.1 # god of fire
+
+	potential = { religion = purepecha_religion }
+	sprite = 36
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+cuerauaperi = {
+	development_cost = -0.1 # goddess of fertility
+	state_maintenance_modifier = -0.15 # goddess of the earth
+
+	potential = { religion = purepecha_religion }
+	sprite = 16
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+xaratanga = {
+	heir_chance = 0.5 # goddess of childbirth
+	global_unrest = -1 # goddess of the ball game
+
+	potential = { religion = purepecha_religion }
+	sprite = 19
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+cupantziere = {
+	movement_speed = 0.1 # god of the hunt
+	land_attrition = -0.1 # god of the hunt
+
+	potential = { religion = purepecha_religion }
+	sprite = 37
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}

@@ -1,0 +1,628 @@
+namespace = ipePRO
+normal_or_historical_nations = yes
+
+#The Inheritance of Anjou
+country_event = {
+	id = ipePRO.1
+	title = ipePRO.1.t
+	desc = ipePRO.1.d
+	picture = CITY_VIEW_eventPicture
+	
+	major = yes
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = { # Anjou is ours again!
+		name = ipePRO.1.a
+		if = {
+			limit = {
+				BAR = {
+					is_subject_of = ANJ
+				}
+				LOR = {
+					is_subject = no
+					exists = yes
+				}
+			}
+			LOR = {
+				inherit = BAR
+				hidden_effect = {
+					country_event = { id = ipePRO.2 }
+				}
+			}
+		}
+		if = {
+			limit = {
+				BAR = {
+					is_subject_of = ANJ
+				}
+				NOT = {
+					LOR = {
+						is_subject = no
+						exists = yes
+					}
+				}
+			}
+			ANJ = {
+				inherit = BAR
+			}
+		}
+		if = {
+			limit = {
+				PRO = {
+					is_subject_of = ANJ
+				}
+			}
+			PRO = {
+				set_in_empire = no
+			}
+			ANJ = {
+				inherit = PRO
+			}
+		}
+		if = {
+			limit = {
+				LOR = {
+					is_subject_of = ANJ
+				}
+			}
+			LOR = {
+				set_in_empire = no
+			}
+			ANJ = {
+				inherit = LOR
+			}
+			if = {
+				limit = {
+					BAR = {
+						is_subject_of = ANJ
+					}
+				}
+				BAR = {
+					set_in_empire = no
+				}
+				ANJ = {
+					inherit = BAR
+				}
+			}
+		}
+		ANJ = {
+			set_in_empire = no
+		}
+		inherit = ANJ
+		add_prestige = 5
+		set_global_flag = angevin_naples
+	}
+}
+
+# The Inheritance of Anjou (Lorraine)
+country_event = {
+	id = ipePRO.2
+	title = ipePRO.1.t
+	desc = ipePRO.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { # Excellent.
+		name = ipePRO.2.a
+		tooltip = {
+			inherit = BAR
+		}
+		add_prestige = 5
+	}
+}
+
+# The Inheritance of Anjou (Mission)
+country_event = {
+	id = ipePRO.3
+	title = ipePRO.1.t
+	desc = ipePRO.3.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Duchy of Anjou and the County of Provence belong to France.
+		name = ipePRO.3.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipePRO.3.a.tooltip
+		set_country_flag = angevin_inheritance
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipePRO.4
+				}
+			}
+		}
+	}
+
+	option = { # We are independent of the Kingdom of France!
+		name = ipePRO.3.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ANJ
+				modifier = refused_angevin_inheritance
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipePRO.5
+				}
+			}
+		}
+	}
+}
+
+# The Inheritance of Anjou (Accepted)
+country_event = {
+	id = ipePRO.4
+	title = ipePRO.1.t
+	desc = ipePRO.4.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # France will be one!
+		name = ipePRO.4.a
+		custom_tooltip = ipePRO.4.a.tooltip
+	}
+}
+
+# The Inheritance of Anjou (Rejected)
+country_event = {
+	id = ipePRO.5
+	title = ipePRO.1.t
+	desc = ipePRO.5.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The scoundrels!
+		name = ipePRO.5.a
+		tooltip = {
+			add_opinion = {
+				who = ANJ
+				modifier = refused_angevin_inheritance
+			}
+		}
+	}
+}
+
+# Defender of the Municipality
+country_event = {
+	id = ipePRO.6
+	title = ipePRO.6.t
+	desc = ipePRO.6.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We should accept French protection.
+		name = ipePRO.6.a
+		ai_chance = {
+			factor = 75
+		}
+		FROM = {
+			create_subject = {
+				subject = ROOT
+				subject_type = vassal
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = accepted_french_overtures
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePRO.7
+				}
+			}
+		}
+	}
+
+	option = { # We reject foreign domination!
+		name = ipePRO.6.b
+		ai_chance = {
+			factor = 25
+		}
+		FROM = {
+			add_casus_belli = {
+				target = ROOT
+				months = 300
+				type = cb_vassalize_mission
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = rejected_french_overtures
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePRO.8
+				}
+			}
+		}
+	}
+}
+
+# Genoa Accepts French Protection!
+country_event = {
+	id = ipePRO.7
+	title = ipePRO.7.t
+	desc = ipePRO.7.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Fantastic.
+		name = ipePRO.7.a
+		tooltip = {
+			create_subject = {
+				subject = FROM
+				subject_type = vassal
+			}
+			add_opinion = {
+				who = FROM
+				modifier = accepted_french_overtures
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Genoa Rejects French Protection!
+country_event = {
+	id = ipePRO.8
+	title = ipePRO.8.t
+	desc = ipePRO.8.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They have yet to see our might!
+		name = ipePRO.8.a
+		tooltip = {
+			add_casus_belli = {
+				target = FROM
+				months = 300
+				type = cb_vassalize_mission
+			}
+			add_opinion = {
+				who = FROM
+				modifier = rejected_french_overtures
+			}
+		}
+		add_prestige = -5
+	}
+}
+
+# The French in Genoa
+country_event = {
+	id = ipePRO.9
+	title = ipePRO.9.t
+	desc = ipePRO.9.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MLO
+		is_subject = no
+		GEN = {
+			is_subject_of = ANJ
+			is_subject_of_type = vassal
+		}
+		NOT = {
+			war_with = GEN
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Support Genovese independence!
+		name = ipePRO.9.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				is_rival = GEN
+			}
+		}
+		add_manpower = -3
+		GEN = {
+			country_event = {
+				id = ipePRO.10
+			}
+		}
+		custom_tooltip = ipePRO.9.a.tooltip
+	}
+
+	option = { # Stay out of these matters.
+		name = ipePRO.9.b
+		ai_chance = {
+			factor = 10
+		}
+		add_prestige = 10
+	}
+}
+
+# The Milanese Offer Support
+country_event = {
+	id = ipePRO.10
+	title = ipePRO.10.t
+	desc = ipePRO.10.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Accept their support!
+		name = ipePRO.10.a
+		overlord = {
+			add_opinion = {
+				who = ROOT
+				modifier = rejected_french_overtures
+			}
+			remove_opinion = {
+				who = ROOT
+				modifier = accepted_french_overtures
+			}
+			country_event = {
+				id = ipePRO.13
+			}
+		}
+		add_opinion = {
+			who = FROM
+			modifier = milanese_support
+		}
+		grant_independence = yes
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipePRO.11
+				}
+			}
+		}
+	}
+
+	option = { # We will stay with France!
+		name = ipePRO.10.b
+		MLO = {
+			add_opinion = {
+				who = ROOT
+				modifier = stayed_under_foreign_domination
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipePRO.12
+				}
+			}
+		}
+	}
+}
+
+# The Genovese Rebel!
+country_event = {
+	id = ipePRO.11
+	title = ipePRO.11.t
+	desc = ipePRO.11.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Success!
+		name = ipePRO.11.a
+		tooltip = {
+			GEN = {
+				grant_independence = yes
+				add_opinion = {
+					who = ROOT
+					modifier = milanese_support
+				}
+			}
+		}
+		add_casus_belli = {
+			target = GEN
+			months = 300
+			type = cb_vassalize_mission
+		}
+		add_prestige = 10
+	}	
+}
+
+# The Genovese Reject Our Support!
+country_event = {
+	id = ipePRO.12
+	title = ipePRO.12.t
+	desc = ipePRO.12.d
+	picture = DEBATE_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Unfortunate.
+		name = ipePRO.12.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = stayed_under_foreign_domination
+			}
+		}
+		add_prestige = -5
+		add_manpower = 3
+	}
+}
+
+# The Genovese Rebel!
+country_event = {
+	id = ipePRO.13
+	title = ipePRO.11.t
+	desc = ipePRO.13.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will retake control.
+		name = ipePRO.13.a
+		tooltip = {
+			FROM = {
+				grant_independence = yes
+			}
+			add_opinion = {
+				who = FROM
+				modifier = rejected_french_overtures
+			}
+			remove_opinion = {
+				who = FROM
+				modifier = accepted_french_overtures
+			}
+		}
+		add_casus_belli = {
+			target = FROM
+			months = 300
+			type = cb_vassalize_mission
+		}
+	}
+}
+
+# The Duchy of Lorraine
+country_event = {
+	id = ipePRO.14
+	title = ipePRO.14.t
+	desc = ipePRO.14.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	major_trigger = {
+		culture_group = french
+	}
+
+	trigger = {
+		tag = ANJ
+		has_ruler_flag = duke_of_lorraine
+		NOT = {
+			has_consort_flag = duchess_of_lorraine
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Then Lorraine shall go to Jean.
+		name = ipePRO.14.a
+		LOR = {
+			grant_independence = yes
+			hidden_effect = {
+				define_heir = {
+					name = "Jean"
+					dynasty = "de Valois"
+					birth_date = 1424.8.2
+					adm = 1
+					dip = 4
+					mil = 2
+				}
+				kill_ruler = yes
+				add_stability = 1
+				country_event = {
+					id = ipePRO.15
+				}
+			}
+			tooltip = {
+				define_ruler = {
+					name = "Jean"
+					dynasty = "de Valois"
+					adm = 1
+					dip = 4
+					mil = 2
+				}
+			}
+		}
+		create_alliance = LOR
+		remove_casus_belli = {
+			target = LOR
+			type = cb_restore_personal_union
+		}
+		if = {
+			limit = {
+				MTZ = {
+					is_subject_of = ANJ
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+			LOR = {
+				create_subject = {
+					subject = MTZ
+					subject_type = puppet_bishopric
+				}
+			}
+		}
+		if = {
+			limit = {
+				TOL = {
+					is_subject_of = ANJ
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+			LOR = {
+				create_subject = {
+					subject = TOL
+					subject_type = puppet_bishopric
+				}
+			}
+		}
+		if = {
+			limit = {
+				VDD = {
+					is_subject_of = ANJ
+					is_subject_of_type = puppet_bishopric
+				}
+			}
+			LOR = {
+				create_subject = {
+					subject = VDD
+					subject_type = puppet_bishopric
+				}
+			}
+		}
+	}
+}
+
+# The Duchy of Lorraine
+country_event = {
+	id = ipePRO.15
+	title = ipePRO.14.t
+	desc = ipePRO.14.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well.
+		name = ipePRO.15.a
+		tooltip = {
+			grant_independence = yes
+			define_ruler = {
+				name = "Jean"
+				dynasty = "de Valois"
+				adm = 1
+				dip = 4
+				mil = 2
+			}
+			create_alliance = ANJ
+		}
+	}
+}

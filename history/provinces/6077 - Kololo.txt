@@ -1,0 +1,22 @@
+#6077 - Kololo
+
+owner = ADA
+controller = ADA
+add_core = ADA
+add_core = ETH
+culture = sidamo
+religion = sunni
+capital = "Kololo"
+is_city = yes
+base_manpower = 1
+trade_goods = livestock
+hre = no
+base_tax = 2
+base_production = 2
+add_local_autonomy = 25
+discovered_by = east_african
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = indian
+
+1550.1.1 = { discovered_by = TUR }

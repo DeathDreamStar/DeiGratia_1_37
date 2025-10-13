@@ -1,0 +1,187 @@
+government = tribal
+add_government_reform = tribal_federation
+government_rank = 1
+primary_culture = kurdish
+religion = sunni
+technology_group = muslim
+capital = 4296 # Bitlis
+fixed_capital = 4296
+religious_school = shafii_school
+
+#Emirate Founded
+1182.1.1 = {
+	monarch = {
+		name = "Qurti"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1200.1.1 = {
+	monarch = {
+		name = "Rojak"
+		dynasty = "Rojakî"
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}
+1240.1.1 = {
+	monarch = {
+		name = "Shams ad-Dîn I"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1280.1.1 = {
+	monarch = {
+		name = "Serefhan I"
+		dynasty = "Rojakî"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1320.1.1 = {
+	monarch = {
+		name = "Shams ad-Dîn II"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1360.1.1 = {
+	monarch = {
+		name = "Serefhan II"
+		dynasty = "Rojakî"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1400.1.1 = {
+	monarch = {
+		name = "Serefhan III"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1440.1.1 = {
+	monarch = {
+		name = "Bidlo I"
+		dynasty = "Rojakî"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1480.1.1 = {
+	monarch = {
+		name = "Khâlid"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1514.1.1 = {
+	monarch = {
+		name = "Serefhan IV"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}
+1532.1.1 = {
+	monarch = {
+		name = "Shams ad-Dîn III"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}
+1543.2.25 = {
+	heir = {
+		name = "Serefhan"
+		monarch_name = "Serefhan V"
+		dynasty = "Rojakî"
+		birth_date = 1543.2.25
+		death_date = 1603.1.1
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}
+1577.1.1 = {
+	monarch = {
+		name = "Serefhan V"
+		dynasty = "Rojakî"
+		birth_date = 1543.2.25
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}
+1603.1.1 = {
+	monarch = {
+		name = "Serefhan VI"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1640.1.1 = {
+	monarch = {
+		name = "Abdal"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}
+1690.1.1 = {
+	monarch = {
+		name = "Muhammad Abid"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 3
+		mil = 4
+	}
+}
+1730.1.1 = {
+	monarch = {
+		name = "Bidlo II"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1770.1.1 = {
+	monarch = {
+		name = "Bidlo III"
+		dynasty = "Rojakî"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1810.1.1 = {
+	monarch = {
+		name = "Rezgo"
+		dynasty = "Rojakî"
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}

@@ -1,0 +1,102 @@
+namespace = ipeAST
+normal_or_historical_nations = yes
+
+# The Khanate of Astrakhan
+country_event = {
+	id = ipeAST.1
+	title = ipeAST.1.t
+	desc = ipeAST.1.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = GOL
+		capital_scope = {
+			NOT = {
+				is_core = AST
+			}
+		}
+		any_owned_province = {
+			is_core = AST
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			NOT = {
+				horde_unity = 75
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				horde_unity = 50
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				horde_unity = 25
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = AST
+			AST = {
+				change_government = tribal
+				add_government_reform = steppe_horde
+				adopt_reform_progress = ROOT
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.4
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Astrakhan is no concern of ours.
+		name = ipeAST.1.a
+		ai_chance = {
+			factor = 75
+		}
+		AST = {
+			every_owned_province = {
+				remove_core = GOL
+			}
+		}
+	}
+
+	option = { # There can only be one Khan!
+		name = ipeAST.1.b
+		ai_chance = {
+			factor = 25
+		}
+		add_historical_rival = AST
+		AST = {
+			add_historical_rival = GOL
+		}
+	}
+
+	option = { # Play as Astrakhan.
+		name = ipeAST.1.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_historical_rival = AST
+			AST = {
+				add_historical_rival = GOL
+			}
+		}
+		switch_tag = AST
+	}
+}

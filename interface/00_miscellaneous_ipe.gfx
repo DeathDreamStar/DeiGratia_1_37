@@ -1,0 +1,14 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_theo_papal"
+		texturefile = "gfx/interface/theo_papal.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_theo_papal_to"
+		texturefile = "gfx//interface//theo_papal_to.dds"
+	}
+	spriteType = {
+		name = "GFX_diplomacy_theo_papal_from"
+		texturefile = "gfx//interface//theo_papal_from.dds"
+	}
+}

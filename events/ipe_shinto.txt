@@ -1,0 +1,494 @@
+namespace = ipe_shinto
+
+# Neo-Confucianism
+country_event = {
+	id = ipe_shinto.1
+	title = ipe_shinto.1.t
+	desc = ipe_shinto.1.d
+	picture = NEO_CONFUCIANISM_INCIDENT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		religion = shinto
+		all_countries_including_self = {
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		NOT = {
+			has_global_flag = incident_neo_confucianism_fired
+		}
+		OR = {
+			NOT = { has_global_flag = incident_nanban_fired }
+			had_global_flag = { flag = incident_nanban_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_firearms_fired }
+			had_global_flag = { flag = incident_firearms_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_spread_of_christianity_fired }
+			had_global_flag = { flag = incident_spread_of_christianity_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_shogunate_authority_fired }
+			had_global_flag = { flag = incident_shogunate_authority_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_ikko_shu_fired }
+			had_global_flag = { flag = incident_ikko_shu_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_urbanization_fired }
+			had_global_flag = { flag = incident_urbanization_fired days = 9125 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+	}
+
+	immediate = {
+		set_global_flag = incident_neo_confucianism_fired
+	}
+
+	option = { # A new incident emerges.
+		name = ipe_shinto.1.a
+		custom_tooltip = ipe_shinto.1.a.tooltip
+	}
+}
+
+# Nanban Trade
+country_event = {
+	id = ipe_shinto.2
+	title = ipe_shinto.2.t
+	desc = ipe_shinto.2.d
+	picture = NANBAN_INCIDENT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		religion = shinto
+		is_institution_enabled = new_world_i
+		any_owned_province = {
+			has_port = yes
+			is_core = ROOT
+		}
+		if = {
+			limit = {
+				normal_or_historical_nations = yes
+				is_playing_custom_nation = no
+			}
+			has_global_flag = japan_has_encountered_the_west
+		}
+		if = {
+			limit = {
+				OR = {
+					normal_or_historical_nations = no
+					is_playing_custom_nation = yes
+				}
+			}
+			any_known_country = {
+				NOT = { same_continent = ROOT }
+			}
+		}
+		all_countries_including_self = {
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		NOT = {
+			has_global_flag = incident_nanban_fired
+		}
+		OR = {
+			NOT = { has_global_flag = incident_neo_confucianism_fired }
+			had_global_flag = { flag = incident_neo_confucianism_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_spread_of_christianity_fired }
+			had_global_flag = { flag = incident_spread_of_christianity_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_shogunate_authority_fired }
+			had_global_flag = { flag = incident_shogunate_authority_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_ikko_shu_fired }
+			had_global_flag = { flag = incident_ikko_shu_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_urbanization_fired }
+			had_global_flag = { flag = incident_urbanization_fired days = 9125 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+	}
+
+	immediate = {
+		set_global_flag = incident_nanban_fired
+	}
+
+	option = { # A new incident emerges.
+		name = ipe_shinto.1.a
+		custom_tooltip = ipe_shinto.2.a.tooltip
+	}
+}
+
+# Proliferation of Firearms
+country_event = {
+	id = ipe_shinto.3
+	title = ipe_shinto.3.t
+	desc = ipe_shinto.3.d
+	picture = FIREARMS_INCIDENT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		religion = shinto
+		is_incident_happened = incident_nanban
+		all_countries_including_self = {
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		NOT = {
+			has_global_flag = incident_firearms_fired
+		}
+		OR = {
+			NOT = { has_global_flag = incident_neo_confucianism_fired }
+			had_global_flag = { flag = incident_neo_confucianism_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_nanban_fired }
+			had_global_flag = { flag = incident_nanban_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_spread_of_christianity_fired }
+			had_global_flag = { flag = incident_spread_of_christianity_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_shogunate_authority_fired }
+			had_global_flag = { flag = incident_shogunate_authority_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_ikko_shu_fired }
+			had_global_flag = { flag = incident_ikko_shu_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_urbanization_fired }
+			had_global_flag = { flag = incident_urbanization_fired days = 9125 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+	}
+
+	immediate = {
+		set_global_flag = incident_firearms_fired
+	}
+
+	option = { # A new incident emerges.
+		name = ipe_shinto.1.a
+		custom_tooltip = ipe_shinto.3.a.tooltip
+	}
+}
+
+# Spread of Christianity
+country_event = {
+	id = ipe_shinto.4
+	title = ipe_shinto.4.t
+	desc = ipe_shinto.4.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		religion = shinto
+		NOT = { current_age = age_of_discovery }
+		if = {
+			limit = {
+				normal_or_historical_nations = yes
+			}
+			has_global_flag = japan_has_encountered_the_west
+		}
+		any_known_country = {
+			religion_group = christian
+		}
+		all_countries_including_self = {
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		NOT = {
+			has_global_flag = incident_spread_of_christianity_fired
+		}
+		OR = {
+			NOT = { has_global_flag = incident_neo_confucianism_fired }
+			had_global_flag = { flag = incident_neo_confucianism_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_nanban_fired }
+			had_global_flag = { flag = incident_nanban_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_firearms_fired }
+			had_global_flag = { flag = incident_firearms_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_shogunate_authority_fired }
+			had_global_flag = { flag = incident_shogunate_authority_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_ikko_shu_fired }
+			had_global_flag = { flag = incident_ikko_shu_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_urbanization_fired }
+			had_global_flag = { flag = incident_urbanization_fired days = 9125 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+	}
+
+	immediate = {
+		set_global_flag = incident_spread_of_christianity_fired
+	}
+
+	option = { # A new incident emerges.
+		name = ipe_shinto.1.a
+		custom_tooltip = ipe_shinto.4.a.tooltip
+	}
+}
+
+# Rising Shogunate Authority
+country_event = {
+	id = ipe_shinto.5
+	title = ipe_shinto.5.t
+	desc = ipe_shinto.5.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		religion = shinto
+		OR = {
+			AND = {
+				has_reform = shogunate
+				absolutism = 50
+				any_subject_country = {
+					has_reform = daimyo
+				}
+			}
+			AND = {
+				has_reform = daimyo
+				overlord = {
+					absolutism = 50
+				}
+			}
+		}
+		OR = {
+			current_age = age_of_absolutism
+			current_age = age_of_revolutions
+		}
+		has_global_flag = ended_sengoku
+		all_countries_including_self = {
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		NOT = {
+			has_global_flag = incident_shogunate_authority_fired
+		}
+		OR = {
+			NOT = { has_global_flag = incident_neo_confucianism_fired }
+			had_global_flag = { flag = incident_neo_confucianism_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_nanban_fired }
+			had_global_flag = { flag = incident_nanban_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_firearms_fired }
+			had_global_flag = { flag = incident_firearms_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_spread_of_christianity_fired }
+			had_global_flag = { flag = incident_spread_of_christianity_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_ikko_shu_fired }
+			had_global_flag = { flag = incident_ikko_shu_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_urbanization_fired }
+			had_global_flag = { flag = incident_urbanization_fired days = 9125 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+	}
+
+	immediate = {
+		set_global_flag = incident_shogunate_authority_fired
+	}
+
+	option = { # A new incident emerges.
+		name = ipe_shinto.1.a
+		custom_tooltip = ipe_shinto.5.a.tooltip
+	}
+}
+
+# Ikko-ikki
+country_event = {
+	id = ipe_shinto.6
+	title = ipe_shinto.6.t
+	desc = ipe_shinto.6.d
+	picture = IKKO_IKKI_INCIDENT_eventPicture
+
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		religion = shinto
+		all_countries_including_self = {
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		NOT = {
+			has_global_flag = incident_ikko_shu_fired
+		}
+		OR = {
+			NOT = { has_global_flag = incident_neo_confucianism_fired }
+			had_global_flag = { flag = incident_neo_confucianism_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_nanban_fired }
+			had_global_flag = { flag = incident_nanban_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_firearms_fired }
+			had_global_flag = { flag = incident_firearms_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_spread_of_christianity_fired }
+			had_global_flag = { flag = incident_spread_of_christianity_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_shogunate_authority_fired }
+			had_global_flag = { flag = incident_shogunate_authority_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_urbanization_fired }
+			had_global_flag = { flag = incident_urbanization_fired days = 9125 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+	}
+
+	immediate = {
+		set_global_flag = incident_ikko_shu_fired
+	}
+
+	option = { # A new incident emerges.
+		name = ipe_shinto.1.a
+		custom_tooltip = ipe_shinto.6.a.tooltip
+	}
+}
+
+# Urbanization
+country_event = {
+	id = ipe_shinto.8
+	title = ipe_shinto.8.t
+	desc = ipe_shinto.8.d
+	picture = URBANISATION_INCIDENT_eventPicture
+
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		religion = shinto
+		is_institution_enabled = global_trade
+		num_of_cities = 2
+		all_countries_including_self = {
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		NOT = {
+			has_global_flag = incident_urbanization_fired
+		}
+		OR = {
+			NOT = { has_global_flag = incident_neo_confucianism_fired }
+			had_global_flag = { flag = incident_neo_confucianism_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_nanban_fired }
+			had_global_flag = { flag = incident_nanban_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_firearms_fired }
+			had_global_flag = { flag = incident_firearms_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_spread_of_christianity_fired }
+			had_global_flag = { flag = incident_spread_of_christianity_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_shogunate_authority_fired }
+			had_global_flag = { flag = incident_shogunate_authority_fired days = 9125 }
+		}
+		OR = {
+			NOT = { has_global_flag = incident_ikko_shu_fired }
+			had_global_flag = { flag = incident_ikko_shu_fired days = 9125 }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 200
+	}
+
+	immediate = {
+		set_global_flag = incident_urbanization_fired
+	}
+
+	option = { # A new incident emerges.
+		name = ipe_shinto.1.a
+		custom_tooltip = ipe_shinto.8.a.tooltip
+	}
+}

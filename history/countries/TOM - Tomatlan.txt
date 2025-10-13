@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = aztek
+religion = nahuatl 
+technology_group = mesoamerican 
+capital = 6593
+fixed_capital = 6593
+
+1444.1.1 = {
+	monarch = {
+		name = "Cuitlahuac"
+		dynasty = "Tomatlan"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

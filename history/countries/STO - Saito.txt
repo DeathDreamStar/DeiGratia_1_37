@@ -1,0 +1,63 @@
+government = monarchy
+add_government_reform = daimyo
+government_rank = 1
+primary_culture = togoku
+religion = shinto
+technology_group = chinese
+capital = 1835	# Mino
+	
+1536.4.7 = { 
+	monarch = {
+		name = "Toshimasa"
+		dynasty = "Saito"
+		birth_date = 1494.1.1
+		death_date = 1556.5.28
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+	heir = {
+		name = "Yoshitatsu"
+		monarch_name = "Yoshitatsu"
+		dynasty = "Saito"
+		birth_date = 1527.7.8
+		death_date = 1561.6.23
+		claim = 90
+		adm = 3
+		dip = 3
+		mil = 5
+	}
+}
+	
+1554.3.1 = { 
+	monarch = {
+		name = "Yoshitatsu"
+		dynasty = "Saito"
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+	heir = {
+		name = "Tatsuoki"
+		monarch_name = "Tatsuoki"
+		dynasty = "Saito"
+		birth_date = 1548.1.1
+		death_date = 1573.9.10
+		claim = 90
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+
+1615.1.1 = {
+	monarch = {
+		name = "Toshimasa"
+		dynasty = "Saito"
+		birth_date = 1494.1.1
+		death_date = 1556.5.28
+		adm = 5
+		dip = 5
+		mil = 4
+	}
+}

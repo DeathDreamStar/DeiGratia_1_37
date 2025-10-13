@@ -1,0 +1,43 @@
+government = monarchy
+add_government_reform = daimyo
+government_rank = 1
+primary_culture = togoku
+religion = shinto
+technology_group = chinese
+capital = 4189	# Kamakura
+
+1409.1.1 = {
+    monarch = {
+        name = "Mochiuji"
+        dynasty = "Ashikaga"
+        birth_date = 1398.1.11
+        death_date = 1439.3.24
+        adm = 1
+        dip = 1
+        mil = 3
+    }
+}
+
+1438.1.1 = {
+    heir = {
+        name = "Shigeuji"
+        dynasty = "Ashikaga"
+        birth_date = 1438.1.1
+        death_date = 1497.1.1
+        adm = 3
+        dip = 5
+        mil = 2
+    }
+}
+
+1439.3.24 = {
+    monarch = {
+        name = "Shigeuji"
+        dynasty = "Ashikaga"
+        birth_date = 1438.1.1
+        death_date = 1497.1.1
+        adm = 3
+        dip = 5
+        mil = 2
+    }
+}

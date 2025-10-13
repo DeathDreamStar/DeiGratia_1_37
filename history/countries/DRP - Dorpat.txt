@@ -1,0 +1,21 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+technology_group = western
+primary_culture = prussian
+add_accepted_culture = estonian
+religion = catholic
+historical_friend = LIV
+capital = 1834	# Livland
+fixed_capital = 1834
+add_army_professionalism = 0.1
+
+1442.1.1 = {
+	monarch = {
+		name = "Bartholomaeus Sawijerwe"
+		birth_date = 1394.1.1
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}

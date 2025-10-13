@@ -1,0 +1,7 @@
+government = monarchy
+add_government_reform = nayankara_reform
+technology_group = indian
+religion = buddhism
+primary_culture = sinhala
+capital = 6865 # Sitawaka
+fixed_capital = 6865

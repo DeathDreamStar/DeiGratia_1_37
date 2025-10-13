@@ -1,0 +1,26 @@
+name = "Mamluk Conquest of Rhodes"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 320
+}
+
+1444.8.10 = {
+	add_attacker = MAM
+	add_attacker = FAD
+	add_attacker = HED
+	add_attacker = MDA
+	add_attacker = ALN
+	add_attacker = HWW
+	add_defender = KNI
+}
+
+1444.9.18 = {
+	rem_attacker = MAM
+	rem_attacker = FAD
+	rem_attacker = HED
+	rem_attacker = MDA
+	rem_attacker = ALN
+	rem_attacker = HWW
+	rem_defender = KNI
+}

@@ -1,0 +1,22 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = moselle
+religion = catholic
+technology_group = western
+capital = 3983
+fixed_capital = 3983
+
+
+
+
+1335.1.1  = {
+	monarch = {
+		name = "Stadtrat"
+		ADM = 3
+		DIP = 3
+		MIL = 3
+		regent = yes
+	}
+}

@@ -1,0 +1,20 @@
+#6917 - Trachenberg
+
+owner = OLS
+controller = OLS
+culture = lower_silesian
+religion = catholic
+capital = "Trachenberg"
+trade_goods = livestock
+hre = yes
+base_tax = 2
+base_production = 2
+is_city = yes 
+base_manpower = 1
+add_core = OLS
+add_core = TRC
+
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman

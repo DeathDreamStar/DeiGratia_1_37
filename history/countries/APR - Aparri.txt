@@ -1,0 +1,9 @@
+government = republic
+add_government_reform = pirate_republic_reform
+technology_group = chinese
+religion = shinto
+primary_culture = kyushuan
+add_accepted_culture = cordilleran
+capital = 658
+mercantilism = 50
+government_rank = 1

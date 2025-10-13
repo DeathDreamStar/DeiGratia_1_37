@@ -1,0 +1,223 @@
+government = monarchy
+add_government_reform = daimyo
+government_rank = 1
+primary_culture = togoku
+religion = shinto
+technology_group = chinese
+capital = 3305
+
+1443.1.1 = {
+	monarch = {
+		name = "Kanasashi" 
+		dynasty = "Suwa"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+
+1443.1.1 = {
+	heir = {
+		name = "Yoshiaki"
+		monarch_name = "Yoshiaki"
+		dynasty = "Suwa"
+		birth_date = 1438.1.1
+		death_date = 1480.4.15
+		claim = 90
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+
+1474.4.7 = {
+	monarch = {
+		name = "Yoshiaki" 
+		dynasty = "Suwa"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+
+1474.4.7 = {
+	heir = {
+		name = "Mitsuuji"
+		monarch_name = "Mitsuuji"
+		dynasty = "Suwa"
+		birth_date = 1446.1.1
+		death_date = 1494.8.14
+		claim = 90
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+
+1480.4.15 = {
+	monarch = {
+		name = "Mitsuuji"
+		dynasty = "Suwa"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+
+1480.4.15 = {
+	heir = {
+		name = "Yoshiatsu"
+		monarch_name = "Yoshiatsu"
+		dynasty = "Suwa"
+		birth_date = 1472.1.1
+		death_date = 1504.10.16
+		claim = 90
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+	
+1494.8.14 = { 
+	monarch = {
+		name = "Yoshiatsu"
+		dynasty = "Suwa"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1494.8.14 = {
+	heir = {
+		name = "Yoshisada"
+		monarch_name = "Yoshisada"
+		dynasty = "Suwa"
+		birth_date = 1492.1.1
+		death_date = 1520.2.20
+		claim = 90
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+	
+1504.10.16 = { 
+	monarch = {
+		name = "Yoshisada"
+		dynasty = "Suwa"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+
+1519.1.1 = {
+	heir = {
+		name = "Yoshimori"
+		monarch_name = "Yoshimori"
+		dynasty = "Suwa"
+		birth_date = 1519.1.1
+		death_date = 1590.6.19
+		claim = 90
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+
+1520.2.20 = { 
+	monarch = {
+		name = "Yorishige"
+		dynasty = "Suwa"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+
+1546.2.1 = {
+	heir = {
+		name = "Yoshiaki"
+		monarch_name = "Yoshiaki"
+		dynasty = "Suwa"
+		birth_date = 1546.2.1
+		death_date = 1614.2.26
+		claim = 90
+		adm = 4
+		dip = 5
+		mil = 5
+	}
+}
+
+1570.8.1 = { 
+	monarch = {
+		name = "Yoshiaki"
+		dynasty = "Suwa"
+		adm = 4
+		dip = 5
+		mil = 5
+	}
+}
+
+1582.1.1 = {
+	heir = {
+		name = "Yoshiyasu"
+		monarch_name = "Yoshiyasu"
+		dynasty = "Suwa"
+		birth_date = 1575.1.1
+		death_date = 1603.1.1
+		claim = 90
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+
+1603.1.1 = {
+	heir = {
+		name = "Iechika"
+		monarch_name = "Iechika"
+		dynasty = "Suwa"
+		birth_date = 1582.1.1
+		death_date = 1617.4.11
+		claim = 90
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1614.2.26 = { 
+	monarch = {
+		name = "Iechika"
+		dynasty = "Suwa"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1614.2.26 = {
+	heir = {
+		name = "Yoshitoshi"
+		monarch_name = "Yoshitoshi"
+		dynasty = "Suwa"
+		birth_date = 1605.1.1
+		death_date = 1632.1.13
+		claim = 90
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+
+1617.4.11 = { 
+	monarch = {
+		name = "Yoshitoshi"
+		dynasty = "Suwa"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}

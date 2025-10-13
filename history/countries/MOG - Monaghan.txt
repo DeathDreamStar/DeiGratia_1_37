@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = gaelic_overkingdom
+government_rank = 1
+technology_group = western
+primary_culture = irish
+religion = catholic
+capital = 6888	# Monaghan
+fixed_capital = 6888
+add_historical_rival = ENG
+
+1442.1.1 = {
+	monarch = {
+		name = "Ruaidhri"
+		dynasty = "MacMahon"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

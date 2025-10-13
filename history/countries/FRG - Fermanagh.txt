@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = gaelic_overkingdom
+government_rank = 1
+technology_group = western
+primary_culture = irish
+religion = catholic
+capital = 6887	# Fermanagh
+fixed_capital = 6887
+add_historical_rival = ENG
+
+1436.1.1 = {
+	monarch = {
+		name = "Éamonn"
+		dynasty = "Mag Uidhir"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

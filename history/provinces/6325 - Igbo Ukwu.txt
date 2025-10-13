@@ -1,0 +1,24 @@
+#6325 - Igbo-Ukwu
+
+owner = NRI
+controller = NRI
+add_core = NRI
+is_city = yes
+culture = igbo
+religion = shamanism
+capital = "Igbo-Ukwu"
+trade_goods = coffee #Kola nuts
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+native_size = 40
+native_ferocity = 4
+native_hostileness = 9
+discovered_by = sub_saharan
+
+1806.1.1 = {
+           owner = SOK
+           controller = SOK
+           add_core = SOK
+} # The Fulani Empire

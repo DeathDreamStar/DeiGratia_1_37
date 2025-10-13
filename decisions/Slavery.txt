@@ -1,0 +1,35 @@
+country_decisions = {
+	colonize_automatically_with_slaves = {
+		major = yes
+		potential = {
+			num_of_colonists = 1
+			NOT = {
+				has_country_flag = colonize_with_slaves
+			}
+		}
+		allow = {
+		}
+		effect = {
+			set_country_flag = colonize_with_slaves
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	stop_colonizing_automatically_with_slaves = {
+		major = yes
+		potential = {
+			num_of_colonists = 1
+			has_country_flag = colonize_with_slaves
+		}
+		allow = {
+		}
+		effect = {
+			clr_country_flag = colonize_with_slaves
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

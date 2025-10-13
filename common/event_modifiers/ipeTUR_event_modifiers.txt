@@ -1,0 +1,52 @@
+dishonorable_surrender = {
+	land_morale = -0.10
+	manpower_recovery_speed = -0.2
+}
+
+janissary_support = {
+	land_morale = 0.10
+	manpower_recovery_speed = 0.2
+}
+
+kure_copper_mines = {
+	trade_goods_size = 3
+}
+
+enhanced_artillery_production = {
+	siege_ability = 0.25
+	mil_tech_cost_modifier = -0.1
+}
+
+janissary_puppet = {
+	janissaries_influence_modifier = 0.2
+	mil_tech_cost_modifier = 0.1
+	yearly_corruption = 0.1
+}
+
+non_christian_janissaries_2 = {
+	discipline = -0.05
+	is_janissary_modifier = yes
+}
+
+tur_mamluk_support = {
+	cavalry_cost = -0.1
+}
+
+tatar_captives = {
+	heir_chance = 0.5
+	sailors_recovery_speed = 0.1
+}
+
+culmination_of_public_works_projects = {
+	prestige = 1
+	legitimacy = 1
+}
+
+expanding_military_infrastructure = {
+	manpower_recovery_speed = 0.1
+	reinforce_speed = 0.25
+}
+
+tur_janissary_support = {
+	infantry_cost = -0.1
+}

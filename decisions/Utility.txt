@@ -1,0 +1,429 @@
+country_decisions = {
+	DevelopmentDisplayOn = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_flag = development_display_on
+			}
+		}
+		allow = {
+		}
+		effect = {
+			set_country_flag = development_display_on
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	DevelopmentDisplayOff = {
+		major = yes
+		potential = {
+			has_country_flag = development_display_on
+		}
+		allow = {
+		}
+		effect = {
+			clr_country_flag = development_display_on
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	InflationDisplayOn = {
+		major = yes
+		potential = {
+			NOT = {
+				has_country_flag = show_inflation_events
+			}
+		}
+		allow = {
+		}
+		effect = {
+			set_country_flag = show_inflation_events
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	InflationDisplayOff = {
+		major = yes
+		potential = {
+			has_country_flag = show_inflation_events
+		}
+		allow = {
+		}
+		effect = {
+			clr_country_flag = show_inflation_events
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	SubjectWar = {
+		major = yes
+		potential = {
+			any_subject_country = {
+				OR = {
+					is_subject_of_type = vassal
+					is_subject_of_type = march
+					is_subject_of_type = puppet_bishopric
+					is_subject_of_type = league_associate
+				}
+				is_in_war = {
+					defender_leader = THIS
+				}
+			}
+		}
+		allow = {
+		}
+		effect = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = vassal
+					is_in_war = {
+						defender_leader = THIS
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject = PREV
+						subject_type = defensive_vassal
+					}
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = march
+					is_in_war = {
+						defender_leader = THIS
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject = PREV
+						subject_type = defensive_march
+					}
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = puppet_bishopric
+					is_in_war = {
+						defender_leader = THIS
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject = PREV
+						subject_type = defensive_puppet_bishopric
+					}
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = league_associate
+					is_in_war = {
+						defender_leader = THIS
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject = PREV
+						subject_type = defensive_league_associate
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	NoReligionFix = {
+		major = yes
+		potential = {
+			NOT = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = eastern
+				religion_group = dharmic
+				religion_group = pagan
+				religion_group = mesoamerican_religion_group
+				religion_group = jewish_group
+				religion_group = zoroastrian_group
+				religion_group = druze_group
+			}
+		}
+		allow = {
+		}
+		effect = {
+			if = {
+				limit = {
+					dominant_religion = catholic
+				}
+				change_religion = catholic
+			}
+			if = {
+				limit = {
+					dominant_religion = catholique
+				}
+				change_religion = catholique
+			}
+			if = {
+				limit = {
+					dominant_religion = anglican
+				}
+				change_religion = anglican
+			}
+			if = {
+				limit = {
+					dominant_religion = hussite
+				}
+				change_religion = hussite
+			}
+			if = {
+				limit = {
+					dominant_religion = protestant
+				}
+				change_religion = protestant
+			}
+			if = {
+				limit = {
+					dominant_religion = reformed
+				}
+				change_religion = reformed
+			}
+			if = {
+				limit = {
+					dominant_religion = orthodox
+				}
+				change_religion = orthodox
+			}
+			if = {
+				limit = {
+					dominant_religion = coptic
+				}
+				change_religion = coptic
+			}
+			if = {
+				limit = {
+					dominant_religion = nestorian
+				}
+				change_religion = nestorian
+			}
+			if = {
+				limit = {
+					dominant_religion = bosnian_christian
+				}
+				change_religion = bosnian_christian
+			}
+			if = {
+				limit = {
+					dominant_religion = sunni
+				}
+				change_religion = sunni
+			}
+			if = {
+				limit = {
+					dominant_religion = shiite
+				}
+				change_religion = shiite
+			}
+			if = {
+				limit = {
+					dominant_religion = ibadi
+				}
+				change_religion = ibadi
+			}
+			if = {
+				limit = {
+					dominant_religion = buddhism
+				}
+				change_religion = buddhism
+			}
+			if = {
+				limit = {
+					dominant_religion = vajrayana
+				}
+				change_religion = vajrayana
+			}
+			if = {
+				limit = {
+					dominant_religion = mahayana
+				}
+				change_religion = mahayana
+			}
+			if = {
+				limit = {
+					dominant_religion = confucianism
+				}
+				change_religion = shiite
+			}
+			if = {
+				limit = {
+					dominant_religion = shinto
+				}
+				change_religion = shiite
+			}
+			if = {
+				limit = {
+					dominant_religion = hinduism
+				}
+				change_religion = hinduism
+			}
+			if = {
+				limit = {
+					dominant_religion = sikhism
+				}
+				change_religion = sikhism
+			}
+			if = {
+				limit = {
+					dominant_religion = animism
+				}
+				change_religion = animism
+			}
+			if = {
+				limit = {
+					dominant_religion = shamanism
+				}
+				change_religion = shamanism
+			}
+			if = {
+				limit = {
+					dominant_religion = totemism
+				}
+				change_religion = totemism
+			}
+			if = {
+				limit = {
+					dominant_religion = inti
+				}
+				change_religion = inti
+			}
+			if = {
+				limit = {
+					dominant_religion = nahuatl
+				}
+				change_religion = nahuatl
+			}
+			if = {
+				limit = {
+					dominant_religion = mesoamerican_religion
+				}
+				change_religion = mesoamerican_religion
+			}
+			if = {
+				limit = {
+					dominant_religion = mixtec_religion
+				}
+				change_religion = mixtec_religion
+			}
+			if = {
+				limit = {
+					dominant_religion = purepecha_religion
+				}
+				change_religion = purepecha_religion
+			}
+			if = {
+				limit = {
+					dominant_religion = zapotec_religion
+				}
+				change_religion = zapotec_religion
+			}
+			if = {
+				limit = {
+					dominant_religion = tengri_pagan_reformed
+				}
+				change_religion = tengri_pagan_reformed
+			}
+			if = {
+				limit = {
+					dominant_religion = jewish
+				}
+				change_religion = jewish
+			}
+			if = {
+				limit = {
+					dominant_religion = zoroastrian
+				}
+				change_religion = zoroastrian
+			}
+			if = {
+				limit = {
+					dominant_religion = yazidi
+				}
+				change_religion = yazidi
+			}
+			if = {
+				limit = {
+					dominant_religion = druze
+				}
+				change_religion = druze
+			}
+			if = {
+				limit = {
+					dominant_religion = taoism
+				}
+				change_religion = confucianism
+				add_harmonized_religion = taoism
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	RecruitNewSettlers = {
+		major = yes
+		potential = {
+			government = native
+			any_owned_province = {
+				is_city = yes
+				any_empty_neighbor_province = {
+					tribal_land_of = ROOT
+				}
+			}
+		}
+		allow = {
+			adm_tech = 3
+			is_at_war = no
+			any_owned_province = {
+				is_city = yes
+				any_empty_neighbor_province = {
+					tribal_land_of = ROOT
+				}
+			}
+			NOT = {
+				has_country_modifier = recently_recruited_settlers
+			}
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					is_city = yes
+					any_empty_neighbor_province = {
+						tribal_land_of = ROOT
+					}
+				}
+				random_empty_neighbor_province = {
+					limit = {
+						tribal_land_of = ROOT
+					}
+					settle_province = ROOT
+				}
+			}
+			add_country_modifier = {
+				name = recently_recruited_settlers
+				duration = 3650
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

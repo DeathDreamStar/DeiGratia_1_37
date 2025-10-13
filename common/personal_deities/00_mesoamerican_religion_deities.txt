@@ -1,0 +1,209 @@
+itzamna = {
+	technology_cost = -0.05 # god of wisdom
+	legitimacy = 1 # god of rulership
+	devotion = 1
+	republican_tradition = 0.3
+	horde_unity = 1
+
+	potential = { religion = mesoamerican_religion }
+	sprite = 21
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}	
+	}
+}
+
+chaac = {
+	global_trade_goods_size_modifier = 0.1 # god of rain
+	hostile_attrition = 1 # god of weather
+
+	potential = { religion = mesoamerican_religion }
+	sprite = 22
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+kukulkan = {
+	reform_progress_growth = 0.25 # god of laws and writing
+	trade_efficiency = 0.1 # god of trade
+
+	potential = {
+		religion = mesoamerican_religion
+		primary_culture = yucatec
+	}
+	sprite = 23
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}	
+	}
+}
+
+ququmatz = {
+	reform_progress_growth = 0.25 # god of laws and writing
+	trade_efficiency = 0.1 # god of trade
+
+	potential = {
+		religion = mesoamerican_religion
+		NOT = {
+			primary_culture = yucatec
+		}
+	}
+	sprite = 23
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}	
+	}
+}
+
+yum_kaax = {
+	hostile_attrition = 1 # god of the forest
+	movement_speed = 0.1 # god of hunters
+
+	potential = { religion = mesoamerican_religion }
+	sprite = 24
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+ix_chel = {
+	heir_chance = 0.5 # goddess of midwifery
+	manpower_recovery_speed = 0.1 # goddess of medicine
+
+	potential = { religion = mesoamerican_religion }
+	sprite = 25
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+cizin = {
+	discipline = 0.025 # god of death
+	shock_damage = 0.1 # god of earthquakes
+
+	potential = { religion = mesoamerican_religion }
+	sprite = 26
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}
+
+tohil = {
+	land_morale = 0.05 # god of war
+	war_exhaustion = -0.03 # god of sacrifice
+
+	potential = {
+		religion = mesoamerican_religion
+		primary_culture = highland_mayan
+	}
+	sprite = 39
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			personality = ai_militarist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_diplomat
+		}	
+	}
+}

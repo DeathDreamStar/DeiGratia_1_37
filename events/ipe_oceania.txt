@@ -1,0 +1,28 @@
+namespace = ipe_oceania
+normal_or_historical_nations = yes
+
+# New Contacts
+country_event = {
+	id = ipe_oceania.1
+	title = ipe_oceania.1.t
+	desc = ipe_oceania.1.d
+	picture = NATIVES_eventPicture
+
+	trigger = {
+		has_country_modifier = pacific_isolation
+		any_known_country = {
+			NOT = {
+				technology_group = polynesian_tech
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = { # It is the beginning of a new and perilous age.
+		name = ipe_oceania.1.a
+		remove_country_modifier = pacific_isolation
+	}
+}

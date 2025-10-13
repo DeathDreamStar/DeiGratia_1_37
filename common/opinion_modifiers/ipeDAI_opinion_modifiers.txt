@@ -1,0 +1,9 @@
+supported_our_vietnamese_dynasty = {
+	opinion = 100
+	yearly_decay = 2
+}
+
+opposed_our_vietnamese_dynasty = {
+	opinion = -100
+	yearly_decay = 2
+}

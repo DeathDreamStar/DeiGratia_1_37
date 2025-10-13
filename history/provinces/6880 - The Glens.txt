@@ -1,0 +1,19 @@
+#6880 - The Glens
+
+owner = GLN
+controller = GLN
+culture = irish
+religion = catholic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = grain
+base_manpower = 1
+capital = "Ballycastle"
+is_city = yes
+add_core = GLN
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+fort_15th = yes

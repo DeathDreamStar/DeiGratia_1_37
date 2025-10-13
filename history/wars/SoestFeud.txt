@@ -1,0 +1,26 @@
+name = "Soest Feud"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 6412 # Soest
+}
+
+1444.6.5 = {
+	add_attacker = KOL
+	add_attacker = PAD
+	add_attacker = FRK
+	add_attacker = RVA
+	add_defender = KLE
+	add_defender = SOE
+	add_defender = LPP
+}
+
+1449.4.1 = {
+	rem_attacker = KOL
+	rem_attacker = PAD
+	rem_attacker = FRK
+	rem_attacker = RVA
+	rem_defender = KLE
+	rem_defender = SOE
+	rem_defender = LPP
+}

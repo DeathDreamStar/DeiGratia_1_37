@@ -1,0 +1,27 @@
+#351 - Biskra
+
+owner = TUN
+controller = TUN 
+culture = berber
+religion = sunni
+capital = "Biskra"
+trade_goods = wool
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = TUN
+add_core = ALG
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+add_local_autonomy = 50
+
+
+1671.1.1 = {
+	owner = ALG
+	controller = ALG
+	add_core = ALG
+} # Virtually independent of the Ottoman empire

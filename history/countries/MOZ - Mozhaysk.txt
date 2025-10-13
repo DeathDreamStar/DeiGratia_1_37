@@ -1,0 +1,68 @@
+government = monarchy
+add_government_reform = principality
+primary_culture = russian
+religion = orthodox
+technology_group = eastern
+capital = 4251
+fixed_capital = 4251 # Cannot move capital away from this province & no power cost to move to it
+government_rank = 1
+add_historical_friend = GLC
+
+#1341.3.31 direct MOS
+1389.5.19 = {
+	monarch = {
+		name = "(Regency Council)"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Andrey"
+		monarch_name = "Andrey I"
+		dynasty = "Rurik"
+		birth_date = 1382.8.14
+		death_date = 1432.7.9
+		claim = 95
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1397.8.14 = {
+	monarch = {
+		name = "Andrey I"
+		dynasty = "Rurik"
+		birth_date = 1382.8.14
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1417.1.1 = {
+	heir = {
+		name = "Ivan"
+		monarch_name = "Ivan I"
+		dynasty = "Rurik"
+		birth_date = 1417.1.1
+		death_date = 1485.1.1
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 0
+	}
+}
+1432.7.9 = {
+	monarch = {
+		name = "Ivan I"
+		dynasty = "Rurik"
+		birth_date = 1417.1.1
+		adm = 3
+		dip = 3
+		mil = 0
+	}
+}
+#1454.1.1 done
+#1462-1473.9.12 under Dmitrov
+#to MOS
+#1481-1492.9.19 under Uglich

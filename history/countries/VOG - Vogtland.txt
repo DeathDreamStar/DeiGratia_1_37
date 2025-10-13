@@ -1,0 +1,28 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = saxon
+religion = catholic
+technology_group = western
+capital = 2965
+
+
+1426.1.1 = {
+	monarch = {
+		name = "Heinrich I"
+		dynasty = "von Plauen"
+		birth_date = 1387.1.1
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+	heir = {
+		name = "Heinrich"
+		monarch_name = "Heinrich II"
+		dynasty = "von Plauen"
+		birth_date = 1417.1.1
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}

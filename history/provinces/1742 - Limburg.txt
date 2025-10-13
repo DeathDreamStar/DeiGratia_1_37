@@ -1,0 +1,44 @@
+# 1742 - Upper Guelders
+
+owner = BRB
+controller = BRB
+add_core = BRB
+is_city = yes
+capital = "Maastricht"
+culture = flemish
+religion = catholic
+hre = yes
+base_tax = 3
+base_production = 3
+trade_goods = cloth
+base_manpower = 3
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+fort_15th = yes
+
+1477.1.5 = {
+	owner = HAB
+	controller = HAB
+	add_core = HAB
+} # Charles the Bold dies
+1519.1.12 = { owner = SPA controller = SPA add_core = SPA remove_core = HAB }
+1632.1.1 = {
+	owner = NED
+	controller = NED
+	add_core = NED
+	remove_core = SPA
+}
+1797.12.26 = {
+	owner = FRA
+	controller = FRA
+	add_core = FRA
+} # Treaty of Campo Formio
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+1815.3.16 = {
+	owner = NED
+	controller = NED
+	add_core = NED
+	remove_core = FRA
+} # Vienna Congress, most of Upper Guelders now incorporated into the Netherlands and joined with the province of Limburg.

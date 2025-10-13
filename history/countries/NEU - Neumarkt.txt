@@ -1,0 +1,63 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = bavarian
+religion = catholic
+capital = 6758
+fixed_capital = 6758
+
+#Palatinate-Neumarkt
+1410.5.18 = {
+	monarch = {
+		name = "Johann I"
+		dynasty = "von Wittelsbach"
+		birth_date = 1383.1.1
+		adm = 2
+		dip = 3
+		mil = 5
+	}
+}
+
+1416.2.26 = {
+	heir = {
+		name = "Christoph"
+		monarch_name = "Christoph I"
+		dynasty = "von Wittelsbach"
+		birth_date = 1416.2.26
+		death_date = 1448.1.5
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+	clear_scripted_personalities = yes
+	add_heir_personality = infertile_personality
+}
+
+1426.1.1 = {
+	queen = {
+		country_of_origin = UBV
+		name = "Beatrix"
+		dynasty = "von Wittelsbach"
+		birth_date = 1403.1.1
+		death_date = 1447.3.12
+		female = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1443.3.14 = {
+	monarch = {
+		name = "Christoph I"
+		dynasty = "von Wittelsbach"
+		birth_date = 1416.2.26
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = infertile_personality
+}

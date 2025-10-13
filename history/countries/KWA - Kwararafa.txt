@@ -1,0 +1,16 @@
+government = tribal
+add_government_reform = tribal_federation
+technology_group = sub_saharan
+religion = shamanism #Fetishism
+primary_culture = jukun
+capital = 1162 # Wukari
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Aaku"
+		dynasty = "Kwararafa"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

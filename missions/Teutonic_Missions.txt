@@ -1,0 +1,645 @@
+teutonic_missions_main_slot = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = TEU
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	prussian_confederation_mission_teu = {
+		icon = mission_alliances
+		required_missions = {  }
+		completed_by = 1466.10.19
+		provinces_to_highlight = {
+			OR = {
+				province_id = 43
+				province_id = 1859
+				province_id = 2997
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = prussian_confederation_mission_teu.tooltip
+				OR = {
+					AND = {
+						has_country_flag = pru_confederation_happened
+						DNZ = {
+							exists = no
+						}
+						owns = 43
+						owns = 1859
+						owns = 6413
+					}
+					AND = {
+						is_year = 1467
+						DNZ = {
+							exists = no
+						}
+						owns = 43
+						owns = 1859
+						owns = 6413
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_prestige = 25
+			estonia_ingria_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			livonia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			curonia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			latgalia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	livonian_order_mission_teu = {
+		icon = shield_of_christendom
+		required_missions = { prussian_confederation_mission_teu }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 271
+				province_id = 3909
+				province_id = 4534
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			owns = 271
+			owns = 3909
+			owns = 4534
+			OR = {
+				AND = {
+					num_of_cities = LIV
+					government = theocracy
+					has_reform = monastic_order_reform
+					is_subject = no
+					religion = catholic
+					LIV = {
+						government = theocracy
+						has_reform = monastic_order_reform
+						OR = {
+							is_subject = no
+							is_subject_of = ROOT
+						}
+						is_neighbor_of = ROOT
+						alliance_with = ROOT
+						religion = catholic
+					}
+				}
+				AND = {
+					LIV = {
+						exists = no
+					}
+					estonia_ingria_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT	
+					}
+					livonia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT	
+					}
+					curonia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT	
+					}
+					latgalia_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT	
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					num_of_cities = LIV
+					government = theocracy
+					has_reform = monastic_order_reform
+					is_subject = no
+					religion = catholic
+					LIV = {
+						government = theocracy
+						has_reform = monastic_order_reform
+						OR = {
+							is_subject = no
+							is_subject_of = ROOT
+						}
+						is_neighbor_of = ROOT
+						alliance_with = ROOT
+						religion = catholic
+					}
+				}
+				country_event = {
+					id = ipePOL.23
+				}
+			}
+			add_dip_power = 100
+			add_prestige = 25
+			samogitia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			lithuania_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	conquer_the_balts = {
+		icon = mission_teutonic_knights
+		required_missions = { livonian_order_mission_teu }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = samogitia_area
+				area = lithuania_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			samogitia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			lithuania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			novgorod_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			pskov_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			karelia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			north_karelia = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			pomor_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			wielkopolska_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			kuyavia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			neumark_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			northern_mazovia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			mazovia_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	crusade_against_novgorod = {
+		icon = mission_novgorod_the_great
+		required_missions = { conquer_the_balts }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = novgorod_area
+				area = pskov_area
+				area = karelia_area
+				area = pomor_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			novgorod_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			pskov_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			karelia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+			pomor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT	
+			}
+		}
+		effect = {
+			moscow_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			beloozero_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			tver_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			yaroslavl_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			vladimir_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			vologda_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+			galich_area = {
+				limit = {
+					NOT = { is_permanent_claim = ROOT	}
+					NOT = { is_core = ROOT	}
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	archbishop_in_moscow = {
+		icon = mission_defeat_muscovy
+		required_missions = { crusade_against_novgorod }
+		position = 7
+		provinces_to_highlight = {
+			OR = {
+				area = moscow_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+			NOT = { religion = catholic }
+		}
+		trigger = {
+			religion = catholic
+			moscow_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = catholic	
+			}
+		}
+		effect = {
+			add_prestige = 25
+			add_papal_influence = 25
+			add_mil_power = 100
+			PAP = {
+				add_opinion = {
+					who = ROOT
+					modifier = mending_the_schism
+				}
+			}
+		}
+	}
+}
+
+teutonic_missions_second_slot = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = TEU
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	take_over_greater_poland = {
+		icon = mission_crusade_for_varna
+		required_missions = { conquer_the_balts }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = wielkopolska_area
+				area = kuyavia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			wielkopolska_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kuyavia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					area = wielkopolska_area
+				}
+				add_core = ROOT
+				change_culture = ROOT
+				change_religion = ROOT
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+			}
+			random_owned_province = {
+				limit = {
+					area = kuyavia_area
+				}
+				add_core = ROOT
+				change_culture = ROOT
+				change_religion = ROOT
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+			}
+		}
+	}
+}
+
+teutonic_missions_third_slot = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = TEU
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	reaffirm_papal_ties = {
+		icon = mission_religious
+		required_missions = {  }
+		trigger = {
+			PAP = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+			religion = catholic
+		}
+		effect = {
+			add_papal_influence = 25
+		}
+	}
+
+	imperial_relations = {
+		icon = mission_alliances
+		required_missions = { reaffirm_papal_ties }
+		trigger = {
+			emperor = {
+				has_opinion = {
+					who = ROOT
+					value = 150
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = teutonic_hre_lands
+				duration = -1
+			}
+		}
+	}
+
+	mazovian_conquest = {
+		icon = mission_conquer_5_states
+		required_missions = { conquer_the_balts }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = northern_mazovia_area
+				area = mazovia_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			northern_mazovia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			mazovia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					area = mazovia_area
+				}
+				add_core = ROOT
+				change_culture = ROOT
+				change_religion = ROOT
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+			}
+		}
+	}
+}
+
+teutonic_missions_fifth_slot = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		tag = TEU
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	ostsiedlung = {
+		icon = mission_colonial
+		required_missions = {  }
+		provinces_to_highlight = {
+			OR = {
+				area = west_prussia_area
+				area = pomerelia_area
+				area = east_prussia_area
+			}
+			OR = {
+				NOT = {
+					culture = ROOT
+				}
+				NOT = {
+					religion = catholic
+				}
+				NOT = {
+					country_or_non_sovereign_subject_holds = ROOT
+				}
+			}
+		}
+		trigger = {
+			west_prussia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = catholic
+				culture = ROOT
+			}
+			pomerelia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = catholic
+				culture = ROOT
+			}
+			east_prussia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = catholic
+				culture = ROOT
+			}
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					area = west_prussia_area
+				}
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+			}
+			random_owned_province = {
+				limit = {
+					area = pomerelia_area
+				}
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+			}
+			random_owned_province = {
+				limit = {
+					area = east_prussia_area
+				}
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+			}
+		}
+	}
+
+	seize_gotland = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { ostsiedlung }
+		provinces_to_highlight = {
+			province_id = 25
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			25 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = baltic_ambition
+				duration = 5475
+			}
+		}
+	}
+
+	dominate_baltic_trade = {
+		icon = mission_galleys_in_port
+		required_missions = { seize_gotland }
+		trigger = {
+			1926 = {
+				is_strongest_trade_power = TEU
+			}
+		}
+		effect = {
+			add_years_of_income = 1.5
+		}
+	}
+}

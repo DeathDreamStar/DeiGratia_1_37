@@ -1,0 +1,39 @@
+government = monarchy
+add_government_reform = timurid_emirate
+technology_group = muslim
+religion = sunni
+primary_culture = tajik # rulers were uzbehk
+add_accepted_culture = afghani
+capital = 450 # Balkh
+religious_school = hanafi_school
+government_rank = 2
+historical_rival = DLH
+
+1429.1.1 = {
+    monarch = {
+        name = "Muhammad Juki"
+        dynasty = "Gurkani"
+		culture = uzbehk
+        adm = 3
+        dip = 5
+        mil = 2
+        birth_date = 1402.4.27
+    }
+	clear_scripted_personalities = yes
+	add_ruler_personality = silver_tongue_personality
+	add_ruler_personality = intricate_web_weaver_personality
+	add_piety = -0.5
+
+    set_ruler_flag = death_of_juki
+
+    heir = {
+        name = "Muhammad Qasim"
+        dynasty = "Gurkani"
+        culture = uzbehk
+        adm = 0
+        dip = 0
+        mil = 0
+        birth_date = 1422.1.1
+    }
+    add_heir_personality = naive_personality
+}

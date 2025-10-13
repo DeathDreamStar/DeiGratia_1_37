@@ -1,0 +1,18 @@
+government_rank = 1
+government = tribal
+add_government_reform = tribal_federation
+primary_culture = oromo
+religion = shamanism #waaq
+technology_group = east_african
+unit_type = sub_saharan
+capital = 6125 #Oda Roba
+
+1444.11.11 = { # fictional
+      monarch = {
+           name = "Irbuu"
+           dynasty = "Barentu"
+           adm = 2
+           dip = 2
+           mil = 2
+      }
+} # Noble councils. 

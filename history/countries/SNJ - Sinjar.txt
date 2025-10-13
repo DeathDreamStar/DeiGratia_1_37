@@ -1,0 +1,145 @@
+government = tribal
+add_government_reform = tribal_federation
+government_rank = 1
+primary_culture = kurdish
+religion = yazidi
+technology_group = muslim
+capital = 2309
+fixed_capital = 2309
+
+#Dasini Tribe
+1335.12.1 = {
+	monarch = {
+		name = "Mihammad Batini"
+		dynasty = "Dasini"
+		adm = 5
+		dip = 5
+		mil = 1
+	}
+}
+1371.1.1 = {
+	monarch = {
+		name = "Melik"
+		dynasty = "Dasini"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1406.1.1 = {
+	monarch = {
+		name = "Shams"
+		dynasty = "Dasini"
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+1444.1.1 = {
+	monarch = {
+		name = "Mansur"
+		dynasty = "Dasini"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1481.1.1 = {
+	monarch = {
+		name = "Qatan"
+		dynasty = "Dasini"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1502.1.1 = {
+	monarch = {
+		name = "Hussein"
+		dynasty = "Dasini"
+		adm = 0
+		dip = 5
+		mil = 1
+	}
+}
+1534.1.1 = {
+	monarch = {
+		name = "Hassan"
+		dynasty = "Dasini"
+		adm = 2
+		dip = 1
+		mil = 0
+	}
+}
+1573.1.1 = {
+	monarch = {
+		name = "Khanjar"
+		dynasty = "Dasini"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1611.1.1 = {
+	monarch = {
+		name = "Mirza"
+		dynasty = "Dasini"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1651.1.1 = {
+	monarch = {
+		name = "Suleiman"
+		dynasty = "Dasini"
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+1690.1.1 = {
+	monarch = {
+		name = "Mirkhan"
+		dynasty = "Dasini"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1730.1.1 = {
+	monarch = {
+		name = "Badakh"
+		dynasty = "Dasini"
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+1771.1.1 = {
+	monarch = {
+		name = "Jol"
+		dynasty = "Dasini"
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1790.1.1 = {
+	monarch = {
+		name = "Hassan"
+		dynasty = "Dasini"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1810.1.1 = {
+	monarch = {
+		name = "Ali"
+		dynasty = "Dasini"
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}

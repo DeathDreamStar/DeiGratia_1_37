@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = mame
+religion = mesoamerican_religion
+technology_group = mesoamerican 
+capital = 2638
+fixed_capital = 2638
+
+1444.1.1 = {
+	monarch = {
+		name = "Xmayquiej"
+		dynasty = "Xoco"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,34 @@
+namespace = ipeZIM
+
+normal_or_historical_nations = yes
+
+# The Regression of Zimbabwe
+country_event = {
+	id = ipeZIM.1
+	title = flavor_zim.1.t
+	desc = flavor_zim.1.d
+	picture = AFRICAN_CARAVAN_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # These are dark times for Zimbabwe...
+		name = flavor_zim.1.a
+		GZI = {
+			every_owned_province = {
+				limit = {
+					is_core = GZI
+				}
+				add_core = ROOT
+			}
+		}
+		random_owned_province = {
+			add_base_tax = 1
+		}
+		random_owned_province = {
+			add_base_production = 1
+		}
+		random_owned_province = {
+			add_base_manpower = 1
+		}
+	}
+}

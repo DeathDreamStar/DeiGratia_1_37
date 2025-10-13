@@ -1,0 +1,156 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = dagestani
+religion = sunni
+technology_group = muslim
+capital = 4306 #Khumukh
+religious_school = shafii_school
+
+1295.1.1 = {
+	monarch = {
+		name = "Badr"
+		dynasty = "Shamkhal"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1320.1.1 = {
+	monarch = {
+		name = "Akhsuvar I"
+		dynasty = "Shamkhal"
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+1354.1.1 = {
+	monarch = {
+		name = "Akhsuvar II"
+		dynasty = "Shamkhal"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1394.1.1 = {
+	monarch = {
+		name = "Utsmay"
+		dynasty = "Shamkhal"
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+1434.1.1 = {
+	monarch = {
+		name = "Ulkhay"
+		dynasty = "Shamkhal"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1474.1.1 = {
+	monarch = {
+		name = "Surkhay I"
+		dynasty = "Shamkhal"
+		adm = 2
+		dip = 0
+		mil = 1
+	}
+}
+1510.1.1 = {
+	monarch = {
+		name = "Muhammad"
+		dynasty = "Shamkhal"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1544.1.1 = {
+	monarch = {
+		name = "Umal-Muhammad"
+		dynasty = "Shamkhal"
+		birth_date = 1500.1.1
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1566.1.1 = {
+	monarch = {
+		name = "Budai"
+		dynasty = "Shamkhal"
+		birth_date = 1515.1.1
+		adm = 2
+		dip = 1
+		mil = 4
+	}
+}
+1567.1.1 = {
+	monarch = {
+		name = "Surkhay II"
+		dynasty = "Shamkhal"
+		birth_date = 1518.1.1
+		adm = 3
+		dip = 1
+		mil = 2
+	}
+}
+1569.1.1 = {
+	monarch = {
+		name = "Chopan"
+		dynasty = "Shamkhal"
+		birth_date = 1540.1.1
+		adm = 1
+		dip = 3
+		mil = 1
+	}
+}
+1578.1.1 = {
+	monarch = {
+		name = "Alibek I"
+		dynasty = "Shamkhal"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1605.1.1 = {
+	monarch = {
+		name = "Surkhay III"
+		dynasty = "Shamkhal"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1614.1.1 = {
+	monarch = {
+		name = "Andia"
+		dynasty = "Shamkhal"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1623.1.1 = {
+	monarch = {
+		name = "Eldar"
+		dynasty = "Shamkhal"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1635.1.1 = {
+	monarch = {
+		name = "Aidermir"
+		dynasty = "Shamkhal"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}

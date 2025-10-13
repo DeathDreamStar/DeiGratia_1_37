@@ -1,0 +1,3 @@
+discovered_by = mesoamerican
+discovered_by = caribbean
+1517.1.1 = { discovered_by = SPA }

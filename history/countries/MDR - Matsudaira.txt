@@ -1,0 +1,143 @@
+government = monarchy
+add_government_reform = daimyo
+government_rank = 1
+primary_culture = togoku
+religion = shinto
+technology_group = chinese
+capital = 4360	# Mikawa
+	
+1440.6.14 = { 
+	monarch = {
+		name = "Nobumitsu"
+		dynasty = "Matsudaira"
+		birth_date = 1404.1.1
+		death_date = 1488.8.29
+		adm = 4
+		dip = 4
+		mil = 5
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = tactical_genius_personality
+}
+
+1440.6.14 = {
+	heir = {
+		name = "Chikatada"
+		monarch_name = "Chikatada"
+		dynasty = "Matsudaira"
+		birth_date = 1431.1.1
+		death_date = 1501.9.22
+		claim = 90
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+
+1488.8.29 = { 
+	monarch = {
+		name = "Chikatada"
+		dynasty = "Matsudaira"
+		birth_date = 1431.1.1
+		death_date = 1501.9.22
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+
+1488.8.29 = {
+	heir = {
+		name = "Nagachika"
+		monarch_name = "Nagachika"
+		dynasty = "Matsudaira"
+		birth_date = 1473.1.1
+		death_date = 1544.9.9
+		claim = 90
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}
+
+1501.9.22 = { 
+	monarch = {
+		name = "Nagachika"
+		dynasty = "Matsudaira"
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}
+
+1501.9.22 = {
+	heir = {
+		name = "Nobutada"
+		monarch_name = "Nobutada"
+		dynasty = "Matsudaira"
+		birth_date = 1490.1.1
+		death_date = 1531.9.8
+		claim = 90
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+
+1503.1.1 = { 
+	monarch = {
+		name = "Nobutada"
+		dynasty = "Matsudaira"
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+
+1511.9.28 = {
+	heir = {
+		name = "Kiyoyasu"
+		monarch_name = "Kiyoyasu"
+		dynasty = "Matsudaira"
+		birth_date = 1511.9.28
+		death_date = 1535.12.29
+		claim = 90
+		adm = 4
+		dip = 3
+		mil = 5
+	}
+}
+
+1523.1.1 = { 
+	monarch = {
+		name = "Kiyoyasu"
+		dynasty = "Matsudaira"
+		adm = 4
+		dip = 3
+		mil = 5
+	}
+}
+
+1526.6.9 = {
+	heir = {
+		name = "Hirotada"
+		monarch_name = "Hirotada"
+		dynasty = "Matsudaira"
+		birth_date = 1526.6.9
+		death_date = 1549.4.3
+		claim = 90
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+
+1535.12.29 = { 
+	monarch = {
+		name = "Hirotada"
+		dynasty = "Matsudaira"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}

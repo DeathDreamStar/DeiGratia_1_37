@@ -1,0 +1,16 @@
+government = tribal
+add_government_reform = tribal_kingdom
+technology_group = chinese
+religion = vajrayana
+primary_culture = bhutanese
+capital = 565	# Bumthang
+
+1444.1.1 = {
+	monarch = {
+		name = "Dongrub Zangpo"
+		dynasty = "Wangchuk"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

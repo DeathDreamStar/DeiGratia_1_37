@@ -1,0 +1,19 @@
+namespace = ipeAYU
+
+# The King of Sukhothai
+country_event = {
+	id = ipeAYU.1
+	title = ipeAYU.1.t
+	desc = ipeAYU.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ipeAYU.1.a
+        inherit = SUK
+		add_prestige = 5
+    }
+}

@@ -1,0 +1,16 @@
+# 3347 - Pnong
+
+owner = KHM
+controller = KHM
+add_core = KHM
+culture = bahnar
+religion = animism
+capital = "Senmonorom"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian

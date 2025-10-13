@@ -1,0 +1,21 @@
+#6144 - Mandera
+
+owner = BOA
+controller = BOA
+add_core = BOA
+culture = somali
+religion = sunni
+capital = "Mandera"
+trade_goods = livestock
+is_city = yes
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+
+discovered_by = east_african
+discovered_by = muslim
+discovered_by = ottoman
+
+
+1550.1.1 = { discovered_by = TUR }

@@ -1,0 +1,17 @@
+pay_legitimacy = {
+	trigger = {
+		government = monarchy
+		legitimacy = 2
+		NOT = { has_reform = celestial_empire }
+		NOT = { has_reform = celestial_kingdom }
+		NOT = { has_reform = chrysanthemum_throne }
+	}
+	
+	effect = {
+		add_legitimacy = -2
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}

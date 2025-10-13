@@ -1,0 +1,5 @@
+abolished_nayankara = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}

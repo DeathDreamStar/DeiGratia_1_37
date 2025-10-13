@@ -1,0 +1,9 @@
+﻿l_english:
+ ipeBOS.1.t: "The Faith of $MONARCHTITLE$ $MONARCH$"
+ ipeBOS.1.d: "$MONARCHTITLE$ $MONARCH$ of Bosnia has always been a pragmatic individual, even in matters of faith. The people of Bosnia have long been independent of the influences of the Catholic and Orthodox churches, because they adhere to the Bosnian Church, which separated from Rome during the 11th century. As such, Catholics and Orthodox Christians regard Bosnians as heretics, sometimes even wrongfully accusing them of supporting Gnosticism, an even more heretical form of Christianity.\n\nWith Bosnia having been forced to fight a civil war against vassal lords in Herzegovina and the growing threat of the Ottoman Empire, $MONARCHTITLE$ $MONARCH$ finds that Bosnia needs allies to help it through these tumultuous times. One of the easiest ways to acquire such alliances would be to convert to Catholicism, which would gain the support of Hungary and the Papacy. However, converting to Catholicism would also deeply harm $MONARCHTITLE$ $MONARCH$’s image among the people of Bosnia, who have no desire to be tied with Rome. As such, $MONARCHTITLE$ $MONARCH$ will have a difficult choice to make regarding the future faith of the Bosnian people."
+ ipeBOS.1.a: "Convert to Catholicism."
+ bosnian_convert: "Bosnian Convert"
+ betrayed_bosnia: "Betrayed Bosnia"
+ ipeBOS.1.b: "Remain an adherent of the Bosnian Church."
+ bosnian_heretic: "Bosnian Heretic"
+ defended_bosnia: "Defended Bosnia"

@@ -1,0 +1,20 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+technology_group = western
+primary_culture = prussian
+add_accepted_culture = estonian
+religion = catholic
+historical_friend = LIV
+capital = 3905	# Hapsal
+add_army_professionalism = 0.1
+
+1439.1.1 = {
+	monarch = {
+		name = "Johann Krewl"
+		birth_date = 1396.1.1
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}

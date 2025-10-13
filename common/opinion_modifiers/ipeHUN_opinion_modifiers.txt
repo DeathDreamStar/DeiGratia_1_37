@@ -1,0 +1,17 @@
+granted_upper_hungary = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+elected_austrian_king = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+rejected_austrian_king = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}

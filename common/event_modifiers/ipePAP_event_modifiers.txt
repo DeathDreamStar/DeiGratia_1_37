@@ -1,0 +1,8 @@
+comtat_venaissin = {
+	local_tax_modifier = -2
+	trade_goods_size_modifier = 1
+	local_manpower_modifier = -2
+	local_development_cost = -0.1
+	local_unrest = -10
+	local_governing_cost = -0.75
+}

@@ -1,0 +1,29 @@
+name = "Malvi Conquest of Bhilwara"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 4501 # Bhilwara
+}
+
+1442.1.1 = {
+	add_attacker = MLW
+	add_attacker = GDW
+	add_attacker = BGL
+	add_attacker = KLP
+	add_attacker = BND
+	add_attacker = PAN
+	add_defender = MER
+	add_defender = HAD
+}
+
+# Peace
+1446.1.1 = {
+	rem_attacker = MLW
+	rem_attacker = GDW
+	rem_attacker = BGL
+	rem_attacker = KLP
+	rem_attacker = BND
+	rem_attacker = PAN
+	rem_defender = MER
+	rem_defender = HAD
+}

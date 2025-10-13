@@ -1,0 +1,29 @@
+gharbian_settlement = {
+	advisor_cost = -0.1
+	advisor_pool = 1
+}
+
+struggling_government = {
+	advisor_cost = 0.1
+	stability_cost_modifier = 0.1
+}
+
+adm_mahmud_gawans_reforms = {
+	adm_tech_cost_modifier = -0.05
+	global_tax_modifier = 0.1
+}
+
+mil_mahmud_gawans_reforms = {
+	mil_tech_cost_modifier = -0.05
+	discipline = 0.025
+}
+
+centralization_of_bahmanis = {
+	global_autonomy = -0.05
+	global_unrest = 1
+}
+
+local_bahmani_capital = {
+	local_autonomy = 0.05
+	local_defensiveness = 0.2
+}

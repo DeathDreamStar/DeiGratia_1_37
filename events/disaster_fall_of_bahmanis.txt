@@ -1,0 +1,582 @@
+namespace = fall_of_bahmanis
+normal_or_historical_nations = yes
+
+# The Fall of Bahmanis
+country_event = {
+	id = fall_of_bahmanis.1
+	title = fall_of_bahmanis.1.t
+	desc = fall_of_bahmanis.1.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		add_stability = -6
+		add_legitimacy = -50
+		set_global_flag = fall_of_bahmanis
+	}
+
+	option = { # Dark times for Bahmanis.
+		name = fall_of_bahmanis.1.a
+		custom_tooltip = fall_of_bahmanis.1.a.tooltip
+	}
+}
+
+# The Uprising of Ahmadnagar
+country_event = {
+	id = fall_of_bahmanis.2
+	title = ipeBAH.11.t
+	desc = fall_of_bahmanis.2.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			release = AHM
+            AHM = {
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+						cavalry = 0.5
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							heavy_ship = 0.5
+				        	light_ship = 0.5
+                     		transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Ahmad"
+					dynasty = "Nizam Shah"
+					adm = 4
+					dip = 6
+					mil = 4
+				}
+				add_ruler_personality = bold_fighter_personality
+                change_government = monarchy
+                add_government_reform = indian_sultanate_reform
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # Deal with them!
+		name = ipeBAH.11.a
+		ai_chance = {
+			factor = 60
+		}
+		declare_war_with_cb = {
+			who = AHM
+			casus_belli = cb_civil_war
+		}
+		add_legitimacy = 10
+	}
+
+	option = { # We will have to accept this.
+		name = ipeBAH.11.b
+		ai_chance = {
+			factor = 40
+		}
+		add_prestige = -10
+	}
+
+	option = { # Play as Ahmadnagar.
+		name = ipeBAH.11.c
+		hidden_effect = {
+			add_prestige = -10
+		}
+		switch_tag = AHM
+	}
+}
+
+# The Uprising of Bijapur
+country_event = {
+	id = fall_of_bahmanis.3
+	title = ipeBAH.12.t
+	desc = fall_of_bahmanis.3.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			release = BIJ
+            BIJ = {
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+						cavalry = 0.5
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							heavy_ship = 0.5
+				        	light_ship = 0.5
+                     		transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Yusuf"
+					dynasty = "Adil Shah"
+					adm = 4
+					dip = 4
+					mil = 5
+				}
+				add_ruler_personality = inspiring_leader_personality
+                change_government = monarchy
+                add_government_reform = indian_sultanate_reform
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # Deal with them!
+		name = ipeBAH.11.a
+		ai_chance = {
+			factor = 60
+		}
+		declare_war_with_cb = {
+			who = BIJ
+			casus_belli = cb_civil_war
+		}
+	}
+
+	option = { # We will have to accept this.
+		name = ipeBAH.11.b
+		ai_chance = {
+			factor = 40
+		}
+		add_prestige = -10
+	}
+
+	option = { # Play as Bijapur.
+		name = ipeBAH.12.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_prestige = -10
+		}
+		switch_tag = BIJ
+	}
+}
+
+# The Uprising of Golkonda
+country_event = {
+	id = fall_of_bahmanis.4
+	title = ipeBAH.13.t
+	desc = ipeBAH.13.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			release = GOC
+            GOC = {
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+						cavalry = 0.5
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							heavy_ship = 0.5
+				        	light_ship = 0.5
+                     		transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Quli"
+					dynasty = "Qutb Shah"
+					adm = 3
+					dip = 5
+					mil = 6
+				}
+				add_ruler_personality = conqueror_personality
+                change_government = monarchy
+                add_government_reform = indian_sultanate_reform
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # Deal with them!
+		name = ipeBAH.11.a
+		ai_chance = {
+			factor = 60
+		}
+		declare_war_with_cb = {
+			who = GOC
+			casus_belli = cb_civil_war
+		}
+	}
+
+	option = { # We will have to accept this.
+		name = ipeBAH.11.b
+		ai_chance = {
+			factor = 40
+		}
+		add_prestige = -10
+	}
+
+	option = { # Play as Golkonda.
+		name = ipeBAH.13.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_prestige = -10
+		}
+		switch_tag = GOC
+	}
+}
+
+# The Uprising of Berar
+country_event = {
+	id = fall_of_bahmanis.5
+	title = ipeBAH.14.t
+	desc = fall_of_bahmanis.5.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			release = BRR
+            BRR = {
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+						cavalry = 0.5
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							heavy_ship = 0.5
+				        	light_ship = 0.5
+                     		transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Fath Allah"
+					dynasty = "Imad Shah"
+					adm = 3
+					dip = 4
+					mil = 4
+				}
+				add_ruler_personality = architectural_visionary_personality
+                change_government = monarchy
+                add_government_reform = indian_sultanate_reform
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # Deal with them!
+		name = ipeBAH.11.a
+		ai_chance = {
+			factor = 60
+		}
+		declare_war_with_cb = {
+			who = BRR
+			casus_belli = cb_civil_war
+		}
+		add_legitimacy = 10
+	}
+
+	option = { # We will have to accept this.
+		name = ipeBAH.11.b
+		ai_chance = {
+			factor = 40
+		}
+		add_prestige = -10
+	}
+
+	option = { # Play as Berar.
+		name = ipeBAH.14.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_prestige = -10
+		}
+		switch_tag = BRR
+	}
+}
+
+# The Assassination Plot (Hidden)
+country_event = {
+	id = fall_of_bahmanis.6
+	title = fall_of_bahmanis.6.t
+	desc = fall_of_bahmanis.6.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		has_regency = no
+		dynasty = "Bahman"
+	}
+
+	immediate = {
+		random_list = {
+			80 = {
+				set_country_flag = bah_sultan_lives
+			}
+			20 = {
+				set_country_flag = bah_sultan_dies
+			}
+		}
+	}
+
+	option = {
+		name = fall_of_bahmanis.6.a
+	}
+}
+
+# The Assassination Plot (Sultan Lives)
+country_event = {
+	id = fall_of_bahmanis.7
+	title = fall_of_bahmanis.6.t
+	desc = fall_of_bahmanis.7.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_regency = no
+		has_country_flag = bah_sultan_lives
+		dynasty = "Bahman"
+	}
+
+	immediate = {
+		clr_country_flag = bah_sultan_lives
+	}
+
+	option = { # Order a brutal reprisal.
+		name = fall_of_bahmanis.7.a
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = -1
+		add_legitimacy = 30
+		random = {
+			chance = 50
+			random_owned_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1
+				}
+			}
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -20
+		}
+	}
+
+	option = { # Forgive the nobility.
+		name = fall_of_bahmanis.7.b
+		ai_chance = {
+			factor = 20
+		}
+		add_stability = 1
+		add_legitimacy = -30
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+	}
+}
+
+# The Assassination Plot (Sultan Dies)
+country_event = {
+	id = fall_of_bahmanis.8
+	title = fall_of_bahmanis.6.t
+	desc = fall_of_bahmanis.8.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_regency = no
+		has_country_flag = bah_sultan_dies
+		dynasty = "Bahman"
+	}
+
+	option = { # Kill them all!
+		name = fall_of_bahmanis.8.a
+		kill_ruler = yes
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+			}
+		}
+		add_legitimacy = -50
+		clr_country_flag = bah_sultan_dies
+	}
+}
+
+# A Powerful Vizier
+country_event = {
+	id = fall_of_bahmanis.9
+	title = fall_of_bahmanis.9.t
+	desc = fall_of_bahmanis.9.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BAH
+		dynasty = "Bahman"
+		NOT = {
+			legitimacy = 90
+		}
+	}
+
+	option = { # It is the end of the Bahmani dynasty.
+		name = fall_of_bahmanis.9.a
+		add_stability = -1
+		define_ruler = {
+			name = "Qasim" 
+			dynasty = "Barid Shah"
+			adm = 4
+			dip = 3
+			mil = 3
+			claim = 50
+		}
+		hidden_effect = {
+			add_ruler_personality = malevolent_personality
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			remove_heir = {}
+		}
+	}
+
+	option = { # The Bahmani dynasty will reign eternal!
+		name = fall_of_bahmanis.9.b
+		random_list = {
+			50 = {
+				add_stability = -1
+				capital_scope = {
+					spawn_rebels = {
+						type = pretender_rebels
+						leader = "Qasim"
+						size = 1
+						leader_dynasty = "Barid Shah"
+					}
+				}
+			}
+			50 = {
+				add_legitimacy = 10
+			}
+		}
+	}
+}
+
+# Order Restored to $COUNTRY$
+country_event = {
+	id = fall_of_bahmanis.100
+	title = fall_of_bahmanis.100.t
+	desc = fall_of_bahmanis.100.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We will return to prosperity!
+		name = fall_of_bahmanis.100.a
+		add_stability = 1
+		every_owned_province = {
+			limit = {
+				has_province_modifier = local_bahmani_capital
+			}
+			remove_province_modifier = local_bahmani_capital
+		}
+		set_country_flag = deccanis_gharbians_peace
+		clr_country_flag = bah_sultan_lives
+		clr_country_flag = bah_sultan_dies
+	}
+}

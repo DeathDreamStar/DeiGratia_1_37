@@ -1,0 +1,11 @@
+slave_revolt = {
+    opinion = -200
+    years = 100
+    yearly_decay = 2
+}
+
+expelled_hanseatic_merchants = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}

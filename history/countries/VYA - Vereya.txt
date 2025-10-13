@@ -1,0 +1,9 @@
+government = monarchy
+add_government_reform = feudalism_reform
+mercantilism = 25
+primary_culture = russian
+religion = orthodox
+technology_group = eastern
+capital = 3935	# Vereya
+fixed_capital = 3181 # Cannot move capital away from this province & no power cost to move to it
+government_rank = 1

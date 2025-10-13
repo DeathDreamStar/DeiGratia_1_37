@@ -1,0 +1,2929 @@
+namespace = ipeFRA
+normal_or_historical_nations = yes
+
+# $FROMCOUNTRY$ Declares Independence!
+country_event = {
+	id = ipeFRA.4
+	title = ipeFRA.4.t
+	desc = ipeFRA.4.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeFRA.4.a
+		tooltip = {
+			FROM = {
+				grant_independence = yes
+				every_owned_province = {
+					limit = {
+						culture_group = french
+					}
+					add_permanent_claim = FRA
+				}
+				every_subject_country = {
+					every_owned_province = {
+						limit = {
+							culture_group = french
+						}
+						add_permanent_claim = FRA
+					}
+				}
+			}
+		}
+	}
+}
+
+# The Traitorous Armagnacs
+country_event = {
+	id = ipeFRA.5
+	title = ipeFRA.5.t
+	desc = ipeFRA.5.d
+	picture = ACCUSATION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = FRA
+		is_at_war = no
+		AMG = {
+			has_country_flag = fall_of_armagnac
+			is_at_war = no
+			is_subject_of_type = vassal
+			is_subject_of = FRA
+		}
+		NOT = {
+			has_disaster = league_public_weal
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+		modifier = {
+			factor = 0.1
+			is_year = 1446
+		}
+	}
+
+	option = { # This is the end of the House of Armagnac!
+		name = ipeFRA.5.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 100
+				ruler_has_personality = cruel_personality
+			}
+			modifier = {
+				factor = 100
+				ruler_has_personality = malevolent_personality
+			}
+			modifier = {
+				factor = 0
+				ruler_has_personality_ancestor = { key = benevolent }
+			}
+			modifier = {
+				factor = 0
+				ruler_has_personality_ancestor = { key = kind_hearted }
+			}
+		}
+		AMG = {
+			kill_ruler = yes
+			kill_heir = { allow_new_heir = no }
+		}
+		inherit = AMG
+		if = {
+			limit = {
+				NEM = {
+					dynasty = "d'Armagnac"
+					is_subject_of = FRA
+					is_subject_of_type = vassal
+				}
+			}
+			NEM = {
+				kill_ruler = yes
+				kill_heir = { allow_new_heir = no }
+			}
+			inherit = NEM
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+				NOT = {
+					OR = {
+						tag = AMG
+						AND = {
+							tag = NEM
+							dynasty = "d'Armagnac"
+						}
+					}
+				}
+			}
+			add_liberty_desire = -25
+		}
+	}
+
+	option = { # I am a most merciful ruler.
+		name = ipeFRA.5.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				ruler_has_personality = cruel_personality
+			}
+			modifier = {
+				factor = 0
+				ruler_has_personality = malevolent_personality
+			}
+			modifier = {
+				factor = 100
+				ruler_has_personality_ancestor = { key = benevolent }
+			}
+			modifier = {
+				factor = 100
+				ruler_has_personality_ancestor = { key = kind_hearted }
+			}
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+			}
+			add_opinion = {
+				who = FRA
+				modifier = showed_mercy
+			}
+		}
+	}
+}
+
+# The Duchy of Alençon
+country_event = {
+	id = ipeFRA.6
+	title = ipeFRA.6.t
+	desc = ipeFRA.6.d
+	picture = CONQUEST_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		ALE = {
+			exists = no
+		}
+		owns = 1879
+		controls = 1879
+		1879 = {
+			is_core = ALE
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Yes, let a hero go home.
+		name = ipeFRA.6.a
+		ai_chance = {
+			factor = 100
+		}
+		release = ALE
+		ALE = {
+			every_owned_province = {
+				remove_core = FRA
+			}
+		}
+		hidden_effect = {
+			ALE = {
+				change_religion = catholic
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				define_ruler = {
+					dynasty = "de Valois"
+				}
+			}
+		}
+		vassalize = ALE
+	}
+
+	option = { # Alençon is ours!
+		name = ipeFRA.6.b
+		ai_chance = {
+			factor = 0
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+			}
+			add_liberty_desire = 25
+		}
+	}
+}
+
+# The Duchy of Berry
+country_event = {
+	id = ipeFRA.7
+	title = ipeFRA.7.t
+	desc = ipeFRA.7.d
+	picture = CONQUEST_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = FRA
+		BER = {
+			exists = no
+		}
+		owns = 179
+		controls = 179
+		179 = {
+			is_core = BER
+		}
+		is_at_war = no
+		NOT = {
+			ruler_has_personality_ancestor = { key = inspiring_leader }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # Surrender the Duchy of Berry.
+		name = ipeFRA.7.a
+		ai_chance = {
+			factor = 100
+		}
+		release = BER
+		BER = {
+			every_owned_province = {
+				remove_core = FRA
+			}
+		}
+		hidden_effect = {
+			BER = {
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+					}
+				}
+				define_ruler = {
+					dynasty = "de Valois"
+				}
+			}
+		}
+		vassalize = BER
+	}
+
+	option = { # Berry is ours!
+		name = ipeFRA.7.b
+		ai_chance = {
+			factor = 0
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+			}
+			add_liberty_desire = 25
+		}
+	}
+}
+
+# The County of Maine
+country_event = {
+	id = ipeFRA.8
+	title = ipeFRA.8.t
+	desc = ipeFRA.8.d
+	picture = CONQUEST_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = FRA
+		OR = {
+			AND = { 
+				owns = 177
+				controls = 177
+				177 = {
+					is_core = MNE
+				}
+			}
+			AND = {
+				owns = 6379
+				controls = 6379
+				6379 = {
+					is_core = MNE
+				}
+			}
+		}
+		is_at_war = no
+		MNE = {
+			is_subject_of = FRA
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = ipeFRA.8.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				owns = 177
+			}
+			177 = {
+				remove_core = FRA
+				cede_province = MNE
+			}
+		}
+		if = {
+			limit = {
+				owns = 6379
+			}
+			6379 = {
+				remove_core = FRA
+				cede_province = MNE
+			}
+		}
+		if = {
+			limit = {
+				MNE = {
+					is_subject_of = ROOT
+					is_subject_of_type = vassal
+				}
+			}
+			MNE = {
+				add_liberty_desire = -100
+			}
+		}
+	}
+
+	option = {
+		name = ipeFRA.8.b
+		ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit = {
+				MNE = {
+					is_subject_of = ROOT
+					is_subject_of_type = vassal
+				}
+			}
+			MNE = {
+				add_liberty_desire = 100
+			}
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+				NOT = {
+					tag = MNE
+				}
+			}
+			add_liberty_desire = 25
+		}
+	}
+}
+
+# The Mines of Paris
+country_event = {
+	id = ipeFRA.9
+	title = ipeFRA.9.t
+	desc = ipeFRA.9.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		owns = 183
+		is_year = 1750
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = ipeFRA.9.a
+		ai_chance = {
+			factor = 100
+		}
+		add_years_of_income = -0.25
+		183 = {
+			add_province_modifier = {
+				name = inspected_mines
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+		name = ipeFRA.9.b
+		ai_chance = {
+			factor = 0
+		}
+		183 = {
+			add_province_modifier = {
+				name = uninspected_mines
+				duration = -1
+			}
+		}
+	}
+}
+
+# The Catacombs of Paris
+country_event = {
+	id = ipeFRA.10
+	title = ipeFRA.10.t
+	desc = ipeFRA.10.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		owns = 183
+		is_year = 1750
+		183 = {
+			has_province_modifier = inspected_mines
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = {
+		name = ipeFRA.10.a
+		ai_chance = {
+			factor = 100
+		}
+		add_years_of_income = -0.5
+		183 = {
+			add_province_modifier = {
+				name = catacombs_of_paris
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+		name = ipeFRA.10.b
+		ai_chance = {
+			factor = 0
+		}
+		add_stability = -1
+	}
+}
+
+# Sampiero Corso
+country_event = {
+	id = ipeFRA.11
+	title = ipeFRA.11.t
+	desc = ipeFRA.11.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		NOT = {
+			alliance_with = GEN
+		}
+		GEN = {
+			owns = 1247
+		}
+		1247 = {
+			culture = corsican
+		}
+		is_year = 1550
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			war_with = GEN
+		}
+	}
+
+	option = {
+		name = ipeFRA.11.a
+		add_manpower = -2
+		GEN = {
+			country_event = {
+				id = ipeFRA.12
+				days = 30
+			}
+		}
+	}
+
+	option = {
+		name = ipeFRA.11.b
+		define_advisor = {
+			type = army_organiser
+			name = "Sampiero Corso"
+			skill = 3
+			discount = yes
+			culture = corsican
+			religion = catholic
+		}
+	}
+}
+
+# Sampiero Corso
+country_event = {
+	id = ipeFRA.12
+	title = ipeFRA.12.t
+	desc = ipeFRA.12.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeFRA.12.a
+		add_opinion = {
+			who = FRA
+			modifier = supported_sampiero_corso
+		}
+		1247 = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 2
+				friend = COR
+				win = yes
+			}
+		}
+	}
+}
+
+# The French Toll System
+country_event = {
+	id = ipeFRA.13
+	title = ipeFRA.13.t
+	desc = ipeFRA.13.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	trigger = {
+		tag = FRA
+		is_year = 1600
+		num_of_cities = 12
+		is_at_war = no
+		government = monarchy
+		NOT = {
+			has_country_modifier = reformed_toll_system
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.5
+			treasury = 100
+		}
+	}
+
+	option = {
+		name = ipeFRA.13.a
+		ai_chance = {
+			factor = 25
+		}
+		add_years_of_income = -0.5
+		add_country_modifier = {
+			name = reformed_toll_system
+			duration = -1
+		}
+		add_inflation = -2
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = 20
+		}
+		add_estate_influence_modifier = {
+			estate = estate_burghers
+			desc = reformed_the_toll_system
+			influence = 10
+			duration = 7200
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -20
+		}
+		add_estate_influence_modifier = {
+			estate = estate_nobles
+			desc = reformed_the_toll_system
+			influence = -10
+			duration = 7200
+		}
+	}
+
+	option = {
+		name = ipeFRA.13.b
+		ai_chance = {
+			factor = 75
+		}
+		add_years_of_income = -0.10
+		add_inflation = 1
+	}
+}
+
+# The Allegiance of Naples
+country_event = {
+	id = ipeFRA.14
+	title = ipeFRA.14.t
+	desc = ipeFRA.14.d
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = ITALIAN_wars_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = COURT_eventPicture
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = PAP
+		exists = NAP
+		religion = catholic
+		has_opinion = {
+			who = FRA
+			value = 100
+		}
+		NOT = {
+			is_year = 1550
+			exists = PRO
+			exists = ANJ
+			has_opinion = {
+				who = NAP
+				value = 0
+			}
+		}
+		FRA = {
+			OR = {
+				dynasty = "de Valois"
+				dynasty = "d'Anjou"
+			}
+			religion = catholic
+			has_regency = no
+		}
+		ARA = {
+			had_country_flag = {
+				flag = alfonso_died_yes_really
+				days = 1
+			}
+		}
+		NAP = {
+			religion = catholic
+			is_subject = no
+			government = monarchy
+			has_regency = no
+		}
+		any_country = {
+			OR = {
+				tag = NAP
+				tag = ARA
+				tag = CAS
+				tag = SPA
+			}
+			any_owned_province = {
+				OR = {
+					area = abruzzo_area
+					area = sicily_area
+					area = naples_area
+					area = apulia_area
+					area = calabria_area
+					area = basilicata_area
+					area = western_sicily_area
+					area = capitanata_area
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			NOT = {
+				has_opinion = {
+					who = NAP
+					value = -50
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				has_opinion = {
+					who = NAP
+					value = -100
+				}
+			}
+		}
+	}
+
+	option = { # The King of Naples must be deposed!
+		name = ipeFRA.14.a
+		excommunicate = NAP
+		custom_tooltip = ipeFRA.14.a.tooltip
+		hidden_effect = {
+			FRA = {
+				country_event = {
+					id = flavor_fra.3105
+					days = 30
+				}
+			}
+		}
+	}
+
+	option = { # We should not underestimate foreign kings.
+		name = ipeFRA.14.b
+	}
+}
+
+# The Inheritance of Anjou
+country_event = {
+	id = ipeFRA.15
+	title = ipeFRA.15.t
+	desc = ipeFRA.15.d
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = ITALIAN_wars_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = COURT_eventPicture
+	} 
+
+	is_triggered_only = yes
+
+	option = { # May the French succeed on their divine mission.
+		name = ipeFRA.15.a
+		custom_tooltip = ipeFRA.15.a.tooltip
+		tooltip = {
+			add_opinion = {
+				who = FRA
+				modifier = enforcing_papal_authority
+			}
+		}
+	}
+}
+
+# The Inheritance of Anjou
+country_event = {
+	id = ipeFRA.16
+	title = ipeFRA.15.t
+	desc = ipeFRA.16.d
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = ITALIAN_wars_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = COURT_eventPicture
+	} 
+
+	is_triggered_only = yes
+
+	option = { # How dare they deny our request!
+		name = ipeFRA.16.a
+		tooltip = {
+			add_opinion = {
+				who = FRA
+				modifier = refused_to_enforce_papal_authority
+			}
+		}
+		add_prestige = -5
+	}
+}
+
+# The Conquest of Naples
+country_event = {
+	id = ipeFRA.17
+	title = ipeFRA.17.t
+	desc = ipeFRA.17.d
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = ITALIAN_wars_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = COURT_eventPicture
+	} 
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = PAP
+		religion = catholic
+		FRA = {
+			senior_union_with = NAP
+			religion = catholic
+			has_country_flag = claimed_naples
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Let them remember the authority of the Holy Father.
+		name = ipeFRA.17.a
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_prestige = 25
+		every_known_country = {
+			limit = {
+				culture_group = latin
+				religion = catholic
+			}
+			add_opinion = {
+				who = PAP
+				modifier = recognizes_papal_supremacy
+			}
+		}
+		FRA = {
+			clr_country_flag = claimed_naples
+		}
+	}
+}
+
+# The Inheritance of Anjou
+country_event = {
+	id = ipeFRA.18
+	title = flavor_fra.EVTNAME3105
+	desc = ipeFRA.18.d
+	picture = {	
+		trigger = {
+			has_dlc = "Emperor"
+		}
+		picture = ITALIAN_wars_eventPicture
+	}
+	picture = {	
+		trigger = {
+			NOT = { has_dlc = "Emperor" }
+		}
+		picture = COURT_eventPicture
+	} 
+
+	is_triggered_only = yes
+
+	option = { # They will pay for their treachery.
+		name = ipeFRA.18.a
+		tooltip = {
+			FRA = {
+				add_casus_belli = {
+					type = cb_restore_personal_union
+					months = 600
+					target = NAP
+				}
+			}
+		}
+	}
+}
+
+# The Ambitions of the Dauphin
+country_event = {
+	id = ipeFRA.19
+	title = ipeFRA.19.t
+	desc = ipeFRA.19.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		DAU = {
+			exists = no
+		}
+		has_heir_flag = plans_of_louis
+		owns = 3685
+		controls = 3685
+		3685 = {
+			is_core = DAU
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 36
+	}
+
+	option = { # Give him the Dauphiné.
+		name = ipeFRA.19.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeFRA.19.a.tooltip
+		set_country_flag = louis_in_exile
+		release = DAU
+		every_owned_province = {
+			limit = {
+				is_core = DAU
+			}
+			remove_core = FRA
+		}
+		hidden_effect = {
+			DAU = {
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.3
+					}
+				}
+				define_heir = {
+					name = "Louis"
+					dynasty = "de Valois"
+					culture = cosmopolitan_french
+					adm = 6
+					dip = 6
+					mil = 4
+					birth_date = 1423.7.3
+				}
+				add_heir_personality = intricate_web_weaver_personality
+				kill_ruler = yes
+				add_stability = 1
+			}
+		}
+		vassalize = DAU
+		DAU = {
+			add_liberty_desire = -50
+			set_ruler_flag = ambitions_of_dauphin
+		}
+		set_heir_flag = ambitions_of_dauphin
+	}
+
+	option = { # He will stay in $CAPITAL$!
+		name = ipeFRA.19.b
+		ai_chance = {
+			factor = 0
+		}
+		add_stability = -1
+	}
+}
+
+# The Centralizing Policies of the Dauphin
+country_event = {
+	id = ipeFRA.20
+	title = ipeFRA.20.t
+	desc = ipeFRA.20.d
+	picture = ECONOMY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		DAU = {
+			has_ruler_flag = ambitions_of_dauphin
+			is_subject_of = FRA
+			is_at_war = no
+			OR = {
+				owns = 204
+				owns = 3685
+				owns = 3684
+				owns = 6374
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 18
+	}
+
+	option = { # He is clearly quite gifted.
+		name = ipeFRA.20.a
+		if = {
+			limit = {
+				DAU = {
+					owns = 3685
+				}
+			}
+			3685 = {
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+			}
+		}
+		if = {
+			limit = {
+				DAU = {
+					owns = 204
+				}
+			}
+			204 = {
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+			}
+		}
+		if = {
+			limit = {
+				DAU = {
+					owns = 3684
+				}
+			}
+			3684 = {
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+			}
+		}
+		if = {
+			limit = {
+				DAU = {
+					owns = 6374
+				}
+			}
+			6374 = {
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+			}
+		}
+		DAU = {
+			set_country_flag = dauphin_1
+		}
+	}
+}
+
+# The Dauphin's Intrigues in Italy
+country_event = {
+	id = ipeFRA.21
+	title = ipeFRA.21.t
+	desc = ipeFRA.21.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		DAU = {
+			has_ruler_flag = ambitions_of_dauphin
+			is_subject_of = FRA
+			has_country_flag = dauphin_1
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 18
+	}
+
+	option = { # Interesting.
+		name = ipeFRA.21.a
+		if = {
+			limit = {
+				exists = SAV
+			}
+			SAV = {
+				add_opinion = {
+					who = FRA
+					modifier = intrigues_of_the_dauphin
+				}
+				add_opinion = {
+					who = DAU
+					modifier = intrigues_of_the_dauphin
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = MLO
+			}
+			MLO = {
+				add_opinion = {
+					who = FRA
+					modifier = intrigues_of_the_dauphin
+				}
+				add_opinion = {
+					who = DAU
+					modifier = intrigues_of_the_dauphin
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = VEN
+			}
+			VEN = {
+				add_opinion = {
+					who = FRA
+					modifier = intrigues_of_the_dauphin
+				}
+				add_opinion = {
+					who = DAU
+					modifier = intrigues_of_the_dauphin
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = LAN
+			}
+			LAN = {
+				add_opinion = {
+					who = FRA
+					modifier = intrigues_of_the_dauphin
+				}
+				add_opinion = {
+					who = DAU
+					modifier = intrigues_of_the_dauphin
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = PAP
+			}
+			PAP = {
+				add_opinion = {
+					who = FRA
+					modifier = intrigues_of_the_dauphin
+				}
+				add_opinion = {
+					who = DAU
+					modifier = intrigues_of_the_dauphin
+				}
+			}
+		}
+		DAU = {
+			set_country_flag = dauphin_2
+		}
+	}
+}
+
+# The End of Anarchy in the Dauphiné
+country_event = {
+	id = ipeFRA.22
+	title = ipeFRA.22.t
+	desc = ipeFRA.22.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		DAU = {
+			has_ruler_flag = ambitions_of_dauphin
+			is_subject_of = FRA
+			is_at_war = no
+			has_country_flag = dauphin_1
+			has_country_flag = dauphin_2
+			owns = 3685
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 18
+	}
+
+	option = { # His feats are admirable.
+		name = ipeFRA.22.a
+		3685 = {
+			center_of_trade = 1
+		}
+		204 = {
+			add_building = university
+		}
+		DAU = {
+			set_country_flag = dauphin_3
+		}
+	}
+}
+
+# The Transgressions of the Dauphin
+country_event = {
+	id = ipeFRA.23
+	title = ipeFRA.23.t
+	desc = ipeFRA.23.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		DAU = {
+			has_ruler_flag = ambitions_of_dauphin
+			is_subject_of = FRA
+			is_at_war = no
+			has_country_flag = dauphin_1
+			has_country_flag = dauphin_2
+			has_country_flag = dauphin_3
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 18
+	}
+
+	option = { # He must leave!
+		name = ipeFRA.23.a
+		custom_tooltip = ipeFRA.23.a.tooltip
+		DAU = {
+			clr_country_flag = dauphin_1
+			clr_country_flag = dauphin_2
+			clr_country_flag = dauphin_3
+		}
+		add_manpower = -3
+		inherit = DAU
+		add_prestige = 5
+		BUR = {
+			country_event = {
+				id = ipeFRA.24
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					owns = 3685
+				}
+				3685 = {
+					add_province_modifier = {
+						name = encouraged_growth_tax
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_production
+						duration = 18250
+					}
+				}
+			}
+			if = {
+				limit = {
+					owns = 204
+				}
+				204 = {
+					add_province_modifier = {
+						name = encouraged_growth_tax
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_production
+						duration = 18250
+					}
+				}
+			}
+			if = {
+				limit = {
+					owns = 3684
+				}
+				3684 = {
+					add_province_modifier = {
+						name = encouraged_growth_tax
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_production
+						duration = 18250
+					}
+				}
+			}
+			if = {
+				limit = {
+					owns = 6374
+				}
+				6374 = {
+					add_province_modifier = {
+						name = encouraged_growth_tax
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_production
+						duration = 18250
+					}
+				}
+			}
+		}
+	}
+}
+
+# The Dauphin Seeks Refuge
+country_event = {
+	id = ipeFRA.24
+	title = ipeFRA.24.t
+	desc = ipeFRA.24.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # I suppose we will have to take him in.
+		name = ipeFRA.24.a
+		add_country_modifier = {
+			name = harboring_the_dauphin
+			duration = -1
+		}
+	}
+}
+
+# Hunting with the Dauphin
+country_event = {
+	id = ipeFRA.25
+	title = ipeFRA.25.t
+	desc = ipeFRA.25.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_country_modifier = harboring_the_dauphin
+		has_heir = yes
+		FRA = {
+			has_heir_flag = plans_of_louis
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Every heir should learn to hunt!
+		name = ipeFRA.25.a
+		add_prestige = 10
+	}
+}
+
+# The Coronation of Louis XI (France)
+country_event = {
+	id = ipeFRA.26
+	title = ipeFRA.26.t
+	desc = ipeFRA.26.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # May his rule be long and prosperous.
+		name = ipeFRA.26.a
+		if = {
+			limit = {
+				any_known_country = {
+					has_country_modifier = harboring_the_dauphin
+				}
+			}
+			random_known_country = {
+				limit = {
+					has_country_modifier = harboring_the_dauphin
+				}
+				reverse_add_opinion = {
+					who = ROOT
+					modifier = supported_the_dauphin
+				}
+				hidden_effect = {
+					country_event = {
+						id = ipeFRA.27
+					}
+				}
+			}
+		}
+		add_stability = 1
+		add_prestige = 25
+		add_legitimacy = 25
+		clr_country_flag = louis_in_exile
+	}
+}
+
+# The Coronation of Louis XI (Burgundy)
+country_event = {
+	id = ipeFRA.27
+	title = ipeFRA.26.t
+	desc = ipeFRA.26.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Hopefully he will remember our aid.
+		name = ipeFRA.27.a
+		tooltip = {
+			FRA = {
+				add_opinion = {
+					who = ROOT
+					modifier = supported_the_dauphin
+				}
+			}
+		}
+		add_stability = 1
+		add_prestige = 25
+		add_legitimacy = 25
+		remove_country_modifier = harboring_the_dauphin
+	}
+}
+
+# The Death of the Dauphin (France)
+country_event = {
+	id = ipeFRA.28
+	title = ipeFRA.28.t
+	desc = ipeFRA.28.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # He will be missed...
+		name = ipeFRA.28.a
+		if = {
+			limit = {
+				exists = DAU
+			}
+			inherit = DAU
+		}
+		clr_country_flag = louis_in_exile
+		add_prestige = 5
+	}
+}
+
+# The Death of the Dauphin (Burgundy)
+country_event = {
+	id = ipeFRA.29
+	title = ipeFRA.28.t
+	desc = ipeFRA.29.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # He will be missed...
+		name = ipeFRA.28.a
+		remove_country_modifier = harboring_the_dauphin
+	}
+}
+
+# The Coronation of Louis XI
+country_event = {
+	id = ipeFRA.30
+	title = ipeFRA.26.t
+	desc = ipeFRA.30.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # May his rule be long and prosperous.
+		name = ipeFRA.26.a
+		if = {
+			limit = {
+				DAU = {
+					has_ruler_flag = ambitions_of_dauphin
+				}
+			}
+			inherit = DAU
+			add_prestige = 5
+		}
+		clr_country_flag = louis_in_exile
+	}
+}
+
+# The Retrial of Joan of Arc
+country_event = {
+	id = ipeFRA.31
+	title = ipeFRA.31.t
+	desc = ipeFRA.31.d
+	picture = wihgfx_FEMALE_GENERAL_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Declare Joan a martyr.
+		name = ipeFRA.31.a
+		ai_chance = {
+			factor = 100
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = declared_joan_a_martyr
+			}
+			country_event = {
+				id = ipeFRA.32
+			}
+		}
+	}
+
+	option = { # She was a heretic!
+		name = ipeFRA.31.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = declared_joan_a_heretic
+			}
+			country_event = {
+				id = ipeFRA.33
+			}
+		}
+		add_reform_desire = 0.001
+	}
+}
+
+# The Retrial of Joan of Arc
+country_event = {
+	id = ipeFRA.32
+	title = ipeFRA.31.t
+	desc = ipeFRA.32.d
+	picture = wihgfx_FEMALE_GENERAL_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Church rules justly.
+		name = ipeFRA.32.a
+		add_stability_or_adm_power = yes
+		add_papal_influence = 25
+		tooltip = {
+			add_opinion = {
+				who = PAP
+				modifier = declared_joan_a_martyr
+			}
+		}
+	}
+}
+
+# The Retrial of Joan of Arc
+country_event = {
+	id = ipeFRA.33
+	title = ipeFRA.31.t
+	desc = ipeFRA.33.d
+	picture = wihgfx_FEMALE_GENERAL_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is a travesty!
+		name = ipeFRA.33.a
+		tooltip = {
+			add_opinion = {
+				who = PAP
+				modifier = declared_joan_a_heretic
+			}
+		}
+	}
+}
+
+# The Sale of Puisaye
+country_event = {
+	id = ipeFRA.34
+	title = ipeFRA.34.t
+	desc = ipeFRA.34.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MFA
+		FRA = {
+			exists = yes
+		}
+		owns = 6407
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # We should sell the land.
+		name = ipeFRA.34.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				war_with = FRA
+			}
+		}
+		6407 = {
+			cede_province = FRA
+			add_core = FRA
+			remove_core = ROOT
+		}
+		hidden_effect = {
+			FRA = {
+				country_event = {
+					id = ipeFRA.35
+				}
+			}
+		}
+		add_treasury = 50
+	}
+
+	option = { # The Puisaye is mine!
+		name = ipeFRA.34.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				war_with = FRA
+			}
+		}
+	}
+}
+
+# The Sale of Puisaye
+country_event = {
+	id = ipeFRA.35
+	title = ipeFRA.34.t
+	desc = ipeFRA.35.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Puisaye belongs to us!
+		name = ipeFRA.35.a
+		tooltip = {
+			6407 = {
+				cede_province = FRA
+				add_core = FRA
+				remove_core = FROM
+			}
+		}
+	}
+}
+
+# The Purchase of Roussillon
+country_event = {
+	id = ipeFRA.36
+	title = ipeFRA.36.t
+	desc = ipeFRA.36.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They may have it!
+		name = ipeFRA.36.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				war_with = FRA
+			}
+			modifier = {
+				factor = 0
+				is_rival = FRA
+			}
+		}
+		add_treasury = 400
+		add_truce_with = FRA
+		197 = {
+			cede_province = FRA
+			add_core = FRA
+		}
+		hidden_effect = {
+			FRA = {
+				country_event = {
+					id = ipeFRA.37
+				}
+			}
+		}
+	}
+
+	option = { # We will never give up Roussillon!
+		name = ipeFRA.36.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				war_with = FRA
+			}
+			modifier = {
+				factor = 100
+				is_rival = FRA
+			}
+		}
+		hidden_effect = {
+			FRA = {
+				country_event = {
+					id = ipeFRA.38
+				}
+			}
+		}
+	}
+}
+
+# The Purchase of Roussillon
+country_event = {
+	id = ipeFRA.37
+	title = ipeFRA.36.t
+	desc = ipeFRA.37.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Wonderful.
+		name = ipeFRA.37.a
+		tooltip = {
+			add_truce_with = ARA
+			197 = {
+				cede_province = FRA
+				add_core = FRA
+			}
+		}
+		add_treasury = -400
+	}
+}
+
+# The Denial of Roussillon
+country_event = {
+	id = ipeFRA.38
+	title = ipeFRA.38.t
+	desc = ipeFRA.38.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # What a shame!
+		name = ipeFRA.38.a
+		add_prestige = -5
+	}
+}
+
+# The Repurchase of the Somme Towns
+country_event = {
+	id = ipeFRA.39
+	title = ipeFRA.39.t
+	desc = ipeFRA.39.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well, return the towns.
+		name = ipeFRA.39.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0
+				war_with = FROM
+			}
+			modifier = {
+				factor = 0
+				is_rival = FROM
+			}
+		}
+		add_treasury = 800
+		add_truce_with = FROM
+		89 = {
+			cede_province = FROM
+			add_core = FROM
+		}
+		3720 = {
+			cede_province = FROM
+			add_core = FROM
+		}
+		6405 = {
+			cede_province = FROM
+			add_core = FROM
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = returned_the_somme_towns
+			}
+		}
+		add_opinion = {
+			who = FROM
+			modifier = reclaimed_the_somme_towns
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeFRA.40
+				}
+			}
+		}
+	}
+
+	option = { # These lands are now Burgundian!
+		name = ipeFRA.39.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 100
+				war_with = FROM
+			}
+			modifier = {
+				factor = 100
+				is_rival = FROM
+			}
+		}
+		89 = {
+			add_core = FROM
+		}
+		3720 = {
+			add_core = FROM
+		}
+		6405 = {
+			add_core = FROM
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = kept_the_somme_towns
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeFRA.41
+				}
+			}
+		}
+	}
+}
+
+# The Repurchase of the Somme Towns
+country_event = {
+	id = ipeFRA.40
+	title = ipeFRA.39.t
+	desc = ipeFRA.40.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We are grateful that they honor their obligations.
+		name = ipeFRA.40.a
+		tooltip = {
+			add_truce_with = FROM
+			89 = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			3720 = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			6405 = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			add_opinion = {
+				who = FROM
+				modifier = returned_the_somme_towns
+			}
+			tooltip = {
+				FROM = {
+					add_opinion = {
+						who = ROOT
+						modifier = reclaimed_the_somme_towns
+					}
+				}
+			}
+		}
+		add_treasury = -800
+	}
+}
+
+# The Repurchase of the Somme Towns
+country_event = {
+	id = ipeFRA.41
+	title = ipeFRA.39.t
+	desc = ipeFRA.41.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will pay for this!
+		name = ipeFRA.41.a
+		tooltip = {
+			89 = {
+				add_core = ROOT
+			}
+			3720 = {
+				add_core = ROOT
+			}
+			6405 = {
+				add_core = ROOT
+			}
+			add_opinion = {
+				who = FROM
+				modifier = kept_the_somme_towns
+			}
+		}
+	}
+}
+
+# The Reconquest of Normandy
+country_event = {
+	id = ipeFRA.42
+	title = ipeFRA.42.t
+	desc = ipeFRA.42.d
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will finish this war!
+		name = ipeFRA.42.a
+		trigger = {
+			tag = FRA
+		}
+		custom_tooltip = ipeFRA.42.a.tooltip
+		tooltip = {
+			if = {
+				limit = {
+					has_country_flag = retook_gascony
+				}
+				white_peace = ENG
+			}
+		}
+	}
+
+	option = { # This is not over yet!
+		name = ipeFRA.42.b
+		trigger = {
+			tag = ENG
+		}
+		custom_tooltip = ipeFRA.42.b.tooltip
+		tooltip = {
+			if = {
+				limit = {
+					FRA = {
+						has_country_flag = retook_gascony
+					}
+				}
+				FRA = {
+					white_peace = ENG
+				}
+			}
+		}
+	}
+}
+
+# The Reconqust of Gascony
+country_event = {
+	id = ipeFRA.43
+	title = ipeFRA.43.t
+	desc = ipeFRA.43.d
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will finish this war!
+		name = ipeFRA.42.a
+		trigger = {
+			tag = FRA
+		}
+		custom_tooltip = ipeFRA.43.a.tooltip
+		tooltip = {
+			if = {
+				limit = {
+					has_country_flag = retook_normandy
+				}
+				white_peace = ENG
+			}
+		}
+	}
+
+	option = { # This is not over yet!
+		name = ipeFRA.42.b
+		trigger = {
+			tag = ENG
+		}
+		custom_tooltip = ipeFRA.43.b.tooltip
+		tooltip = {
+			if = {
+				limit = {
+					FRA = {
+						has_country_flag = retook_normandy
+					}
+				}
+				FRA = {
+					white_peace = ENG
+				}
+			}
+		}
+	}
+}
+
+# The Imprisonment of Jean IV
+country_event = {
+	id = ipeFRA.44
+	title = ipeFRA.44.t
+	desc = ipeFRA.44.d
+	picture = ACCUSATION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = AMG
+		is_subject_of = FRA
+		has_country_flag = armagnac_interregnum
+		NOT = {
+			is_year = 1450
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # We will await the judgment of the King of France.
+		name = ipeFRA.44.a
+		custom_tooltip = ipeFRA.44.a.tooltip
+		clr_country_flag = armagnac_interregnum
+		set_country_flag = fate_of_jean_iv
+	}
+}
+
+# The Imprisonment of Jean IV
+country_event = {
+	id = ipeFRA.45
+	title = ipeFRA.44.t
+	desc = ipeFRA.44.d
+	picture = ACCUSATION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		AMG = {
+			is_subject_of = FRA
+			has_country_flag = fate_of_jean_iv
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = { # Let him go free.
+		name = ipeFRA.45.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				AMG = {
+					AI = no
+				}
+			}
+		}
+		AMG = {
+			define_heir = {
+				name = "Jean"
+				dynasty = "d'Armagnac"
+				claim = 95
+				birth_date = 1396.10.15
+				adm = 1
+				dip = 2
+				mil = 2
+			}
+			add_opinion = {
+				who = FRA
+				modifier = freed_jean_iv
+			}
+			country_event = {
+				id = ipeFRA.46
+			}
+		}
+	}
+
+	option = { # Execute him and revoke his titles!
+		name = ipeFRA.45.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				AMG = {
+					ai = no
+				}
+			}
+		}
+		inherit = AMG
+		add_prestige = 5
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+			}
+			add_liberty_desire = 25
+		}
+	}
+}
+
+# The Freedom of Jean IV
+country_event = {
+	id = ipeFRA.46
+	title = ipeFRA.46.t
+	desc = ipeFRA.46.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We are grateful to see Jean's return.
+		name = ipeFRA.46.a
+		tooltip = {
+			define_heir = {
+				name = "Jean"
+				dynasty = "d'Armagnac"
+				claim = 95
+				birth_date = 1396.10.15
+				adm = 1
+				dip = 2
+				mil = 2
+			}
+			add_opinion = {
+				who = FRA
+				modifier = freed_jean_iv
+			}
+		}
+		clr_country_flag = fate_of_jean_iv
+	}
+}
+
+# The Execution of Jean IV
+country_event = {
+	id = ipeFRA.47
+	title = ipeFRA.47.t
+	desc = ipeFRA.47.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = AMG
+		war_with = FRA
+		has_country_flag = fate_of_jean_iv
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Jean will be avenged!
+		name = ipeFRA.47.a
+		add_stability = -1
+		define_heir = {
+			name = "Jean V"
+			dynasty = "d'Armagnac"
+			claim = 95
+			birth_date = 1420.1.1
+			adm = 2
+			dip = 0
+			mil = 1
+		}
+		every_owned_province = {
+			add_core = FRA
+		}
+		FRA = {
+			country_event = {
+				id = ipeFRA.48
+			}
+		}
+		clr_country_flag = fate_of_jean_iv
+	}
+}
+
+# The Execution of Jean IV
+country_event = {
+	id = ipeFRA.48
+	title = ipeFRA.47.t
+	desc = ipeFRA.48.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will pay for this treachery.
+		name = ipeFRA.48.a
+		tooltip = {
+			AMG = {
+				every_owned_province = {
+					add_core = FRA
+				}
+			}
+		}
+	}
+}
+
+# Leonor of Navarre (Leonor)
+country_event = {
+	id = ipeFRA.49
+	title = ipeFRA.49.t
+	desc = ipeFRA.49.d
+	picture = wihgfx_FEMALE_RULER_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { # The Kingdom of Navarre is an excellent addition to our holdings.
+		name = ipeFRA.49.a
+		create_union = NAV
+		hidden_effect = {
+			ARA = {
+				country_event = {
+					id = ipeFRA.50
+				}
+			}
+			if = {
+				limit = {
+					is_subject_of = FRA
+				}
+				FRA = {
+					country_event = {
+						id = ipeFRA.50
+					}
+				}
+			}
+		}
+	}
+}
+
+# Leonor of Navarre (Leonor)
+country_event = {
+	id = ipeFRA.50
+	title = ipeFRA.49.t
+	desc = ipeFRA.49.d
+	picture = wihgfx_FEMALE_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # An unfortunate loss.
+		name = ipeFRA.50.a
+		trigger = {
+			tag = ARA
+		}
+		tooltip = {
+			FOI = {
+				create_union = NAV
+			}
+		}
+	}
+
+	option = { # Intriguing.
+		name = ipeFRA.50.b
+		trigger = {
+			tag = FRA
+		}
+		tooltip = {
+			FOI = {
+				create_union = NAV
+			}
+		}
+	}
+}
+
+# Leonor of Navarre (Leonor's Descendant)
+country_event = {
+	id = ipeFRA.51
+	title = ipeFRA.49.t
+	desc = ipeFRA.51.d
+	picture = wihgfx_FEMALE_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Kingdom of Navarre is an excellent addition to our holdings.
+		name = ipeFRA.49.a
+		create_union = NAV
+		hidden_effect = {
+			ARA = {
+				country_event = {
+					id = ipeFRA.52
+				}
+			}
+			if = {
+				limit = {
+					is_subject_of = FRA
+				}
+				FRA = {
+					country_event = {
+						id = ipeFRA.52
+					}
+				}
+			}
+		}
+	}
+}
+
+# Leonor of Navarre (Leonor's Descendant)
+country_event = {
+	id = ipeFRA.52
+	title = ipeFRA.49.t
+	desc = ipeFRA.51.d
+	picture = wihgfx_FEMALE_RULER_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # An unfortunate loss.
+		name = ipeFRA.50.a
+		trigger = {
+			tag = ARA
+		}
+		tooltip = {
+			FOI = {
+				create_union = NAV
+			}
+		}
+	}
+
+	option = { # Intriguing.
+		name = ipeFRA.50.b
+		trigger = {
+			tag = FRA
+		}
+		tooltip = {
+			FOI = {
+				create_union = NAV
+			}
+		}
+	}
+}
+
+# The Viscounty of Narbonne
+country_event = {
+	id = ipeFRA.53
+	title = ipeFRA.53.t
+	desc = ipeFRA.53.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FOI
+		is_at_war = no
+		NRB = {
+			exists = yes
+			ai = yes
+			is_at_war = no
+		}
+		OR = {
+			AND = {
+				is_subject = no
+				NRB = {
+					is_subject = no
+				}
+			}
+			AND = {
+				is_subject_of = FRA
+				NRB = {
+					is_subject_of = FRA
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = { # Purchase the Viscounty.
+		name = ipeFRA.53.a
+		ai_chance = {
+			factor = 100
+		}
+		add_treasury = -50
+		inherit = NRB
+		add_prestige = 5
+	}
+
+	option = { # We have no need for Narbonne.
+		name = ipeFRA.53.b
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -5
+	}
+}
+
+# The Inheritance of Comminges
+country_event = {
+	id = ipeFRA.54
+	title = ipeFRA.54.t
+	desc = ipeFRA.54.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { # Very well.
+		name = ipeFRA.54.a
+		FRA = {
+			inherit = ROOT
+			add_prestige = 5
+			hidden_effect = {
+				country_event = {
+					id = ipeFRA.55
+				}
+			}
+		}
+	}
+}
+
+# The Inheritance of Comminges
+country_event = {
+	id = ipeFRA.55
+	title = ipeFRA.54.t
+	desc = ipeFRA.54.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Glory to the Kingdom of France!
+		name = ipeFRA.55.a
+		tooltip = {
+			inherit = FROM
+			add_prestige = 5
+		}
+	}
+}
+
+# The Affair of the Placards
+country_event = {
+	id = ipeFRA.56
+	title = ipeFRA.56.t
+	desc = ipeFRA.56.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		religion = catholic
+		any_owned_province = {
+			region = france_region
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+		NOT = {
+			has_country_flag = placard_flag
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.75
+			NOT = {
+				religious_unity = 0.75
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				religious_unity = 0.5
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = placard_flag
+	}
+
+	option = { # Reaffirm that Catholicism is the religion of the state. 
+		name = ipeFRA.56.a
+		ai_chance = {
+			factor = 100
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					religion = protestant
+					religion = reformed
+				}
+			}
+			add_province_modifier = {
+				name = affair_of_the_placards
+				duration = 3650
+			}
+		}
+		add_stability = -1
+	}
+
+	option = { # Continue to seek reconciliation with the Protestants.
+		name = ipeFRA.56.b
+		ai_chance = {
+			factor = 0
+		}
+		every_owned_province = {
+			limit = {
+				religion = catholic
+			}
+			add_province_modifier = {
+				name = affair_of_the_placards
+				duration = 3650
+			}
+		}
+		add_stability = -1
+	}
+}
+
+# The Conference of the Huguenots
+country_event = {
+	id = ipeFRA.57
+	title = ipeFRA.57.t
+	desc = ipeFRA.57.d
+	picture = PROTESTANT_PRINTED_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FOI
+		OR = {
+			NAV = {
+				is_subject_of = FOI
+			}
+			3690 = {
+				owned_by = FOI
+			}
+		}
+		religion = catholic
+		is_religion_enabled = reformed
+		has_global_flag = wih_jeannedalbret_flag
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_owned_province = {
+				religion = reformed
+			}
+		}
+	}
+
+	option = { # Humanism is the path to God.
+		name = ipeFRA.57.a
+		ai_chance = {
+			factor = 100
+		}
+		change_religion = reformed
+		capital_scope = {
+			change_religion = reformed
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			change_religion = reformed
+		}
+		if = {
+			limit = {
+				NAV = {
+					is_subject_of = FOI
+				}
+			}
+			NAV = {
+				change_religion = reformed
+				capital_scope = {
+					change_religion = reformed
+				}
+			}
+		}
+	}
+
+	option = { # We cannot be too extreme.
+		name = ipeFRA.57.b
+		ai_chance = {
+			factor = 0
+		}
+		add_stability_or_adm_power = yes
+	}
+}
+
+# The Conspiracy of Amboise
+country_event = {
+	id = ipeFRA.58
+	title = ipeFRA.58.t
+	desc = ipeFRA.58.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		religion = catholic
+		has_disaster_progress = {
+			disaster = french_wars_of_religion
+			value = 50
+		}
+		NOT = {
+			has_country_flag = conspiracy_of_amboise
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		set_country_flag = conspiracy_of_amboise
+	}
+
+	option = { # Dark times await France.
+		name = ipeFRA.58.a
+		add_stability = -1
+	}
+}
+
+# The Affair of the Placards
+country_event = {
+	id = ipeFRA.59
+	title = ipeFRA.56.t
+	desc = ipeFRA.59.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		OR = {
+			religion = protestant
+			religion = reformed
+		}
+		any_owned_province = {
+			region = france_region
+			religion = catholic
+		}
+		NOT = {
+			has_country_flag = placard_flag
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.75
+			NOT = {
+				religious_unity = 0.75
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				religious_unity = 0.5
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = placard_flag
+	}
+
+	option = { # Maintain repression of the Catholics.
+		name = ipeFRA.59.a
+		ai_chance = {
+			factor = 100
+		}
+		every_owned_province = {
+			limit = {
+				religion = catholic
+			}
+			add_province_modifier = {
+				name = affair_of_the_placards
+				duration = 3650
+			}
+		}
+		add_stability = -1
+	}
+
+	option = { # Continue to seek reconciliation with the Catholics.
+		name = ipeFRA.59.b
+		ai_chance = {
+			factor = 0
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					religion = protestant
+					religion = reformed
+				}
+			}
+			add_province_modifier = {
+				name = affair_of_the_placards
+				duration = 3650
+			}
+		}
+		add_stability = -1
+	}
+}
+
+# The Conspiracy of Amboise
+country_event = {
+	id = ipeFRA.60
+	title = ipeFRA.58.t
+	desc = ipeFRA.60.d
+	picture = RELIGIOUS_TURMOIL_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		OR = {
+			religion = protestant
+			religion = reformed
+		}
+		has_disaster_progress = {
+			disaster = french_wars_of_religion
+			value = 50
+		}
+		NOT = {
+			has_country_flag = conspiracy_of_amboise
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		set_country_flag = conspiracy_of_amboise
+	}
+
+	option = { # Dark times await France.
+		name = ipeFRA.58.a
+		add_stability = -1
+	}
+}
+
+# The Settlement of Port Royal
+country_event = {
+	id = ipeFRA.61
+	title = ipeFRA.61.t
+	desc = ipeFRA.61.d
+	picture = COLONIZATION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # This will serve as an excellent outpost.
+		name = ipeFRA.61.a
+		2568 = {
+			owner = {
+				hidden_effect = {
+					country_event = {
+						id = ipeFRA.62
+					}
+				}
+			}
+			cede_province = ROOT
+			add_core = ROOT
+			change_culture = ROOT
+			change_religion = ROOT
+			rename_capital = "Port Royal"
+		}
+	}
+}
+
+# The Settlement of Port Royal
+country_event = {
+	id = ipeFRA.62
+	title = ipeFRA.61.t
+	desc = ipeFRA.62.d
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This does not bode well.
+		name = ipeFRA.62.a
+		tooltip = {
+			2568 = {
+				cede_province = FROM
+				add_core = FROM
+				change_culture = FROM
+				change_religion = FROM
+				rename_capital = "Port Royal"
+			}
+		}
+	}
+}
+
+# The Purchase of Cuddalore
+country_event = {
+	id = ipeFRA.63
+	title = ipeFRA.63.t
+	desc = ipeFRA.63.d
+	picture = SHIP_SAILING_eventPicture
+	goto = 540
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major_trigger = {
+		technology_group = indian
+	}
+
+	option = { # Let the French settle near Cuddalore.
+		name = ipeFRA.63.a
+		ai_chance = {
+			factor = 100
+		}
+		540 = {
+			cede_province = FROM
+			add_core = FROM
+			remove_core = ROOT
+		}
+		add_treasury = 1000
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeFRA.64
+				}
+			}
+		}
+	}
+
+	option = { # Refuse them.
+		name = ipeFRA.63.b
+		ai_chance = {
+			factor = 0
+		}
+		540 = {
+			add_core = FROM
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeFRA.65
+				}
+			}
+		}
+	}
+}
+
+# The Purchase of Cuddalore
+country_event = {
+	id = ipeFRA.64
+	title = ipeFRA.63.t
+	desc = ipeFRA.64.d
+	picture = SHIP_SAILING_eventPicture
+	goto = 540
+
+	is_triggered_only = yes
+
+	option = { # An excellent addition to our empire.
+		name = ipeFRA.64.a
+		tooltip = {
+			540 = {
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = FROM
+			}
+		}
+		add_treasury = -1000
+		540 = {
+			change_province_name = "Pondicherry"
+			rename_capital = "Pondicherry"
+		}
+	}
+}
+
+# Cuddalore Denied
+country_event = {
+	id = ipeFRA.65
+	title = ipeFRA.65.t
+	desc = ipeFRA.65.d
+	picture = SHIP_SAILING_eventPicture
+	goto = 540
+
+	is_triggered_only = yes
+
+	option = { # We'll find a way to seize it.
+		name = ipeFRA.65.a
+		tooltip = {
+			540 = {
+				add_core = ROOT
+			}
+		}
+	}
+}

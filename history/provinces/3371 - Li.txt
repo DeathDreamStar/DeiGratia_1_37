@@ -1,0 +1,19 @@
+#3371 - Li
+
+owner = LNA
+controller = LNA
+culture = northern_thai
+religion = buddhism
+capital = "Li"
+trade_goods = cotton
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = LNA
+
+
+
+discovered_by = chinese
+discovered_by = indian

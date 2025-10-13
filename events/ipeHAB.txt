@@ -1,0 +1,1871 @@
+namespace = ipeHAB
+normal_or_historical_nations = yes
+
+# Death of the Albertine Line
+country_event = {
+	id = ipeHAB.1
+	title = ipeHAB.6.t
+	desc = ipeHAB.6.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	immediate = {
+		every_known_country = {
+			limit = {
+				has_ruler = "Ladislaus Postumus"
+				has_ruler_flag = ladislaus_postumus
+			}
+			kill_ruler = yes
+		}
+		every_known_country = {
+			limit = {
+				has_heir = "Ladislaus Postumus"
+				has_heir_flag = ladislaus_postumus
+			}
+			set_country_flag = ladislaus_already_killed
+			kill_heir = { allow_new_heir = no }
+		}
+		set_global_flag = ladislaus_killed
+	}
+
+	option = { # We hope that they will choose wisely.
+		name = ipeHAB.6.a
+	}
+}
+
+# Death of the Albertine Line
+country_event = {
+	id = ipeHAB.6
+	title = ipeHAB.6.t
+	desc = ipeHAB.6.d
+	picture = CITY_VIEW_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We hope that they will choose wisely.
+		name = ipeHAB.6.a
+		if = {
+			limit = {
+				AUT = {
+					OR = {
+						is_subject = no
+						is_lesser_in_union = yes
+					}
+				}
+			}
+			inherit = AUT
+		}
+		add_prestige = 5
+		hidden_effect = {
+			if = {
+				limit = {
+					HUN = {
+						is_subject = no
+						NOT = {
+							has_country_flag = celjski_plot
+						}
+					}
+					is_subject = no
+				}
+				HUN = {
+					country_event = {
+						id = ipeHAB.57
+					}
+					country_event = {
+						id = ipeHAB.7
+						days = 30
+					}
+				}
+			}
+			if = {
+				limit = {
+					BOH = {
+						is_subject = no
+					}
+					is_subject = no
+				}
+				BOH = {
+					country_event = {
+						id = ipeHAB.43
+						days = 30
+					}
+				}
+			}
+		}
+	}
+}
+
+# Mátyás Corvinus
+country_event = {
+	id = ipeHAB.7
+	title = flavor_hun.2.t
+	desc = ipeHAB.7.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+
+	major = yes
+
+    is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = hun_has_had_matthias_corvinus_event
+	}
+	
+	option = { # Elect Mátyás as King
+		name = flavor_hun.2.a
+		ai_chance = { factor = 80 }
+		remove_historical_friend = HAB
+		remove_historical_friend = STY
+		HAB = { remove_historical_friend = HUN }
+		STY = { remove_historical_friend = HUN }
+		define_heir = {
+			name = "Mátyás"
+			culture = hungarian
+			dynasty = "Hunyadi"
+			adm = 4
+			dip = 5
+			mil = 6
+			claim = 50
+			birth_date = 1443.2.23
+		}
+		if = {
+			limit = {
+				has_dlc = "Rights of Man" 
+			}
+			hidden_effect = { add_heir_personality = just_personality }
+		}
+		if = {
+			limit = {
+				NOT = {
+					dynasty = "Hunyadi"
+				}
+			}
+			kill_ruler = yes
+		}
+        if = {
+            limit = {
+				exists = STY
+				NOT = {
+					exists = HAB
+				}
+				STY = {
+					dynasty = "von Habsburg"
+					is_subject = no
+				}
+            }
+    		STY = {
+			    tooltip = {
+				    add_casus_belli = {	
+					    target = HUN
+					    type = cb_restore_personal_union
+					    months = 300
+				    }	
+			    }
+			    hidden_effect = {
+				    country_event = { id = flavor_hun.10 }
+			    }
+				add_opinion = {
+					who = HUN
+					modifier = rejected_the_habsburgs
+				}
+		    }
+		}
+        if = {
+            limit = {
+				exists = HAB
+				HAB = {
+					dynasty = "von Habsburg"
+					is_subject = no
+				}
+            }
+    		HAB = {
+			    tooltip = {
+				    add_casus_belli = {	
+					    target = HUN
+					    type = cb_restore_personal_union
+					    months = 300
+				    }	
+			    }
+			    hidden_effect = {
+				    country_event = { id = flavor_hun.10 }
+			    }
+				add_opinion = {
+					who = HUN
+					modifier = rejected_the_habsburgs
+				}
+		    }
+        }
+		set_country_flag = hungarian_succession_crisis
+		if = {
+			limit = {
+				has_ruler = "Mátyás"
+			}
+			set_ruler_flag = matyas_hunyadi
+		}
+		if = {
+			limit = {
+				has_heir = "Mátyás"
+			}
+			set_heir_flag = matyas_hunyadi
+		}
+	}
+	option = { # A German King would be best!
+		name = flavor_hun.2.b	
+		ai_chance = { factor = 20 }
+		add_stability_or_adm_power = yes
+        if = {
+            limit = {
+				exists = STY
+				NOT = {
+					exists = HAB
+				}
+				STY = {
+					dynasty = "von Habsburg"
+					is_subject = no
+				}
+            }
+		    STY = {
+			    create_union = HUN
+			    hidden_effect = {
+				    country_event = { id = flavor_hun.3 }
+			    }
+		    }
+        }
+        if = {
+            limit = {
+				exists = HAB
+				HAB = {
+					dynasty = "von Habsburg"
+					is_subject = no
+				}
+            }
+		    HAB = {
+			    create_union = HUN
+			    hidden_effect = {
+				    country_event = { id = flavor_hun.3 }
+			    }
+		    }
+        }
+	}
+	option = { # Let us not forget about [Root.Heir.GetName]?
+		name = flavor_hun.2.c
+		trigger = {
+			has_ruler = yes
+			NOT = { dynasty = STY }
+            NOT = { dynasty = HAB }
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 10
+				heir_adm = 5
+				heir_mil = 5
+				heir_dip = 5
+			}
+		}
+		remove_historical_friend = HAB
+		remove_historical_friend = STY
+		HAB = { remove_historical_friend = HUN }
+		STY = { remove_historical_friend = HUN }
+        if = {
+            limit = {
+				exists = STY
+				NOT = {
+					exists = HAB
+				}
+				STY = {
+					dynasty = "von Habsburg"
+					is_subject = no
+				}
+            }
+    		STY = {
+			    tooltip = {
+				    add_casus_belli = {	
+					    target = HUN
+					    type = cb_restore_personal_union
+					    months = 300
+				    }	
+			    }
+			    hidden_effect = {
+				    country_event = { id = flavor_hun.10 }
+			    }
+				add_opinion = {
+					who = HUN
+					modifier = rejected_the_habsburgs
+				}
+		    }
+		}
+        if = {
+            limit = {
+				exists = HAB
+				HAB = {
+					dynasty = "von Habsburg"
+					is_subject = no
+				}
+            }
+    		HAB = {
+			    tooltip = {
+				    add_casus_belli = {	
+					    target = HUN
+					    type = cb_restore_personal_union
+					    months = 300
+				    }	
+			    }
+			    hidden_effect = {
+				    country_event = { id = flavor_hun.10 }
+			    }
+				add_opinion = {
+					who = HUN
+					modifier = rejected_the_habsburgs
+				}
+		    }
+        }
+	}
+}
+
+# The Accession of Ladislaus Postumus
+country_event = {
+	id = ipeHAB.15
+	title = ipeHAB.15.t
+	desc = ipeHAB.15.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = STY
+		government = monarchy
+		AUT = {
+			is_subject_of = STY
+			is_lesser_in_union = yes
+		}
+		HUN = {
+			OR = {
+				AND = {
+					has_heir = "Ladislaus Postumus"
+					heir_age = 15
+				}
+				AND = {
+					has_ruler = "Ladislaus Postumus"
+					ruler_age = 15
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = { # May he rule wisely.
+		name = ipeHAB.15.a
+		break_union = AUT
+		if = {
+			limit = {
+				HUN = {
+					has_ruler = "Ladislaus Postumus"
+				}
+			}
+			HUN = {
+				create_union = AUT
+				hidden_effect = {
+					country_event = {
+						id = ipeHAB.16
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			AUT = {
+				country_event = {
+					id = ipeHAB.16
+				}
+			}
+		}
+		remove_casus_belli = {
+			target = AUT
+			type = cb_restore_personal_union
+		}
+	}
+}
+
+# The Accession of Ladislaus Postumus
+country_event = {
+	id = ipeHAB.16
+	title = ipeHAB.15.t
+	desc = ipeHAB.16.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					tag = AUT
+					HUN = {
+						NOT = {
+							has_ruler = "Ladislaus Postumus"
+						}
+					}
+				}
+				define_heir = {
+					name = "Ladislaus Postumus"
+					dynasty = "von Habsburg"
+					culture = austrian
+					adm = 3
+					dip = 3
+					mil = 2
+					block_disinherit = yes
+					birth_date = 1440.2.22
+				}
+				set_heir_flag = ladislaus_postumus
+				kill_ruler = yes
+				add_stability = 1
+				set_country_flag = death_of_albertines
+			}
+		}
+	}
+
+	option = { # Ladislaus' time has come.
+		name = ipeHAB.16.a
+		trigger = {
+			tag = AUT
+		}
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+	}
+
+	option = { # Ladislaus' time has come.
+		name = ipeHAB.16.a
+		trigger = {
+			tag = HUN
+		}
+		add_legitimacy = 5
+		add_prestige = 5
+	}
+}
+
+# The Illness of Ladislaus Postumus
+country_event = {
+	id = ipeHAB.20
+	title = ipeHAB.20.t
+	desc = ipeHAB.20.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_ruler = "Ladislaus Postumus"
+		is_lesser_in_union = no
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # And so begins the game of thrones.
+		name = ipeHAB.20.a
+		kill_ruler = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = ladislaus_killed
+					}
+				}
+				every_known_country = {
+					limit = {
+						has_ruler = "Ladislaus Postumus"
+						has_ruler_flag = ladislaus_postumus
+					}
+					kill_ruler = yes
+				}
+				every_known_country = {
+					limit = {
+						has_heir = "Ladislaus Postumus"
+						has_heir_flag = ladislaus_postumus
+					}
+					kill_heir = { allow_new_heir = no }
+				}
+				set_global_flag = ladislaus_killed
+			}
+		}
+	}
+}
+
+# The Accession of Sigismund
+country_event = {
+	id = ipeHAB.39
+	title = ipeHAB.39.t
+	desc = ipeHAB.39.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = STY
+		TIR = {
+			is_subject_of = STY
+			is_lesser_in_union = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # May he rule wisely.
+		name = ipeHAB.15.a
+		break_union = TIR
+		hidden_effect = {
+			TIR = {
+				define_heir = {
+					name = "Sigismund"
+					dynasty = "von Habsburg"
+					culture = austrian
+					adm = 2
+					dip = 2
+					mil = 3
+					birth_date = 1427.10.26
+				}
+				kill_ruler = yes
+				country_event = {
+					id = ipeHAB.40
+				}
+				set_country_flag = sigismund_returns
+			}
+		}
+		remove_casus_belli = {
+			target = TIR
+			type = cb_restore_personal_union
+		}
+		create_subject = {
+			subject_type = vassal
+			subject = TIR
+		}
+	}
+}
+
+# The Accession of Sigismund
+country_event = {
+	id = ipeHAB.40
+	title = ipeHAB.39.t
+	desc = ipeHAB.39.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # May he rule wisely.
+		name = ipeHAB.15.a
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+	}
+}
+
+# Death of the Tyrolean Line
+country_event = {
+	id = ipeHAB.42
+	title = ipeHAB.42.t
+	desc = ipeHAB.42.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Austriae est imperare orbi universo.
+		name = ipeHAB.42.a
+		TIR = {
+			clr_country_flag = sigismund_returns
+		}
+		inherit = TIR
+		add_prestige = 5
+	}
+}
+
+# The Bohemian Succession
+country_event = {
+	id = ipeHAB.43
+	title = ipeHAB.43.t
+	desc = ipeHAB.43.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We will keep our freedom!
+		name = ipeHAB.43.a
+		ai_chance = { 
+			factor = 25
+			modifier = {
+				factor = 95
+				has_country_flag = boh_supported_hussites
+			}
+		}
+    	if = {
+             limit = {
+				exists = STY
+				NOT = {
+					exists = HAB
+				}
+				STY = {
+					dynasty = "von Habsburg"
+					is_subject = no
+				}
+            }
+    		STY = {
+			    tooltip = {
+				    add_casus_belli = {	
+					    target = BOH
+					    type = cb_restore_personal_union
+					    months = 300
+				    }	
+			    }
+			    hidden_effect = {
+				    country_event = { id = ipeHAB.44 }
+			    }
+				add_opinion = {
+					who = BOH
+					modifier = rejected_the_habsburgs
+				}
+		    }
+		}
+        if = {
+            limit = {
+				exists = HAB
+				HAB = {
+					dynasty = "von Habsburg"
+					is_subject = no
+				}
+            }
+    		HAB = {
+			    tooltip = {
+				    add_casus_belli = {	
+					    target = BOH
+					    type = cb_restore_personal_union
+					    months = 300
+				    }	
+			    }
+			    hidden_effect = {
+				    country_event = { id = ipeHAB.44 }
+			    }
+				add_opinion = {
+					who = HUN
+					modifier = rejected_the_habsburgs
+				}
+		    }
+        }
+	}
+	option = { # A German King would be best!
+		name = ipeHAB.43.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 5
+				has_country_flag = boh_supported_hussites
+			}
+		}
+		add_stability_or_adm_power = yes
+        if = {
+             limit = {
+				exists = STY
+				NOT = {
+					exists = HAB
+				}
+				STY = {
+					dynasty = "von Habsburg"
+					is_subject = no
+				}
+            }
+		    STY = {
+			    create_union = BOH
+			    hidden_effect = {
+				    country_event = { id = ipeHAB.45 }
+			    }
+		    }
+        }
+        if = {
+            limit = {
+				exists = HAB
+				HAB = {
+					dynasty = "von Habsburg"
+					is_subject = no
+				}
+            }
+		    HAB = {
+			    create_union = BOH
+			    hidden_effect = {
+				    country_event = { id = ipeHAB.45 }
+			    }
+		    }
+        }
+	}
+}
+
+# The Bohemian Throne
+country_event = {
+	id = ipeHAB.44
+	title = ipeHAB.44.t
+	desc = ipeHAB.44.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # War is the continuation of politics by other means...
+		name = ipeHAB.44.a
+		if = { #Only add if we haven't got one already.
+			limit = {
+				has_casus_belli = {
+					type = cb_restore_personal_union
+					target = BOH
+				}
+			}
+			tooltip = {
+				add_casus_belli = {	
+					target = BOH
+					type = cb_restore_personal_union
+					months = 300
+				}
+			}
+		}
+		else = {
+			add_casus_belli = {	
+				target = BOH
+				type = cb_restore_personal_union
+				months = 300
+			}
+		}
+		tooltip = {
+			add_opinion = {
+				who = BOH
+				modifier = rejected_the_habsburgs
+			}
+		}
+	}
+}
+
+# Union with Bohemia
+country_event = {
+	id = ipeHAB.45
+	title = ipeHAB.45.t
+	desc = ipeHAB.45.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # Let others wage wars...
+		name = flavor_hun.3.a
+		add_legitimacy = 5
+		add_prestige = 5
+	}
+}
+
+# The Death of Jirí z Podebrad
+country_event = {
+	id = ipeHAB.48
+	title = ipeHAB.48.t
+	desc = ipeHAB.48.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BOH
+		government = monarchy
+		NOT = {
+			has_ruler = "Jirí"
+		}
+		NOT = {
+			dynasty = "von Habsburg"
+		}
+		NOT = {
+			is_rival = POL
+		}
+		NOT = {
+			is_rival = PLC
+		}
+		NOT = {
+			is_year = 1500
+		}
+		has_country_flag = boh_supported_hussites
+		OR = {
+			POL = {
+				exists = yes
+				has_regency = no
+				dynasty = "Jagiellon"
+			}
+			PLC = {
+				exists = yes
+				has_regency = no
+				dynasty = "Jagiellon"
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = { # We need a Jagiellon!
+		name = ipeHAB.48.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				is_rival = HUN
+				factor = 90
+			}
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			remove_heir = {}
+		}
+		define_heir = {
+			name = "Wladyslaw"
+			dynasty = "Jagiellon"
+			culture = polish
+			adm = 1
+			dip = 4
+			mil = 1
+		}
+		kill_ruler = yes
+		if = {
+			limit = {
+				POL = {
+					exists = yes
+					dynasty = "Jagiellon"
+					has_regency = no
+				}
+			}
+			POL = {
+				add_opinion = {
+					who = ROOT
+					modifier = polish_king_in_bohemia
+				}
+				country_event = {
+					id = ipeHAB.50
+				}
+			}
+		}
+		if = {
+			limit = {
+				PLC = {
+					exists = yes
+					dynasty = "Jagiellon"
+					has_regency = no
+				}
+			}
+			PLC = {
+				add_opinion = {
+					who = ROOT
+					modifier = polish_king_in_bohemia
+				}
+				country_event = {
+					id = ipeHAB.50
+				}
+			}
+		}
+	}
+
+	option = { # We do not need Polish aid.
+		name = ipeHAB.48.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				is_rival = HUN
+				factor = 10
+			}
+		}
+		if = {
+			limit = {
+				POL = {
+					exists = yes
+					dynasty = "Jagiellon"
+					has_regency = no
+				}
+			}
+			POL = {
+				add_opinion = {
+					who = ROOT
+					modifier = no_polish_king_in_bohemia
+				}
+			}
+		}
+		if = {
+			limit = {
+				PLC = {
+					exists = yes
+					dynasty = "Jagiellon"
+					has_regency = no
+				}
+			}
+			PLC = {
+				add_opinion = {
+					who = ROOT
+					modifier = no_polish_king_in_bohemia
+				}
+			}
+		}
+	}
+}
+
+# Jagiellons in Bohemia
+country_event = {
+	id = ipeHAB.50
+	title = ipeHAB.50.t
+	desc = ipeHAB.50.d
+	picture = SEJM_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Let others wage wars...
+		name = ipeHAB.50.a
+		add_legitimacy = 10
+		tooltip = {
+			add_opinion = {
+				who = BOH
+				modifier = polish_king_in_bohemia
+			}
+		}
+	}
+}
+
+# The Death of Mátyás Corvinus
+country_event = {
+	id = ipeHAB.52
+	title = ipeHAB.52.t
+	desc = ipeHAB.52.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Hungarian throne will be ours!
+		name = ipeHAB.52.a
+		add_casus_belli = {	
+			target = HUN
+			type = cb_restore_personal_union
+			months = 300
+		}
+	}
+}
+
+# Death of the Albertine Line (Hungary)
+country_event = {
+	id = ipeHAB.57
+	title = ipeHAB.6.t
+	desc = ipeHAB.6.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We must gather the nobles once again.
+		name = ipeHAB.57.a
+		custom_tooltip = ipeHAB.57.a.tooltip
+		austria_proper_area = {
+			limit = {
+				NOT = { is_permanent_claim = ROOT	}
+				NOT = { is_core = ROOT	}
+			}
+			add_claim = ROOT
+		}
+		upper_austria_area = {
+			limit = {
+				NOT = { is_permanent_claim = ROOT	}
+				NOT = { is_core = ROOT	}
+			}
+			add_claim = ROOT
+		}
+	}
+}
+
+
+# Diet of 1445
+country_event = {
+	id = ipeHAB.58
+	title = flavor_hun.1.t
+	desc = ipeHAB.58.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well.
+		name = ipeHAB.58.a
+		country_event = {
+			id = 700
+		}
+	}
+}
+
+# The Inheritance of $COUNTRY$
+country_event = {
+	id = ipeHAB.65
+	title = ipeHAB.65.t
+	desc = ipeHAB.65.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Incredible.
+		name = ipeHAB.65.a
+		FROM = {
+			inherit = ROOT
+			hidden_effect = {
+				country_event = {
+					id = ipeHAB.66
+				}
+			}
+		}
+	}
+}
+
+# The Inheritance of $FROMCOUNTRY$
+country_event = {
+	id = ipeHAB.66
+	title = ipeHAB.66.t
+	desc = ipeHAB.66.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We will vote wisely.
+		name = ipeHAB.66.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+		if = {
+			limit = {
+				is_emperor = yes
+			}
+			add_imperial_influence = 10
+		}
+	}
+}
+
+# The Extinction of the House of Gorizia
+country_event = {
+	id = ipeHAB.67
+	title = ipeHAB.67.t
+	desc = ipeHAB.67.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { # Excellent.
+		name = ipeHAB.67.a
+		inherit = GRZ
+		add_prestige = 5
+	}
+}
+
+# The Fate of Gorizia
+country_event = {
+	id = ipeHAB.68
+	title = ipeHAB.68.t
+	desc = ipeHAB.68.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { # We will sign over the rights of inheritance to the Austrians.
+		name = ipeHAB.68.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeHAB.68.a.tooltip
+		set_country_flag = gorizian_inheritance
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = accepted_gorizian_inheritance
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeHAB.69
+				}
+			}
+		}
+	}
+
+	option = { # My family will always rule Gorizia!
+		name = ipeHAB.68.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_gorizian_inheritance
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeHAB.70
+				}
+			}
+		}
+	}
+}
+
+# The Fate of Gorizia
+country_event = {
+	id = ipeHAB.69
+	title = ipeHAB.68.t
+	desc = ipeHAB.69.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They have chosen wisely.
+		name = ipeHAB.69.a
+		custom_tooltip = ipeHAB.69.a.tooltip
+		tooltip = {
+			add_opinion = {
+				who = GRZ
+				modifier = accepted_gorizian_inheritance
+			}
+		}
+	}
+}
+
+# The Fate of Gorizia
+country_event = {
+	id = ipeHAB.70
+	title = ipeHAB.68.t
+	desc = ipeHAB.70.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The fools!
+		name = ipeHAB.70.a
+		tooltip = {
+			add_opinion = {
+				who = GRZ
+				modifier = refused_gorizian_inheritance
+			}
+		}
+	}
+}
+
+# The Death of János Hunyadi
+country_event = {
+	id = ipeHAB.71
+	title = ipeHAB.71.t
+	desc = ipeHAB.71.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Take part in the Hungarian regency.
+		name = ipeHAB.71.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeHAB.71.a.tooltip
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		HUN = {
+			create_union = ROOT
+			hidden_effect = {
+				country_event = {
+					id = ipeHAB.75
+				}
+			}
+			tooltip = {
+				add_adm_power = -100
+				add_dip_power = -100
+				add_mil_power = -100
+			}
+		}
+		set_country_flag = regent_celjski
+	}
+
+	option = { # Hungarian affairs are of no concern to us.
+		name = ipeHAB.71.b
+		add_prestige = -5
+	}
+}
+
+# The Celjski Plot
+country_event = {
+	id = ipeHAB.72
+	title = ipeHAB.72.t
+	desc = ipeHAB.72.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = HUN
+		CLI = {
+			has_country_flag = regent_celjski
+		}
+		has_heir = "Ladislaus Postumus"
+		has_heir_flag = ladislaus_postumus
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # We must strike first!
+		name = ipeHAB.72.a
+		ai_chance = {
+			factor = 90
+		}
+		custom_tooltip = ipeHAB.72.a.tooltip
+		hidden_effect = {
+			country_event = {
+				id = ipeHAB.73
+				days = 15
+			}
+		}
+	}
+
+	option = { # These allegations are of no concern to us.
+		name = ipeHAB.72.b
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = ipeHAB.72.b.tooltip
+		set_country_flag = celjski_plot
+	}
+}
+
+# The End of the Celjski
+country_event = {
+	id = ipeHAB.73
+	title = ipeHAB.73.t
+	desc = ipeHAB.73.d
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		CLI = {
+			clr_country_flag = regent_celjski
+		}
+	}
+
+	option = { # An eye for an eye...
+		name = ipeHAB.73.a
+		if = {
+			limit = {
+				HAB = {
+					exists = yes
+				}
+			}
+			CLI = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = italy_region
+							region = south_german_region
+						}
+					}
+					cede_province = HAB
+					add_core = HAB
+				}
+			}
+			hidden_effect = {
+				HAB = {
+					country_event = {
+						id = ipeHAB.74
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				STY = {
+					exists = yes
+				}
+				NOT = {
+					exists = HAB
+				}
+			}
+			CLI = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = italy_region
+							region = south_german_region
+						}
+					}
+					cede_province = STY
+					add_core = STY
+				}
+			}
+			hidden_effect = {
+				STY = {
+					country_event = {
+						id = ipeHAB.74
+					}
+				}
+			}
+		}
+		inherit = CLI
+		add_prestige = 5
+	}
+}
+
+# The End of the Celjski
+country_event = {
+	id = ipeHAB.74
+	title = ipeHAB.73.t
+	desc = ipeHAB.74.d
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # There can only be one ruler in Carniola.
+		name = ipeHAB.74.a
+		tooltip = {
+			CLI = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							region = italy_region
+							region = south_german_region
+						}
+					}
+					cede_province = ROOT
+					add_core = ROOT
+				}
+			}
+		}
+	}
+}
+
+# The Death of János Hunyadi
+country_event = {
+	id = ipeHAB.75
+	title = ipeHAB.71.t
+	desc = ipeHAB.75.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We are skeptical that they have our best interests in mind.
+		name = ipeHAB.75.a
+		tooltip = {
+			create_union = CLI
+			CLI = {
+				add_adm_power = 100
+				add_dip_power = 100
+				add_mil_power = 100
+			}
+		}
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+	}
+}
+
+# The Assassination of Ladislaus Postumus
+country_event = {
+	id = ipeHAB.76
+	title = ipeHAB.76.t
+	desc = ipeHAB.76.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = HUN
+		has_country_flag = celjski_plot
+		has_heir = "Ladislaus Postumus"
+		has_heir_flag = ladislaus_postumus
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # And so begins the game of thrones.
+		name = ipeHAB.20.a
+		if = {
+			limit = {
+				has_ruler = "Ladislaus Postumus"
+				has_ruler_flag = ladislaus_postumus
+			}
+			kill_ruler = yes
+		}
+		if = {
+			limit = {
+				has_heir = "Ladislaus Postumus"
+				has_heir_flag = ladislaus_postumus
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					has_ruler = "Ladislaus Postumus"
+					has_ruler_flag = ladislaus_postumus
+				}
+				kill_ruler = yes
+			}
+			every_known_country = {
+				limit = {
+					has_heir = "Ladislaus Postumus"
+					has_heir_flag = ladislaus_postumus
+				}
+				kill_heir = { allow_new_heir = no }
+			}
+		}
+		define_ruler = {
+			dynasty = "Celjski"
+			culture = slovene
+			age = 40
+			claim = 30
+		}
+		hidden_effect = {
+			add_ruler_personality = malevolent_personality
+			if = {
+				limit = {
+					exists = STY
+					NOT = {
+						exists = HAB
+					}
+					STY = {
+						dynasty = "von Habsburg"
+					}
+				}
+				STY = {
+					country_event = {
+						id = ipeHAB.77
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = HAB
+					HAB = {
+						dynasty = "von Habsburg"
+					}
+				}
+				HAB = {
+					country_event = {
+						id = ipeHAB.77
+					}
+				}
+			}
+			CLI = {
+				country_event = {
+					id = ipeHAB.78
+				}
+			}
+		}
+		add_stability = -2
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "László Hunyadi"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+			}
+		}
+		if = {
+			limit = {
+				exists = STY
+				NOT = {
+					exists = HAB
+				}
+				STY = {
+					dynasty = "von Habsburg"
+				}
+			}
+			STY = {
+				add_opinion = {
+					who = HUN
+					modifier = murdered_ladislaus
+				}
+				add_opinion = {
+					who = CLI
+					modifier = murdered_ladislaus
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = HAB
+				HAB = {
+					dynasty = "von Habsburg"
+				}
+			}
+			HAB = {
+				add_opinion = {
+					who = HUN
+					modifier = murdered_ladislaus
+				}
+				add_opinion = {
+					who = CLI
+					modifier = murdered_ladislaus
+				}
+			}
+		}
+	}
+}
+
+# The Assassination of Ladislaus Postumus
+country_event = {
+	id = ipeHAB.77
+	title = ipeHAB.76.t
+	desc = ipeHAB.77.d
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will pay for this!
+		name = ipeHAB.77.a
+		add_casus_belli = {	
+			target = HUN
+			type = cb_restore_personal_union
+			months = 600
+		}
+		tooltip = {
+			add_opinion = {
+				who = HUN
+				modifier = murdered_ladislaus
+			}
+			add_opinion = {
+				who = CLI
+				modifier = murdered_ladislaus
+			}
+		}
+	}
+}
+
+# The Assassination of Ladislaus Postumus
+country_event = {
+	id = ipeHAB.78
+	title = ipeHAB.76.t
+	desc = ipeHAB.78.d
+	picture = ASSASSINATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # And so begins the game of thrones.
+		name = ipeHAB.20.a
+		ai_chance = {
+			factor = 100
+		}
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		tooltip = {
+			if = {
+				limit = {
+					exists = STY
+					NOT = {
+						exists = HAB
+					}
+					STY = {
+						dynasty = "von Habsburg"
+					}
+				}
+				STY = {
+					add_opinion = {
+						who = HUN
+						modifier = murdered_ladislaus
+					}
+					add_opinion = {
+						who = CLI
+						modifier = murdered_ladislaus
+					}
+				}
+			}
+			if = {
+				limit = {
+					exists = HAB
+					HAB = {
+						dynasty = "von Habsburg"
+					}
+				}
+				HAB = {
+					add_opinion = {
+						who = HUN
+						modifier = murdered_ladislaus
+					}
+					add_opinion = {
+						who = CLI
+						modifier = murdered_ladislaus
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Play as Hungary.
+		name = ipeHAB.78.b
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = HUN
+		HUN = {
+			inherit = CLI
+			add_prestige = 5
+		}
+	}
+}
+
+# The Fate of Bregenz
+country_event = {
+	id = ipeHAB.79
+	title = ipeHAB.79.t
+	desc = ipeHAB.79.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				tag = TIR
+				OR = {
+					is_subject_of = STY
+					is_subject_of = HAB
+					is_subject = no
+				}
+			}
+			AND = {
+				tag = HAB
+				NOT = {
+					exists = TIR
+				}
+				is_subject = no
+			}
+		}
+		is_neighbor_of = MBZ
+		MBZ = {
+			exists = yes
+			is_subject = no
+			ai = yes
+			NOT = {
+				num_of_cities = 2
+			}
+			owns = 4710
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # Make the Count of Bregenz a generous offer.
+		name = ipeHAB.79.a
+		ai_chance = {
+			factor = 100
+		}
+		add_treasury = -25
+		4710 = {
+			cede_province = ROOT
+			add_core = ROOT
+			remove_core = MBZ
+		}
+		add_prestige = 5
+	}
+
+	option = { # We must conserve our funds.
+		name = ipeHAB.79.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = ipeHAB.79.b.tooltip
+		add_prestige = -5
+	}
+}
+
+# The Fate of Rijeka
+country_event = {
+	id = ipeHAB.80
+	title = ipeHAB.80.t
+	desc = ipeHAB.80.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # Make the Lord of Rijeka a generous offer.
+		name = ipeHAB.80.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeHAB.80.a.tooltip
+		FIU = {
+			country_event = {
+				id = ipeHAB.81
+			}
+		}
+	}
+
+	option = { # We must conserve our funds.
+		name = ipeHAB.80.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = ipeHAB.80.b.tooltip
+		add_prestige = -5
+	}
+}
+
+# The Fate of Rijeka
+country_event = {
+	id = ipeHAB.81
+	title = ipeHAB.80.t
+	desc = ipeHAB.81.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It is a fine offer.
+		name = ipeHAB.81.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeHAB.81.a.tooltip
+		set_country_flag = rijekan_inheritance
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = accepted_gorizian_inheritance
+			}
+		}
+        add_treasury = 25
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeHAB.82
+				}
+			}
+		}
+	}
+
+	option = { # Rijeka shall remain free!
+		name = ipeHAB.81.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_gorizian_inheritance
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeHAB.83
+				}
+			}
+		}
+	}
+}
+
+# The Fate of Rijeka
+country_event = {
+	id = ipeHAB.82
+	title = ipeHAB.80.t
+	desc = ipeHAB.82.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They have chosen wisely.
+		name = ipeHAB.69.a
+		custom_tooltip = ipeHAB.82.a.tooltip
+        add_treasury = -25
+		tooltip = {
+			add_opinion = {
+				who = FIU
+				modifier = accepted_gorizian_inheritance
+			}
+		}
+	}
+}
+
+# The Fate of Rijeka
+country_event = {
+	id = ipeHAB.83
+	title = ipeHAB.80.t
+	desc = ipeHAB.83.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The fools!
+		name = ipeHAB.70.a
+		tooltip = {
+			add_opinion = {
+				who = FIU
+				modifier = refused_gorizian_inheritance
+			}
+		}
+	}
+}
+
+# The Inheritance of Rijeka
+country_event = {
+	id = ipeHAB.84
+	title = ipeHAB.84.t
+	desc = ipeHAB.84.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Rijeka will be of great use to us.
+		name = ipeHAB.84.a
+		inherit = FIU
+		add_prestige = 5
+	}
+}

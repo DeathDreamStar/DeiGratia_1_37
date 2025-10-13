@@ -1,0 +1,20 @@
+name = "Ava Subjugation of Taungu"
+war_goal = {
+	type = take_capital_vassalize
+	casus_belli = cb_vassalize_mission
+	tag = TAU
+}
+
+1437.1.1 = {
+	add_attacker = AVA
+	add_attacker = KAL
+	add_attacker = MYA
+	add_defender = TAU
+}
+
+1442.1.1 = {
+	rem_attacker = AVA
+	rem_attacker = KAL
+	rem_attacker = MYA
+	rem_defender = TAU
+}

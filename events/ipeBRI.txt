@@ -1,0 +1,869 @@
+namespace = ipeBRI
+normal_or_historical_nations = yes
+
+# The Duchy of Brittany
+country_event = {
+	id = ipeBRI.1
+	title = ipeBRI.1.t
+	desc = ipeBRI.1.d
+	picture = DIPLOMACY_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = BRI
+		government = monarchy
+		has_regency = no
+		FRA = {
+			exists = yes
+			is_subject = no
+			government = monarchy
+			has_country_flag = breton_inheritance_enabled
+		}
+		OR = {
+			AND = {
+				is_subject_of = FRA
+				is_subject_of_type = vassal
+				is_at_war = no
+			}
+			AND = {
+				is_subject = no
+				is_at_war = no
+			}
+		}
+		OR = {
+			has_heir = no
+			has_female_heir = yes
+			AND = {
+				heir_has_ruler_dynasty = no
+				dynasty = "de Dreux"
+			}
+			ruler_has_personality = infertile_personality
+		}
+		exists = ENG
+		exists = CAS
+		exists = HAB
+		NOT = {
+			is_rival = ENG
+			alliance_with = ENG
+		}
+		NOT = {
+			is_rival = CAS
+			alliance_with = CAS
+		}
+		NOT = {
+			is_rival = HAB
+			alliance_with = HAB
+		}
+		NOT = {
+			government_rank = 2
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		FRA = {
+			clr_country_flag = breton_inheritance_enabled
+		}
+	}
+	
+	option = { # An English heir would be most suitable.
+		name = ipeBRI.1.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 100
+				is_subject = no
+			}
+		}
+		custom_tooltip = ipeBRI.1.a.tooltip
+		ENG = {
+			country_event = {
+				id = ipeBRI.2
+				days = 30
+			}
+		}
+	}
+
+	option = { # The future of the Duchy is already secure.
+		name = ipeBRI.1.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_subject = no
+			}
+		}
+		add_legitimacy = 5
+	}
+}
+
+# The Duchy of Brittany Seeks Our Aid (England)
+country_event = {
+	id = ipeBRI.2
+	title = ipeBRI.2.t
+	desc = ipeBRI.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { # We must protect this newfound friend!
+		name = ipeBRI.2.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 50
+				is_rival = FRA
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					exists = YRK
+					exists = LNC
+				}
+			}
+		}
+		if = {
+			limit = {
+				BRI = {
+					is_subject_of = FRA
+				}
+			}
+			BRI = {
+				grant_independence = yes
+			}
+		}
+		create_alliance = BRI
+		create_marriage = BRI
+		if = {
+			limit = {
+				BRI = {
+					ai = yes
+				}
+			}
+			BRI = {
+				set_ruler_flag = inheritance_of_brittany
+			}
+			set_country_flag = inheritor_of_brittany
+		}
+		BRI = {
+			country_event = {
+				id = ipeBRI.3
+				days = 1
+			}
+		}
+	}
+
+	option = { # We should not interfere in the affairs of Brittany.
+		name = ipeBRI.2.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 50
+				is_rival = FRA
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					exists = YRK
+					exists = LNC
+				}
+			}
+		}
+		add_prestige = -5
+		BRI = {
+			country_event = {
+				id = ipeBRI.5
+				days = 1
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Defends Brittany
+country_event = {
+	id = ipeBRI.3
+	title = ipeBRI.3.t
+	desc = ipeBRI.3.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { # We will stand strong against our common foe.
+		name = ipeBRI.3.a
+		trigger = {
+			FROM = {
+				tag = ENG
+			}
+		}
+		add_prestige = 10
+		set_global_flag = breton_marriage_acquired
+		hidden_effect = {
+			FRA = {
+				country_event = {
+					id = ipeBRI.4
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { # We will stand strong against our common foe.
+		name = ipeBRI.3.a
+		trigger = {
+			FROM = {
+				tag = CAS
+			}
+		}
+		add_prestige = 10
+		set_global_flag = breton_marriage_acquired
+		hidden_effect = {
+			FRA = {
+				country_event = {
+					id = ipeBRI.17
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { # We will stand strong against our common foe.
+		name = ipeBRI.3.a
+		trigger = {
+			FROM = {
+				tag = HAB
+			}
+		}
+		add_prestige = 10
+		set_global_flag = breton_marriage_acquired
+		hidden_effect = {
+			FRA = {
+				country_event = {
+					id = ipeBRI.18
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+# England Allies Brittany!
+country_event = {
+	id = ipeBRI.4
+	title = ipeBRI.4.t
+	desc = ipeBRI.4.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We cannot afford to be encircled by our enemies.
+		name = ipeBRI.4.a
+		custom_tooltip = ipeBRI.4.a.tooltip
+		ai_chance = {
+			factor = 100
+		}
+		add_casus_belli = {
+			target = BRI
+			type = cb_restore_personal_union
+			months = 300
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+			}
+			add_liberty_desire = 50
+		}
+	}
+
+	option = { # The Duchy of Brittany is of no concern to us.
+		name = ipeBRI.4.b
+		ai_chance = {
+			factor = 0
+		}
+		add_legitimacy = -25
+		add_prestige = -25
+	}
+}
+
+# The English Rejection
+country_event = {
+	id = ipeBRI.5
+	title = ipeBRI.5.t
+	desc = ipeBRI.5.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A Castilian heir would defend the interests of Brittany.
+		name = ipeBRI.5.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 100
+				is_subject = no
+			}
+		}
+		custom_tooltip = ipeBRI.5.a.tooltip
+		CAS = {
+			country_event = {
+				id = ipeBRI.6
+				days = 30
+			}
+		}
+	}
+
+	option = { # The future of the Duchy is already secure.
+		name = ipeBRI.1.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_subject = no
+			}
+		}
+		add_legitimacy = 5
+	}
+}
+
+# The Duchy of Brittany Seeks Our Aid (Castile)
+country_event = {
+	id = ipeBRI.6
+	title = ipeBRI.2.t
+	desc = ipeBRI.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { # We must protect this newfound friend!
+		name = ipeBRI.2.a
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 25
+				is_rival = FRA
+			}
+		}
+		if = {
+			limit = {
+				BRI = {
+					is_subject_of = FRA
+				}
+			}
+			BRI = {
+				grant_independence = yes
+			}
+		}
+		create_alliance = BRI
+		create_marriage = BRI
+		if = {
+			limit = {
+				BRI = {
+					ai = yes
+				}
+			}
+			BRI = {
+				set_ruler_flag = inheritance_of_brittany
+			}
+			set_country_flag = inheritor_of_brittany
+		}
+		BRI = {
+			country_event = {
+				id = ipeBRI.3
+				days = 1
+			}
+		}
+	}
+
+	option = { # We should not interfere in the affairs of Brittany.
+		name = ipeBRI.2.b
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 75
+				is_rival = FRA
+			}
+		}
+		add_prestige = -5
+		BRI = {
+			country_event = {
+				id = ipeBRI.7
+				days = 1
+			}
+		}
+	}
+}
+
+# The Castilian Rejection
+country_event = {
+	id = ipeBRI.7
+	title = ipeBRI.7.t
+	desc = ipeBRI.7.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We need an Austrian heir above all else.
+		name = ipeBRI.7.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 100
+				is_subject = no
+			}
+		}
+		custom_tooltip = ipeBRI.7.a.tooltip
+		HAB = {
+			country_event = {
+				id = ipeBRI.8
+				days = 30
+			}
+		}
+	}
+
+	option = { # The future of the Duchy is already secure.
+		name = ipeBRI.1.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_subject = no
+			}
+		}
+		add_legitimacy = 5
+	}
+}
+
+# The Duchy of Brittany Seeks Our Aid (Austria)
+country_event = {
+	id = ipeBRI.8
+	title = ipeBRI.2.t
+	desc = ipeBRI.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { # We must protect this newfound friend!
+		name = ipeBRI.2.a
+		ai_chance = {
+			factor = 95
+		}
+		if = {
+			limit = {
+				BRI = {
+					is_subject_of = FRA
+				}
+			}
+			BRI = {
+				grant_independence = yes
+			}
+		}
+		create_alliance = BRI
+		create_marriage = BRI
+		if = {
+			limit = {
+				BRI = {
+					ai = yes
+				}
+			}
+			BRI = {
+				set_ruler_flag = inheritance_of_brittany
+			}
+			set_country_flag = inheritor_of_brittany
+		}
+		BRI = {
+			country_event = {
+				id = ipeBRI.3
+				days = 1
+			}
+		}
+	}
+
+	option = { # We should not interfere in the affairs of Brittany.
+		name = ipeBRI.2.b
+		ai_chance = {
+			factor = 5
+		}
+		add_prestige = -5
+		BRI = {
+			country_event = {
+				id = ipeBRI.9
+				days = 1
+			}
+		}
+	}
+}
+
+# The Austrian Rejection
+country_event = {
+	id = ipeBRI.9
+	title = ipeBRI.9.t
+	desc = ipeBRI.9.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Sad day.
+		name = ipeBRI.9.a
+		add_prestige = -25
+	}
+}
+
+# The Inheritance of Brittany (Inheritor)
+country_event = {
+	id = ipeBRI.10
+	title = ipeBRI.10.t
+	desc = ipeBRI.10.d
+	picture = DIPLOMACY_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = inheritor_of_brittany
+		alliance_with = BRI
+		BRI = {
+			NOT = {
+				has_ruler_flag = inheritance_of_brittany
+			}
+			is_subject = no
+			government = monarchy
+		}
+		government = monarchy
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Wonderful!
+		name = ipeBRI.10.a
+		create_union = BRI
+		hidden_effect = {
+			BRI = {
+				country_event = {
+					id = ipeBRI.11
+					days = 1
+				}
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# The Inheritance of Brittany (Brittany)
+country_event = {
+	id = ipeBRI.11
+	title = ipeBRI.10.t
+	desc = ipeBRI.11.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It is better than rule by the French.
+		name = ipeBRI.11.a
+		tooltip = {
+			FROM = {
+				create_union = BRI
+			}
+		}
+	}
+}
+
+# Treason Against France!
+country_event = {
+	id = ipeBRI.12
+	title = ipeBRI.12.t
+	desc = ipeBRI.12.d
+	picture = ACCUSATION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		is_in_war = {
+			attacker_leader = FRA
+			defender_leader = BRI
+		}
+		BRI = {
+			has_ruler_flag = inheritance_of_brittany
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Deeply unnerving.
+		name = ipeBRI.12.a
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+			}
+			add_liberty_desire = 50
+			hidden_effect = {
+				country_event = {
+					id = ipeBRI.13
+					days = 30
+				}
+			}
+		}
+	}
+}
+
+# French Aggression in Brittany
+country_event = {
+	id = ipeBRI.13
+	title = ipeBRI.13.t
+	desc = ipeBRI.13.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Support the League of the Public Weal.
+		name = ipeBRI.13.a
+		FRA = {
+			country_event = {
+				id = ipeBRI.14
+				days = 1
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = league_public_weal_interference
+			}
+		}
+		add_manpower = -2
+	}
+
+	option = { # We will not support rebels.
+		name = ipeBRI.13.b
+		add_prestige = 5
+	}
+}
+
+# $FROMCOUNTRY$ Supports the League of the Public Weal!
+country_event = {
+	id = ipeBRI.14
+	title = ipeBRI.14.t
+	desc = ipeBRI.14.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Damnation!
+		name = ipeBRI.14.a
+		random_owned_province = {
+			random = {
+				chance = 25
+				spawn_rebels = {
+					type = noble_rebels
+					size = 1
+					friend = FROM
+				}
+			}
+		}
+	}
+}
+
+# The End of the Second League of the Public Weal
+country_event = {
+	id = ipeBRI.15
+	title = ipeBRI.15.t
+	desc = ipeBRI.15.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		has_global_flag = breton_marriage_acquired
+		OR = {
+			BRI = {
+				is_subject_of = FRA
+			}
+			BRI = {
+				exists = no
+			}
+			BRI = {
+				is_lesser_in_union = yes
+				NOT = {
+					is_subject_of = FRA
+				}
+			}
+		}
+		NOT = {
+			is_in_war = {
+				attacker_leader = FRA
+				defender_leader = BRI
+			}
+			is_in_war = {
+				defender_leader = FRA
+				casus_belli = cb_independence_war
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # France will again be as one.
+		name = ipeBRI.15.a
+		clr_global_flag = breton_marriage_acquired
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+			}
+			add_liberty_desire = -50
+		}
+		if = {
+			limit = {
+				BRI = {
+					is_subject_of = FRA
+				}
+			}
+			add_legitimacy = 10
+			add_prestige = 10
+		}
+		if = {
+			limit = {
+				BRI = {
+					is_lesser_in_union = yes
+					NOT = {
+						is_subject_of = FRA
+					}
+				}
+			}
+			add_legitimacy = -10
+			add_prestige = -10
+		}
+		every_known_country = {
+			limit = {
+				has_country_flag = inheritor_of_brittany
+			}
+			clr_country_flag = inheritor_of_brittany
+		}
+	}
+}
+
+# The $DYNASTY$ Claim to the Duchy of Brittany
+country_event = {
+	id = ipeBRI.16
+	title = ipeBRI.16.t
+	desc = ipeBRI.16.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ORL
+		BRI = {
+			has_ruler_flag = inheritance_of_brittany
+		}
+		NOT = {
+			war_with = BRI
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Brittany will be ours!
+		name = ipeBRI.16.a
+		BRI = {
+			every_owned_province = {
+				add_claim = ORL
+			}
+		}
+	}
+}
+
+# Castile Allies Brittany!
+country_event = {
+	id = ipeBRI.17
+	title = ipeBRI.17.t
+	desc = ipeBRI.17.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We cannot afford to be encircled by our enemies.
+		name = ipeBRI.4.a
+		custom_tooltip = ipeBRI.17.a.tooltip
+		ai_chance = {
+			factor = 100
+		}
+		add_casus_belli = {
+			target = BRI
+			type = cb_restore_personal_union
+			months = 300
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+			}
+			add_liberty_desire = 50
+		}
+	}
+
+	option = { # The Duchy of Brittany is of no concern to us.
+		name = ipeBRI.4.b
+		ai_chance = {
+			factor = 0
+		}
+		add_legitimacy = -25
+		add_prestige = -25
+	}
+}
+
+# Austria Allies Brittany!
+country_event = {
+	id = ipeBRI.18
+	title = ipeBRI.18.t
+	desc = ipeBRI.18.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We cannot afford to be encircled by our enemies.
+		name = ipeBRI.4.a
+		custom_tooltip = ipeBRI.18.a.tooltip
+		ai_chance = {
+			factor = 100
+		}
+		add_casus_belli = {
+			target = BRI
+			type = cb_restore_personal_union
+			months = 300
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = vassal
+				}
+			}
+			add_liberty_desire = 50
+		}
+	}
+
+	option = { # The Duchy of Brittany is of no concern to us.
+		name = ipeBRI.4.b
+		ai_chance = {
+			factor = 0
+		}
+		add_legitimacy = -25
+		add_prestige = -25
+	}
+}

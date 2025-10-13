@@ -1,0 +1,68 @@
+government = monarchy
+add_government_reform = principality
+primary_culture = byelorussian
+religion = orthodox
+technology_group = eastern
+capital = 4244
+fixed_capital = 4244 # Cannot move capital away from this province & no power cost to move to it
+government_rank = 1
+
+#Trubetskoys
+1356.1.1 = {
+	monarch = {
+		name = "Dmitry II"
+		dynasty = "Gediminai"
+		culture = lithuanian
+		religion = animism
+		adm = 4
+		dip = 4
+		mil = 4
+	}
+}
+1399.8.12 = {
+	monarch = {
+		name = "Mikhail II"
+		dynasty = "Gediminai"
+		adm = 3
+		dip = 5
+		mil = 1
+	}
+}
+1433.1.1 = {
+	monarch = {
+		name = "Semyon I"
+		dynasty = "Gediminai"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1467.1.1 = {
+	monarch = {
+		name = "Ivan II"
+		dynasty = "Gediminai"
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}
+1499.1.1 = {
+	monarch = {
+		name = "Semyon II"
+		dynasty = "Gediminai"
+		adm = 1
+		dip = 4
+		mil = 2
+	}
+}
+1503.4.1 = { primary_culture = russian }
+1533.1.1 = {
+	monarch = {
+		name = "Mikhail III"
+		dynasty = "Gediminai"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+#done 1566.1.1

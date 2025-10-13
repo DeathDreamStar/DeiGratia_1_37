@@ -1,0 +1,30 @@
+country_decisions = {
+	centralize_bahmanis = {
+		major = yes
+		potential = {
+			OR = {
+				any_owned_province = {
+					has_province_modifier = local_bahmani_capital
+				}
+			}
+		}
+		provinces_to_highlight = {
+			has_province_modifier = local_bahmani_capital
+		}
+		allow = {
+			adm_tech = 12
+			stability = 1
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = local_bahmani_capital
+				}
+				remove_province_modifier = local_bahmani_capital
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,15 @@
+#3334 - Oshu
+
+owner = SBA
+controller = SBA
+culture = togoku
+religion = shinto
+capital = "Oshu"
+trade_goods = livestock
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = SBA
+discovered_by = chinese

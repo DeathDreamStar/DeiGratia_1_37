@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = inca
+religion = inti
+technology_group = andean
+unit_type = south_american
+capital = 2946 # Quillaca
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Mamani"
+		dynasty = "Quillaca"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+#1476 annexed by Incas

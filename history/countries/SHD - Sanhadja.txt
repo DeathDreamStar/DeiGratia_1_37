@@ -1,0 +1,16 @@
+government = tribal
+add_government_reform = tribal_federation
+primary_culture = mauritanian
+religion = sunni
+technology_group = muslim
+capital = 6341 # Boutilimit
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Baragsen"
+		dynasty = "Sanhadja"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

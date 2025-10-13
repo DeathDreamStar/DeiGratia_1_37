@@ -1,0 +1,8671 @@
+namespace = ipeJAP
+normal_or_historical_nations = yes
+
+# The Bun'an Era (Shogun)
+country_event = {
+	id = ipeJAP.1
+	title = ipeJAP.1.t
+	desc = ipeJAP.1.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		has_reform = shogunate
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+	
+	option = { # Dark times come for Japan.
+		name = ipeJAP.1.a
+		custom_tooltip = ipeJAP.1.a.tooltip
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					OR = {
+						is_subject_of_type = daimyo_vassal
+						is_subject_of_type = kanrei_vassal
+					}
+				}
+				country_event = {
+					id = ipeJAP.2
+				}
+			}
+		}
+	}
+}
+
+# The Bun'an Era (Daimyos)
+country_event = {
+	id = ipeJAP.2
+	title = ipeJAP.1.t
+	desc = ipeJAP.1.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Dark times come for Japan.
+		name = ipeJAP.1.a
+		custom_tooltip = ipeJAP.1.a.tooltip
+	}
+}
+
+# The Kanto Kubo (Ashikaga)
+country_event = {
+	id = ipeJAP.3
+	title = ipeJAP.3.t
+	desc = ipeJAP.3.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = CONQUEST_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+    }
+
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+		tag = ASK
+		has_reform = shogunate
+		UES = {
+			is_subject_of = ASK
+			owns = 4189
+			any_owned_province = {
+				NOT = {
+					is_core = KMK
+				}
+			}
+		}
+		is_year = 1449
+        NOT = {
+            is_year = 1467
+            exists = KMK
+        }
+	}
+
+    mean_time_to_happen = {
+        days = 180
+    }
+
+	option = { # We should allow Shigeuji to reclaim his heritage in Kanto.
+		name = ipeJAP.3.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeJAP.3.a.tooltip
+		tooltip = {
+			UES = {
+				release = KMK
+			}
+			if = {
+				limit = {
+					ASK = {
+						owns = 3325
+					}
+				}
+				3325 = {
+					cede_province = KMK
+				}
+			}
+			KMK = {
+				change_religion = shinto
+				every_owned_province = {
+					limit = {
+						is_core = ASK
+					}
+					remove_core = ASK
+				}
+				every_owned_province = {
+					limit = {
+						is_core = UES
+					}
+					remove_core = UES
+				}
+			}
+		}
+		hidden_effect = {
+			UES = {
+				country_event = {
+					id = ipeJAP.4
+				}
+			}
+		}
+        add_stability_or_adm_power = yes
+	}
+
+	option = { # There is too much bad blood between us and Shigeuji.
+		name = ipeJAP.3.b
+		ai_chance = {
+			factor = 0
+		}
+		add_stability = -3
+		random = {
+			chance = 50
+			capital_scope = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1
+					leader = "Shigeuji"
+					leader_dynasty = "Ashikaga"
+				}
+			}
+		}
+	}
+}
+
+# The Kanto Kubo (Uesugi)
+country_event = {
+	id = ipeJAP.4
+	title = ipeJAP.3.t
+	desc = ipeJAP.4.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = DIPLOMACY_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+    }
+
+    is_triggered_only = yes
+
+	immediate = {
+        hidden_effect = {
+			release = KMK
+			if = {
+				limit = {
+					ASK = {
+						owns = 3325
+					}
+				}
+				3325 = {
+					cede_province = KMK
+				}
+			}
+            KMK = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+                define_ruler = {
+                    name = "Shigeuji"
+                    dynasty = "Ashikaga"
+                    adm = 3
+                    dip = 5
+                    mil = 2
+					claim = 95
+                }
+				add_ruler_personality = malevolent_personality
+				set_country_flag = growing_uesugi_power
+            }
+            ASK = {
+                create_subject = {
+                    subject_type = kubo_vassal
+                    subject = KMK
+                }
+            }
+            KMK = {
+                change_government = monarchy
+                add_government_reform = shogunate
+                adopt_reform_progress = ROOT
+				every_owned_province = {
+					limit = {
+						is_core = UES
+					}
+					remove_core = UES
+				}
+				every_owned_province = {
+					limit = {
+						is_core = ASK
+					}
+					remove_core = ASK
+				}
+            }
+        }
+	}
+
+    option = { # Only time will tell what forgiveness might bring.
+        name = ipeJAP.4.a
+		KMK = {
+			add_opinion = {
+				who = UES
+				modifier = kanto_kubo_appointed
+			}
+		}
+		UES = {
+			add_opinion = {
+				who = KMK
+				modifier = kanto_kubo_appointed
+			}
+		}
+        create_alliance = KMK
+    }
+
+	option = { # Play as Kamakura.
+		name = ipeJAP.4.b
+		KMK = {
+			add_opinion = {
+				who = UES
+				modifier = kanto_kubo_appointed
+			}
+		}
+		UES = {
+			add_opinion = {
+				who = KMK
+				modifier = kanto_kubo_appointed
+			}
+		}
+        create_alliance = KMK
+		switch_tag = KMK
+	}
+}
+
+# The Growing Power of the Uesugi
+country_event = {
+	id = ipeJAP.5
+	title = ipeJAP.5.t
+	desc = ipeJAP.5.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = DIPLOMACY_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+    }
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = KMK
+		alliance_with = UES
+		is_neighbor_of = UES
+		is_subject_of = ASK
+		UES = {
+			num_of_cities = KMK
+			is_subject_of = ASK
+		}
+		had_country_flag = {
+			flag = growing_uesugi_power
+			days = 1825
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # It would be prudent of us to hold talks with the Uesugi.
+		name = ipeJAP.5.a
+		ai_chance = {
+			factor = 90
+		}
+		custom_tooltip = ipeJAP.5.a.tooltip
+		UES = {
+			country_event = {
+				id = ipeJAP.6
+				days = 30
+			}
+		}
+		add_dip_power = 50
+		clr_country_flag = growing_uesugi_power
+	}
+
+	option = {
+		name = ipeJAP.5.b
+		ai_chance = {
+			factor = 10
+		}
+		add_prestige = 5
+		clr_country_flag = growing_uesugi_power
+	}
+}
+
+# Diplomatic Talks with the Kanto Kubo
+country_event = {
+	id = ipeJAP.6
+	title = ipeJAP.6.t
+	desc = ipeJAP.6.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = DIPLOMACY_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+    }
+
+	is_triggered_only = yes
+
+	option = { # Let us have talks then.
+		name = ipeJAP.6.a
+		ai_chance = {
+			factor = 70
+		}
+		custom_tooltip = ipeJAP.6.a.tooltip
+		KMK = {
+			country_event = {
+				id = ipeJAP.7
+				days = 30
+			}
+		}
+		add_dip_power = 50
+	}
+
+	option = { # We have no time for trivialities.
+		name = ipeJAP.6.b
+		ai_chance = {
+			factor = 30
+		}
+		tooltip = {
+			KMK = {
+				add_dip_power = -50
+			}
+		}
+		KMK = {
+			country_event = {
+				id = ipeJAP.8
+				days = 30
+			}
+			add_opinion = {
+				who = UES
+				modifier = refused_to_hold_talks
+			}
+		}
+	}
+}
+
+# The Visit of the Uesugi
+country_event = {
+	id = ipeJAP.7
+	title = ipeJAP.7.t
+	desc = ipeJAP.7.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = DIPLOMACY_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+    }
+
+	is_triggered_only = yes
+
+	option = { # Welcome the Uesugi as friends.
+		name = ipeJAP.7.a
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				OR = {
+					ruler_has_personality = malevolent_personality
+					ruler_has_personality = cruel_personality
+				}
+			}
+			modifier = {
+				factor = 0
+				ruler_has_personality = babbling_buffoon_personality
+			}
+		}
+		add_dip_power = 50
+		tooltip = {
+			UES = {
+				add_dip_power = 50
+			}
+		}
+		add_opinion = {
+			who = UES
+			modifier = diplomatic_talks
+		}
+		UES = {
+			add_opinion = {
+				who = KMK
+				modifier = welcomed_us
+			}
+			country_event = {
+				id = ipeJAP.9
+			}
+		}
+	}
+
+	option = { # Insult their diplomats.
+		name = ipeJAP.7.b
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 0
+				OR = {
+					ruler_has_personality = malevolent_personality
+					ruler_has_personality = cruel_personality
+				}
+			}
+			modifier = {
+				factor = 100
+				ruler_has_personality = babbling_buffoon_personality
+			}
+		}
+		add_dip_power = 150
+		tooltip = {
+			UES = {
+				add_dip_power = -50
+			}
+		}
+		remove_opinion = {
+			who = UES
+			modifier = kanto_kubo_appointed
+		}
+		UES = {
+			remove_opinion = {
+				who = KMK
+				modifier = kanto_kubo_appointed
+			}
+			add_opinion = {
+				who = KMK
+				modifier = insulted_our_diplomats
+			}
+			country_event = {
+				id = ipeJAP.10
+			}
+		}
+	}
+
+	option = { # Kill them all.
+		name = ipeJAP.7.c
+		custom_tooltip = ipeJAP.7.c.tooltip
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 100
+				OR = {
+					ruler_has_personality = malevolent_personality
+					ruler_has_personality = cruel_personality
+				}
+			}
+		}
+		add_mil_power = 150
+		tooltip = {
+			UES = {
+				kill_ruler = yes
+				add_dip_power = -50
+			}
+		}
+		remove_opinion = {
+			who = UES
+			modifier = kanto_kubo_appointed
+		}
+		add_historical_rival = UES
+		UES = {
+			add_historical_rival = KMK
+			remove_opinion = {
+				who = KMK
+				modifier = kanto_kubo_appointed
+			}
+			add_opinion = {
+				who = KMK
+				modifier = murdered_our_leader
+			}
+			country_event = {
+				id = ipeJAP.11
+			}
+		}
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					OR = {
+						is_subject_of_type = daimyo_vassal
+						is_subject_of_type = kanrei_vassal
+					}
+				}
+				add_opinion = {
+					who = KMK
+					modifier = crimes_in_kanto
+				}
+			}
+		}
+	}
+}
+
+# The Uesugi Reject Talks!
+country_event = {
+	id = ipeJAP.8
+	title = ipeJAP.8.t
+	desc = ipeJAP.8.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It seems that we are indeed rivals.
+		name = ipeJAP.8.a
+		tooltip = {
+			add_opinion = {
+				who = UES
+				modifier = refused_to_hold_talks
+			}
+		}
+		add_dip_power = -50
+	}
+}
+
+# Tea with the Kanto Kubo
+country_event = {
+	id = ipeJAP.9
+	title = ipeJAP.9.t
+	desc = ipeJAP.9.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Their intentions are pure.
+		name = ipeJAP.9.a
+		add_dip_power = 100
+		tooltip = {
+			add_opinion = {
+				who = KMK
+				modifier = welcomed_us
+			}
+		}
+		if = {
+			limit = {
+				is_subject_of = ASK
+				KMK = {
+					is_subject_of = ASK
+				}
+				ASK = {
+					has_reform = shogunate
+				}
+			}
+			custom_tooltip = ipeJAP.9.a.tooltip
+			ASK = {
+				country_event = {
+					id = ipeJAP.12
+				}
+			}
+		}
+	}
+}
+
+# The Kanto Kubo Insults Us!
+country_event = {
+	id = ipeJAP.10
+	title = ipeJAP.10.t
+	desc = ipeJAP.10.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # How insolent!
+		name = ipeJAP.10.a
+		add_dip_power = -50
+		tooltip = {
+			remove_opinion = {
+				who = KMK
+				modifier = kanto_kubo_appointed
+			}
+			add_opinion = {
+				who = KMK
+				modifier = insulted_our_diplomats
+			}
+		}
+		if = {
+			limit = {
+				is_subject_of = ASK
+				KMK = {
+					is_subject_of = ASK
+				}
+				ASK = {
+					has_reform = shogunate
+				}
+			}
+			custom_tooltip = ipeJAP.10.a.tooltip
+			ASK = {
+				country_event = {
+					id = ipeJAP.13
+				}
+			}
+		}
+	}
+}
+
+# The Crimes in Kanto (Uesugi)
+country_event = {
+	id = ipeJAP.11
+	title = ipeJAP.11.t
+	desc = ipeJAP.11.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = BORDER_TENSION_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+    }
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = {
+		name = ipeJAP.11.a
+		ai_chance = {
+			factor = 95
+		}
+		kill_ruler = yes
+		add_dip_power = -50
+		tooltip = {
+			add_historical_rival = KMK
+			KMK = {
+				add_historical_rival = UES
+			}
+			remove_opinion = {
+				who = KMK
+				modifier = kanto_kubo_appointed
+			}
+			add_opinion = {
+				who = KMK
+				modifier = murdered_our_leader
+			}
+		}
+		declare_war_with_cb = {
+			who = KMK
+			casus_belli = cb_sengoku
+		}
+		KMK = {
+			every_owned_province = {
+				add_core = UES
+			}
+		}
+		if = {
+			limit = {
+				is_subject_of = ASK
+				KMK = {
+					is_subject_of = ASK
+				}
+				ASK = {
+					has_reform = shogunate
+				}
+			}
+			custom_tooltip = ipeJAP.11.a.tooltip
+			ASK = {
+				country_event = {
+					id = ipeJAP.14
+					days = 15
+				}
+			}
+		}
+		KMK = {
+			country_event = {
+				id = ipeJAP.16
+			}
+		}
+	}
+
+	option = {
+		name = ipeJAP.11.b
+		ai_chance = {
+			factor = 5
+		}
+		kill_ruler = yes
+		tooltip = {
+			add_historical_rival = KMK
+			KMK = {
+				add_historical_rival = UES
+			}
+		}
+		add_stability = -1
+		add_prestige = -50
+		add_legitimacy = -50
+		add_dip_power = -50
+		if = {
+			limit = {
+				is_subject_of = ASK
+				KMK = {
+					is_subject_of = ASK
+				}
+				ASK = {
+					has_reform = shogunate
+				}
+			}
+			ASK = {
+				country_event = {
+					id = ipeJAP.15
+					days = 15
+				}
+			}
+		}
+		KMK = {
+			country_event = {
+				id = ipeJAP.17
+			}
+		}
+	}
+}
+
+# Pleasantries in the Kanto
+country_event = {
+	id = ipeJAP.12
+	title = ipeJAP.12.t
+	desc = ipeJAP.12.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We view their friendship favorably.
+		name = ipeJAP.12.a
+		add_legitimacy = 10
+		add_opinion = {
+			who = KMK
+			modifier = kanto_pleasantries
+		}
+		add_opinion = {
+			who = UES
+			modifier = kanto_pleasantries
+		}
+	}
+}
+
+# Insults in the Kanto
+country_event = {
+	id = ipeJAP.13
+	title = ipeJAP.13.t
+	desc = ipeJAP.13.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # How unfortunate.
+		name = ipeJAP.13.a
+		add_legitimacy = -10
+		add_opinion = {
+			who = KMK
+			modifier = kanto_insults
+		}
+	}
+}
+
+# The War in Kanto
+country_event = {
+	id = ipeJAP.14
+	title = ipeJAP.14.t
+	desc = ipeJAP.14.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = BORDER_TENSION_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+    }
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Side with the Uesugi clan.
+		name = ipeJAP.14.a
+		ai_chance = {
+			factor = 60
+		}
+		add_stability = -1
+		add_legitimacy = -25
+		tooltip = {
+			UES = {
+				add_mil_power = 200
+				add_opinion = {
+					who = ASK
+					modifier = ues_supported_the_kanrei
+				}
+			}
+		}
+		UES = {
+			hidden_effect = {
+				country_event = {
+					id = ipeJAP.18
+					days = 15
+				}
+			}
+		}
+		KMK = {
+			hidden_effect = {
+				country_event = {
+					id = ipeJAP.18
+					days = 15
+				}
+			}
+			add_opinion = {
+				who = ASK
+				modifier = kmk_supported_the_kanrei
+			}
+		}
+		add_opinion = {
+			who = KMK
+			modifier = crimes_in_kanto
+		}
+	}
+
+	option = { # We cannot betray our kinsman.
+		name = ipeJAP.14.b
+		ai_chance = {
+			factor = 20
+		}
+		add_stability = -1
+		add_legitimacy = 25
+		every_subject_country = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = KMK
+						alliance_with = KMK
+					}
+				}
+			}
+			add_liberty_desire = 100
+		}
+		add_adm_power = 200
+		add_dip_power = 200
+		add_mil_power = 200
+		tooltip = {
+			KMK = {
+				add_mil_power = 200
+			}
+		}
+		KMK = {
+			hidden_effect = {
+				country_event = {
+					id = ipeJAP.19
+					days = 15
+				}
+			}
+			add_opinion = {
+				who = ASK
+				modifier = kmk_supported_the_kubo
+			}
+		}
+		UES = {
+			hidden_effect = {
+				country_event = {
+					id = ipeJAP.19
+					days = 15
+				}
+			}
+			add_opinion = {
+				who = ASK
+				modifier = ues_supported_the_kubo
+			}
+		}
+		add_opinion = {
+			who = UES
+			modifier = war_in_kanto
+		}
+	}
+
+	option = { # We should not pick sides.
+		name = ipeJAP.14.c
+		ai_chance = {
+			factor = 20
+		}
+		add_stability = -3
+		add_legitimacy = -50
+		every_subject_country = {
+			add_liberty_desire = 50
+		}
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_opinion = {
+			who = KMK
+			modifier = crimes_in_kanto
+		}
+		add_opinion = {
+			who = UES
+			modifier = war_in_kanto
+		}
+		KMK = {
+			hidden_effect = {
+				country_event = {
+					id = ipeJAP.20
+					days = 15
+				}
+			}
+			add_opinion = {
+				who = ASK
+				modifier = did_nothing
+			}
+		}
+		UES = {
+			hidden_effect = {
+				country_event = {
+					id = ipeJAP.20
+					days = 15
+				}
+			}
+			add_opinion = {
+				who = ASK
+				modifier = did_nothing
+			}
+		}
+	}
+}
+
+# The Crimes in Kanto (Ashikaga)
+country_event = {
+	id = ipeJAP.15
+	title = ipeJAP.15.t
+	desc = ipeJAP.15.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It is a tragedy.
+		name = ipeJAP.15.a
+		add_legitimacy = -25
+		every_subject_country = {
+			limit = {
+				NOT = {
+					OR = {
+						tag = KMK
+						alliance_with = KMK
+					}
+				}
+			}
+			add_liberty_desire = 50
+		}
+		add_opinion = {
+			who = KMK
+			modifier = crimes_in_kanto
+		}
+	}
+}
+
+# The War in Kanto (Kamakura)
+country_event = {
+	id = ipeJAP.16
+	title = ipeJAP.16.t
+	desc = ipeJAP.16.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = BORDER_TENSION_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+    }
+
+	is_triggered_only = yes
+
+	option = { # The Kanto kubo will be triumphant!
+		name = ipeJAP.16.a
+		tooltip = {
+			UES = {
+				declare_war_with_cb = {
+					who = KMK
+					casus_belli = cb_sengoku
+				}
+			}
+			every_owned_province = {
+				add_core = UES
+			}
+		}
+		if = {
+			limit = {
+				is_subject_of = ASK
+				UES = {
+					is_subject_of = ASK
+				}
+			}
+			custom_tooltip = ipeJAP.16.a.tooltip
+		}
+	}
+}
+
+# Tensions in Kanto
+country_event = {
+	id = ipeJAP.17
+	title = ipeJAP.17.t
+	desc = ipeJAP.17.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We are the ones who will rule Kanto.
+		name = ipeJAP.17.a
+		add_prestige = 10
+	}
+}
+
+# The Shogunate Backs the Kanto kanrei
+country_event = {
+	id = ipeJAP.18
+	title = ipeJAP.18.t
+	desc = ipeJAP.18.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeJAP.18.a
+		trigger = {
+			tag = UES
+		}
+		add_mil_power = 200
+		tooltip = {
+			add_opinion = {
+				who = ASK
+				modifier = ues_supported_the_kanrei
+			}
+		}
+	}
+
+	option = {
+		name = ipeJAP.18.b
+		trigger = {
+			tag = KMK
+		}
+		tooltip = {
+			add_opinion = {
+				who = ASK
+				modifier = kmk_supported_the_kanrei
+			}
+		}
+	}
+}
+
+# The Shogunate Backs the Kanto Kubo
+country_event = {
+	id = ipeJAP.19
+	title = ipeJAP.19.t
+	desc = ipeJAP.19.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We are a family, after all.
+		name = ipeJAP.19.a
+		trigger = {
+			tag = KMK
+		}
+		add_mil_power = 200
+		tooltip = {
+			add_opinion = {
+				who = ASK
+				modifier = kmk_supported_the_kubo
+			}
+		}
+	}
+
+	option = { # The Shogunate must fall!
+		name = ipeJAP.19.b
+		trigger = {
+			tag = UES
+		}
+		tooltip = {
+			add_opinion = {
+				who = ASK
+				modifier = ues_supported_the_kubo
+			}
+		}
+	}
+}
+
+# The Shogunate Turns Away
+country_event = {
+	id = ipeJAP.20
+	title = ipeJAP.20.t
+	desc = ipeJAP.20.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # How indolent.
+		name = ipeJAP.20.a
+		tooltip = {
+			add_opinion = {
+				who = ASK
+				modifier = did_nothing
+			}
+		}
+	}
+}
+
+# The Rise of the Later Hojo
+country_event = {
+	id = ipeJAP.21
+	title = ipeJAP.21.t
+	desc = ipeJAP.21.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes #No resurrections 
+
+	major = yes
+
+	trigger = {
+		is_year = 1470
+		NOT = { is_year = 1520 }
+		owns = 3304 #Izu
+		3304 = {
+			is_core = HJO
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		any_owned_province = {
+			NOT = {
+				is_core = HJO
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = HJO
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = HJO
+            HJO = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Soun"
+					dynasty = "Hojo"
+					adm = 5
+					dip = 4
+					mil = 5
+				}
+				add_ruler_personality = bold_fighter_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = HJO
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = HJO
+					}
+				}
+			}
+            HJO = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+			3108 = {
+				add_core = HJO # Odawara
+			}
+		}
+	}
+	
+	option = { # We cannot stop the ascent of the Hojo.
+		name = ipeJAP.21.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = HJO
+			}
+			HJO = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = HJO
+			}
+			HJO = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		HJO = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these imposters.
+		name = ipeJAP.21.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = HJO
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Hojo.
+		name = ipeJAP.21.c
+		ai_chance = {
+			factor = 0
+		}
+		HJO = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = HJO
+	}
+}
+
+# The Rise of the Oda (Release)
+country_event = {
+	id = ipeJAP.22
+	title = ipeJAP.22.t
+	desc = ipeJAP.22.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_year = 1500
+		NOT = { is_year = 1550 }
+		owns = 1030 #Owari
+		1030 = {
+			is_core = ODA
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = ODA
+			has_global_flag = oda_coup
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		set_global_flag = oda_released
+		hidden_effect = {
+			release = ODA
+            ODA = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Nobuhide"
+					dynasty = "Oda"
+					adm = 4
+					dip = 3
+					mil = 4
+					claim = 80
+				}
+				add_ruler_personality = bold_fighter_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = ODA
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = ODA
+					}
+				}
+			}
+            ODA = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # We cannot stop the ascent of the Oda.
+		name = ipeJAP.22.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = ODA
+			}
+			ODA = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = ODA
+			}
+			ODA = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		ODA = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = ODA
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Oda.
+		name = ipeJAP.22.c
+		ai_chance = {
+			factor = 0
+		}
+		ODA = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = ODA
+	}
+}
+
+# The Rise of the Oda (Coup)
+country_event = {
+	id = ipeJAP.23
+	title = ipeJAP.22.t
+	desc = ipeJAP.23.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_year = 1500
+		NOT = { is_year = 1550 }
+		owns = 1030 #Owari
+		1030 = {
+			is_core = ODA
+			is_capital_of = ROOT
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = ODA
+			has_global_flag = oda_released
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+	}
+
+	immediate = {
+		set_global_flag = oda_coup
+	}
+
+	option = {
+		name = ipeJAP.22.a # We cannot stop the ascent of the Oda.
+		change_tag = ODA
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		kill_ruler = yes
+		define_ruler = {
+			name = "Nobuhide"
+			dynasty = "Oda"
+			claim = 80
+			adm = 4
+			dip = 3
+			mil = 4
+		}
+		hidden_effect = {
+			add_ruler_personality = bold_fighter_personality
+		}
+		if = {
+			limit = {
+				has_custom_ideas = no
+			}
+			country_event = {
+				id = ideagroups.1
+			} #Swap Ideas
+		}
+	}
+
+	option = {
+		name = ipeJAP.22.b # Crush these rebels!
+		1030 = {
+			spawn_rebels = {
+				size = 1
+				leader = "Nobuhide Oda"
+				type = nationalist_rebels
+				friend = ODA
+			}
+		}
+	}
+}
+
+# The Rise of the Asakura
+country_event = {
+	id = ipeJAP.24
+	title = ipeJAP.24.t
+	desc = ipeJAP.24.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_year = 1450
+		NOT = { is_year = 1500 }
+		owns = 3109 #Ichijodani
+		3109 = {
+			is_core = ASA
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		any_owned_province = {
+			NOT = {
+				is_core = ASA
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = ASA
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = ASA
+			if = {
+				limit = {
+					owns = 1023
+					1023 = {
+						is_core = ASA
+					}
+				}
+				1023 = {
+					cede_province = ASA
+				}
+			}
+			3109 = {
+				add_building = fort_15th
+			}
+            ASA = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                    }
+                }
+				if = {
+					limit = {
+						ASA = {
+							owns = 1023
+						}
+					}
+					1023 = {
+						build_to_forcelimit = {
+							light_ship = 0.5
+							galley = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Takakage" 
+					dynasty = "Asakura"
+					adm = 4
+					dip = 4
+					mil = 5
+					claim = 80
+				}
+				add_ruler_personality = free_thinker_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = ASA
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = ASA
+					}
+				}
+			}
+            ASA = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # We cannot stop the ascent of the Asakura.
+		name = ipeJAP.24.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = ASA
+			}
+			ASA = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = ASA
+			}
+			ASA = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		ASA = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = ASA
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Asakura.
+		name = ipeJAP.24.c
+		ai_chance = {
+			factor = 0
+		}
+		ASA = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = ASA
+	}
+}
+
+# The Rise of the Chosokabe
+country_event = {
+	id = ipeJAP.25
+	title = ipeJAP.25.t
+	desc = ipeJAP.25.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_year = 1550
+		NOT = { is_year = 1600 }
+		owns = 1819 #Tosa
+		1819 = {
+			is_core = CSK
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = CSK
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = CSK
+            CSK = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Motochika"
+					dynasty = "Chosokabe"
+					adm = 4
+					dip = 4
+					mil = 5
+					claim = 80
+					religion = shinto
+				}
+				add_ruler_personality = strict_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = CSK
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = CSK
+					}
+				}
+			}
+            CSK = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # We cannot stop the ascent of the Chosokabe.
+		name = ipeJAP.25.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = CSK
+			}
+			CSK = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = CSK
+			}
+			CSK = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		CSK = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = CSK
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Chosokabe.
+		name = ipeJAP.25.c
+		ai_chance = {
+			factor = 0
+		}
+		CSK = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = CSK
+	}
+}
+
+# The Rise of the Mori
+country_event = {
+	id = ipeJAP.26
+	title = ipeJAP.26.t
+	desc = ipeJAP.26.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_year = 1515
+		NOT = { is_year = 1565 }
+		owns = 3112 #Yoshida
+		3112 = {
+			is_core = MRI
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = MRI
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = MRI
+            MRI = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                    }
+                }
+				define_ruler = {
+					name = "Motonari" 
+					dynasty = "Mori"
+					adm = 5
+					dip = 6
+					mil = 4
+					claim = 80
+				}
+				add_ruler_personality = inspiring_leader_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = MRI
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = MRI
+					}
+				}
+			}
+            MRI = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # We cannot stop the ascent of the Mori.
+		name = ipeJAP.26.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = MRI
+			}
+			MRI = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = MRI
+			}
+			MRI = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		MRI = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = MRI
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Mori.
+		name = ipeJAP.26.c
+		ai_chance = {
+			factor = 0
+		}
+		MRI = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = MRI
+	}
+}
+
+# The Succession of Hosokawa Katsumoto
+country_event = {
+	id = ipeJAP.27
+	title = ipeJAP.27.t
+	desc = ipeJAP.27.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = YMN
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # It is a curious accord.
+		name = ipeJAP.27.a
+		custom_tooltip = ipeJAP.27.a.tooltip
+		hidden_effect = {
+			HSK = {
+				country_event = {
+					id = ipeJAP.33
+				}
+			}
+		}
+	}
+}
+
+# The Heir of Hosokawa Katsumoto
+country_event = {
+	id = ipeJAP.28
+	title = ipeJAP.28.t
+	desc = ipeJAP.28.d
+	picture = NEW_HEIR_eventPicture
+
+	major = yes
+	
+	trigger = {
+		tag = HSK
+		has_country_flag = hosokawa_succession
+		has_ruler_flag = yamana_heir
+		has_heir = yes
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	immediate = {
+		clr_country_flag = hosokawa_succession
+	}
+
+	option = { # Renounce the youngest son of Yamana Mochitoyo as heir.
+		name = ipeJAP.28.a
+		ai_chance = {
+			factor = 95
+			modifier = {
+				factor = 100
+				NOT = {
+					alliance_with = YMN
+				}
+			}
+		}
+		custom_tooltip = ipeJAP.28.a.tooltip
+		YMN = {
+			add_opinion = {
+				who = HSK
+				modifier = renounced_yamana_heir
+			}
+			country_event = {
+				id = ipeJAP.34
+			}
+		}
+		clr_ruler_flag = yamana_heir
+	}
+
+	option = { # We must abide by our agreements with the Yamana.
+		name = ipeJAP.28.b
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 0
+				NOT = {
+					alliance_with = YMN
+				}
+			}
+		}
+		custom_tooltip = ipeJAP.28.b.tooltip
+		remove_heir = {}
+		set_country_flag = hosokawa_succession
+	}
+}
+
+# The Death of Hosokawa Katsumoto (Hosokawa)
+country_event = {
+	id = ipeJAP.29
+	title = ipeJAP.29.t
+	desc = ipeJAP.29.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		clr_country_flag = hosokawa_succession
+		if = {
+			limit = {
+				is_subject_of_type = kanrei_vassal
+			}
+			YMN = {
+				set_country_flag = hosokawa_kanrei_successor
+			}
+		}
+	}
+
+	option = { # We must honor the claims of the Yamana.
+		name = ipeJAP.29.a
+		trigger = {
+			ai = yes
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = {
+					alliance_with = YMN
+				}
+			}
+		}
+		YMN = {
+			inherit = ROOT
+			country_event = {
+				id = ipeJAP.30
+			}
+		}
+	}
+
+	option = { # The Hosokawa heritage must be protected!
+		name = ipeJAP.29.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				NOT = {
+					alliance_with = YMN
+				}
+			}
+		}
+		custom_tooltip = ipeJAP.29.b.tooltip
+		YMN = {
+			country_event = {
+				id = ipeJAP.31
+			}
+			clr_country_flag = hosokawa_kanrei_successor
+		}
+	}
+}
+
+# The Death of Hosokawa Katsumoto (Yamana Inherits Hosokawa)
+country_event = {
+	id = ipeJAP.30
+	title = ipeJAP.29.t
+	desc = ipeJAP.30.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We will accomplish great things together.
+		name = ipeJAP.30.a
+		tooltip = {
+			inherit = HSK
+		}
+		if = {
+			limit = {
+				overlord = {
+					has_reform = shogunate
+				}
+				is_subject_of_type = daimyo_vassal
+				has_country_flag = hosokawa_kanrei_successor
+			}
+			overlord = {
+				create_subject = {
+					subject_type = kanrei_vassal
+					subject = YMN
+				}
+			}
+		}
+		add_prestige = 10
+		clr_country_flag = hosokawa_kanrei_successor
+	}
+}
+
+# The Death of Hosokawa Katsumoto (Yamana Wars Hosokawa)
+country_event = {
+	id = ipeJAP.31
+	title = ipeJAP.29.t
+	desc = ipeJAP.31.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We must enforce our rightful claim!
+		name = ipeJAP.31.a
+		HSK = {
+			every_owned_province = {
+				limit = {
+					is_core = HSK
+				}
+				add_core = YMN
+			}
+			add_opinion = {
+				who = YMN
+				modifier = enforced_yamana_claim
+			}
+		}
+		declare_war_with_cb = {
+			who = HSK
+			casus_belli = cb_sengoku
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					overlord = {
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					country_event = {
+						id = ipeJAP.32
+					}
+				}
+			}
+		}
+	}
+
+	option = { # The Hosokawa lands do not belong to us.
+		name = ipeJAP.31.b
+		add_prestige = -10
+	}
+}
+
+# The Death of Hosokawa Katsumoto (Ashikaga)
+country_event = {
+	id = ipeJAP.32
+	title = ipeJAP.29.t
+	desc = ipeJAP.32.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Blood spilt senselessly.
+		name = ipeJAP.32.a
+		add_legitimacy = -25
+	}
+}
+
+# The Succession of Hosokawa Katsumoto
+country_event = {
+	id = ipeJAP.33
+	title = ipeJAP.27.t
+	desc = ipeJAP.27.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It is a curious accord.
+		name = ipeJAP.27.a
+		custom_tooltip = ipeJAP.27.a.tooltip
+	}
+}
+
+# Hosokawa Katsumoto Rejects a Yamana Heir!
+country_event = {
+	id = ipeJAP.34
+	title = ipeJAP.34.t
+	desc = ipeJAP.34.d
+	picture = NEW_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Katsumoto has sown seeds of great distrust.
+		name = ipeJAP.34.a
+		custom_tooltip = ipeJAP.34.a.tooltip
+		tooltip = {
+			add_opinion = {
+				who = HSK
+				modifier = renounced_yamana_heir
+			}
+		}
+	}
+}
+
+# The Rise of the Matsudaira
+country_event = {
+	id = ipeJAP.35
+	title = ipeJAP.35.t
+	desc = ipeJAP.35.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes #No resurrections 
+
+	major = yes
+
+	trigger = {
+		is_year = 1490
+		NOT = { is_year = 1540 }
+		owns = 4360 #Mikawa
+		4360 = {
+			is_core = MDR
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = MDR
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = MDR
+            MDR = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Nagachika"
+					dynasty = "Matsudaira"
+					adm = 4
+					dip = 4
+					mil = 4
+					claim = 80
+				}
+				add_ruler_personality = bold_fighter_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = MDR
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = MDR
+					}
+				}
+			}
+            MDR = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+	
+	option = { # We cannot stop the ascent of the Matsudaira.
+		name = ipeJAP.35.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = MDR
+			}
+			MDR = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = MDR
+			}
+			MDR = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		MDR = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = MDR
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Matsudaira.
+		name = ipeJAP.35.c
+		ai_chance = {
+			factor = 0
+		}
+		MDR = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = MDR
+	}	
+}
+
+# The Birth of Tokugawa Ieyasu
+country_event = {
+	id = ipeJAP.36
+	title = ipeJAP.36.t
+	desc = ipeJAP.36.d
+	picture = NEW_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		is_year = 1540
+		NOT = {
+			is_year = 1550
+		}
+		tag = MDR
+		has_heir = no
+		has_government_attribute = heir
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # It is a good omen!
+		name = ipeJAP.36.a
+		define_heir = {
+			name = "Ieyasu"
+			dynasty = "Tokugawa"
+			claim = 90
+			adm = 6
+			dip = 5
+			mil = 5
+		}
+		hidden_effect = {
+			add_heir_personality = careful_personality
+		}
+		set_country_flag = rise_of_the_tokugawa
+	}
+}
+
+# The Beginnings of the Tokugawa
+country_event = {
+	id = ipeJAP.37
+	title = ipeJAP.37.t
+	desc = ipeJAP.37.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MDR
+		dynasty = "Tokugawa"
+		has_country_flag = rise_of_the_tokugawa
+		owns = 4360
+		legitimacy = 100
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # We will bear this name honorably!
+		name = ipeJAP.37.a
+		change_tag = TKG
+		add_prestige = 25
+		clr_country_flag = rise_of_the_tokugawa
+	}
+}
+
+# The Akamatsu Remnants (Hosokawa)
+country_event = {
+	id = ipeJAP.38
+	title = ipeJAP.38.t
+	desc = ipeJAP.38.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = HSK
+		YMN = {
+			exists = yes
+			any_owned_province = {
+				is_core = AKM
+			}
+		}
+		NOT = {
+			exists = AKM
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+	}
+
+	option = { # We should support the restoration of the Akamatsu.
+		name = ipeJAP.38.a
+		custom_tooltip = ipeJAP.38.a.tooltip
+		YMN = {
+			every_owned_province = {
+				limit = {
+					is_core = AKM
+				}
+				add_core = HSK
+			}
+			add_opinion = {
+				who = HSK
+				modifier = supporting_the_akamatsu
+			}
+			add_trust = {
+				who = HSK
+				value = -20
+			}
+			country_event = {
+				id = ipeJAP.39
+			}
+		}
+		add_yearly_manpower = 5
+		set_country_flag = akamatsu_restoration
+	}
+
+	option = { # We will not back traitors.
+		name = ipeJAP.38.b
+		add_prestige = -10
+	}
+}
+
+# The Akamatsu Remnants (Yamana)
+country_event = {
+	id = ipeJAP.39
+	title = ipeJAP.38.t
+	desc = ipeJAP.39.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Hosokawa will pay for their treachery...
+		name = ipeJAP.39.a
+		tooltip = {
+			add_opinion = {
+				who = HSK
+				modifier = supporting_the_akamatsu
+			}
+			add_trust = {
+				who = HSK
+				value = -20
+			}
+		}
+	}
+}
+
+# The Restoration of the Akamatsu
+country_event = {
+	id = ipeJAP.40
+	title = ipeJAP.40.t
+	desc = ipeJAP.40.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = HSK
+		any_owned_province = {
+			is_core = AKM
+		}
+		any_owned_province = {
+			NOT = {
+				is_core = AKM
+			}
+		}
+		YMN = {
+			all_owned_province = {
+				NOT = {
+					is_core = AKM
+				}
+			}
+		}
+		has_country_flag = akamatsu_restoration
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		clr_country_flag = akamatsu_restoration
+	}
+
+	option = { # Authorize the restoration of the Akamatsu.
+		name = ipeJAP.40.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0
+				is_rival = AKM
+			}
+		}
+		if = {
+			limit = {
+				exists = AKM
+			}
+			every_owned_province = {
+				limit = {
+					is_core = AKM
+				}
+				cede_province = AKM
+				remove_core = HSK
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = AKM
+				}
+			}
+			release = AKM
+			AKM = {
+				every_owned_province = {
+					remove_core = HSK
+				}
+			}
+			hidden_effect = {
+				AKM = {
+					change_religion = shinto
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 1
+							light_ship = 0.5
+							galley = 0.5
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_country = {
+							overlord_of = ROOT
+							has_reform = shogunate
+						}
+					}
+					overlord = {
+						create_subject = {
+							subject_type = daimyo_vassal
+							subject = AKM
+						}
+					}
+				}
+				if = {
+					limit = {
+						any_country = {
+							overlord_of = ROOT
+							has_reform = indep_daimyo
+						}
+					}
+					overlord = {
+						create_subject = {
+							subject_type = daimyo_vassal
+							subject = AKM
+						}
+					}
+				}
+				AKM = {
+					change_government = monarchy
+					add_government_reform = daimyo
+					adopt_reform_progress = ROOT
+				}
+			}
+		}
+		AKM = {
+			add_opinion = {
+				who = HSK
+				modifier = restored_the_akamatsu
+			}
+			add_historical_friend = HSK
+			add_trust = {
+				who = HSK
+				value = 10
+			}
+		}
+		add_historical_friend = AKM
+		if = {
+			limit = {
+				NOT = {
+					alliance_with = AKM
+					has_reform = shogunate
+					any_subject_country = {
+						is_subject_of_type = puppet_shogunate
+					}
+				}
+				OR = {
+					AND = {
+						AKM = {
+							OR = {
+								is_subject = no
+								is_subject_of_type = tributary_state
+							}
+						}
+						HSK = {
+							OR = {
+								is_subject = no
+								is_subject_of_type = tributary_state
+							}
+						}
+					}
+					AND = {
+						overlord = {
+							overlord_of = AKM
+							overlord_of = HSK
+						}
+						AKM = {
+							OR = {
+								is_subject_of_type = daimyo_vassal
+								is_subject_of_type = kanrei_vassal
+							}
+						}
+						HSK = {
+							OR = {
+								is_subject_of_type = daimyo_vassal
+								is_subject_of_type = kanrei_vassal
+							}
+						}
+					}
+				}
+			}
+			create_alliance = AKM
+		}
+		if = {
+			limit = {
+				OR = {
+					has_reform = shogunate
+					any_subject_country = {
+						is_subject_of_type = puppet_shogunate
+					}
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = AKM
+			}
+			AKM = {
+				add_opinion = {
+					who = HSK
+					modifier = released_vassal
+				}
+			}
+		}
+	}
+
+	option = { # It is not a crime to betray traitors.
+		name = ipeJAP.40.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 100
+				is_rival = AKM
+			}
+		}
+		every_owned_province = {
+			limit = {
+				is_core = AKM
+			}
+			random = {
+				chance = 50
+				spawn_rebels = {
+					type = nationalist_rebels
+					size = 1
+					leader_dynasty = "Akamatsu"
+					friend = AKM
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = AKM
+			}
+			AKM = {
+				add_opinion = {
+					who = HSK
+					modifier = denied_akamatsu_claim
+				}
+				add_trust = {
+					who = HSK
+					value = -20
+				}
+				country_event = {
+					id = ipeJAP.41
+				}
+			}
+		}
+	}
+}
+
+# Hosokawa Rejects the Restoration of the Akamatsu!
+country_event = {
+	id = ipeJAP.41
+	title = ipeJAP.41.t
+	desc = ipeJAP.41.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will pay a heavy price for this.
+		name = ipeJAP.41.a
+		tooltip = {
+			add_opinion = {
+				who = HSK
+				modifier = denied_akamatsu_claim
+			}
+			add_trust = {
+				who = HSK
+				value = -20
+			}
+		}
+	}
+}
+
+# The Rise of the Amago
+country_event = {
+	id = ipeJAP.42
+	title = ipeJAP.42.t
+	desc = ipeJAP.42.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes #No resurrections 
+
+	major = yes
+
+	trigger = {
+		is_year = 1470
+		NOT = { is_year = 1520 }
+		owns = 1018 #Izumo
+		1018 = {
+			is_core = AMA
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		any_owned_province = {
+			NOT = {
+				is_core = AMA
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = AMA
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = AMA
+			if = {
+				limit = {
+					owns = 3113
+					3113 = {
+						is_core = AMA
+					}
+				}
+				3113 = {
+					cede_province = AMA
+				}
+			}
+            AMA = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Tsunehisa"
+					dynasty = "Amago"
+					adm = 4
+					dip = 5
+					mil = 4
+				}
+				add_ruler_personality = secretive_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = AMA
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = AMA
+					}
+				}
+			}
+            AMA = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+	
+	option = { # We cannot stop the ascent of the Amago.
+		name = ipeJAP.42.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = AMA
+			}
+			AMA = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_country = {
+					is_subject_of = ROOT
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = AMA
+			}
+			AMA = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		AMA = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = AMA
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Amago.
+		name = ipeJAP.42.c
+		ai_chance = {
+			factor = 0
+		}
+		AMA = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = AMA
+	}
+}
+
+# The Loyal Maeda
+country_event = {
+	id = ipeJAP.43
+	title = ipeJAP.43.t
+	desc = ipeJAP.43.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes #No resurrections 
+
+	major = yes
+
+	trigger = {
+		tag = ODA
+		owns = 3318 #Noto
+		3318 = {
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		1837 = {
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		3307 = {
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = MAE
+		}
+		has_leader = "Toshiie Maeda"
+		had_country_flag = {
+			flag = rise_of_maeda
+			days = 1825
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # He should be handsomely rewarded for his services.
+		name = ipeJAP.43.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 7
+				}
+			}
+		}
+		3318 = {
+			add_core = MAE
+		}
+		1837 = {
+			add_core = MAE
+		}
+		3307 = {
+			add_core = MAE
+		}
+		release = MAE
+		hidden_effect = {
+			kill_leader = {
+				type = "Toshiie Maeda"
+			}
+            MAE = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Toshiie"
+					dynasty = "Maeda"
+					adm = 5
+					dip = 5
+					mil = 4
+				}
+				add_ruler_personality = strict_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = MAE
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = MAE
+					}
+				}
+			}
+            MAE = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+				every_owned_province = {
+					limit = {
+						is_core = ROOT
+					}
+					remove_core = ROOT
+				}
+            }
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = MAE
+			}
+			MAE = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = MAE
+			}
+			MAE = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		add_historical_friend = MAE
+		MAE = {
+			add_historical_friend = ODA
+		}
+		if = {
+			limit = {
+				MAE = {
+					NOT = {
+						is_subject_of = ODA
+					}
+				}
+			}
+			create_alliance = MAE
+		}
+	}
+
+	option = { # The Oda lands should remain united.
+		name = ipeJAP.43.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 7
+				}
+			}
+		}
+		add_legitimacy = -10
+	}
+}
+
+# Maeda Toshiie
+country_event = {
+	id = ipeJAP.44
+	title = ipeJAP.44.t
+	desc = ipeJAP.44.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ODA
+		has_ruler_flag = nobunagas_ambition
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Give him command of the armies!
+		name = ipeJAP.44.a
+		ai_chance = {
+			factor = 90
+		}
+		define_general = {
+			name = "Toshiie Maeda"
+			shock = 4
+			fire = 4
+			manuever = 4
+			siege = 3
+		}
+		set_country_flag = rise_of_maeda
+	}
+
+	option = { # I am sure we can find capable leaders elsewhere.
+		name = ipeJAP.44.b
+		ai_chance = {
+			factor = 10
+		}
+		add_army_tradition = 10
+	}
+}
+
+# An Oda Heir
+country_event = {
+	id = ipeJAP.45
+	title = ipeJAP.45.t
+	desc = ipeJAP.45.d
+	picture = NEW_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ODA
+		capital = 1030
+		NOT = {
+			has_reform = shogunate
+		}
+		is_year = 1510
+		NOT = {
+			is_year = 1560
+		}
+		has_heir = no
+		has_government_attribute = heir
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.1
+			is_year = 1550
+		}
+	}
+
+	option = { # It is a good omen.
+		name = ipeJAP.45.a
+		define_heir = {
+			name = "Nobunaga"
+			dynasty = "Oda"
+			adm = 5
+			dip = 5
+			mil = 6
+		}
+		hidden_effect = {
+			add_heir_personality = free_thinker_personality
+		}
+		set_heir_flag = nobunagas_ambition
+	}
+}
+
+# Nobunaga's Ambition
+country_event = {
+	id = ipeJAP.46
+	title = ipeJAP.46.t
+	desc = ipeJAP.46.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ODA
+		has_ruler_flag = nobunagas_ambition
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Tenka Fubu.
+		name = ipeJAP.46.a
+		ai_chance = {
+			factor = 95
+		}
+		add_stability = -1
+		capital_scope = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Nobuyuki"
+				leader_dynasty = "Oda"
+			}
+		}
+	}
+
+	option = { # Nobunaga is unfit to rule!
+		name = ipeJAP.46.b
+		ai_chance = {
+			factor = 5
+		}
+		define_heir = {
+			name = "Nobuyuki"
+			dynasty = "Oda"
+			max_random_adm = 3
+			max_random_dip = 3
+			max_random_mil = 3
+			claim = 80
+		}
+		kill_ruler = yes
+	}
+}
+
+# Toyotomi Hideyoshi
+country_event = {
+	id = ipeJAP.47
+	title = ipeJAP.47.t
+	desc = ipeJAP.47.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ODA
+		has_ruler_flag = nobunagas_ambition
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { #We have great need of such generals.
+		name = ipeJAP.47.a
+		define_general = {
+			name = "Hideyoshi Toyotomi"
+			shock = 4
+			fire = 4
+			manuever = 6
+			siege = 6
+		}
+	}
+
+	option = {
+		name = ipeJAP.44.b
+		add_army_tradition = 10
+	}
+}
+
+# The Incident at Honno-ji
+country_event = {
+	id = ipeJAP.48
+	title = ipeJAP.48.t
+	desc = ipeJAP.48.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = ODA
+		had_ruler_flag = {
+			flag = nobunagas_ambition
+			days = 14600
+		}
+		owns = 1020
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # We must entrust Hideyoshi with avenging Nobunaga.
+		name = ipeJAP.48.a
+		trigger = {
+			has_leader = "Hideyoshi Toyotomi"
+		}
+		kill_ruler = yes
+		define_ruler = {
+			name = "Hideyoshi"
+			dynasty = "Toyotomi"
+			adm = 5
+			dip = 6
+			mil = 5
+			claim = 30
+			attach_leader = "Hideyoshi Toyotomi"
+		}
+		hidden_effect = {
+			add_ruler_personality = charismatic_negotiator_personality
+		}
+		1020 = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Mitsuhide"
+				leader_dynasty = "Akechi"
+			}
+		}
+		set_ruler_flag = toyotomi_takeover
+	}
+
+	option = { # The Maeda will come to our aid.
+		name = ipeJAP.48.b
+		trigger = {
+			has_leader = "Toshiie Maeda"
+		}
+		kill_ruler = yes
+		define_ruler = {
+			name = "Toshiie"
+			dynasty = "Maeda"
+			adm = 5
+			dip = 5
+			mil = 4
+			claim = 30
+			attach_leader = "Toshiie Maeda"
+		}
+		hidden_effect = {
+			add_ruler_personality = strict_personality
+		}
+		1020 = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Mitsuhide"
+				leader_dynasty = "Akechi"
+			}
+		}
+		set_ruler_flag = maeda_takeover
+	}
+
+	option = { # We can call upon the honorable Ikeda.
+		name = ipeJAP.48.c
+		trigger = {
+			has_leader = "Tsuneoki Ikeda"
+		}
+		kill_ruler = yes
+		define_ruler = {
+			name = "Tsuneoki"
+			dynasty = "Ikeda"
+			adm = 5
+			dip = 5
+			mil = 6
+			claim = 30
+			attach_leader = "Tsuneoki Ikeda"
+		}
+		hidden_effect = {
+			add_ruler_personality = inspiring_leader_personality
+		}
+		1020 = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Mitsuhide"
+				leader_dynasty = "Akechi"
+			}
+		}
+		set_ruler_flag = ikeda_takeover
+	}
+
+	option = { # Nobunaga must be avenged!
+		name = ipeJAP.48.e
+		trigger = {
+			NOT = {
+				OR = {
+					has_leader = "Hideyoshi Toyotomi"
+					has_leader = "Toshiie Maeda"
+					has_leader = "Tsuneoki Ikeda"
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		kill_ruler = yes
+		1020 = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Mitsuhide"
+				leader_dynasty = "Akechi"
+			}
+		}
+	}
+}
+
+# The Fall of the Oda
+country_event = {
+	id = ipeJAP.49
+	title = ipeJAP.49.t
+	desc = ipeJAP.49.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = ODA
+		OR = {
+			had_ruler_flag = {
+				flag = toyotomi_takeover
+				days = 365
+			}
+			had_ruler_flag = {
+				flag = maeda_takeover
+				days = 365
+			}
+			had_ruler_flag = {
+				flag = ikeda_takeover
+				days = 365
+			}
+		}
+		NOT = {
+			has_spawned_rebels = pretender_rebels
+		}
+	}
+
+	option = { # Nobunaga's ambition is in Toyotomi's hands!
+		name = ipeJAP.49.a
+		trigger = {
+			has_ruler_flag = toyotomi_takeover
+		}
+		add_stability = -1
+		add_legitimacy = 50
+		change_tag = TOY
+		capital_scope = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Nobukatsu"
+				leader_dynasty = "Oda"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					is_capital_of = ROOT
+				}
+			}
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Katsuie"
+				leader_dynasty = "Shibata"
+			}
+		}
+	}
+
+	option = { # Nobunaga's ambition is in Maeda hands!
+		name = ipeJAP.49.b
+		trigger = {
+			has_ruler_flag = maeda_takeover
+		}
+		add_stability = -1
+		add_legitimacy = 50
+		change_tag = MAE
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Nobukatsu"
+				leader_dynasty = "Oda"
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Katsuie"
+				leader_dynasty = "Shibata"
+			}
+		}
+	}
+
+	option = { # Nobunaga's ambition is in Ikeda hands!
+		name = ipeJAP.49.c
+		trigger = {
+			has_ruler_flag = ikeda_takeover
+		}
+		add_stability = -1
+		add_legitimacy = 50
+		change_tag = IKE
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Nobukatsu"
+				leader_dynasty = "Oda"
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Katsuie"
+				leader_dynasty = "Shibata"
+			}
+		}
+	}
+
+	option = { # Nobunaga's ambitions must remain with the family he came from.
+		name = ipeJAP.49.e
+		define_heir = {
+			dynasty = "Oda"
+			max_random_adm = 3
+			max_random_dip = 3
+			max_random_mil = 3
+			claim = 80
+		}
+		kill_ruler = yes
+	}
+}
+
+# Ikeda Tsuneoki
+country_event = {
+	id = ipeJAP.50
+	title = ipeJAP.50.t
+	desc = ipeJAP.50.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ODA
+		has_ruler_flag = nobunagas_ambition
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Give him command of the armies!
+		name = ipeJAP.44.a
+		ai_chance = {
+			factor = 90
+		}
+		define_general = {
+			name = "Tsuneoki Ikeda"
+			shock = 4
+			fire = 4
+			manuever = 4
+			siege = 3
+		}
+		set_country_flag = rise_of_ikeda
+	}
+
+	option = { # I am sure we can find capable leaders elsewhere.
+		name = ipeJAP.44.b
+		ai_chance = {
+			factor = 10
+		}
+		add_army_tradition = 10
+	}
+}
+
+# The Loyal Ikeda
+country_event = {
+	id = ipeJAP.51
+	title = ipeJAP.51.t
+	desc = ipeJAP.51.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes #No resurrections 
+
+	major = yes
+
+	trigger = {
+		tag = ODA
+		owns = 1835 #Mino
+		1835 = {
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = IKE
+		}
+		has_leader = "Tsuneoki Ikeda"
+		had_country_flag = {
+			flag = rise_of_ikeda
+			days = 1825
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # He should be handsomely rewarded for his services.
+		name = ipeJAP.43.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		1835 = {
+			add_core = IKE
+		}
+		release = IKE
+		hidden_effect = {
+			kill_leader = {
+				type = "Tsuneoki Ikeda"
+			}
+            IKE = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Tsuneoki"
+					dynasty = "Ikeda"
+					adm = 5
+					dip = 5
+					mil = 6
+				}
+				add_ruler_personality = inspiring_leader_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = IKE
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = IKE
+					}
+				}
+			}
+            IKE = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+				every_owned_province = {
+					limit = {
+						is_core = ROOT
+					}
+					remove_core = ROOT
+				}
+            }
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = IKE
+			}
+			IKE = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = IKE
+			}
+			IKE = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		add_historical_friend = IKE
+		IKE = {
+			add_historical_friend = ODA
+		}
+		if = {
+			limit = {
+				IKE = {
+					NOT = {
+						is_subject_of = ODA
+					}
+				}
+			}
+			create_alliance = IKE
+		}
+	}
+
+	option = { # The Oda lands should remain united.
+		name = ipeJAP.43.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		add_legitimacy = -10
+	}
+}
+
+# The Ashikaga Succession
+country_event = {
+	id = ipeJAP.52
+	title = ipeJAP.52.t
+	desc = ipeJAP.52.d
+	picture = NEW_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ASK
+		HSK = {
+			is_subject_of = ASK
+			is_subject_of_type = kanrei_vassal
+		}
+		YMN = {
+			is_subject_of = ASK
+		}
+		has_reform = shogunate
+		has_heir = no
+		has_consort = yes
+		has_regency = no
+		is_year = 1466
+		current_age = age_of_discovery
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Appoint the Shogun's brother Ashikaga Yoshimi as heir.
+		name = ipeJAP.52.a
+		ai_chance = {
+			factor = 50
+		}
+		define_heir = {
+			name = "Yoshimi"
+			dynasty = "Ashikaga"
+			adm = 2
+			dip = 2
+			mil = 1
+			birth_date = 1439.3.3
+			claim = 80
+		}
+		set_heir_flag = ashikaga_succession_crisis_brother
+		set_heir_flag = yoshimi_betrayal
+		HSK = {
+			country_event = {
+				id = ipeJAP.53
+				days = 15
+			}
+		}
+	}
+
+	option = { # Appoint the Shogun's son Ashikaga Yoshihisa as heir.
+		name = ipeJAP.52.b
+		ai_chance = {
+			factor = 50
+		}
+		define_heir = {
+			name = "Yoshihisa"
+			dynasty = "Ashikaga"
+			adm = 1
+			dip = 1
+			mil = 2
+			birth_date = 1465.12.11
+			claim = 90
+		}
+		set_heir_flag = ashikaga_succession_crisis_son
+		HSK = {
+			country_event = {
+				id = ipeJAP.53
+				days = 15
+			}
+		}
+	}
+}
+
+# The Ashikaga Succession (Hosokawa)
+country_event = {
+	id = ipeJAP.53
+	title = ipeJAP.52.t
+	desc = ipeJAP.53.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Back the chosen Ashikaga heir.
+		name = ipeJAP.53.a
+		ai_chance = {
+			factor = 95
+		}
+		custom_tooltip = ipeJAP.53.a.tooltip
+		ASK = {
+			add_opinion = {
+				who = HSK
+				modifier = supported_our_heir_ASK
+			}
+			country_event = {
+				id = ipeJAP.54
+			}
+		}
+		add_liberty_desire = -50
+		set_country_flag = onin_war_imminent
+		set_country_flag = hosokawa_domination
+	}
+
+	option = { # We should avoid such problematic entanglements.
+		name = ipeJAP.53.b
+		ai_chance = {
+			factor = 5
+		}
+		ASK = {
+			add_opinion = {
+				who = HSK
+				modifier = refused_to_support_our_heir_ASK
+			}
+			country_event = {
+				id = ipeJAP.55
+			}
+		}
+	}
+}
+
+# The Hosokawa Back Our Heir!
+country_event = {
+	id = ipeJAP.54
+	title = ipeJAP.54.t
+	desc = ipeJAP.54.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Hosokawa are our most reliable subjects.
+		name = ipeJAP.54.a
+		add_legitimacy = 10
+		tooltip = {
+			add_opinion = {
+				who = HSK
+				modifier = supported_our_heir_ASK
+			}
+			HSK = {
+				add_liberty_desire = -50
+			}
+		}
+	}
+}
+
+# The Hosokawa Refuse to Back Our Heir!
+country_event = {
+	id = ipeJAP.55
+	title = ipeJAP.55.t
+	desc = ipeJAP.55.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Such treachery!
+		name = ipeJAP.55.a
+		add_legitimacy = -10
+		add_heir_claim = -10
+		tooltip = {
+			add_opinion = {
+				who = HSK
+				modifier = refused_to_support_our_heir_ASK
+			}
+		}
+	}
+}
+
+# The Ashikaga Succession (Yamana)
+country_event = {
+	id = ipeJAP.56
+	title = ipeJAP.52.t
+	desc = ipeJAP.56.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = YMN
+		ASK = {
+			OR = {
+				has_heir_flag = ashikaga_succession_crisis_brother
+				has_heir_flag = ashikaga_succession_crisis_son
+			}
+		}
+		HSK = {
+			has_country_flag = onin_war_imminent
+			is_subject_of = ASK
+			has_reform = daimyo
+		}
+		is_subject_of = ASK
+		has_reform = daimyo
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		HSK = {
+			clr_country_flag = onin_war_imminent
+		}
+	}
+
+	option = { # We will support the Shogun's son, Ashikaga Yoshihisa.
+		name = ipeJAP.56.a
+		trigger = {
+			ASK = {
+				has_heir_flag = ashikaga_succession_crisis_brother
+			}
+		}
+		custom_tooltip = ipeJAP.56.a.tooltip
+		set_country_flag = supports_ashikaga_son
+		add_yearly_manpower = 5
+		ASK = {
+			add_opinion = {
+				who = YMN
+				modifier = supported_rival_heir
+			}
+			add_trust = {
+				who = YMN
+				value = -50
+			}
+		}
+		HSK = {
+			add_opinion = {
+				who = YMN
+				modifier = supported_rival_heir
+			}
+			add_trust = {
+				who = YMN
+				value = -50
+			}
+			add_historical_rival = YMN
+		}
+		add_historical_rival = HSK
+		hidden_effect = {
+			ASK = {
+				country_event = {
+					id = ipeJAP.57
+				}
+			}
+			HSK = {
+				country_event = {
+					id = ipeJAP.57
+				}
+			}
+		}
+		clr_heir_flag = ashikaga_succession_crisis_brother
+	}
+
+	option = { # We will support the Shogun's brother, Ashikaga Yoshimi.
+		name = ipeJAP.56.b
+		trigger = {
+			ASK = {
+				has_heir_flag = ashikaga_succession_crisis_son
+			}
+		}
+		custom_tooltip = ipeJAP.56.b.tooltip
+		set_country_flag = supports_ashikaga_brother
+		add_yearly_manpower = 5
+		ASK = {
+			add_opinion = {
+				who = YMN
+				modifier = supported_rival_heir
+			}
+			add_trust = {
+				who = YMN
+				value = -50
+			}
+		}
+		HSK = {
+			add_opinion = {
+				who = YMN
+				modifier = supported_rival_heir
+			}
+			add_trust = {
+				who = YMN
+				value = -50
+			}
+		}
+		hidden_effect = {
+			ASK = {
+				country_event = {
+					id = ipeJAP.57
+				}
+			}
+			HSK = {
+				country_event = {
+					id = ipeJAP.57
+				}
+			}
+		}
+		clr_heir_flag = ashikaga_succession_crisis_son
+	}
+
+	option = { # Plunging Japan into an endless civil war is against our interests.
+		name = ipeJAP.56.c
+		add_prestige = 5
+	}
+}
+
+# The Yamana Meddle in the Ashikaga Succession!
+country_event = {
+	id = ipeJAP.57
+	title = ipeJAP.57.t
+	desc = ipeJAP.57.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is a great mistake!
+		name = ipeJAP.57.a
+		trigger = {
+			tag = ASK
+		}
+		custom_tooltip = ipeJAP.57.a.tooltip
+		add_legitimacy = -25
+		tooltip = {
+			add_opinion = {
+				who = YMN
+				modifier = supported_rival_heir
+			}
+			add_trust = {
+				who = YMN
+				value = -50
+			}
+		}
+	}
+
+	option = { # I knew the Yamana could never be trusted.
+		name = ipeJAP.57.b
+		trigger = {
+			tag = HSK
+		}
+		custom_tooltip = ipeJAP.57.a.tooltip
+		tooltip = {
+			add_opinion = {
+				who = YMN
+				modifier = supported_rival_heir
+			}
+			add_trust = {
+				who = YMN
+				value = -50
+			}
+			add_historical_rival = YMN
+			YMN = {
+				add_historical_rival = HSK
+			}
+		}
+	}
+}
+
+# The Onin War (Yamana Supports Son)
+country_event = {
+	id = ipeJAP.58
+	title = ipeJAP.58.t
+	desc = ipeJAP.58.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = YMN
+		NOT = {
+			war_with = HSK
+			war_with = ASK
+		}
+		had_country_flag = {
+			flag = supports_ashikaga_son
+			days = 365
+		}
+		is_subject_of = ASK
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # The Onin War has begun.
+		name = ipeJAP.58.a
+		custom_tooltip = ipeJAP.58.a.tooltip
+		declare_war_with_cb = {
+			who = ASK
+			casus_belli = cb_daimyo_annex
+		}
+		ASK = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = daimyo_vassal
+					NOT = {
+						alliance_with = HSK
+					}
+				}
+				add_liberty_desire = 50
+			}
+			country_event = {
+				id = ipeJAP.60
+			}
+		}
+		if = {
+			limit = {
+				HSK = {
+					is_subject_of = ASK
+				}
+			}
+			HSK = {
+				country_event = {
+					id = ipeJAP.60
+				}
+			}
+		}
+	}
+}
+
+# The Onin War (Yamana Supports Brother)
+country_event = {
+	id = ipeJAP.59
+	title = ipeJAP.58.t
+	desc = ipeJAP.59.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = YMN
+		NOT = {
+			war_with = HSK
+			war_with = ASK
+		}
+		had_country_flag = {
+			flag = supports_ashikaga_brother
+			days = 365
+		}
+		is_subject_of = ASK
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # The Onin War has begun.
+		name = ipeJAP.58.a
+		custom_tooltip = ipeJAP.58.a.tooltip
+		declare_war_with_cb = {
+			who = ASK
+			casus_belli = cb_daimyo_annex
+		}
+		ASK = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = daimyo_vassal
+					NOT = {
+						alliance_with = HSK
+					}
+				}
+				add_liberty_desire = 50
+			}
+			country_event = {
+				id = ipeJAP.61
+			}
+		}
+		if = {
+			limit = {
+				HSK = {
+					is_subject_of = ASK
+				}
+			}
+			HSK = {
+				country_event = {
+					id = ipeJAP.61
+				}
+			}
+		}
+	}
+}
+
+# The Onin War (Ashikaga and Hosokawa, Yamana Supports Son)
+country_event = {
+	id = ipeJAP.60
+	title = ipeJAP.58.t
+	desc = ipeJAP.58.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Dire times for the Shogunate...
+		name = ipeJAP.60.a
+		custom_tooltip = ipeJAP.58.a.tooltip
+		trigger = {
+			tag = ASK
+		}
+		add_legitimacy = -25
+		tooltip = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = daimyo_vassal
+					NOT = {
+						alliance_with = HSK
+					}
+				}
+				add_liberty_desire = 50
+			}
+		}
+	}
+
+	option = { # We must rally to the defense of the Shogun.
+		name = ipeJAP.60.b
+		custom_tooltip = ipeJAP.58.a.tooltip
+		trigger = {
+			tag = HSK
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Onin War (Ashikaga and Hosokawa, Yamana Supports Brother)
+country_event = {
+	id = ipeJAP.61
+	title = ipeJAP.58.t
+	desc = ipeJAP.59.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Dire times for the Shogunate...
+		name = ipeJAP.60.a
+		custom_tooltip = ipeJAP.58.a.tooltip
+		trigger = {
+			tag = ASK
+		}
+		add_legitimacy = -25
+		tooltip = {
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = daimyo_vassal
+					NOT = {
+						alliance_with = HSK
+					}
+				}
+				add_liberty_desire = 50
+			}
+		}
+	}
+
+	option = { # We must rally to the defense of the Shogun!
+		name = ipeJAP.60.b
+		custom_tooltip = ipeJAP.58.a.tooltip
+		trigger = {
+			tag = HSK
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Ruin of Kyoto (Yamana)
+country_event = {
+	id = ipeJAP.62
+	title = ipeJAP.62.t
+	desc = ipeJAP.62.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = BORDER_TENSION_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+    }
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = YMN
+		1020 = {
+			sieged_by = ROOT
+			owner = {
+				has_reform = shogunate
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	option = { # Set the suburbs of Kyoto ablaze!
+		name = ipeJAP.62.a
+		ai_chance = {
+			factor = 95
+		}
+		add_mil_power = 200
+		1020 = {
+			add_devastation = 50
+			add_base_tax = -5
+			add_base_production = -5
+			add_base_manpower = -5
+			owner = {
+				add_opinion = {
+					who = YMN
+					modifier = burned_kyoto
+				}
+				country_event = {
+					id = ipeJAP.63
+				}
+			}
+		}
+	}
+
+	option = { # Treat the imperial capital with mercy.
+		name = ipeJAP.62.b
+		ai_chance = {
+			factor = 5
+		}
+		add_prestige = 10
+	}
+}
+
+# The Ruin of Kyoto (Shogun)
+country_event = {
+	id = ipeJAP.63
+	title = ipeJAP.62.t
+	desc = ipeJAP.63.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = BORDER_TENSION_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+    }
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = faltering_shogunate
+	}
+
+	option = { # These rebels must pay for their crimes!
+		name = ipeJAP.63.a
+		tooltip = {
+			1020 = {
+				add_devastation = 50
+				add_base_tax = -5
+				add_base_production = -5
+				add_base_manpower = -5
+			}
+			add_opinion = {
+				who = YMN
+				modifier = burned_kyoto
+			}
+		}
+	}
+}
+
+# The Appointment of Ashikaga Yoshihisa
+country_event = {
+	id = ipeJAP.64
+	title = ipeJAP.64.t
+	desc = ipeJAP.64.d
+	picture = COURT_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = YMN
+		ASK = {
+			has_reform = shogunate
+		}
+		has_country_flag = supports_ashikaga_son
+		controls = 1020
+		HSK = {
+			OR = {
+				capital_scope = {
+					controlled_by = YMN
+				}
+				alliance_with = YMN
+				NOT = {
+					is_subject_of_type = kanrei_vassal
+				}
+			}
+		}
+		HTK = {
+			OR = {
+				capital_scope = {
+					controlled_by = YMN
+				}
+				alliance_with = YMN
+				NOT = {
+					is_subject_of_type = kanrei_vassal
+				}
+			}
+		}
+		SBA = {
+			OR = {
+				capital_scope = {
+					controlled_by = YMN
+				}
+				alliance_with = YMN
+				NOT = {
+					is_subject_of_type = kanrei_vassal
+				}
+			}
+		}
+		UES = {
+			OR = {
+				capital_scope = {
+					controlled_by = YMN
+				}
+				alliance_with = YMN
+				NOT = {
+					is_subject_of_type = kanrei_vassal
+				}
+			}
+		}
+		is_in_war = {
+			attacker_leader = YMN
+			defender_leader = ASK
+			duration = 1875
+		}
+		NOT = {
+			is_year = 1500
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	immediate = {
+		clr_country_flag = supports_ashikaga_son
+	}
+
+	option = { # Ashikaga Yoshihisa will be an excellent puppet.
+		name = ipeJAP.64.a
+		ai_chance = {
+			factor = 95
+		}
+		custom_tooltip = ipeJAP.64.a.tooltip
+		white_peace = ASK
+		grant_independence = yes
+		HSK = {
+			clr_country_flag = hosokawa_domination
+		}
+		ASK = {
+			clr_country_flag = faltering_shogunate
+			country_event = {
+				id = ipeJAP.69
+			}
+			remove_opinion = {
+				who = YMN
+				modifier = supported_rival_heir
+			}
+			tooltip = {
+				define_heir = {
+					name = "Yoshihisa"
+					dynasty = "Ashikaga"
+					adm = 1
+					dip = 1
+					mil = 2
+					birth_date = 1465.12.11
+					claim = 90
+				}
+				kill_ruler = yes
+			}
+			hidden_effect = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = daimyo_vassal
+					}
+					grant_independence = yes
+					country_event = {
+						id = ipeJAP.66
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = kanrei_vassal
+					}
+					grant_independence = yes
+					country_event = {
+						id = ipeJAP.67
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = kubo_vassal
+					}
+					grant_independence = yes
+					country_event = {
+						id = ipeJAP.68
+					}
+				}
+			}
+		}
+		create_subject = {
+			subject_type = puppet_shogunate
+			subject = ASK
+		}
+		if = {
+			limit = {
+				has_reform = daimyo
+			}
+			add_government_reform = indep_daimyo
+		}
+		set_global_flag = puppet_shogunate_enabled
+	}
+
+	option = { # We will take control of the Shogunate for ourselves!
+		name = ipeJAP.64.b
+		ai_chance = {
+			factor = 5
+		}
+		add_legitimacy = 10
+	}
+}
+
+# The Appointment of Ashikaga Yoshimi
+country_event = {
+	id = ipeJAP.65
+	title = ipeJAP.65.t
+	desc = ipeJAP.65.d
+	picture = COURT_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = YMN
+		ASK = {
+			has_reform = shogunate
+		}
+		has_country_flag = supports_ashikaga_brother
+		controls = 1020
+		HSK = {
+			OR = {
+				capital_scope = {
+					controlled_by = YMN
+				}
+				alliance_with = YMN
+				NOT = {
+					is_subject_of_type = kanrei_vassal
+				}
+			}
+		}
+		HTK = {
+			OR = {
+				capital_scope = {
+					controlled_by = YMN
+				}
+				alliance_with = YMN
+				NOT = {
+					is_subject_of_type = kanrei_vassal
+				}
+			}
+		}
+		SBA = {
+			OR = {
+				capital_scope = {
+					controlled_by = YMN
+				}
+				alliance_with = YMN
+				NOT = {
+					is_subject_of_type = kanrei_vassal
+				}
+			}
+		}
+		UES = {
+			OR = {
+				capital_scope = {
+					controlled_by = YMN
+				}
+				alliance_with = YMN
+				NOT = {
+					is_subject_of_type = kanrei_vassal
+				}
+			}
+		}
+		is_in_war = {
+			attacker_leader = YMN
+			defender_leader = ASK
+			duration = 1875
+		}
+		NOT = {
+			is_year = 1500
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	immediate = {
+		clr_country_flag = supports_ashikaga_brother
+	}
+
+	option = { # Ashikaga Yoshimi will be an excellent puppet.
+		name = ipeJAP.65.a
+		custom_tooltip = ipeJAP.64.a.tooltip
+		ai_chance = {
+			factor = 95
+		}
+		white_peace = ASK
+		grant_independence = yes
+		HSK = {
+			clr_country_flag = hosokawa_domination
+		}
+		ASK = {
+			clr_country_flag = faltering_shogunate
+			country_event = {
+				id = ipeJAP.70
+			}
+			remove_opinion = {
+				who = YMN
+				modifier = supported_rival_heir
+			}
+			tooltip = {
+				define_heir = {
+					name = "Yoshimi"
+					dynasty = "Ashikaga"
+					adm = 2
+					dip = 2
+					mil = 1
+					birth_date = 1439.3.3
+					claim = 80
+				}
+				kill_ruler = yes
+			}
+			hidden_effect = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = daimyo_vassal
+					}
+					grant_independence = yes
+					country_event = {
+						id = ipeJAP.66
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = kanrei_vassal
+					}
+					grant_independence = yes
+					country_event = {
+						id = ipeJAP.67
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = kubo_vassal
+					}
+					grant_independence = yes
+					country_event = {
+						id = ipeJAP.68
+					}
+				}
+			}
+		}
+		create_subject = {
+			subject_type = puppet_shogunate
+			subject = ASK
+		}
+		ASK = {
+			add_liberty_desire = -50
+		}
+		if = {
+			limit = {
+				has_reform = daimyo
+			}
+			add_government_reform = indep_daimyo
+		}
+		set_global_flag = puppet_shogunate_enabled
+	}
+
+	option = { # We will take control of the Shogunate for ourselves!
+		name = ipeJAP.64.b
+		ai_chance = {
+			factor = 5
+		}
+		add_legitimacy = 10
+	}
+}
+
+# The End of the Onin War (Daimyo)
+country_event = {
+	id = ipeJAP.66
+	title = ipeJAP.66.t
+	desc = ipeJAP.66.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			YMN = {
+				create_subject = {
+					subject_type = daimyo_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+
+	option = { # Dark times for Japan.
+		name = ipeJAP.66.a
+		custom_tooltip = ipeJAP.64.a.tooltip
+		tooltip = {
+			YMN = {
+				create_subject = {
+					subject_type = daimyo_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+}
+
+# The End of the Onin War (Kanrei)
+country_event = {
+	id = ipeJAP.67
+	title = ipeJAP.66.t
+	desc = ipeJAP.66.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			YMN = {
+				create_subject = {
+					subject_type = kanrei_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+
+	option = { # Dark times for Japan.
+		name = ipeJAP.66.a
+		custom_tooltip = ipeJAP.64.a.tooltip
+		tooltip = {
+			YMN = {
+				create_subject = {
+					subject_type = kanrei_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+}
+
+# The End of the Onin War (Kubo)
+country_event = {
+	id = ipeJAP.68
+	title = ipeJAP.66.t
+	desc = ipeJAP.66.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			YMN = {
+				create_subject = {
+					subject_type = kubo_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+	
+	option = { # Dark times for Japan.
+		name = ipeJAP.66.a
+		custom_tooltip = ipeJAP.64.a.tooltip
+		tooltip = {
+			YMN = {
+				create_subject = {
+					subject_type = kubo_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+}
+
+# Ashikaga Yoshihisa Becomes Shogun
+country_event = {
+	id = ipeJAP.69
+	title = ipeJAP.69.t
+	desc = ipeJAP.69.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Can the Shogunate endure such humiliation?
+		name = ipeJAP.69.a
+		custom_tooltip = ipeJAP.64.a.tooltip
+		define_heir = {
+			name = "Yoshihisa"
+			dynasty = "Ashikaga"
+			adm = 1
+			dip = 1
+			mil = 2
+			birth_date = 1465.12.11
+			claim = 90
+		}
+		kill_ruler = yes
+		add_prestige = -50
+		add_legitimacy = -50
+		tooltip = {
+			YMN = {
+				create_subject = {
+					subject_type = puppet_shogunate
+					subject = ASK
+				}
+			}
+			remove_opinion = {
+				who = YMN
+				modifier = supported_rival_heir
+			}
+			add_liberty_desire = -50
+		}
+	}
+}
+
+# Ashikaga Yoshimi Becomes Shogun
+country_event = {
+	id = ipeJAP.70
+	title = ipeJAP.70.t
+	desc = ipeJAP.70.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Can the Shogunate endure such humiliation?
+		name = ipeJAP.69.a
+		custom_tooltip = ipeJAP.64.a.tooltip
+		define_heir = {
+			name = "Yoshimi"
+			dynasty = "Ashikaga"
+			adm = 2
+			dip = 2
+			mil = 1
+			birth_date = 1439.3.3
+			claim = 80
+		}
+		kill_ruler = yes
+		add_prestige = -50
+		add_legitimacy = -50
+		tooltip = {
+			YMN = {
+				create_subject = {
+					subject_type = puppet_shogunate
+					subject = ASK
+				}
+			}
+			remove_opinion = {
+				who = YMN
+				modifier = supported_rival_heir
+			}
+			add_liberty_desire = -50
+		}
+	}
+}
+
+# The Question of Kanrei
+country_event = {
+	id = ipeJAP.71
+	title = ipeJAP.71.t
+	desc = ipeJAP.71.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = YMN
+		HSK = {
+			is_subject_of = YMN
+			is_subject_of_type = kanrei_vassal
+			historical_rival_with = YMN
+		}
+		historical_rival_with = HSK
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Revoke the title of kanrei from the Hosokawa.
+		name = ipeJAP.71.a
+		ai_chance = {
+			factor = 75
+		}
+		create_subject = {
+			subject_type = daimyo_vassal
+			subject = HSK
+		}
+		HSK = {
+			clr_country_flag = kanrei_of_shogun
+			country_event = {
+				id = ipeJAP.72
+			}
+			add_liberty_desire = 50
+			add_opinion = {
+				who = YMN
+				modifier = revoked_kanrei
+			}
+		}
+	}
+
+	option = { # We should not treat the Hosokawa too harshly.
+		name = ipeJAP.71.b
+		ai_chance = {
+			factor = 25
+		}
+		remove_historical_rival = HSK
+		HSK = {
+			remove_historical_rival = YMN
+			country_event = {
+				id = ipeJAP.73
+			}
+		}
+	}
+}
+
+# The Punishment of the Yamana
+country_event = {
+	id = ipeJAP.72
+	title = ipeJAP.72.t
+	desc = ipeJAP.72.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will pay for their haughtiness!
+		name = ipeJAP.72.a
+		tooltip = {
+			YMN = {
+				create_subject = {
+					subject_type = daimyo_vassal
+					subject = HSK
+				}
+			}
+			add_liberty_desire = 50
+			add_opinion = {
+				who = YMN
+				modifier = revoked_kanrei
+			}
+		}
+		add_prestige = -25
+		add_legitimacy = -25
+	}
+}
+
+# The Leniency of the Yamana
+country_event = {
+	id = ipeJAP.73
+	title = ipeJAP.73.t
+	desc = ipeJAP.73.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They have acted with great wisdom.
+		name = ipeJAP.73.a
+		tooltip = {
+			remove_historical_rival = YMN
+			YMN = {
+				remove_historical_rival = HSK
+			}
+		}
+	}
+}
+
+# The Subjugation of the Shogunate (Daimyo)
+country_event = {
+	id = ipeJAP.74
+	title = ipeJAP.74.t
+	desc = ipeJAP.74.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				create_subject = {
+					subject_type = daimyo_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+
+	option = { # This is a disturbing development.
+		name = ipeJAP.74.a
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject_type = daimyo_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+}
+
+# The Subjugation of the Shogunate (Kanrei)
+country_event = {
+	id = ipeJAP.75
+	title = ipeJAP.74.t
+	desc = ipeJAP.74.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				create_subject = {
+					subject_type = kanrei_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+
+	option = { # This is a disturbing development.
+		name = ipeJAP.74.a
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject_type = kanrei_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+}
+
+# The Subjugation of the Shogunate (Kubo)
+country_event = {
+	id = ipeJAP.76
+	title = ipeJAP.74.t
+	desc = ipeJAP.74.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				create_subject = {
+					subject_type = kubo_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+
+	option = { # This is a disturbing development.
+		name = ipeJAP.74.a
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject_type = kubo_vassal
+					subject = ROOT
+				}
+			}
+		}
+	}
+}
+
+# The Subjugation of the Shogunate (Shogunate)
+country_event = {
+	id = ipeJAP.77
+	title = ipeJAP.74.t
+	desc = ipeJAP.77.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				create_subject = {
+					subject_type = puppet_shogunate
+					subject = ROOT
+				}
+			}
+			define_heir = {
+				max_random_adm = 3
+				max_random_dip = 3
+				max_random_mil = 3
+				claim = 50
+				age = 20
+			}
+			kill_ruler = yes
+			add_liberty_desire = -50
+		}
+	}
+
+	option = { # This is a disturbing development.
+		name = ipeJAP.74.a
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject_type = puppet_shogunate
+					subject = ROOT
+				}
+			}
+			define_heir = {
+				max_random_adm = 3
+				max_random_dip = 3
+				max_random_mil = 3
+				claim = 50
+				age = 20
+			}
+			kill_ruler = yes
+			add_liberty_desire = -50
+		}
+	}
+}
+
+# The Allegiance of Ashikaga Yoshimi (Yamana)
+country_event = {
+	id = ipeJAP.78
+	title = ipeJAP.78.t
+	desc = ipeJAP.78.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = YMN
+		has_country_flag = supports_ashikaga_son
+		is_in_war = {
+			attacker_leader = YMN
+			defender_leader = ASK
+		}
+		war_score_against = {
+			who = ASK
+			value = 10
+		}
+		ASK = {
+			has_heir_flag = yoshimi_betrayal
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # We are now supporters of Ashikaga Yoshimi.
+		name = ipeJAP.78.a
+		ai_chance = {
+			factor = 95
+		}
+		clr_country_flag = supports_ashikaga_son
+		set_country_flag = supports_ashikaga_brother
+		add_yearly_manpower = 5
+		tooltip = {
+			ASK = {
+				remove_heir = {}
+				define_heir = {
+					name = "Yoshihisa"
+					dynasty = "Ashikaga"
+					adm = 1
+					dip = 1
+					mil = 2
+					birth_date = 1465.12.11
+					claim = 90
+				}
+			}
+		}
+		ASK = {
+			country_event = {
+				id = ipeJAP.79
+			}
+		}
+		HSK = {
+			country_event = {
+				id = ipeJAP.79
+			}
+		}
+	}
+
+	option = { # We will not take advantage of betrayal.
+		name = ipeJAP.78.b
+		ai_chance = {
+			factor = 5
+		}
+		add_prestige = 10
+	}
+}
+
+# The Allegiance of Ashikaga Yoshimi (Ashikaga and Hosokawa)
+country_event = {
+	id = ipeJAP.79
+	title = ipeJAP.78.t
+	desc = ipeJAP.79.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # I hereby accept Ashikaga Yoshihisa as heir.
+		name = ipeJAP.79.a
+		trigger = {
+			tag = ASK
+		}
+		remove_heir = {}
+		define_heir = {
+			name = "Yoshihisa"
+			dynasty = "Ashikaga"
+			adm = 1
+			dip = 1
+			mil = 2
+			birth_date = 1465.12.11
+			claim = 90
+		}
+		add_legitimacy = -25
+	}
+
+	option = { # How frustrating...
+		name = ipeJAP.79.b
+		trigger = {
+			tag = HSK
+		}
+		tooltip = {
+			ASK = {
+				remove_heir = {}
+				define_heir = {
+					name = "Yoshihisa"
+					dynasty = "Ashikaga"
+					adm = 1
+					dip = 1
+					mil = 2
+					birth_date = 1465.12.11
+					claim = 90
+				}
+			}
+		}
+	}
+}
+
+# The Faltering of the Shogunate (Ashikaga)
+country_event = {
+	id = ipeJAP.80
+	title = ipeJAP.80.t
+	desc = ipeJAP.80.d
+	picture = COURT_eventPicture
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We must accept domination by the Hosokawa.
+		name = ipeJAP.80.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				HSK = {
+					NOT = {
+						total_development = ASK
+					}
+				}
+			}
+		}
+		add_stability = 3
+		add_legitimacy = 50
+		HSK = {
+			country_event = {
+				id = ipeJAP.81
+			}
+			tooltip = {
+				create_subject = {
+					subject_type = puppet_shogunate
+					subject = ASK
+				}
+			}
+		}
+	}
+
+	option = { # The Shogunate will not fall into these ploys!
+		name = ipeJAP.80.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				HSK = {
+					NOT = {
+						total_development = ASK
+					}
+				}
+			}
+		}
+		add_stability = -3
+		add_legitimacy = -50
+		HSK = {
+			add_liberty_desire = 100
+			country_event = {
+				id = ipeJAP.82
+			}
+		}
+	}
+}
+
+# The Shogunate Submits
+country_event = {
+	id = ipeJAP.81
+	title = ipeJAP.81.t
+	desc = ipeJAP.81.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # With time, they will be defeated.
+		name = ipeJAP.81.a
+		custom_tooltip = ipeJAP.64.a.tooltip
+		grant_independence = yes
+		ASK = {
+			hidden_effect = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = daimyo_vassal
+					}
+					grant_independence = yes
+					country_event = {
+						id = ipeJAP.74
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = kanrei_vassal
+					}
+					grant_independence = yes
+					country_event = {
+						id = ipeJAP.75
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = kubo_vassal
+					}
+					grant_independence = yes
+					country_event = {
+						id = ipeJAP.76
+					}
+				}
+			}
+		}
+		create_subject = {
+			subject_type = puppet_shogunate
+			subject = ASK
+		}
+		ASK = {
+			add_liberty_desire = -50
+		}
+		if = {
+			limit = {
+				has_reform = daimyo
+			}
+			add_government_reform = indep_daimyo
+		}
+		set_global_flag = puppet_shogunate_enabled
+	}
+}
+
+# The Shogunate Refuses to Submit!
+country_event = {
+	id = ipeJAP.82
+	title = ipeJAP.82.t
+	desc = ipeJAP.82.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Down with the Shogunate!
+		name = ipeJAP.82.a
+		tooltip = {
+			add_liberty_desire = 100
+		}
+	}
+}
+
+# The Faltering of the Shogunate (Hosokawa)
+country_event = {
+	id = ipeJAP.83
+	title = ipeJAP.80.t
+	desc = ipeJAP.83.d
+	picture = FIREARMS_INCIDENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = HSK
+		ASK = {
+			has_country_flag = faltering_shogunate
+			has_reform = shogunate
+			is_subject = no
+			NOT = {
+				war_with = YMN
+				war_with = HSK
+			}
+		}
+		has_country_flag = hosokawa_domination
+	}
+
+	immediate = {
+		ASK = {
+			clr_country_flag = faltering_shogunate
+		}
+		clr_country_flag = hosokawa_domination
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	option = { # Demand the submission of the Shogunate.
+		name = ipeJAP.83.a
+		ai_chance = {
+			factor = 95
+		}
+		custom_tooltip = ipeJAP.83.a.tooltip
+		ASK = {
+			country_event = {
+				id = ipeJAP.80
+				days = 15
+			}
+		}
+	}
+	
+	option = { # We are only loyal subjects.
+		name = ipeJAP.83.b
+		ai_chance = {
+			factor = 5
+		}
+		add_prestige = 10
+	}
+}
+
+# The Sengoku Jidai (Start)
+country_event = {
+	id = ipeJAP.84
+	title = ipeJAP.84.t
+	desc = ipeJAP.84.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		is_at_war = yes
+		OR = {
+			is_subject_of_type = daimyo_vassal
+			is_subject_of_type = kanrei_vassal
+			is_subject_of_type = kubo_vassal
+		}
+		overlord = {
+			any_subject_country = {
+				OR = {
+					is_subject_of_type = daimyo_vassal
+					is_subject_of_type = kanrei_vassal
+					is_subject_of_type = kubo_vassal
+				}
+				war_with = ROOT
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 9125
+		modifier = {
+			factor = 0.9
+			overlord = {
+				NOT = {
+					legitimacy = 90
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			overlord = {
+				NOT = {
+					legitimacy = 80
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			overlord = {
+				NOT = {
+					legitimacy = 70
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			overlord = {
+				NOT = {
+					legitimacy = 60
+				}
+			}
+		}
+		modifier = {
+			factor = 0.9
+			overlord = {
+				NOT = {
+					legitimacy = 50
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			overlord = {
+				any_subject_country = {
+					OR = {
+						is_subject_of_type = daimyo_vassal
+						is_subject_of_type = kanrei_vassal
+						is_subject_of_type = kubo_vassal
+					}
+					total_development = 200
+				}
+			}
+		}
+		modifier = {
+			factor = 0.25
+			overlord = {
+				any_subject_country = {
+					OR = {
+						is_subject_of_type = daimyo_vassal
+						is_subject_of_type = kanrei_vassal
+						is_subject_of_type = kubo_vassal
+					}
+					total_development = 250
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			overlord = {
+				any_subject_country = {
+					OR = {
+						is_subject_of_type = daimyo_vassal
+						is_subject_of_type = kanrei_vassal
+						is_subject_of_type = kubo_vassal
+					}
+					total_development = 300
+				}
+			}
+		}
+		modifier = {
+			factor = 0.1
+			OR = {
+				tag = HSK
+				tag = YMN
+			}
+			OR = {
+				HSK = {
+					is_subject_of = ASK
+					war_with = YMN
+				}
+				YMN = {
+					is_subject_of = ASK
+					war_with = HSK
+				}
+			}
+		}
+	}
+
+	immediate = {
+		set_global_flag = sengoku_jidai_begins
+	}
+
+	option = { # Furinkazan.
+		name = ipeJAP.84.a
+		custom_tooltip = ipeJAP.84.a.tooltip
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					OR = {
+						has_reform = shogunate
+						has_reform = daimyo
+						has_reform = indep_daimyo
+					}
+				}
+				country_event = {
+					id = ipeJAP.85
+				}
+			}
+		}
+	}
+}
+
+# The Sengoku Jidai (End)
+country_event = {
+	id = ipeJAP.85
+	title = ipeJAP.84.t
+	desc = ipeJAP.84.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeJAP.84.a
+		custom_tooltip = ipeJAP.84.a.tooltip
+	}
+}
+
+# Enryaku-ji Asks for Support
+country_event = {
+	id = ipeJAP.86
+	title = ipeJAP.86.t
+	desc = ipeJAP.86.d
+	picture = BUDDHISM_MONASTERY_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		owns = 3321
+		3321 = {
+			is_core = ROOT
+			has_province_modifier = enryaku_ji
+		}
+		religion_group = eastern
+	}
+
+	option = { # We should support the monks of Enryaku-ji.
+		name = ipeJAP.86.a
+		add_years_of_income = -0.25
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = 10
+		}
+	}
+
+	option = { # We have no time for their religious dogma.
+		name = ipeJAP.86.b
+		add_estate_loyalty = {
+			estate = estate_church
+			loyalty = -10
+		}
+	}
+}
+
+# Backing of the Sohei
+country_event = {
+	id = ipeJAP.87
+	title = ipeJAP.87.t
+	desc = ipeJAP.87.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		owns = 3321
+		3321 = {
+			is_core = ROOT
+			has_province_modifier = enryaku_ji
+		}
+		estate_loyalty = {
+			estate = estate_church
+			loyalty = 30
+		}
+		is_at_war = yes
+		religion_group = eastern
+	}
+
+	option = { # We are grateful for their help.
+		name = ipeJAP.87.a
+		add_yearly_manpower = 5
+	}
+}
+
+# Tendai Influences
+country_event = {
+	id = ipeJAP.88
+	title = ipeJAP.88.t
+	desc = ipeJAP.88.d
+	picture = BUDDHISM_GOOD_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		owns = 3321
+		3321 = {
+			is_core = ROOT
+			has_province_modifier = enryaku_ji
+		}
+		estate_loyalty = {
+			estate = estate_church
+			loyalty = 30
+		}
+		NOT = {
+			has_country_modifier = tendai_influences
+		}
+		religion_group = eastern
+	}
+
+	option = { # There is great wisdom in these teachings.
+		name = ipeJAP.88.a
+		add_country_modifier = {
+			name = tendai_influences
+			duration = 3650
+		}
+	}
+}
+
+# Disciples Flock to Enryaku-ji
+country_event = {
+	id = ipeJAP.89
+	title = ipeJAP.89.t
+	desc = ipeJAP.89.d
+	picture = BUDDHISM_MONASTERY_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		owns = 3321
+		3321 = {
+			is_core = ROOT
+			has_province_modifier = enryaku_ji
+		}
+		is_at_war = no
+	}
+
+	option = { # What do they have to gain from such a life?
+		name = ipeJAP.89.a
+		add_yearly_manpower = -2.5
+	}
+}
+
+# Traditions of the Sohei
+country_event = {
+	id = ipeJAP.90
+	title = ipeJAP.90.t
+	desc = ipeJAP.90.d
+	picture = BUDDHISM_MONASTERY_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		owns = 3321
+		3321 = {
+			is_core = ROOT
+			has_province_modifier = enryaku_ji
+		}
+		estate_loyalty = {
+			estate = estate_church
+			loyalty = 30
+		}
+		NOT = {
+			has_country_modifier = sohei_traditions
+		}
+		religion_group = eastern
+	}
+
+	option = { # The sohei are ever admirable in their conduct.
+		name = ipeJAP.90.a
+		add_country_modifier = {
+			name = sohei_traditions
+			duration = 3650
+		}
+	}
+}
+
+# Uprising of the Sohei
+country_event = {
+	id = ipeJAP.91
+	title = ipeJAP.91.t
+	desc = ipeJAP.91.d
+	picture = IKKO_IKKI_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		owns = 3321
+		3321 = {
+			is_core = ROOT
+			has_province_modifier = enryaku_ji
+		}
+		NOT = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 30
+			}
+		}
+	}
+
+	option = { # Crush these zealots!
+		name = ipeJAP.91.a
+		3321 = {
+			spawn_rebels = {
+				type = mahayana_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# A Scholar from Enryaku-ji
+country_event = {
+	id = ipeJAP.92
+	title = ipeJAP.92.t
+	desc = ipeJAP.92.d
+	picture = BUDDHISM_LAMA_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		owns = 3321
+		3321 = {
+			is_core = ROOT
+			has_province_modifier = enryaku_ji
+		}
+		estate_loyalty = {
+			estate = estate_church
+			loyalty = 30
+		}
+	}
+
+	option = { # He is certainly welcome here.
+		name = ipeJAP.92.a
+		define_advisor = {
+			type = theologian
+			skill = 2
+			discount = yes
+		}
+	}
+}
+
+# The Burning of Mount Hiei (Victim)
+country_event = {
+	id = ipeJAP.93
+	title = ipeJAP.93.t
+	desc = ipeJAP.93.d
+	picture = BUDDHISM_MONASTERY_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # They too shall pass away.
+		name = ipeJAP.93.a
+		3321 = {
+			remove_province_modifier = enryaku_ji
+			tooltip = {
+				add_devastation = 50
+			}
+		}
+		tooltip = {
+			add_opinion = {
+				who = ROOT
+				modifier = burned_mount_hiei
+			}
+		}
+	}
+}
+
+# The Burning of Mount Hiei (Perpetrator)
+country_event = {
+	id = ipeJAP.94
+	title = ipeJAP.93.t
+	desc = ipeJAP.94.d
+	picture = BUDDHISM_MONASTERY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Make sure that there are no survivors.
+		name = ipeJAP.94.a
+		add_mil_power = 150
+	}
+}
+
+# The Rise of the Azai
+country_event = {
+	id = ipeJAP.95
+	title = ipeJAP.95.t
+	desc = ipeJAP.95.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes #No resurrections 
+
+	major = yes
+
+	trigger = {
+		is_year = 1500
+		NOT = { is_year = 1550 }
+		owns = 3308 #Omi
+		3308 = {
+			is_core = AZI
+		}
+		any_owned_province = {
+			NOT = {
+				is_core = AZI
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = AZI
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = AZI
+            AZI = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                    }
+                }
+				define_ruler = {
+					name = "Sukemasa"
+					dynasty = "Azai"
+					adm = 5
+					dip = 3
+					mil = 3
+					claim = 80
+				}
+				add_ruler_personality = intricate_web_weaver_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = AZI
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = AZI
+					}
+				}
+			}
+            AZI = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+	
+	option = { # We cannot stop the ascent of the Azai.
+		name = ipeJAP.95.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = AZI
+			}
+			AZI = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = AZI
+			}
+			AZI = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		AZI = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = AZI
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Azai.
+		name = ipeJAP.95.c
+		ai_chance = {
+			factor = 0
+		}
+		AZI = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = AZI
+	}
+}
+
+# The Rise of the Saito
+country_event = {
+	id = ipeJAP.96
+	title = ipeJAP.96.t
+	desc = ipeJAP.96.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = TKI
+		1835 = {
+			is_core = STO
+			is_capital_of = ROOT
+		}
+		is_year = 1500
+		NOT = {
+			is_year = 1550
+			exists = STO
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	option = { # We cannot stop the ascent of the Saito.
+		name = ipeJAP.96.a
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		kill_ruler = yes
+		change_tag = STO
+		define_ruler = {
+			name = "Toshimasa"
+			dynasty = "Saito"
+			adm = 4
+			dip = 4
+			mil = 4
+			claim = 50
+		}
+		hidden_effect = {
+			add_ruler_personality = cruel_personality
+		}
+	}
+
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 50
+		}
+		1835 = {
+			spawn_rebels = {
+				type = nationalist_rebels
+				size = 1
+				leader = "Toshimasa Saito"
+				friend = STO
+			}
+		}
+	}
+}
+
+# The Rise of the Miyoshi
+country_event = {
+	id = ipeJAP.97
+	title = ipeJAP.97.t
+	desc = ipeJAP.97.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes #No resurrections 
+
+	major = yes
+
+	trigger = {
+		is_year = 1540
+		NOT = { is_year = 1590 }
+		owns = 1820 #Awa
+		1820 = {
+			is_core = MYI
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		3311 = {
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		3333 = {
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = MYI
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = MYI
+            MYI = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+						light_ship = 0.5
+						galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Nagayoshi"
+					dynasty = "Miyoshi"
+					adm = 6
+					dip = 6
+					mil = 4
+					claim = 90
+				}
+				add_ruler_personality = intricate_web_weaver_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = MYI
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = MYI
+					}
+				}
+			}
+            MYI = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+	
+	option = { # We cannot stop the ascent of the Miyoshi.
+		name = ipeJAP.97.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = MYI
+			}
+			MYI = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = MYI
+			}
+			MYI = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		MYI = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = MYI
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Miyoshi.
+		name = ipeJAP.97.c
+		ai_chance = {
+			factor = 0
+		}
+		MYI = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = MYI
+	}
+}
+
+# The Rise of the Matsumae (Shogun)
+country_event = {
+	id = ipeJAP.98
+	title = ipeJAP.98.t
+	desc = ipeJAP.98.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		any_subject_country = {
+			is_subject_of_type = daimyo_vassal
+			owns = 4193
+			4193 = {
+				is_core = MSU
+				is_capital = no
+			}
+		}
+		has_reform = shogunate
+		is_year = 1600
+		NOT = {
+			is_year = 1650
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # The Matsumae would serve as reliable guardians in the north.
+		name = ipeJAP.98.a
+		custom_tooltip = ipeJAP.98.a.tooltip
+		hidden_effect = {
+			if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 1031
+				}
+				1031 = {
+					add_core = MSU
+				}
+			}
+			if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 1852
+				}
+				1852 = {
+					add_core = MSU
+				}
+			}
+			if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 3314
+				}
+				3314 = {
+					add_core = MSU
+				}
+			}
+			if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 1847
+				}
+				1847 = {
+					add_core = MSU
+				}
+			}
+			if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 4193
+				}
+				4193 = {
+					add_core = MSU
+				}
+			}
+			if = {
+				limit = {
+					owns_or_non_sovereign_subject_of = 3315
+				}
+				3315 = {
+					add_core = MSU
+				}
+			}
+			every_subject_country = {
+				limit = {
+					any_owned_province = {
+						is_core = MSU
+					}
+					NOT = {
+						owns = 4193
+					}
+				}
+				country_event = {
+					id = ipeJAP.100
+				}
+			}
+		}
+		4193 = {
+			owner = {
+				country_event = {
+					id = ipeJAP.99
+				}
+				tooltip = {
+					release = MSU
+					add_liberty_desire = 25
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = took_hokkaido
+				}
+			}
+		}
+		tooltip = {
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = MSU
+			}
+		}
+	}
+
+	option = {
+		name = ipeJAP.98.b
+		add_adm_power = 10
+	}
+}
+
+# The Rise of the Matsumae (Main Daimyo)
+country_event = {
+	id = ipeJAP.99
+	title = ipeJAP.98.t
+	desc = ipeJAP.99.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			release = MSU
+            MSU = {
+				change_religion = shinto
+				every_owned_province = {
+					remove_core = ROOT
+				}
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Yoshihiro"
+					dynasty = "Matsumae"
+					adm = 3
+					dip = 3
+					mil = 3
+				}
+				add_ruler_personality = bold_fighter_personality
+            }
+			FROM = {
+				create_subject = {
+					subject_type = daimyo_vassal
+					subject = MSU
+				}
+			}
+            MSU = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+			if = {
+				limit = {
+					1031 = {
+						is_capital = no
+						is_core = MSU
+					}
+				}
+				1031 = {
+					cede_province = MSU
+				}
+			}
+			if = {
+				limit = {
+					1852 = {
+						is_capital = no
+						is_core = MSU
+					}
+				}
+				1852 = {
+					cede_province = MSU
+				}
+			}
+			if = {
+				limit = {
+					3314 = {
+						is_capital = no
+						is_core = MSU
+					}
+				}
+				3314 = {
+					cede_province = MSU
+				}
+			}
+			if = {
+				limit = {
+					1847 = {
+						is_capital = no
+						is_core = MSU
+					}
+				}
+				1847 = {
+					cede_province = MSU
+				}
+			}
+			if = {
+				limit = {
+					4193 = {
+						is_capital = no
+						is_core = MSU
+					}
+				}
+				4193 = {
+					cede_province = MSU
+				}
+			}
+			if = {
+				limit = {
+					3315 = {
+						is_capital = no
+						is_core = MSU
+					}
+				}
+				3315 = {
+					cede_province = MSU
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ipeJAP.99.a
+		tooltip = {
+			release = MSU
+			add_liberty_desire = 25
+			add_opinion = {
+				who = FROM
+				modifier = took_hokkaido
+			}
+		}
+	}
+}
+
+# The Rise of the Matsumae (Other Daiymo)
+country_event = {
+	id = ipeJAP.100
+	title = ipeJAP.98.t
+	desc = ipeJAP.99.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeJAP.99.a
+		MSU = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		overlord = {
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = took_hokkaido
+			}
+		}
+		add_liberty_desire = 25
+	}
+}
+
+# Clearing Subjects of the Puppet Shogunate
+country_event = {
+	id = ipeJAP.101
+	title = ipeJAP.101.t
+	desc = ipeJAP.101.d
+	picture = COURT_eventPicture
+
+	trigger = {
+		is_subject_of_type = puppet_shogunate
+		any_subject_country = {
+			exists = yes
+		}
+	}
+
+	hidden = yes
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	immediate = {
+		every_subject_country = {
+			grant_independence = yes
+		}
+	}
+
+	option = {
+		name = ipeJAP.101.a
+	}
+}
+
+# Clearing Kanrei Subjects
+country_event = {
+	id = ipeJAP.102
+	title = ipeJAP.102.t
+	desc = ipeJAP.102.d
+	picture = COURT_eventPicture
+
+	trigger = {
+		any_subject_country = {
+			is_subject_of_type = kanrei_vassal
+			NOT = {
+				has_country_flag = kanrei_of_shogun
+			}
+		}
+	}
+
+	hidden = yes
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	immediate = {
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = kanrei_vassal
+				NOT = {
+					has_country_flag = kanrei_of_shogun
+				}
+			}
+			ROOT = {
+				create_subject = {
+					subject_type = daimyo_vassal
+					subject = PREV
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ipeJAP.102.a
+	}
+}
+
+# The Rising Sun and the Middle Kingdom
+country_event = {
+	id = ipeJAP.103
+	title = ipeJAP.103.t
+	desc = ipeJAP.103.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_reform = shogunate
+		is_subject_of_type = tributary_state
+		overlord = {
+			is_emperor_of_china = yes
+		}
+		NOT = {
+			current_age = age_of_discovery
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	immediate = {
+		set_global_flag = japanese_independence
+	}
+
+	option = { # Japan is no subject.
+		name = ipeJAP.103.a
+		ai_chance = {
+			factor = 100
+		}
+		overlord = {
+			add_opinion = {
+				who = ROOT
+				modifier = rejected_chinese_influence
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeJAP.104
+				}
+			}
+		}
+		grant_independence = yes
+	}
+
+	option = { # Japan must maintain ties with China.
+		name = ipeJAP.103.b
+		ai_chance = {
+			factor = 0
+		}
+		add_legitimacy = -25
+	}
+}
+
+# The Rising Sun and the Middle Kingdom
+country_event = {
+	id = ipeJAP.104
+	title = ipeJAP.103.t
+	desc = ipeJAP.104.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Times have changed.
+		name = ipeJAP.104.a
+		tooltip = {
+			FROM = {
+				grant_independence = yes
+			}
+			add_opinion = {
+				who = FROM
+				modifier = rejected_chinese_influence
+			}
+		}
+	}
+}
+
+# The Rise of the Ichijo
+country_event = {
+	id = ipeJAP.105
+	title = ipeJAP.105.t
+	desc = ipeJAP.105.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_year = 1450
+		NOT = { is_year = 1500 }
+		owns = 6794 #Hata
+		6794 = {
+			is_core = ICJ
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = ICJ
+		}
+		1020 = {
+			devastation = 10
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = ICJ
+            ICJ = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Norifusa"
+					dynasty = "Ichijo"
+					adm = 4
+					dip = 4
+					mil = 4
+					claim = 80
+					religion = shinto
+				}
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = ICJ
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = ICJ
+					}
+				}
+			}
+            ICJ = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # We cannot stop the ascent of the Ichijo.
+		name = ipeJAP.105.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = ICJ
+			}
+			ICJ = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = ICJ
+			}
+			ICJ = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		ICJ = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = ICJ
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Ichijo.
+		name = ipeJAP.105.c
+		ai_chance = {
+			factor = 0
+		}
+		ICJ = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = ICJ
+	}
+}
+
+# The Rise of the Kimotsuki
+country_event = {
+	id = ipeJAP.106
+	title = ipeJAP.106.t
+	desc = ipeJAP.106.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_year = 1530
+		NOT = { is_year = 1580 }
+		owns = 3328 #Osumi
+		3328 = {
+			is_core = KMS
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = KMS
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = KMS
+            KMS = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Kanetsugu"
+					dynasty = "Kimotsuki"
+					adm = 1
+					dip = 1
+					mil = 1
+					claim = 80
+					religion = shinto
+				}
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = KMS
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = KMS
+					}
+				}
+			}
+            KMS = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # We cannot stop the ascent of the Kimotsuki.
+		name = ipeJAP.106.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = KMS
+			}
+			KMS = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = KMS
+			}
+			KMS = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		KMS = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = KMS
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Kimotsuki.
+		name = ipeJAP.106.c
+		ai_chance = {
+			factor = 0
+		}
+		KMS = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = KMS
+	}
+}
+
+# Sankin-kotai
+country_event = {
+	id = ipeJAP.107
+	title = ipeJAP.107.t
+	desc = ipeJAP.107.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	trigger = {
+		any_known_country = {
+			war_with = ROOT
+			has_reform = shogunate
+			has_country_modifier = overlord_sankin_kotai
+			owns = 1020
+		}
+		is_in_war = {
+			casus_belli = cb_daimyo_annex
+		}
+		OR = {
+			has_heir = yes
+			has_consort = yes
+		}
+		has_country_modifier = subject_sankin_kotai
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # It is a necessary sacrifice.
+		name = ipeJAP.107.a
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		if = {
+			limit = {
+				has_consort = yes
+			}
+			remove_consort = yes
+		}
+		add_stability = -1
+		remove_country_modifier = subject_sankin_kotai
+	}
+}
+
+# The $ROOT$ Shogunate
+country_event = {
+	id = ipeJAP.108
+	title = ipeJAP.108.t
+	desc = ipeJAP.108.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We should continue showing favor to the fudai daimyo.
+		name = ipeJAP.108.a
+		trigger = {
+			any_subject_country = {
+				has_reform = daimyo
+				NOT = {
+					total_development = 25
+				}
+			}
+		}
+		custom_tooltip = shinto_incident_shogunate_authority.tt
+		custom_tooltip = shinto_events.much.isolation.tt
+		custom_tooltip = ipeJAP.108.a.tooltip
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					has_reform = daimyo
+					NOT = {
+						total_development = 25
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = privileged_fudai
+				}
+				country_event = {
+					id = ipeJAP.109
+				}
+			}
+			every_subject_country = {
+				limit = {
+					has_reform = daimyo
+					total_development = 25
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = discriminated_tozama
+				}
+			}
+		}
+		add_country_modifier = {
+			name = fudai_strengthened
+			duration = 3650
+		}
+		add_incident_variable_value = {
+			incident = incident_shogunate_authority
+			value = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = ipeJAP.111
+				days = 1095
+			}
+		}
+	}
+
+	option = { # It would be unwise to not show respect to the tozama daimyo.
+		name = ipeJAP.108.b
+		trigger = {
+			any_subject_country = {
+				has_reform = daimyo
+				total_development = 25
+			}
+		}
+		custom_tooltip = shinto_incident_shogunate_authority.tt
+		custom_tooltip = shinto_events.open.tt
+		custom_tooltip = ipeJAP.108.b.tooltip
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					has_reform = daimyo
+					total_development = 25
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = privileged_tozama
+				}
+				country_event = {
+					id = ipeJAP.110
+				}
+			}
+			every_subject_country = {
+				limit = {
+					has_reform = daimyo
+					NOT = {
+						total_development = 25
+					}
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = discriminated_fudai
+				}
+			}
+		}
+		add_country_modifier = {
+			name = tozama_strengthened
+			duration = 3650
+		}
+		add_incident_variable_value = {
+			incident = incident_shogunate_authority
+			value = 3
+		}
+		hidden_effect = {
+			country_event = {
+				id = ipeJAP.111
+				days = 1095
+			}
+		}
+	}
+	
+	option = { # We should not give special treatment to any daimyo.
+		name = ipeJAP.108.c
+		custom_tooltip = shinto_incident_shogunate_authority.tt
+		custom_tooltip = shinto_events.isolation.tt
+		add_incident_variable_value = {
+			incident = incident_shogunate_authority
+			value = 2
+		}
+		add_legitimacy = 10
+		hidden_effect = {
+			country_event = {
+				id = ipeJAP.111
+				days = 1095
+			}
+		}
+	}
+}
+
+# The Fudai Daimyo
+country_event = {
+	id = ipeJAP.109
+	title = ipeJAP.109.t
+	desc = ipeJAP.109.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # How wonderful.
+		name = ipeJAP.109.a
+		add_country_modifier = {
+			name = fudai_strengthened
+			duration = 3650
+		}
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = privileged_fudai
+			}
+		}
+	}
+}
+
+# The Tozama Daimyo
+country_event = {
+	id = ipeJAP.110
+	title = ipeJAP.110.t
+	desc = ipeJAP.110.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A pleasant surprise.
+		name = ipeJAP.110.a
+		add_country_modifier = {
+			name = tozama_strengthened
+			duration = 3650
+		}
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = privileged_tozama
+			}
+		}
+	}
+}
+
+# Ikkoku ichijyo rei
+country_event = {
+	id = ipeJAP.111
+	title = ipeJAP.111.t
+	desc = ipeJAP.111.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They must dismantle their fortifications.
+		name = ipeJAP.111.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = shinto_events.much.isolation.tt
+		custom_tooltip = ipeJAP.111.a.tooltip
+		add_absolutism = 10
+		hidden_effect = {
+			every_subject_country = {
+				limit = {
+					has_reform = daimyo
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = enforced_ikkoku_ichijyo_rei
+				}
+				add_liberty_desire = 25
+				country_event = {
+					id = ipeJAP.112
+				}
+			}
+		}
+		set_country_flag = ikkoku_ichijyo_rei
+		add_incident_variable_value = {
+			incident = incident_shogunate_authority
+			value = 1
+		}
+		hidden_effect = {
+			country_event = {
+				id = ipeJAP.113
+				days = 1095
+			}
+		}
+	}
+
+	option = { # We should not interfere with our subjects' internal matters.
+		name = ipeJAP.111.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = shinto_events.open.tt
+		add_legitimacy = 10
+		add_incident_variable_value = {
+			incident = incident_shogunate_authority
+			value = 3
+		}
+		hidden_effect = {
+			country_event = {
+				id = ipeJAP.113
+				days = 1095
+			}
+		}
+	}
+}
+
+# Ikkoku ichijyo rei
+country_event = {
+	id = ipeJAP.112
+	title = ipeJAP.111.t
+	desc = ipeJAP.112.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will have to obey.
+		name = ipeJAP.112.a
+		custom_tooltip = ipeJAP.112.a.tooltip
+		every_owned_province = {
+			limit = {
+				is_capital = no
+				has_building = fort_15th
+			}
+			remove_building = fort_15th
+		}
+		every_owned_province = {
+			limit = {
+				is_capital = no
+				has_building = fort_16th
+			}
+			remove_building = fort_16th
+		}
+		every_owned_province = {
+			limit = {
+				is_capital = no
+				has_building = fort_17th
+			}
+			remove_building = fort_17th
+		}
+		every_owned_province = {
+			limit = {
+				is_capital = no
+				has_building = fort_18th
+			}
+			remove_building = fort_18th
+		}
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = enforced_ikkoku_ichijyo_rei
+			}
+			add_liberty_desire = 25
+		}
+	}
+}
+
+# The Shinpan Daimyo
+country_event = {
+	id = ipeJAP.113
+	title = ipeJAP.113.t
+	desc = ipeJAP.113.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Elevate our cadet branches to shinpan status.
+		name = ipeJAP.113.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = shinto_events.much.isolation.tt
+		add_country_modifier = {
+			name = shinpan_daimyo
+			duration = -1
+		}
+		add_incident_variable_value = {
+			incident = incident_shogunate_authority
+			value = 1
+		}
+		set_country_flag = end_of_incident_shogunate_authority_chain_shogunate
+	}
+
+	option = { # We have no need of additional noble branches.
+		name = ipeJAP.113.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = shinto_events.open.tt
+		add_stability_or_adm_power = yes
+		add_incident_variable_value = {
+			incident = incident_shogunate_authority
+			value = 3
+		}
+		set_country_flag = end_of_incident_shogunate_authority_chain_shogunate
+	}
+}
+
+# Centralization of the Shogunate
+country_event = {
+	id = ipeJAP.114
+	title = ipeJAP.114.t
+	desc = ipeJAP.114.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	trigger = {
+		is_at_war = no
+		is_incident_active = incident_shogunate_authority
+		has_country_flag = end_of_incident_shogunate_authority_chain_shogunate
+		NOT = {
+			incident_variable_value = {
+				incident = incident_shogunate_authority
+				value = 4
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = { NOT = { check_variable = { which = isolationism_achievement_counter value = 1 } }  }
+				set_variable = { which = isolationism_achievement_counter value = 1 }
+				else = { change_variable = { which = isolationism_achievement_counter value = 1 } }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # We shall wield this power wisely.
+		name = ipeJAP.114.a
+		if = {
+			limit = { NOT = { religion = shinto } }
+			hidden_effect = {
+				add_isolationism = 1
+				end_incident = incident_shogunate_authority
+			}
+			else = {
+				add_isolationism = 1
+				end_incident = incident_shogunate_authority
+			}
+		}
+		add_country_modifier = {
+			name = centralization_of_the_shogunate
+			duration = 18250
+		}
+	}
+}
+
+# Stabilization of the Shogunate
+country_event = {
+	id = ipeJAP.115
+	title = ipeJAP.115.t
+	desc = ipeJAP.115.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	trigger = {
+		is_at_war = no
+		is_incident_active = incident_shogunate_authority
+		has_country_flag = end_of_incident_shogunate_authority_chain_shogunate
+		NOT = {
+			incident_variable_value = {
+				incident = incident_shogunate_authority
+				value = 7
+			}
+		}
+		incident_variable_value = {
+			incident = incident_shogunate_authority
+			value = 4
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Our rule over Japan is secure.
+		name = ipeJAP.115.a
+		if = {
+			limit = { NOT = { religion = shinto } }
+			hidden_effect = {
+				end_incident = incident_shogunate_authority
+			}
+			else = {
+				end_incident = incident_shogunate_authority
+			}
+		}
+		add_country_modifier = {
+			name = stabilization_of_the_shogunate
+			duration = 18250
+		}
+	}
+}
+
+# Decentralization of the Shogunate
+country_event = {
+	id = ipeJAP.116
+	title = ipeJAP.116.t
+	desc = ipeJAP.116.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	trigger = {
+		is_at_war = no
+		is_incident_active = incident_shogunate_authority
+		has_country_flag = end_of_incident_shogunate_authority_chain_shogunate
+		incident_variable_value = {
+			incident = incident_shogunate_authority
+			value = 7
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # The daimyo respect us, and we shall respect them.
+		name = ipeJAP.116.a
+		if = {
+			limit = { NOT = { religion = shinto } }
+			hidden_effect = {
+				add_isolationism = -1
+				end_incident = incident_shogunate_authority
+			}
+			else = {
+				add_isolationism = -1
+				end_incident = incident_shogunate_authority
+			}
+		}
+		add_country_modifier = {
+			name = decentralization_of_the_shogunate
+			duration = 18250
+		}
+	}
+}
+
+# The Rise of the Ryuzoji
+country_event = {
+	id = ipeJAP.117
+	title = ipeJAP.117.t
+	desc = ipeJAP.117.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_year = 1550
+		NOT = { is_year = 1600 }
+		owns = 3313 #Saga
+		3313 = {
+			is_core = RZJ
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = shogunate
+			has_reform = indep_daimyo
+		}
+		NOT = {
+			exists = RZJ
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			any_country = {
+				overlord_of = ROOT
+				has_reform = shogunate
+				NOT = {
+					legitimacy = 75
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = shogunate
+			NOT = {
+				legitimacy = 75
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = RZJ
+            RZJ = {
+				change_religion = shinto
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Takanobu"
+					dynasty = "Ryuzoji"
+					adm = 3
+					dip = 2
+					mil = 6
+					claim = 80
+					religion = shinto
+				}
+				add_ruler_personality = bold_fighter_personality
+            }
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = shogunate
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = RZJ
+					}
+				}
+			}
+			if = {
+				limit = {
+					any_country = {
+						overlord_of = ROOT
+						has_reform = indep_daimyo
+					}
+				}
+				overlord = {
+					create_subject = {
+						subject_type = daimyo_vassal
+						subject = RZJ
+					}
+				}
+			}
+            RZJ = {
+                change_government = monarchy
+                add_government_reform = daimyo
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # We cannot stop the ascent of the Ryuzoji.
+		name = ipeJAP.117.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_reform = shogunate
+				is_subject = no
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = RZJ
+			}
+			RZJ = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				any_subject_country = {
+					is_subject_of_type = puppet_shogunate
+				}
+			}
+			create_subject = {
+				subject_type = daimyo_vassal
+				subject = RZJ
+			}
+			RZJ = {
+				add_opinion = {
+					who = ROOT
+					modifier = released_vassal
+				}
+			}
+		}
+		RZJ = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+	option = { # Crush these rebels.
+		name = ipeJAP.22.b
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				NOT = {
+					num_of_cities = 4
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = RZJ
+			casus_belli = cb_sengoku
+		}
+	}
+	option = { # Play as Ryuzoji.
+		name = ipeJAP.117.c
+		ai_chance = {
+			factor = 0
+		}
+		RZJ = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = RZJ
+	}
+}
+
+# Ikkoku ichijyo rei
+country_event = {
+	id = ipeJAP.118
+	title = ipeJAP.111.t
+	desc = ipeJAP.118.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We are grateful for this change in policy.
+		name = ipeJAP.118.a
+		custom_tooltip = ipeJAP.118.a.tooltip
+	}
+}
+
+# The End of the Sengoku Jidai
+country_event = {
+	id = ipeJAP.119
+	title = ipeJAP.119.t
+	desc = ipeJAP.119.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Japan shall finally have peace.
+		name = ipeJAP.119.a
+		custom_tooltip = end_sengoku.tooltip
+		add_stability_or_adm_power = yes
+		add_prestige = 25
+		add_country_modifier = {
+			name = centralization_modifier
+			duration = 7300
+		}
+	}
+}
+
+# The End of the Sengoku Jidai
+country_event = {
+	id = ipeJAP.120
+	title = ipeJAP.119.t
+	desc = ipeJAP.120.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We are honored to serve the Shogun.
+		name = ipeJAP.120.a
+		custom_tooltip = end_sengoku_2.tooltip
+	}
+}
+
+# The Imperial Restoration
+country_event = {
+	id = ipeJAP.121
+	title = ipeJAP.121.t
+	desc = ipeJAP.121.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				remove_heir = {}
+			}
+		}
+		define_ruler = {
+			dynasty = "Yamato"
+			adm = 3
+			dip = 3
+			mil = 3
+			claim = 100
+			male = yes
+		}
+	}
+
+	option = { # The Emperor should rule absolutely.
+		name = ipeJAP.121.a
+		add_government_reform = royal_decree_reform
+		add_adm_power = 300
+	}
+
+	option = { # A constitutional monarchy suits us best.
+		name = ipeJAP.121.b
+		add_government_reform = parliamentary_reform
+		add_dip_power = 300
+	}
+}
+
+# The Rebirth of Edo
+country_event = {
+	id = ipeJAP.122
+	title = ipeJAP.122.t
+	desc = ipeJAP.122.d
+	picture = CITY_VIEW_eventPicture
+	goto = 1028
+
+	fire_only_once = yes
+
+	trigger = {
+		owns = 1028
+		1028 = {
+			has_province_modifier = restructuring_edo_safer
+			NOT = {
+				devastation = 1
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = { # Beauty arises from destruction.
+		name = ipeJAP.122.a
+		add_stability_or_adm_power = yes
+		add_prestige = 25
+		1028 = {
+			add_base_tax = 8
+			add_base_production = 8
+			add_base_manpower = 8
+			remove_province_modifier = restructuring_edo_safer
+		}
+	}
+}

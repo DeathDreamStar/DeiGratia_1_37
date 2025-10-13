@@ -1,0 +1,42 @@
+name = "Ming War for Ava Tribute"
+war_goal = {
+	type = take_capital_force_tributary
+	casus_belli = cb_force_tributary
+	tag = AVA
+}
+
+1443.3.1 = {
+	add_attacker = MNG
+	add_attacker = CBZ
+	add_attacker = CSD
+	add_attacker = CSX
+	add_attacker = CLJ
+	add_attacker = CYN
+	add_attacker = CYO
+	add_attacker = CSZ
+	add_defender = AVA
+	add_defender = KAL
+	add_defender = MYA
+	add_defender = TAU
+	add_defender = MKA
+	add_defender = HSI
+	add_defender = YGW
+}
+
+1445.11.3 = {
+	rem_attacker = MNG
+	rem_attacker = CBZ
+	rem_attacker = CSD
+	rem_attacker = CSX
+	rem_attacker = CLJ
+	rem_attacker = CYN
+	rem_attacker = CYO
+	rem_attacker = CSZ
+	rem_defender = AVA
+	rem_defender = KAL
+	rem_defender = MYA
+	rem_defender = TAU
+	rem_defender = MKA
+	rem_defender = HSI
+	rem_defender = YGW
+}

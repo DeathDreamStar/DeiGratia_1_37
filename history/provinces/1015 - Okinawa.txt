@@ -1,0 +1,19 @@
+#1015 - Okinawa
+
+owner = RYU
+controller = RYU
+culture = ryukyuan
+religion = animism
+capital = "Shuri"
+trade_goods = chinaware
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = RYU
+discovered_by = chinese
+center_of_trade = 1
+
+1542.1.1 = { discovered_by = POR }
+1624.1.1 = { religion = shinto } # The Amami islands are annexed

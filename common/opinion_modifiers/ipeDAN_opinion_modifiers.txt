@@ -1,0 +1,23 @@
+chose_denmark_positive = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+chose_denmark_negative = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+chose_sweden_negative = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+chose_sweden_positive = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}

@@ -1,0 +1,20 @@
+#6660 - Shizhu
+
+latent_trade_goods = {
+	coal
+}
+
+owner = CSZ
+controller = CSZ
+culture = miao
+religion = animism
+capital = "Shizhu"
+trade_goods = marble
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = CSZ

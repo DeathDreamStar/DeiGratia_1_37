@@ -1,0 +1,29 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = limousin
+religion = catholic
+capital = 3704
+fixed_capital = 3704
+
+1444.5.14 = {
+	monarch = {
+		name = "Agne IV"
+		dynasty = "de La Tour"
+		adm = 2
+		dip = 2
+		mil = 2
+		birth_date = 1422.1.1
+	}
+
+	queen = {
+		name = "Anne"
+		dynasty = "de Beaufort"
+		country_of_origin = XTR
+		adm = 2
+		dip = 2
+		mil = 2
+		birth_date = 1435.1.1
+	}
+}

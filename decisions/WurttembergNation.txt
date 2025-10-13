@@ -1,0 +1,191 @@
+country_decisions = {
+
+	wurttemberg_nation_militarily = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			was_never_german_regional_tag_trigger = yes
+			NOT = { has_country_flag = formed_wurttemberg_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				NOT = { exists = WUR }
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			OR = {
+				tag = SGT
+				tag = URC
+			}
+			NOT = { tag = WUR }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 70
+				province_id = 4713
+				province_id = 6838
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			NOT = { exists = WUR }
+			owns_core_province = 70
+			owns_core_province = 4713
+			owns_core_province = 6838
+		}
+		effect = {
+			change_tag = WUR
+			restore_country_name_effect = yes
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			set_country_flag = formed_wurttemberg_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	wurttemberg_nation_diplomatically = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			was_never_german_regional_tag_trigger = yes
+			NOT = { has_country_flag = formed_wurttemberg_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				NOT = { exists = WUR }
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			OR = {
+				AND = {
+					tag = SGT
+					exists = URC
+					URC = {
+						ai = yes
+					}
+				}
+				AND = {
+					tag = URC
+					exists = SGT
+					SGT = {
+						ai = yes
+					}
+				}
+			}
+			NOT = { tag = WUR }
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					NOT = { ROOT = { tag = SGT } }
+					owned_by = SGT
+				}
+				AND = {
+					NOT = { ROOT = { tag = URC } }
+					owned_by = URC
+				}
+			}
+		}
+
+		allow = {
+			OR = {
+				AND = {
+					tag = SGT
+					URC = {
+						has_opinion = {
+							who = ROOT
+							value = 190
+						}
+						is_at_war = no
+					}
+					OR = {
+						alliance_with = URC
+						URC = {
+							is_subject_of = ROOT
+						}
+					}
+					is_neighbor_of = URC
+				}
+				AND = {
+					tag = URC
+					SGT = {
+						has_opinion = {
+							who = ROOT
+							value = 190
+						}
+						is_at_war = no
+					}
+					OR = {
+						alliance_with = SGT
+						SGT = {
+							is_subject_of = ROOT
+						}
+					}
+					is_neighbor_of = SGT
+				}
+			}
+			is_at_war = no
+			NOT = { exists = WUR }
+		}
+		effect = {
+			if = {
+				limit = {
+					tag = SGT
+				}
+				inherit = URC
+			}
+			if = {
+				limit = {
+					tag = URC
+				}
+				inherit = SGT
+			}
+			change_tag = WUR
+			restore_country_name_effect = yes
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+			set_country_flag = formed_wurttemberg_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+		do_not_integrate = SGT
+		do_not_integrate = URC
+	}
+}

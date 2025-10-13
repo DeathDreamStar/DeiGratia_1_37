@@ -1,0 +1,15 @@
+#6802 - Awa
+
+owner = STM
+controller = STM
+culture = togoku
+religion = shinto
+capital = "Minamiboso"
+trade_goods = fish
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = STM
+discovered_by = chinese

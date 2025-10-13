@@ -1,0 +1,966 @@
+namespace = ipeMUG
+normal_or_historical_nations = yes
+
+# Kamran Mirza
+country_event = {
+	id = ipeMUG.1
+	title = ipeMUG.1.t
+	desc = ipeMUG.1.d
+	picture = KING_SICK_IN_BED_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		ruler_age = 40
+		tag = MUG
+		is_subject = no
+		has_heir = yes
+		heir_age = 15
+		owns = 451
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # We have many sons to please...
+		name = ipeMUG.1.a
+		ai_chance = {
+			factor = 80
+		}
+		custom_tooltip = ipeMUG.1.a.tooltip
+		add_stability_or_adm_power = yes
+		set_country_flag = kamran_mirzas_inheritance
+	}
+
+	option = { # Give Kamran nothing.
+		name = ipeMUG.1.b
+		ai_chance = {
+			factor = 20
+		}
+		custom_tooltip = ipeMUG.1.b.tooltip
+		add_stability = -1
+		random_list = {
+			50 = {
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							NOT = {
+								superregion = india_superregion
+							}
+						}
+						add_core = AFG
+					}
+				}
+				release = AFG
+				hidden_effect = {
+					vassalize = AFG
+					AFG = {
+						capital_scope = {
+							build_to_forcelimit = {
+								infantry = 2.4
+								cavalry = 0.8
+								artillery = 0.8
+							}
+						}
+						change_government = monarchy
+						add_government_reform = timurid_emirate
+						adopt_reform_progress = ROOT
+						add_yearly_manpower = 5
+					}
+				}
+				AFG = {
+					define_ruler = {
+						name = "Kamran Mirza"
+						dynasty = ROOT
+						culture = ROOT
+						religion = ROOT	
+						adm = 1
+						dip = 1
+						mil = 4
+					}
+					hidden_effect = {
+						add_ruler_personality = cruel_personality
+					}
+					declare_war_with_cb = {
+						who = ROOT
+						casus_belli = cb_civil_war
+					}
+				}
+			}
+			50 = {
+			}
+		}
+	}
+}
+
+# The Division of the Empire
+country_event = {
+	id = ipeMUG.2
+	title = ipeMUG.2.t
+	desc = ipeMUG.2.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	major = yes
+
+	immediate = {
+		clr_country_flag = kamran_mirzas_inheritance
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					NOT = {
+						superregion = india_superregion
+					}
+				}
+				add_core = AFG
+			}
+			release = AFG
+			vassalize = AFG
+			AFG = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 2.4
+						cavalry = 0.8
+						artillery = 0.8
+					}
+				}
+				change_government = monarchy
+				add_government_reform = timurid_emirate
+				adopt_reform_progress = ROOT
+				add_yearly_manpower = 5
+				define_ruler = {
+					name = "Kamran Mirza"
+					dynasty = ROOT
+					culture = ROOT
+					religion = ROOT	
+					adm = 1
+					dip = 1
+					mil = 4
+				}
+				add_ruler_personality = cruel_personality
+			}
+		}
+	}
+
+	option = { # We will have a difficult time with him.
+		name = ipeMUG.2.a
+		tooltip = {
+			release = AFG
+			vassalize = AFG
+			AFG = {
+				define_ruler = {
+					name = "Kamran Mirza"
+					dynasty = ROOT
+					culture = ROOT
+					religion = ROOT	
+					adm = 1
+					dip = 1
+					mil = 4
+				}
+			}
+		}
+		AFG = {
+			add_liberty_desire = 50
+		}
+	}
+
+	after = {
+		AFG = {
+			set_ruler_flag = cruelty_of_kamran
+		}
+	}
+}
+
+# Kamran Mirza's Downfall
+country_event = {
+	id = ipeMUG.3
+	title = ipeMUG.3.t
+	desc = ipeMUG.3.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = MUG
+		AFG = {
+			is_subject_of = MUG
+			has_ruler_flag = cruelty_of_kamran
+			ai = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # The empire is reunited.
+		name = ipeMUG.3.a
+		inherit = AFG
+		add_prestige = 5
+	}
+}
+
+# Sher Shah Suri
+country_event = {
+	id = ipeMUG.4
+	title = ipeMUG.4.t
+	desc = ipeMUG.4.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = MUG
+		mission_completed = mug_bengal_campaign
+		any_owned_province = {
+			OR = {
+				area = mithila_area
+				area = bihar_area
+				area = north_bengal_area
+				area = gaur_area
+				area = west_bengal_area
+				area = east_bengal_area
+				area = central_bengal_area
+				area = sunderbans_area
+				area = meghna_area
+				area = tripura_area
+				area = arakan_area
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			NOT = {
+				stability = 1
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				legitimacy = 50
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = suri_empire_spawned
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = mithila_area
+						area = bihar_area
+						area = north_bengal_area
+						area = gaur_area
+						area = west_bengal_area
+						area = east_bengal_area
+						area = central_bengal_area
+						area = sunderbans_area
+						area = meghna_area
+						area = tripura_area
+						area = arakan_area
+					}
+				}
+				add_core = SUR
+			}
+			release = SUR
+			SUR = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 4.8
+						cavalry = 1.6
+						artillery = 1.6
+					}
+				}
+				random_owned_province = {
+					limit = {
+						is_capital = no
+					}
+					build_to_forcelimit = {
+						infantry = 4.8
+						cavalry = 1.6
+						artillery = 1.6
+					}
+				}
+				change_government = monarchy
+				add_government_reform = indian_sultanate_reform
+				add_government_reform = mughal_government
+				adopt_reform_progress = ROOT
+				add_yearly_manpower = 10
+				define_ruler = {
+					name = "Sher Shah"
+					dynasty = "Suri"
+					culture = afghani
+					religion = sunni	
+					adm = 6
+					dip = 4
+					mil = 6
+				}
+				# define_ruler_to_general = {
+				#	fire = 5
+				#	shock = 5
+				#	manuever = 5
+				#	siege = 3
+				# }
+				add_ruler_personality = strict_personality
+				set_government_rank = 3
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_civil_war
+				}
+			}
+			every_owned_province = {
+				limit = {
+					superregion = india_superregion
+				}
+				add_core = SUR
+			}
+			add_stability = -2
+		}
+	}
+
+	option = { # He is a worthy opponent.
+		name = ipeMUG.4.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeMUG.4.a.tooltip
+		tooltip = {
+			release = SUR
+			SUR = {
+				define_ruler = {
+					name = "Sher Shah"
+					dynasty = "Suri"
+					culture = afghani
+					religion = sunni	
+					adm = 6
+					dip = 4
+					mil = 6
+				}
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_civil_war
+				}
+			}
+			add_stability = -2
+		}
+	}
+
+	option = { # Play as Sur.
+		name = ipeMUG.4.b
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = SUR
+	}
+
+	after = {
+		SUR = {
+			set_country_flag = sher_shah_suri
+		}
+	}
+}
+
+# The Fall of the Suri Empire
+country_event = {
+	id = ipeMUG.5
+	title = ipeMUG.5.t
+	desc = ipeMUG.5.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			SUR = {
+				white_peace = ROOT
+				every_owned_province = {
+					limit = {
+						is_core = ROOT
+					}
+					cede_province = ROOT
+				}
+				every_owned_province = {
+					limit = {
+						NOT = {
+							is_core = ROOT
+						}
+					}
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+			every_province = {
+				limit = {
+					is_core = SUR
+				}
+				remove_core = SUR
+			}
+		}
+	}
+
+	option = { # Sher Shah has taught us much.
+		name = ipeMUG.5.a
+		custom_tooltip = ipeMUG.5.a.tooltip
+		add_stability_or_adm_power = yes
+		add_mil_power = 100
+		add_prestige = 25
+	}
+}
+
+# The Victory of the Suri Empire
+country_event = {
+	id = ipeMUG.6
+	title = ipeMUG.6.t
+	desc = ipeMUG.6.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			white_peace = MUG
+			MUG = {
+				every_owned_province = {
+					limit = {
+						superregion = india_superregion
+						is_core = ROOT
+					}
+					cede_province = ROOT
+				}
+				every_owned_province = {
+					limit = {
+						superregion = india_superregion
+						NOT = {
+							is_core = ROOT
+						}
+					}
+					add_core = ROOT
+					cede_province = ROOT
+				}
+				country_event = {
+					id = ipeMUG.7
+				}
+			}
+		}
+	}
+
+	option = { # May they never return.
+		name = ipeMUG.6.a
+		custom_tooltip = ipeMUG.6.a.tooltip
+		add_stability_or_adm_power = yes
+		add_mil_power = 100
+		add_prestige = 25
+	}
+}
+
+# The Victory of the Suri Empire
+country_event = {
+	id = ipeMUG.7
+	title = ipeMUG.6.t
+	desc = ipeMUG.7.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Their days are numbered!
+		name = ipeMUG.7.a
+		custom_tooltip = ipeMUG.7.a.tooltip
+		add_stability = -2
+		add_prestige = -50
+	}
+}
+
+# The Revolt of the Gujarat Sultanate
+country_event = {
+	id = ipeMUG.8
+	title = ipeMUG.8.t
+	desc = ipeMUG.8.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = MUG
+		mission_completed = mug_secure_hajj_ports
+		any_owned_province = {
+			OR = {
+				area = tapti_area
+				area = ahmedabad_area
+				area = patan_area
+				area = saurashtra_area
+				area = baroda_area
+				area = kathiawar_area
+			}
+		}
+		NOT = {
+			exists = GUJ
+		}
+		has_country_flag = suri_empire_spawned
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		set_country_flag = gujarati_revolt
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = tapti_area
+						area = ahmedabad_area
+						area = patan_area
+						area = saurashtra_area
+						area = baroda_area
+						area = kathiawar_area
+					}
+				}
+				add_core = GUJ
+			}
+			release = GUJ
+			GUJ = {
+				change_religion = sunni
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 3.6
+						cavalry = 1.2
+						artillery = 1.2
+					}
+				}
+				change_government = monarchy
+				add_government_reform = indian_sultanate_reform
+				adopt_reform_progress = ROOT
+				add_yearly_manpower = 10
+				set_government_rank = 2
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_civil_war
+				}
+			}
+			add_stability = -1
+		}
+	}
+
+	option = { # This is getting dangerous.
+		name = ipeMUG.8.a
+		custom_tooltip = ipeMUG.8.a.tooltip
+		tooltip = {
+			release = GUJ
+			GUJ = {
+				declare_war_with_cb = {
+					who = MUG
+					casus_belli = cb_civil_war
+				}
+			}
+			add_stability = -1
+		}
+	}
+}
+
+# The Reconquest of Gujarat
+country_event = {
+	id = ipeMUG.9
+	title = ipeMUG.9.t
+	desc = ipeMUG.9.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			GUJ = {
+				white_peace = ROOT
+				every_owned_province = {
+					limit = {
+						is_core = ROOT
+					}
+					cede_province = ROOT
+				}
+				every_owned_province = {
+					limit = {
+						NOT = {
+							is_core = ROOT
+						}
+					}
+					add_core = ROOT
+					cede_province = ROOT
+				}
+			}
+		}
+	}
+
+	option = { # Excellent.
+		name = ipeMUG.9.a
+		custom_tooltip = ipeMUG.9.a.tooltip
+		add_prestige = 10
+	}
+}
+
+# The Revolt of the Gujarat Sultanate
+country_event = {
+	id = ipeMUG.10
+	title = ipeMUG.10.t
+	desc = ipeMUG.10.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = {
+		NOT = {
+			war_with = GUJ
+		}
+		has_country_flag = gujarati_revolt
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		clr_country_flag = gujarati_revolt
+	}
+
+	option = {
+		name = ipeMUG.10.a
+	}
+}
+
+# The Suri Succession Crisis
+country_event = {
+	id = ipeMUG.11
+	title = ipeMUG.11.t
+	desc = ipeMUG.11.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Kill them all!
+		name = ipeMUG.11.a
+		add_stability = -1
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 3
+				leader = "Adil Khan"
+				leader_dynasty = "Suri"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 3
+				leader = "Ibrahim Shah"
+				leader_dynasty = "Suri"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 3
+				leader = "Sikandar Shah"
+				leader_dynasty = "Suri"
+			}
+		}
+	}
+}
+
+# The Maratha Revolt
+country_event = {
+	id = ipeMUG.12
+	title = ipeMUG.12.t
+	desc = ipeMUG.12.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = MUG
+		any_owned_province = {
+			OR = {
+				area = desh_area
+				area = konkan_area
+				area = thane_area
+				area = ahmednagar_area
+			}
+			culture = marathi
+		}
+		NOT = {
+			exists = MAR
+		}
+		current_age = age_of_absolutism
+	}
+
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.5
+			NOT = {
+				stability = 1
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				legitimacy = 50
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = desh_area
+						area = konkan_area
+						area = thane_area
+						area = ahmednagar_area
+					}
+				}
+				add_core = MAR
+			}
+			release = MAR
+			MAR = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 4.8
+						cavalry = 1.6
+						artillery = 1.6
+					}
+				}
+				change_government = monarchy
+				change_religion = hinduism
+				add_government_reform = autocracy_reform
+				adopt_reform_progress = ROOT
+				add_yearly_manpower = 10
+				define_ruler = {
+					name = "Shivaji"
+					dynasty = "Bhonsle"	
+					adm = 4
+					dip = 4
+					mil = 6
+				}
+				add_ruler_personality = inspiring_leader_personality
+				set_government_rank = 3
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_civil_war
+				}
+			}
+			every_owned_province = {
+				limit = {
+					region = deccan_region
+				}
+				add_core = MAR
+			}
+			add_stability = -2
+		}
+	}
+
+	option = { # India only knows one Emperor.
+		name = ipeMUG.12.a
+		tooltip = {
+			release = MAR
+			MAR = {
+				define_ruler = {
+					name = "Shivaji"
+					dynasty = "Bhonsle"	
+					adm = 4
+					dip = 4
+					mil = 6
+				}
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_civil_war
+				}
+			}
+			add_stability = -2
+		}
+		add_historical_rival = MAR
+		MAR = {
+			add_historical_rival = ROOT
+		}
+	}
+
+	option = { # Play as Maratha.
+		name = ipeMUG.12.b
+		switch_tag = MAR
+		hidden_effect = {
+			add_historical_rival = MAR
+			MAR = {
+				add_historical_rival = ROOT
+			}
+		}
+	}
+}
+
+# The Misl Confederacy
+country_event = {
+	id = ipeMUG.13
+	title = ipeMUG.13.t
+	desc = ipeMUG.13.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = MUG
+		any_owned_province = {
+			OR = {
+				area = sirhind_area
+				area = bist_doab_area
+				area = hisar_area
+				area = jech_doab_area
+				area = lahore_area
+			}
+			religion = sikhism
+		}
+		NOT = {
+			exists = PUN
+		}
+		current_age = age_of_revolutions
+	}
+
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.5
+			NOT = {
+				stability = 1
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				legitimacy = 50
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = sirhind_area
+						area = bist_doab_area
+						area = hisar_area
+						area = jech_doab_area
+						area = lahore_area
+					}
+				}
+				add_core = PUN
+			}
+			release = PUN
+			PUN = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 4.8
+						cavalry = 1.6
+						artillery = 1.6
+					}
+				}
+				change_government = monarchy
+				change_religion = sikhism
+				add_government_reform = misl_confederacy_reform
+				adopt_reform_progress = ROOT
+				add_yearly_manpower = 10
+				define_ruler = {
+					name = "Jassa Singh"
+					dynasty = "Ahluwalia"
+					adm = 1
+					dip = 2
+					mil = 6
+				}
+				# define_ruler_to_general = {
+				#	fire = 2
+				#	shock = 3
+				#	manuever = 2
+				#	siege = 1
+				# }
+				add_ruler_personality = inspiring_leader_personality
+				set_government_rank = 1
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_civil_war
+				}
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = multan_area
+						area = sind_sagar_area
+					}
+				}
+				add_core = PUN
+			}
+			add_stability = -2
+		}
+	}
+
+	option = { # We shall teach them their place!
+		name = ipeMUG.13.a
+		tooltip = {
+			release = PUN
+			PUN = {
+				define_ruler = {
+					name = "Jassa Singh"
+					dynasty = "Ahluwalia"
+					adm = 1
+					dip = 2
+					mil = 6
+				}
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_civil_war
+				}
+			}
+			add_stability = -2
+		}
+	}
+
+	option = { # Play as Punjab.
+		name = ipeMUG.13.b
+		switch_tag = PUN
+	}
+}

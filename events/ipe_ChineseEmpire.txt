@@ -1,0 +1,901 @@
+namespace = ipe_ChineseEmpire
+normal_or_historical_nations = yes
+
+# The Empire of China
+country_event = {
+	id = ipe_ChineseEmpire.1
+	title = ipe_ChineseEmpire.1.t
+	desc = ipe_ChineseEmpire.1.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			every_ally = {
+				country_event = {
+					id = ipe_ChineseEmpire.2
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { # The Emperor of China knows no allies, and only subjects.
+		name = ipe_ChineseEmpire.1.a
+		custom_tooltip = ipe_ChineseEmpire.1.a.tooltip
+	}
+}
+
+# $FROMCOUNTRY$ Declares the Mandate of Heaven!
+country_event = {
+	id = ipe_ChineseEmpire.2
+	title = ipe_ChineseEmpire.2.t
+	desc = ipe_ChineseEmpire.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_chinese_unification
+				}
+				white_peace = ROOT
+			}
+		}
+	}
+
+	option = { # We will not kowtow to these new emperors!
+		name = ipe_ChineseEmpire.2.a
+		custom_tooltip = ipe_ChineseEmpire.2.a.tooltip
+	}
+}
+
+# War with the Emperor of China
+country_event = {
+	id = ipe_ChineseEmpire.3
+	title = ipe_ChineseEmpire.3.t
+	desc = ipe_ChineseEmpire.3.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	trigger = {
+		OR = {
+			has_reform = steppe_horde
+			has_reform = great_mongol_state_reform
+			has_reform = jurchen_tribe
+		}
+		any_neighbor_country = {
+			war_with = ROOT
+			is_emperor_of_china = yes
+		}
+		NOT = {
+			manpower_percentage = 0.75
+		}
+	}
+
+	is_triggered_only = yes
+
+	option = { # We are grateful for their aid!
+		name = ipe_ChineseEmpire.3.a
+		add_yearly_manpower = 5
+	}
+}
+
+# Tiring of War
+country_event = {
+	id = ipe_ChineseEmpire.4
+	title = ipe_ChineseEmpire.4.t
+	desc = ipe_ChineseEmpire.4.d
+    picture = {
+        trigger = {
+            NOT = {
+                has_dlc = "Mandate of Heaven"
+            }
+        }
+        picture = BORDER_TENSION_eventPicture
+    }
+    picture = {
+        trigger = {
+            has_dlc = "Mandate of Heaven"
+        }
+        picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+    }
+
+	trigger = {
+		has_reform = celestial_empire
+		war_exhaustion = 4
+		dip_power = 200
+		manpower_percentage = 0.2
+		imperial_mandate = 5
+	}
+
+	is_triggered_only = yes
+
+	option = { # We must assist them in their time of need.
+		name = ipe_ChineseEmpire.4.a
+		ai_chance = {
+			factor = 45
+		}
+		add_dip_power = -200
+		add_war_exhaustion = -2
+	}
+
+	option = { # Allow the peasants to return to their farms.
+		name = ipe_ChineseEmpire.4.b
+		ai_chance = {
+			factor = 45
+		}
+		add_yearly_manpower = -0.5
+		add_war_exhaustion = -2
+	}
+
+	option = { # Ignore their pleas.
+		name = ipe_ChineseEmpire.4.c
+		ai_chance = {
+			factor = 10
+		}
+		add_mandate = -5
+	}
+}
+
+# The Disintegration of China
+country_event = {
+	id = ipe_ChineseEmpire.5
+	title = ipe_ChineseEmpire.5.t
+	desc = ipe_ChineseEmpire.5.d
+	picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # What will become of the Middle Kingdom?
+		name = ipe_ChineseEmpire.5.a
+		tooltip = {
+			FROM = {
+				add_government_reform = warring_state
+			}
+		}
+		every_subject_country = {
+			limit = {
+				OR = {
+					is_subject_of_type = march
+					is_subject_of_type = vassal
+				}
+			}
+			add_liberty_desire = 25
+		}
+		add_mandate = -10
+	}
+}
+
+# A New Chinese Dynasty
+country_event = {
+	id = ipe_ChineseEmpire.6
+	title = ipe_ChineseEmpire.6.t
+	desc = ipe_ChineseEmpire.6.d
+	picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Ask to side with these new rulers of China.
+		name = ipe_ChineseEmpire.6.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				liberty_desire = 50
+				NOT = {
+					is_subject_of_type = guard
+				}
+			}
+			modifier = {
+				factor = 0
+				any_known_country = {
+					is_emperor_of_china = yes
+					ROOT = {
+						NOT = {
+							has_opinion = {
+								who = PREV
+								value = 0
+							}
+						}
+					}
+				}
+				NOT = {
+					is_subject_of_type = guard
+				}
+			}
+			modifier = {
+				factor = 0
+				any_known_country = {
+					is_emperor_of_china = yes
+					NOT = {
+						total_development = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				is_subject = no
+			}
+			modifier = {
+				factor = 100
+				is_subject_of_type = guard
+			}
+		}
+		random_known_country = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			country_event = {
+				id = ipe_ChineseEmpire.7
+			}
+		}
+	}
+
+	option = { # Let us remain loyal to the previous dynasty.
+		name = ipe_ChineseEmpire.6.b
+		ai_chance = {
+			factor = 0
+		}
+		clr_country_flag = new_chinese_tributary_state
+		clr_country_flag = new_chinese_guard
+	}
+
+	option = { # It is time to break free of our shackles.
+		name = ipe_ChineseEmpire.6.c
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				liberty_desire = 50
+				NOT = {
+					is_subject_of_type = guard
+				}
+			}
+			modifier = {
+				factor = 100
+				any_known_country = {
+					is_emperor_of_china = yes
+					ROOT = {
+						NOT = {
+							has_opinion = {
+								who = PREV
+								value = 0
+							}
+						}
+					}
+				}
+				NOT = {
+					is_subject_of_type = guard
+				}
+			}
+			modifier = {
+				factor = 100
+				any_known_country = {
+					is_emperor_of_china = yes
+					NOT = {
+						total_development = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				is_subject = no
+			}
+			modifier = {
+				factor = 0
+				is_subject_of_type = guard
+			}
+		}
+		grant_independence = yes
+		clr_country_flag = new_chinese_tributary_state
+		clr_country_flag = new_chinese_guard
+	}
+}
+
+# $FROMCOUNTRY$ Offers Tribute
+country_event = {
+	id = ipe_ChineseEmpire.7
+	title = ipe_ChineseEmpire.7.t
+	desc = ipe_ChineseEmpire.7.d
+	picture = TRIBUTARY_FLEET_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will accept their tribute.
+		name = ipe_ChineseEmpire.7.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					tag = MCH
+					tag = QNG
+					tag = OIR
+					tag = YUA
+				}
+				FROM = {
+					capital_scope = {
+						OR = {
+							region = manchuria_region
+							region = mongolia_region
+							region = tibet_region
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					any_owned_province = {
+						OR = {
+							region = north_china_region
+							region = south_china_region
+							region = xinan_region
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					any_owned_province = {
+						is_core = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				FROM = {
+					is_rival = ROOT
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_country_flag = new_chinese_tributary_state
+				}
+			}
+			create_subject = {
+				subject = FROM
+				subject_type = tributary_state
+			}
+			FROM = {
+				hidden_effect = {
+					country_event = {
+						id = ipe_ChineseEmpire.8
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					has_country_flag = new_chinese_guard
+				}
+			}
+			create_subject = {
+				subject = FROM
+				subject_type = guard
+			}
+			FROM = {
+				hidden_effect = {
+					country_event = {
+						id = ipe_ChineseEmpire.8
+					}
+				}
+			}
+		}
+	}
+
+	option = { # They are not worthy of joining our sphere.
+		name = ipe_ChineseEmpire.7.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				OR = {
+					tag = MCH
+					tag = QNG
+					tag = OIR
+					tag = YUA
+				}
+				FROM = {
+					capital_scope = {
+						OR = {
+							region = manchuria_region
+							region = mongolia_region
+							region = tibet_region
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				FROM = {
+					any_owned_province = {
+						OR = {
+							region = north_china_region
+							region = south_china_region
+							region = xinan_region
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				FROM = {
+					any_owned_province = {
+						is_core = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				FROM = {
+					is_rival = ROOT
+				}
+			}
+		}
+		FROM = {
+			hidden_effect = {
+				country_event = {
+					id = ipe_ChineseEmpire.9
+				}
+			}
+			clr_country_flag = new_chinese_tributary_state
+			clr_country_flag = new_chinese_guard
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Accepts Our Tribute!
+country_event = {
+	id = ipe_ChineseEmpire.8
+	title = ipe_ChineseEmpire.8.t
+	desc = ipe_ChineseEmpire.8.d
+	picture = TRIBUTARY_FLEET_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Excellent.
+		name = ipe_ChineseEmpire.8.a
+		if = {
+			limit = {
+				has_country_flag = new_chinese_tributary_state
+			}
+			tooltip = {
+				FROM = {
+					create_subject = {
+						subject = ROOT
+						subject_type = tributary_state
+					}
+				}
+			}
+			clr_country_flag = new_chinese_tributary_state
+		}
+		if = {
+			limit = {
+				has_country_flag = new_chinese_guard
+			}
+			tooltip = {
+				FROM = {
+					create_subject = {
+						subject = ROOT
+						subject_type = guard
+					}
+				}
+			}
+			clr_country_flag = new_chinese_guard
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Refuses Our Tribute!
+country_event = {
+	id = ipe_ChineseEmpire.9
+	title = ipe_ChineseEmpire.9.t
+	desc = ipe_ChineseEmpire.9.d
+	picture = TRIBUTARY_FLEET_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well.
+		name = ipe_ChineseEmpire.9.a
+	}
+}
+
+# Han Defectors
+country_event = {
+	id = ipe_ChineseEmpire.10
+	title = ipe_ChineseEmpire.10.t
+	desc = ipe_ChineseEmpire.10.d
+	picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+
+	trigger = {
+		is_in_war = {
+			attacker_leader = ROOT
+			casus_belli = cb_take_mandate
+		}
+		any_known_country = {
+			is_emperor_of_china = yes
+			NOT = {
+				imperial_mandate = 50
+			}
+		}
+		NOT = {
+			has_country_flag = han_defectors
+		}
+		OR = {
+			NOT = {
+				culture_group = east_asian
+			}
+			primary_culture = manchu_new
+		}
+		capital_scope = {
+			controlled_by = ROOT
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # We welcome them into our service.
+		name = ipe_ChineseEmpire.10.a
+		set_country_flag = han_defectors
+		add_yearly_manpower = 5
+		add_army_tradition = 20
+		capital_scope = {
+			artillery = ROOT
+			artillery = ROOT
+		}
+	}
+}
+
+# A New Capital
+country_event = {
+	id = ipe_ChineseEmpire.11
+	title = ipe_ChineseEmpire.11.t
+	desc = ipe_ChineseEmpire.11.d
+	picture = IMPERIAL_EXAMINATION_eventPicture
+
+	trigger = {
+		is_emperor_of_china = yes
+		capital_scope = {
+			NOT = {
+				region = north_china_region
+				region = south_china_region
+				region = xinan_region
+			}
+		}
+		any_owned_province = {
+			OR = {
+				region = north_china_region
+				region = south_china_region
+				region = xinan_region
+			}
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Beijing.
+		name = ipe_ChineseEmpire.11.a
+		trigger = {
+			owns = 1816
+		}
+		ai_chance = {
+			factor = 70
+		}
+		set_capital = 1816
+		1816 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # Nanjing.
+		name = ipe_ChineseEmpire.11.b
+		trigger = {
+			owns = 1821
+		}
+		ai_chance = {
+			factor = 10
+		}
+		set_capital = 1821
+		1821 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # Xi'an.
+		name = ipe_ChineseEmpire.11.c
+		trigger = {
+			owns = 700
+		}
+		ai_chance = {
+			factor = 10
+		}
+		set_capital = 700
+		700 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # Kaifeng.
+		name = ipe_ChineseEmpire.11.e
+		trigger = {
+			owns = 688
+		}
+		ai_chance = {
+			factor = 10
+		}
+		set_capital = 688
+		688 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # Hangzhou.
+		name = ipe_ChineseEmpire.11.f
+		trigger = {
+			owns = 684
+		}
+		ai_chance = {
+			factor = 0
+		}
+		set_capital = 684
+		684 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # Wuchang.
+		name = ipe_ChineseEmpire.11.g
+		trigger = {
+			owns = 682
+		}
+		ai_chance = {
+			factor = 0
+		}
+		set_capital = 682
+		682 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # Chongqing.
+		name = ipe_ChineseEmpire.11.h
+		trigger = {
+			owns = 680
+		}
+		ai_chance = {
+			factor = 0
+		}
+		set_capital = 680
+		680 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # Fuzhou.
+		name = ipe_ChineseEmpire.11.i
+		trigger = {
+			owns = 669
+		}
+		ai_chance = {
+			factor = 0
+		}
+		set_capital = 669
+		669 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # Canton.
+		name = ipe_ChineseEmpire.11.j
+		trigger = {
+			owns = 667
+		}
+		ai_chance = {
+			factor = 0
+		}
+		set_capital = 667
+		667 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # Chengdu.
+		name = ipe_ChineseEmpire.11.k
+		trigger = {
+			owns = 679
+		}
+		ai_chance = {
+			factor = 0
+		}
+		set_capital = 679
+		679 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # A lesser known city.
+		name = ipe_ChineseEmpire.11.l
+		trigger = {
+			NOT = {
+				owns = 667
+				owns = 669
+				owns = 679
+				owns = 680
+				owns = 682
+				owns = 684
+				owns = 688
+				owns = 700
+				owns = 1816
+				owns = 1821
+			}
+		}
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						region = north_china_region
+						region = south_china_region
+						region = xinan_region
+					}
+					province_has_center_of_trade_of_level = 1
+				}
+			}
+			random_owned_province = {
+				limit = {
+					OR = {
+						region = north_china_region
+						region = south_china_region
+						region = xinan_region
+					}
+					province_has_center_of_trade_of_level = 1
+				}
+				move_capital_effect = yes
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+			}
+		}
+		else = {
+			random_owned_province = {
+				limit = {
+					OR = {
+						region = north_china_region
+						region = south_china_region
+						region = xinan_region
+					}
+				}
+				move_capital_effect = yes
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+			}
+		}
+	}
+}

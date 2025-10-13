@@ -1,0 +1,42 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = english
+add_accepted_culture = welsh
+religion = catholic
+capital = 4369
+fixed_capital = 4369
+
+1432.10.19 = {
+	monarch = {
+		name = "John"
+		dynasty = "de Mowbray"
+		birth_date = 1415.9.12
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+
+	queen = {
+		name = "Eleanor"
+		dynasty = "de Bourchier"
+		country_of_origin = ENG
+		female = yes
+		birth_date = 1417.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1444.10.18 = {
+	heir = {
+		name = "John"
+		dynasty = "de Mowbray"
+		birth_date = 1444.10.18
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}

@@ -1,0 +1,41 @@
+#3518 - Kokand
+
+owner = TIM
+controller = TIM
+culture = kirgiz
+religion = sunni
+capital = "Osi"
+trade_goods = livestock
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = TIM
+add_core = TRS
+add_core = FGH
+add_core = SGD
+
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = nomad_group
+discovered_by = indian
+
+1409.5.13 = { #Ulugh Beg is made Governor of Samarkand
+           owner = TRS
+           controller = TRS
+}
+1501.1.1 = {
+           owner = SHY
+           controller = SHY
+           add_core = SHY
+           #remove_core = TRS
+} # Muhammad Shaybani
+1502.1.1 = {
+           owner = BUK
+           add_core = BUK
+           controller = BUK
+           remove_core = TRS
+} # The Uzbek Shaybanids brings an end to the Timurid dynasty
+1622.1.1 = { discovered_by = RUS }
+1709.1.1 = { owner = KOK controller = KOK remove_core = BUK } # Independent principality established by Shaybanid Shahrukh

@@ -1,0 +1,30 @@
+#801 - Cochabamba
+
+culture = inca
+
+
+
+discovered_by = south_american
+discovered_by = andean
+
+owner = SRA
+controller = SRA
+add_core = SRA
+religion = inti
+capital = "Cochabamba"
+trade_goods = grain
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 1
+is_city = yes
+
+1561.1.1 = {
+	discovered_by = SPA
+	owner = SPA
+	controller = SPA
+	add_core = SPA
+	religion = catholic
+	culture = castillian
+}
+1809.7.16 = { revolt = { type = nationalist_rebels size = 0 } controller = REB } # Bolivian War of Independence

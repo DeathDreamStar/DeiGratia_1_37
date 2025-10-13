@@ -1,0 +1,15 @@
+#3317 - Hitoyoshi
+
+owner = SGR
+controller = SGR
+culture = kyushuan
+religion = shinto
+capital = "Hitoyoshi"
+trade_goods = wine # shochu, not actually rice wine but close enough
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = SGR
+discovered_by = chinese

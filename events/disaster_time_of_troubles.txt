@@ -1,0 +1,377 @@
+########################################
+# Time of Troubles
+########################################
+
+namespace = time_of_troubles
+
+# Time of Troubles
+country_event = {
+	id = time_of_troubles.1
+	title = "flavor_rus.EVTNAME1101"
+	desc = "flavor_rus.EVTDESC1101"
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = time_of_troubles
+	}
+	
+	option = { # Hard times are ahead of us.
+		name = "flavor_rus.EVTOPTA1101"
+		add_stability = -6
+	}
+}
+
+# Brigands in $COUNTRY$
+country_event = {
+	id = time_of_troubles.5	
+	title = ipe_time_of_troubles.5.t
+	desc = ipe_time_of_troubles.5.d
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_owned_province = {
+			NOT = { has_province_flag = armed_brigands }
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		random_owned_province = {
+			limit = { is_capital = no }
+			set_province_flag = armed_brigands
+		}
+	}
+	
+	option = { # Restore authority.
+		name = ipe_time_of_troubles.5.a
+		ai_chance = { factor = 75 }
+		add_adm_power = -10
+		add_years_of_income = -0.1
+	}
+	option = { # Let it be.
+		name = ipe_time_of_troubles.5.b
+		ai_chance = { factor = 25 }
+		random_owned_province = {
+			limit = { has_province_flag = armed_brigands }
+			add_province_modifier = {
+				name = armed_brigands
+				duration = 1825
+			}
+		}
+	}
+}
+
+# The First Dmitry
+country_event = {
+	id = time_of_troubles.6
+	title = ipe_time_of_troubles.6.t
+	desc = ipe_time_of_troubles.6.d
+	picture = ACCUSATION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion_group = christian
+		government = monarchy
+		is_subject = no
+		any_neighbor_country = {
+			religion_group = christian
+			government = monarchy
+			is_subject = no
+			is_rival = ROOT
+			manpower = 10
+			has_regency = no
+			NOT = {
+				war_with = ROOT
+			}
+		}
+		has_disaster = time_of_troubles
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # Recognize him as the legitimate ruler.
+		name = ipe_time_of_troubles.6.a
+		ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit = {
+				has_regency = no
+			}
+			kill_ruler = yes
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		define_ruler = {
+			name = "Dmitry I"
+			dynasty = "Rurik"
+			adm = 0
+			dip = 0
+			mil = 0
+			claim = 20
+		}
+		add_ruler_modifier = {
+			name = usurper_on_the_throne
+		}
+		set_ruler_flag = dmitry_downfall
+	}
+
+	option = { # Expel him from the country.
+		name = ipe_time_of_troubles.6.b
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipe_time_of_troubles.6.b.tooltip
+		hidden_effect = {
+			random_neighbor_country = {
+				limit = {
+					religion_group = christian
+					government = monarchy
+					is_subject = no
+					is_rival = ROOT
+					manpower = 10
+					has_regency = no
+					NOT = {
+						war_with = ROOT
+					}
+				}
+				country_event = {
+					id = time_of_troubles.11
+				}
+			}
+		}
+	}
+}
+
+# The False Dmitry
+country_event = {
+	id = time_of_troubles.11
+	title = ipe_time_of_troubles.11.t
+	desc = ipe_time_of_troubles.11.d
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# Support him with troops.
+		name = ipe_time_of_troubles.11.a
+		custom_tooltip = ipe_time_of_troubles.11.a.tooltip
+		ai_chance = { factor = 100 }
+		set_country_flag = supporter_of_dimitri
+		add_mil_power = -100
+		add_manpower = -10
+		FROM = {
+			country_event = {
+				id = time_of_troubles.8
+				days = 365
+			}
+		}
+	}
+
+	option = { # Do not support this nonsense.
+		name = ipe_time_of_troubles.11.b
+		ai_chance = { factor = 0 }
+		add_prestige = 10
+	}
+}
+
+# Dmitry Returns
+country_event = {
+	id = time_of_troubles.8
+	title = ipe_time_of_troubles.8.t
+	desc = ipe_time_of_troubles.8.d
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+
+	major = yes
+	
+	option = { # We are doomed...
+		name = ipe_time_of_troubles.8.a
+		add_stability = -1
+		if = {
+			limit = {
+				has_regency = no
+			}
+			kill_ruler = yes
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		define_ruler = {
+			name = "Dmitry I"
+			dynasty = "Rurik"
+			adm = 0
+			dip = 0
+			mil = 0
+			claim = 20
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+				}
+				religion = orthodox
+			}
+			set_ruler_religion = catholic
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = protestant
+				}
+				religion = orthodox
+			}
+			set_ruler_religion = protestant
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = reformed
+				}
+				religion = orthodox
+			}
+			set_ruler_religion = reformed
+		}
+		add_ruler_modifier = {
+			name = usurper_on_the_throne
+		}
+		add_truce_with = FROM
+		FROM = {
+			add_truce_with = ROOT
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = new_time_of_troubles.5
+				}
+			}
+		}
+	}
+}
+
+# False Dmitry Overthrown
+country_event = {
+	id = time_of_troubles.9
+	title = ipe_time_of_troubles.9.t
+	desc = ipe_time_of_troubles.9.d
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		has_disaster = time_of_troubles
+		has_ruler_flag = dmitry_downfall
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # These dark times shall continue.
+		name = ipe_time_of_troubles.9.a
+		if = {
+			limit = {
+				has_regency = no
+			}
+			tooltip = {
+				kill_ruler = yes
+			}
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		define_ruler = {
+			name = "Vasiliy"
+			dynasty = "Shuisky"
+			adm = 0
+			dip = 0
+			mil = 0
+			claim = 20
+		}
+		add_ruler_modifier = {
+			name = usurper_on_the_throne
+		}
+		set_ruler_flag = vasiliy_downfall
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					has_country_flag = supporter_of_dimitri
+				}
+				country_event = {
+					id = new_time_of_troubles.1
+				}
+			}
+		}
+		random_known_country = {
+			limit = {
+				has_country_flag = supporter_of_dimitri
+			}
+			add_opinion = {
+				who = RUS
+				modifier = rus_overthrow_dimitri
+			}
+		}
+		set_global_flag = romanov_election
+	}
+}
+
+# End of the Time of Troubles
+country_event = {
+	id = time_of_troubles.10
+	title = "flavor_rus.EVTNAME1110"
+	desc = ipe_time_of_troubles.10.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = {
+		set_country_flag = rus_had_time_of_troubles
+	}
+	
+	option = { # Russia will always be victorious.
+		name = ipe_time_of_troubles.10.a
+		trigger = {
+			is_subject = no
+		}
+		add_stability_or_adm_power = yes
+		remove_country_modifier = heroes_of_russia
+	}
+
+	option = { # But when will we know freedom again?
+		name = ipe_time_of_troubles.10.b
+		trigger = {
+			is_subject = yes
+		}
+		add_stability = -1
+		remove_country_modifier = heroes_of_russia
+	}
+}

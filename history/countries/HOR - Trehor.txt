@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = kham
+religion = animism
+technology_group = chinese
+capital = 2135	# Garze
+government_rank = 1
+
+1400.1.1 = { # fictional
+	monarch = {
+		name = "Ga Anyen"
+		dynasty = "Trehor"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,60 @@
+country_decisions = {
+	burn_mount_hiei = {
+		major = yes
+		potential = {
+			3321 = {
+				has_province_modifier = enryaku_ji
+				owner = {
+					war_with = ROOT
+				}
+			}
+		}
+		provinces_to_highlight = {
+			province_id = 3321 # Otsu
+		}
+		allow = {
+			controls = 3321
+			OR = {
+				ruler_has_personality = free_thinker_personality
+				ruler_has_personality = cruel_personality
+				ruler_has_personality = malevolent_personality
+				ruler_has_personality = sinner_personality
+				AND = {
+					ruler_has_personality = zealot_personality
+					NOT = {
+						religion_group = eastern
+					}
+				}
+			}
+			NOT = {
+				ruler_has_personality = tolerant_personality
+			}
+		}
+		effect = {
+			3321 = {
+				tooltip = {
+					remove_province_modifier = enryaku_ji
+				}
+				add_devastation = 50
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				owner = {
+					add_opinion = {
+						who = ROOT
+						modifier = burned_mount_hiei
+					}
+					country_event = {
+						id = ipeJAP.93
+					}
+				}
+			}
+			country_event = {
+				id = ipeJAP.94
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

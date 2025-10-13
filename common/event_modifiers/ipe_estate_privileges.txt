@@ -1,0 +1,19 @@
+estate_rajput_levies_for_muslims_mod = {
+	local_manpower_modifier = 0.2
+}
+
+estate_mamluks_mamluk_rule_in_egypt_mod = {
+	min_local_autonomy = 50
+}
+
+estate_mamluks_entrenched_syrian_governors_mod = {
+	min_local_autonomy = 25
+}
+
+estate_burghers_english_wool_trade_mod = {
+	local_production_efficiency = 0.5
+}
+
+estate_vaisyas_tamil_trade_guilds_mod = {
+	min_local_autonomy = 50
+}

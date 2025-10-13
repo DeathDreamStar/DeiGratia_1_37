@@ -1,0 +1,18 @@
+#6951 - Weisheim
+
+capital = "Weisheim"
+culture = moselle
+religion = catholic
+trade_goods = wine
+owner = PAL
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+controller = PAL
+add_core = PAL
+hre = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman

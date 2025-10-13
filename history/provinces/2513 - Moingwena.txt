@@ -1,0 +1,33 @@
+# No previous file for Moingwena
+
+owner = PEO
+controller = PEO
+add_core = PEO
+culture = illini
+religion = totemism
+capital = "Moingwena"
+trade_goods = grain
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes 
+native_size = 5
+native_ferocity = 1
+native_hostileness = 2
+tribal_owner = PEO
+
+
+
+discovered_by = north_american
+
+
+1670.1.1 = { discovered_by = FRA } # Robert Cavelier de La Salle
+1808.1.1 = {
+	owner = USA
+	controller = USA
+	add_core = USA
+	religion = protestant
+	culture = american 
+} #Fort Madison
+

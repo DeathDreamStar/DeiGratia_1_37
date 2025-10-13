@@ -1,0 +1,19 @@
+#6889 - Keenaght
+
+owner = CLN
+controller = CLN
+culture = irish
+religion = catholic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = grain
+base_manpower = 1
+capital = "Coleraine"
+is_city = yes
+add_core = CLN
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+add_local_autonomy = 50 # Ó Catháin

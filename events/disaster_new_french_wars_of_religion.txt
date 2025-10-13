@@ -1,0 +1,1210 @@
+########################################
+# Wars of Religion                     #
+########################################
+
+namespace = new_french_wars_of_religion
+
+# The Surprise of Meaux
+country_event = {
+	id = new_french_wars_of_religion.1
+	title = new_french_wars_of_religion.1.t
+	desc = {
+		trigger = {
+			religion = catholic
+		}
+		desc = new_french_wars_of_religion.1.d.catholic
+	}
+	desc = {
+		trigger = {
+			NOT = { religion = catholic }
+		}
+		desc = new_french_wars_of_religion.1.d.protestant
+	}
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_disaster = french_wars_of_religion
+		OR = {
+			AND = {
+				religion = catholic
+				any_owned_province = {
+					OR = {
+						religion = protestant
+						religion = reformed
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					religion = catholic
+				}
+				any_owned_province = {
+					religion = catholic
+				}
+			}
+		}
+	}
+
+	option = { # Their sedition will be punished...
+		name = new_french_wars_of_religion.1.a
+		set_country_flag = bartholomew_massacre_prelude
+		add_stability = -1
+		if = {
+			limit = {
+				religion = catholic
+				any_owned_province = {
+					religion = protestant
+				}
+			}
+			random_owned_province = {
+				limit = {
+					religion = protestant
+					is_capital = no
+				}
+				spawn_rebels = {
+					type = protestant_rebels
+					size = 2
+				}
+			}
+		}
+		if = {
+			limit = {
+				religion = catholic
+				any_owned_province = {
+					religion = reformed
+				}
+			}
+			random_owned_province = {
+				limit = {
+					religion = reformed
+					is_capital = no
+				}
+				spawn_rebels = {
+					type = reformed_rebels
+					size = 2
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					religion = catholic
+				}
+			}
+			random_owned_province = {
+				limit = {
+					religion = catholic
+					is_capital = no
+				}
+				spawn_rebels = {
+					type = catholic_rebels
+					size = 2
+				}
+				set_province_flag = catholic_rebel_spawn
+			}
+			random_owned_province = {
+				limit = {
+					religion = catholic
+					is_capital = no
+					NOT = {
+						has_province_flag = catholic_rebel_spawn
+					}
+				}
+				spawn_rebels = {
+					type = catholic_rebels
+					size = 2
+				}
+			}
+		}
+	}
+
+	after = {
+		every_owned_province = {
+			limit = {
+				has_province_flag = catholic_rebel_spawn
+			}
+			clr_province_flag = catholic_rebel_spawn
+		}
+	}
+}
+
+# The Heretic Succession
+country_event = {
+	id = new_french_wars_of_religion.2
+	title = new_french_wars_of_religion.2.t
+	desc = {
+		trigger = {
+			has_heir = yes
+		}
+		desc = new_french_wars_of_religion.2.d.has_heir
+	}
+	desc = {
+		trigger = {
+			has_heir = no
+		}
+		desc = new_french_wars_of_religion.2.d.no_heir
+	}
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_disaster = french_wars_of_religion
+		has_country_flag = henry_of_navarre
+		OR = {
+			religion = catholic
+			religion = protestant
+			religion = reformed
+		}
+	}
+
+	immediate = {
+		clr_country_flag = henry_of_navarre
+	}
+
+	option = { # Our faith is in France. The monarchy rules from blood.
+		name = new_french_wars_of_religion.2.a
+		trigger = {
+			religion = catholic
+		}
+		custom_tooltip = new_french_wars_of_religion.2.a.catholic.tooltip
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		set_country_flag = catholic_league_rising
+		add_country_modifier = {
+			name = league_rising
+			duration = -1
+			hidden = yes
+		}
+	}
+
+	option = { # Our faith is in France. The monarchy rules from blood.
+		name = new_french_wars_of_religion.2.a
+		trigger = {
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+		custom_tooltip = new_french_wars_of_religion.2.a.protestant.tooltip
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		set_country_flag = protestant_league_rising
+		add_country_modifier = {
+			name = league_rising
+			duration = -1
+			hidden = yes
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			remove_heir = {}
+		}
+	}
+}
+
+# The Catholic League
+country_event = {
+	id = new_french_wars_of_religion.3
+	title = new_french_wars_of_religion.3.t
+	desc = new_french_wars_of_religion.3.d
+	picture = RELIGION_eventPicture
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_disaster = french_wars_of_religion
+		has_country_flag = catholic_league_rising
+	}
+	
+	option = { # The Duke of Guise will not go unopposed...
+		name = new_french_wars_of_religion.3.a
+		add_stability = -1
+		clr_country_flag = catholic_league_rising
+		set_country_flag = catholic_league_day_of_barricades
+	}
+}
+
+# The Protestant League
+country_event = {
+	id = new_french_wars_of_religion.4
+	title = new_french_wars_of_religion.4.t
+	desc = new_french_wars_of_religion.4.d
+	picture = RELIGION_eventPicture
+
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_disaster = french_wars_of_religion
+		has_country_flag = protestant_league_rising
+	}
+	
+	option = { # The Prince of Condé will not go unopposed...
+		name = new_french_wars_of_religion.4.a
+		add_stability = -1
+		clr_country_flag = protestant_league_rising
+		set_country_flag = protestant_league_day_of_barricades
+	}
+}
+
+# The Day of the Barricades (Catholic League)
+country_event = {
+	id = new_french_wars_of_religion.5
+	title = new_french_wars_of_religion.5.t
+	desc = new_french_wars_of_religion.5.d
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		has_disaster = french_wars_of_religion
+		capital_scope = {
+			religion = catholic
+		}
+		has_country_flag = catholic_league_day_of_barricades
+	}
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		clr_country_flag = catholic_league_day_of_barricades
+	}
+	
+	option = { # Yield to the demands of the League.
+		name = new_french_wars_of_religion.5.a
+		add_stability = -1
+		add_country_modifier = {
+			name = edit_dunion
+			duration = -1
+		}
+		set_country_flag = assassinate_guise
+	}
+
+	option = { # Go to war with the Catholic League.
+		name = new_french_wars_of_religion.5.b
+		custom_tooltip = new_french_wars_of_religion.5.b.tooltip
+		set_country_flag = war_with_catholic_league
+	}
+}
+
+# The Day of the Barricades (Protestant League)
+country_event = {
+	id = new_french_wars_of_religion.6
+	title = new_french_wars_of_religion.5.t
+	desc = new_french_wars_of_religion.6.d
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		has_disaster = french_wars_of_religion
+		capital_scope = {
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+		has_country_flag = protestant_league_day_of_barricades
+	}
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	immediate = {
+		clr_country_flag = protestant_league_day_of_barricades
+	}
+	
+	option = { # Yield to the demands of the League.
+		name = new_french_wars_of_religion.5.a
+		add_stability = -1
+		add_country_modifier = {
+			name = edit_dunion
+			duration = -1
+		}
+		set_country_flag = assassinate_conde
+	}
+
+	option = { # Go to war with the Protestant League.
+		name = new_french_wars_of_religion.6.b
+		custom_tooltip = new_french_wars_of_religion.6.b.tooltip
+		set_country_flag = war_with_protestant_league
+	}
+}
+
+# The Assassination of the Prince of Condé
+country_event = {
+	id = new_french_wars_of_religion.7
+	title = new_french_wars_of_religion.7.t.conde
+	desc = new_french_wars_of_religion.7.d.conde
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_disaster = french_wars_of_religion
+		has_country_flag = assassinate_conde
+	}	
+	
+	immediate = {
+		clr_country_flag = assassinate_conde
+	}
+
+	option = { # Assassinate him.
+		name = new_french_wars_of_religion.7.a
+		custom_tooltip = new_french_wars_of_religion.7.a.tooltip
+		set_country_flag = war_with_protestant_league
+		add_prestige = 25
+	}
+}
+
+# The Catholic League Declares War!
+country_event = {
+	id = new_french_wars_of_religion.8
+	title = new_french_wars_of_religion.8.t
+	desc = new_french_wars_of_religion.8.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_country_flag = war_with_catholic_league
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		clr_country_flag = war_with_catholic_league
+		add_stability = -2
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					religion = catholic
+					continent = europe
+					OR = {
+						culture = cosmopolitan_french
+						culture = champenois
+						culture = picard
+						culture = normand
+						culture = burgundian
+						culture = occitain
+						culture = wallonian
+						culture = lorrainer
+						culture = arpitan
+					}
+				}
+				add_core = CTL
+			}
+			release = CTL
+			if = {
+				limit = {
+					183 = {
+						religion = catholic
+					}
+				}
+				183 = {
+					cede_province = CTL
+				}
+				CTL = {
+					set_capital = 183
+				}
+			}
+			CTL = {
+				if = {
+					limit = {
+						FRA = {
+							government_rank = 3
+						}
+					}
+					set_government_rank = 3
+				}
+				if = {
+					limit = {
+						FRA = {
+							NOT = {
+								government_rank = 3
+							}
+							government_rank = 2
+						}
+					}
+					set_government_rank = 2
+				}
+				if = {
+					limit = {
+						FRA = {
+							NOT = {
+								government_rank = 2
+							}
+						}
+					}
+					set_government_rank = 1
+				}
+				change_religion = catholic
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					name = "Charles"
+					dynasty = "de Bourbon"
+					adm = 1
+					dip = 3
+					mil = 1
+				}
+				if = {
+					limit = {
+						has_dlc = "Rights of Man"
+					}
+					hidden_effect = { add_ruler_personality = zealot_personality }
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1.6
+						cavalry = 0.4
+						artillery = 0.4
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						heavy_ship = 0.5
+						light_ship = 0.5
+						transport = 0.5
+					}
+				}
+				add_manpower = 10
+				add_treasury = 250
+			}
+			every_owned_province = {
+				add_core = CTL
+			}
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						region = france_region
+					}
+					religion = catholic
+				}
+				random = {
+					chance = 50
+					CTL = {
+						vassalize = PREV
+					}
+				}
+			}
+			declare_war_with_cb = {
+				who = CTL
+				casus_belli = cb_civil_war
+			}
+		}
+	}
+
+	option = { # Grande Dieu Sauve le Roi!
+		name = new_french_wars_of_religion.8.a
+		tooltip = {
+			declare_war_with_cb = {
+				who = CTL
+				casus_belli = cb_civil_war
+			}
+		}
+		add_yearly_manpower = -3
+		remove_country_modifier = edit_dunion
+		hidden_effect = {
+			remove_country_modifier = league_rising
+		}
+		remove_country_modifier = french_moderates
+		remove_country_modifier = french_fanaticism
+		if = {
+			limit = {
+				any_owned_province = {
+					religion = reformed
+				}
+			}
+			define_heir = {
+				dynasty = "de Bourbon"
+				adm = 3
+				dip = 3
+				mil = 3
+				religion = reformed
+				block_disinherit = yes
+				claim = 50
+				age = 40
+			}
+			set_heir_flag = worth_a_mass
+		}
+		if = {
+			limit = {
+				NOT = {
+					any_owned_province = {
+						religion = reformed
+					}
+				}
+			}
+			define_heir = {
+				dynasty = "de Bourbon"
+				adm = 3
+				dip = 3
+				mil = 3
+				religion = protestant
+				block_disinherit = yes
+				claim = 50
+				age = 40
+			}
+			set_heir_flag = worth_a_mass
+		}
+	}
+
+	option = { # Play as the Catholic League.
+		name = new_french_wars_of_religion.8.b
+		hidden_effect = { 
+			add_yearly_manpower = -3
+			remove_country_modifier = edit_dunion
+			hidden_effect = {
+				remove_country_modifier = league_rising
+			}
+			remove_country_modifier = french_moderates
+			remove_country_modifier = french_fanaticism
+			if = {
+				limit = {
+					any_owned_province = {
+						religion = reformed
+					}
+				}
+				define_heir = {
+					dynasty = "de Bourbon"
+					adm = 3
+					dip = 3
+					mil = 3
+					religion = reformed
+					block_disinherit = yes
+					claim = 50
+					age = 40
+				}
+				set_heir_flag = worth_a_mass
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_owned_province = {
+							religion = reformed
+						}
+					}
+				}
+				define_heir = {
+					dynasty = "de Bourbon"
+					adm = 3
+					dip = 3
+					mil = 3
+					religion = protestant
+					block_disinherit = yes
+					claim = 50
+					age = 40
+				}
+				set_heir_flag = worth_a_mass
+			}
+		}
+		switch_tag = CTL
+	}
+}
+
+# The Protestant League Declares War!
+country_event = {
+	id = new_french_wars_of_religion.9
+	title = new_french_wars_of_religion.9.t
+	desc = new_french_wars_of_religion.9.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_country_flag = war_with_protestant_league
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		clr_country_flag = war_with_protestant_league
+		add_stability = -2
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						religion = protestant
+						religion = reformed
+					}
+					continent = europe
+					OR = {
+						culture = cosmopolitan_french
+						culture = champenois
+						culture = picard
+						culture = normand
+						culture = burgundian
+						culture = occitain
+						culture = wallonian
+						culture = lorrainer
+						culture = arpitan
+					}
+				}
+				add_core = HUG
+			}
+			release = HUG
+			if = {
+				limit = {
+					183 = {
+						OR = {
+							religion = protestant
+							religion = reformed
+						}
+					}
+				}
+				183 = {
+					cede_province = HUG
+				}
+				HUG = {
+					set_capital = 183
+				}
+			}
+			HUG = {
+				if = {
+					limit = {
+						FRA = {
+							government_rank = 3
+						}
+					}
+					set_government_rank = 3
+				}
+				if = {
+					limit = {
+						FRA = {
+							NOT = {
+								government_rank = 3
+							}
+							government_rank = 2
+						}
+					}
+					set_government_rank = 2
+				}
+				if = {
+					limit = {
+						FRA = {
+							NOT = {
+								government_rank = 2
+							}
+						}
+					}
+					set_government_rank = 1
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = protestant
+						}
+					}
+					change_religion = protestant
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							religion = reformed
+						}
+					}
+					change_religion = reformed
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							NOT = {
+								religion = protestant
+								religion = reformed
+							}
+						}
+						dominant_religion = protestant
+					}
+					change_religion = protestant
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							NOT = {
+								religion = protestant
+								religion = reformed
+							}
+						}
+						dominant_religion = reformed
+					}
+					change_religion = reformed
+				}
+				if = {
+					limit = {
+						capital_scope = {
+							NOT = {
+								religion = protestant
+								religion = reformed
+							}
+						}
+						NOT = {
+							dominant_religion = protestant
+							dominant_religion = reformed
+						}
+					}
+					change_religion = reformed # historical
+				}
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					name = "Henri"
+					dynasty = "de Bourbon"
+					adm = 5
+					dip = 5
+					mil = 5
+				}
+				if = {
+					limit = {
+						has_dlc = "Rights of Man"
+					}
+					hidden_effect = { add_ruler_personality = zealot_personality }
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1.6
+						cavalry = 0.4
+						artillery = 0.4
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						heavy_ship = 0.5
+						light_ship = 0.5
+						transport = 0.5
+					}
+				}
+				add_manpower = 10
+				add_treasury = 250
+			}
+			every_owned_province = {
+				add_core = HUG
+			}
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						region = france_region
+					}
+					OR = {
+						religion = protestant
+						religion = reformed
+					}
+				}
+				random = {
+					chance = 50
+					HUG = {
+						vassalize = PREV
+					}
+				}
+			}
+			declare_war_with_cb = {
+				who = HUG
+				casus_belli = cb_civil_war
+			}
+		}
+	}
+
+	option = { # Grande Dieu Sauve le Roi!
+		name = new_french_wars_of_religion.8.a
+		tooltip = {
+			declare_war_with_cb = {
+				who = HUG
+				casus_belli = cb_civil_war
+			}
+		}
+		add_yearly_manpower = -3
+		remove_country_modifier = edit_dunion
+		hidden_effect = {
+			remove_country_modifier = league_rising
+		}
+		remove_country_modifier = french_moderates
+		remove_country_modifier = french_fanaticism
+		define_heir = {
+			dynasty = "de Bourbon"
+			adm = 3
+			dip = 3
+			mil = 3
+			religion = catholic
+			block_disinherit = yes
+			claim = 50
+			age = 40
+		}
+		set_heir_flag = worth_a_mass
+	}
+
+	option = { # Play as the Catholic League.
+		name = new_french_wars_of_religion.9.b
+		hidden_effect = {
+			add_yearly_manpower = -3
+			remove_country_modifier = edit_dunion
+			hidden_effect = {
+				remove_country_modifier = league_rising
+			}
+			remove_country_modifier = french_moderates
+			remove_country_modifier = french_fanaticism
+			define_heir = {
+				dynasty = "de Bourbon"
+				adm = 3
+				dip = 3
+				mil = 3
+				religion = catholic
+				block_disinherit = yes
+				claim = 50
+				age = 40
+			}
+			set_heir_flag = worth_a_mass
+		}
+		switch_tag = HUG
+	}
+}
+
+# The Assassination of $MONARCHTITLE$ $MONARCH$ (Catholic League)
+country_event = {
+	id = new_french_wars_of_religion.10
+	title = new_french_wars_of_religion.10.t
+	desc = new_french_wars_of_religion.10.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		war_with = CTL
+		has_regency = no
+		has_heir_flag = worth_a_mass
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # A most unfortunate fate...
+		name = new_french_wars_of_religion.10.a
+		kill_ruler = yes
+	}
+}
+
+# The Assassination of $MONARCHTITLE$ $MONARCH$ (Protestant League)
+country_event = {
+	id = new_french_wars_of_religion.11
+	title = new_french_wars_of_religion.10.t
+	desc = new_french_wars_of_religion.11.d
+	picture = ASSASSINATION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		war_with = HUG
+		has_regency = no
+		has_heir_flag = worth_a_mass
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # A most unfortunate fate...
+		name = new_french_wars_of_religion.10.a
+		kill_ruler = yes
+	}
+}
+
+# The Reconquest of the Nation (Catholic League)
+country_event = {
+	id = new_french_wars_of_religion.12
+	title = new_french_wars_of_religion.12.t
+	desc = new_french_wars_of_religion.12.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = FRA
+		any_owned_province = {
+			is_core = CTL
+		}
+		NOT = {
+			exists = CTL
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # We welcome the return of peace.
+		name = new_french_wars_of_religion.12.a
+		hidden_effect = {
+			every_province = {
+				remove_core = CTL
+			}
+		}
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+	}
+}
+
+# The Reconquest of the Nation (Protestant League)
+country_event = {
+	id = new_french_wars_of_religion.13
+	title = new_french_wars_of_religion.12.t
+	desc = new_french_wars_of_religion.13.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = FRA
+		any_owned_province = {
+			is_core = HUG
+		}
+		NOT = {
+			exists = HUG
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # We welcome the return of peace.
+		name = new_french_wars_of_religion.12.a
+		hidden_effect = {
+			every_province = {
+				remove_core = HUG
+			}
+		}
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+	}
+}
+
+# The Reconquest of the Nation (Catholic League Victory)
+country_event = {
+	id = new_french_wars_of_religion.14
+	title = new_french_wars_of_religion.12.t
+	desc = new_french_wars_of_religion.14.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = CTL
+		any_owned_province = {
+			is_core = FRA
+		}
+		NOT = {
+			exists = FRA
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # We welcome the return of peace.
+		name = new_french_wars_of_religion.12.a
+		change_tag = FRA
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+	}
+}
+
+# The Reconquest of the Nation (Protestant League Victory)
+country_event = {
+	id = new_french_wars_of_religion.15
+	title = new_french_wars_of_religion.12.t
+	desc = new_french_wars_of_religion.14.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = HUG
+		any_owned_province = {
+			is_core = FRA
+		}
+		NOT = {
+			exists = FRA
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # We welcome the return of peace.
+		name = new_french_wars_of_religion.12.a
+		change_tag = FRA
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+	}
+}
+
+# The Governor of Brittany
+country_event = {
+	id = new_french_wars_of_religion.16
+	title = new_french_wars_of_religion.16.t
+	desc = new_french_wars_of_religion.16.d
+	picture = SIEGE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = FRA
+		OR = {
+			AND = {
+				war_with = CTL
+				172 = {
+					religion = catholic
+				}
+			}
+			AND = {
+				war_with = HUG
+				172 = {
+					OR = {
+						religion = protestant
+						religion = reformed
+					}
+				}
+			}
+		}
+		NOT = {
+			exists = BRI
+		}
+		brittany_area = {
+			type = all
+			is_core = BRI
+			owned_by = ROOT
+		}
+		western_brittany_area = {
+			type = all
+			is_core = BRI
+			owned_by = ROOT
+		}
+		vannetais_area = {
+			type = all
+			is_core = BRI
+			owned_by = ROOT
+		}
+		rennais_area = {
+			type = all
+			is_core = BRI
+			owned_by = ROOT
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = BRI
+			BRI = {
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					name = "Philippe Emmanuel"
+					dynasty = "de Lorraine"
+					adm = 4
+					dip = 4
+					mil = 4
+				}
+				if = {
+					limit = {
+						has_dlc = "Rights of Man"
+					}
+					hidden_effect = { add_ruler_personality = zealot_personality }
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.8
+						cavalry = 0.2
+						artillery = 0.2
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						heavy_ship = 0.3
+						light_ship = 0.3
+						transport = 0.3
+					}
+				}
+				add_manpower = 5
+				add_treasury = 100
+			}
+			declare_war_with_cb = {
+				who = BRI
+				casus_belli = cb_civil_war
+			}
+		}
+	}
+
+	option = { # Brittany will return to the fold!
+		name = new_french_wars_of_religion.16.a
+		tooltip = {
+			declare_war_with_cb = {
+				who = BRI
+				casus_belli = cb_civil_war
+			}
+		}
+	}
+
+	option = { # Play as Brittany.
+		name = new_french_wars_of_religion.16.b
+		switch_tag = BRI
+	}
+}

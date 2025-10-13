@@ -1,0 +1,15 @@
+#6182 - Muhazi
+
+owner = RWA
+controller = RWA
+add_core = RWA
+culture = rwandan
+religion = shamanism #Fetishism
+capital = "Muhazi"
+trade_goods = wool
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+discovered_by = central_african

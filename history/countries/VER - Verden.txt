@@ -1,0 +1,84 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = low_saxon
+religion = catholic
+technology_group = western
+capital = 4771	# Verden
+fixed_capital = 4771
+
+1426.2.21 = {
+	monarch = {
+		name = "Johann III"
+		dynasty = "von Asel"
+		birth_date = 1380.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1470.1.1 = {
+	monarch = {
+		name = "Berthold I"
+		dynasty = "von Landsberg"
+		birth_date = 1435.1.1 #est
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1502.6.4 = {
+	monarch = {
+		name = "Cristoph I"
+		dynasty = "von Welf"
+		birth_date = 1487.1.1
+		adm = 1
+		dip = 0
+		mil = 0
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = sinner_personality
+	add_ruler_personality = embezzler_personality
+}
+1558.1.23 = {
+	religion = protestant
+	monarch = {
+		name = "Georg I"
+		dynasty = "von Welf"
+		birth_date = 1494.11.22
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}
+1566.12.4 = {
+	monarch = {
+		name = "Eberhard"
+		dynasty = "von Holle"
+		birth_date = 1531.1.1
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1586.7.5 = {
+	monarch = {
+		name = "Philipp Sigismund"
+		dynasty = "von Welf"
+		birth_date = 1568.7.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1623.3.19 = {
+	monarch = {
+		name = "Friedrich II"
+		dynasty = "von Oldenburg"
+		birth_date = 1609.3.18
+		adm = 0
+		dip = 0
+		mil = 3
+	}
+} #future king of Denmark
+#1629.5.22 under BRE

@@ -1,0 +1,20 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = hausa
+religion = shamanism
+technology_group = sub_saharan
+unlock_cult = yemoja_cult
+unlock_cult = roog_cult
+unlock_cult = nyame_cult
+capital = 2293 # Yawuri
+fixed_capital = 2293	
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Albishir"
+		dynasty = "Yauri"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

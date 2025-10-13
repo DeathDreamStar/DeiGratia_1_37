@@ -1,0 +1,32 @@
+name = "Bahmani Reconquest of Mudgal"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 4428 # Mudgal
+}
+
+1443.1.1 = {
+	add_attacker = BAH
+	add_attacker = TLG
+	add_attacker = CHD
+	add_defender = VIJ
+	add_defender = YOR
+	add_defender = MYS
+	add_defender = MAD
+	add_defender = VND
+	add_defender = MAB
+	add_defender = KLT
+}
+
+1444.1.1 = {
+	rem_attacker = BAH
+	rem_attacker = TLG
+	rem_attacker = CHD
+	rem_defender = VIJ
+	rem_defender = YOR
+	rem_defender = MYS
+	rem_defender = MAD
+	rem_defender = VND
+	rem_defender = MAB
+	rem_defender = KLT
+}

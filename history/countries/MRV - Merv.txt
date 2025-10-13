@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = iqta
+technology_group = muslim
+religion = sunni
+primary_culture = turkmeni
+capital = 445	# Merv
+fixed_capital = 445 # Cannot move capital away from this province & no power cost to move to it
+religious_school = hanafi_school
+historical_rival = DLH
+
+1447.3.13 = {
+    monarch = {
+        name = "Sanjar bin Umar Shaikh"
+        dynasty = "Gurkani"
+        adm = 3
+        dip = 3
+        mil = 2
+        culture = uzbehk
+    }
+}

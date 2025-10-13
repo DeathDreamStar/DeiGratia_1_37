@@ -1,0 +1,976 @@
+########################################
+# Wars of Religion                     #
+########################################
+
+namespace = french_wars_of_religion
+
+# Wars of Religion in France
+country_event = {
+	id = french_wars_of_religion.1
+	title = ipe_french_wars_of_religion.1.t
+	desc = {
+		trigger = {
+			religion = catholic
+		}
+		desc = ipe_french_wars_of_religion.1.d.catholic
+	}
+	desc = {
+		trigger = {
+			NOT = { religion = catholic }
+		}
+		desc = ipe_french_wars_of_religion.1.d.protestant
+	}
+	picture = BATTLE_eventPicture
+	
+	
+	fire_only_once = yes	
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = fra_wars_of_religion_flag
+			
+			if = {
+				limit = {
+					religion = catholic
+				}
+				random_owned_province = {
+					limit = {
+						religion = protestant
+					}
+					set_province_flag = protestant_rebel_spawn
+					spawn_rebels = {
+						type = protestant_rebels
+						size = 2
+						win = yes
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = protestant
+						NOT = {
+							has_province_flag = protestant_rebel_spawn
+						}
+					}
+					spawn_rebels = {
+						type = protestant_rebels
+						size = 2
+						win = yes
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = reformed
+					}
+					set_province_flag = reformed_rebel_spawn
+					spawn_rebels = {
+						type = reformed_rebels
+						size = 2
+						win = yes
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = reformed
+						NOT = {
+							has_province_flag = reformed_rebel_spawn
+						}
+					}
+					set_province_flag = reformed_rebel_spawn
+					spawn_rebels = {
+						type = reformed_rebels
+						size = 2
+						win = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						religion = catholic
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = catholic
+					}
+					set_province_flag = catholic_rebel_spawn_1
+					spawn_rebels = {
+						type = catholic_rebels
+						size = 2
+						win = yes
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = catholic
+						NOT = {
+							has_province_flag = catholic_rebel_spawn_1
+						}
+					}
+					set_province_flag = catholic_rebel_spawn_2
+					spawn_rebels = {
+						type = catholic_rebels
+						size = 2
+						win = yes
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = catholic
+						NOT = {
+							has_province_flag = catholic_rebel_spawn_1
+							has_province_flag = catholic_rebel_spawn_2
+						}
+					}
+					set_province_flag = catholic_rebel_spawn_3
+					spawn_rebels = {
+						type = catholic_rebels
+						size = 2
+						win = yes
+					}
+				}
+				random_owned_province = {
+					limit = {
+						religion = catholic
+						NOT = {
+							has_province_flag = catholic_rebel_spawn_1
+							has_province_flag = catholic_rebel_spawn_2
+							has_province_flag = catholic_rebel_spawn_3
+						}
+					}
+					spawn_rebels = {
+						type = catholic_rebels
+						size = 2
+						win = yes
+					}
+				}
+			}
+			every_owned_province = {
+				clr_province_flag = protestant_rebel_spawn
+				clr_province_flag = reformed_rebel_spawn
+				clr_province_flag = catholic_rebel_spawn_1
+				clr_province_flag = catholic_rebel_spawn_2
+				clr_province_flag = catholic_rebel_spawn_3
+			}
+		}
+	}
+	
+	option = { # Support moderation.
+		name = ipe_french_wars_of_religion.1.a
+		ai_chance = {
+			factor = 90
+		}
+		add_stability = -2
+		add_country_modifier = {
+			name = french_moderates
+			duration = -1
+		}
+		set_country_flag = supports_french_moderates
+	}
+
+	option = { # Crush the heretics!
+		name = ipe_french_wars_of_religion.2.b
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -2
+		add_country_modifier = {
+			name = french_fanaticism
+			duration = -1
+		}
+	}
+}
+
+# The St. Bartholomew's Day Massacre
+country_event = {
+	id = french_wars_of_religion.2
+	title = "flavor_fra.EVTNAME3101"
+	desc = {
+		trigger = {
+			religion = catholic
+		}
+		desc = "flavor_fra.EVTDESC3101"
+	}
+	desc = {
+		trigger = {
+			NOT = { religion = catholic }
+		}
+		desc = french_wars_of_religion.2.b
+	}
+	picture = ANGRY_MOB_eventPicture
+	
+	
+	fire_only_once = yes
+
+	major = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		capital_scope = {
+			controlled_by = ROOT
+			has_owner_religion = yes
+		}
+		has_country_flag = bartholomew_massacre_prelude
+	}
+	
+	immediate = {
+		hidden_effect = {
+			capital_scope = {
+				save_event_target_as = capital
+			}
+		}
+		clr_country_flag = bartholomew_massacre_prelude
+		set_country_flag = henry_of_navarre
+	}
+	
+	option = {		# Contain it to CAPITALNAME
+		name = "flavor_fra.EVTOPTB3101"
+		goto = capital
+		ai_chance = {
+			factor = 50
+		}
+		add_stability = -1
+		add_mil_power = -100
+		capital_scope = {
+			add_province_modifier = {
+				name = religious_massacre
+				duration = 1825
+			}
+			add_devastation = 20
+		}
+	}
+	option = {		# Let it spread to the provinces
+		name = "flavor_fra.EVTOPTC3101"
+		goto = capital
+		add_stability = -2
+		capital_scope = {
+			add_province_modifier = {
+				name = religious_massacre
+				duration = 1825
+			}
+			add_devastation = 20
+		}
+		# Less than 5 heretic provinces
+		if = {
+			limit = {
+				any_owned_province = {
+					region = france_region
+					has_owner_religion = no
+					NOT = { has_province_modifier = religious_massacre }
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 5
+						region = france_region
+						has_owner_religion = no
+						NOT = { has_province_modifier = religious_massacre }
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					region = france_region
+					has_owner_religion = no
+					NOT = { has_province_modifier = religious_massacre }
+				}
+				add_province_modifier = {
+					name = religious_massacre
+					duration = 1825
+				}
+				add_devastation = 20
+			}
+		}
+		# 5 to 10 heretic provinces
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					value = 5
+					region = france_region
+					has_owner_religion = no
+					NOT = { has_province_modifier = religious_massacre }
+				}
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 10
+						region = france_region
+						has_owner_religion = no
+						NOT = { has_province_modifier = religious_massacre }
+					}
+				}
+			}
+			random_owned_province = {
+				limit = {
+					region = france_region
+					has_owner_religion = no
+					NOT = { has_province_modifier = religious_massacre }
+				}
+				add_province_modifier = {
+					name = religious_massacre
+					duration = 1825
+				}
+				add_devastation = 20
+			}
+			random_owned_province = {
+				limit = {
+					region = france_region
+					has_owner_religion = no
+					NOT = { has_province_modifier = religious_massacre }
+				}
+				add_province_modifier = {
+					name = religious_massacre
+					duration = 1825
+				}
+				add_devastation = 20
+			}
+		}
+		# More than 10 heretic provinces
+		if = {
+			limit = {
+				num_of_owned_provinces_with = {
+					value = 10
+					region = france_region
+					has_owner_religion = no
+					NOT = { has_province_modifier = religious_massacre }
+				}
+			}
+			random_owned_province = {
+				limit = {
+					region = france_region
+					has_owner_religion = no
+					NOT = { has_province_modifier = religious_massacre }
+				}
+				add_province_modifier = {
+					name = religious_massacre
+					duration = 1825
+				}
+				add_devastation = 20
+			}
+			random_owned_province = {
+				limit = {
+					region = france_region
+					has_owner_religion = no
+					NOT = { has_province_modifier = religious_massacre }
+				}
+				add_province_modifier = {
+					name = religious_massacre
+					duration = 1825
+				}
+				add_devastation = 20
+			}
+			random_owned_province = {
+				limit = {
+					region = france_region
+					has_owner_religion = no
+					NOT = { has_province_modifier = religious_massacre }
+				}
+				add_province_modifier = {
+					name = religious_massacre
+					duration = 1825
+				}
+				add_devastation = 20
+			}
+		}
+	}
+}
+
+# The Assassination of Henri of Guise
+country_event = {
+	id = french_wars_of_religion.5
+	title = new_french_wars_of_religion.7.t.guise
+	desc = new_french_wars_of_religion.7.d.guise
+	picture = ASSASSINATION_eventPicture
+	
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_disaster = french_wars_of_religion
+		has_country_flag = assassinate_guise
+	}	
+	
+	immediate = {
+		clr_country_flag = assassinate_guise
+	}
+
+	option = { # Assassinate him.
+		name = new_french_wars_of_religion.7.a
+		custom_tooltip = new_french_wars_of_religion.7.a.tooltip
+		set_country_flag = war_with_catholic_league
+		add_prestige = 25
+	}
+}
+
+# Religious Fanatics
+province_event = {
+	id = french_wars_of_religion.6
+	title = "flavor_fra.EVTNAME3200"
+	desc = "flavor_fra.EVTDESC3200"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		region = france_region
+		owner = {
+			has_disaster = french_wars_of_religion
+		}
+		has_owner_religion = no
+		NOT = { has_province_flag = religious_fanatics }
+		NOT = { has_province_modifier = religious_violence }
+		NOT = { has_province_modifier = religious_massacre }
+	}
+	
+	is_mtth_scaled_to_size = 0.25
+
+	mean_time_to_happen = {
+		months = 120
+		# Had revolt before
+		modifier = {
+			factor = 1.25
+			has_province_flag = religious_fanatics
+		}
+		# Neighbor provinces
+		modifier = {
+			factor = 2.0
+			NOT = {
+				any_neighbor_province = {
+					owned_by = FRA
+					has_owner_religion = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.95
+			any_neighbor_province = {
+				owned_by = FRA
+				has_owner_religion = yes
+			}
+		}
+		# Revolt risk
+		modifier = {
+			factor = 0.95
+			unrest = 3
+		}		
+		modifier = {
+			factor = 0.95
+			unrest = 5
+		}		
+		modifier = {
+			factor = 0.95
+			unrest = 7
+		}		
+		modifier = {
+			factor = 0.95
+			unrest = 9
+		}		
+		modifier = {
+			factor = 0.95
+			unrest = 11
+		}		
+		# General
+		modifier = {
+			factor = 0.95
+			owner = {
+				NOT = { stability = 0 }
+			}
+		}
+		modifier = {
+			factor = 0.95
+			owner = {
+				NOT = { stability = -1 }
+			}
+		}
+		modifier = {
+			factor = 0.95
+			owner = {
+				NOT = { stability = -2 }
+			}
+		}
+	}
+	
+	immediate = {
+		set_province_flag = religious_fanatics
+	}
+
+	option = {		# Encourage these attacks...
+		name = "flavor_fra.EVTOPTA3200"
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				owner = {
+					has_country_flag = supports_french_moderates
+				}
+			}
+		}
+		add_province_modifier = {
+			name = "religious_massacre"
+			duration = 7300
+		}
+		add_devastation = 20
+		set_province_flag = religious_fanatics_encouraged
+	}
+	option = {		# They must be stopped
+		name = "flavor_fra.EVTOPTB3200"
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				owner = {
+					religion = catholic
+				}
+			}
+			spawn_rebels = {
+				type = religious_rebels
+				size = 1
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					religion = protestant
+				}
+			}
+			spawn_rebels = {
+				type = protestant_rebels
+				size = 1
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					religion = reformed
+				}
+			}
+			spawn_rebels = {
+				type = reformed_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# Ravening Religious Fanatics
+province_event = {
+	id = french_wars_of_religion.7
+	title = "flavor_fra.EVTNAME3201"
+	desc = "flavor_fra.EVTDESC3201"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		FROM = { tag = REB }
+		has_owner_religion = no
+		has_province_flag = religious_fanatics
+		NOT = { has_province_modifier = religious_violence }
+		NOT = { has_province_modifier = religious_massacre }
+	}
+	
+	is_triggered_only = yes # from on_action on_siege_lost_province
+
+	option = {		# When will these horrors stop?
+		name = "flavor_fra.EVTOPTA3201"
+		trigger = { NOT = { has_province_flag = religious_fanatics_encouraged } }
+		add_province_modifier = {
+			name = religious_violence
+			duration = 1825
+		}
+		add_devastation = 10
+		clr_province_flag = religious_fanatics
+	}
+	option = {		# For the good of RELIGION!
+		name = "flavor_fra.EVTOPTB3201"
+		trigger = { has_province_flag = religious_fanatics_encouraged }
+		add_province_modifier = {
+			name = religious_massacre
+			duration = 1825
+		}
+		add_devastation = 20
+		clr_province_flag = religious_fanatics
+	}
+}
+
+# Heretic Fanatics
+province_event = {
+	id = french_wars_of_religion.8
+	title = "flavor_fra.EVTNAME3202"
+	desc = "flavor_fra.EVTDESC3202"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		owner = {
+			has_disaster = french_wars_of_religion
+			NOT = { has_country_flag = supports_french_moderates }
+		}
+		has_owner_religion = yes
+		NOT = { has_province_flag = heretic_fanatics }
+		NOT = { has_province_modifier = religious_violence }
+		NOT = { has_province_modifier = religious_massacre }
+	}
+
+	is_mtth_scaled_to_size = 0.25
+	
+	mean_time_to_happen = {
+		months = 120
+		# Had revolt before
+		modifier = {
+			factor = 1.25
+			has_province_flag = heretic_fanatics
+		}
+		# Neighbor provinces
+		modifier = {
+			factor = 2.0
+			NOT = {
+				any_neighbor_province = {
+					owned_by = FRA
+					has_owner_religion = yes
+				}
+			}
+		}
+		modifier = {
+			factor = 0.95
+			any_neighbor_province = {
+				owned_by = FRA
+				has_owner_religion = yes
+			}
+		}
+		# Revolt risk
+		modifier = {
+			factor = 0.95
+			unrest = 3
+		}		
+		modifier = {
+			factor = 0.95
+			unrest = 5
+		}		
+		modifier = {
+			factor = 0.95
+			unrest = 7
+		}		
+		modifier = {
+			factor = 0.95
+			unrest = 9
+		}		
+		modifier = {
+			factor = 0.95
+			unrest = 11
+		}		
+		# General
+		modifier = {
+			factor = 0.95
+			owner = {
+				NOT = { stability = 0 }
+			}
+		}
+		modifier = {
+			factor = 0.95
+			owner = {
+				NOT = { stability = -1 }
+			}
+		}
+		modifier = {
+			factor = 0.95
+			owner = {
+				NOT = { stability = -2 }
+			}
+		}
+	}
+	
+	immediate = {
+		set_province_flag = heretic_fanatics
+	}
+
+	option = {		# They must be stopped
+		name = "flavor_fra.EVTOPTB3202"
+		spawn_rebels = {
+			type = heretic_rebels
+			size = 1
+		}
+	}
+}
+
+# Ravening Heretic Fanatics
+province_event = {
+	id = french_wars_of_religion.9
+	title = "flavor_fra.EVTNAME3203"
+	desc = "flavor_fra.EVTDESC3203"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		FROM = { tag = REB }
+		has_owner_religion = yes
+		has_province_flag = heretic_fanatics
+		NOT = { has_province_modifier = religious_violence }
+		NOT = { has_province_modifier = religious_massacre }
+	}
+	
+	is_triggered_only = yes
+
+	option = {		# When will these horrors stop?
+		name = "flavor_fra.EVTOPTA3203"
+		trigger = { NOT = { has_province_flag = heretic_fanatics_encouraged } }
+		add_province_modifier = {
+			name = religious_violence
+			duration = 1825
+		}
+		add_devastation = 10
+		clr_province_flag = heretic_fanatics
+		clr_province_flag = heretic_fanatics_encouraged
+	}
+	option = {		# These RELIGION followers must be rooted out!
+		name = "flavor_fra.EVTOPTB3203"
+		trigger = { has_province_flag = heretic_fanatics_encouraged }
+		add_province_modifier = {
+			name = religious_massacre
+			duration = 1825
+		}
+		add_devastation = 20
+		clr_province_flag = heretic_fanatics
+		clr_province_flag = heretic_fanatics_encouraged
+	}
+}
+
+# Paris is Worth...?
+country_event = {
+	id = french_wars_of_religion.14
+	title = ipe_french_wars_of_religion.14.t
+	desc = {
+		trigger = {
+			AND = {
+				exists = CTL
+				OR = {
+					ruler_religion = protestant
+					ruler_religion = reformed
+				}
+				CTL = {
+					owns = 183
+					ai = yes
+				}
+			}
+		}
+		desc = ipe_french_wars_of_religion.14.d.catholic
+	}
+	desc = {
+		trigger = {
+			AND = {
+				exists = HUG
+				ruler_religion = catholic
+				HUG = {
+					owns = 183
+					ai = yes
+				}
+			}
+		}
+		desc = ipe_french_wars_of_religion.14.d.protestant
+	}
+	picture = DIPLOMACY_eventPicture
+	
+	trigger = {
+		tag = FRA
+		OR = {
+			AND = {
+				exists = CTL
+				OR = {
+					ruler_religion = protestant
+					ruler_religion = reformed
+				}
+				CTL = {
+					owns = 183
+					ai = yes
+				}
+			}
+			AND = {
+				exists = HUG
+				ruler_religion = catholic
+				HUG = {
+					owns = 183
+					ai = yes
+				}
+			}
+		}
+		NOT = {
+			controls = 183
+		}
+		has_ruler_flag = worth_a_mass
+	}
+	
+	fire_only_once = yes
+
+	major = yes
+
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	option = { # Paris is worth a mass.
+		name = ipe_french_wars_of_religion.14.a
+		trigger = {
+			exists = CTL
+			OR = {
+				ruler_religion = protestant
+				ruler_religion = reformed
+			}
+			CTL = {
+				owns = 183
+				ai = yes
+			}
+		}
+		CTL = {
+			white_peace = ROOT
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		set_ruler_religion = catholic
+		if = {
+			limit = {
+				NOT = {
+					religion = catholic
+				}
+			}
+			change_religion = catholic
+		}
+		hidden_effect = {
+			every_province = {
+				remove_core = CTL
+			}
+		}
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		set_country_flag = FRA_wars_of_religion_ended
+	}
+
+	option = { # Paris is worth not having mass.
+		name = ipe_french_wars_of_religion.14.b
+		trigger = {
+			exists = HUG
+			ruler_religion = catholic
+			HUG = {
+				owns = 183
+				ai = yes
+			}
+		}
+		HUG = {
+			white_peace = ROOT
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+		if = {
+			limit = {
+				HUG = {
+					religion = protestant
+				}
+			}
+			set_ruler_religion = protestant
+			if = {
+				limit = {
+					NOT = {
+						religion = protestant
+					}
+				}
+				change_religion = protestant
+			}
+		}
+		if = {
+			limit = {
+				HUG = {
+					religion = reformed
+				}
+			}
+			set_ruler_religion = reformed
+			if = {
+				limit = {
+					NOT = {
+						religion = reformed
+					}
+				}
+				change_religion = reformed
+			}
+		}
+		if = {
+			limit = {
+				HUG = {
+					NOT = {
+						religion = protestant
+						religion = reformed
+					}
+				}
+			}
+			set_ruler_religion = reformed
+			if = {
+				limit = {
+					NOT = {
+						religion = reformed
+					}
+				}
+				change_religion = reformed
+			}
+		}
+		hidden_effect = {
+			every_province = {
+				remove_core = HUG
+			}
+		}
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		set_country_flag = FRA_wars_of_religion_ended
+	}
+
+	option = { # Never! Paris will fall by the sword!
+		name = "flavor_fra.EVTOPTC3197"
+		ai_chance = {
+			factor = 0
+		}
+		add_stability = -1
+		add_legitimacy = -25
+	}
+}
+
+# End of the Wars of Religion in France
+country_event = {
+	id = french_wars_of_religion.100
+	title = "flavor_fra.EVTNAME3199"
+	desc = ipe_french_wars_of_religion.100.d
+	picture = DIPLOMACY_eventPicture
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_country_flag = FRA_wars_of_religion_ended
+	}
+	
+	option = { # Blessed be the Lord.
+		name = ipe_french_wars_of_religion.100.a
+		clr_country_flag = bartholomew_massacre_prelude
+		clr_country_flag = henry_of_navarre
+		clr_country_flag = catholic_league_rising
+		clr_country_flag = protestant_league_rising
+		clr_country_flag = catholic_league_day_of_barricades
+		clr_country_flag = protestant_league_day_of_barricades
+		clr_country_flag = assassinate_guise
+		clr_country_flag = assassinate_conde
+
+		remove_country_modifier = french_moderates
+		clr_country_flag = supports_french_moderates
+		remove_country_modifier = french_fanaticism
+		remove_country_modifier = edit_dunion
+		hidden_effect = {
+			remove_country_modifier = league_rising
+		}
+		capital_scope = {
+			remove_province_modifier = religious_fanatics
+		}
+		add_stability = 4
+		add_adm_power = 100
+	}
+}

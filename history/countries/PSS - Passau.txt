@@ -1,0 +1,247 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = bavarian
+religion = catholic
+technology_group = western
+capital = 4709 #Passau
+fixed_capital = 4709 # Cannot move capital away from this province & no power cost to move to it
+
+1423.8.3 = {
+	monarch = {
+		name = "Leonhard"
+		dynasty = "von Laiming"
+		birth_date = 1381.1.1
+		dip = 4
+		adm = 3
+		mil = 0
+	}
+}
+1451.6.24 = {
+	monarch = {
+		name = "Ulrich III"
+		dynasty = "von Nußdorf"
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}
+1479.9.2 = {
+	monarch = {
+		name = "Georg II"
+		dynasty = "von Hessler"
+		birth_date = 1427.1.1
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+1481.9.21 = {
+	monarch = {
+		name = "Friedrich I"
+		dynasty = "Mauerkircher"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1485.11.22 = {
+	monarch = {
+		name = "Friedrich II"
+		dynasty = "von Öttingen"
+		birth_date = 1459.1.1
+		adm = 1
+		dip = 0
+		mil = 0
+	}
+}
+1490.3.3 = {
+	monarch = {
+		name = "Christoph"
+		dynasty = "von Schachner"
+		birth_date = 1447.1.1
+		adm = 3
+		dip = 2
+		mil = 0
+	}
+}
+1500.1.3 = {
+	monarch = {
+		name = "Wiguleus"
+		dynasty = "Fröschl"
+		birth_date = 1445.4.4
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1517.11.6 = {
+	monarch = {
+		name = "Ernst"
+		dynasty = "von Wittelsbach"
+		birth_date = 1500.6.13
+		adm = 0
+		dip = 2
+		mil = 0
+	}
+}
+1540.3.30 = {
+	monarch = {
+		name = "Wolfgang I"
+		dynasty = "von Salm"
+		birth_date = 1514.1.1
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+}
+1555.12.5 = {
+	monarch = {
+		name = "Wolfgang II"
+		dynasty = "von Closen"
+		birth_date = 1503.1.1
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+1561.8.7 = {
+	monarch = {
+		name = "Urban"
+		dynasty = "von Trennbach"
+		birth_date = 1525.5.10
+		adm = 5
+		dip = 5
+		mil = 2
+	}
+}
+1598.8.9 = {
+	monarch = {
+		name = "Leopold V"
+		dynasty = "von Habsburg"
+		birth_date = 1586.10.9
+		adm = 2
+		dip = 2
+		mil = 3
+	} 
+}
+1618.11.2 = {
+	monarch = {
+		name = "Leopold Wilhelm"
+		dynasty = "von Habsburg"
+		birth_date = 1614.1.5
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+}
+1662.11.2 = {
+	monarch = {
+		name = "Karl Joseph"
+		dynasty = "von Habsburg"
+		birth_date = 1649.8.7
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+1664.1.27 = {
+	monarch = {
+		name = "Wenzeslaus"
+		dynasty = "von Thun"
+		birth_date = 1629.8.13
+		adm = 5
+		dip = 2
+		mil = 1
+	}
+}
+1673.1.8 = {
+	monarch = {
+		name = "Sebastian"
+		dynasty = "von Pötting"
+		birth_date = 1628.1.1
+		adm = 2
+		dip = 3
+		mil = 0
+	}
+}
+1689.3.16 = {
+	monarch = {
+		name = "Johann Philipp"
+		dynasty = "von Lamberg"
+		birth_date = 1652.5.25
+		adm = 3
+		dip = 4
+		mil = 0
+	}
+}
+1712.10.30 = {
+	monarch = {
+		name = "Raymund Ferdinan"
+		dynasty = "von Rabatta"
+		birth_date = 1669.2.4
+		adm = 2
+		dip = 1
+		mil = 0
+	}
+}
+1722.10.25 = {
+	monarch = {
+		name = "Joseph Dominikus"
+		dynasty = "von Lamberg"
+		birth_date = 1680.7.8
+		adm = 5
+		dip = 2
+		mil = 0
+	}
+}
+1761.8.31 = {
+	monarch = {
+		name = "Joseph Maria"
+		dynasty = "von Thun"
+		birth_date = 1713.5.24
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1763.6.16 = {
+	monarch = {
+		name = "Leopold VI"
+		dynasty = "von Firmian"
+		birth_date = 1708.9.22
+		adm = 4
+		dip = 2
+		mil = 1
+	}
+}
+1783.3.13 = {
+	monarch = {
+		name = "Josepf Franz"
+		dynasty = "von Auersperg"
+		birth_date = 1734.1.31
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}
+1795.8.21 = {
+	monarch = {
+		name = "Thomas Johann"
+		dynasty = "von Thun"
+		birth_date = 1737.5.16
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1796.10.7 = {
+	monarch = {
+		name = "Leopold Leonhard"
+		dynasty = "von Thun"
+		birth_date = 1748.4.17
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}

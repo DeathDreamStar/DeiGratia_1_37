@@ -1,0 +1,22 @@
+#6016 - Souk
+
+owner = TUN
+controller = TUN
+culture = berber
+religion = sunni
+capital = "Souk"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = TUN
+add_core = ALG
+add_local_autonomy = 50
+
+
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern

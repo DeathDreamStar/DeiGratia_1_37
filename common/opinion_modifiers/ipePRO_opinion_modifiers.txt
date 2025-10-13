@@ -1,0 +1,29 @@
+refused_angevin_inheritance = {
+    opinion = -100
+    years = 100
+    yearly_decay = 1
+}
+
+accepted_french_overtures = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+rejected_french_overtures = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+milanese_support = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+stayed_under_foreign_domination = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}

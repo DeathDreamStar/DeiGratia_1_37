@@ -1,0 +1,857 @@
+#################################################################################
+# Muscovite Civil War (1425-1453) Events  										#
+# Scripted Originally by Isildur "the Mage", Rescripted by Nguyenforthewin13	#
+#################################################################################
+
+namespace = MOS_civil_war
+
+#The Muscovite Civil War
+country_event = {
+	id = MOS_civil_war.1
+	title = MOS_civil_war.1.t
+	desc = MOS_civil_war.1.d
+	picture = CIVIL_WAR_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		set_global_flag = had_muscovite_civil_war
+		add_stability = -2
+	}
+	
+	option = { # Troubling times for Moscow.
+		name = MOS_civil_war.1.a
+		add_legitimacy = -20
+	}
+}
+
+# The Qasim Khanate
+country_event = {
+	id = MOS_civil_war.2
+	title = MOS_civil_war.2.t
+	desc = MOS_civil_war.2.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		MOS = {
+			has_disaster = muscovite_civil_war
+			war_with = GLC
+		}
+		1778 = {
+			owned_by = MOS
+			culture = mishary
+		}
+		NOT = {
+			war_with = MOS
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+	
+	option = { # Qasim must be freed from the Muscovite yoke.
+		name = MOS_civil_war.2.a
+		ai_chance = {
+			factor = 100
+		}
+		MOS = {
+			country_event = {
+				id = MOS_civil_war.3
+			}
+		}
+	}
+	option = { # It is none of our concern.
+		name = MOS_civil_war.2.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# The Qasim Khanate
+country_event = {
+	id = MOS_civil_war.3
+	title = MOS_civil_war.2.t
+	desc = MOS_civil_war.3.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # They will not press us.
+		name = MOS_civil_war.3.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				war_with = KAZ
+			}
+			modifier = {
+				factor = 100
+				NOT = {
+					has_disaster = muscovite_civil_war
+				}
+			}
+		}
+		KAZ = {
+			country_event = {
+				id = MOS_civil_war.4
+			}
+		}
+	}
+	option = { # We must concede to their demands.
+		name = MOS_civil_war.3.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				war_with = KAZ
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_disaster = muscovite_civil_war
+				}
+			}
+		}
+		tooltip = {
+			1778 = {
+				cede_province = KAZ
+				remove_core = MOS
+			}
+			3166 = {
+				cede_province = KAZ
+				remove_core = MOS
+			}
+		}
+		KAZ = {
+			country_event = {
+				id = MOS_civil_war.5
+			}
+		}
+	}
+}
+
+# The Oppression of Qasim
+country_event = {
+	id = MOS_civil_war.4
+	title = MOS_civil_war.4.t
+	desc = MOS_civil_war.4.d
+	picture = BORDER_TENSION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # This will be the end of Rus'!
+		name = MOS_civil_war.4.a
+		1778 = {
+			add_core = KAZ
+		}
+		3166 = {
+			add_core = KAZ
+		}
+	}
+}
+
+# The Liberation of Qasim
+country_event = {
+	id = MOS_civil_war.5
+	title = MOS_civil_war.5.t
+	desc = MOS_civil_war.5.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Third Rome" }
+		}
+		picture = HORDE_ON_HORSEBACK_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = TRIBUTE_TO_TATARS_eventPicture
+	}
+	
+	is_triggered_only = yes
+	
+	option = { # Make my brother Khan of Qasim.
+		name = MOS_civil_war.5.a
+		ai_chance = {
+			factor = 75
+		}
+		1778 = {
+			cede_province = KAZ
+			remove_core = MOS
+		}
+		3166 = {
+			cede_province = KAZ
+			remove_core = MOS
+		}
+		KAZ = {
+			release = QAS
+		}
+		create_subject = {
+			subject = QAS
+			subject_type = march
+		}
+		hidden_effect = {
+			QAS = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.4
+					}
+				}
+				define_ruler = {
+					name = "Qasim"
+					dynasty = "Borjigin"
+					adm = 2
+					dip = 2
+					mil = 2
+					claim = 95
+				}
+				change_government = tribal
+				add_government_reform = steppe_horde
+				adopt_reform_progress = ROOT
+				set_government_rank = 2
+			}
+		}
+		add_prestige = 5
+	}
+	
+	option = {
+		ai_chance = {
+			factor = 25
+		}
+		name = MOS_civil_war.5.b
+		1778 = {
+			cede_province = KAZ
+			remove_core = MOS
+		}
+		3166 = {
+			cede_province = KAZ
+			remove_core = MOS
+		}
+		add_prestige = 5
+	}
+}
+
+# The Muscovite Throne
+country_event = {
+	id = MOS_civil_war.6
+	title = MOS_civil_war.6.t
+	desc = MOS_civil_war.6.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Third Rome" }
+		}
+		picture = ANGRY_MOB_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = MARCHING_PEASANTS_eventPicture
+	}
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = GLC
+		has_reform = principality
+		has_ruler = "Dmitry Shemyaka"
+		MOS = {
+			has_disaster = muscovite_civil_war
+		}
+		NOT = {
+			war_with = MOS
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # I am Grand Prince of Rus'!
+		name = MOS_civil_war.6.a
+		custom_tooltip = MOS_civil_war.6.a.tooltip
+		capital_scope = {
+			build_to_forcelimit = {
+				infantry = 0.8
+				cavalry = 0.2
+			}
+		}
+		add_yearly_manpower = 2
+		declare_war_with_cb = {
+			who = MOS
+			casus_belli = cb_independence_war
+		}
+		MOS = {
+			country_event = {
+				id = MOS_civil_war.7
+			}
+			add_opinion = {
+				who = GLC
+				modifier = renewed_civil_war
+			}
+		}
+	}
+}
+
+# The Rebellion of Dmitry Shemyaka
+country_event = {
+	id = MOS_civil_war.7
+	title = MOS_civil_war.7.t
+	desc = MOS_civil_war.7.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Third Rome" }
+		}
+		picture = ANGRY_MOB_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = MARCHING_PEASANTS_eventPicture
+	}
+
+	is_triggered_only = yes
+
+	option = { # Like father, like son.
+		name = MOS_civil_war.7.a
+		custom_tooltip = MOS_civil_war.7.a.tooltip
+		tooltip = {
+			GLC = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_independence_war
+				}
+			}
+			add_opinion = {
+				who = GLC
+				modifier = renewed_civil_war
+			}
+		}
+	}
+}
+
+# The Fall of Moscow
+country_event = {
+	id = MOS_civil_war.12
+	title = MOS_civil_war.12.t
+	desc = MOS_civil_war.12.d
+	picture = SIEGE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = GLC
+		is_in_war = {
+			casus_belli = cb_independence_war
+		}
+		MOS = {
+			capital_scope = {
+				controlled_by = GLC
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # A tragic end.
+		name = MOS_civil_war.12.a
+		white_peace = MOS
+		inherit = MOS
+		change_tag = MOS
+		if = {
+			limit = {
+				owns = 295
+			}
+			set_capital = 295
+		}
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		set_global_flag = end_of_MOS_civil_war
+	}
+}
+
+# The Flight of Shemyaka
+country_event = {
+	id = MOS_civil_war.13
+	title = MOS_civil_war.13.t
+	desc = MOS_civil_war.13.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Third Rome" }
+		}
+		picture = SIEGE_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = PRINCE_AND_BOYARS_eventPicture
+	}
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = MOS
+		is_in_war = {
+			casus_belli = cb_independence_war
+		}
+		GLC = {
+			capital_scope = {
+				controlled_by = MOS
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # He will not escape.
+		name = MOS_civil_war.13.a
+		every_known_country = {
+			limit = {
+				alliance_with = GLC
+				dynasty = "Rurik"
+				war_with = MOS
+			}
+			every_owned_province = {
+				add_core = MOS
+			}
+		}
+		GLC = {
+			every_owned_province = {
+				limit = {
+					is_core = GLC
+				}
+				add_core = MOS
+			}
+			every_owned_province = {
+				cede_province = MOS
+			}
+		}
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		set_country_flag = flight_of_shemyaka
+	}
+}
+
+# Chasing Shemyaka
+country_event = {
+	id = MOS_civil_war.14
+	title = MOS_civil_war.14.t
+	desc = MOS_civil_war.14.d
+	picture = {
+		trigger = {
+			NOT = { has_dlc = "Third Rome" }
+		}
+		picture = SPY_eventPicture
+	}
+	picture = {
+		trigger = { has_dlc = "Third Rome" }
+		picture = PRINCE_AND_BOYARS_eventPicture
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MOS
+		has_country_flag = flight_of_shemyaka
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		clr_country_flag = flight_of_shemyaka
+	}
+
+	option = { # Poison him.
+		name = MOS_civil_war.14.a
+		ai_chance = {
+			factor = 75
+			modifier = {
+				factor = 100
+				ruler_has_personality_ancestor = { key = intricate_web_weaver }
+			}
+		}
+		custom_tooltip = MOS_civil_war.14.a.tooltip
+		add_treasury = -25
+		hidden_effect = {
+			random_list = {
+				75 = {
+					country_event = {
+						id = MOS_civil_war.69
+						days = 30
+					}
+				}
+				25 = {
+					country_event = {
+						id = MOS_civil_war.70
+						days = 30
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Spare his life.
+		name = MOS_civil_war.14.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				ruler_has_personality_ancestor = { key = intricate_web_weaver }
+			}
+		}
+		custom_tooltip = MOS_civil_war.14.b.tooltip
+		set_country_flag = return_of_shemyaka
+	}
+}
+
+# Qasimi Allegiances
+country_event = {
+	id = MOS_civil_war.15
+	title = MOS_civil_war.15.t
+	desc = MOS_civil_war.15.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = QAS
+		is_subject_of = KAZ
+		is_subject_of_type = march
+		NOT = {
+			war_with = MOS
+		}
+		has_global_flag = end_of_MOS_civil_war
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = { # Offer to serve Muscovy.
+		name = MOS_civil_war.15.a
+		custom_tooltip = MOS_civil_war.15.a.tooltip
+		ai_chance = {
+			factor = 75
+		}
+		custom_tooltip = MOS_civil_war.15.a.tooltip
+		MOS = {
+			country_event = {
+				id = MOS_civil_war.16
+			}
+		}
+	}
+	
+	option = { # Forget about it.
+		name = MOS_civil_war.15.b
+		ai_chance = {
+			factor = 25
+		}
+	}	
+}
+
+# Qasimi Allegiances
+country_event = {
+	id = MOS_civil_war.16
+	title = MOS_civil_war.15.t
+	desc = MOS_civil_war.16.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # Make Qasim a Muscovite subject.
+		name = MOS_civil_war.16.a
+		ai_chance = {
+			factor = 100
+		}
+		add_treasury = -50
+		create_subject = {
+			subject = QAS
+			subject_type = march
+		}
+		QAS = {
+			country_event = {
+				id = MOS_civil_war.17
+			}
+			add_opinion = {
+				who = MOS
+				modifier = subjugated_qasim
+			}
+		}
+		KAZ = {
+			country_event = {
+				id = MOS_civil_war.18
+			}
+			add_opinion = {
+				who = MOS
+				modifier = qasimi_dispute
+			}
+		}
+	}
+	
+	option = { # It's not worth the money.
+		name = MOS_civil_war.16.b
+		ai_chance = {
+			factor = 0
+		}
+		QAS = {
+			country_event = {
+				id = MOS_civil_war.20
+			}
+		}
+	}
+}
+
+# The Subjugation of Qasim
+country_event = {
+	id = MOS_civil_war.17
+	title = MOS_civil_war.17.t
+	desc = MOS_civil_war.17.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # Excellent.
+		name = MOS_civil_war.17.a
+		add_treasury = 50
+		tooltip = {
+			MOS = {
+				create_subject = {
+					subject = ROOT
+					subject_type = march
+				}
+			}
+			add_opinion = {
+				who = MOS
+				modifier = subjugated_qasim
+			}
+		}
+		KAZ = {
+			add_opinion = {
+				who = QAS
+				modifier = qasimi_dispute
+			}
+		}
+	}
+}
+
+# The Betrayal of Qasim
+country_event = {
+	id = MOS_civil_war.18
+	title = MOS_civil_war.18.t
+	desc = MOS_civil_war.18.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # These traitors must be punished!
+		name = MOS_civil_war.18.a
+		QAS = {
+			every_owned_province = {
+				limit = {
+					is_core = QAS
+				}
+				add_core = KAZ
+			}
+		}
+		tooltip = {
+			KAZ = {
+				add_opinion = {
+					who = MOS
+					modifier = qasimi_dispute
+				}
+			}
+			KAZ = {
+				add_opinion = {
+					who = QAS
+					modifier = qasimi_dispute
+				}
+			}
+		}
+		add_prestige = -5
+	}
+}
+
+# The Death of Dmitry Shemyaka
+country_event = {
+	id = MOS_civil_war.19
+	title = MOS_civil_war.19.t
+	desc = MOS_civil_war.19.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	option = { # We will have peace.
+		name = MOS_civil_war.19.a
+		if = {
+			limit = {
+				GLC = {
+					war_with = MOS
+				}
+			}
+			every_known_country = {
+				limit = {
+					alliance_with = GLC
+					dynasty = "Rurik"
+					war_with = MOS
+				}
+				every_owned_province = {
+					add_core = MOS
+				}
+			}
+			GLC = {
+				every_owned_province = {
+					limit = {
+						is_core = GLC
+					}
+					add_core = MOS
+				}
+				every_owned_province = {
+					cede_province = MOS
+				}
+			}
+			add_stability_or_adm_power = yes
+			add_legitimacy = 25
+		}
+		if = {
+			limit = {
+				GLC = {
+					NOT = {
+						war_with = MOS
+					}
+				}
+			}
+			inherit = GLC
+			add_prestige = 5
+		}
+	}
+}
+
+# The Khanate Denied
+country_event = {
+	id = MOS_civil_war.20
+	title = MOS_civil_war.20.t
+	desc = MOS_civil_war.20.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Unfortunate.
+		name = MOS_civil_war.20.a
+		add_prestige = -5
+	}
+}
+
+# The Demise of Dmitry Shemyaka
+country_event = {
+	id = MOS_civil_war.69
+	title = MOS_civil_war.69.t
+	desc = MOS_civil_war.69.d
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	# His passing will not be mourned.
+		name = MOS_civil_war.69.a
+		add_legitimacy = 25
+		add_stability = 1
+	}
+}
+
+# Shemyaka Lives!
+country_event = {
+	id = MOS_civil_war.70
+	title = MOS_civil_war.70.t
+	desc = MOS_civil_war.70.d
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # They will be crushed!
+		name = MOS_civil_war.70.a
+		add_prestige = -10
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = noble_rebels
+				size = 1
+			}
+		}
+		set_country_flag = return_of_shemyaka
+	}
+}
+
+# End of the Muscovite Civil War
+country_event = {
+	id = MOS_civil_war.100
+	title = "MOS_civil_war.100.t"
+	desc = "MOS_civil_war.100.d"
+	picture = CIVIL_WAR_eventPicture
+
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = { # Indeed.
+		name = "MOS_civil_war.100.a"
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		add_prestige = 10
+		set_global_flag = end_of_MOS_civil_war
+	}
+}
+
+# The Return of Dmitry Shemyaka
+country_event = {
+	id = MOS_civil_war.102
+	title = MOS_civil_war.102.t
+	desc = MOS_civil_war.102.d
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = return_of_shemyaka
+		NOT = {
+			is_year = 1460
+		}
+		NOT = {
+			has_disaster = muscovite_civil_war
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 36
+	}
+
+	option = { # This is the end for him!
+		name = MOS_civil_war.102.a
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Dmitry Shemyaka"
+				leader_dynasty = "Rurik"
+			}
+		}
+		clr_country_flag = return_of_shemyaka
+	}
+}

@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_despotism
+primary_culture = otomi
+religion = nahuatl
+technology_group = mesoamerican
+capital = 6583
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Hedia"
+		dynasty = "Otomi"
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}

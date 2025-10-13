@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+primary_culture = albanian
+religion = orthodox
+technology_group = eastern
+capital = 3846 # Berat
+
+# The League of Lezhe
+1396.1.1 = {
+	monarch = {
+		name = "Theodhor Koronë"
+		dynasty = "Muzaka"	
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+
+1444.3.2 = {
+	set_country_flag = lezhe_league_member
+}

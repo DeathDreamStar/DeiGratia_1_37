@@ -1,0 +1,24 @@
+﻿l_english:
+ # Cuba
+ colonial_cuba: "Colonial Cuba"
+ COLONIAL_CUBA_Root_Culture_GetName_Cuba: "[Root.GetAdjective] Cuba"
+ COLONIAL_CUBA_Root_Culture_GetName_Cuba_ADJ: "[Root.GetAdjective] Cuban"
+
+ # Hispaniola
+ colonial_hispaniola: "Colonial Hispaniola"
+ COLONIAL_HISPANIOLA_Root_Culture_GetName_Hispaniola: "[Root.GetAdjective] Hispaniola"
+ COLONIAL_HISPANIOLA_Root_Culture_GetName_Hispaniola: "[Root.GetAdjective] Hispaniolan"
+ COLONIAL_HISPANIOLA_Santo_Domingo: "Santo Domingo"
+ COLONIAL_HISPANIOLA_Saint_Domingue: "Saint-Domingue"
+
+ # Chile
+ colonial_chile: "Colonial Chile"
+ COLONIAL_CHILE_Root_Culture_GetName_Chile: "[Root.GetAdjective] Chile"
+ COLONIAL_CHILE_Root_Culture_GetName_Chile_ADJ: "[Root.GetAdjective] Chilean"
+
+ # Cape
+ colonial_cape: "Colonial Cape"
+ COLONIAL_CAPE_Root_Culture_GetName_Cape: "[Root.GetAdjective] Cape"
+ COLONIAL_CAPE_Root_Culture_GetName_Cape_ADJ: "[Root.GetAdjective] Cape"
+ COLONIAL_CAPE_cape_colony: "Cape Colony"
+ COLONIAL_CAPE_kaapkolonie: "Kaapkolonie"

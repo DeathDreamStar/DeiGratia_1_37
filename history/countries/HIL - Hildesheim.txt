@@ -1,0 +1,190 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = eastphalian
+religion = catholic
+technology_group = western
+capital = 3998
+fixed_capital = 3998
+
+1331.8.3 = {
+	monarch = {
+		name = "Heinrich III"
+		dynasty = "von Welf"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1363.2.6 = {
+	monarch = {
+		name = "Johann II"
+		dynasty = "de Schadelande"
+		birth_date = 1312.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1365.6.21 = {
+	monarch = {
+		name = "Gerhard I"
+		dynasty = "vom Berge"
+		birth_date = 1330.1.1 #est
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1398.11.15 = {
+	monarch = {
+		name = "Johann III"
+		dynasty = "von Hoya"
+		birth_date = 1355.1.1
+		adm = 5
+		dip = 1
+		mil = 3
+	}
+}
+1424.5.12 = {
+	monarch = {
+		name = "Magnus I"
+		dynasty = "Askanier"
+		birth_date = 1390.7.14
+		adm = 4
+		dip = 0
+		mil = 3
+	}
+}
+1452.9.21 = {
+	monarch = {
+		name = "Bernhard II"
+		dynasty = "von Welf"
+		birth_date = 1437.1.1
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+1457.1.1 = {
+	monarch = {
+		name = "Ernst I"
+		dynasty = "von Schauenburg"
+		adm = 1
+		dip = 2
+		mil = 0
+	}
+}
+1471.7.23 = {
+	monarch = {
+		name = "Henning I"
+		dynasty = "vom Haus"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+#1481 to 1502 under VER
+1502.5.4 = {
+	monarch = {
+		name = "Erich I"
+		dynasty = "Askanier"
+		birth_date = 1472.1.1
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1503.1.1 = {
+	monarch = {
+		name = "Johann IV"
+		dynasty = "Askanier"
+		birth_date = 1483.1.1
+		adm = 4
+		dip = 2
+		mil = 3
+	}
+}
+1527.1.1 = {
+	monarch = {
+		name = "Balthasar I"
+		dynasty = "Merklin"
+		birth_date = 1479.1.1
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1531.5.28 = {
+	monarch = {
+		name = "Otto III"
+		dynasty = "von Schauenburg"
+		birth_date = 1517.1.1
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1537.1.1 = {
+	monarch = {
+		name = "Valentin I"
+		dynasty = "von Teutleben"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1542.1.1 = { religion = protestant }
+1551.4.28 = {
+	monarch = {
+		name = "Friedrich I"
+		dynasty = "von Oldenburg"
+		birth_date = 1532.4.13
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1556.10.27 = {
+	monarch = {
+		name = "Burchard I"
+		dynasty = "von Oberg"
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+#1573 starts under extensive PUs
+1688.6.4 = {
+	monarch = {
+		name = "Jobst Edmund"
+		dynasty = "von Brabeck"
+		birth_date = 1619.11.11
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = entrepreneur_personality
+}
+#1702 back under PUs
+1761.2.6 = {
+	monarch = {
+		name = "Friedrich Wilhelm"
+		dynasty = "von Westphalen"
+		birth_date = 1727.4.5
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1789.1.6 = {
+	monarch = {
+		name = "Franz Egon"
+		dynasty = "von Fürstenberg"
+		birth_date = 1737.5.10
+		adm = 3
+		dip = 2
+		mil = 1
+	}
+}

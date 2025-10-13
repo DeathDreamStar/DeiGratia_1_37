@@ -1,0 +1,685 @@
+namespace = ipeHUN
+normal_or_historical_nations = yes
+
+# The Fall of Hungary
+country_event = {
+	id = ipeHUN.1
+	title = ipeHUN.1.t
+	desc = ipeHUN.1.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	major = yes
+
+	option = { # We have overcome the bulwark of Europe.
+		name = ipeHUN.1.a
+		hidden_effect = {
+			HUN = {
+				capital_scope = {
+					save_event_target_as = hun_capital
+				}
+			}
+		}
+		if = {
+			limit = {
+				HAB = {
+					is_neighbor_of = HUN
+				}
+			}
+			custom_tooltip = ipeHUN.1.a.tooltip
+		}
+		if = {
+			limit = {
+				TRA = {
+					NOT = {
+						is_subject_of = TUR
+					}
+					is_subject = yes
+				}
+			}
+			TRA = {
+				grant_independence = yes
+			}
+		}
+		hidden_effect = {
+			transylvania_area = {
+				limit = {
+					NOT = {
+						is_core = TRA
+					}
+				}
+				add_core = TRA
+			}
+			southern_transylvania_area = {
+				limit = {
+					NOT = {
+						is_core = TRA
+					}
+				}
+				add_core = TRA
+			}
+			szekelyfold_area = {
+				limit = {
+					NOT = {
+						is_core = TRA
+					}
+				}
+				add_core = TRA
+			}
+			kiralyfold_area = {
+				limit = {
+					NOT = {
+						is_core = TRA
+					}
+				}
+				add_core = TRA
+			}
+			crisana_area = {
+				limit = {
+					NOT = {
+						is_core = TRA
+					}
+				}
+				add_core = TRA
+			}
+			alfold_area = {
+				limit = {
+					NOT = {
+						is_core = TRA
+					}
+				}
+				add_core = TRA
+			}
+			eastern_slovakia_area = {
+				limit = {
+					NOT = {
+						is_core = TRA
+					}
+				}
+				add_core = TRA
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = TRA
+				}
+				TUR = {
+					any_owned_province = {
+						is_core = TRA
+						culture = hungarian
+					}
+				}
+			}
+			TUR = {
+				release = TRA
+				create_march = TRA
+			}
+			hidden_effect = {
+				TRA = {
+					change_religion = event_target:hun_capital
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = TRA
+					TUR = {
+						any_owned_province = {
+							is_core = TRA
+							culture = hungarian
+						}
+					}
+				}
+				HUN = {
+					any_owned_province = {
+						is_core = TRA
+						culture = hungarian
+					}
+				}
+			}
+			HUN = {
+				release = TRA
+			}
+			hidden_effect = {
+				TRA = {
+					change_religion = event_target:hun_capital
+				}
+			}
+		}
+		hidden_effect = {
+			HUN = {
+				every_owned_province = {
+					limit = {
+						is_core = TRA
+					}
+					cede_province = TRA
+				}
+			}
+		}
+		TRA = {
+			hidden_effect = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.4
+					}
+				}
+				change_government = monarchy
+				adopt_reform_progress = ROOT
+				country_event = {
+					id = ipeHUN.2
+				}
+			}
+			define_ruler = {
+				name = "János"
+				dynasty = "Zápolya"
+				adm = 4
+				dip = 3
+				mil = 2
+			}
+		}
+		if = {
+			limit = {
+				SZK = {
+					OR = {
+						is_subject_of = HUN
+						is_subject_of = TUR
+					}
+				}
+			}
+			TRA = {
+				inherit = SZK
+			}
+		}
+		if = {
+			limit = {
+				KLY = {
+					OR = {
+						is_subject_of = HUN
+						is_subject_of = TUR
+					}
+				}
+			}
+			TRA = {
+				inherit = KLY
+			}
+		}
+		hidden_effect = {
+			HUN = {
+				every_owned_province = {
+					add_permanent_claim = TRA
+				}
+				country_event = {
+					id = ipeHUN.2
+				}
+			}
+		}
+		white_peace = HUN
+		if = {
+			limit = {
+				war_with = TRA
+			}
+			white_peace = TRA
+		}
+		if = {
+			limit = {
+				TRA = {
+					NOT = {
+						is_subject_of = TUR
+					}
+				}
+			}
+			create_march = TRA
+		}
+	}
+}
+
+# The Fall of Hungary
+country_event = {
+	id = ipeHUN.2
+	title = ipeHUN.1.t
+	desc = ipeHUN.1.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will conquer Hungary!
+		name = ipeHUN.2.a
+		trigger = {
+			tag = TRA
+		}
+		if = {
+			limit = {
+				HUN = {
+					is_subject = no
+					NOT = {
+						war_with = HAB
+					}
+					is_neighbor_of = HAB
+					government = monarchy
+				}
+			}
+			custom_tooltip = ipeHUN.1.a.tooltip
+		}
+		tooltip = {
+        	change_government = monarchy
+			define_ruler = {
+				name = "János"
+				dynasty = "Zápolya"
+				adm = 4
+				dip = 3
+				mil = 2
+			}
+		}
+	}
+
+	option = { # We are doomed!
+		name = ipeHUN.2.b
+		trigger = {
+			tag = HUN
+		}
+		if = {
+			limit = {
+				HUN = {
+					is_subject = no
+					NOT = {
+						war_with = HAB
+					}
+					is_neighbor_of = HAB
+					government = monarchy
+				}
+			}
+			custom_tooltip = ipeHUN.1.a.tooltip
+			hidden_effect = {
+				country_event = {
+					id = ipeHUN.3
+					days = 90
+				}
+			}
+		}
+		tooltip = {
+			every_owned_province = {
+				add_permanent_claim = TRA
+			}
+		}
+		add_stability = -2
+	}
+}
+
+# The Fate of Hungary
+country_event = {
+	id = ipeHUN.3
+	title = ipeHUN.3.t
+	desc = ipeHUN.3.d
+	picture = ELECTION_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	major = yes
+
+	option = { # We must receive the help of Austria.
+		name = ipeHUN.3.a
+		ai_chance = {
+			factor = 100
+		}
+		every_subject_country = {
+			limit = {
+				is_lesser_in_union = yes
+			}
+			ROOT = {
+				inherit = PREV
+			}
+		}
+		HAB = {
+			create_union = HUN
+			hidden_effect = {
+				country_event = {
+					id = ipeHUN.4
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = elected_austrian_king
+			}
+		}
+	}
+
+	option = { # We will stand alone.
+		name = ipeHUN.3.b
+		ai_chance = {
+			factor = 0
+		}
+		HAB = {
+			hidden_effect = {
+				country_event = {
+					id = ipeHUN.5
+				}
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = rejected_austrian_king
+			}
+		}
+	}
+}
+
+# The Austro-Hungarian Union
+country_event = {
+	id = ipeHUN.4
+	title = ipeHUN.4.t
+	desc = ipeHUN.4.d
+	picture = ELECTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It will soon be time for a great confrontation.
+		name = ipeHUN.4.a
+		tooltip = {
+			create_union = HUN
+			add_opinion = {
+				who = HUN
+				modifier = elected_austrian_king
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Hungary Rejects Union with Austria!
+country_event = {
+	id = ipeHUN.5
+	title = ipeHUN.5.t
+	desc = ipeHUN.5.d
+	picture = ELECTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Hungarian throne will be ours!
+		name = ipeHUN.5.a
+		add_casus_belli = {
+			target = HUN
+			type = cb_restore_personal_union
+			months = 300
+		}
+	}
+}
+
+# Czech Mercenaries
+country_event = {
+	id = ipeHUN.10
+	title = ipeHUN.10.t
+	desc = ipeHUN.10.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = HUN
+		UHN = {
+			is_subject_of = HUN
+			is_neighbor_of = HUN
+			owns = 3876
+		}
+		is_at_war = no
+		has_country_flag = death_of_albertines
+	}
+
+	mean_time_to_happen = {
+		months = 48
+	}
+
+	immediate = {
+		set_country_flag = raids_of_jan_jiskra
+	}
+
+	option = { # Drive the Czechs out of Hungary!
+		name = ipeHUN.10.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 0
+				dynasty = "von Habsburg"
+			}
+		}
+		declare_war_with_cb = {
+			who = UHN
+			casus_belli = cb_core
+			war_goal_province = 3876
+		}
+		alfold_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			add_devastation = 10
+		}
+		hidden_effect = {
+			UHN = {
+				country_event = {
+					id = ipeHUN.11
+				}
+			}
+		}
+	}
+
+	option = { # Ignore them.
+		name = ipeHUN.10.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 100
+				dynasty = "von Habsburg"
+			}
+		}
+		add_legitimacy = -10
+		add_prestige = -25
+		alfold_area = {
+			limit = {
+				owned_by = ROOT
+			}
+			add_devastation = 25
+		}
+	}
+}
+
+# Czech Mercenaries
+country_event = {
+	id = ipeHUN.11
+	title = ipeHUN.10.t
+	desc = ipeHUN.11.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will fend them off!
+		name = ipeHUN.11.a
+		tooltip = {
+			HUN = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_core
+					war_goal_province = 3876
+				}
+			}
+		}
+	}
+}
+
+# The Reclamation of Upper Hungary
+country_event = {
+	id = ipeHUN.12
+	title = ipeHUN.12.t
+	desc = ipeHUN.12.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = HUN
+		UHN = {
+			is_subject_of = HUN
+			ai = yes
+		}
+		is_at_war = no
+		has_country_flag = raids_of_jan_jiskra
+	}
+
+	mean_time_to_happen = {
+		months = 36
+	}
+
+	option = { # Reincorporate the lands into Hungary.
+		name = ipeHUN.12.a
+		ai_chance = {
+			factor = 10
+		}
+		inherit = UHN
+		add_prestige = 5
+	}
+
+	option = { # Grant them to the Count of Cilli.
+		name = ipeHUN.12.b
+		trigger = {
+			exists = CLI
+			NOT = {
+				war_with = CLI
+			}
+			CLI = {
+				is_subject = no
+			}
+		}
+		ai_chance = {
+			factor = 90
+		}
+		CLI = {
+			inherit = UHN
+			add_opinion = {
+				who = HUN
+				modifier = granted_upper_hungary
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeHUN.13
+				}
+			}
+		}
+	}
+}
+
+# The Reclamation of Upper Hungary
+country_event = {
+	id = ipeHUN.13
+	title = ipeHUN.12.t
+	desc = ipeHUN.13.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We are grateful.
+		name = ipeHUN.13.a
+		tooltip = {
+			inherit = UHN
+			add_opinion = {
+				who = HUN
+				modifier = granted_upper_hungary
+			}
+		}
+		add_prestige = 5
+	}
+}
+
+# The Defense of Bosnia
+country_event = {
+	id = ipeHUN.14
+	title = ipeHUN.14.t
+	desc = ipeHUN.14.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We shall join forces with Hungary.
+		name = ipeHUN.14.a
+		ai_chance = {
+			factor = 100
+		}
+		FROM = {
+			create_march = ROOT
+		}
+		add_liberty_desire = -50
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeHUN.15
+				}
+			}
+		}
+	}
+
+	option = { # Joining Hungary? Preposterous!
+		name = ipeHUN.14.b
+		ai_chance = {
+			factor = 0
+		}
+		tooltip = {
+			FROM = {
+				add_casus_belli = {
+					target = ROOT
+					type = cb_vassalize_mission
+					months = 300
+				}
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeHUN.16
+				}
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Becomes a Vassal of $COUNTRY$
+country_event = {
+	id = ipeHUN.15
+	title = ipeHUN.15.t
+	desc = ipeHUN.15.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We are grateful for their aid.
+		name = ipeHUN.15.a
+		tooltip = {
+			create_march = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# $FROMCOUNTRY$ Refuses to Help Us!
+country_event = {
+	id = ipeHUN.16
+	title = ipeHUN.16.t
+	desc = ipeHUN.16.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will side with us, one way or another.
+		name = ipeHUN.16.a
+		add_casus_belli = {
+			target = FROM
+			type = cb_vassalize_mission
+			months = 300
+		}
+	}
+}

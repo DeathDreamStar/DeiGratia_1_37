@@ -1,0 +1,65 @@
+country_decisions = {
+	curtail_the_hansa = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			any_owned_province = {
+				has_active_triggered_province_modifier = kontor
+			}
+			NOT = {
+				has_country_modifier = curtailed_the_hansa
+			}
+		}
+		provinces_to_highlight = {
+			has_active_triggered_province_modifier = kontor
+		}
+		allow = {
+			dip_power = 100
+			NOT = {
+				has_opinion = {
+					who = HSA
+					value = 0
+				}
+			}
+		}
+		effect = {
+			add_dip_power = -100
+			add_mercantilism = 5
+			add_country_modifier = {
+				name = curtailed_the_hansa
+				duration = -1
+			}
+			HSA = {
+				add_opinion = {
+					who = ROOT
+					modifier = expelled_hanseatic_merchants
+				}
+				add_casus_belli = {
+					target = ROOT
+					type = cb_trade_war_triggered
+					months = 24
+				}
+			}
+			every_known_country = {
+				limit = {
+					is_in_trade_league_with = HSA
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = expelled_hanseatic_merchants
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 1
+				war_with = HSA
+			}
+			modifier = {
+				factor = 1
+				current_age = age_of_absolutism
+			}
+		}
+	}
+}

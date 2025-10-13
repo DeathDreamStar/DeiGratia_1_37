@@ -1,0 +1,31 @@
+technology_group = indian
+government_rank = 1
+primary_culture = marathi # rulers were siddi
+religion = sunni
+capital = 6741	# Janjira
+unit_type = indian
+government = monarchy
+add_government_reform = indian_sultanate_reform
+religious_school = shafii_school
+
+1676.1.1 = {
+	monarch = {
+		name = "Kasim"
+		dynasty = "Yaqut Khan"
+		culture = siddi
+		adm = 2
+		dip = 1
+		mil = 4
+	}
+}
+
+1703.1.1 = {
+	monarch = {
+		name = "Amabat"
+		dynasty = "Yaqut Khan"
+		culture = siddi
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+}

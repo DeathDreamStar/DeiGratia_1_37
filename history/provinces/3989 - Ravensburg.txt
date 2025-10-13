@@ -1,0 +1,29 @@
+# 3989 - Ravensburg
+culture = swabian
+owner = RAV
+controller = RAV
+add_core = RAV
+capital = "Ravensburg"
+religion = catholic
+trade_goods = cloth
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+hre = yes
+center_of_trade = 1
+extra_cost = 8
+
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+
+
+1803.2.25 = { owner = BAV controller = BAV } #Mediatization - Bavarian Exclave
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+1810.1.1 = {
+           owner = WUR
+           controller = WUR
+           add_core = WUR
+}

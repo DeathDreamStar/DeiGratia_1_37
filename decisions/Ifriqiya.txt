@@ -1,0 +1,106 @@
+country_decisions = {
+	found_ait_abbas = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			tag = AAB
+			NOT = {
+				has_country_flag = formed_ait_abbas
+			}
+		}
+		provinces_to_highlight = {
+			province_id = 6013 # Setif
+		}
+		allow = {
+			6013 = {
+				is_capital = yes
+			}
+		}
+		effect = {
+			set_country_flag = formed_ait_abbas
+			override_country_name = AIT_ABBAS
+			if = {
+				limit = {
+					NOT = {
+						government_rank = 2
+					}
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					NOT = {
+						primary_culture = berber
+					}
+				}
+				change_primary_culture = berber
+			}
+			6013 = {
+				ipe_add_base_tax_1 = yes
+				rename_capital = "Kalâa"
+			}
+			add_prestige = 10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	subjugate_tunis = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			OR = {
+				AND = {
+					tag = ARA
+					NOT = {
+						exists = SPA
+					}
+				}
+				tag = SPA
+				tag = MAM
+				AND = {
+					tag = TUR
+					NOT = {
+						exists = MAM
+					}
+					mission_completed = conquer_egypt
+				}
+			}
+			war_with = TUN
+			OR = {
+				current_age = age_of_discovery
+				current_age = age_of_reformation
+			}
+		}
+		provinces_to_highlight = {
+			owner = {
+				tag = TUN
+				capital_scope = {
+					region = maghreb_region
+				}
+			}
+		}
+		allow = {
+			TUN = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+				NOT = {
+					total_development = 300
+				}
+			}
+		}
+		effect = {
+			tooltip = {
+				white_peace = TUN
+			}
+			country_event = {
+				id = ipeTUN.1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,1999 @@
+namespace = ipeMNG
+normal_or_historical_nations = yes
+
+# The Prince of Ning
+country_event = {
+	id = ipeMNG.1
+	title = ipeMNG.1.t
+	desc = ipeMNG.1.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = MNG
+		any_owned_province = {
+			is_core = NNG
+			culture = gan
+		}
+		NOT = {
+			imperial_mandate = 40
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	immediate = {
+		set_country_flag = prince_of_ning_revolt_flag
+		hidden_effect = {
+			release = NNG
+			NNG = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 2.4
+						cavalry = 0.8
+						artillery = 0.8
+					}
+				}
+				define_ruler = {
+					name = "Chenhao"
+					dynasty = "Zhu"
+					adm = 1
+					dip = 3
+					mil = 1
+				}
+				change_government = monarchy
+				add_government_reform = warring_state
+				adopt_reform_progress = ROOT
+				declare_war_with_cb = {
+					who = MNG
+					casus_belli = cb_take_mandate
+				}
+				add_yearly_manpower = 5
+			}
+		}
+	}
+
+	option = { # The Prince of Ning will have no more luxuries!
+		name = ipeMNG.1.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeMNG.1.a.tooltip
+		add_mandate = -10
+	}
+
+	option = { # Play as Ning.
+		name = ipeMNG.1.b
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = NNG
+		hidden_effect = {
+			add_mandate = -10
+		}
+	}
+}
+
+# The Prince of Ning
+country_event = {
+	id = ipeMNG.2
+	title = ipeMNG.2.t
+	desc = ipeMNG.2.d
+	picture = BATTLE_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				NOT = {
+					war_with = NNG
+				}
+				has_country_flag = prince_of_ning_revolt_flag
+			}
+			AND = {
+				NOT = {
+					war_with = CSH
+				}
+				has_country_flag = shun_revolt_flag
+			}
+			AND = {
+				NOT = {
+					war_with = CXI
+				}
+				has_country_flag = xi_revolt_flag
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		clr_country_flag = prince_of_ning_revolt_flag
+		clr_country_flag = shun_revolt_flag
+		clr_country_flag = xi_revolt_flag
+	}
+
+	option = {
+		name = ipeMNG.2.a
+	}
+}
+
+# The Yellow River Floods
+country_event = {
+	id = ipeMNG.3
+	title = ipeMNG.3.t
+	desc = ipeMNG.3.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		owns = 6688 # Yellow River Estuary
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					has_country_modifier = repaired_dikes
+					any_known_country = {
+						has_country_modifier = repaired_dikes
+						any_owned_province = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+					}
+				}
+				is_emperor_of_china = yes
+			}
+			random_list = {
+				50 = { # 5 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 5
+					}
+					country_event = {
+						id = ipeMNG.5
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.5
+						}
+					}
+				}
+				40 = { # 10 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 10
+					}
+					country_event = {
+						id = ipeMNG.6
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.6
+						}
+					}
+				}
+				7 = { # 25 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 25
+					}
+					country_event = {
+						id = ipeMNG.7
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.7
+						}
+					}
+				}
+				3 = { # 50 devastation
+					if = {
+						limit = {
+							NOT = {
+								has_global_flag = great_yellow_river_flood
+							}
+						}
+						set_global_flag = great_yellow_river_flood
+						688 = {
+							add_devastation = 100
+							add_base_tax = -5
+							add_base_production = -5
+							add_base_manpower = -5
+						}
+						every_province = {
+							limit = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+							add_devastation = 50
+						}
+						country_event = {
+							id = ipeMNG.8
+						}
+						every_known_country = {
+							limit = {
+								any_owned_province = {
+									has_province_modifier = banks_of_the_yellow_river
+								}
+							}
+							country_event = {
+								id = ipeMNG.8
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_country_modifier = repaired_dikes
+					any_known_country = {
+						has_country_modifier = repaired_dikes
+						any_owned_province = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+					}
+				}
+				is_emperor_of_china = no
+			}
+			random_list = {
+				50 = { # 5 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 5
+					}
+					country_event = {
+						id = ipeMNG.5
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.5
+						}
+					}
+				}
+				40 = { # 10 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 10
+					}
+					country_event = {
+						id = ipeMNG.6
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.6
+						}
+					}
+				}
+				10 = { # 25 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 25
+					}
+					country_event = {
+						id = ipeMNG.7
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.7
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_modifier = repaired_dikes
+					any_known_country = {
+						has_country_modifier = repaired_dikes
+						any_owned_province = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+					}
+				}
+				is_emperor_of_china = yes
+			}
+			random_list = {
+				50 = { # 0 devastation
+					country_event = {
+						id = ipeMNG.4
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.4
+						}
+					}
+				}
+				40 = { # 5 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 5
+					}
+					country_event = {
+						id = ipeMNG.5
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.5
+						}
+					}
+				}
+				7 = { # 10 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 10
+					}
+					country_event = {
+						id = ipeMNG.6
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.6
+						}
+					}
+				}
+				2 = { # 25 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 25
+					}
+					country_event = {
+						id = ipeMNG.7
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.7
+						}
+					}
+				}
+				1 = { # 50 devastation
+					if = {
+						limit = {
+							NOT = {
+								has_global_flag = great_yellow_river_flood
+							}
+						}
+						set_global_flag = great_yellow_river_flood
+						688 = {
+							add_devastation = 100
+							add_base_tax = -5
+							add_base_production = -5
+							add_base_manpower = -5
+						}
+						every_province = {
+							limit = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+							add_devastation = 50
+						}
+						country_event = {
+							id = ipeMNG.8
+						}
+						every_known_country = {
+							limit = {
+								any_owned_province = {
+									has_province_modifier = banks_of_the_yellow_river
+								}
+							}
+							country_event = {
+								id = ipeMNG.8
+							}
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_country_modifier = repaired_dikes
+					any_known_country = {
+						has_country_modifier = repaired_dikes
+						any_owned_province = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+					}
+				}
+				is_emperor_of_china = no
+			}
+			random_list = {
+				50 = { # 0 devastation
+					country_event = {
+						id = ipeMNG.4
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.4
+						}
+					}
+				}
+				40 = { # 5 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 5
+					}
+					country_event = {
+						id = ipeMNG.5
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.5
+						}
+					}
+				}
+				7 = { # 10 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 10
+					}
+					country_event = {
+						id = ipeMNG.6
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.6
+						}
+					}
+				}
+				3 = { # 25 devastation
+					every_province = {
+						limit = {
+							has_province_modifier = banks_of_the_yellow_river
+						}
+						add_devastation = 25
+					}
+					country_event = {
+						id = ipeMNG.7
+					}
+					every_known_country = {
+						limit = {
+							any_owned_province = {
+								has_province_modifier = banks_of_the_yellow_river
+							}
+						}
+						country_event = {
+							id = ipeMNG.7
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ipeMNG.3.a
+	}
+}
+
+# The Yellow River Floods
+country_event = {
+	id = ipeMNG.4
+	title = ipeMNG.4.t
+	desc = ipeMNG.4.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A relief.
+		name = ipeMNG.4.a
+		custom_tooltip = ipeMNG.4.a.tooltip
+	}
+}
+
+# The Yellow River Floods
+country_event = {
+	id = ipeMNG.5
+	title = ipeMNG.4.t
+	desc = ipeMNG.5.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It could be worse.
+		name = ipeMNG.5.a
+		custom_tooltip = ipeMNG.4.a.tooltip
+		tooltip = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = banks_of_the_yellow_river
+				}
+				add_devastation = 5
+			}
+		}
+	}
+}
+
+# The Yellow River Floods
+country_event = {
+	id = ipeMNG.6
+	title = ipeMNG.4.t
+	desc = ipeMNG.6.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Unfortunate.
+		name = ipeMNG.6.a
+		custom_tooltip = ipeMNG.4.a.tooltip
+		tooltip = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = banks_of_the_yellow_river
+				}
+				add_devastation = 10
+			}
+		}
+	}
+}
+
+# The Yellow River Floods
+country_event = {
+	id = ipeMNG.7
+	title = ipeMNG.4.t
+	desc = ipeMNG.7.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Send for help from the neighboring provinces!
+		name = ipeMNG.7.a
+		custom_tooltip = ipeMNG.4.a.tooltip
+		tooltip = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = banks_of_the_yellow_river
+				}
+				add_devastation = 25
+			}
+		}
+	}
+}
+
+# The $YEAR$ Yellow River Flood
+country_event = {
+	id = ipeMNG.8
+	title = ipeMNG.8.t
+	desc = ipeMNG.8.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { # Is this the end?
+		name = ipeMNG.8.a
+		custom_tooltip = ipeMNG.4.a.tooltip
+		tooltip = {
+			688 = {
+				add_devastation = 100
+				add_base_tax = -5
+				add_base_production = -5
+				add_base_manpower = -5
+			}
+			every_owned_province = {
+				limit = {
+					NOT = {
+						province_id = 688
+					}
+					has_province_modifier = banks_of_the_yellow_river
+				}
+				add_devastation = 50
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_stability = -1
+			add_mandate = -20
+		}
+	}
+}
+
+# The Yangtze River Floods
+country_event = {
+	id = ipeMNG.9
+	title = ipeMNG.9.t
+	desc = ipeMNG.9.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	trigger = {
+		owns = 3245 # Yangtze River Estuary
+	}
+
+	immediate = {
+		random_list = {
+			50 = { # 0 devastation
+				country_event = {
+					id = ipeMNG.10
+				}
+				every_known_country = {
+					limit = {
+						any_owned_province = {
+							has_province_modifier = banks_of_the_yangtze_river
+						}
+					}
+					country_event = {
+						id = ipeMNG.10
+					}
+				}
+			}
+			40 = { # 5 devastation
+				every_province = {
+					limit = {
+						has_province_modifier = banks_of_the_yangtze_river
+					}
+					add_devastation = 5
+				}
+				country_event = {
+					id = ipeMNG.11
+				}
+				every_known_country = {
+					limit = {
+						any_owned_province = {
+							has_province_modifier = banks_of_the_yangtze_river
+						}
+					}
+					country_event = {
+						id = ipeMNG.11
+					}
+				}
+			}
+			7 = { # 10 devastation
+				every_province = {
+					limit = {
+						has_province_modifier = banks_of_the_yangtze_river
+					}
+					add_devastation = 10
+				}
+				country_event = {
+					id = ipeMNG.12
+				}
+				every_known_country = {
+					limit = {
+						any_owned_province = {
+							has_province_modifier = banks_of_the_yangtze_river
+						}
+					}
+					country_event = {
+						id = ipeMNG.12
+					}
+				}
+			}
+			3 = { # 25 devastation
+				every_province = {
+					limit = {
+						has_province_modifier = banks_of_the_yangtze_river
+					}
+					add_devastation = 25
+				}
+				country_event = {
+					id = ipeMNG.13
+				}
+				every_known_country = {
+					limit = {
+						any_owned_province = {
+							has_province_modifier = banks_of_the_yangtze_river
+						}
+					}
+					country_event = {
+						id = ipeMNG.13
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ipeMNG.9.a
+	}
+}
+
+# The Yangtze River Floods
+country_event = {
+	id = ipeMNG.10
+	title = ipeMNG.10.t
+	desc = ipeMNG.10.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A relief.
+		name = ipeMNG.4.a
+		custom_tooltip = ipeMNG.10.a.tooltip
+	}
+}
+
+# The Yangtze River Floods
+country_event = {
+	id = ipeMNG.11
+	title = ipeMNG.10.t
+	desc = ipeMNG.11.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It could be worse.
+		name = ipeMNG.5.a
+		custom_tooltip = ipeMNG.10.a.tooltip
+		tooltip = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = banks_of_the_yangtze_river
+				}
+				add_devastation = 5
+			}
+		}
+	}
+}
+
+# The Yangtze River Floods
+country_event = {
+	id = ipeMNG.12
+	title = ipeMNG.10.t
+	desc = ipeMNG.12.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Unfortunate.
+		name = ipeMNG.6.a
+		custom_tooltip = ipeMNG.10.a.tooltip
+		tooltip = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = banks_of_the_yangtze_river
+				}
+				add_devastation = 10
+			}
+		}
+	}
+}
+
+# The Yangtze River Floods
+country_event = {
+	id = ipeMNG.13
+	title = ipeMNG.10.t
+	desc = ipeMNG.13.d
+	picture = FLOOD_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Send for help from the neighboring provinces!
+		name = ipeMNG.7.a
+		custom_tooltip = ipeMNG.10.a.tooltip
+		tooltip = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = banks_of_the_yangtze_river
+				}
+				add_devastation = 25
+			}
+		}
+	}
+}
+
+# The $YEAR$ Shaanxi Earthquake
+country_event = {
+	id = ipeMNG.14
+	title = ipeMNG.14.t
+	desc = ipeMNG.14.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 700
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 700 # Xi'an
+		is_year = 1525
+		NOT = {
+			is_year = 1575
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # It is a disaster!
+		name = ipeMNG.14.a
+		add_stability = -1
+		700 = {
+			add_base_tax = -5
+			add_base_production = -5
+			add_base_manpower = -5
+		}
+		shaanxi_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		north_shaanxi_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		gansu_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		ningxia_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		north_shanxi_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		shanxi_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		south_shanxi_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		north_henan_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		west_henan_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -20
+		}
+	}
+
+	after = {
+		every_country = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						area = shaanxi_area
+						area = north_shaanxi_area
+						area = gansu_area
+						area = ningxia_area
+						area = north_shanxi_area
+						area = shanxi_area
+						area = south_shanxi_area
+						area = north_henan_area
+						area = west_henan_area
+					}
+					has_province_modifier = earthquake
+				}
+				NOT = {
+					tag = ROOT
+				}
+			}
+			country_event = {
+				id = ipeMNG.29
+			}
+		}
+	}
+}
+
+# Cao Qin's Coup
+country_event = {
+	id = ipeMNG.15
+	title = ipeMNG.15.t
+	desc = ipeMNG.15.d
+	picture = CHINESE_GENERAL_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MNG
+		OIR = {
+			is_subject_of = MNG
+		}
+		is_at_war = no
+		capital_scope = {
+			controlled_by = MNG
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Kill them all!
+		name = ipeMNG.15.a
+		capital_scope = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 1
+				leader = "Cao Qin"
+			}
+		}
+	}
+}
+
+# The Resurgence of the Wokou
+country_event = {
+	id = ipeMNG.16
+	title = ipeMNG.16.t
+	desc = ipeMNG.16.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_emperor_of_china = yes
+		has_global_flag = japanese_independence
+		current_age = age_of_reformation
+		has_estate_privilege = estate_burghers_haijin
+		any_owned_province = {
+			has_port = yes
+		}
+		if = {
+			limit = {
+				exists = POR
+			}
+			POR = {
+				has_discovered = 3324
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = { # Dark times come for the coasts of China.
+		name = ipeMNG.16.a
+		custom_tooltip = ipeMNG.16.a.tooltip
+		set_global_flag = wokou_resurgence
+	}
+}
+
+# The Shuangyu Entrepôt
+country_event = {
+	id = ipeMNG.17
+	title = ipeMNG.17.t
+	desc = ipeMNG.17.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_emperor_of_china = yes
+		has_global_flag = wokou_resurgence
+		owns = 3324
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		hidden_effect = {
+			3324 = {
+				add_core = SYU
+			}
+			if = {
+				limit = {
+					owns = 6671
+				}
+				6671 = { # Putian, later refuge of the wokou
+					add_core = SYU
+				}
+			}
+			if = {
+				limit = {
+					owns = 6694
+				}
+				6694 = { # Zhelin, secondary base of the wokou
+					add_core = SYU
+				}
+			}
+			release = SYU
+			SYU = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1
+						heavy_ship = 0.5
+						galley = 0.5
+					}
+					add_building = fort_15th
+				}
+				if = {
+					limit = {
+						owns = 6671
+					}
+					6671 = {
+						add_building = fort_15th
+					}
+				}
+				if = {
+					limit = {
+						owns = 6694
+					}
+					6694 = {
+						add_building = fort_15th
+					}
+				}
+				change_government = republic
+				add_government_reform = pirate_republic_reform
+				adopt_reform_progress = ROOT
+				add_truce_with = ROOT
+				add_opinion = {
+					who = ROOT
+					modifier = excessive_trade_restrictions
+				}
+			}
+			add_opinion = {
+				who = SYU
+				modifier = shuangyu_piracy
+			}
+			add_truce_with = SYU
+			3324 = {
+				add_center_of_trade_level = 1
+			}
+			if = {
+				limit = {
+					POR = {
+						is_subject = no
+						has_discovered = 3324
+					}
+				}
+				POR = {
+					country_event = {
+						id = ipeMNG.18
+					}
+				}
+			}
+		}
+	}
+
+	option = { # This cannot be permitted!
+		name = ipeMNG.17.a
+		ai_chance = {
+			factor = 100
+		}
+		tooltip = {
+			3324 = {
+				add_core = SYU
+			}
+			if = {
+				limit = {
+					owns = 6671
+				}
+				6671 = {
+					add_core = SYU
+				}
+			}
+			if = {
+				limit = {
+					owns = 6694
+				}
+				6694 = {
+					add_core = SYU
+				}
+			}
+			release = SYU
+			SYU = {
+				add_government_reform = pirate_republic_reform
+				add_truce_with = ROOT
+				add_opinion = {
+					who = ROOT
+					modifier = excessive_trade_restrictions
+				}
+			}
+			add_opinion = {
+				who = SYU
+				modifier = shuangyu_piracy
+			}
+			add_truce_with = SYU
+			3324 = {
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+
+	option = { # Play as Shuangyu.
+		name = ipeMNG.17.b
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = SYU
+	}
+}
+
+# The Shuangyu Entrepôt
+country_event = {
+	id = ipeMNG.18
+	title = ipeMNG.17.t
+	desc = ipeMNG.18.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Come to their aid!
+		name = ipeMNG.18.a
+		ai_chance = {
+			factor = 100
+		}
+		create_guarantee = SYU
+		SYU = {
+			add_opinion = {
+				who = POR
+				modifier = protecting_merchants
+			}
+		}
+		random_known_country = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_opinion = {
+				who = POR
+				modifier = protecting_pirates
+			}
+		}
+		4233 = {
+			add_trade_modifier = {
+				who = ROOT
+				duration = 9125
+				power = 30
+				key = SHUANGYU_ENTREPOT
+			}
+		}
+		684 = {
+			add_trade_modifier = {
+				who = ROOT
+				duration = 9125
+				power = 30
+				key = SHUANGYU_ENTREPOT
+			}
+		}
+		1371 = {
+			add_trade_modifier = {
+				who = ROOT
+				duration = 9125
+				power = 30
+				key = SHUANGYU_ENTREPOT
+			}
+		}
+	}
+
+	option = { # Turn them down.
+		name = ipeMNG.18.b
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -5
+	}
+}
+
+# Wokou Havens
+country_event = {
+	id = ipeMNG.19
+	title = ipeMNG.19.t
+	desc = ipeMNG.19.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	trigger = {
+		NOT = {
+			overlord = {
+				is_emperor_of_china = yes
+			}
+			overlord = {
+				overlord = {
+					is_emperor_of_china = yes
+				}
+			}
+		}
+		OR = {
+			has_reform = daimyo
+			has_reform = indep_daimyo
+		}
+		any_owned_province = {
+			has_port = yes
+		}
+		has_global_flag = wokou_resurgence
+		NOT = {
+			has_country_flag = wokou_event_fired
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		set_country_flag = wokou_event_fired
+	}
+
+	option = { # Let us sponsor these troubled mariners!
+		name = ipeMNG.19.a
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				any_owned_province = {
+					OR = {
+						area = kyushu_area
+						area = northern_kyushu
+						area = ryukyu_island_area
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				has_country_modifier = treaty_of_gyehae
+			}
+		}
+		add_government_reform = wokou_haven
+		add_yearly_sailors = 2
+		random_known_country = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = protecting_pirates
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeMNG.20
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = treaty_of_gyehae
+			}
+			remove_country_modifier = treaty_of_gyehae
+		}
+	}
+
+	option = { # We will not harbor pirates.
+		name = ipeMNG.19.b
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				any_owned_province = {
+					OR = {
+						area = kyushu_area
+						area = northern_kyushu
+						area = ryukyu_island_area
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				has_country_modifier = treaty_of_gyehae
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# $FROMCOUNTRY$ Harbors Wokou
+country_event = {
+	id = ipeMNG.20
+	title = ipeMNG.20.t
+	desc = ipeMNG.20.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will have to be vigilant.
+		name = ipeMNG.20.a
+		tooltip = {
+			FROM = {
+				add_government_reform = wokou_haven
+			}
+			add_opinion = {
+				who = FROM
+				modifier = protecting_pirates
+			}
+		}
+	}
+}
+
+# Growing Paranoia
+country_event = {
+	id = ipeMNG.21
+	title = ipeMNG.21.t
+	desc = ipeMNG.21.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		is_emperor_of_china = yes
+		has_global_flag = wokou_resurgence
+		any_owned_province = {
+			OR = {
+				trade_goods = fish
+				trade_goods = whales
+			}
+			has_port = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # We will commit to whatever measures it takes to stop the pirates!
+		name = ipeMNG.21.a
+		every_owned_province = {
+			limit = {
+				OR = {
+					trade_goods = fish
+					trade_goods = whales
+				}
+			}
+			add_province_modifier = {
+				name = fishing_boats_prohibited
+				duration = 3650
+			}
+		}
+	}
+}
+
+# The Founding of Aparri
+country_event = {
+	id = ipeMNG.22
+	title = ipeMNG.22.t
+	desc = ipeMNG.22.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	major = yes
+
+	major_trigger = {
+		technology_group = chinese
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		is_emperor_of_china = yes
+		658 = {
+			is_empty = yes
+		}
+		has_global_flag = wokou_resurgence	
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	immediate = {
+		hidden_effect = {
+			658 = {
+				cede_province = MNG
+				add_core = APR
+			}
+			release = APR
+			APR = {
+				change_primary_culture = kyushuan
+				add_accepted_culture = cordilleran
+				change_government = republic
+				add_government_reform = pirate_republic_reform
+				adopt_reform_progress = ROOT
+				change_religion = shinto
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1
+						heavy_ship = 0.5
+						galley = 0.5
+					}
+				}
+			}
+		}
+	}
+
+	option = { # This does not bode well for us.
+		name = ipeMNG.22.a
+		ai_chance = {
+			factor = 100
+		}
+		tooltip = {
+			658 = {
+				add_core = APR
+			}
+			APR = {
+				add_government_reform = pirate_republic_reform
+			}
+		}
+	}
+
+	option = { # Play as Aparri.
+		name = ipeMNG.22.b
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = APR
+	}
+}
+
+# The Arrival of Limahong
+country_event = {
+	id = ipeMNG.23
+	title = ipeMNG.23.t
+	desc = ipeMNG.23.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	major_trigger = {
+		technology_group = chinese
+	}
+
+	trigger = {
+		tag = PGS
+		has_global_flag = wokou_resurgence
+		any_owned_province = {
+			has_port = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Limahong can stay.
+		name = ipeMNG.23.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				NOT = {
+					government = republic
+				}
+			}
+			change_government = republic
+		}
+		add_government_reform = pirate_republic_reform
+		random_owned_province = {
+			limit = {
+				has_port = yes
+			}
+			build_to_forcelimit = {
+				heavy_ship = 0.5
+				galley = 0.5
+			}
+		}
+		capital_scope = {
+			add_building = fort_15th
+		}
+		define_ruler = {
+			name = "Hong"
+			dynasty = "Lim"
+			adm = 2
+			dip = 5
+			mil = 3
+			culture = hakka
+			religion = confucianism
+		}
+		swap_free_idea_group = yes
+		swap_non_generic_missions = yes
+		set_ruler_flag = historical_pirate
+	}
+
+	option = { # He is only a scoundrel!
+		name = ipeMNG.23.b
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = 10
+	}
+}
+
+# The End of the Wokou
+country_event = {
+	id = ipeMNG.24
+	title = ipeMNG.24.t
+	desc = ipeMNG.24.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_emperor_of_china = yes
+		OR = {
+			current_age = age_of_absolutism
+			NOT = {
+				has_estate_privilege = estate_burghers_haijin
+			}
+		}
+		NOT = {
+			exists = SYU
+		}
+		had_global_flag = {
+			flag = wokou_resurgence
+			days = 7300
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # We are relieved to see these days come to an end.
+		name = ipeMNG.24.a
+		custom_tooltip = ipeMNG.24.a.tooltip
+		add_navy_tradition = 20
+		if = {
+			limit = {
+				has_estate_privilege = estate_burghers_haijin
+			}
+			remove_estate_privilege = estate_burghers_haijin
+		}
+		every_known_country = {
+			limit = {
+				has_country_flag = wokou_event_fired
+				has_reform = wokou_haven
+			}
+			clr_country_flag = wokou_event_fired
+			country_event = {
+				id = ipeMNG.25
+			}
+		}
+		clr_global_flag = wokou_resurgence
+	}
+}
+
+# The End of the Wokou
+country_event = {
+	id = ipeMNG.25
+	title = ipeMNG.24.t
+	desc = ipeMNG.25.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Every era comes to an end.
+		name = ipeMNG.25.a
+		custom_tooltip = ipeMNG.25.a.tooltip
+		add_navy_tradition = 20
+	}
+}
+
+# The End of the Wokou
+country_event = {
+	id = ipeMNG.26
+	title = ipeMNG.24.t
+	desc = ipeMNG.26.d
+	picture = WOKOU_INCIDENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		current_age = age_of_absolutism
+		any_owned_province = {
+			OR = {
+				region = north_china_region
+				region = south_china_region
+			}
+			has_port = yes
+		}
+		all_country = {
+			NOT = {
+				is_emperor_of_china = yes
+			}
+		}
+		had_global_flag = {
+			flag = wokou_resurgence
+			days = 7300
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # It is the end of an era.
+		name = ipeMNG.26.a
+		custom_tooltip = ipeMNG.24.a.tooltip
+		clr_global_flag = wokou_resurgence
+		every_known_country = {
+			limit = {
+				has_country_flag = wokou_event_fired
+			}
+			clr_country_flag = wokou_event_fired
+			country_event = {
+				id = ipeMNG.25
+			}
+		}
+	}
+}
+
+# Zhang Xianzhong's Rebellion and the Xi Dynasty
+country_event = {
+	id = ipeMNG.27
+	title = ipeMNG.27.t
+	desc = ipeMNG.27.d
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		NOT = { exists = CXI }
+		exists = CSH
+		any_owned_province = {
+			OR = {
+				area = chuanbei_area
+				area = sichuan_area
+				area = chongqing_area
+				area = east_hubei_area
+				area = central_hubei_area
+				area = huguang_area
+			}
+		}
+	}
+	
+	immediate = {
+		set_country_flag = xi_revolt_flag
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = chuanbei_area
+						area = sichuan_area
+						area = chongqing_area
+						area = east_hubei_area
+						area = central_hubei_area
+						area = huguang_area
+					}
+				}
+				add_core = CXI
+				clear_rebels = yes
+			}
+			release = CXI
+			CXI = {
+				change_religion = confucianism
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 3.6
+						cavalry = 1.2
+						artillery = 1.2
+					}
+				}
+				change_government = monarchy
+				add_government_reform = warring_state
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					name = "Xianzhong"
+					dynasty = "Zhang"
+					religion = confucianism
+				}
+				add_yearly_manpower = 3
+				add_years_of_income = 3
+			}
+		}
+	}
+	
+	option = { # Kill this rebel!
+		name = ipeMNG.27.a
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -2
+		add_mandate = -10
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			CXI = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_take_mandate
+				}
+			}
+		}
+		else = {
+			CXI = {
+				declare_war = ROOT
+			}
+		}
+	}
+
+	option = { # Play as Xi.
+		name = ipeMNG.27.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_stability = -2
+			add_mandate = -10
+			if = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				CXI = {
+					declare_war_with_cb = {
+						who = ROOT
+						casus_belli = cb_take_mandate
+					}
+				}
+			}
+			else = {
+				CXI = {
+					declare_war = ROOT
+				}
+			}
+		}
+		switch_tag = CXI
+	}
+}
+
+# The Wanggongchang Explosion
+country_event = {
+	id = ipeMNG.28
+	title = ipeMNG.28.t
+	desc = ipeMNG.28.d
+	picture = SUFFERING_CHINESE_VILLAGE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		is_emperor_of_china = yes
+		current_age = age_of_absolutism
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # It is a dark time in our history.
+		name = ipeMNG.28.a
+		capital_scope = {
+			add_devastation = 50
+		}
+		add_stability = -1
+		add_mandate = -10
+		add_years_of_income = -1
+		add_mil_power = -100
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+	}
+}
+
+# The $YEAR$ Shaanxi Earthquake
+country_event = {
+	id = ipeMNG.29
+	title = ipeMNG.14.t
+	desc = ipeMNG.14.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 700
+
+	is_triggered_only = yes
+
+	option = { # This is a disaster!
+		name = ipeMNG.14.a
+		add_stability = -1
+		tooltip = {
+			700 = {
+				add_base_tax = -5
+				add_base_production = -5
+				add_base_manpower = -5
+			}
+			shaanxi_area = {
+				add_devastation = 50
+				add_permanent_province_modifier = {
+					name = earthquake
+					duration = 730
+				}
+			}
+			north_shaanxi_area = {
+				add_devastation = 50
+				add_permanent_province_modifier = {
+					name = earthquake
+					duration = 730
+				}
+			}
+			gansu_area = {
+				add_devastation = 25
+				add_permanent_province_modifier = {
+					name = earthquake
+					duration = 730
+				}
+			}
+			ningxia_area = {
+				add_devastation = 25
+				add_permanent_province_modifier = {
+					name = earthquake
+					duration = 730
+				}
+			}
+			north_shanxi_area = {
+				add_devastation = 25
+				add_permanent_province_modifier = {
+					name = earthquake
+					duration = 730
+				}
+			}
+			shanxi_area = {
+				add_devastation = 25
+				add_permanent_province_modifier = {
+					name = earthquake
+					duration = 730
+				}
+			}
+			south_shanxi_area = {
+				add_devastation = 25
+				add_permanent_province_modifier = {
+					name = earthquake
+					duration = 730
+				}
+			}
+			north_henan_area = {
+				add_devastation = 25
+				add_permanent_province_modifier = {
+					name = earthquake
+					duration = 730
+				}
+			}
+			west_henan_area = {
+				add_devastation = 25
+				add_permanent_province_modifier = {
+					name = earthquake
+					duration = 730
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -20
+		}
+	}
+}

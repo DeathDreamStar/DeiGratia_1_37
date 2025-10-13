@@ -1,0 +1,17 @@
+plantations_of_madeira = {
+	trade_goods_size = 10
+}
+
+pines_of_leiria = {
+	global_ship_cost = -0.1
+}
+
+artilharia = {
+	artillery_power = 0.10
+	artillery_cost = -0.10
+}
+
+afonsine_ordinances = {
+	burghers_loyalty_modifier = 0.1
+	nobles_influence_modifier = -0.1
+}

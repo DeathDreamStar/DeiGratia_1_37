@@ -1,0 +1,60 @@
+#3674 - Asti
+
+owner = ATI
+controller = ATI
+culture = piedmontese
+religion = catholic
+hre = yes
+base_tax = 3
+base_production = 3
+trade_goods = wine
+base_manpower = 2
+capital = "Asti"
+is_city = yes
+add_core = ATI
+
+
+
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+
+
+1372.1.1 = {
+           owner = ATI
+           controller = ATI
+           add_core = ATI
+} # Given to Louis de Valois, duke of Orléans
+1495.1.1 = { hre = no }
+1526.8.5 = {
+           owner = SPA
+           controller = SPA
+           add_core = SPA
+} # Treaty of Cambrai
+1575.1.1 = {
+           owner = SAV
+           controller = SAV
+           add_core = SAV
+} # Asti comes under dominion of Savoie
+1713.4.12 = {
+           owner = SIC
+           controller = SIC
+           add_core = SIC
+           remove_core = SAV
+} # Treaty of Utrecht
+1720.1.1 = {
+           owner = SPI
+           controller = SPI
+           add_core = SPI
+           remove_core = SIC
+} # Kingdom of Piedmont-Sardinia
+1792.9.1 = { controller = FRA } # Occupied by French troops
+1792.11.27 = { owner = FRA
+           add_core = FRA
+} # Savoie is annexed
+1814.4.11 = {
+           owner = SPI
+           controller = SPI
+           remove_core = FRA
+} # Napoleon abdicates and Victor Emmanuel is able to return to Turin

@@ -1,0 +1,227 @@
+name = "Crusade of Varna"
+war_goal = {
+	type = superiority_crusade
+	casus_belli = cb_crusade
+}
+
+1443.1.1 = {
+	# Hungary
+	add_attacker = HUN
+	add_attacker = SZK
+	add_attacker = KLY
+	add_attacker = TRA
+	add_attacker = CRO
+	add_attacker = UHN
+
+	# Serbia
+	add_attacker = SER
+
+	# Poland
+	add_attacker = POL
+	add_attacker = MAZ
+	add_attacker = PCK
+	add_attacker = STP
+
+	# Lithuania
+	add_attacker = LIT
+	add_attacker = KIE
+	add_attacker = OKA
+	add_attacker = TRB
+	add_attacker = VTN
+	add_attacker = ZMG
+	add_attacker = PNK
+	add_attacker = SKS
+	add_attacker = VOL
+	add_attacker = JGA
+	add_attacker = ORY
+	add_attacker = BLV
+	add_attacker = MSV
+	add_attacker = MSL
+
+	# Bosnia
+	add_attacker = BOS
+
+	# Wallachia
+	add_attacker = WAL
+
+	# Venice
+	add_attacker = VEN
+	add_attacker = NAX
+
+	# Ragusa
+	add_attacker = RAG
+
+	# Bohemia
+	add_attacker = BOH
+	add_attacker = MVA
+	add_attacker = OPL
+	add_attacker = GLG
+	add_attacker = BEG
+	add_attacker = NYS
+	add_attacker = OLS
+	add_attacker = PLS
+	add_attacker = RTB
+	add_attacker = TES
+	add_attacker = TOP
+	add_attacker = ZAG
+	add_attacker = LGN
+
+	# Papal States
+	add_attacker = PAP
+	add_attacker = PGA
+	add_attacker = URB
+	add_attacker = ANC
+	add_attacker = BLG
+	add_attacker = CES
+	add_attacker = CNO
+	add_attacker = FRL
+	add_attacker = PSO
+	add_attacker = RIM
+	add_attacker = OVI
+
+	# Burgundy
+	add_attacker = BUR
+	add_attacker = FLA
+	add_attacker = NEV
+	add_attacker = BRB
+	add_attacker = HOL
+	add_attacker = BSC
+	add_attacker = XSP
+	add_attacker = VDD
+	add_attacker = CMB
+
+	# Teutonic Order
+	add_attacker = TEU
+	add_attacker = WRM
+
+	# Karaman
+	add_attacker = KAR
+
+	# Ottomans
+	add_defender = TUR
+	add_defender = EPI
+}
+
+1444.8.1 = {
+	# Karaman
+	rem_attacker = KAR
+}
+
+1444.8.14 = {
+	# Serbia
+	rem_attacker = SER
+}
+
+1444.11.10 = {
+	battle = {
+		name = "Varna"
+		location = 150
+		attacker = {
+			commander = "Wladyslaw III"	# Wladyslaw III
+			infantry = 18000
+			cavalry = 2000
+			losses = 60	# percent
+			country = POL
+		}
+		defender = {
+			commander = "Murad II"	# Murad II
+			infantry = 50000
+			cavalry = 10000
+			losses = 25	# percent
+			country = TUR
+		}
+		result = no
+	}
+}
+
+1444.11.11 = {
+	# Hungary
+	rem_attacker = HUN
+	rem_attacker = SZK
+	rem_attacker = KLY
+	rem_attacker = TRA
+	rem_attacker = CRO
+	rem_attacker = UHN
+
+	# Poland
+	rem_attacker = POL
+	rem_attacker = MAZ
+	rem_attacker = PCK
+	rem_attacker = STP
+
+	# Lithuania
+	rem_attacker = LIT
+	rem_attacker = KIE
+	rem_attacker = OKA
+	rem_attacker = TRB
+	rem_attacker = VTN
+	rem_attacker = ZMG
+	rem_attacker = PNK
+	rem_attacker = SKS
+	rem_attacker = VOL
+	rem_attacker = JGA
+	rem_attacker = ORY
+	rem_attacker = BLV
+	rem_attacker = MSV
+	rem_attacker = MSL
+
+	# Bosnia
+	rem_attacker = BOS
+
+	# Wallachia
+	rem_attacker = WAL
+
+	# Venice
+	rem_attacker = VEN
+	rem_attacker = NAX
+
+	# Ragusa
+	rem_attacker = RAG
+
+	# Bohemia
+	rem_attacker = BOH
+	rem_attacker = MVA
+	rem_attacker = OPL
+	rem_attacker = GLG
+	rem_attacker = BEG
+	rem_attacker = NYS
+	rem_attacker = OLS
+	rem_attacker = PLS
+	rem_attacker = RTB
+	rem_attacker = TES
+	rem_attacker = TOP
+	rem_attacker = ZAG
+	rem_attacker = LGN
+
+	# Papal States
+	rem_attacker = PAP
+	rem_attacker = PGA
+	rem_attacker = URB
+	rem_attacker = ANC
+	rem_attacker = BLG
+	rem_attacker = CES
+	rem_attacker = CNO
+	rem_attacker = FRL
+	rem_attacker = PSO
+	rem_attacker = RIM
+	rem_attacker = OVI
+
+	# Burgundy
+	rem_attacker = BUR
+	rem_attacker = FLA
+	rem_attacker = NEV
+	rem_attacker = BRB
+	rem_attacker = HOL
+	rem_attacker = BSC
+	rem_attacker = XSP
+	rem_attacker = VDD
+	rem_attacker = CMB
+
+	# Teutonic Order
+	rem_attacker = TEU
+	rem_attacker = WRM
+
+	# Ottomans
+	rem_defender = TUR
+	rem_defender = EPI
+}

@@ -1,0 +1,1471 @@
+namespace = ipePOR
+normal_or_historical_nations = yes
+
+# Wine in Madeira
+country_event = {
+	id = ipePOR.1
+	title = ipePOR.1.t
+	desc = ipePOR.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		is_year = 1600
+		owns = 368
+		is_core = 368
+		controls = 368
+		368 = {
+			trade_goods = sugar
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Wonderful.
+		name = ipePOR.1.a
+		368 = {
+			remove_province_modifier = plantations_of_madeira
+			change_trade_goods = wine
+		}
+	}
+}
+
+# Afonsine Ordinances
+country_event = {
+	id = ipePOR.2
+	title = ipePOR.2.t
+	desc = ipePOR.2.d
+	picture = CONQUEST_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		has_regency = yes
+		government = monarchy
+		NOT = {
+			is_year = 1460
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # Institute the Afonsine Ordinances.
+		name = ipePOR.2.a
+		ai_chance = {
+			factor = 100
+		}
+		add_country_modifier = {
+			name = afonsine_ordinances
+			duration = -1
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -20
+		}
+		set_country_flag = afonsine_ordinances_event
+	}
+
+	option = { # We do not wish to anger the nobility.
+		name = ipePOR.2.b
+		ai_chance = {
+			factor = 0
+		}
+		add_stability_or_adm_power = yes
+		set_country_flag = afonsine_ordinances_event
+	}
+}
+
+# Joanna la Beltraneja
+country_event = {
+	id = ipePOR.3
+	title = ipePOR.3.t
+	desc = ipePOR.3.d
+	picture = ROYAL_COUPLE_FUTURE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = POR
+		government = monarchy
+		has_regency = no
+		has_government_attribute = heir
+		is_subject = no
+		is_female = no
+		has_global_flag = castilian_civil_war_possible
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Marry Joanna.
+		name = ipePOR.3.a
+		custom_tooltip = ipePOR.3.a.tooltip
+		define_consort = {
+			name = "Joanna"
+			dynasty = "de Trastámara"
+			country_of_origin = CAS
+			adm = 2
+			dip = 2
+			mil = 1
+			female = yes
+		}
+		CAS = {
+			add_opinion = {
+				who = POR
+				modifier = cas_civil_war_interferance
+			}
+			country_event = {
+				id = ipeCAS.15
+			}
+		}
+		clr_global_flag = castilian_civil_war_possible
+		set_consort_flag = joanna_la_beltraneja
+	}
+
+	option = { # We should not interfere with Castilian affairs.
+		name = ipePOR.3.b
+		CAS = {
+			add_opinion = {
+				who = POR
+				modifier = cas_non_interferance
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Ending the Castilian Civil War
+country_event = {
+	id = ipePOR.4
+	title = ipePOR.4.t
+	desc = ipePOR.4.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		AVZ = {
+			is_subject_of = POR
+			is_lesser_in_union = yes
+		}
+		CAS = {
+			exists = yes
+			has_disaster = castilian_civil_war
+			had_country_flag = {
+				flag = had_cas_civil_war
+				days = 3650
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # It is time to lay down our arms.
+		name = ipePOR.4.a
+		ai_chance = {
+			factor = 100
+		}
+		CAS = {
+			inherit = AVZ
+			country_event = {
+				id = ipePOR.5
+			}
+		}
+		if = {
+			limit = {
+				war_with = CAS
+			}
+			set_country_flag = cas_civil_war_gave_up
+			white_peace = CAS
+		}
+	}
+
+	option = { # No! We must keep fighting!
+		name = ipePOR.4.b
+	}
+}
+
+# Ending the Castilian Civil War
+country_event = {
+	id = ipePOR.5
+	title = ipePOR.4.t
+	desc = ipePOR.5.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We welcome the arrival of peace.
+		name = ipePOR.5.a
+		tooltip = {
+			inherit = AVZ
+			if = {
+				limit = {
+					POR = {
+						has_country_flag = cas_civil_war_gave_up
+					}
+				}
+				white_peace = POR
+			}
+		}
+		POR = {
+			clr_country_flag = cas_civil_war_gave_up
+		}
+	}
+}
+
+# The Foundation of Porto Seguro
+country_event = {
+	id = ipePOR.6
+	title = ipePOR.6.t
+	desc = ipePOR.6.d
+	picture = COLONIZATION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # It will be a wealthy and prosperous land.
+		name = ipePOR.6.a
+		760 = {
+			owner = {
+				hidden_effect = {
+					country_event = {
+						id = ipePOR.7
+					}
+				}
+			}
+			cede_province = ROOT
+			add_core = ROOT
+			change_culture = ROOT
+			change_religion = ROOT
+		}
+	}
+}
+
+# The Foundation of Porto Seguro
+country_event = {
+	id = ipePOR.7
+	title = ipePOR.6.t
+	desc = ipePOR.7.d
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We shall see whether we can be friends.
+		name = ipePOR.7.a
+		tooltip = {
+			760 = {
+				cede_province = FROM
+				add_core = FROM
+				change_culture = FROM
+				change_religion = FROM
+			}
+		}
+	}
+}
+
+# The Portuguese Interest in Malabar
+country_event = {
+	id = ipePOR.8
+	title = ipePOR.8.t
+	desc = ipePOR.8.d
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	major_trigger = {
+		technology_group = indian
+	}
+
+	option = { # We should accept Portuguese protection.
+		name = ipePOR.8.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					KOC = {
+						is_subject = yes
+					}
+				}
+				overlord = {
+					country_event = {
+						id = ipePOR.11
+					}
+				}
+				FROM = {
+					set_country_flag = kochin_overlord
+				}
+			}
+		}
+		FROM = {
+			vassalize = ROOT
+			add_opinion = {
+				who = ROOT
+				modifier = accepted_protection
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.9
+				}
+			}
+		}
+		add_liberty_desire = -50
+	}
+
+	option = { # Allowing Europeans to control our affairs? Preposterous!
+		name = ipePOR.8.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_protection
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.10
+				}
+			}
+		}
+	}
+}
+
+# Kochin Accepts Protection!
+country_event = {
+	id = ipePOR.9
+	title = ipePOR.9.t
+	desc = ipePOR.9.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They are wise to side with us.
+		name = ipePOR.9.a
+		tooltip = {
+			vassalize = FROM
+			add_opinion = {
+				who = FROM
+				modifier = accepted_protection
+			}
+			FROM = {
+				add_liberty_desire = -50
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Kochin Refuses Protection!
+country_event = {
+	id = ipePOR.10
+	title = ipePOR.10.t
+	desc = ipePOR.10.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Kochin will surely fall without our aid.
+		name = ipePOR.10.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = refused_protection
+			}
+		}
+	}
+}
+
+# The Betrayal of Kochin
+country_event = {
+	id = ipePOR.11
+	title = ipePOR.11.t
+	desc = ipePOR.11.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well.
+		name = ipePOR.11.a
+		tooltip = {
+			random_country = {
+				limit = {
+					has_country_flag = kochin_overlord
+				}
+				vassalize = KOC
+			}
+		}
+		add_prestige = -5
+	}
+
+	after = {
+		random_country = {
+			limit = {
+				has_country_flag = kochin_overlord
+			}
+			clr_country_flag = kochin_overlord
+		}
+	}
+}
+
+# The Conquest of Goa
+country_event = {
+	id = ipePOR.12
+	title = ipePOR.12.t
+	desc = ipePOR.12.d
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will pay for this!
+		name = ipePOR.12.a
+		tooltip = {
+			2030 = {
+				cede_province = FROM
+				add_core = FROM
+				if = {
+					limit = {
+						NOT = {
+							has_building = fort_15th
+						}
+					}
+					add_building = fort_15th
+				}
+				add_devastation = 10
+			}
+			add_opinion = {
+				who = FROM
+				modifier = conquered_goa
+			}
+		}
+	}
+}
+
+# The Portuguese in Gujarat
+country_event = {
+	id = ipePOR.13
+	title = ipePOR.13.t
+	desc = ipePOR.13.d
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # We need the money.
+		name = ipePOR.13.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					529 = {
+						is_capital_of = ROOT
+					}
+					3470 = {
+						is_capital_of = ROOT
+					}
+					4430 = {
+						is_capital_of = ROOT
+					}
+					4455 = {
+						is_capital_of = ROOT
+					}
+					6542 = {
+						is_capital_of = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				GUJ = {
+					is_rival = FROM
+				}
+				FROM = {
+					is_rival = GUJ
+				}
+			}
+		}
+		529 = {
+			cede_province = FROM
+			add_core = FROM
+			remove_core = ROOT
+		}
+		3470 = {
+			cede_province = FROM
+			add_core = FROM
+			remove_core = ROOT
+		}
+		4430 = {
+			cede_province = FROM
+			add_core = FROM
+			remove_core = ROOT
+		}
+		4455 = {
+			cede_province = FROM
+			add_core = FROM
+			remove_core = ROOT
+		}
+		6542 = {
+			cede_province = FROM
+			add_core = FROM
+			remove_core = ROOT
+		}
+		add_treasury = 1000
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipePOR.14
+				}
+			}
+		}
+	}
+
+	option = { # This is a ridiculous proposal!
+		name = ipePOR.13.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				OR = {
+					529 = {
+						is_capital_of = ROOT
+					}
+					3470 = {
+						is_capital_of = ROOT
+					}
+					4430 = {
+						is_capital_of = ROOT
+					}
+					4455 = {
+						is_capital_of = ROOT
+					}
+					6542 = {
+						is_capital_of = ROOT
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				GUJ = {
+					is_rival = FROM
+				}
+				FROM = {
+					is_rival = GUJ
+				}
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_to_sell
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.15
+				}
+			}
+		}
+	}
+}
+
+# The Northern Province
+country_event = {
+	id = ipePOR.14
+	title = ipePOR.14.t
+	desc = ipePOR.14.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Excellent!
+		name = ipePOR.14.a
+		tooltip = {
+			529 = {
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = FROM
+			}
+			3470 = {
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = FROM
+			}
+			4430 = {
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = FROM
+			}
+			4455 = {
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = FROM
+			}
+			6542 = {
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = FROM
+			}
+		}
+		add_treasury = -1000
+	}
+}
+
+# The Gujarati Refusal
+country_event = {
+	id = ipePOR.15
+	title = ipePOR.15.t
+	desc = ipePOR.15.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Unfortunate.
+		name = ipePOR.15.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = refused_to_sell
+			}
+		}
+	}
+}
+
+# The Sofala Expedition
+country_event = {
+	id = ipePOR.16
+	title = ipePOR.16.t
+	desc = ipePOR.16.d
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	major_trigger = {
+		technology_group = east_african
+	}
+
+	option = { # By all means, let them come!
+		name = ipePOR.16.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					SFA = {
+						is_subject = yes
+					}
+				}
+				overlord = {
+					country_event = {
+						id = ipePOR.19
+					}
+				}
+				FROM = {
+					set_country_flag = sofala_overlord
+				}
+			}
+		}
+		FROM = {
+			vassalize = ROOT
+			add_opinion = {
+				who = ROOT
+				modifier = accepted_protection
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.17
+				}
+			}
+		}
+		add_liberty_desire = -50
+	}
+
+	option = { # Permitting Europeans to stay would be dangerous.
+		name = ipePOR.16.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_protection
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.18
+				}
+			}
+		}
+	}
+}
+
+# Sofala Accepts Protection!
+country_event = {
+	id = ipePOR.17
+	title = ipePOR.17.t
+	desc = ipePOR.17.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They are wise to side with us.
+		name = ipePOR.9.a
+		tooltip = {
+			vassalize = FROM
+			add_opinion = {
+				who = FROM
+				modifier = accepted_protection
+			}
+			FROM = {
+				add_liberty_desire = -50
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Sofala Refuses Protection!
+country_event = {
+	id = ipePOR.18
+	title = ipePOR.18.t
+	desc = ipePOR.18.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Sofala's future is in jeopardy without us.
+		name = ipePOR.18.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = refused_protection
+			}
+		}
+	}
+}
+
+# The Betrayal of Sofala
+country_event = {
+	id = ipePOR.19
+	title = ipePOR.19.t
+	desc = ipePOR.19.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well.
+		name = ipePOR.11.a
+		tooltip = {
+			random_country = {
+				limit = {
+					has_country_flag = sofala_overlord
+				}
+				vassalize = KOC
+			}
+		}
+		add_prestige = -5
+	}
+
+	after = {
+		random_country = {
+			limit = {
+				has_country_flag = sofala_overlord
+			}
+			clr_country_flag = sofala_overlord
+		}
+	}
+}
+
+# The Portuguese in Malindi
+country_event = {
+	id = ipePOR.20
+	title = ipePOR.20.t
+	desc = ipePOR.20.d
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	major_trigger = {
+		technology_group = east_african
+	}
+
+	option = { # They will make excellent allies.
+		name = ipePOR.20.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					MLI = {
+						is_subject = yes
+					}
+				}
+				overlord = {
+					country_event = {
+						id = ipePOR.23
+					}
+				}
+				FROM = {
+					set_country_flag = malindi_overlord
+				}
+			}
+		}
+		FROM = {
+			vassalize = ROOT
+			add_opinion = {
+				who = ROOT
+				modifier = accepted_protection
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.21
+				}
+			}
+		}
+		add_liberty_desire = -50
+	}
+
+	option = { # The Portuguese shall not rule Malindi.
+		name = ipePOR.20.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_protection
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.22
+				}
+			}
+		}
+	}
+}
+
+# Malindi Accepts Protection!
+country_event = {
+	id = ipePOR.21
+	title = ipePOR.21.t
+	desc = ipePOR.21.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It is a valuable possession.
+		name = ipePOR.21.a
+		tooltip = {
+			vassalize = FROM
+			add_opinion = {
+				who = FROM
+				modifier = accepted_protection
+			}
+			FROM = {
+				add_liberty_desire = -50
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Malindi Refuses Protection!
+country_event = {
+	id = ipePOR.22
+	title = ipePOR.22.t
+	desc = ipePOR.22.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Malindi will be rapidly eclipsed without us.
+		name = ipePOR.22.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = refused_protection
+			}
+		}
+	}
+}
+
+# The Betrayal of Malindi
+country_event = {
+	id = ipePOR.23
+	title = ipePOR.23.t
+	desc = ipePOR.23.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well.
+		name = ipePOR.11.a
+		tooltip = {
+			random_country = {
+				limit = {
+					has_country_flag = malindi_overlord
+				}
+				vassalize = KOC
+			}
+		}
+		add_prestige = -5
+	}
+
+	after = {
+		random_country = {
+			limit = {
+				has_country_flag = malindi_overlord
+			}
+			clr_country_flag = malindi_overlord
+		}
+	}
+}
+
+# The Portuguese Interest in Malabar
+country_event = {
+	id = ipePOR.24
+	title = ipePOR.8.t
+	desc = ipePOR.24.d
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	major_trigger = {
+		technology_group = indian
+	}
+
+	option = { # We should accept Portuguese protection.
+		name = ipePOR.8.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					KLT = {
+						is_subject = yes
+					}
+				}
+				overlord = {
+					country_event = {
+						id = ipePOR.27
+					}
+				}
+				FROM = {
+					set_country_flag = kolathunad_overlord
+				}
+			}
+		}
+		FROM = {
+			vassalize = ROOT
+			add_opinion = {
+				who = ROOT
+				modifier = accepted_protection
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.25
+				}
+			}
+		}
+		add_liberty_desire = -50
+	}
+
+	option = { # Allowing Europeans to control our affairs? Preposterous!
+		name = ipePOR.8.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_protection
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.26
+				}
+			}
+		}
+	}
+}
+
+# Kolathunad Accepts Protection!
+country_event = {
+	id = ipePOR.25
+	title = ipePOR.25.t
+	desc = ipePOR.25.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They are wise to side with us.
+		name = ipePOR.9.a
+		tooltip = {
+			vassalize = FROM
+			add_opinion = {
+				who = FROM
+				modifier = accepted_protection
+			}
+			FROM = {
+				add_liberty_desire = -50
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Kolathunad Refuses Protection!
+country_event = {
+	id = ipePOR.26
+	title = ipePOR.26.t
+	desc = ipePOR.26.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Kolathunad will surely decline without our aid.
+		name = ipePOR.26.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = refused_protection
+			}
+		}
+	}
+}
+
+# The Betrayal of Kolathunad
+country_event = {
+	id = ipePOR.27
+	title = ipePOR.27.t
+	desc = ipePOR.27.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well.
+		name = ipePOR.11.a
+		tooltip = {
+			random_country = {
+				limit = {
+					has_country_flag = kolathunad_overlord
+				}
+				vassalize = KLT
+			}
+		}
+		add_prestige = -5
+	}
+
+	after = {
+		random_country = {
+			limit = {
+				has_country_flag = kolathunad_overlord
+			}
+			clr_country_flag = kolathunad_overlord
+		}
+	}
+}
+
+# The Portuguese Interest in Malabar
+country_event = {
+	id = ipePOR.28
+	title = ipePOR.8.t
+	desc = ipePOR.28.d
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	major_trigger = {
+		technology_group = indian
+	}
+
+	option = { # We should accept Portuguese protection.
+		name = ipePOR.8.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					VND = {
+						is_subject = yes
+					}
+				}
+				overlord = {
+					country_event = {
+						id = ipePOR.31
+					}
+				}
+				FROM = {
+					set_country_flag = venad_overlord
+				}
+			}
+		}
+		FROM = {
+			vassalize = ROOT
+			add_opinion = {
+				who = ROOT
+				modifier = accepted_protection
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.29
+				}
+			}
+		}
+		add_liberty_desire = -50
+	}
+
+	option = { # Allowing Europeans to control our affairs? Preposterous!
+		name = ipePOR.8.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_protection
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.30
+				}
+			}
+		}
+	}
+}
+
+# Venad Accepts Protection!
+country_event = {
+	id = ipePOR.29
+	title = ipePOR.29.t
+	desc = ipePOR.29.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They are wise to side with us.
+		name = ipePOR.9.a
+		tooltip = {
+			vassalize = FROM
+			add_opinion = {
+				who = FROM
+				modifier = accepted_protection
+			}
+			FROM = {
+				add_liberty_desire = -50
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Venad Refuses Protection!
+country_event = {
+	id = ipePOR.30
+	title = ipePOR.30.t
+	desc = ipePOR.30.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Venad will surely suffer without us.
+		name = ipePOR.30.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = refused_protection
+			}
+		}
+	}
+}
+
+# The Betrayal of Venad
+country_event = {
+	id = ipePOR.31
+	title = ipePOR.31.t
+	desc = ipePOR.31.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well.
+		name = ipePOR.11.a
+		tooltip = {
+			random_country = {
+				limit = {
+					has_country_flag = venad_overlord
+				}
+				vassalize = VND
+			}
+		}
+		add_prestige = -5
+	}
+
+	after = {
+		random_country = {
+			limit = {
+				has_country_flag = venad_overlord
+			}
+			clr_country_flag = venad_overlord
+		}
+	}
+}
+
+# The Portuguese in Pulicat
+country_event = {
+	id = ipePOR.32
+	title = ipePOR.32.t
+	desc = ipePOR.32.d
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # Sell the town to Portugal.
+		name = ipePOR.32.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					is_rival = FROM
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+			}
+		}
+		539 = {
+			cede_province = FROM
+			add_core = FROM
+			remove_core = ROOT
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipePOR.33
+				}
+			}
+		}
+		add_treasury = 1000
+	}
+
+	option = { # We cannot sacrifice our territorial integrity!
+		name = ipePOR.32.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				OR = {
+					is_rival = FROM
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_to_sell
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.34
+				}
+			}
+		}
+	}
+}
+
+# The Sale of Pulicat
+country_event = {
+	id = ipePOR.33
+	title = ipePOR.33.t
+	desc = ipePOR.33.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # An excellent addition to our empire.
+		name = ipePOR.33.a
+		tooltip = {
+			539 = {
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = FROM
+			}
+		}
+		add_treasury = -1000
+	}
+}
+
+# $FROMCOUNTRY$ Refuses to Sell Pulicat!
+country_event = {
+	id = ipePOR.34
+	title = ipePOR.34.t
+	desc = ipePOR.34.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A missed opportunity.
+		name = ipePOR.34.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = refused_to_sell
+			}
+		}
+	}
+}
+
+# The Portuguese in Chittagong
+country_event = {
+	id = ipePOR.35
+	title = ipePOR.35.t
+	desc = ipePOR.35.d
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # Allow the Portuguese to settle in Chittagong.
+		name = ipePOR.35.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					is_rival = FROM
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+			}
+		}
+		568 = {
+			cede_province = FROM
+			add_core = FROM
+			remove_core = ROOT
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipePOR.36
+				}
+			}
+		}
+		add_treasury = 1000
+	}
+
+	option = { # Kick the Portuguese out!
+		name = ipePOR.35.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				OR = {
+					is_rival = FROM
+					FROM = {
+						is_rival = ROOT
+					}
+				}
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_to_sell
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePOR.37
+				}
+			}
+		}
+	}
+}
+
+# The Sale of Chittagong
+country_event = {
+	id = ipePOR.36
+	title = ipePOR.36.t
+	desc = ipePOR.36.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It will be a most useful port.
+		name = ipePOR.36.a
+		tooltip = {
+			568 = {
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = FROM
+			}
+		}
+		add_treasury = -1000
+	}
+}
+
+# $FROMCOUNTRY$ Refuses to Sell Chittagong!
+country_event = {
+	id = ipePOR.37
+	title = ipePOR.37.t
+	desc = ipePOR.37.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will acquire more ports one way or another.
+		name = ipePOR.37.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = refused_to_sell
+			}
+		}
+	}
+}

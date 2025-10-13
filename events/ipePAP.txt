@@ -1,0 +1,123 @@
+namespace = ipePAP
+normal_or_historical_nations = yes
+
+# A Fief of the Papacy
+country_event = {
+	id = ipePAP.1
+	title = ipePAP.1.t
+	desc = ipePAP.1.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We are servants of the Holy Father.
+		name = ipePAP.1.a
+		ai_chance = {
+			factor = 100
+		}
+		PAP = {
+			create_subject = {
+				subject_type = vassal
+				subject = FER
+			}
+			add_opinion = {
+				who = FER
+				modifier = subjected_to_the_pope
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePAP.2
+					days = 1
+				}
+			}
+		}
+		add_adm_power = 100
+		add_dip_power = 100
+		add_mil_power = 100
+		add_legitimacy = 25
+		add_papal_influence = 25
+	}
+
+	option = { # I rule Ferrara in my own right!
+		name = ipePAP.1.b
+		ai_chance = {
+			factor = 0
+		}
+		every_owned_province = {
+			limit = {
+				region = italy_region
+			}
+			add_permanent_claim = PAP
+		}
+		PAP = {
+			add_opinion = {
+				who = FER
+				modifier = resisted_the_pope
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipePAP.3
+					days = 1
+				}
+			}
+		}
+		add_legitimacy = -10
+		add_papal_influence = -10
+	}
+}
+
+# Ferrara Acknowledges Papal Overlordship
+country_event = {
+	id = ipePAP.2
+	title = ipePAP.2.t
+	desc = ipePAP.2.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Their rule is blessed.
+		name = ipePAP.2.a
+		tooltip = {
+			create_subject = {
+				subject_type = vassal
+				subject = FER
+			}
+			add_opinion = {
+				who = FER
+				modifier = subjected_to_the_pope
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Ferrara Refuses Papal Overlordship
+country_event = {
+	id = ipePAP.3
+	title = ipePAP.3.t
+	desc = ipePAP.3.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will be punished for this!
+		name = ipePAP.3.a
+		tooltip = {
+			FER = {
+				every_owned_province = {
+					limit = {
+						region = italy_region
+					}
+					add_permanent_claim = PAP
+				}
+			}
+			add_opinion = {
+				who = FER
+				modifier = resisted_the_pope
+			}
+		}
+		add_prestige = -10
+	}
+}

@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = schlesian
+religion = catholic
+capital = 6908
+fixed_capital = 6908
+
+1424.1.1 = {
+	monarch = {
+		name = "Helena"
+		dynasty = "Gediminai"
+		birth_date = 1390.1.1
+		culture = lithuanian
+		female = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,21 @@
+# 4750 - Krujë, Tirana, central Albania
+
+owner = KST
+controller = KST
+culture = albanian
+religion = orthodox
+capital = "Krujë"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+fort_15th = yes # Krujë Castle
+add_core = KST
+add_core = TUR
+
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = western

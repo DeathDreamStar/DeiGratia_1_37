@@ -1,0 +1,15 @@
+#3329 - Tanba
+
+owner = HSK
+controller = HSK
+culture = japanese
+religion = shinto
+capital = "Kameyama"
+trade_goods = grain
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = HSK
+discovered_by = chinese

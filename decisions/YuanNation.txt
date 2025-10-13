@@ -1,0 +1,358 @@
+country_decisions = {
+
+	from_great_yuan = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_yuan_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = YUA }
+			NOT = { tag = MUG }
+			NOT = { tag = QNG }
+			NOT = { tag = MNG }
+			NOT = { tag = MCH }
+			NOT = { tag = OIR }
+			culture_group = mongolic
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 8
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 723 #Xilin Gol
+				province_id = 1816 #Beijing
+				province_id = 2190 #Qaraqorum
+				province_id = 2136 #Xuanha
+				AND = {
+					culture = mongol
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				AND = {
+					culture = oirats
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				AND = {
+					culture = khalkha
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				AND = {
+					culture = chahar
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+				AND = {
+					culture = korchin
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			culture_group = mongolic
+			is_at_war = no
+			owns_core_province = 723 #Xilin Gol
+			owns_core_province = 1816 #Beijing
+			owns_core_province = 2190 #Qaraqorum
+			owns_core_province = 2136 #Xuanha
+			custom_trigger_tooltip = {
+				tooltip = ipe_subject_all_mongols
+				NOT = {
+					any_province = {
+						culture = mongol
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+				NOT = {
+					any_province = {
+						culture = oirats
+						NOT = {
+							province_id = 2417
+						}
+						NOT = {
+							country_or_non_sovereign_subject_holds = ROOT
+						}
+					}
+				}
+				NOT = {
+					any_province = {
+						culture = khalkha
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+				NOT = {
+					any_province = {
+						culture = chahar
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+				NOT = {
+					any_province = {
+						culture = korchin
+						NOT = { country_or_non_sovereign_subject_holds = ROOT }
+					}
+				}
+			}
+			OR = {
+				is_emperor_of_china = yes
+				custom_trigger_tooltip = {
+					tooltip = empire_of_china_dismantled.tooltip
+					has_global_flag = empire_of_china_dismantled
+				}
+			}
+		}
+		effect = {
+			1816 = {
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+				change_province_name = Khanbaliq
+				rename_capital = Khanbaliq
+				move_capital_effect = yes
+			}
+			723 = {
+				change_province_name = Xanadu
+				rename_capital = Xanadu 
+			}
+			2136 = {
+				change_province_name = Zhongdu
+				rename_capital = Zhongdu 
+			}
+			change_tag = YUA
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			china_superregion = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = YUA
+			}
+			manchuria_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = YUA
+			}
+			mongolia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = YUA
+			}
+			tibet_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = YUA
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			add_prestige = 50
+			set_country_flag = formed_yuan_flag
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	form_great_yuan_oirat = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_yuan_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = YUA }
+			tag = OIR
+			culture_group = mongolic
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 8
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			culture_group = mongolic
+			is_at_war = no
+			KHA = {
+				is_subject_of = ROOT
+				NOT = {
+					is_subject_of_type = tributary_state
+				}
+				NOT = {
+					num_of_cities = 60
+				}
+			}
+			OR = {
+				is_emperor_of_china = yes
+				custom_trigger_tooltip = {
+					tooltip = empire_of_china_dismantled.tooltip
+					has_global_flag = empire_of_china_dismantled
+				}
+			}
+		}
+		effect = {
+			inherit = KHA
+			if = {
+				limit = {
+					HMI = {
+						is_subject_of = ROOT
+						is_subject_of_type = vassal
+						ai = yes
+						NOT = {
+							num_of_cities = 3
+						}
+					}
+				}
+				inherit = HMI
+			}
+			if = {
+				limit = {
+					owns = 1816
+				}
+				1816 = {
+					add_province_modifier = {
+						name = encouraged_growth_tax
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_production
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_manpower
+						duration = 18250
+					}
+					change_province_name = Khanbaliq
+					rename_capital = Khanbaliq
+					move_capital_effect = yes
+				}
+			}
+			if = {
+				limit = {
+					owns = 723
+				}
+				723 = {
+					change_province_name = Xanadu
+					rename_capital = Xanadu 
+				}
+			}
+			if = {
+				limit = {
+					owns = 2136
+				}
+				2136 = {
+					change_province_name = Zhongdu
+					rename_capital = Zhongdu 
+				}
+			}
+			change_tag = YUA
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			china_superregion = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = YUA
+			}
+			manchuria_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = YUA
+			}
+			mongolia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = YUA
+			}
+			tibet_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = YUA
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			add_prestige = 50
+			set_country_flag = formed_yuan_flag
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+		do_not_integrate = KHA
+	}
+}

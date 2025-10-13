@@ -1,0 +1,25 @@
+#3636 - Achmat
+
+owner = GOL
+controller = GOL
+culture = mishary
+religion = sunni
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = naval_supplies
+base_manpower = 1
+capital = "Achmat"
+is_city = yes
+add_core = GOL
+discovered_by = eastern
+discovered_by = western
+
+
+discovered_by = nomad_group
+discovered_by = muslim
+discovered_by = ottoman
+
+1450.1.1 = { discovered_by = SIB }
+1503.4.1 = { owner = RUS controller = RUS add_core = RUS remove_core = GOL } # Ivan III annexes Tula
+1600.1.1 = { culture = russian religion = orthodox }

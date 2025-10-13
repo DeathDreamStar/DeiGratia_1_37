@@ -1,0 +1,371 @@
+namespace = ipeMCH
+normal_or_historical_nations = yes
+
+# The Rise of $MONARCH$
+country_event = {
+	id = ipeMCH.1
+	title = ipeMCH.1.t
+	desc = ipeMCH.1.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		NOT = {
+			exists = MCH
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+		has_reform = jurchen_tribe
+		primary_culture = manchu
+		capital_scope = {
+			OR = {
+				region = manchuria_region
+				region = mongolia_region
+			}
+		}
+		OR = {
+			is_subject = no
+			is_subject_of_type = tributary_state
+			is_subject_of_type = guard
+		}
+		adm = 4
+		dip = 4
+		mil = 4
+		any_known_country = {
+			is_emperor_of_china = yes
+			NOT = {
+				imperial_mandate = 50
+			}
+		}
+		is_at_war = no
+		NOT = {
+			total_development = 100
+			ruler_age = 40
+		}
+		prestige = 25
+	}
+
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			any_known_country = {
+				is_emperor_of_china = yes
+				NOT = {
+					imperial_mandate = 25
+				}
+			}
+		}
+	}
+
+	option = { # It is time for the rise of the Jurchen state.
+		name = ipeMCH.1.a
+		custom_tooltip = ipeMCH.1.a.tooltip
+		set_country_flag = rise_of_nurhaci
+	}
+}
+
+# The Unification of the Jurchens
+country_event = {
+	id = ipeMCH.2
+	title = ipeMCH.2.t
+	desc = ipeMCH.2.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	major = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				OR = {
+					has_reform = jurchen_tribe
+					has_reform = siberian_tribe
+				}
+				primary_culture = manchu
+			}
+			tag = KRC # Korchins joined the Manchus
+		}
+		capital_scope = {
+			OR = {
+				region = manchuria_region
+				region = mongolia_region
+			}
+		}
+		OR = {
+			is_subject = no
+			is_subject_of_type = tributary_state
+			is_subject_of_type = guard
+		}
+		is_at_war = no
+		ai = yes
+		any_known_country = {
+			has_reform = jurchen_tribe
+			primary_culture = manchu
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = guard
+			}
+			NOT = {
+				war_with = ROOT
+				total_development = 100
+			}
+			is_neighbor_of = ROOT
+			has_country_flag = rise_of_nurhaci
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 36
+	}
+
+	option = { # Let us unite with our kinsmen.
+		name = ipeMCH.2.a
+		random_known_country = {
+			limit = {
+				has_reform = jurchen_tribe
+				primary_culture = manchu
+				OR = {
+					is_subject = no
+					is_subject_of_type = tributary_state
+					is_subject_of_type = guard
+				}
+				NOT = {
+					war_with = ROOT
+					total_development = 100
+				}
+				is_neighbor_of = ROOT
+				has_country_flag = rise_of_nurhaci
+			}
+			inherit = ROOT
+			hidden_effect = {
+				country_event = {
+					id = ipeMCH.3
+				}
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Joins Us!
+country_event = {
+	id = ipeMCH.3
+	title = ipeMCH.3.t
+	desc = ipeMCH.3.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Wonderful.
+		name = ipeMCH.3.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+		add_yearly_manpower = 3
+	}
+}
+
+# The Seven Grievances
+country_event = {
+	id = ipeMCH.4
+	title = ipeMCH.4.t
+	desc = ipeMCH.4.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_country_flag = seven_grievances_flag
+		any_known_country = {
+			is_emperor_of_china = yes
+			NOT = {
+				war_with = ROOT
+				imperial_mandate = 50
+			}
+			is_neighbor_of = ROOT
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # We will avenge these crimes!
+		name = ipeMCH.4.a
+		clr_country_flag = seven_grievances_flag
+		add_mil_power = 200
+		add_army_tradition = 20
+		add_yearly_manpower = 5
+		add_country_modifier = {
+			name = seven_grievances_country
+			duration = 7300
+		}
+		capital_scope = {
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			cavalry = ROOT
+			cavalry = ROOT
+			cavalry = ROOT
+			cavalry = ROOT
+		}
+		tooltip = {
+			random_known_country = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				every_owned_province = {
+					limit = {
+						OR = {
+							culture = manchu
+							culture = manchu_new
+						}
+					}
+					add_province_modifier = {
+						name = seven_grievances_province
+						duration = 7300
+					}
+				}
+			}
+		}
+		random_known_country = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			ROOT = {
+				declare_war_with_cb = {
+					who = PREV
+					casus_belli = cb_take_mandate
+				}
+			}
+		}
+		hidden_effect = {
+			random_known_country = {
+				limit = {
+					is_emperor_of_china = yes
+				}
+				country_event = {
+					id = ipeMCH.5
+				}
+			}
+		}
+	}
+}
+
+# The Seven Grievances
+country_event = {
+	id = ipeMCH.5
+	title = ipeMCH.4.t
+	desc = ipeMCH.5.d
+	picture = HORDE_ON_HORSEBACK_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # How dare they challenge us!
+		name = ipeMCH.5.a
+		every_owned_province = {
+			limit = {
+				OR = {
+					culture = manchu
+					culture = manchu_new
+				}
+			}
+			add_province_modifier = {
+				name = seven_grievances_province
+				duration = 7300
+			}
+		}
+		tooltip = {
+			FROM = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_take_mandate
+				}
+			}
+		}
+		add_stability = -1
+		add_mandate = -10
+	}
+}
+
+# The Later Jin Conquest of Manchuria
+country_event = {
+	id = ipeMCH.6
+	title = ipeMCH.6.t
+	desc = ipeMCH.6.d
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # This is only the beginning.
+		name = ipeMCH.6.a
+		random_known_country = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			every_owned_province = {
+				limit = {
+					region = manchuria_region
+				}
+				cede_province = MCH
+				set_province_flag = liberated_manchuria_province
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeMCH.7
+				}
+			}
+		}
+		add_stability_or_adm_power = yes
+		add_prestige = 25
+		if = {
+			limit = {
+				726 = {
+					owned_by = ROOT
+				}
+			}
+			set_capital = 726
+			726 = {
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+			}
+		}
+	}
+}
+
+# The Later Jin Conquest of Manchuria
+country_event = {
+	id = ipeMCH.7
+	title = ipeMCH.6.t
+	desc = ipeMCH.7.d
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We must defend the frontiers!
+		name = ipeMCH.7.a
+		tooltip = {
+			every_province = {
+				limit = {
+					has_province_flag = liberated_manchuria_province
+				}
+				cede_province = MCH
+			}
+		}
+		add_stability = -1
+		add_mandate = -10
+	}
+}

@@ -1,0 +1,61 @@
+graphical_culture = easterngfx
+color = { 47 156 227 }
+
+historical_idea_groups = {
+	administrative_ideas
+	plutocracy_ideas
+	trade_ideas
+	religious_ideas
+	offensive_ideas
+	maritime_ideas
+	economic_ideas
+	quality_ideas
+}
+
+historical_units = {
+	bardiche_infantry
+	eastern_knights
+	slavic_stradioti
+	eastern_militia
+	muscovite_musketeer
+	muscovite_caracolle
+	muscovite_soldaty
+	muscovite_cossack
+	russian_petrine
+	russian_lancer
+	russian_green_coat
+	russian_cuirassier
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	russian_mass
+}
+
+monarch_names = {
+	"Yuri #0" = 20
+	"Semyon #0" = 20
+	"Mikhail #0" = 20
+	"Sergey #0" = 20
+	"Roman #0" = 10
+	"Mstislav #0" = 10
+	"Svyatoslav #0" = 10
+	"Titus #0" = 10
+	"Vasily #0" = 10
+	"Grigory #0" = 10
+	
+	"Dominika #0" = -1
+	"Katya #0" = -1
+	"Anya #0" = -1
+}
+
+leader_names = { 
+	Odoyevsky Belyovsky Mosalsky Vorotynsky Zvenigorodsky Nozdrevaty Khotetovsky Gorchakov
+	Shcherbatov Mezetsky Boryatinsky Dolgorukov Shcherbatov Lykov Obolensky Boryatinsky
+}
+
+ship_names = {
+	Pronsk Pronya "Y. Sviatoslavich" Murom
+	"Staraya Ryazan" Pereslavl Ryazansky Moksha
+	Oka Tsna Skopin Mikhailov Lolotcha Kasimov
+	Kadorn Sasovo Shatsk Novornichurinsk
+}

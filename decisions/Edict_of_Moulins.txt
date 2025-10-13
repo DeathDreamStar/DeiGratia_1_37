@@ -1,0 +1,28 @@
+country_decisions = {
+	enact_edict_de_moulins = {
+		potential = {
+			tag = FRA
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = {
+				has_country_flag = edict_of_moulins
+			}
+		}
+		allow = {
+			adm_tech = 12
+			legitimacy = 100
+			stability = 1
+		}
+		effect = {
+			set_country_flag = edict_of_moulins
+			add_government_reform = french_absolutism
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+}

@@ -1,0 +1,184 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = low_saxon
+religion = catholic
+capital = 3990
+fixed_capital = 3990
+
+1348.1.1 = {
+	monarch = {
+		name = "Otto III"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1364.1.1 = {
+	monarch = {
+		name = "Bernhard I"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1421.1.1 = {
+	monarch = {
+		name = "Eberwin I"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1454.1.1 = {
+	monarch = {
+		name = "Bernhard II"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1473.1.1 = {
+	monarch = {
+		name = "Eberwind II"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1498.1.1 = {
+	monarch = {
+		name = "Arnold II"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1536.1.1 = {
+	heir = {
+		name = "Eberwin"
+		monarch_name = "Eberwin III"
+		dynasty = "von Bentheim"
+		birth_date = 1536.1.1
+		death_date = 1836.1.1
+		claim = 95
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1544.1.1 = {
+	monarch = {
+		name = "Eberwin III"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1562.1.1 = {
+	monarch = {
+		name = "Arnold III"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1598.1.1 = {
+	monarch = {
+		name = "Anna"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+		female = yes
+		regent = yes
+	}
+}
+
+1606.1.1 = {
+	monarch = {
+		name = "Arnold Jobst"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1643.1.1 = {
+	monarch = {
+		name = "Philip Konrad"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1668.1.1 = {
+	monarch = {
+		name = "Arnold Mauritz"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1701.1.1 = {
+	monarch = {
+		name = "Herman Freidrich"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1723.1.1 = {
+	monarch = {
+		name = "Ludwig Franciz"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1731.1.1 = {
+	monarch = {
+		name = "Friedrich Karl"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1803.1.1 = {
+	monarch = {
+		name = "Ludwig"
+		dynasty = "von Bentheim"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}

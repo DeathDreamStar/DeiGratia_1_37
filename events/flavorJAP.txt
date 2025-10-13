@@ -1,0 +1,1962 @@
+########################################
+# General Flavor Events for Japan and Daimyos
+#
+# written by Sara Wendel-Örtqvist
+########################################
+# Reworked and given alternative effects for Mandate of Heaven / 1.20 by Drikus Kuiper.
+########################################
+
+namespace = flavor_jap
+normal_or_historical_nations = yes
+
+# Western Wrecked Ship (William Adams)
+country_event = {
+	id = flavor_jap.8
+	title = "flavor_jap.EVTNAME8"
+	desc = "flavor_jap.EVTDESC8"
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		culture_group = japanese_g
+		OR = {
+			has_country_modifier = western_trade
+			is_incident_active = incident_nanban
+			is_incident_happened = incident_nanban
+		}
+		has_regency = no
+		NOT = { has_country_flag = william_adams }
+		num_of_ports = 1
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	immediate = {
+		set_country_flag = william_adams
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA8" # Do nothing
+		add_stability_or_adm_power = yes
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB8" # Help the foreign shipwreckers
+		add_stability = -1
+		add_ruler_modifier = { 
+			name = jap_western_wrecked_ship
+		}
+	}
+	option = {
+		name = "flavor_jap.EVTOPTC8" # Bring the foreigner to me
+		add_prestige = -10
+		define_advisor = {
+			name = "William Adams"
+			culture = english
+			religion = protestant
+			type = trader
+			discount = yes
+			skill = 2
+		}
+	}
+}
+
+# Rise of urban culture
+country_event = {
+	id = flavor_jap.12
+	title = "flavor_jap.EVTNAME12"
+	desc = "flavor_jap.EVTDESC12"
+	picture = THEATRE_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		dip = 4
+		has_regency = no
+		NOT = {
+			has_country_modifier = jap_culture
+			has_country_flag = jap_culture_flag
+		}
+		OR = {
+			current_age = age_of_absolutism
+			current_age = age_of_revolutions
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA12"
+		add_years_of_income = -0.5
+		add_country_modifier = { 
+			name = jap_culture
+			duration = 7300
+		}
+		hidden_effect = {
+			set_country_flag = jap_culture_flag
+		}
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB12"
+		add_prestige = -10
+		hidden_effect = {
+			set_country_flag = jap_culture_flag
+		}
+	}
+}
+
+# Terakoya
+country_event = {
+	id = flavor_jap.13
+	title = "flavor_jap.EVTNAME13"
+	desc = "flavor_jap.EVTDESC13"
+	picture = UNIVERSITY_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		has_country_flag = jap_genroku
+		has_regency = no
+		NOT = {
+			has_country_modifier = jap_terakoya
+			has_country_flag = jap_terakoya_country_flag
+		}
+		OR = {
+			current_age = age_of_absolutism
+			current_age = age_of_revolutions
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.5
+			stability = 1
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+				}
+				set_province_flag = jap_terakoya_flag1
+			}
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+					NOT = {
+						has_province_flag = jap_terakoya_flag1
+					}
+				}
+				set_province_flag = jap_terakoya_flag2
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA13" # Establish Terakoya
+		add_years_of_income = -0.5
+		add_country_modifier = {
+			name = jap_terakoya
+			duration = 7300
+		}
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_province_flag = jap_terakoya_flag1
+				}
+				clr_province_flag = jap_terakoya_flag1
+			}
+			random_owned_province = {
+				limit = {
+					has_province_flag = jap_terakoya_flag2
+				}
+				clr_province_flag = jap_terakoya_flag2
+			}
+			set_country_flag = jap_terakoya_country_flag
+		}
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB13"
+		random_owned_province = {
+			limit = {
+				has_province_flag = jap_terakoya_flag1
+			}
+			add_province_modifier = {
+				name = add_unrest_5_modifier
+				duration = 1825
+			}
+			clr_province_flag = jap_terakoya_flag1
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = jap_terakoya_flag2
+			}
+			add_province_modifier = {
+				name = add_unrest_5_modifier
+				duration = 1825
+			}
+			clr_province_flag = jap_terakoya_flag2
+		}
+			set_country_flag = jap_terakoya_country_flag
+	}
+}
+
+# Higashiyama culture
+country_event = {
+	id = flavor_jap.17
+	title = "flavor_jap.EVTNAME17"
+	desc = "flavor_jap.EVTDESC17"
+	picture = THEATRE_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		OR = {
+			adm = 4
+			dip = 4
+		}
+		NOT = {
+			has_country_flag = jap_higashiyama_culture_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA17" # Encourage
+		add_years_of_income = -0.5
+		add_country_modifier = { 
+			name = jap_higashiyama_culture
+			duration = 3650
+		}
+		set_country_flag = jap_higashiyama_culture_flag
+		if = {
+			limit = {
+				adm = 4
+				NOT = {
+					dip = 4
+				}
+			}
+			add_adm_power = -30
+		}
+		if = {
+			limit = {
+				dip = 4
+				NOT = {
+					adm = 4
+				}
+			}
+			add_dip_power = -30
+		}
+		if = {
+			limit = {
+				dip = 4
+				adm = 4
+			}
+			add_mil_power = -30
+		}
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB17"
+		add_prestige = -5
+		set_country_flag = jap_higashiyama_culture_flag
+	}
+}
+
+# Build Ginkakuji (Silver Pavillion)
+country_event = {
+	id = flavor_jap.18
+	title = "flavor_jap.EVTNAME18"
+	desc = "flavor_jap.EVTDESC18"
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		any_owned_province = {
+			NOT = { has_building = temple }
+			NOT = { has_building = cathedral }
+			num_free_building_slots = 1
+			region = japan_region
+		}
+		NOT = { has_country_flag = jap_ginkakuji }
+		has_country_flag = jap_higashiyama_culture_flag
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA18"
+		add_treasury = -30
+		random_owned_province = {
+			limit = {
+				num_free_building_slots = 1
+				NOT = { has_building = temple }
+				NOT = { has_building = cathedral }
+				region = japan_region
+			}
+			add_building = temple
+		}
+		set_country_flag = jap_ginkakuji
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB18"
+		add_prestige = 5
+		set_country_flag = jap_ginkakuji
+	}
+}
+
+# Sekisho
+country_event = {
+	id = flavor_jap.19
+	title = "flavor_jap.EVTNAME19"
+	desc = "flavor_jap.EVTDESC19"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		has_regency = no
+		NOT = {
+			has_country_modifier = jap_sekisho
+			has_country_flag = jap_sekisho
+		}
+		OR = {
+			current_age = age_of_absolutism
+			current_age = age_of_revolutions
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.8
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -1 }
+		}
+		modifier = {
+			factor = 0.8
+			NOT = { stability = -2 }
+		}
+	}
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				culture_group = japanese_g
+			}
+			set_province_flag = jap_sekisho
+		}
+		random_owned_province = {
+			limit = {
+				culture_group = japanese_g
+				NOT = { has_province_flag = jap_sekisho }
+			}
+			set_province_flag = jap_sekisho
+		}
+		random_owned_province = {
+			limit = {
+				culture_group = japanese_g
+				NOT = { has_province_flag = jap_sekisho }
+			}
+			set_province_flag = jap_sekisho
+		}
+		hidden_effect = {
+			set_country_flag = jap_sekisho
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA19"
+		add_years_of_income = -1
+		add_country_modifier = { 
+			name = jap_sekisho
+			duration = 7300
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_flag = jap_sekisho
+				}
+				clr_province_flag = jap_sekisho
+			}
+		}
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB19"
+		every_owned_province = {
+			limit = {
+				has_province_flag = jap_sekisho
+			}
+			add_province_modifier = {
+				name = add_unrest_5_modifier
+				duration = 1825
+			}
+			clr_province_flag = jap_sekisho
+		}
+	}
+}
+
+# Gokaido
+country_event = {
+	id = flavor_jap.22
+	title = "flavor_jap.EVTNAME22"
+	desc = "flavor_jap.EVTDESC22"
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		OR = {
+			tag = JAP
+			has_reform = shogunate
+		}
+		NOT = {
+			has_country_modifier = jap_gokaido
+			has_country_flag = jap_gokaido
+		}
+		OR = {
+			current_age = age_of_absolutism
+			current_age = age_of_revolutions
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = jap_gokaido
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA22" # Establish the Gokaido
+		add_years_of_income = -0.5
+		add_country_modifier = { 
+			name = jap_gokaido 
+			duration = 3650 
+		}
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB22"
+		add_prestige = -5
+	}
+}
+
+# Kyoho Reforms
+country_event = {
+	id = flavor_jap.23
+	title = "flavor_jap.EVTNAME23"
+	desc = "flavor_jap.EVTDESC23"
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		is_incident_happened = incident_neo_confucianism
+		current_age = age_of_revolutions
+		has_regency = no
+		NOT = {
+			has_ruler_modifier = jap_trade_reform
+		}
+		NOT = {
+			has_ruler_modifier = jap_military_reform
+		}
+		NOT = {
+			has_ruler_modifier = jap_economic_reform
+		}
+		NOT = {
+			has_country_flag = jap_kyoho_reforms
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+		modifier = {
+			factor = 0.9
+			stability = 2
+		}
+		modifier = {
+			factor = 0.9
+			stability = 3
+		}
+	}
+
+	immediate = {
+		set_country_flag = jap_kyoho_reforms
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA23" # Reform the Trade
+		add_mercantilism = 5
+		add_ruler_modifier = { 
+			name = jap_trade_reform
+		}
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB23" # Reform the Military
+		add_army_tradition = 20
+		add_navy_tradition = 20
+		add_ruler_modifier = { 
+			name = jap_military_reform
+		}
+	}
+	option = {
+		name = "flavor_jap.EVTOPTC23" # Reform the Economy
+		random_owned_province = {
+			limit = {
+				is_capital = yes
+			}
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+		}
+		add_ruler_modifier = { 
+			name = jap_economic_reform
+		}
+	}
+}
+
+# Genroku-era culture
+country_event = {
+	id = flavor_jap.24
+	title = "flavor_jap.EVTNAME24"
+	desc = "flavor_jap.EVTDESC24"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		OR = {
+			tag = JAP
+			has_reform = shogunate
+		}
+		has_country_flag = jap_higashiyama_culture_flag
+		NOT = {
+			has_country_modifier = jap_genroku
+			has_country_flag = jap_genroku
+		}
+		NOT = {
+			num_of_loans = 1
+		}
+		stability = 1
+		OR = {
+			current_age = age_of_absolutism
+			current_age = age_of_revolutions
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 800
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA24" # Start the era of Genroku!
+		add_stability_or_adm_power = yes
+		add_country_modifier = { 
+			name = jap_genroku
+			duration = 7300
+		}
+		set_country_flag = jap_genroku
+	}
+}
+
+# Oie Sodo
+country_event = {
+	id = flavor_jap.28
+	title = "flavor_jap.EVTNAME28"
+	desc = "flavor_jap.EVTDESC28"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_country_flag = jap_oie_sodo }
+		culture_group = japanese_g
+		is_lesser_in_union = no
+		has_heir = yes
+		heir_age = 15
+		has_regency = no
+		NOT = {
+			prestige = 40
+		}
+		NOT = {
+			legitimacy = 50
+		}
+		current_age = age_of_absolutism
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = jap_oie_sodo
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA28" # Follow the noble's advice
+		kill_heir = {}
+		add_legitimacy = 20
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB28" # Refuse to comply to their demands
+		add_legitimacy = -10
+		random_owned_province = {
+			limit = {
+				culture_group = japanese_g
+			}
+			spawn_rebels = {
+				type = noble_rebels
+				size = 2
+			}
+		}
+	}
+}
+
+### From JapanEvents and ShogunEvents ###
+
+# Unruly Samurai
+country_event = {
+	id = flavor_jap.31
+	title = "flavor_jap.EVTNAME31"
+	desc = "flavor_jap.EVTDESC31"
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.8
+			NOT = {
+				stability = -1
+			}
+		}
+		modifier = {
+			factor = 0.8
+			NOT = {
+				stability = -2
+			}
+		}
+		modifier = {
+			factor = 1.5
+			stability = 0
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA31"
+		add_country_modifier = {
+			name = jap_unruly_samurai
+			duration = 3650
+		}
+		add_army_tradition = 10
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB31"
+		add_army_tradition = -10
+		add_prestige = 10
+	}
+}
+
+# Sword Hunt - episode 1: The Bad Hunt(er)
+country_event = {
+	id = flavor_jap.32
+	title = "flavor_jap.EVTNAME32"
+	desc = "flavor_jap.EVTDESC32"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		has_reform = daimyo
+		culture_group = japanese_g
+		has_country_modifier = sword_hunter
+		NOT = { has_country_flag = sword_hunter_flag }
+		OR = {
+			legitimacy = 75
+			prestige = 75
+			stability = 2
+		}
+	}
+	
+	mean_time_to_happen = {	
+		months = 1
+	}
+	
+	immediate = { set_country_flag = sword_hunter_flag }
+	
+	option = {
+		name = "flavor_jap.EVTOPTA32"
+		random_owned_province = {
+			limit = {
+				culture_group = japanese_g
+			}
+			spawn_rebels = {
+				type = anti_tax_rebels
+				size = 2
+			}
+		}
+	}
+}
+
+#  Sword Hunt - episode 2: Captured Prey
+country_event = {
+	id = flavor_jap.33
+	title = "flavor_jap.EVTNAME33"
+	desc = "flavor_jap.EVTDESC33"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		has_reform = daimyo
+		culture_group = japanese_g
+		has_country_modifier = sword_hunter
+		NOT = { has_country_flag = sword_hunter_flag }
+	}
+	mean_time_to_happen = {	
+		months = 10
+	}
+	
+	immediate = { set_country_flag = sword_hunter_flag }
+	
+	option = {
+		name = "flavor_jap.EVTOPTA33"
+		add_prestige = 25
+	}
+}
+
+# Sword Hunt - episode 3: Disrupted Hunt
+country_event = {
+	id = flavor_jap.34
+	title = "flavor_jap.EVTNAME34"
+	desc = "flavor_jap.EVTDESC34"
+	picture = ANGRY_MOB_eventPicture
+	
+	trigger = {
+		has_reform = daimyo
+		culture_group = japanese_g
+		has_country_flag = sword_hunter_flag
+	}
+	
+	mean_time_to_happen = {
+		months = 10
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA34"
+		add_stability = -1
+		remove_country_modifier = sword_hunter
+		clr_country_flag = sword_hunter_flag
+	}
+}
+
+# Ninja strike
+country_event = {
+	id = flavor_jap.36
+	title = "flavor_jap.EVTNAME36"
+	desc = "flavor_jap.EVTDESC36"
+	picture = ASSASSINATION_eventPicture
+	
+	trigger = {
+		has_reform = daimyo
+		has_country_modifier = ninjas
+		culture_group = japanese_g
+		any_neighbor_country = {
+			has_country_modifier = ninjas
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 36
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA36"
+		add_years_of_income = -0.3
+		every_neighbor_country = {
+			limit = { has_country_modifier = ninjas	}
+			add_opinion = { who = ROOT modifier = opinion_ninja_attack }
+		}
+		random_list = {
+			50 = { 
+				add_prestige = 10
+				every_neighbor_country = {
+					limit = { has_country_modifier = ninjas	}
+					country_event = { id = flavor_jap.37 } 
+				}
+			}
+			50 = { 
+				add_prestige = -10
+				every_neighbor_country = {
+					limit = { has_country_modifier = ninjas	}
+					country_event = { id = flavor_jap.38 } 
+				} 
+			}
+		}
+		
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB36"
+		add_prestige = -5
+		every_neighbor_country = {
+			limit = { has_country_modifier = ninjas	}
+			add_opinion = { who = ROOT modifier = opinion_grateful }
+		}
+	}
+}
+
+# Ninja strike succeeds
+country_event = {
+	id = flavor_jap.37
+	title = "flavor_jap.EVTNAME36"
+	desc = "flavor_jap.EVTDESC37"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "flavor_jap.EVTOPTA37"
+		remove_country_modifier = ninjas
+		add_opinion = { who = FROM modifier = opinion_ninja_attack }
+		add_casus_belli = {
+			target = FROM
+			type = cb_spy_discovered
+			months = 12
+		}
+	}
+}
+
+# Ninja strike fails
+country_event = {
+	id = flavor_jap.38
+	title = "flavor_jap.EVTNAME36"
+	desc = "flavor_jap.EVTDESC38"
+	picture = ASSASSINATION_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "flavor_jap.EVTOPTA38"
+		add_prestige = 20
+		add_opinion = { who = FROM modifier = opinion_irritated }
+		add_casus_belli = {
+			target = FROM
+			type = cb_spy_discovered
+			months = 12
+		}
+	}
+}
+
+# Way of the Tea
+country_event = {
+	id = flavor_jap.39
+	title = "flavor_jap.EVTNAME39"
+	desc = "flavor_jap.EVTDESC39"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		has_country_modifier = "way_of_tea" 
+		NOT = { has_country_flag = new_tea_province }
+		NOT = { has_country_flag = rejected_tea_province }
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA39"
+		ai_chance = { factor = 100 }
+		random_owned_province = {
+			limit = {
+				is_core = ROOT
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = silver }
+				NOT = { trade_goods = copper }
+				NOT = { trade_goods = iron }
+				NOT = { trade_goods = chinaware }
+				NOT = { trade_goods = tea }
+			}
+			change_trade_goods = tea
+		}
+		set_country_flag = new_tea_province
+	}
+	option = {
+		name = "flavor_jap.EVTOPTB39"
+		ai_chance = { factor = 0 }
+		set_country_flag = rejected_tea_province
+	}
+}
+
+# Tea with the Emperor
+country_event = {
+	id = flavor_jap.40
+	title = "flavor_jap.EVTNAME40"
+	desc = "flavor_jap.EVTDESC40"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_modifier = way_of_tea
+		culture_group = japanese_g
+		has_reform = daimyo
+		prestige = 1
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			prestige = 30
+		}
+		modifier = {
+			factor = 1.3
+			prestige = 40
+		}
+		modifier = {
+			factor = 0.8
+			NOT = {
+				stability = 1
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA40"
+		add_prestige = 10
+	}
+}
+
+# Heirless
+country_event = {
+	id = flavor_jap.41
+	title = "flavor_jap.EVTNAME41"
+	desc = "flavor_jap.EVTDESC41"
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		has_heir = no
+		has_government_attribute = heir
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.9
+			NOT = {
+				legitimacy = 50
+			}
+		}
+		modifier = {
+			factor = 0.9
+			NOT = {
+				legitimacy = 40
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA41"
+		add_prestige = 5
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB41"
+		define_heir = {
+			dynasty = ROOT
+			claim = 30
+		}
+		add_prestige = -25
+	}
+}
+
+# Losing Face
+country_event = {
+	id = flavor_jap.42
+	title = "flavor_jap.EVTNAME42"
+	desc = "flavor_jap.EVTDESC42"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		culture_group = japanese_g
+		NOT = {
+			stability = 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 1.3
+			NOT = {
+				stability = 0
+			}
+		}
+		modifier = {
+			factor = 1.2
+			NOT = {
+				stability = -1
+			}
+		}
+		modifier = {
+			factor = 0.66
+			stability = 0
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA42"
+		add_prestige = -20
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB42"
+		add_stability = -1
+	}
+}
+
+# Levying Additional Taxation
+country_event = {
+	id = flavor_jap.43
+	title = "flavor_jap.EVTNAME43"
+	desc = "flavor_jap.EVTDESC43"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		culture_group = japanese_g
+		stability = 0
+		NOT = {
+			war_exhaustion = 1
+		}
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 1.2
+			stability = 3
+		}
+		modifier = {
+			factor = 1.1
+			stability = 1
+		}
+	}
+
+	option = {
+		name = "flavor_jap.EVTOPTA43"
+		add_years_of_income = 0.5
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB43"
+		add_yearly_manpower = 1.5
+	}
+}
+
+# Sword of The Daimyo
+country_event = {
+	id = flavor_jap.44
+	title = "flavor_jap.EVTNAME44"
+	desc = "flavor_jap.EVTDESC44"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		overextension_percentage = 0.04
+		stability = 1
+		has_reform = daimyo
+		culture_group = japanese_g
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+		modifier = {
+			factor = 0.8
+			overextension_percentage = 0.06
+		}
+		modifier = {
+			factor = 0.8
+			overextension_percentage = 0.08
+		}
+		modifier = {
+			factor = 0.8
+			stability = 3
+		}
+		modifier = {
+			factor = 1.5
+			NOT = {
+				legitimacy = 50
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA44"
+		custom_tooltip = "daimyo_displeased_TT"
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					has_reform = daimyo
+					culture_group = japanese_g
+				}
+				add_opinion = { 
+					modifier = opinion_angry
+					who = ROOT
+				}
+			}
+		}
+		add_prestige = 25
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB44"
+		add_ruler_modifier = {
+			name = jap_sword_of_the_daimyo
+		}
+	}
+}
+
+# Lacquerware for the Emperor
+country_event = {
+	id = flavor_jap.45
+	title = "flavor_jap.EVTNAME45"
+	desc = "flavor_jap.EVTDESC45"
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = daimyo
+		culture_group = japanese_g
+		years_of_income = 0.6
+		NOT = {
+			any_known_country = {
+				has_reform = shogunate
+				war_with = ROOT
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA45"
+		add_years_of_income = -0.5
+		overlord = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_pleased
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB45"
+		add_prestige = -15
+	}
+}
+
+#  The First Sake
+country_event = {
+	id = flavor_jap.46
+	title = "flavor_jap.EVTNAME46"
+	desc = "flavor_jap.EVTDESC46"
+	picture = COURT_eventPicture
+	
+	trigger = {
+		has_reform = daimyo
+		culture_group = japanese_g
+		NOT = {
+			any_known_country = {
+				has_reform = shogunate
+				war_with = ROOT
+			}
+		}
+		NOT = {
+			has_country_modifier = jap_first_sake
+		}
+		has_regency = no
+		is_month = 0
+		NOT = { is_month = 5 }
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+		modifier = {
+			factor = 0.9
+			stability = 1
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA46"
+		add_prestige = 15
+		overlord = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_pleased
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB46"
+		add_country_modifier = {
+			name = jap_first_sake 
+			duration = 7300
+		}
+	}
+}
+
+# Calling up Recruits
+country_event = {
+	id = flavor_jap.47
+	title = "flavor_jap.EVTNAME47"
+	desc = "flavor_jap.EVTDESC47"
+	picture = LAND_MILITARY_eventPicture
+	
+	trigger = {
+		culture_group = japanese_g
+		OR = {
+			legitimacy = 75
+			prestige = 75
+		}
+		is_at_war = yes
+		NOT = {
+			has_country_flag = jap_recruits
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 1.2
+			war_exhaustion = 4
+		}
+		modifier = {
+			factor = 1.2
+			war_exhaustion = 6
+		}
+		modifier = {
+			factor = 1.2
+			war_exhaustion = 8
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = jap_recruits
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA47"
+		add_years_of_income = -0.25
+		add_ruler_modifier = {
+			name = jap_recruits
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB47"
+		add_war_exhaustion = -2
+		add_prestige = -5
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTC47"
+		add_prestige = 10
+	}
+}
+
+# Bushido
+country_event = {
+	id = flavor_jap.48
+	title = "flavor_jap.EVTNAME48"
+	desc = "flavor_jap.EVTDESC48"
+	picture = COURT_eventPicture
+
+	trigger = {
+		tag = JAP
+		years_of_income = 1.1
+		has_global_flag = japan_has_encountered_the_west
+		NOT = { has_country_flag = jap_bushido }
+		OR = {
+			current_age = age_of_reformation
+			current_age = age_of_absolutism
+			current_age = age_of_revolutions
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 400
+	}
+
+	immediate = {
+		hidden_effect = {
+			set_country_flag = jap_bushido
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA48"
+		add_army_tradition = -10
+		add_adm_power = 150
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB48"
+		add_years_of_income = -1
+		add_army_tradition = 10
+		add_mil_power = 150
+	}
+}
+
+# Spreading Rumors
+country_event = {
+	id = flavor_jap.49
+	title = "flavor_jap.EVTNAME49"
+	desc = "flavor_jap.EVTDESC49"
+	picture = ELECTION_REPUBLICAN_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = daimyo
+		culture_group = japanese_g
+		NOT = {
+			has_ruler_modifier = jap_gossip
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 0.5
+			spy_ideas = 1
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA49"
+		add_ruler_modifier = {
+			name = jap_gossip
+		}
+		add_dip_power = 150
+		custom_tooltip = "daimyo_displeased_TT"
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					has_reform = daimyo
+					culture_group = japanese_g
+				}
+				add_opinion = { 
+					modifier = opinion_mildly_displeased
+					who = ROOT 
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB49"
+		add_ruler_modifier = {
+			name = jap_gossip_spies
+		}
+	}
+}
+
+# A Son Finds His Way Home
+country_event = {
+	id = flavor_jap.50
+	title = "flavor_jap.EVTNAME50"
+	desc = "flavor_jap.EVTDESC50"
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		has_reform = daimyo
+		any_neighbor_country = {
+			has_reform = daimyo
+		} 
+		culture_group = japanese_g
+		NOT = { has_heir = yes }
+		has_government_attribute = heir
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.8
+			any_neighbor_country = {
+				has_reform = daimyo
+				is_rival = ROOT
+			} 
+		}
+		modifier = {
+			factor = 0.8
+			any_neighbor_country = {
+				has_reform = daimyo
+				truce_with = ROOT
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB50"
+		add_dip_power = 50
+		define_heir = {
+			claim = 95
+			male = yes
+			name = "Motonobu"
+			age = 15
+			dip = 4
+			dynasty = ROOT
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA50"
+		add_adm_power = 50
+		define_heir = {
+			claim = 95
+			male = yes
+			name = "Ieyasu"
+			age = 15
+			adm = 4
+			dynasty = ROOT
+		}
+	}
+	option = {
+		name = "flavor_jap.EVTOPTC50"
+		add_mil_power = 30
+		add_army_tradition = 5
+		define_heir = {
+			claim = 95
+			male = yes
+			name = "Motoyasu"
+			age = 15
+			mil = 4
+			dynasty = ROOT
+		}
+	}
+}
+
+# Exceptional Swords
+country_event = {
+	id = flavor_jap.51
+	title = "flavor_jap.EVTNAME51"
+	desc = "flavor_jap.EVTDESC51"
+	picture = MILITARY_CAMP_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_reform = daimyo
+		culture_group = japanese_g
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA51"
+		add_army_tradition = 10
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB51"
+		add_years_of_income = 1
+		add_country_modifier = {
+			name = japanese_downprioritized_military
+			duration = 3650
+		}
+	}
+}
+
+# Hangings in the Han
+country_event = {
+	id = flavor_jap.52
+	title = "flavor_jap.EVTNAME52"
+	desc = "flavor_jap.EVTDESC52"
+	picture = ANGRY_MOB_eventPicture
+	
+	is_triggered_only = yes
+
+	trigger = {
+		has_reform = daimyo
+		culture_group = japanese_g
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+					is_core = owner
+				}
+				set_province_flag = shogunate_destabilized_flag1
+			}
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+					is_core = owner
+					NOT = {
+						has_province_flag = shogunate_destabilized_flag1
+					}
+				}
+				set_province_flag = shogunate_destabilized_flag2
+			}
+			random_owned_province = {
+				limit = {
+					culture_group = japanese_g
+					is_core = owner
+					NOT = {
+						has_province_flag = shogunate_destabilized_flag1
+					}
+					NOT = {
+						has_province_flag = shogunate_destabilized_flag2
+					}
+				}
+				set_province_flag = shogunate_destabilized_flag3
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA52"
+		random_owned_province = {
+			limit = {
+				has_province_flag = shogunate_destabilized_flag1
+			}
+			clr_province_flag = shogunate_destabilized_flag1
+			add_province_modifier = {
+				name = add_unrest_5_modifier
+				duration = 1825
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = shogunate_destabilized_flag2
+			}
+			clr_province_flag = shogunate_destabilized_flag2
+			add_province_modifier = {
+				name = add_unrest_5_modifier
+				duration = 1825
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = shogunate_destabilized_flag3
+			}
+			clr_province_flag = shogunate_destabilized_flag3
+			add_province_modifier = {
+				name = add_unrest_5_modifier
+				duration = 1825
+			}
+		}
+		add_prestige = -10
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB52"
+		add_stability = -1
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					has_province_flag = shogunate_destabilized_flag1
+				}
+				clr_province_flag = shogunate_destabilized_flag1
+			}
+			random_owned_province = {
+				limit = {
+					has_province_flag = shogunate_destabilized_flag2
+				}
+				clr_province_flag = shogunate_destabilized_flag2
+			}
+			random_owned_province = {
+				limit = {
+					has_province_flag = shogunate_destabilized_flag3
+				}
+				clr_province_flag = shogunate_destabilized_flag3
+			}
+		}
+	}
+}
+
+# New Generation of Samurai
+country_event = {
+	id = flavor_jap.53
+	title = "flavor_jap.EVTNAME53"
+	desc = "flavor_jap.EVTDESC53"
+	picture = MILITARY_CAMP_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		culture_group = japanese_g
+		NOT = {
+			war_exhaustion = 1
+		}
+		NOT = {	is_at_war = yes }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		
+		modifier = {
+			factor = 0.66
+			NOT = {
+				stability =  0
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA53"
+		add_adm_power = 30
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB53"
+		add_army_tradition = 5
+	}
+}
+
+# Strengthening the Shogunate
+country_event = {
+	id = flavor_jap.54
+	title = "flavor_jap.EVTNAME54"
+	desc = "flavor_jap.EVTDESC54"
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = daimyo
+		culture_group = japanese_g
+		OR = {
+			legitimacy = 75
+			prestige = 75
+		}
+		army_tradition = 10
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 1.1
+			army_tradition = 25
+		}
+		modifier = {
+			factor = 1.1
+			army_tradition = 30
+		}
+		modifier = {
+			factor = 0.66
+			NOT = {
+				army_tradition = 20
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA54"
+		add_adm_power = 50
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB54"
+		add_army_tradition = 10
+	}
+}
+
+# Death or Glory?
+country_event = {
+	id = flavor_jap.55
+	title = "flavor_jap.EVTNAME55"
+	desc = "flavor_jap.EVTDESC55"
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = daimyo
+		culture_group = japanese_g
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+		modifier = {
+			factor = 1.1
+			NOT = {
+				stability = -1
+			}
+		}
+		modifier = {
+			factor = 1.1
+			NOT = {
+				stability = -2
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTA55"
+		add_prestige = 10
+		add_corruption = 1
+	}
+	
+	option = {
+		name = "flavor_jap.EVTOPTB55"
+		add_prestige = -10
+		if = {
+			limit = {
+				corruption = 1
+			}
+			add_corruption = -1
+		}
+		if = {
+			limit = {
+				NOT = { corruption = 1 }
+			}
+			add_dip_power = 50
+		}
+	}
+}
+
+
+
+#Independent as Daimyo
+country_event = {
+	id = flavor_jap.57
+	title = flavor_jap.57.t
+	desc = flavor_jap.57.d
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		has_reform = daimyo
+		NOT = { is_subject_of_type = daimyo_vassal }
+		NOT = { is_subject_of_type = kanrei_vassal }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = flavor_jap.57.a
+		trigger = {
+			any_country = {
+				has_reform = shogunate
+			}
+		}
+		add_government_reform = indep_daimyo
+		add_legitimacy = -25
+	}
+	option = {
+		name = flavor_jap.57.b
+		trigger = {
+			NOT = {
+				any_country = {
+					has_reform = shogunate
+				}
+			}
+		}
+		add_government_reform = indep_daimyo
+	}
+}
+
+
+# Returning to the fold
+country_event = {
+	id = flavor_jap.58
+	title = flavor_jap.58.t
+	desc = flavor_jap.58.d
+	picture = BATTLE_eventPicture
+	
+	trigger = {
+		OR = {
+			is_subject_of_type = daimyo_vassal
+			is_subject_of_type = kanrei_vassal
+		}
+		NOT = { has_reform = daimyo }
+		NOT = { tag = PAP } # Just no, the Pope isn't a Daimyo.
+		NOT = {
+			has_country_flag = ikko_ikki_peasants_flag
+			OR = {
+				has_reform = warrior_monks_reform
+				has_reform = peasants_republic
+			}
+		}
+		is_reform_available = daimyo
+		NOT = { has_reform = shogunate }
+		is_revolutionary = no
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	option = {
+		name = flavor_jap.58.a
+		if = {
+			limit = { NOT = { government = monarchy } }
+			change_government_to_monarchy = yes
+		}
+		add_government_reform = daimyo
+		if = {
+			limit = {
+				government_rank = 2
+			}
+			set_government_rank = 1
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				government = monarchy
+			}
+			add_government_reform = daimyo
+		}
+	}
+}
+
+#The Grand Temple of Ise
+country_event = {
+	id = flavor_jap.59
+	title = flavor_jap.59.t
+	desc = flavor_jap.59.d
+	picture = RELIGION_eventPicture
+	
+	trigger = {
+		NOT = { religion = shinto }
+		owns = 4359
+		4359 = {
+			has_province_modifier = ise_grand_shrine
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = { #Interesting.
+		name = flavor_jap.59.a
+		ai_chance = { factor = 1 }
+		4359 = {
+			remove_province_modifier = ise_grand_shrine
+			add_province_modifier = {
+				name = "religious_center"
+				duration = -1
+			}
+		}
+	}
+	
+	option = { #This is a fascinating religion, let us embrace it instead.
+		ai_chance = { factor = 1 }
+		name = flavor_jap.59.b
+		trigger = {
+			religion_group = pagan
+			is_colonial_nation = no
+		}
+		change_religion = shinto
+		if = {
+			limit = { government = tribal }
+			change_government_to_monarchy = yes
+			#set_legacy_government = despotic_monarchy
+		}
+	}
+}
+
+# Iwami Ginzan Silver Mine
+province_event = {
+	id = flavor_jap.60
+	
+	title = flavor_jap.60.t
+	desc = flavor_jap.60.d
+
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		province_id = 4183 # Iwami
+		is_year = 1526
+		NOT = { trade_goods = silver }
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	option = { 
+		name = flavor_jap.60.a
+		change_trade_goods = silver
+		add_base_production = 2
+	}
+}
+
+#Sado Kinzan
+province_event = {
+	id = flavor_jap.61
+	
+	title = flavor_jap.61.t
+	desc = flavor_jap.61.d
+
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		province_id = 3316 # Sado
+		is_year = 1526
+		NOT = { trade_goods = gold }
+	}
+	
+	mean_time_to_happen = {
+		months = 200
+	}
+	
+	option = { 
+		name = flavor_jap.61.a
+		change_trade_goods = gold
+		add_base_production = 2
+	}
+}

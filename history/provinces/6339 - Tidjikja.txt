@@ -1,0 +1,17 @@
+#6339 - Tidjikja
+
+add_core = MAQ
+owner = MAQ
+controller = MAQ
+culture = mauritanian
+religion = sunni
+capital = "Tidjikja"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 50
+native_ferocity = 4
+native_hostileness = 9
+discovered_by = sub_saharan

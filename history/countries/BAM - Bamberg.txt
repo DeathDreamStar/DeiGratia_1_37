@@ -1,0 +1,275 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+technology_group = western
+primary_culture = franconian
+religion = catholic
+capital = 66	# Würzburg
+fixed_capital = 66 # Cannot move capital away from this province & no power cost to move to it
+
+1431.11.9 = {
+	monarch = {
+		name = "Anton I"
+		dynasty = "von Rotenhan"
+		birth_date = 1390.1.1
+		adm = 1
+		dip = 0
+		mil = 2
+	}
+}
+1459.5.5 = {
+	monarch = {
+		name = "Georg I"
+		dynasty = "von Schaumberg"
+		birth_date = 1390.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1475.2.4 = {
+	monarch = {
+		name = "Philipp I"
+		dynasty = "von Henneberg"
+		birth_date = 1430.1.1
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1487.1.26 = {
+	monarch = {
+		name = "Heinrich III"
+		dynasty = "von Trockau"
+		birth_date = 1450.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1501.3.30 = {
+	monarch = {
+		name = "Veit I"
+		dynasty = "von Pommersfelden"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1503.9.7 = {
+	monarch = {
+		name = "Georg II"
+		dynasty = "von Ebnet"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1505.1.1 = {
+	monarch = {
+		name = "Georg III"
+		dynasty = "von Limpurg"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1522.5.31 = {
+	monarch = {
+		name = "Weigand I"
+		dynasty = "von Redwitz"
+		birth_date = 1476.1.1
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}
+1556.5.20 = {
+	monarch = {
+		name = "Georg IV"
+		dynasty = "Fuchs"
+		birth_date = 1519.2.6
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1561.3.22 = {
+	monarch = {
+		name = "Veit II"
+		dynasty = "von Würzburg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1577.1.1 = {
+	monarch = {
+		name = "Johann III"
+		dynasty = "Zobel"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1580.1.1 = {
+	monarch = {
+		name = "Martin I"
+		dynasty = "von Eyb"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1583.1.1 = {
+	monarch = {
+		name = "Ernst I"
+		dynasty = "von Mengersdorf"
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1591.10.21 = {
+	monarch = {
+		name = "Neidhardt I"
+		dynasty = "von Thüngen"
+		birth_date = 1545.5.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1598.12.26 = {
+	monarch = {
+		name = "Johann IV"
+		dynasty = "von Gebsattel"
+		birth_date = 1555.5.13
+		adm = 5
+		dip = 1
+		mil = 0
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = sinner_personality
+	add_ruler_personality = architectural_visionary_personality
+}
+1609.6.26 = {
+	monarch = {
+		name = "Johann V"
+		dynasty = "von Aschausen"
+		birth_date = 1575.8.12
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1622.12.30 = {
+	monarch = {
+		name = "Johann VI"
+		dynasty = "Fuchs"
+		birth_date = 1586.4.23
+		adm = 1
+		dip = 0
+		mil = 4
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = zealot_personality
+}
+#under WBG
+1642.7.30 = {
+	monarch = {
+		name = "Melchior Otto"
+		dynasty = "Voit"
+		birth_date = 1603.6.19
+		adm = 4
+		dip = 2
+		mil = 0
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = scholar_personality
+}
+1653.1.4 = {
+	monarch = {
+		name = "Philipp Valentin"
+		dynasty = "von Rieneck"
+		birth_date = 1612.1.7
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1672.2.3 = {
+	monarch = {
+		name = "Peter I"
+		dynasty = "von Dernbach"
+		birth_date = 1619.7.1
+		adm = 0
+		dip = 1
+		mil = 3
+	}
+}
+1683.4.23 = {
+	monarch = {
+		name = "Marquard Sebastian"
+		dynasty = "von Stauffenberg"
+		birth_date = 1644.5.14
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1693.10.9 = {
+	monarch = {
+		name = "Lothar Franz"
+		dynasty = "von Schönborn"
+		birth_date = 1655.10.4
+		adm = 5
+		dip = 3
+		mil = 3
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = architectural_visionary_personality
+}
+1729.1.30 = {
+	monarch = {
+		name = "Friedrich IV"
+		dynasty = "von Schönborn"
+		birth_date = 1674.3.3
+		adm = 0
+		dip = 1
+		mil = 2
+	}
+}
+1746.7.26 = {
+	monarch = {
+		name = "Johann Philipp"
+		dynasty = "von Frankenstein"
+		birth_date = 1695.3.27
+		adm = 3
+		dip = 6
+		mil = 2
+	}
+}
+1753.6.3 = {
+	monarch = {
+		name = "Franz Konrad"
+		dynasty = "von Stadion"
+		birth_date = 1679.8.29
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+#under WBG
+1795.2.14 = {
+	monarch = {
+		name = "Christoph Franz"
+		dynasty = "von Buseck"
+		birth_date = 1724.12.28
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = craven_personality
+}

@@ -1,0 +1,23 @@
+# War of the Roses
+waging_war_of_roses = {
+	land_morale = 0.1
+	manpower_recovery_speed = 0.1
+	war_exhaustion = -0.02
+}
+
+waging_war_of_roses_2 = {
+	land_morale = 0.1
+	manpower_recovery_speed = 0.1
+	war_exhaustion = -0.02
+}
+
+tiring_of_roses = {
+	land_morale = -0.1
+	manpower_recovery_speed = -0.1
+	war_exhaustion = 0.02
+}
+
+the_legacy_of_the_war_of_the_roses = {
+	land_morale = 0.1
+	nobles_influence_modifier = -0.1
+}

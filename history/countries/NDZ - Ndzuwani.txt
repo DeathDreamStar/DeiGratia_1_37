@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = comorian
+religion = sunni
+technology_group = east_african
+unit_type = sub_saharan
+capital = 6721	# Ndzuwani
+fixed_capital = 6721
+add_piety = -0.25
+religious_school = shafii_school
+mercantilism = 25
+
+1440.1.1 = { #First recorded ruler
+	monarch = {
+		name = "Alimah II"
+		dynasty = "Ndzuwani"
+		female = yes
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}

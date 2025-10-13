@@ -1,0 +1,14 @@
+#6288 - Kwahu
+
+owner = ASH
+controller = ASH
+add_core = ASH
+culture = aka
+religion = shamanism
+capital = "Kwahu"
+trade_goods = coffee #Kola nuts
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+discovered_by = sub_saharan

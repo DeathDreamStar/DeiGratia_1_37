@@ -1,0 +1,272 @@
+namespace = ipeSWI
+normal_or_historical_nations = yes
+
+# St. Gallen Joins the Confederacy
+country_event = {
+	id = ipeSWI.1
+	title = ipeSWI.1.t
+	desc = ipeSWI.1.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Confederacy grows stronger.
+		name = ipeSWI.1.a
+		inherit = SGA
+		add_prestige = 5
+	}
+}
+
+# The Three Leagues Join the Confederacy
+country_event = {
+	id = ipeSWI.2
+	title = ipeSWI.2.t
+	desc = ipeSWI.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Confederacy grows stronger.
+		name = ipeSWI.1.a
+		inherit = TTL
+		add_prestige = 5
+	}
+}
+
+# Fribourg Joins the Confederacy
+country_event = {
+	id = ipeSWI.3
+	title = ipeSWI.3.t
+	desc = ipeSWI.3.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Confederacy grows stronger.
+		name = ipeSWI.1.a
+		inherit = FBO
+		add_prestige = 5
+	}
+}
+
+# The Seizure of Thurgau
+country_event = {
+	id = ipeSWI.4
+	title = ipeSWI.4.t
+	desc = ipeSWI.4.d
+	picture = LAND_MILITARY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Confederacy grows stronger.
+		name = ipeSWI.1.a
+		3744 = {
+			owner = {
+				add_opinion = {
+					who = ROOT
+					modifier = seized_thurgau
+				}
+				hidden_effect = {
+					country_event = {
+						id = ipeSWI.5
+					}
+				}
+			}
+			cede_province = ROOT
+			add_core = ROOT
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					KNZ = {
+						has_reform = free_city
+						is_neighbor_of = SWI
+					}
+				}
+				KNZ = {
+					country_event = {
+						id = ipeSWI.6
+						days = 30
+					}
+				}
+			}
+		}
+	}
+}
+
+# The Seizure of Thurgau
+country_event = {
+	id = ipeSWI.5
+	title = ipeSWI.4.t
+	desc = ipeSWI.5.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Confederacy has gone too far!
+		name = ipeSWI.5.a
+		tooltip = {
+			3744 = {
+				cede_province = FROM
+				add_core = FROM
+			}
+			add_opinion = {
+				who = FROM
+				modifier = seized_thurgau
+			}
+		}
+	}
+}
+
+# The Seizure of Thurgau
+country_event = {
+	id = ipeSWI.6
+	title = ipeSWI.4.t
+	desc = ipeSWI.6.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Perhaps we should throw in our lot with the Confederacy.
+		name = ipeSWI.6.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeSWI.6.a.tooltip
+		FROM = {
+			country_event = {
+				id = ipeSWI.7
+			}
+		}
+	}
+
+	option = { # We will not associate with them.
+		name = ipeSWI.6.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# Konstanz Petitions to Join the Confederacy
+country_event = {
+	id = ipeSWI.7
+	title = ipeSWI.7.t
+	desc = ipeSWI.7.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Allow them to join the Confederacy.
+		name = ipeSWI.7.a
+		inherit = KNZ
+		add_prestige = 5
+		add_estate_influence_modifier = {
+			estate = estate_burghers
+			desc = ADMITTED_KONSTANZ
+			influence = 10
+			duration = 7300
+		}
+	}
+
+	option = { # Reject them.
+		name = ipeSWI.7.b
+		KNZ = {
+			add_opinion = {
+				who = ROOT
+				modifier = seized_thurgau
+			}
+		}
+		hidden_effect = {
+			KNZ = {
+				country_event = {
+					id = ipeSWI.8
+				}
+			}
+		}
+	}
+}
+
+# The Swiss Refuse Admission
+country_event = {
+	id = ipeSWI.8
+	title = ipeSWI.8.t
+	desc = ipeSWI.8.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Unfortunate.
+		name = ipeSWI.8.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = seized_thurgau
+			}
+		}
+	}
+}
+
+# Rottweil Joins the Confederacy
+country_event = {
+	id = ipeSWI.9
+	title = ipeSWI.9.t
+	desc = ipeSWI.9.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Confederacy grows stronger.
+		name = ipeSWI.1.a
+		inherit = RWI
+		add_prestige = 5
+	}
+}
+
+# Basel Joins the Confederacy
+country_event = {
+	id = ipeSWI.10
+	title = ipeSWI.10.t
+	desc = ipeSWI.10.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Confederacy grows stronger.
+		name = ipeSWI.1.a
+		inherit = FBS
+		add_prestige = 5
+	}
+}
+
+# Valais Joins the Confederacy
+country_event = {
+	id = ipeSWI.11
+	title = ipeSWI.11.t
+	desc = ipeSWI.11.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Confederacy grows stronger.
+		name = ipeSWI.1.a
+		inherit = VLS
+		add_prestige = 5
+	}
+}
+
+# Mulhouse Joins the Confederacy
+country_event = {
+	id = ipeSWI.12
+	title = ipeSWI.12.t
+	desc = ipeSWI.12.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Confederacy grows stronger.
+		name = ipeSWI.1.a
+		inherit = MLH
+		add_prestige = 5
+	}
+}

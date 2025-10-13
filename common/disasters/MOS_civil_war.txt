@@ -1,0 +1,108 @@
+muscovite_civil_war = {
+	potential = {
+		tag = MOS
+        government = monarchy
+		NOT = { has_global_flag = had_muscovite_civil_war }
+		is_free_or_tributary_trigger = yes
+		normal_or_historical_nations = yes
+	}
+	
+
+	can_start = {
+		current_age = age_of_discovery
+		has_any_disaster = no
+		is_lesser_in_union = no
+		GLC = {
+			has_ruler = "Dmitry Shemyaka"
+		}
+		exists = GLC
+	}
+
+	can_stop = {
+		OR = {
+			has_any_disaster = yes
+			is_lesser_in_union = yes
+			NOT = {
+				GLC = {
+					has_ruler = "Dmitry Shemyaka"
+				}
+			}
+			NOT = {
+				exists = GLC
+			}
+		}
+	}
+
+
+
+
+	progress = {
+		modifier = {
+			factor = 10
+			exists = GLC
+		}
+		modifier = {
+			factor = 5
+			NOT = { legitimacy = 100 }
+		}
+		modifier = {
+			factor = 5
+			NOT = { legitimacy = 90 }
+		}
+        modifier = {
+			factor = 5
+			NOT = { legitimacy = 80 }
+		}
+		modifier = {
+			factor = 5
+			NOT = { stability = 1 }
+		}
+	}
+
+	modifier = {
+		stability_cost_modifier = 0.5
+		legitimacy = -1
+	}
+
+
+
+	can_end = {
+		stability = 1
+		OR = {
+			NOT = {
+				exists = GLC
+			}
+			GLC = {
+				NOT = {
+					has_ruler = "Dmitry Shemyaka"
+				}
+			}
+		}
+		NOT = {
+			has_spawned_rebels = noble_rebels
+		}
+		NOT = {
+			has_spawned_rebels = pretender_rebels
+		}
+		NOT = {
+			is_in_war = {
+				defender_leader = GLC
+				casus_belli = cb_civil_war
+			}
+		}
+	}
+
+
+
+
+
+
+
+	on_start = MOS_civil_war.1
+	on_end = MOS_civil_war.100
+
+	on_monthly = {
+		events = {
+		}
+	}
+}

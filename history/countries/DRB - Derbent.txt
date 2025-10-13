@@ -1,0 +1,91 @@
+government = monarchy
+add_government_reform = feudal_theocracy
+government_rank = 1
+primary_culture = tat
+technology_group = muslim
+religion = sunni
+religious_school = shafii_school
+capital = 425
+fixed_capital = 425
+
+#Shirvan Cadets
+1335.12.1 = {
+	monarch = {
+		name = "Sultan Muhammad"
+		dynasty = "Kesrani"
+		adm = 1
+		dip = 3
+		mil = 3
+	}
+}
+1378.1.1 = {
+	monarch = {
+		name = "Bahlul I"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+}
+1419.1.1 = {
+	monarch = {
+		name = "Tahmuras I"
+		dynasty = "Kesrani"
+		adm = 1
+		dip = 0
+		mil = 3
+	}
+}
+1459.4.5 = {
+	monarch = {
+		name = "Abu Bakr I"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1500.1.1 = {
+	monarch = {
+		name = "Keyqubad I"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+
+#Derbent Khanate
+1718.1.1 = {
+	religion = shiite
+	religious_school = jafari_school
+	monarch = {
+		name = "Imam Qoli"
+		dynasty = "Utsmi"
+		adm = 2
+		dip = 4
+		mil = 1
+	}
+}
+1747.6.19 = {
+	monarch = {
+		name = "Muhammad Hassan"
+		dynasty = "Utsmi"
+		adm = 1
+		dip = 3
+		mil = 3
+	}
+}
+#1765 to Quba
+1799.5.1 = {
+	monarch = {
+		name = "Hasan Agha"
+		dynasty = "Utsmi"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+#1802 to Quba
+#1806 occupied RUS
+#1813.10.12 to RUS

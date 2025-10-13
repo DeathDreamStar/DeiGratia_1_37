@@ -1,0 +1,28 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+primary_culture = albanian
+religion = catholic
+technology_group = eastern
+capital = 6439 # Pukë
+
+# The League of Lezhe
+1409.1.1 = {
+	monarch = {
+		name = "Nikollë"
+		dynasty = "Dukagjini"
+		adm = 2
+		dip = 3
+		mil = 0
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = craven_personality
+	add_ruler_personality = loose_lips_personality
+	add_ruler_personality = fierce_negotiator_personality
+	#betrayed his people to the ottomans
+	set_estate_privilege = estate_burghers_enforced_interfaith_dialogue
+}
+
+1444.3.2 = {
+	set_country_flag = lezhe_league_member
+}

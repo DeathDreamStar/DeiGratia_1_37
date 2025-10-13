@@ -1,0 +1,121 @@
+005_inflation = {
+	inflation_reduction = -0.005
+}
+01_inflation = {
+	inflation_reduction = -0.01
+}
+015_inflation = {
+	inflation_reduction = -0.015
+}
+02_inflation = {
+	inflation_reduction = -0.02
+}
+025_inflation = {
+	inflation_reduction = -0.025
+}
+03_inflation = {
+	inflation_reduction = -0.03
+}
+035_inflation = {
+	inflation_reduction = -0.035
+}
+04_inflation = {
+	inflation_reduction = -0.04
+}
+045_inflation = {
+	inflation_reduction = -0.045
+}
+05_inflation = {
+	inflation_reduction = -0.05
+}
+055_inflation = {
+	inflation_reduction = -0.055
+}
+06_inflation = {
+	inflation_reduction = -0.06
+}
+065_inflation = {
+	inflation_reduction = -0.065
+}
+07_inflation = {
+	inflation_reduction = -0.07
+}
+075_inflation = {
+	inflation_reduction = -0.075
+}
+08_inflation = {
+	inflation_reduction = -0.08
+}
+085_inflation = {
+	inflation_reduction = -0.085
+}
+09_inflation = {
+	inflation_reduction = -0.09
+}
+095_inflation = {
+	inflation_reduction = -0.095
+}
+1_inflation = {
+	inflation_reduction = -0.1
+}
+
+005_inflation_silver = {
+	inflation_reduction = -0.005
+}
+01_inflation_silver = {
+	inflation_reduction = -0.01
+}
+015_inflation_silver = {
+	inflation_reduction = -0.015
+}
+02_inflation_silver = {
+	inflation_reduction = -0.02
+}
+025_inflation_silver = {
+	inflation_reduction = -0.025
+}
+03_inflation_silver = {
+	inflation_reduction = -0.03
+}
+035_inflation_silver = {
+	inflation_reduction = -0.035
+}
+04_inflation_silver = {
+	inflation_reduction = -0.04
+}
+045_inflation_silver = {
+	inflation_reduction = -0.045
+}
+05_inflation_silver = {
+	inflation_reduction = -0.05
+}
+055_inflation_silver = {
+	inflation_reduction = -0.055
+}
+06_inflation_silver = {
+	inflation_reduction = -0.06
+}
+065_inflation_silver = {
+	inflation_reduction = -0.065
+}
+07_inflation_silver = {
+	inflation_reduction = -0.07
+}
+075_inflation_silver = {
+	inflation_reduction = -0.075
+}
+08_inflation_silver = {
+	inflation_reduction = -0.08
+}
+085_inflation_silver = {
+	inflation_reduction = -0.085
+}
+09_inflation_silver = {
+	inflation_reduction = -0.09
+}
+095_inflation_silver = {
+	inflation_reduction = -0.095
+}
+1_inflation_silver = {
+	inflation_reduction = -0.1
+}

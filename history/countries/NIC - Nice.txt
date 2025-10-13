@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+mercantilism = 50
+primary_culture = ligurian
+religion = catholic
+technology_group = western
+capital = 102
+fixed_capital = 102 # Cannot move capital away from this province & no power cost to move to it
+
+1356.1.1 = {
+	monarch = {
+		name = "Consiglio Generale"
+		ADM = 3
+		DIP = 3
+		MIL = 3
+		regent = yes
+	}
+	set_estate_privilege = estate_nobles_recruit_condottieri
+}

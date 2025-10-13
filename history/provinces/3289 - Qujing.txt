@@ -1,0 +1,20 @@
+#3289 - Qujing
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = yi
+religion = animism
+capital = "Qujing"
+trade_goods = tea
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+discovered_by = indian
+add_core = CDL
+add_core = CYI
+add_local_autonomy = 75

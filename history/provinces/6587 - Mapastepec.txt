@@ -1,0 +1,30 @@
+#6587 - Mapastepec
+
+culture = zapotek
+religion = zapotec_religion
+owner = TEH
+controller = TEH
+add_core = TEH
+is_city = yes
+capital = "Mapastepec"
+trade_goods = fish
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+
+discovered_by = mesoamerican
+
+1522.5.31 = { discovered_by = SPA } # Andres Nino
+
+1525.1.1 = {
+           owner = SPA
+           controller = SPA
+           add_core = SPA
+           capital = "Tonalá"
+           culture = castillian
+           trade_goods = cocoa
+           religion = catholic
+           is_city = yes
+}
+1810.9.16 = { owner = MEX add_core = MEX controller = SPA } # Mexican War of Independence

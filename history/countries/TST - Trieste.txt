@@ -1,0 +1,9 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+technology_group = western
+religion = catholic
+primary_culture = friulian
+capital = 954
+fixed_capital = 954

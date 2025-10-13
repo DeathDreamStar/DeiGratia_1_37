@@ -1,0 +1,12 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = comorian
+religion = sunni
+technology_group = east_african
+unit_type = sub_saharan
+capital = 6722	# Mwali
+fixed_capital = 6722
+add_piety = -0.25
+religious_school = shafii_school
+
+# Wasn't independent until after game's timeframe

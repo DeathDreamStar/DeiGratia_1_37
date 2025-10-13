@@ -1,0 +1,25 @@
+name = "Ava Subjugation of Mong Kawng"
+war_goal = {
+	type = take_capital_vassalize
+	casus_belli = cb_vassalize_mission
+	tag = MKA
+}
+
+1440.1.1 = {
+	add_attacker = AVA
+	add_attacker = KAL
+	add_attacker = MYA
+	add_defender = MKA
+}
+
+1442.1.1 = {
+	add_attacker = TAU
+}
+
+1443.1.1 = {
+	rem_attacker = AVA
+	rem_attacker = KAL
+	rem_attacker = MYA
+	rem_attacker = TAU
+	rem_defender = MKA
+}

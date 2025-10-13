@@ -1,0 +1,5 @@
+refused_to_join_safavids = {
+    opinion = -200
+    years = 50
+    yearly_decay = 4
+}

@@ -1,0 +1,57 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = berber
+government_rank = 1
+religion = sunni
+technology_group = muslim
+capital = 6007
+fixed_capital = 6007
+religious_school = maliki_school
+
+#Prince of Debdou
+1430.1.1 = {
+	monarch = {
+		name = "Mûsâ"
+		dynasty = "al-Wattasiyun"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1460.1.1 = {
+	monarch = {
+		name = "Ahmad"
+		dynasty = "al-Wattasiyun"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1485.1.1 = {
+	monarch = {
+		name = "Muhammad I"
+		dynasty = "al-Wattasiyun"
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+}
+1515.1.1 = {
+	monarch = {
+		name = "Muhammad II"
+		dynasty = "al-Wattasiyun"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1550.1.1 = {
+	monarch = {
+		name = "‘Ammâr"
+		dynasty = "al-Wattasiyun"
+		adm = 1
+		dip = 2
+		mil = 0
+	}
+}
+#done 1563

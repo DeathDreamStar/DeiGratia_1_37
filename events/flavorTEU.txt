@@ -1,0 +1,368 @@
+# Flavour events for Teutonic Order - The Prussian Confederation
+# By Daniel Tolman
+
+namespace = flavor_teu
+normal_or_historical_nations = yes
+
+# Prussian Confederation rises up
+country_event = {
+	id = flavor_teu.1
+	title = "flavor_teu.EVTNAME1"
+	desc = "flavor_teu.EVTDESC1"
+	picture = BATTLE_VISTULA_LAGOON_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { is_year = 1500 }
+		tag = TEU
+		NOT = { has_country_flag = pru_confederation_curtailed }
+		POL = {
+			NOT = {
+				truce_with = TEU
+			}
+		}
+		has_country_flag = pru_confederation_flag
+		is_subject = no
+		exists = POL
+		is_neighbor_of = POL
+		NOT = { alliance_with = POL }
+		POL = { is_subject = no }
+		POL = { num_of_cities = 10 }
+		num_of_cities = 5
+		OR = {
+			NOT = { exists = DNZ }
+			DNZ = {
+				is_subject_of = ROOT
+			}
+		}
+		OR = {
+			AND = {
+				owns = 43
+				controls = 43
+			}
+			DNZ = { owns = 43 controls = 43 }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			is_year = 1450
+		}
+		modifier = {
+			factor = 0.5
+			is_year = 1460
+		}
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = pru_confederation_happened
+			1859 = {
+				add_core = DNZ
+			}
+			6413 = {
+				add_core = DNZ
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = DNZ
+					}
+				}
+				release = DNZ
+				DNZ = {
+					change_government = republic
+					add_government_reform = oligarchy_reform
+					adopt_reform_progress = ROOT
+				}
+				DNZ = {
+					capital_scope = {
+						build_to_forcelimit = {
+							infantry = 0.6
+							cavalry = 0.4
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							galley = 0.4
+							light_ship = 0.4
+							transport = 0.2
+						}
+					}
+				}
+			}
+			42 = {
+				add_core = DNZ
+			}
+			43 = {
+				add_core = DNZ
+			}
+			1841 = {
+				add_core = DNZ
+			}
+			2997 = {
+				add_core = DNZ
+			}
+			3923 = {
+				add_core = DNZ
+			}
+			3924 = {
+				add_core = DNZ
+			}
+			6253 = {
+				add_core = DNZ
+			}
+			POL = {
+				vassalize = DNZ
+			}
+		}
+	}
+	
+	option = { # Go to war
+		name = "flavor_teu.1.a"
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					is_bankrupt = yes
+					war_exhaustion = 10
+				}
+			}
+		}
+		custom_tooltip = flavor_teu.1.tooltip
+		hidden_effect = {
+			POL = {
+				country_event = { id = flavor_teu.2 }
+			}
+			remove_estate_privilege = estate_burghers_prussian_confederation
+		}
+	}
+	option = { # Let them go
+		name = "flavor_teu.1.b"
+		ai_chance = { 
+			factor = 100 
+			modifier = {
+				factor = 0
+				OR = {
+					is_bankrupt = no
+					NOT = { war_exhaustion = 10 }
+				}
+			}
+		}
+		add_stability = -1
+		add_prestige = -20
+		hidden_effect = {
+			remove_estate_privilege = estate_burghers_prussian_confederation
+		}
+	}
+}
+
+# Prussian Confederation seeks Polish support
+country_event = {
+	id = flavor_teu.2
+	title = "flavor_teu.EVTNAME2"
+	desc = "flavor_teu.EVTDESC2"
+	picture = BATTLE_VISTULA_LAGOON_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	option = {
+		name = "flavor_teu.2.a"
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				OR = {
+					is_bankrupt = yes
+					war_exhaustion = 10
+					TEU = {
+						alliance_with = BOH
+					}
+					TEU = {
+						alliance_with = DAN
+					}
+					TEU = {
+						alliance_with = HAB
+					}
+					TEU = {
+						alliance_with = STY
+					}
+				}
+			}
+		}
+		set_country_flag = supported_prussian_confederation_flag
+		POL = {
+			declare_war_with_cb = {
+				who = TEU
+				casus_belli = cb_prussian_confederation
+			}
+		}
+		add_opinion = {
+			who = DNZ
+			modifier = supported_prussian_confederation
+		}
+		DNZ = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_prussian_confederation
+			}
+			add_liberty_desire = -50
+		}
+	}
+	option = { # stay out of this
+		name = "flavor_teu.2.b"
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				OR = {
+					is_bankrupt = yes
+					war_exhaustion = 10
+					TEU = {
+						alliance_with = BOH
+					}
+					TEU = {
+						alliance_with = DAN
+					}
+					TEU = {
+						alliance_with = HAB
+					}
+					TEU = {
+						alliance_with = STY
+					}
+				}
+			}
+		}
+		DNZ = {
+			grant_independence = yes
+			declare_war_with_cb = {
+				who = TEU
+				casus_belli = cb_prussian_confederation
+			}
+		}
+		add_prestige = -10
+	}
+}
+
+# Prussian Confederation accepts Polish rule
+country_event = {
+	id = flavor_teu.3
+	title = "flavor_teu.EVTNAME3"
+	desc = "flavor_teu.EVTDESC3"
+	picture = SEJM_eventPicture
+	
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "flavor_teu.3.a"
+		if = {
+			limit = {
+				1859 = {
+					owned_by = DNZ
+					culture = polish
+				}
+			}
+			1859 = {
+				cede_province = ROOT
+				add_core = ROOT
+				remove_core = DNZ
+			}
+		}
+		west_prussia_area = {
+			limit = {
+				NOT = { is_permanent_claim = ROOT }
+				NOT = { is_core = ROOT	}
+				NOT = { is_permanent_claim = DNZ }
+				NOT = { is_core = DNZ }
+			}
+			add_permanent_claim = ROOT
+		}
+	}
+}
+
+# The Prussian Confederation
+country_event = {
+	id = flavor_teu.4
+	title = "flavor_teu.EVTNAME4"
+	desc = "flavor_teu.EVTDESC4"
+	picture = SEJM_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = TEU
+		NOT = {
+			is_year = 1450
+		}
+		NOT = { has_country_flag = pru_confederation_flag }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "flavor_teu.4.a"
+		set_country_flag = pru_confederation_flag
+		custom_tooltip = dnz_decision_available_tooltip
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = -20
+		}
+	}
+}
+	
+# The End of the Teutonic State
+country_event = {
+	id = flavor_teu.5
+	title = flavor_teu.5.t
+	desc = flavor_teu.5.d
+	picture = SEJM_eventPicture
+	
+	trigger = {
+		NOT = {
+			current_age = age_of_discovery
+		}
+		tag = TEU
+		NOT = { has_country_flag = pru_confederation_curtailed }
+		has_country_flag = pru_confederation_flag
+		has_estate_privilege = estate_burghers_prussian_confederation
+		is_subject = no
+		is_at_war = no
+		NOT = {
+			exists = DNZ
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+	}
+	
+	option = {
+		name = flavor_teu.5.a
+		clr_country_flag = pru_confederation_flag
+		change_tag = DNZ
+		change_government = republic
+		add_government_reform = oligarchy_reform
+		remove_estate_privilege = estate_burghers_prussian_confederation
+		add_stability = -1
+		add_prestige = -25
+		if = {
+			limit = { has_custom_ideas = no }
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+	}
+}

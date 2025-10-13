@@ -1,0 +1,15 @@
+#3312 - Bingo
+
+owner = YMN
+controller = YMN
+culture = japanese
+religion = shinto
+capital = "Bingo"
+trade_goods = iron
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = YMN
+discovered_by = chinese

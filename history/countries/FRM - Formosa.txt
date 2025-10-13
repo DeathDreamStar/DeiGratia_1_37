@@ -1,0 +1,9 @@
+government = monarchy
+add_government_reform = autocracy_reform
+technology_group = chinese
+religion = confucianism
+add_harmonized_religion = mahayana
+add_harmonized_religion = taoism
+primary_culture = chimin
+capital = 738 # Sakam
+add_accepted_culture = formosan

@@ -1,0 +1,221 @@
+########################################
+# Civil War in Castile
+# Mix of Castilian Civil Wars involving
+# nobles and outside intervention
+########################################
+
+namespace = castilian_civil_war
+
+# Civil War in Castile
+country_event = {
+	id = castilian_civil_war.1
+	title = "castilian_civil_war.1.t"
+	desc = ipe_castilian_civil_war.1.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_country_flag = had_cas_civil_war
+		add_stability = -2
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						# Castile
+						area = galicia_area
+						area = asturias_area
+						area = basque_country
+						province_id = 208
+						province_id = 215
+						province_id = 1746
+						province_id = 2755
+						province_id = 3805
+						province_id = 4552
+						province_id = 4553
+
+						# Portugal
+						area = northern_portugal_area
+						area = alentejo_area
+						area = algarve_area
+						area = estremadura_area
+						area = ribatejo_area
+						area = beieras_area
+					}
+				}
+				add_core = AVZ
+			}
+			release = AVZ
+			AVZ = {
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1.6
+						cavalry = 0.4
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						heavy_ship = 0.5
+						light_ship = 0.5
+						transport = 0.5
+					}
+				}
+				add_manpower = 10
+				add_treasury = 250
+				add_accepted_culture = andalucian
+				add_accepted_culture = leonese
+			}
+			every_owned_province = {
+				add_core = AVZ
+			}
+			POR = {
+				create_union = AVZ
+				declare_war_with_cb = {
+					who = CAS
+					casus_belli = cb_castilian_civil_war
+				}
+			}
+		}
+	}
+	
+	option = { # We will prevail!
+		name = ipe_castilian_civil_war.1.b
+		custom_tooltip = ipe_castilian_civil_war.1.b.tooltip
+		tooltip = {
+			release = AVZ
+			POR = {
+				create_union = AVZ
+				declare_war_with_cb = {
+					who = CAS
+					casus_belli = cb_castilian_civil_war
+				}
+			}
+		}
+		ARA = {
+			country_event = {
+				id = castilian_civil_war.5
+			}
+		}
+		POR = {
+			country_event = {
+				id = castilian_civil_war.3
+			}
+		}
+	}
+}
+
+# Civil War in Castile - Portugal
+country_event = {
+	id = castilian_civil_war.3
+	title = "castilian_civil_war.3.t"
+	desc = ipe_castilian_civil_war.3.d
+	picture = CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # We fight for Joanna!
+		name = ipe_castilian_civil_war.3.a
+		custom_tooltip = ipe_castilian_civil_war.1.b.tooltip
+		tooltip = {
+			CAS = {
+				release = AVZ
+			}
+			create_union = AVZ
+			declare_war_with_cb = {
+				who = CAS
+				casus_belli = cb_castilian_civil_war
+			}
+		}
+	}
+}
+
+# Castilian Civil War - Aragon
+country_event = {
+	id = castilian_civil_war.5
+	title = "castilian_civil_war.5.t"
+	desc = ipe_castilian_civil_war.5.d
+	picture = CIVIL_WAR_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # We fight for Isabella!
+		name = ipe_castilian_civil_war.5.a
+		custom_tooltip = ipe_castilian_civil_war.1.b.tooltip
+		tooltip = {
+			CAS = {
+				release = AVZ
+			}
+			POR = {
+				create_union = AVZ
+				declare_war_with_cb = {
+					who = CAS
+					casus_belli = cb_castilian_civil_war
+				}
+			}
+		}
+	}
+}
+
+# End of Castilian Civil War
+country_event = {
+	id = castilian_civil_war.100
+	title = "castilian_civil_war.100.t"
+	desc = ipe_castilian_civil_war.100.d
+	picture = CIVIL_WAR_eventPicture
+
+	major = yes
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "castilian_civil_war.100.a" # Aragon Triumphs
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = AVZ
+				}
+				remove_core = AVZ
+			}
+		}
+		if = {
+			limit = {
+				has_opinion_modifier = {
+					modifier = cas_civil_war_interferance
+					who = POR
+				}
+			}
+			remove_opinion = {
+				who = POR
+				modifier = cas_civil_war_interferance
+			}
+		}
+		add_stability_or_adm_power = yes
+		add_opinion = {
+			who = ARA
+			modifier = cas_civil_war_winner
+		}
+		ARA = {
+			add_opinion = {
+				who = CAS
+				modifier = cas_civil_war_winner
+			}
+			country_event = {
+				id = ipeCAS.18
+			}
+		}
+	}
+}

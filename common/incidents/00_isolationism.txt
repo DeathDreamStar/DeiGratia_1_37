@@ -1,0 +1,360 @@
+incident_neo_confucianism = {
+
+	frame = 1
+	variable_initial = 0
+
+	potential = {
+		has_dlc = "Mandate of Heaven"
+		religion = shinto
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip_2
+			NOT = { had_global_flag = { flag = incident_neo_confucianism_fired days = 1825 } }
+		}
+		hidden_trigger = {
+			has_global_flag = incident_neo_confucianism_fired
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	immediate_effect = {
+		country_event = { id = shinto_events.19 }
+		set_country_flag = shinto_incident_recent
+	}
+}
+
+incident_nanban = {
+
+	frame = 2
+
+	variable_initial = 4
+
+	potential = {
+		has_dlc = "Mandate of Heaven"
+		religion = shinto
+	}
+
+	trigger = {
+		is_institution_enabled = new_world_i
+		any_owned_province = {
+			has_port = yes
+			is_core = ROOT
+		}
+		if = {
+			limit = {
+				normal_or_historical_nations = yes
+				is_playing_custom_nation = no
+			}
+			custom_trigger_tooltip = {
+				tooltip = japan_has_encountered_the_west_tooltip
+				has_global_flag = japan_has_encountered_the_west
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					normal_or_historical_nations = no
+					is_playing_custom_nation = yes
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = encountered_other_continent_tooltip
+				any_known_country = {
+					NOT = { same_continent = ROOT }
+				}
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip_2
+			NOT = { had_global_flag = { flag = incident_nanban_fired days = 1825 } }
+		}
+		hidden_trigger = {
+			has_global_flag = incident_nanban_fired
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	immediate_effect = {
+		country_event = { id = shinto_events.25 }
+		set_country_flag = shinto_incident_recent
+	}
+}
+
+incident_firearms = {
+
+	frame = 3
+
+	variable_initial = 1
+
+	potential = {
+		has_dlc = "Mandate of Heaven"
+		religion = shinto
+	}
+
+	trigger = {
+		is_incident_happened = incident_nanban
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip_2
+			NOT = { had_global_flag = { flag = incident_firearms_fired days = 1825 } }
+		}
+		hidden_trigger = {
+			has_global_flag = incident_firearms_fired
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	immediate_effect = {
+		country_event = { id = shinto_events.32 }
+		set_country_flag = shinto_incident_recent
+	}
+}
+
+incident_spread_of_christianity = {
+
+	frame = 4
+
+	variable_initial = 0
+
+	potential = {
+		has_dlc = "Mandate of Heaven"
+		religion = shinto
+	}
+
+	trigger = {
+		NOT = { current_age = age_of_discovery }
+		if = {
+			limit = {
+				normal_or_historical_nations = yes
+			}
+			custom_trigger_tooltip = {
+				tooltip = japan_has_encountered_the_west_tooltip
+				has_global_flag = japan_has_encountered_the_west
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = encountered_christian_tooltip
+			any_known_country = {
+				religion_group = christian
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip_2
+			NOT = { had_global_flag = { flag = incident_spread_of_christianity_fired days = 1825 } }
+		}
+		hidden_trigger = {
+			has_global_flag = incident_spread_of_christianity_fired
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	immediate_effect = {
+		country_event = { id = shinto_events.38 }
+		set_country_flag = shinto_incident_recent
+	}
+}
+
+incident_shogunate_authority = {
+
+	frame = 5
+
+	variable_initial = 0
+
+	potential = {
+		has_dlc = "Mandate of Heaven"
+		religion = shinto
+	}
+
+	trigger = {
+		OR = {
+			AND = {
+				has_reform = shogunate
+				absolutism = 50
+				any_subject_country = {
+					has_reform = daimyo
+				}
+			}
+			AND = {
+				has_reform = daimyo
+				overlord = {
+					absolutism = 50
+				}
+			}
+		}
+		OR = {
+			current_age = age_of_absolutism
+			current_age = age_of_revolutions
+		}
+		custom_trigger_tooltip = {
+			tooltip = ended_sengoku_tooltip
+			has_global_flag = ended_sengoku
+		}
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip_2
+			NOT = { had_global_flag = { flag = incident_shogunate_authority_fired days = 1825 } }
+		}
+		hidden_trigger = {
+			has_global_flag = incident_shogunate_authority_fired
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	immediate_effect = {
+		if = {
+			limit = {
+				has_reform = shogunate
+				absolutism = 50
+				any_subject_country = {
+					has_reform = daimyo
+				}
+			}
+			country_event = { id = ipeJAP.108 }
+		}
+		if = {
+			limit = {
+				has_reform = daimyo
+				overlord = {
+					absolutism = 50
+				}
+			}
+			country_event = { id = shinto_events.50 }
+		}
+		set_country_flag = shinto_incident_recent
+	}
+}
+
+incident_ikko_shu = {
+
+	frame = 6
+
+	variable_initial = 0
+
+	potential = {
+		has_dlc = "Mandate of Heaven"
+		religion = shinto
+	}
+
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip_2
+			NOT = { had_global_flag = { flag = incident_ikko_shu_fired days = 1825 } }
+		}
+		hidden_trigger = {
+			has_global_flag = incident_ikko_shu_fired
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	immediate_effect = {
+		country_event = { id = shinto_events.13 }
+		set_country_flag = shinto_incident_recent
+	}
+}
+
+incident_urbanization = {
+
+	frame = 8
+
+	variable_initial = 0
+
+	potential = {
+		has_dlc = "Mandate of Heaven"
+		religion = shinto
+	}
+
+	trigger = {
+		is_institution_enabled = global_trade
+		num_of_cities = 2
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip
+			is_incident_active = no
+			OR = {
+				NOT = { has_country_flag = shinto_incident_recent }
+				had_country_flag = { flag = shinto_incident_recent days = 9125 }
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = shinto_incident_recent_tooltip_2
+			NOT = { had_global_flag = { flag = incident_urbanization_fired days = 1825 } }
+		}
+		hidden_trigger = {
+			has_global_flag = incident_urbanization_fired
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	immediate_effect = {
+		country_event = { id = shinto_events.7 }
+		set_country_flag = shinto_incident_recent
+	}
+}

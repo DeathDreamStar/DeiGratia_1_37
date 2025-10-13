@@ -1,0 +1,20 @@
+#3228 - Yulin
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = jin
+religion = confucianism
+capital = "Yulin"
+trade_goods = wool
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = JIN
+add_core = QIN
+fort_15th = yes #the Nine Garrisons
+set_province_flag = the_great_wall_of_china_yulin_constructed

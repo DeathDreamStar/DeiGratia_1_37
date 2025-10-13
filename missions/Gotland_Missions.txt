@@ -1,0 +1,39 @@
+gotland_missions = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = GOT
+		dynasty = "Gryf"
+	}
+
+	the_kalmar_throne = {
+		icon = mission_monarch_in_throne_room
+		required_missions = {  }
+
+		provinces_to_highlight = {
+			owner = {
+				tag = DAN
+				capital_scope = {
+					region = scandinavia_region
+				}
+			}
+		}
+
+		trigger = {
+			tag = GOT
+			dynasty = "Gryf"
+			DAN = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}
+		}
+
+		effect = {
+			country_event = {
+				id = ipeDAN.1
+			}
+		}
+	}
+}

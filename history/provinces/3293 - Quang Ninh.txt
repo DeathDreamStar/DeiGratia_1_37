@@ -1,0 +1,18 @@
+#3293 - Quang Ninh
+
+owner = DAI
+controller = DAI
+culture = vietnamese
+religion = mahayana
+capital = "Ha Long"
+trade_goods = fish
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 6
+is_city = yes
+add_core = DAI
+discovered_by = chinese
+discovered_by = indian
+discovered_by = ottoman
+discovered_by = muslim

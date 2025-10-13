@@ -1,0 +1,26 @@
+# 1743 Cambray
+
+latent_trade_goods = {
+	coal
+}
+
+owner = CMB
+controller = CMB
+add_core = CMB
+capital = "Cambray"
+is_city = yes
+culture = picard
+religion = catholic
+hre = yes
+base_tax = 4
+base_production = 4
+trade_goods = grain
+base_manpower = 2
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+
+1543.1.1 = { owner = SPA controller = SPA add_core = SPA } # Conquered by Charles V
+1665.9.17  = { add_claim = FRA } # Louis XIV's father-in-law, Philip IV of Spain, dies
+1677.4.19 = { owner = FRA controller = FRA add_core = FRA remove_core = SPA hre = no } # Captured by Louis XIV

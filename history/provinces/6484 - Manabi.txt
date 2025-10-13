@@ -1,0 +1,41 @@
+#6484 - Manabí
+
+owner = MTN
+controller = MTN
+add_core = MTN
+culture = cara
+
+
+
+discovered_by = south_american
+discovered_by = andean
+
+religion = inti
+capital = "Manabí"
+is_city = yes
+trade_goods = gems
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+
+1487.1.1 = {
+           owner = INC
+           controller = INC
+           add_core = INC
+           religion = inti
+}
+1533.1.1 = { discovered_by = SPA } # Sebastián de Benalcázar
+1535.1.1 = {
+           owner = SPA
+           controller = SPA
+           add_core = SPA
+           culture = castillian
+           religion = catholic
+} # Founded by Sebastián de Benalcázar
+1819.12.17 = {
+           owner = COL
+           controller = COL
+           add_core = COL
+           remove_core = SPA
+} # The establishment of Gran Colombia

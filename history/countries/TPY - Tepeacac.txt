@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = aztek
+religion = nahuatl 
+technology_group = mesoamerican 
+capital = 2628
+fixed_capital = 2628
+
+1444.1.1 = {
+	monarch = {
+		name = "Tizoc"
+		dynasty = "Tepeyacac"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = bahnar
+religion = animism
+technology_group = chinese
+capital = 3340 # Kon Tum
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Kenh"
+		dynasty = "Bahnar"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,29 @@
+#6013 - Sétif
+owner = AAB
+controller = AAB
+culture = algerian
+religion = sunni
+capital = "Sétif"
+trade_goods = tin
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = AAB
+add_core = TUN
+add_core = ALG
+fort_15th = yes
+
+
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = western
+discovered_by = eastern
+
+
+1521.1.1 = {
+           owner = ALG
+           controller = ALG
+           add_core = ALG
+}

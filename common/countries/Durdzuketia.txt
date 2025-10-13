@@ -1,0 +1,97 @@
+graphical_culture = easterngfx
+color = { 155 81 65 }
+
+historical_idea_groups = { 
+	defensive_ideas
+	quantity_ideas
+	administrative_ideas
+	trade_ideas
+	spy_ideas
+	economic_ideas
+	aristocracy_ideas
+	diplomatic_ideas
+}
+
+historical_units = {
+	persian_footsoldier
+	persian_cavalry_charge
+	persian_shamshir
+	qizilbash_cavalry
+	tofongchis_musketeer
+	topchis_artillery
+	afsharid_reformed
+	afsharid_reformed_infantry
+	muslim_mass_infantry
+	muslim_dragoon
+	persian_rifle
+}
+
+monarch_names = {
+	"Dasha #0" = 20
+	"Ilyas #0" = 20
+	"Alu #0" = 20
+	"Arbi #0" = 20
+	"Movsar #0" = 20
+	"Shamil #0" = 20
+	"Movlid #0" = 20
+	"Dzhokhar #0" = 40
+	"Ruslan #0" = 20
+	"Abukhadzhi #0" = 20
+	"Khasan #0" = 20
+	"Tapa #0" = 20
+	"Akhmad #0" = 20
+	"Ramzan #0" = 20
+	"Aslan #0" = 20
+	"Khanpasha #0" = 20
+	"Mairbek #0" = 20
+	"Zelimkhan #0" = 20
+	"Akhmed #0" = 20
+	"Islambek #0" = 20
+	"Adlan #0" = 20
+	"Apti #0" = 20
+	"Mamed #0" = 20
+	"Dzhamal #0" = 20
+	"Buvaisar #0" = 10
+	"Zubaira #0" = 10
+	"Abuzar #0" = 10
+	"Tamerlan #0" = 10
+	"Makhmud #0" = 10
+	"Khassan #0" = 10
+	"Abdurakhman #0" = 10
+	"Zelimxan #0" = 10
+	"Kunta #0" = 10
+
+	"Lyalya #0" = -1
+	"Amina #0" = -1
+	"Xava #0" = -1
+	"Makka #0" = -1
+	"Milana #0" = -1
+	"Natalya #0" = -1
+	"Hadijat #0" = -1
+}
+
+leader_names = { 
+	"Akay Khant" "Akhmad Khant" "Alkhan Khant"
+	"Baray Khant" "Basay Khant" "Duda Khant"
+	"Gelay Khant" "Idris Khant" "Israil Khant"
+	"Kady Khant" "Khasbulat Khant" "Maskhad Khant"
+	"Nasukhan Khant" "Nuradil Khant" "Oku Khant"
+	"Sadulay Khant" "Sherip Khant" "Tchermo Khant"
+	"Visait Khant" "Yandarbiy Khant" "Zakay Khant"
+	"Surk Khant" "Albi Khant" "Amag Khant"
+	"Aukhad Khant" "Beterbiy Khant" "Khalid Khant"
+	"Matsi Khant" "Otarsultan Khant" "Saiti Khant"
+	"Taisum Khant" "Tukhug Khant" "Tsarna Khant"
+	"Gesha Khant" "Gatay Khant" "Estemir Khant"
+	"Bakha Khant" "Avtorkhan Khant" "Sagaip Khant"
+}
+
+ship_names = {
+	Dela Hela Sela Sata Maetsill Molyz
+	Elta Amgali Taamash Tusholi Dartsa
+	Mokh Seelasat Meler Gal Airi Mozh
+	Bolam Khagya Mattir Peerska Kars
+	Pkharmat Turpal Uja Ida Galain
+	Melhun Nart Almas GHamslig Djinim
+	Taram Ubur Hunsag Batiga
+}

@@ -1,0 +1,17 @@
+#2450 - Ghadames
+
+owner = FZA
+controller = FZA 
+culture = berber
+religion = sunni
+capital = "Ghadames"
+trade_goods = spices #Dates
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = FZA
+
+discovered_by = muslim
+discovered_by = ottoman

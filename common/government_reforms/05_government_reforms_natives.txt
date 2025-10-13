@@ -1,0 +1,166 @@
+native_basic_reform = {
+	basic_reform = yes
+	native_mechanic = yes
+	valid_for_new_country = no
+	allow_convert = no
+	republican_name = yes
+	royal_marriage = no
+	fixed_rank = 1
+	custom_attributes = {
+		enables_plutocratic_idea_group = no
+		enables_aristocratic_idea_group = no
+		enables_natives_idea_group = yes
+	}
+	modifiers = {
+		reform_progress_growth = -1
+		monthly_reform_progress = 0.5
+		diplomatic_upkeep = -2
+		global_institution_spread = -0.5
+		land_forcelimit = 2
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	nation_designer_trigger = {
+		OR = {
+			technology_group = north_american
+			technology_group = south_american
+		}
+		NOT = { religion = nahuatl }
+		NOT = { religion = mesoamerican_religion }
+		NOT = { religion = inti }
+		capital_scope = {
+			OR = {
+				continent = north_america
+				continent = south_america
+				continent = new_world
+			}
+		}
+	}
+}
+
+plains_tribe = {
+	icon = shaman
+	legacy_equivalent = native_council_legacy
+	allow_normal_conversion = no
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	allow_migration = yes
+	custom_attributes = {
+		enable_settled_mechanics = no
+		enable_tribal_grazing = no
+	}
+	modifiers = {
+		movement_speed = 0.1
+	}
+}
+
+indigenous_society = {
+	icon = chieftain
+	legacy_equivalent = native_council_legacy
+	allow_normal_conversion = yes
+	valid_for_nation_designer = yes
+	nation_designer_cost = 0
+	allow_migration = no
+	custom_attributes = {
+		enable_settled_mechanics = yes
+		enable_tribal_grazing = no
+	}
+	modifiers = {
+		stability_cost_modifier = -0.1
+	}
+}
+
+native_becomes_monarchy_reform = {
+	icon = "king_highlighted"
+	allow_normal_conversion = yes
+	trigger = {
+		has_institution = feudalism
+	}
+	effect = {
+		every_tribal_land_province = {
+			limit = { NOT = { owner = { exists = yes } } }
+			settle_province = ROOT
+		}
+		set_country_flag = populists_in_government
+		change_government = monarchy
+		change_government_reform_progress = -500 # Doing it like this to avoid that migration code triggers
+	}
+	ai = {
+		factor = 0
+	}
+}
+
+native_becomes_republic_reform = {
+	icon = "parliament_highlighted"
+	allow_normal_conversion = yes
+	trigger = {
+		has_institution = feudalism
+	}
+	effect = {
+		every_tribal_land_province = {
+			limit = { NOT = { owner = { exists = yes } } }
+			settle_province = ROOT
+		}
+		set_country_flag = populists_in_government
+		change_government = republic
+		change_government_reform_progress = -500 # Doing it like this to avoid that migration code triggers
+	}
+	ai = {
+		factor = 1
+		modifier = {
+			factor = 0
+			OR = {
+				has_reform = steppe_horde
+				has_reform = great_mongol_state_reform
+				NOT = { trade_income_percentage = 0.3 }
+			}
+		}
+		modifier = {
+			factor = 0
+		}
+	}
+}
+
+native_becomes_theocracy_reform = {
+	icon = "pope_highlighted"
+	allow_normal_conversion = yes
+	trigger = {
+		has_institution = feudalism
+	}
+	effect = {
+		every_tribal_land_province = {
+			limit = { NOT = { owner = { exists = yes } } }
+			settle_province = ROOT
+		}
+		set_country_flag = populists_in_government
+		change_government = theocracy
+		change_government_reform_progress = -500 # Doing it like this to avoid that migration code triggers
+	}
+	ai = {
+		factor = 0
+	}
+}
+
+native_becomes_horde_reform = {
+	icon = "horde_riding_highlighted"
+	allow_normal_conversion = yes
+	trigger = {
+		is_migratory_tribe = yes
+		mil_tech = 6
+	}
+	effect = {
+		every_tribal_land_province = {
+			limit = { NOT = { owner = { exists = yes } } }
+			settle_province = ROOT
+		}
+		set_country_flag = populists_in_government
+		change_government = tribal
+		add_government_reform = steppe_horde
+		change_unit_type = nomad_group
+		change_technology_group = nomad_group
+		custom_tooltip = STEPPE_HORDE_BENEFITS
+	}
+	ai = {
+		factor = 0
+	}
+}

@@ -1,0 +1,20 @@
+# French Fanaticism
+french_fanaticism = {
+	tolerance_own = 2
+	tolerance_heretic = -2
+	global_missionary_strength = 0.01
+	global_unrest = 3
+}
+
+league_rising = {
+	heir_chance = -2
+	block_introduce_heir = yes
+}
+
+# Édit d'union
+edit_dunion = {
+	tolerance_own = 2
+	tolerance_heretic = -2
+	global_missionary_strength = 0.01
+	global_unrest = 3
+}

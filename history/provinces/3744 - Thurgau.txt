@@ -1,0 +1,33 @@
+#3744 - Thurgau
+owner = TIR
+controller = TIR
+culture = swiss
+religion = catholic
+hre = yes
+base_tax = 1
+base_production = 1
+trade_goods = livestock
+base_manpower = 1
+capital = "Frauenfeld"
+is_city = yes
+add_core = TIR
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = western
+discovered_by = muslim
+
+1460.1.1 = {
+           owner = SWI
+           controller = SWI
+           add_core = SWI
+}
+1460.12.30 = { remove_core = TIR }
+1513.7.3 = { unrest = 7 }
+1515.1.1 = { unrest = 0 }
+1531.1.1 = { religion = reformed }
+1648.10.24 = { hre = no } # end of Thirty Years War
+1653.1.1 = { unrest = 5 }
+1654.1.1 = { unrest = 0 }
+1656.1.1 = { unrest = 7 }
+1657.1.1 = { unrest = 2 }
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved

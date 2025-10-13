@@ -1,0 +1,197 @@
+kanto_kubo_appointed = {
+    opinion = 100
+    years = 10
+    yearly_decay = 10
+}
+
+refused_to_hold_talks = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+diplomatic_talks = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+welcomed_us = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+insulted_our_diplomats = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+murdered_our_leader = {
+    opinion = -200
+    years = 100
+    yearly_decay = 2
+}
+
+crimes_in_kanto = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+war_in_kanto = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+kanto_pleasantries = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+kanto_insults = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+ues_supported_the_kanrei = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+kmk_supported_the_kanrei = {
+    opinion = -200
+    years = 100
+    yearly_decay = 2
+}
+
+kmk_supported_the_kubo = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+ues_supported_the_kubo = {
+    opinion = -200
+    years = 100
+    yearly_decay = 2
+}
+
+did_nothing = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+renounced_yamana_heir = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+enforced_yamana_claim = {
+    opinion = -200
+    years = 100
+    yearly_decay = 2
+}
+
+supporting_the_akamatsu = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+restored_the_akamatsu = {
+    opinion = 200
+    years = 100
+    yearly_decay = 2
+}
+
+denied_akamatsu_claim = {
+    opinion = -200
+    years = 100
+    yearly_decay = 2
+}
+
+supported_our_heir_ASK = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+refused_to_support_our_heir_ASK = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+supported_rival_heir = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+burned_kyoto = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+revoked_kanrei = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+burned_mount_hiei = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+took_hokkaido = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+rejected_chinese_influence = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+privileged_fudai = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+discriminated_tozama = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+privileged_tozama = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+discriminated_fudai = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+enforced_ikkoku_ichijyo_rei = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}

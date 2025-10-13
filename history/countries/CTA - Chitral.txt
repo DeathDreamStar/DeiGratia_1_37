@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = chitrali
+religion = sunni
+technology_group = indian
+capital = 3460	# Chitral
+fixed_capital = 3460 # Cannot move capital away from this province & no power cost to move to it
+
+1420.1.1 = {
+	monarch = {
+		name = "Karam"
+		dynasty = "Shah Rais"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

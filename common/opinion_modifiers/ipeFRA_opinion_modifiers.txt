@@ -1,0 +1,83 @@
+showed_mercy = {
+    opinion = 50
+	years = 50
+    yearly_decay = 2
+}
+
+supported_sampiero_corso = {
+	opinion = -100
+	years = 25
+	yearly_decay = 4
+}
+
+enforcing_papal_authority = {
+	opinion = 50
+	years = 25
+	yearly_decay = 2
+}
+
+refused_to_enforce_papal_authority = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+recognizes_papal_supremacy = {
+	opinion = 25
+	years = 25
+	yearly_decay = 1
+}
+
+intrigues_of_the_dauphin = {
+	opinion = 50
+	years = 50
+	yearly_decay = 1
+}
+
+supported_the_dauphin = {
+	opinion = 100
+	years = 50
+	yearly_decay = 2
+}
+
+declared_joan_a_martyr = {
+	opinion = 100
+	years = 50
+	yearly_decay = 2
+}
+
+declared_joan_a_heretic = {
+	opinion = -100
+	years = 50
+	yearly_decay = 2
+}
+
+treaty_of_arras = {
+	opinion = 100
+	years = 50
+	yearly_decay = 2
+}
+
+returned_the_somme_towns = {
+	opinion = 100
+	years = 50
+	yearly_decay = 2
+}
+
+reclaimed_the_somme_towns = {
+	opinion = -100
+	years = 50
+	yearly_decay = 2
+}
+
+kept_the_somme_towns = {
+	opinion = -100
+	years = 50
+	yearly_decay = 2
+}
+
+freed_jean_iv = {
+	opinion = 50
+	years = 25
+	yearly_decay = 2
+}

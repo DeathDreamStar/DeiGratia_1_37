@@ -1,0 +1,23 @@
+#4051 - Ewaso Ngiro
+
+owner = BOA
+add_core = BOA
+controller = BOA
+culture = somali
+religion = sunni
+capital = "Ewaso Ngiro"
+native_size = 40
+native_ferocity = 4
+native_hostileness = 9 
+trade_goods = livestock
+is_city = yes
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+
+discovered_by = east_african
+discovered_by = muslim
+discovered_by = ottoman
+
+1705.1.1 = { discovered_by = OMA }

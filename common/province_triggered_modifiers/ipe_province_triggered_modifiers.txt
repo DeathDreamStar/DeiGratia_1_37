@@ -1,0 +1,509 @@
+the_safavid_order = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				tag = ARL
+				was_tag = ARL
+			}
+		}
+	}
+
+	missionaries = 2
+	prestige = 1
+	land_forcelimit = 8
+	global_tax_income = 12
+}
+
+order_of_montesa = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				tag = ARA
+				tag = SPA
+			}
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+
+	land_forcelimit = 1
+	local_defensiveness = 0.2
+	local_manpower_modifier = 0.5
+	papal_influence = 0.5
+	local_autonomy = 0.025
+	army_tradition = 0.03
+}
+
+order_of_santiago = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				tag = CAS
+				tag = AVZ
+				tag = SPA
+			}
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+	
+	land_forcelimit = 1
+	local_defensiveness = 0.2
+	local_manpower_modifier = 0.5
+	papal_influence = 0.5
+	local_autonomy = 0.025
+	army_tradition = 0.03
+}
+
+order_of_calatrava = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				tag = CAS
+				tag = AVZ
+				tag = SPA
+			}
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+
+	
+	land_forcelimit = 1
+	local_defensiveness = 0.2
+	local_manpower_modifier = 0.5
+	papal_influence = 0.5
+	local_autonomy = 0.025
+	army_tradition = 0.03
+}
+
+order_of_saint_john = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				tag = CAS
+				tag = AVZ
+				tag = POR
+				tag = SPA
+			}
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+	
+	land_forcelimit = 1
+	local_defensiveness = 0.2
+	local_manpower_modifier = 0.5
+	papal_influence = 0.5
+	local_autonomy = 0.025
+	army_tradition = 0.03
+}
+
+order_of_alcantara = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				tag = CAS
+				tag = AVZ
+				tag = SPA
+			}
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+	
+	land_forcelimit = 1
+	local_defensiveness = 0.2
+	local_manpower_modifier = 0.5
+	papal_influence = 0.5
+	local_autonomy = 0.025
+	army_tradition = 0.03
+}
+
+# Order of Santiago de la Espada
+order_of_santiago_de_la_espada = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				tag = POR
+				tag = SPA
+			}
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+	
+	land_forcelimit = 1
+	local_defensiveness = 0.2
+	local_manpower_modifier = 0.5
+	papal_influence = 0.5
+	local_autonomy = 0.025
+	army_tradition = 0.03
+}
+
+# Order of Aviz
+order_of_aviz = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			OR = {
+				tag = POR
+				tag = SPA
+			}
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+	
+	land_forcelimit = 1
+	local_defensiveness = 0.2
+	local_manpower_modifier = 0.5
+	papal_influence = 0.5
+	local_autonomy = 0.025
+	army_tradition = 0.03
+}
+
+# Order of Christ
+order_of_christ = {
+	potential = {
+		normal_or_historical_nations = yes
+	}	
+
+	trigger = {
+		owner = {
+			OR = {
+				tag = POR
+				tag = SPA
+			}
+		}
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+	}
+
+	naval_forcelimit = 1
+	local_defensiveness = 0.2
+	colonists = 1
+	papal_influence = 0.5
+	local_autonomy = 0.025
+	navy_tradition = 0.5
+}
+
+# Kontor
+kontor = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			NOT = {
+				is_in_trade_league_with = HSA
+				has_country_modifier = curtailed_the_hansa
+				war_with = HSA
+			}
+		}
+		HSA = {
+			is_in_trade_league = yes
+		}
+	}
+
+	trade_goods_size_modifier = 0.2
+	burghers_loyalty_modifier = -0.025
+}
+
+imperial_city_of_china = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			is_emperor_of_china = yes
+		}
+		controller = {
+			is_emperor_of_china = yes
+		}
+		NOT = {
+			devastation = 10
+		}
+	}
+
+	imperial_mandate = 0.02
+}
+
+grand_canal = {
+	potential = {
+		normal_or_historical_nations = yes
+	}
+
+	trigger = {
+		owner = {
+			culture_group = east_asian
+		}
+		custom_trigger_tooltip = {
+			tooltip = grand_canal_control_tooltip
+			owner = {
+				owns = 1816 # Beijing
+				controls = 1816
+				owns = 3191 # Tianjin
+				controls = 3191
+				owns = 3212 # Langfang
+				controls = 3212
+				owns = 3213 # Cangzhou
+				controls = 3213
+				owns = 695 # Hejian
+				controls = 695
+				owns = 3214 # Laoling
+				controls = 3214
+				owns = 3196 # Dezhou
+				controls = 3196
+				owns = 2137 # Daming
+				controls = 2137
+				owns = 3198 # Puyang
+				controls = 3198
+				owns = 692 # Huaiqing
+				controls = 692
+				owns = 3197 # Caozhou
+				controls = 3197
+				owns = 2140 # Yanzhou
+				controls = 2140
+				owns = 3195 # Linyi
+				controls = 3195
+				owns = 2141 # Xuzhou
+				controls = 2141
+				owns = 3296 # Suqian
+				controls = 3296
+				owns = 2142 # Huai'an
+				controls = 2142
+				owns = 6688 # Funing
+				controls = 6688
+				owns = 3295 # Taizhou
+				controls = 3295
+				owns = 685 # Yangzhou
+				controls = 685
+				owns = 2145 # Zhenjiang
+				controls = 2145
+				owns = 6691 # Changzhou
+				controls = 6691
+				owns = 3246 # Wuxi
+				controls = 3246
+				owns = 1822 # Suzhou
+				controls = 1822
+				owns = 3245 # Songjiang
+				controls = 3245
+				owns = 3244 # Jiaxing
+				controls = 3244
+				owns = 684 # Hangzhou
+				controls = 684
+				owns = 2148 # Shaoxin
+				controls = 2148
+				owns = 6673 # Yuyao
+				controls = 6673
+				owns = 2149 # Ningbo
+				controls = 2149
+				owns = 3198 # Puyang
+				controls = 3198
+			}
+			1816 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3191 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3212 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3213 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			695 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3214 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3196 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			2137 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3198 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			692 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3197 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			2140 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3195 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			2141 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3296 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			2142 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			6688 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3295 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			685 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			2145 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			6691 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3246 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			1822 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3245 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3244 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			684 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			2148 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			6673 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			2149 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+			3198 = {
+				NOT = {
+					devastation = 10
+				}
+			}
+		}
+	}
+
+	trade_goods_size_modifier = 0.05
+	local_friendly_movement_speed = 0.05
+}

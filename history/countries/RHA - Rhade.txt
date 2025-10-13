@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = cham
+religion = animism
+technology_group = chinese
+capital = 4824
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Y Diêng"
+		dynasty = "Rhade"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

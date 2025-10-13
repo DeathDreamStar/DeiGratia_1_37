@@ -1,0 +1,21 @@
+#6180 - Buhonga
+
+owner = BFR
+controller = BFR
+add_core = BFR
+culture = rwandan
+religion = shamanism #Fetishism
+capital = "Buhonga"
+trade_goods = wool
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+discovered_by = central_african
+
+1750.1.1 = { #Bugesera divided between Rwanda and Burundi
+           owner = BUU
+           controller = BUU
+           add_core = BUU
+}

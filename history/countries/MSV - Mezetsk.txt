@@ -1,0 +1,74 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+primary_culture = ryazanian
+religion = orthodox
+technology_group = eastern
+capital = 3189
+fixed_capital = 3189
+
+1309.1.1 = {
+	monarch = {
+		name = "Mikhail I"
+		dynasty = "Rurik"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1356.1.1 = {
+	monarch = {
+		name = "Vsevolod I"
+		dynasty = "Rurik"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1400.1.1 = {
+	monarch = {
+		name = "Andrey I"
+		dynasty = "Rurik"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1443.1.1 = {
+	monarch = {
+		name = "Dmitry I"
+		dynasty = "Rurik"
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+}
+1450.1.1 = {
+	monarch = {
+		name = "Roman I"
+		dynasty = "Rurik"
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+1483.1.1 = {
+	monarch = {
+		name = "Ivan I"
+		dynasty = "Rurik"
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+1494.1.1 = {
+	monarch = {
+		name = "Mikhail I"
+		dynasty = "Rurik"
+		birth_date = 1470.1.1
+		adm = 0
+		dip = 4
+		mil = 4
+	}
+}
+#done 1504.1.1

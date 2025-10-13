@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = matlatzinca
+religion = nahuatl 
+technology_group = mesoamerican 
+capital = 2645
+fixed_capital = 2645
+
+1444.1.1 = {
+	monarch = {
+		name = "Itztlolinqui"	
+		dynasty = "Tlachco"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

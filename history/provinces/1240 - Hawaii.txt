@@ -1,0 +1,23 @@
+#1240 - Hawaii
+
+owner = HAW
+controller = HAW
+add_core = HAW
+culture = polynesian
+religion = animism
+capital = "Kailua-Kona"
+trade_goods = livestock
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 1
+is_city = yes
+discovered_by = polynesian_tech
+
+
+
+
+1555.1.1 = { discovered_by = SPA }
+1795.1.1 = { capital = "Wakiki" }
+1803.1.1 = { capital = "Honolulu" }
+1812.1.1 = { capital = "Kailua-Kona" }

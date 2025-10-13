@@ -1,0 +1,21 @@
+military_hegemon = {
+	allow = {
+		is_great_power = yes
+		NOT = { any_other_great_power = { army_size = root } }
+		NOT = { has_country_modifier = lost_hegemony }
+		current_age = age_of_absolutism
+	}
+	
+	base = {
+		prestige = 1
+	}
+	
+	# At max 100% tickup.
+	scale = {
+		army_tradition = 1
+	}
+	
+	max = {
+	}
+	
+}

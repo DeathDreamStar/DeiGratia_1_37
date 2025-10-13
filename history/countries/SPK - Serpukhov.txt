@@ -1,0 +1,104 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+technology_group = eastern
+religion = orthodox
+primary_culture = russian
+capital = 3936
+fixed_capital = 3936
+
+1341.1.1 = {
+	monarch = {
+		name = "Andrey I"
+		dynasty = "Rurik"
+		birth_date = 1327.7.4
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1353.6.6 = {
+	monarch = {
+		name = "Ivan I"
+		dynasty = "Rurik"
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+1358.1.1 = {
+	monarch = {
+		name = "Vladimir I"
+		dynasty = "Rurik"
+		birth_date = 1353.7.15
+		adm = 4
+		dip = 5
+		mil = 2
+	}
+}
+1381.1.1 = {
+	heir = {
+		name = "Ivan Vladimirovich"
+		monarch_name = "Ivan II"
+		dynasty = "Rurik"
+		birth_date = 1381.1.1
+		death_date = 1422.10.7
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1410.8.12 = {
+	monarch = {
+		name = "Ivan II"
+		dynasty = "Rurik"
+		birth_date = 1381.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1422.10.7 = {
+	monarch = {
+		name = "Semyon I"
+		dynasty = "Rurik"
+		birth_date = 1381.1.1
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}
+1426.1.1 = {
+	monarch = {
+		name = "Vasiliy I"
+		dynasty = "Rurik"
+		adm = 1
+		dip = 4
+		mil = 2
+	}
+}
+1441.11.22 = {
+	heir = {
+		name = "Yuriy"
+		monarch_name = "Yuriy I"
+		dynasty = "Rurik"
+		birth_date = 1441.11.22
+		death_date = 1473.9.12
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1462.1.1 = {
+	monarch = {
+		name = "Yuriy I"
+		dynasty = "Rurik"
+		birth_date = 1441.11.22
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+#1473.9.12 to MOS

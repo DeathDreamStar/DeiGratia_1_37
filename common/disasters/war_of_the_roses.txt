@@ -1,0 +1,142 @@
+war_of_the_roses = {
+	potential = {
+		tag = ENG
+		normal_or_historical_nations = yes
+		government = monarchy
+		is_free_or_tributary_trigger = yes
+		uses_doom = no
+		NOT = { has_global_flag = had_war_of_the_roses  }
+		ENG = {
+			OR = {
+				245 = {
+					owned_by = ENG
+				}
+				239 = {
+					owned_by = ENG
+				}
+				1860 = {
+					owned_by = ENG
+				}
+				4365 = {
+					owned_by = ENG
+				}
+				4367 = {
+					owned_by = ENG
+				}
+				4368 = {
+					owned_by = ENG
+				}
+				4371 = {
+					owned_by = ENG
+				}
+				241 = {
+					owned_by = ENG
+				}
+				4366 = {
+					owned_by = ENG
+				}
+				6428 = {
+					owned_by = ENG
+				}
+				6431 = {
+					owned_by = ENG
+				}
+			}
+		}
+	}
+
+
+
+	can_start = {
+		current_age = age_of_discovery
+		has_any_disaster = no
+		is_lesser_in_union = no
+		FRA = {
+			NOT = {
+				is_subject_of = ENG
+			}
+			mission_completed = emp_fra_end_hyw
+		}
+	}
+	
+	can_stop = { 
+		OR = {
+			has_any_disaster = yes
+			is_lesser_in_union = yes
+			FRA = {
+				is_subject_of = ENG
+			}
+		}
+	}
+	
+	
+	
+	
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = { legitimacy = 90 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { dynasty = York }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { dynasty = Lancaster }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { ADM = 2 }
+		}		
+		modifier = {
+			factor = 0.5
+			NOT = { DIP = 2 }
+		}		
+		modifier = {
+			factor = 0.5
+			NOT = { MIL = 2 }
+		}		
+		
+	}
+
+
+
+
+	
+	can_end = {
+		YRK = {
+			exists = no
+		}
+	}
+	
+
+
+
+	modifier = {
+		mercenary_manpower = 0.125
+		legitimacy = -1
+	}	
+	
+	
+	on_start = war_of_the_roses.1
+	on_end = war_of_the_roses.100
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = war_of_the_roses.2			
+			100 = war_of_the_roses.4
+			100 = war_of_the_roses.5
+			100 = war_of_the_roses.7
+			100 = war_of_the_roses.8
+			#12 & 13 triggers for other nations, and fires 14.
+		}
+	}
+}

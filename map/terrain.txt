@@ -1,0 +1,8796 @@
+##################################################################
+### Terrain Categories
+###
+### Terrain types: plains, mountains, hills, desert, artic, forest, jungle, marsh, pti
+### Types are used by the game to apply certain bonuses/maluses on movement/combat etc.
+###
+### Sound types: plains, forest, desert, sea, jungle, mountains
+
+categories =  {
+	pti = {
+		type = pti
+	}
+
+	ocean = {
+		color = { 255 255 255 }
+
+		sound_type = sea
+		is_water = yes
+
+		movement_cost = 1.0
+	}
+
+	inland_ocean = {
+		color = { 0 0 200 }
+
+		sound_type = sea
+		is_water = yes
+		inland_sea = yes
+
+		movement_cost = 1.0
+
+		terrain_override = {
+			1260 1261 1262 1655 1887 6365 6366 6367 6368 6369 6370 6371 6372 6399 6400 6401 6402 6595 6596 6597 6626 6627 6628 6629 6631 6632 6633
+			6634 6635 6636 6637 6946
+		}
+	}	
+
+	glacier = {
+		color = { 235 235 235 }
+
+		sound_type = desert
+
+		defence = 1
+		movement_cost = 1.5
+		supply_limit = 2		
+		local_development_cost = 1
+		nation_designer_cost_multiplier = 0.75		
+		
+		terrain_override = {		
+			1034 1035 1104 1105 2025 2440 2574 1038 3136 1041
+		}
+	}
+
+	farmlands = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			# IPE New Africa
+			4318 6414 6415 6416 6417 6419 6420
+
+			# IPE New Europe
+			244 3739 4785 3694 3681 184 3720 3682 3680 3717 6383 3718 6405 3675
+			3696 87 4769 3897 1875 3674 103 4728 3789 4729 3899 3898 3987 3982 4741 3668
+			4720 1770 3857 3967 3752 4526 3761 4723 3921 4533 4527 3915 2424 2959 3918 1940 4541 261 3872 3860 3861
+			3869 3870 4756 3865 3830 3788 2316 6186 6188 6191 6193 6194 6198 6397 6389 3709 6396 6391 6376
+			6388 6406 6407 6413 6428 6429 1861 4368 6453 6451 6450 4762 4715 71 3663
+			4760 3973 3977 4711 4381 3756 3889 6673 4765 6755 6759 6760 3775 6768 6769 6841 6843 2979 3724
+			4376 6894 6895 6901 6902 6906 6907 6909 6916 6917 6919 263 6908 6910 265 3753 6926 6927 2963
+			4523 4528 1939 6925 6928 4525 3917 6930 3916 6931 6933 3911 3912 6932 6430 6929 6950 6951 234
+
+			# IPE New East Asia
+			3273 3274 3275 3276 3277 3247 3237 3238 3261 3268 3267 3263 3190 3191 3212 3213 3214 3211 3196 3197
+			3198 3195 3294 3295 3199 3245 3236 3217 3225 3220 3242 3241 3243 3246 3244 3296 3218 3219
+			3200 3222 3223 3221 3224 3252 3251 3194 3192 3282 3193 3283 3310 3319 3308 3320 3321 3098 3099 3100 3101
+			3326 3325 3302 3327 3353 3356 2389 4836 4832 4834 4831 2384 3339 3378 2383 6904 3344 604 4825
+			4399 1815 3383 4395 4394 2399 3380 4393 4474 3387 4475 3394 567 4478 2046 3385 3386 2081 3393 4477
+			2096 4486 2042 562 3390 4484 3391 4472 3413 4469 4488 2055 3484 3485 3416 4495 3486 3395 2094 3487 3488
+			4494 3419 3418 3489 4499 2061 3420 4498 3422 3421 3424 2062 3423 3425 3428 3430 4511 3429 3461 3433 4509
+			3431 2079 4508 4504 504 3452 4503 3450 505 2072 4505 2038 2043 3481 3440 552 3480 2084 3445 3412 543 4419
+			4425 2059 4466 2077 2078 2054 3475 3472 4457 3479 516 3478 517 3477 4430 3470 4418 2083 4420 539
+			3400 3399 4417 2027 3406 3408 2101 4512 3543 4291 3512 4289 412 630 629 628 3585 3022 3102 3096
+			3097 3093 3117 3130 3132 3133 3115 6522 6523 6524 6525 6526 6527 6528 6531 6532 6533 6534 6535 6536
+			6537 6538 6541 6542 6543 6544 6546 6650 6651 6652 6653 6655 6657 6658 6668 6670 3205 6663 6666 6681
+			6672 6690 6691 6692 6694 6686 6687 6688 6689 6695 6707 6708 6709 6710 6711 6712 6714 6715 6716 6717 6719
+			6723 6746 6747 2049 6748 6749 6750 1026 6802 6839 6853 6854 6860 1028 624 4791 2689 3348 4467
+
+			114 131 1864 135 4125
+
+			89 1743 91
+
+			185 1774
+
+			4317
+
+			605 2376 2377 2372 2388
+
+			67 95 1742 2974
+
+			1865
+			
+			113 
+			
+			160
+			
+			510 524 540 556 558 561 563 2026 2044 2045 2047 2060 2063 2075 2095
+			
+			1862
+			
+			584 
+			
+			1772
+			
+			2380
+			
+			167 192 
+			
+			255 254 258 259 152 1767
+			
+			186 88 182 4538
+			
+			2312
+			2981
+			
+			#Sorted from here:
+			
+			4388 4390 #France
+			
+			238 4367 4371 #British isles
+			
+			4316 #Egypt
+			
+			4126 4173 4240 #Central Europe
+			
+			581 4396 585 586 # Burma
+			2076 4415 4416 4476 4479 4487 4489 4490 4496 4497 4510 4513 #India
+			4531 # Romania
+		}		
+	}
+	
+	forest = {
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = { 
+			# IPE South America
+			784
+
+			# IPE North America
+			971 2565 2567 2566 2013 2564 970 2562 2563 969 2559 964 2558 961 959 958 4872 2023 2557 954 966
+			911 2518 912 945 871 2477 2480 2481 872 873 2484 2485 874 947 2021 4637 2577 986 2571
+			985 2570 984 2569 2568 995 2579 994 990 2580 1002 2584 2012 973 2610 974 972 975 2609 976 2613
+			977 2612 1009 999 992 981
+			
+			2594 910 1007 2015 2591 2588 2581 991 3946 4114 4151 1777 3958 3956 29 3940
+			3152 3159 3160 3152 3159 3160 4266 1972 1079 1083 3957 4263 2749 4250 3178 3177 4248 3173 4249
+			3161 3163 3164 3165 4254 4253 3176 3150 1754 3174 3175 3934 4117 4260 1959 3168 2429 2427 1074
+			3186 2428 2433 1068 1064 3143 2432 3142 3137 3135 3134 1039 2439 1036 1037 1044 2443 1062 2442
+			1063 1060 3138 1055 1057 1056 3129 2446 2435 1052 2102 1040
+
+			9 11 18 30 31 4123 4124 # Sweden
+			309 1955 #Russia
+			2611 996 997 998 2575 #n am
+			
+			1054 1046 10
+			993 1011 2572 2583 2671
+			
+			978 980 2022 2517 2573 2582 2593
+			960
+			1085 1246
+			
+			1776 4152 19 32 1961 4259 #Typus
+			305 1067 1780 2431 1061 #Typus
+			2445 1069 1070 1073 1059 2430 2436 2437 1045 2438 1051 4113 4258 1958 #Typus
+		}                                      
+	}
+	
+	hills = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			# IPE New Europe
+			251 3727 6440 3672 3671 4694 3688 3704 195 4697 3684 3703 4737 3795 3776 4730 3787 3786 3785
+			3743 4721 3763 3763 3928 2960 162 1318 3876 154 4239 3883 3881 3880 4755 3849 4176
+			3842 3000 1766 3001 1765 2750 3837 4699 3827 1773 145 3838 4705 4702 3955 1047 1043 6133 6394 6426 6448
+			228 3890 161 201 6395 6757 6763 3772 3781 3794 119 6767 6897 6898 6900 3660 6922 4730 3790
+			268 3734 3735 6934 6939 6943
+
+			# IPE New East Asia
+			3254 3227 3311 3330 3329 2386 3415 3414 4470 2098 560 3454 4471 3522 3417
+			3474 3469 3435 536 2085 3404 4458 3441 4460 3442 526 4461 3437 2057 3447 3448
+			528 2093 4452 551 4468 3114 3120 3121 732 3123 6545 6654 6661 6662 6663 3207 3210
+			6667 6676 3209 6683 6681 6682 3208 6674 6675 6713 2089 3436 6741 3453 4450 6744 6796
+			4180 6852 6856 6858 1830 1825
+
+			# IPE North America
+			2551 2548 2552
+
+			4554 4558 4127
+
+			1247 127 2986 141
+
+			2982
+
+			2992
+
+			197 212
+
+			515 527 530 550 
+			2056 2058 2092 2097
+			
+			105 106 
+			
+			1827
+
+			2657
+			
+			951 2553 2555 2556 2608
+			
+			2658
+			
+			176
+			140 1828
+			123 1934
+			
+			652 657 658 2697 2698 2701 
+			
+			2977 2983 2991 3002
+			242 #British Isles
+			4361 4362 #Scotland
+			4144 4145 #Scandinavia
+			2694 #Korea
+
+			521 559 740 4434 4453 4459 4462 4465 4480 6905 #Central India
+			518 531 538 4414 4427 4429 #South India
+			16 #Typus
+		}
+	}
+
+
+	woods = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			#IPE New Europe
+			3715 4776 1877 191 3721 4392 3691 4696 4555 222 3804 218 3816 2980 107 111 1769 4768 4771 4772 4714 4713 3979
+			4775 4718 3974 4707 3975 4774 1870 3742 3972 3980 4747 1863 3981 4724 2970 3920 60 3926 3925 1826 3944 3943 4143 3902
+			3901 3903 3906 3167 3937 3927 3654 4245 3169 3938 3634 4246 3931 3935 3936 2185 297 3189 3172 6250 6404 6412 4164 3750
+			1761 2538 3697 179 4764 3699 3976 3978 6758 6838 6840 6842 4366 3728 6882 6885 4238 3705 6948 6949 6952 6953 6954
+
+			#IPE New East Asia
+			3313 3317 422 3536 2299 3574 325 3576 3297 3298 4230 3111 4229 736 3125 2107 1819 6845 6850 6857
+
+			#IPE New Australia
+			2732 1091 1092 2734 1089 1087 2728 2729
+
+			# IPE North America
+			2669 894 897 2515 2514 899 930 2531 2532 924 920 2527 6606 949 2014 6613 6618 6625 953 6935 6938
+
+			4662
+
+			375 376 4118 4119 4120 #Ireland
+			129  # Balkans
+			130
+			4148 #Russia
+			
+			918 919 939 940 944 946 948 963 987 988 2560 2585 2586 2639
+
+			933 934 937 941 943 955 956 967 989 2010 2523 2524 2525 2526 2540 2541 2544 2545 2670
+			
+			2665
+			
+			37 273 271 770 311 1960 34 
+			
+			173 194 190 187 
+			181 1866 93 188 189 1880 69
+			1763 
+			372   
+			2521 2522 2587 
+			2304
+			
+			727 731 1033 1049 1050 1053 2106
+			2997 4112 4115
+			1084 1093 1094 1107 2730 2733 #Australia
+			1982 4166 #Scandinavia
+			4241 4242 4243 #Eastern Europe
+			240 4377 4379 4380 #Britain
+			4389 #France & Low Countries
+			4535 4544 # New PLC provinces
+			# 1.29 Manchu
+			4658 4660
+		}
+	}
+	
+	mountain = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			# IPE New Europe
+			198 3687 3679 4719 3822 3821 3817 3819 3754 3777 4734 3780 4731 2978 3683 3765 4722 4710 4759 3858
+			3863 3868 3846 4750 3847 3853 4780 3840 4703 3141 3655 4568 6029 391 6031 4277 2330 6035 6358 6375
+			6439 6732 199 6766 6899 3884 3762 4237 3760 6923 6924
+
+			# IPE New East Asia
+			3215 3226 3258 3229 3256 3289 3288 3286 3287 3284 3285 678 705 4204 3278 3259 3266 3264 3262 616
+			2742 2744 3299 3305 3306 3301 3340 4823 3345 615 3338 1844 611 4840 3375 589 1817 3370 4835 3397
+			3381 4398 2401 588 4406 2400 4397 582 580 3379 2091 4483 2048 4448 2099 4491 4412 3410 2130
+			4205 3432 3451 2232 3509 3510 3507 447 2224 446 4324 2228 1968 3516 4325 3498 4336 3499 2235 2215
+			4337 4330 3490 4342 3495 3496 2206 3500 2202 1856 3538 2197 460 3527 2364 2126 461 4207 713 2120
+			4296 3541 3542 332 3558 3578 4303 3586 2687 3583 3035 3047 2685 637 4837 3109 3112 3119 3124
+			3877 3875 3885 3886 3895 3882 2068 6638 6640 6641 3265 6724 6725 6726 6727 6728 6729 6730 3216
+			554 557 565 2070 2071 3396 3456 4481 4482 2229 2230 6793 3334 6799 6800 6803 6804 6835 6837 6848
+			4663 6851 4192 6859 6861 6862 6864 6865 6870 2688 2382 6940 3559
+
+			# IPE South America
+			6494 823 2818 4604 820 6483 4609 6496 2830 2835 2844
+
+			# IPE North America
+			841 880 4587 4586 2653 2635 2636 2482 2019 2487 2607 6779 4631 4632
+
+			1951 2135 2131 2132 2134
+
+			2987 4557 4547
+
+			128 2976 2984 6756
+
+			4493 4485 4492 2069 511 509 4449 578 2041
+
+			205
+
+			432
+
+			2234
+
+			2946 813 817 832 827 211 2990 1873 166 1871
+
+			2468 344 
+
+			# IPE Central Asia
+			4682 4678 4659
+
+			# IPE Persia
+			2223 4329 4331 2217 413 414 2211 2207 4338 2212 4300 424 419 2205 4304 416
+			4171 4345 2220 434 4344 2236 2221 4326 4310 2307
+
+			210 # Spain
+			139 1831 143 138  #Balkans
+			158 1952 #Hungary
+			4236 #Slovakia
+			2486  #North America
+			808 814 2825 #South America
+			452 #Tibet
+			4210 4214 4215 4216 4217 4222 #Greater China
+			
+			1787 1788
+			
+			120
+			794 802 2605 2813 2817 2824
+			2395 2396 583 587 2604 2877
+			
+			2371 2381 
+			204 
+			1853 144
+			124
+			2305 331 2306 
+			
+			2327 383
+
+			702
+			716 718 719 1066 2117 2189 739 2125 2127
+			
+			2103 1048 2104 2105 729 2186 1850
+			2743 4232 #Korea
+			1109 #New Zeeland
+			4128 #Carpathians
+			22 #Norway
+			2201 2198 4301 #Caucasus
+			386 2332 4281 4282 #Hejaz Range
+			435 436 #Khorasan
+			4348
+			4404 # Burma
+			4518 4519 #tibet
+			4546 # new provinces 1.28 
+			4602 #new provinces 1.28 mesoamerica
+			# 1.29 Manchuria
+			4653 4655 4656 4680 4679
+		}
+	}
+
+	impassable_mountains = {
+		color = { 128 128 128 }
+
+		sound_type = desert
+
+		movement_cost = 8.0
+		defence = 6
+		local_development_cost = 10		
+	}
+
+	grasslands = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			# IPE New Europe
+			3726 4121 169 2989 3806 206 1747 229 230 4150 4548 225 767 4524 256 1938
+			1953 3871 156 1954 2746 150 2998 4529 6 4165 2 1834 1945 4543 290 289 2407 269 279 6250
+			6382 6425 6443 6444 1879 3676 3678 6379 177 4384 6432 6436 172 171 3702 202 6381 200 2753 196
+			175 3689 174 3693 4111 6409 3713 4387 6393 6410 6408 180 3706 6373 3677 178 374
+			6880 6879 6878
+
+			# IPE New East Asia
+			1022 2373 3270 1016 2080 4409 3508 316 3291 426 3116 6844 6845 6867 6868 4407
+
+			# IPE Africa
+			1179 6356 6359
+
+			# IPE New Australia
+			2736 2726
+
+			# IPE South America
+			787 2862 2860 779 2866 2884 2879 2857
+
+			# IPE North America
+			870 2478 2479
+
+			4369 4339 4340
+
+			207
+
+			417 4341 #Iran
+			593 2391  #Sout East Asia
+			
+			4174  # Balkans		
+			
+			1943 1942
+			
+			549 572 
+
+			772 773 778
+			2851 2852 
+			328
+			2390 
+			155
+			
+			1177 2850
+			
+			1086
+			2739
+			2296 318
+			
+			703
+			42
+		}
+	}
+
+	jungle = {
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			# IPE New East Asia
+			3250 3255 3248 3239 3292 3260 3231 3240 3249 3202 3204 3206 3230 3232 3235 3234 3293
+			3373 3371 3374 3372 601 3388 4826 3382 2040 3407 2082 3589 3043 2682 2706 639 4801 2712 3060 2704 4804 3062 640 2394
+			594 2393 598 2392 599 2722 2723 2720 2719 3083 6103 6140 6141 4029 6238 1117 1121 2254 1122 6280 6281 2258
+			1169 6334 1165 2295 2256 6330 4444 6656 6659 6660 6664 6665 6663 6677 6684 3203 6678 6669 6751 6869 4800
+			4827 4828
+
+			# IPE North America
+			839 6557 2640 837 2660 4592 4589 6563 2652 4591 6559 6558 2633 2651 2650 2632 6561 4585 2638 6587 6568 847 849
+			2648 2627 851 6570 6578 6592 6591 854 855 4579 2643 2624 4575 2623 6576 2645 6579 6580 4574 6770 6771 6772 6773
+			6774 6776 6777 4578 4580 4576 859 4598 6780 6781 6782 6783 6784 6788 6789
+
+			# IPE Caribbean
+			488 489 4624
+
+			2820 4599 828
+
+			4440 4405 2710 769 766 763 762 2899 761 2898 760 2916 831 4612 4595 4597 2663 2649 2634 4079 1169 4081
+
+			# IPE South America
+			6492 830 2807 834 2810 2812 741 2855 2814 2887 768 2895 2897 776 2912 2921 755 754 2890
+
+			# IPE Africa
+			4074 4065 6176 6178 4066 6247 4105 4068 6236 4087 4085 6232 1166 6269 2242 1119 6271 1164 1145 1152 1146 2292 1144 6289
+			6290 2291 1140
+
+			2378 1823 4839 603 614
+			
+			1237 2703 #South East Asia
+			746 838 #South America
+			553 566 568 570 571 573 1950
+			486 743 745 748 826 835 840 846 848 2630 2637 2641 2647 2654 2655 2659 2664 2819
+			
+			2397 2398 579 2402 590 2403 602 591 2404 843
+			
+			610
+			756 757 765 2894 2896 2929 
+			1125 1138 1139 1162 1249
+			1118
+			
+			547 4451 #Central India
+			534 535 537 2029 2050 4413 6742 #South India
+			2100 4408 #Ceylon
+			2731 #Australia
+			4024 4025 4026 #Madagascar
+			4090 4109 #Central Africa
+		}
+	}	
+	
+	marsh = {
+		color = { 13 189 130 }
+
+		type = marsh
+		sound_type = forest
+
+		movement_cost = 1.3
+		defence = 1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			# IPE New Africa
+			1182 1183 6055 6056 6057 6059 6218 1131 1134 6309 6292 2290
+			6319 2294 6321 1151 1163 1141 6903
+
+			# IPE New Europe
+			3723 3729 4370 3714 4732 3759 96 4706 1936 3184 4537 3929 3649 6427 6435 100 4382
+			6944 6945
+
+			# IPE New Asia
+			3389 3506 3548 3095
+
+			# IPE South America
+			829 2859
+
+			# IPE North America
+			884 888 2529 2528 895 2530 922 923 2533 2535 926 2539 929 2542 932 2543 2546 938
+			2547
+
+			2858 2803 278 4545 1941 4534 2039
+
+			1860 #England
+			96 #Netherlands
+			950 #n am
+			927 928 2536 2537 2516
+			775 777 1000 1003 1004 1005 1006 2592
+			1217 2259 2261 2286 2287 2759
+			277
+			4386 #France
+			4290 #Middle East
+			462 #Caucasus
+			362 #Egypt
+			2702 #Philippines
+			
+			1072 #Typus
+		}
+	}
+	
+	desert = {
+		color = { 242 242 111 }
+
+		type = desert
+		sound_type = desert
+
+		movement_cost = 1.05
+		supply_limit = 4
+		local_development_cost = 1
+		nation_designer_cost_multiplier = 0.8
+		
+		terrain_override = {
+			# IPE New Africa
+			1207 2466 2778 2792 1206 2024 2784 2785 1112 6338 2269 1178 2864 1175 2472
+
+			# IPE New East Asia
+			3434 4411 2370 2368 459 4671 2114 721 4219 723 4673 2191 2764
+
+			# IPE North America
+			876 2492
+
+			4506
+
+			4669
+
+			# IPE Central Asia
+			2363 456 1969
+
+			# IPE Mesoamerica
+			864 4649 862
+
+			2806 # Caribbean
+			
+			2088 #India
+			
+			4208 4221 4223 #Greater China
+			
+			513 2086
+			867
+			350 1115 2244 2271 2272
+			701 709 720 2193 2747
+		}
+	}
+	
+	coastal_desert = {
+		color = { 255 211 110 }
+
+		type = desert
+		sound_type = desert
+
+		movement_cost = 1.0
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.9		
+		supply_limit = 4
+
+		terrain_override = {
+			# IPE New Africa
+			2325 2326 355 6109 6108 2773 
+
+			# IPE South America
+			812 2826 809 6481 2828 6476 816
+
+			792 793 796 805 806 2821 2822 2840 2841
+			1212 1215 1230 2315 2320 2321 2765 2786 2788 2789
+			1174 #Angra Pequena
+			865 866 
+			1209 2790
+			389 394 395 396 397 398 399 401 402 2331 2333 2340 2341 2342 2347 4269 4278 4283 4284 #Arabia
+			4286 6115 2324 2329 6030 387 4279 6034 2346 6044 6027 4327 2233 575 3511 503 6024 6025
+		}	
+	}
+	
+	coastline = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			#IPE New Africa
+			2954 6148 6209 6210 6261 6262 2241 335
+
+			#IPE New Europe
+			136 163 3824 4175 6183 6184 6185 6187 6421 6422 6423 6424 4378 3732
+
+			#IPE South America
+			2873
+
+			#IPE Caribbean
+			6510 6512 6947
+
+			#IPE East Asia
+			6671 6731 6866 6871
+
+			3323 529 2693 3071 633 3076 1245 3081 3082 3084 1090 4228 3105 3118 4455 6441 #IPE New East Asia
+			
+			487 492 497 500 502 
+			
+			788 1186 1192 1195 1197 1198 1199 1200 1203 1204 2796  
+			 
+			368 1098 1095 1103 1102 1100 1101 1999 1998 2679 2678 
+			647 634 645 1994 1992 1986 1242 1989 979 1240
+			
+			333 3003 4049
+			233 4365 #Britain
+			653 655 656 2699 2700 654 4349 4350 4351 4352 4353 4354 4355 4356 #Philippines
+			4796 643 644 648 650 2713 2714 2716 2717 2718 2725 #Moluccas & Sulawesi
+		}
+	}	
+	
+	drylands = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			# IPE New Africa
+			360 4319 1231 6021 6012 6022 6020 4566 339 6017 1882 6014 6015 343 2467 6004 6005 2470 1214 2791 6081
+			6054 2800 1234 2322 6049 1228 1220 6050 1229 6052 1225 6053 4033 2799 6067 6070 6039 6454 6456 6457
+			6458
+
+			# IPE New Europe
+			3113 214 3820 3803 4788 4549
+
+			# IPE New Asia
+			520 4500 4464 4501 2087 3476 3473 3471 3503 3504 3505 3513 3532 4306 3531
+			3519 3520 4693 711 712 2192 2214 2121 4293 415 3557 3544 3556
+			3552 3555 3554 3560 3564 3571 323 324
+			3579 3580 3581 3131 6438 427 428 2216 6529 6530 6539 6540 2067 514 4502
+			2066 2064 4507 512 6547 1855 2123 3523 6941
+
+			# IPE New Australia
+			3089 1088
+
+			# IPE South America
+			2808 819 6484 6468 6467 2836 791 2843 2847 2914
+
+			# IPE North America
+			861 4606 2620 4635 869
+
+			4335
+
+			353 2452 2451 356 357
+
+			# IPE Persia
+			4332 519 2231 3465 3464 3515 445 3530 3529 2222 433 3547 409 3545
+
+			221 1750 
+			327 2199 2208 #Turkey and Caucasus
+			420 421 425 2203 4307 #Caucasus
+			442 441 1973 444 450 453 2227 4343 #Iran, Transoxiana & Balkh
+			2051 2052 2053 2065
+			2999
+			751 752 753 790 799 858 2476 2498 2614 2668 2842 2854 
+			2878 2883 2885 2915 2917 2922 
+			750
+			2768 2797 2798
+			868 2667 2846 2913 
+			1172
+			
+			2308 407 337 2309
+			2356
+			
+			2302
+			2317 2319 4320 #Egypt
+			4209 #Greater China
+			342 345 1110 2453 2455 2461 2469 #Maghreb
+			381 406 430 431 1854 2219 2314 4292 #Levant
+			1222 #Central Africa
+			4454 4456 4463 #India
+			4562 4563 4564 # new provinces 1.28
+			457 1967 458 #Typus
+		}
+	}
+
+	highlands = {
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			# IPE New Africa
+			6016 6013 6007 6002 6008 6102 6130 6134 4158 6090 6079 2761 2760 6078 6083 6084 6094 6099 2769 2767 6095
+			6085 6093 6096 6105 6106 1223 1210 2793 1213 6077 6062 2802 4280 6023 6040 2345 4023 6138 6139 1792 6137 6136
+			6135 6155 4071 6173 4053 6159 6171 6172 6174 4075 4074 6175 6182 6181 4069 6180 6169 4070 2301 3569
+			3747 6206 6207 6208 6212 6215 6252 6221 4097 2948 6230 6242 6243 4050 1176 833
+			6362
+
+			# IPE New Europe
+			208 3805 4789 3800 3801 3802 3823 4726
+
+			# IPE New East Asia
+			3272 3257 3233 2375 4824 3405 2031 4421 4426 4423 3401 3402 2090 4424 541
+			2032 4439 2037 1949 2033 4428 532 3444 3443 4431 569 4435 1946 2034 4432 1948 4438
+			2028 546 548 4433 545 4437 3449 4443 4442 3497 3546 4315 1846 2300 4314
+			3572 3573 4309 4308 2297 322 4311 1848 3567 4312 3562 6548 6549 6550 6551 6552
+			6553 6554 6555 6754 4584 3549 3553
+		
+			# IPE Mesoamerica
+			2615 844 6567 4582 6569 4581 6581 4645 6778 6785 6786
+
+			# IPE North America
+			875 878 879 2491 2493 2494 2495 6599 2490 2506 2020
+
+			4552 1746 215 4551 2751 2754 1748
+
+			# IPE South America
+			2872 824 4603 6490 6487 4600 6572 4572 4570 4571 6571 4641 2642 6583 4573 6577 6590 4640 4642 4643 857 856 6585
+			2619 6582 2618 860 2617 4647 4648 4646
+
+			544 2035
+			850 853 2621 2622 2626 2628 2629 2644 2646 
+			2006 2483 2488
+			336 346 348 349 351 1171 1184 1185 1188 1208 1211 1218 1219 1227 2274 2458 
+			2465 2756 2757 2758 2762 2763 2766 2770 2771 2772 2787 2950 2951
+			326 329 418 
+			2303
+			2489
+			319 2298 
+			371
+			2209 4294 4295 4298 4313 #Middle East
+			1108 2738 #Australia & New Zeeland
+			4027 4030 #Madagascar
+			4067 4084 4100 4101 4103 #Africa
+			370 #Norway
+			216 2755 #Iberia
+			4299 4305 #Anatolia and Caucasus
+			4391 #Italy & France
+			4422 4436 6743 #Central India
+			4553 # new provinces 1.28
+		}
+	}
+
+	savannah = {
+		color = { 248 199 23  }
+
+		type = plains
+		sound_type = plains
+
+		supply_limit = 6
+		movement_cost = 1.00
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.95	
+		
+		terrain_override = {
+			# IPE New East Asia
+			3279 4822 3343 3355 3359 3361 4830 2385 3357 2379 592 6128 6125 6131 6129 6088 6087
+			6121 4051 4052 2777 2781 2776 1205 2782 6117 2780 6119 6118 2795 2783 6120 6116
+			6097 6098 6126 6075 2779 6124 6122 2779 1226 6068 6071 6069 1216 6062 1221 6061
+			2801 6063 774 2932 6064 6065 6066 6060 4021 6142 6177 4064 6200 4040
+			6203 6202 6213 6214 6229 6228 2949 1901
+			6233 6234 798 6244 6235 1170 6245 6246 4080 6227 6204 2952 4098 6201 6237 6258 6259
+			6260 6266 6272 6275 2246 2260 2243 1180 6354
+
+			# IPE Australia
+			4865 4867
+
+			# IPE Africa
+			6158 6156 6157 6144 6145 6162 6146 6147 6149 4063 6179 6273 2262 2264 1133
+			2268 2273 2276 1156 6301 2284 2282 1157 6308 6310 6311 2288 6305 6300 6302 6297 6298 6299
+			6303 6306 1158
+
+			# IPE South America
+			4613 2927 749 759 2881 2902
+
+			# IPE Caribbean
+			490 4620 4621 4622 4623 6509
+
+			# IPE North America
+			6562 6566
+
+			2387
+
+			2805 2809 2815 
+			2893 2918 2923 2925 2926 2939 
+
+			1113 1116 1123 1135 1142 1148 1149 1155 1159 2237 2239 2245 2250 2263 2265 2270 2278 
+			2279 2280 2283 
+			
+			607 2374 606 612
+			485
+			2891 2892 2906 2907 2920 
+			
+			1114 1120 1124 1136 1137 1143 1150 1154 1160 1161
+			2238 2240 2248 2249 2252 2253 2267 2281 2285 2293
+			1167 1168 1190 1191 1193 1194 2774 2775 2794
+			1153 2266 2656 2886 2924 1187 1189
+			1925 #Kenya
+			4022 4028 4031 4032 #Madagascar
+			4034 4037 4038 4039 4045 4047 4048 4061 4062 4082 4083 4091
+			4092 4093 4094 4095 4096 4099 4107 #Central Africa
+			4618 4619 #Mesoamerica 1.28
+			
+		}		
+	}
+	
+	steppe = {
+		color = { 147 200 83  }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+		supply_limit = 6
+		
+		terrain_override = {
+			# IPE New East Asia
+			4692 4690 4689 4688 4684 469 2365 465 471 2351 2352 2361 477 2119 2110 3126 480 3651 3650
+			463 3183 3641 3656 3657 3640 3643 3642 3644 3646 3645 3637 3658 3635 3639 3638 3166 3170 3179
+			3636 3180 3155 3156 3188 2423 3933 3144 1065 4664 1058 2434 296 4116 3106 2405 6846 6847
+
+			# IPE New Europe
+			6254 6255 6256 3850 3887 3888
+
+			# IPE South America
+			6486 786 2865 2861 2848 2853
+
+			# IPE North America
+			891 896 898 890 903 907 909 1809 2007 2503 2511 6602 2666 883 887 902 900 2513 904 905
+			2512 2016 908 913 914 915 917 2519 2520 916 942 882 2496 4914 6619 1008 1010 2596 2597
+			2017 2018 2501
+
+			2195 2417 466 2367 470 472 2353 2358 476 2354 479 2357 1966 2420
+
+			284 1974 2412 2413 286 2414 287 2447 283 2406 282 1756 
+			
+			304 303 2415 302 2408 299 2409 285 291 2411 467 
+			1081 473 2421 1971 288 468 2418 2419 474 2366 1965 475 2441 2359
+			2360 478 2355 2422
+			
+			2416
+			
+			1076 1075 1071
+			889 2004 2625
+			
+			885 886 892 2500
+			 
+			2800
+			
+			2008 2497 2499 2502 2876 
+			4255 4264 4265 4267 # Russia
+			
+			714 2118 
+			717 722 724 725 2109 2115 2116 2187 2188
+			2727 #Australia
+			
+			4200 4202 4203 4218 4220 #Greater China
+			
+			# 1.29
+			4665 4674 4666 4667 4675 4672 4668 4683
+		}	
+	}
+		
+	urban_vienna = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		terrain_override = {
+			134
+		}
+	}
+	urban_salzburg = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			76
+		}
+	}
+	terrain_orderland = {		# Trento
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			110
+		}
+	}
+	urban_linz = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+	
+		terrain_override = {
+			133
+		}
+	}
+	urban_bern = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			165
+		}
+	}
+	urban_steiermark = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			132
+		}
+	}
+	urban_tirol = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			73
+		}
+	}
+
+	urban_hanseatic = {			# some hansa cities (will be replaced) riga
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		
+		terrain_override = {
+			38
+		}
+	}
+	
+	# netherlands
+	
+	urban_brugge = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		
+		terrain_override = {
+			90
+		}
+	}
+	urban_antwerp = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		
+		terrain_override = {
+			1744
+		}
+	}	
+	urban_amsterdam = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+	
+		terrain_override = {
+			97
+		}
+	}	
+	urban_denbosch = {			# Breda
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+
+		terrain_override = {
+			4770
+		}
+	}	
+	urban_gelre = {				# aka Arnhem
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			99
+		}
+	}	
+	urban_utrecht = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			98
+		}
+	}	
+	urban_den_haag = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			4383
+		}
+	}	
+	urban_groeningen = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			6921
+		}
+	}
+	urban_brussel = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			92
+		}
+	}
+	
+	# Germany
+	
+	urban_berlin = {	
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			50
+		}
+	}		
+	urban_hamburg = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		
+		terrain_override = {
+			44
+		}
+	}
+	urban_dresden = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			61
+		}
+	}
+	urban_munich = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			65
+		}
+	}
+	urban_heidelberg = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05		
+		
+		terrain_override = {
+			77
+		}
+	}
+	urban_cotbus = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			3665
+		}
+	}
+	thuringian_woods = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			63 4743 3971 4716 3968 3970 3969
+		}
+	}
+	urban_amberg = {		
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			1757
+		}
+	}
+	urban_augsburg = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			1868
+		}
+	}
+	urban_baden = {		
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			74
+		}
+	}
+	urban_bamberg = {		
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			66
+		}
+	}
+	urban_freiburg = {		
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			72
+		}
+	}
+	urban_ingolstadt = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			2955
+		}
+	}
+	urban_landshut = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			64
+		}
+	}
+	urban_mainz = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			78
+		}
+	}
+	urban_nuernberg = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			67
+		}
+	}
+	urban_regensburg = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			2957
+		}
+	}
+	urban_straubing = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+	
+		terrain_override = {
+			2956
+		}
+	}
+	urban_stuttgart = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			70
+		}
+	}
+	urban_swabian_hall = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+	
+		terrain_override = {
+			3664
+		}
+	}
+	urban_ulm = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			1872
+		}
+	}
+	urban_worms = {		
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			3985
+		}
+	}
+	urban_wuerzburg = {		
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			79
+		}
+	}
+	urban_strassburg = {		
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+	
+		terrain_override = {
+			75
+		}
+	}
+	urban_memmingen = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			68
+		}
+	}
+	urban_neuruppin = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			51
+		}
+	}
+	urban_stendal = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			2964
+		}
+	}
+	urban_lueneburg = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			53
+		}
+	}
+	urban_osnabrueck = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			56
+		}
+	}
+	urban_sternberg = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			2969
+		}
+	}
+	urban_prenzlau = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			2993
+		}
+	}
+	urban_lauenburg = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			1857
+		}
+	}
+	urban_wittenberg = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			59
+		}
+	}
+	urban_kiel = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			1775
+		}
+	}
+	urban_slesvig = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			13
+		}
+	}
+	urban_emden = {
+		color = { 13 189 130 }
+
+		type = marsh
+		sound_type = forest
+
+		movement_cost = 1.3
+		defence = 1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			1931
+		}
+	}
+	urban_oldenburg = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			55
+		}
+	}
+	urban_bremervoerde = {
+		color = { 13 189 130 }
+
+		type = marsh
+		sound_type = forest
+
+		movement_cost = 1.3
+		defence = 1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+	
+		terrain_override = {
+			54
+		}
+	}
+	urban_heide = {
+		color = { 13 189 130 }
+
+		type = marsh
+		sound_type = forest
+
+		movement_cost = 1.3
+		defence = 1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			4141
+		}
+	}
+	urban_aachen = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			1878
+		}
+	}
+	urban_brunswik = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			57
+		}
+	}
+	urban_dessau = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			58
+		}
+	}
+	urban_duesseldorf = {		# Berg
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			84
+		}
+	}
+	urban_greifswald = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			2994
+		}
+	}
+	urban_hannover = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			1758
+		}
+	}
+	urban_hoya = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			2971
+		}
+	}
+	urban_kassel = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			1762
+		}
+	}
+	urban_kleve = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			2975
+		}
+	}
+	urban_koblenz = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			1760
+		}
+	}
+	urban_leipzig = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+
+		terrain_override = {
+			62
+		}
+	}
+	urban_luebeck = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			45
+		}
+	}
+	urban_marburg = {			# Hessen
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			81
+		}
+	}
+	urban_meppen = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			2973
+		}
+	}
+	urban_muenster = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			86
+		}
+	}
+	urban_potsdam = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			1759
+		}
+	}
+	urban_rostock = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			46
+		}
+	}
+	urban_stralsund = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			47
+		}
+	}
+	urban_trier = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			80
+		}
+	}
+	urban_wiesbaden = {			# Nassau
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			83
+		}
+	}
+	urban_wismar = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			2996
+		}
+	}
+	urban_paderborn = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			2972
+		}
+	}
+	urban_arnsberg = {			# Westfalen
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			82
+		}
+	}
+	urban_magdeburg = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			52
+		}
+	}
+	urban_bremen = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			1874
+		}
+	}
+	urban_frankfurt = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		terrain_override = {
+			1876
+		}
+	}
+	urban_koeln = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		terrain_override = {
+			85
+		}
+	}
+	urban_luxemburg = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			94
+		}
+	}
+	
+	
+	# Prussia aka old German areas
+	
+	urban_koenigsberg = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			41
+		}
+	}
+	urban_danzig = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		
+		terrain_override = {
+			43
+		}
+	}
+	urban_kulm = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			1859
+		}
+	}
+	urban_landsberg = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			49
+		}
+	}
+	urban_kolberg = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			48
+		}
+	}
+	urban_marienburg = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		
+		terrain_override = {
+			1841
+		}
+	}
+	urban_stetin = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			1858
+		}
+	}
+	urban_stolp = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			2995
+		}
+	}
+	urban_memel = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			40
+		}
+	}
+	
+	# Bohemia & Silesia
+	
+	urban_praga = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		
+		terrain_override = {
+			266
+		}
+	}
+	urban_breslau = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05	
+		
+		terrain_override = {
+			264
+		}
+	}
+	urban_litomerice = {		# Rudohori
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+	
+		terrain_override = {
+			1771
+		}
+	}
+	urban_pilsen = {			# Pilsen
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			267
+		}
+	}
+	urban_budweis = {		
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			2968
+		}
+	}
+	bohemian_mountains = {		# Eger & Vogtland
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			2967 2965 3966
+		}
+	}
+	
+	# Scandinavia
+		
+	urban_copenhagen = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			12		
+		}
+	}	
+	urban_stockholm = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			1		
+		}
+	}	
+	urban_trondheim = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			20
+		}
+	}
+	urban_bergen = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			23
+		}
+	}
+	urban_christiania = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			17
+		}
+	}
+	urban_sogn = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+	
+		terrain_override = {
+			2752
+		}
+	}
+	urban_agder = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			24
+		}
+	}
+	urban_halogaland = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			21
+		}
+	}
+	urban_fyn = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			14
+		}
+	}
+	urban_ostjylland = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			4142
+		}
+	}
+	urban_vestjylland = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			15
+		}
+	}
+	urban_nordjylland = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			1984
+		}
+	}
+	urban_kolding = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			4149
+		}
+	}
+	urban_bornholm = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			1981
+		}
+	}
+	urban_kalmar = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			3
+		}
+	}
+	urban_gotland = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			25
+		}
+	}
+	sweden_forest = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			4 5 8 3941 1985
+		}
+	}
+	finnmark_forest = {
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = {
+			315
+		}
+	}
+	
+	# Great Britain
+	urban_london = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			236
+		}
+	}
+	urban_newcastle = {
+		color = { 13 189 130 }
+
+		type = marsh
+		sound_type = forest
+
+		movement_cost = 1.3
+		defence = 1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			246
+		}
+	}
+	urban_edinborough = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			248
+		}
+	}
+	urban_oxford = {			# oxfordshire
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			237
+		}
+	}
+	urban_nottingham = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			3725
+		}
+	}
+	urban_carlisle = {		# Cumbria
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			247
+		}
+	}
+	urban_bristol = {		# Gloucester
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			239
+		}
+	}
+	urban_salisbury = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+            3722
+		}
+	}
+	urban_chester = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			4375
+		}
+	}
+	urban_exeter = {		# Devon
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			4373
+		}
+	}
+	urban_coventry = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			4372
+		}
+	}
+	urban_york = {				# yorkshire
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			245
+		}
+	}
+	urban_lincoln = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05		
+		terrain_override = {
+			243
+		}
+	}
+	urban_kent = {				# aka Canterbury
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			235
+		}
+	}
+	urban_dublin = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			373
+		}
+	}
+	urban_iverness = {
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9
+		terrain_override = {
+			252
+		}
+	}
+	scottish_highlands = {
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9
+		terrain_override = {
+			250 4110 4363 6642 6645
+		}
+	}
+	urban_hebrids = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			253 4364
+		}
+	}	
+	urban_fife = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			3730
+		}
+	}
+	urban_ayr_glasgow = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+	
+		terrain_override = {
+			3733
+		}
+	}
+	# France
+	urban_paris = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			183
+		}
+	}
+	urban_lyon = {
+		color = { 113 176 151 }
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			203
+		}
+	}
+	urban_nice = {
+		color = { 113 176 151 }
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			102
+		}
+	}
+	urban_marseille = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			6196
+		}
+	}
+	urban_besancon = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			193
+		}
+	}
+	urban_carcassonne = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			4695
+		}
+	}
+	
+	# Russia
+	urban_moscow = {		
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			295
+		}
+	}
+	urban_novgorod = {		
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			310
+		}
+	}
+	urban_vladimir = {		
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = {
+			307
+		}
+	}
+	urban_mozhaisk = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			4251
+		}
+	}
+	urban_rostov = {		
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = {
+			4147
+		}
+	}
+	urban_tver = {
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = {
+			294
+		}
+	}
+	urban_suzdal = {		
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+			
+		terrain_override = {
+			1956
+		}
+	}
+	urban_nizhny_novgorod = {			
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+			
+		terrain_override = {
+			306
+		}
+	}
+	urban_pleskau = {			
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+	
+		terrain_override = {
+			274
+		}
+	}
+	urban_rzhev = {			
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = {
+			1752
+		}
+	}
+	urban_yaroslavl = {			
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+				
+		terrain_override = {
+			308
+		}
+	}
+	urban_kazan = {			
+		color = { 147 200 83  }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+		supply_limit = 6
+		
+		terrain_override = {
+			1082
+		}
+	}
+	urban_tula = {			
+		color = { 147 200 83  }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+		supply_limit = 6
+		
+		terrain_override = {
+			300
+		}
+	}
+	urban_kasimov = {			
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = {
+			1778
+		}
+	}
+	urban_ustjug = {			
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = {
+			1755
+		}
+	}
+	urban_vologda = {			
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = {
+			314
+		}
+	}
+	urban_galich = {			
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+		
+		terrain_override = {
+			1957
+		}
+	}
+	urban_kostroma = {			
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+
+		terrain_override = {
+			1753
+		}
+	}
+	urban_kolomna = {			
+		color = { 147 200 83  }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+		supply_limit = 6
+		
+		terrain_override = {
+			4252
+		}
+	}
+	urban_ryasan = {			
+		color = { 147 200 83  }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+		supply_limit = 6
+		
+		terrain_override = {
+			301
+		}
+	}
+	urban_saint_petersburg = {			
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			33
+		}
+	}
+	urban_baloozero = {			
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9
+
+		terrain_override = {
+			312
+		}
+	}
+	urban_cherdyn = {			
+		color = { 18 74 9 }
+
+		type = forest
+		sound_type = forest
+		
+		movement_cost = 1.25
+		defence = 1
+		supply_limit = 4
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9
+		terrain_override = {
+			1963
+		}
+	}
+	urban_hajitarkhan = {			
+		color = { 13 189 130 }
+
+		type = marsh
+		sound_type = forest
+
+		movement_cost = 1.3
+		defence = 1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			464
+		}
+	}
+	urban_samarkand = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+		
+		terrain_override = {
+			454
+		}
+	}
+	
+	# East Europa
+	urban_smolensk = {			
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			293
+		}
+	}
+	urban_minsk = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			276
+		}
+	}	
+	urban_grodno = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			1937
+		}
+	}	
+	urban_vilna = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			272
+		}
+	}
+	urban_kiev = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			280
+		}
+	}
+	urban_polotsk = {			
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			275
+		}
+	}
+	urban_lwow = {			
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			2961
+		}
+	}
+	urban_vitebsk = {			
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			771
+		}
+	}
+	urban_kursk = {			
+		color = { 147 200 83  }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+		supply_limit = 6
+		
+		terrain_override = {
+			298
+		}
+	}
+	urban_trakai = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			270
+		}
+	}
+	urban_warsaw = {
+		color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			257
+		}
+	}
+	urban_lublin = {
+		color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			260
+		}
+	}
+	urban_cracow = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			262
+		}
+	}
+	urban_theodoro = {
+		color = { 147 200 83  }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+		supply_limit = 6
+		
+		terrain_override = {
+			2410
+		}
+	}
+	urban_budapest = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			153
+		}
+	}
+	urban_tiflis = {		
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			423
+		}
+	}
+	urban_mogilyov = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+	
+		terrain_override = {
+			292
+		}
+	}
+	
+	urban_oesel = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+	
+		terrain_override = {
+			35
+		}
+	}
+	urban_reval = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			36
+		}
+	}
+	
+	# Italy
+	urban_milano = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			104
+		}
+	}
+	urban_mantua = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			109
+		}
+	}
+	urban_siena = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			117
+		}
+	}
+	urban_pisa = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			115
+		}
+	}
+	urban_rome = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			118
+		}
+	}
+	urban_venice = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			112
+		}
+	}
+	urban_genoa = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			101
+		}
+	}
+	urban_naples = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			121
+		}
+	}
+	urban_firenze = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			116
+		}
+	}
+	urban_ragusa = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			137
+		}
+	}
+	urban_verona = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			108
+		}
+	}
+	urban_palermo = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			125
+		}
+	}
+	urban_malta = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			126
+		}
+	}
+	
+	# Byzantium	aka Greek area
+	urban_thessaloniki = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			148
+		}
+	}
+	urban_athens = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			146
+		}
+	}
+	urban_constantinople = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			151
+		}
+	}
+	urban_rhodos = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			320
+		}
+	}
+	urban_nicosia = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			321
+		}
+	}
+	urban_trebizond = {		
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			330
+		}
+	}
+	urban_corfu = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			142
+		}
+	}
+	
+	# Hispania aka Spain & Portugal
+	urban_sevilla = {		
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			224
+		}
+	}
+	urban_toledo = {		
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			219
+		}
+	}
+	urban_lisboa = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			227
+		}
+	}
+	urban_braganca = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			232
+		}
+	}
+	urban_porto = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			231
+		}
+	}
+	urban_coimbra = {		
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+
+		terrain_override = {
+			1851
+		}
+	}
+	
+	urban_cadiz = {		
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			1749
+		}
+	}
+	urban_granada = {		
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			223
+		}
+	}
+	urban_madrid = {		
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			217
+		}
+	}
+	urban_valencia = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+		
+		terrain_override = {
+			220
+		}
+	}
+	urban_barcelona = {		
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			213
+		}
+	}
+	urban_bilbao = {		
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			209
+		}
+	}
+	urban_arabic = { # Gibraltar
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			226
+		}
+	}
+	
+	pyramids = {			# pyramids of Gizeh
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			6418
+		}
+	}
+	urban_mecca = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			385
+		}
+	}
+	urban_medina = {
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+		
+		terrain_override = {
+			384
+		}
+	}
+	urban_jerusalem = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+		terrain_override = {
+			379
+		}
+	} 
+	urban_kars = {	
+		color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			2204
+		}
+	}
+	urban_smyrna = {	
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+			
+		terrain_override = {
+			3568
+		}
+	}
+	urban_bursa = {	
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+			
+		terrain_override = {
+			317
+		}
+	}
+	urban_akkon = {				# and Naablus
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+		terrain_override = {
+			3037
+		}
+	}
+	urban_cairo = {
+		color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			361
+		}
+	}
+	urban_tunis = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+		terrain_override = {
+			341
+		}
+	}
+	urban_alexandria = {
+		color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			358
+		}
+	}
+
+	urban_angkor_wat = {
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5	
+		terrain_override = {
+			609
+		}
+	}
+	urban_tenochtitlan = {
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+		terrain_override = {
+			852
+		}
+	}
+	urban_kilwa = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			1196
+		}
+	}
+	urban_gondar = {
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+		
+		terrain_override = {
+			1224
+		}
+	}
+	urban_havanna = {		# Cuba baby!
+		color = { 248 199 23  }
+
+		type = plains
+		sound_type = plains
+
+		supply_limit = 6
+		movement_cost = 1.00
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.95	
+		
+		terrain_override = {
+			484
+		}
+	}
+	urban_nassau = {		# Bahamas
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			482
+		}
+	}
+	urban_new_orleans = {	# Louisiana
+		color = { 13 189 130 }
+
+		type = marsh
+		sound_type = forest
+
+		movement_cost = 1.3
+		defence = 1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			893
+		}
+	}
+	urban_new_york = {		# Manhattan
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			965
+		}
+	}
+	urban_boston = {		# Massachusetts
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			968
+		}
+	}
+	easter_island = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			1988
+		}
+	}
+	
+	
+	# New bigger terrain areas added by LoL
+	
+	coast_baltic_sea = {		# Baltic Sea
+		color = { 49 175 191 }
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			1930 1983 
+		}
+	}
+	coast_north_sea = {			# nordic Islands aka atlantic coastline
+		color = { 49 175 191 }
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			369 1978 1979
+		}
+	}
+	coast_america = {
+		color = { 49 175 191 }
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			2578 983 982 2561 962 957 2554 6604 6605
+		}
+	}
+	generic_isle = {			# Karibische Inseln
+		color = { 49 175 191 }
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			499 496 491 495 501 498 1881 494
+		}
+	}
+	mountains_himalaya = {
+		color = { 235 235 235 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 3.0
+		defence = 3
+		local_defensiveness = 0.50
+		local_development_cost = 1
+		nation_designer_cost_multiplier = 0.50
+		supply_limit = 2
+		
+		terrain_override = {
+			676 2128 2071 3521 3427 2074 4514 4515 4516
+			4520 6745 2073 3458 2128 6790 6791 6792 6801
+			6836
+		}
+	}
+	mountains_rocky_mountains = {
+		color = { 235 235 235 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 3.0
+		defence = 3
+		local_defensiveness = 0.50
+		local_development_cost = 1
+		nation_designer_cost_multiplier = 0.50
+		supply_limit = 2
+		
+		terrain_override = {
+			2003 2603
+		}
+	}
+	mountains_appalachian = {
+		color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			931 936 935 6609 4889 6615 4879 6617
+		}
+	}
+	mountains_ural = {
+		color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			2444 1078 3154 3151
+		}
+	}
+	1beijing = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			1816
+		}
+	}
+	2nanjing = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			1821
+		}
+	}
+	3guangzhou = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			667
+		}
+	}
+	4hangzhou = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			684
+		}
+	}
+	5xian = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			700
+		}
+	}
+	6chengdu = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			679
+		}
+	}
+	7wuchang = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			682
+		}
+	}
+	8xiangyang = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			2171
+		}
+	}
+	9quanzhou = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			1829
+		}
+	}
+	10yangzhou = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			685
+		}
+	}
+	11shenyang = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			726
+		}
+	}
+	12luoyang = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+		    1836
+		}
+	}
+	13nanchang = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			683
+		}
+	}
+	14jinan = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			691
+		}
+	}
+	15hefei = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			1838
+		}
+	}
+	16shaoxing = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			2148
+		}
+	}
+	17lasa = {
+	    color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			677
+		}
+	}
+	kyoto = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			1020
+		}
+	}
+	19xichangcheng = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+		
+		terrain_override = {
+			2182 699 698
+		}
+	}
+	20zhongchangcheng = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			2179 2177
+		}
+	}
+	21dongchangcheng = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			704
+		}
+	}
+	22kaifeng = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			688
+		}
+	}
+	23yunnan = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			662
+		}
+	}
+	24xuanhua= {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			2136
+		}
+	}
+	25datong= {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			697
+		}
+	}
+	26yumen = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+		
+		terrain_override = {
+			707
+		}
+	}
+	27fuzhou = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			669
+		}
+	}
+	28dunhuang = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+		
+		terrain_override = {
+			708
+		}
+	}
+	29changsha = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			671
+		}
+	}
+	30suzhou = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			1822
+		}
+	}
+	31huaian = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			2142
+		}
+	}
+	660xsbn = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			660 2166
+		}
+	}
+	661dali = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			661
+		}
+	}
+	663guangnan = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			663
+		}
+	}
+	664lingyun = {
+		color = { 98 163 18 }
+		type = jungle
+		sound_type = jungle
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		terrain_override = {
+			664
+		}
+	}
+	665zhaoqing = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			665
+		}
+	}
+	666qiongzhou = {
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			666 
+		}
+	}
+	2160yazhou = {
+		color = { 98 163 18 }
+		type = jungle
+		sound_type = jungle
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		terrain_override = {
+			2160
+		}
+	}
+	668aomen = {
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			668
+		}
+	}
+	670ganzhou = {
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			670
+		}
+	}
+	672wulin = {
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			672
+		}
+	}
+	673zhenyuan = {
+		color = { 176 129 21 }
+		type = hills
+		sound_type = mountains
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9
+		terrain_override = {
+			673
+		}
+	}	
+	674guiyang = {
+		color = { 176 129 21 }
+		type = hills
+		sound_type = mountains
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9
+		terrain_override = {
+			674
+		}
+	}	
+	675wumeng = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			675
+		}
+	}
+    680chongqing = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			680
+		}
+	}
+    681yichang = {
+		color = { 113 176 151 }
+		type = hills
+		sound_type = mountains
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			681
+		}
+	}
+	686anqing = { 
+        color = { 113 176 151 }
+		type = hills
+		sound_type = mountains
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			686
+		}
+	}
+	687nanyang = { 
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			687
+		}
+	}
+    689hanzhong = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			689 
+		}
+	}
+    2183taozhou = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+
+		terrain_override = {
+			2183 
+		}
+	}
+	690qingzhou = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			690
+		}
+	}
+	692huaiqing = { 
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			692
+		}
+	}
+	693taiyuan = { 
+        color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			693
+		}
+	}
+	694pingyang = { 
+        color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			694
+		}
+	}
+	695hejian = {
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			695
+		}
+	}
+	696baoding = { 
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			696
+		}
+	}
+	728hrb = { 
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			728
+		}
+	}
+	730jilin = { 
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			730
+		}
+	}
+	738ck = { 
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			738
+		}
+	}
+	matsue = { 
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			1018
+		}
+	}
+	naniwa = { 
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			1021
+		}
+	}
+	kawagoe = { 
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			3303
+		}
+	}
+	kofu = { 
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			1029
+		}
+	}
+	kiyosu = { 
+        color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			1030
+		}
+	}
+	1824wenzhou = { 
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		
+		terrain_override = {
+			1824
+		}
+	}
+	1833jian = { 
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			1833
+		}
+	}
+	inabayama = { 
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			1835
+		}
+	}
+	1840guilin = { 
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			1840
+		}
+	}
+	2108hunchun = { 
+		color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			2108
+		}
+	}
+	2111htal = { 
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			2111
+		}
+	}
+	2112andong = { 
+		color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+		movement_cost = 1.5
+		defence = 2
+
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			2112
+		}
+	}
+	2113gaizhou = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			2113
+		}
+	}
+	2133dege = { 
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			2133
+		}
+	}
+	2137daming = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			2137
+		}
+	}
+	2138wuding = {
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+         
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2138
+		}
+	}
+	2139laizhou = {
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+         
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2139
+		}
+	}
+	2140yanzhou = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2140
+		}
+	}
+	2141xuzhou = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2141
+		}
+	}
+	2143fengyang = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2143
+		}
+	}
+	2144fuyang = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2144
+		}
+	}
+	2145zhenjiang = {
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+         
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2145
+		}
+	}
+	2146ningguo = { 
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			2146
+		}
+	}
+	2147huizhou = { 
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			2147
+		}
+	}
+	2149ningbo = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+	
+		terrain_override = {
+			2149
+		}
+	}
+	2150jinhua = { 
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			2150
+		}
+	}
+	2151poyang = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2151
+		}
+	}
+	2152jianning = { 
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			2152
+		}
+	}
+
+	2153tingzhou = { 
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			2153
+		}
+	}
+	2154jilong = { 
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+			
+		terrain_override = {
+			2154
+		}
+	}
+	2155dadu = { 
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			2155
+		}
+	}
+	2156chaozhou = {
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			2156
+		}
+	}
+	2157huizhou = { 
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			2157
+		}
+	}
+	2158shaoguan = { 
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+
+		terrain_override = {
+			2158
+		}
+	}
+	2159leizhou = { 
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			2159
+		}
+	}
+	2161lianzhou = { 
+		color = { 98 163 18 }
+		type = jungle
+		sound_type = jungle
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+         
+		terrain_override = {
+			2161
+		}
+	}
+	2162wuzhou = { 
+		color = { 98 163 18 }
+		type = jungle
+		sound_type = jungle
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		terrain_override = {
+			2162
+		}
+	}
+	2163liuzhou = { 
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			2163
+		}
+	}
+	2164nanning = { 
+		color = { 98 163 18 }
+		type = jungle
+		sound_type = jungle
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		terrain_override = {
+			2164
+		}
+	}
+	2165puer = { 
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			2165
+		}
+	}
+	2167lijiang = { 
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			2167
+		}
+	}
+	2168bozhou = { 
+        color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			2168
+		}
+	}
+	2169langzhong = { 
+		color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			2169
+		}
+	}
+	2170songqu = { 
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			2170
+		}
+	}
+	2172jingzhou = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2172
+		}
+	}
+	2173yuanling = { 
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			2173
+		}
+	}
+	2174hengyang = { 
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+		
+		terrain_override = {
+			2174
+		}
+	}
+	2175runing = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2175
+		}
+	}
+	2176shangqiu = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			2176
+		}
+	}
+	2180tianshui = { 
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			2180
+		}
+	}
+	2181pingliang = { 
+		color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+
+		terrain_override = {
+			2181
+		}
+	}
+	2184xining = { 
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			2184
+		}
+	}
+	2190hlhl = { 
+		color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			2190
+		}
+	}
+	2748jianchang = { 
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			2748
+		}
+	}
+	4194yongping = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+         
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			4194
+		}
+	}
+	4195zhending = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			4195
+		}
+	}
+	4196haizhou = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+         
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			4196
+		}
+	}
+	4197huangzhou = { 
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			4197
+		}
+	}
+	4198fengxiang = { 
+        color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			4198
+		}
+	}
+	4199tongren = { 
+		color = { 176 129 21 }
+		type = hills
+		sound_type = mountains
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9
+		terrain_override = {
+			4199
+		}
+	}
+	4201jianzhou = { 
+		color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			4201
+		}
+	}
+	4211dazhou = { 
+		color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			4211
+		}
+	}
+	4212jiazhou = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			4212
+		}
+	}
+	4213luzhou = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			4213
+		}
+	}
+	kiriyama = { 
+        color = { 179 255 64 }
+		type = plains
+		sound_type = plains
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		terrain_override = {
+			4359
+		}
+	}
+	hakata = { 
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			1818
+		}
+	}
+	kumamoto = { 
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			4181
+		}
+	}
+	himeji = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			1019
+		}
+	}
+	nagasaki = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			4182
+		}
+	}
+	funai = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			1014
+		}
+	}
+	obi = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			6798
+		}
+	}
+	kagoshima = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			1012
+		}
+	}
+	yuzuki = {
+        color = { 41 155 22 }
+		type = forest
+		sound_type = forest
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			4186
+		}
+	}
+	nakamura = {
+        color = { 41 155 22 }
+		type = forest
+		sound_type = forest
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			6794
+		}
+	}
+	tokushima = {
+        color = { 113 176 151 }
+		type = hills
+		sound_type = mountains
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			1820
+		}
+	}
+	yamaguchi = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			1017
+		}
+	}
+	hamada = {
+        color = { 113 176 151 }
+		type = hills
+		sound_type = mountains
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			4183
+		}
+	}
+	okayama = {
+        color = { 41 155 22 }
+		type = forest
+		sound_type = forest
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			4184
+		}
+	}
+	tottori = {
+        color = { 113 176 151 }
+		type = hills
+		sound_type = mountains
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			6863
+		}
+	}
+	miyazu = {
+        color = { 113 176 151 }
+		type = hills
+		sound_type = mountains
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			4185
+		}
+	}
+	wakayama = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+
+		terrain_override = {
+			4187
+		}
+	}
+	nara = {
+        color = { 113 176 151 }
+		type = hills
+		sound_type = mountains
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			1832
+		}
+	}
+	takefu = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			1023
+		}
+	}
+	kanazawa = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			1837
+		}
+	}
+	naoetsu = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		
+		terrain_override = {
+			1024
+		}
+	}
+	okazaki = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+	
+		terrain_override = {
+			4360
+		}
+	}
+	sunpu = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			1839
+		}
+	}
+	nagano = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			4188
+		}
+	}
+	mayabashi = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			1843
+		}
+	}
+	kamakura = {
+        color = { 41 155 22 }
+		type = forest
+		sound_type = forest
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			4189
+		}
+	}
+	sakura = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			4190
+		}
+	}
+	ota = {
+        color = { 41 155 22 }
+		type = forest
+		sound_type = forest
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		terrain_override = {
+			1027
+		}
+	}
+	utsunomiya = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			4191
+		}
+	}
+	aizu = {
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+	
+		terrain_override = {
+			3300
+		}
+	}
+	yamagata = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			1025
+		}
+	}
+	akita = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			6855
+		}
+	}
+	sannohe = {
+        color = { 105 24 4 }
+		type = mountains
+		sound_type = mountains
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		terrain_override = {
+			4131
+		}
+	}
+	katsuyama = {
+        color = { 49 175 191 }
+		sound_type = sea
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			4193
+		}
+	}
+	shiribeshi = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+	
+		terrain_override = {
+			1847
+		}
+	}
+
+	tokachi = {
+        color = { 113 176 151 }
+		type = hills
+		sound_type = mountains
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+		terrain_override = {
+			1852
+		}
+	}
+	kamikawa = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			1031
+		}
+	}
+	shuri = {
+        color = { 49 175 191 }
+		sound_type = sea
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			1015
+		}
+	}
+
+	Hwangju = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+			
+		terrain_override = {
+			733
+		}
+	}
+	Haeju = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+			
+		terrain_override = {
+			4231
+		}
+	}
+	Pyeongyang = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+			
+		terrain_override = {
+			1845
+		}
+	}
+	Gyeongju = {
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+	
+		terrain_override = {
+			2745
+		}
+	}
+	Hanseong = {
+	    color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			735
+		}
+	}
+    Jeonju = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			737
+		}
+	}
+	Cheongju = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			1013
+		}
+	}
+	Jeju = {
+        color = { 49 175 191 }
+		sound_type = sea
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+		terrain_override = {
+			2741
+		}
+	}
+	Wonju = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			734
+		}
+	}
+	Jinju = {
+		color = { 41 155 22 }
+
+		type = forest
+		sound_type = forest
+
+		movement_cost = 1.10
+		defence = 1
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.9
+		supply_limit = 6
+		
+		terrain_override = {
+			4227
+		}
+	}
+	
+	###############EAST_ASIA##########
+	Palembang = {
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+		
+		terrain_override = {
+			622
+		}
+	}
+	
+	Urumqi = {
+		color = { 147 200 83  }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.20
+		nation_designer_cost_multiplier = 0.9	
+		supply_limit = 6
+	
+		terrain_override = {
+			715
+		}
+	}
+	Yarkant = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+	
+		terrain_override = {
+			2124
+		}
+	}
+	Hotan = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+	
+		terrain_override = {
+			710
+		}
+	}
+	Tsaidam = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			706
+		}
+	}
+	Balikul = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+		
+		terrain_override = {
+			4206
+		}
+	}
+	
+	Nedong = {
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+	
+		terrain_override = {
+			4517
+		}
+	}
+	
+	Hami = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			2122
+		}
+	}
+	
+	DongKinh = {
+	    color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			613
+		}
+	}
+	Ayutthaya = {
+	    color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+		
+		terrain_override = {
+			600
+		}
+	}	
+
+	urban_ceuta = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+		
+		terrain_override = {
+			1751
+		}
+	}
+
+	urban_constantine = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			340
+		}
+	}
+	
+	urban_damietta = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			363
+		}
+	}
+	
+	urban_hautesplaines = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			2459
+			2462
+			2463
+			6018
+		}
+	}
+	
+	urban_kef = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			2454
+		}
+	}
+	
+	urban_mitija-algiers = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			338
+		}
+	}
+	
+	urban_mombasa = {		
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+
+		terrain_override = {
+			1202
+		}
+	}
+	
+	urban_mountsinai = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			365
+		}
+	}
+	
+	urban_nilefayyum = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			359
+		}
+	}
+	
+	urban_ourzazate = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			2464
+		}
+	}
+	
+	urban_sousse = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			2473
+		}
+	}
+	
+	urban_suakin = {		
+		color = { 255 211 110 }
+
+		type = desert
+		sound_type = desert
+
+		movement_cost = 1.0
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.9		
+		supply_limit = 4
+
+		terrain_override = {
+			1232
+		}
+	}
+	
+	urban_tangiers = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			334
+		}
+	}
+	
+	urban_tetouan = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+		
+		terrain_override = {
+			4561
+		}
+	}
+	
+	urban_timbuktu = {		
+		color = { 248 199 23  }
+
+		type = plains
+		sound_type = plains
+
+		supply_limit = 6
+		movement_cost = 1.00
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.95	
+
+		terrain_override = {
+			1132
+		}
+	}
+	
+	urban_tripolitania = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			354
+		}
+	}
+	
+	urban_zanzibar = {		
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+
+		terrain_override = {
+			1201
+		}
+	}
+	
+################# Arab World ######################
+
+	urban_aden = {		
+		color = { 255 211 110 }
+
+		type = desert
+		sound_type = desert
+
+		movement_cost = 1.0
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.9		
+		supply_limit = 4
+
+		terrain_override = {
+			388
+		}
+	}
+	
+	urban_aleppo = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			377
+		}
+	}
+	
+	urban_antioch = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			2313
+		}
+	}
+	
+	urban_aqabah = {		
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+
+		terrain_override = {
+			4268
+		}
+	}
+
+	urban_baghdad = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			410
+		}
+	}
+	
+	urban_basra = {		
+		color = { 13 189 130 }
+
+		type = marsh
+		sound_type = forest
+
+		movement_cost = 1.3
+		defence = 1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			408
+		}
+	}
+	
+	urban_damascus = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			382
+		}
+	}
+	
+	urban_gaza = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			364
+		}
+	}
+	
+	urban_hama = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			1849
+		}
+	}
+	
+	urban_homs = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			4297
+		}
+	}
+	
+	urban_kerak = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			380
+		}
+	}
+	
+	urban_mosul = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			411
+		}
+	}
+	
+	urban_muscat = {
+		color = { 255 211 110 }
+
+		type = desert
+		sound_type = desert
+
+		movement_cost = 1.0
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.9		
+		supply_limit = 4
+		
+		terrain_override = {
+			400
+		}
+	}
+	
+	urban_najaf = {
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+		
+		terrain_override = {
+			2311
+		}
+	}
+	
+	urban_palmyra = {
+		color = { 242 242 111 }
+
+		type = desert
+		sound_type = desert
+
+		movement_cost = 1.05
+		supply_limit = 4
+		local_development_cost = 1
+		nation_designer_cost_multiplier = 0.8
+		
+		terrain_override = {
+			405
+		}
+	}
+	
+	urban_sanaa = {		
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+
+		terrain_override = {
+			390
+		}
+	}
+	
+	urban_shatt = {		
+		color = { 13 189 130 }
+
+		type = marsh
+		sound_type = forest
+
+		movement_cost = 1.3
+		defence = 1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			4288
+		}
+	}
+	
+	urban_socotra = {
+		color = { 255 211 110 }
+
+		type = desert
+		sound_type = desert
+
+		movement_cost = 1.0
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.9		
+		supply_limit = 4
+		
+		terrain_override = {
+			1099
+		}
+	}
+	
+	urban_suwayda = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			4271
+		}
+	}
+	
+	urban_tikrit = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			2310
+		}
+	}
+	
+	urban_trablussham = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			378
+		}
+	}
+	
+################# Asia ###############################3
+	
+	urban_delhi = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			522
+		}
+	}
+	
+	urban_dhaka = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			564
+		}
+	}
+	
+	urban_gingee = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			1947
+		}
+	}
+	
+	urban_gird = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			525
+		}
+	}
+	
+	urban_goa = {		
+		color = { 113 176 151 }
+
+		type = hills
+		sound_type = mountains
+
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.25
+		nation_designer_cost_multiplier = 0.85
+		supply_limit = 5
+
+		terrain_override = {
+			2030
+		}
+	}
+	
+	urban_golconda = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			542
+		}
+	}
+	
+	urban_isfahan = {		
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+
+		terrain_override = {
+			429
+		}
+	}
+	
+	urban_jaunpur = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			555
+		}
+	}
+	
+	urban_kabul = {		
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+
+		terrain_override = {
+			451
+		}
+	}
+	
+	urban_kashmir = {		
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+
+		terrain_override = {
+			508
+		}
+	}
+	
+	urban_kermanshah = {		
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+
+		terrain_override = {
+			2210
+		}
+	}
+	
+	urban_kumari = {
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+	
+		terrain_override = {
+			4410
+		}
+	}
+	
+	urban_qom = {		
+		color = { 232 172 102 }		
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.00
+		local_development_cost = 0.05
+		nation_designer_cost_multiplier = 0.95
+		supply_limit = 7
+		allowed_num_of_buildings = 1
+
+		terrain_override = {
+			2213
+		}
+	}
+	
+	urban_lahore = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			507
+		}
+	}
+	
+	urban_lucknow = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			523
+		}
+	}
+	
+	urban_malacca = {		
+		color = { 98 163 18 }
+
+		type = jungle
+		sound_type = jungle
+
+		movement_cost = 1.5
+		defence = 1
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.8
+		supply_limit = 5
+
+		terrain_override = {
+			596
+		}
+	}
+	
+	urban_multan = {		
+		color = { 179 255 64 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.10
+		local_development_cost = -0.1
+		supply_limit = 10
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1.05
+
+		terrain_override = {
+			506
+		}
+	}
+	
+	urban_mysore = {		
+		color = { 176 129 21 }
+
+		type = hills
+		sound_type = mountains
+		
+		supply_limit = 6
+		movement_cost = 1.40
+		defence = 1
+		local_defensiveness = 0.1
+		local_development_cost = 0.2
+		nation_designer_cost_multiplier = 0.9	
+
+		terrain_override = {
+			533
+		}
+	}
+	
+	urban_shiraz = {		
+		color = { 105 24 4 }
+
+		type = mountains
+		sound_type = mountains
+
+		movement_cost = 1.5
+		defence = 2
+		local_defensiveness = 0.25
+		local_development_cost = 0.35
+		nation_designer_cost_multiplier = 0.75
+		supply_limit = 4
+
+		terrain_override = {
+			2218
+		}
+	}
+	
+	urban_ternate = {		
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+
+		terrain_override = {
+			649
+		}
+	}
+
+	urban_edirne = {		
+		color = { 90 235 27 }
+
+		type = plains
+		sound_type = plains
+
+		movement_cost = 1.0
+		supply_limit = 8
+		allowed_num_of_buildings = 1
+		nation_designer_cost_multiplier = 1
+
+		terrain_override = {
+			149
+		}
+	}
+	
+	urban_creta = {		
+		color = { 49 175 191 }
+
+		sound_type = sea
+
+		movement_cost = 1.0
+		local_development_cost = 0.15
+		nation_designer_cost_multiplier = 0.85		
+		supply_limit = 6 
+
+		terrain_override = {
+			3832
+		}
+	}
+}
+	
+##################################################################
+### Graphical terrain
+###		type	=	refers to the terrain defined above, "terrain category"'s 
+### 	color 	= 	index in bitmap color table (see terrain.bmp)
+###
+
+terrain = {
+	grasslands			= { type = grasslands		color = { 	0	 } }
+	hills				= { type = hills			color = { 	1	 } }
+	desert_mountain		= { type = mountain			color = { 	2	 } }
+	desert				= { type = desert			color = { 	3	 } }
+
+	plains				= { type = grasslands		color = { 	4	 } }
+	terrain_5			= { type = grasslands		color = { 	5	 } }
+	mountain			= { type = mountain			color = { 	6	 } }
+	desert_mountain_low	= { type = desert			color = { 	7	 } }
+
+	terrain_8			= { type = hills			color = { 	8	 } }
+	marsh				= { type = marsh			color = { 	9	 } }
+	terrain_10			= { type = farmlands		color = { 	10	 } }
+	terrain_11			= { type = farmlands		color = { 	11	 } }
+
+	forest_12			= { type = forest			color = { 	12	 } }
+	forest_13			= { type = forest			color = { 	13	 } }
+	forest_14			= { type = forest			color = { 	14	 } }
+	ocean				= { type = ocean			color = { 	15	 } }
+
+	snow				= { type = mountain 		color = { 	16	 } } # (SPECIAL CASE) Used to identify permanent snow
+	inland_ocean_17 	= { type = inland_ocean		color = {	17	 } }
+
+	coastal_desert_18	= { type = coastal_desert	color = { 	19	 } }
+	coastline			= { type = coastline		color = { 	35	 } }
+	
+	savannah			= { type = savannah 		color = {	20	 } }
+	drylands			= { type = drylands			color = {	22	 } }
+	highlands			= { type = highlands		color = {	23	 } }
+	dry_highlands		= { type = highlands		color = {	24	 } }
+	
+	woods				= { type = woods			color = { 	255	 } }
+	jungle				= { type = jungle			color = { 	254	 } }
+	
+	terrain_21			= { type = farmlands		color = { 	21	 } }	
+}
+
+##################################################################
+### Tree terrain
+###		terrain	=	refers to the terrain tag defined above
+### 	color 	= 	index in bitmap color table (see tree.bmp)
+###
+
+tree = {
+	forest				= { terrain = forest 			color = { 	3 4 6 7 19 20	} }
+	woods				= { terrain = woods 			color = { 	2 5 8 18	} }
+	jungle				= { terrain = jungle 			color = { 	13 14 15	} }
+	palms				= { terrain = desert 			color = { 	12	} }
+	savana				= { terrain = grasslands 		color = { 	27 28 29 30	} }
+}

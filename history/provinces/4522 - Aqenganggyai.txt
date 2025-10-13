@@ -1,0 +1,6 @@
+#4522 - Chungyang
+
+discovered_by = chinese
+
+1521.1.1 = { discovered_by = SPA }
+1544.1.1 = { discovered_by = POR }

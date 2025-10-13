@@ -1,0 +1,24 @@
+government = monarchy
+add_government_reform = iqta
+government_rank = 1
+primary_culture = persian
+religion = sunni
+technology_group = muslim
+capital = 433 # Yazd
+fixed_capital = 433
+religious_school = hanafi_school
+
+1433.1.1 = {
+	monarch = {
+		name = "Jalal al-Din Chaqmaq Shami"
+		dynasty = "Yazdi"
+		birth_date = 1392.1.1
+		adm = 4
+		dip = 4
+		mil = 4
+		culture = al_misr_arabic
+	}
+
+    add_ruler_personality = architectural_visionary_personality
+    add_ruler_personality = scholar_personality
+}

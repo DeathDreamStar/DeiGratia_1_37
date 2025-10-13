@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = barbary_state
+government_rank = 1
+primary_culture = tunisian
+add_accepted_culture = berber
+add_accepted_culture = algerian
+religion = sunni
+technology_group = muslim
+capital = 339
+religious_school = maliki_school
+
+1444.1.1 = {
+	monarch = {
+		name = "Abu al-Hasan"
+		dynasty = "al-Hafsiyun"
+		culture = tunisian
+		adm = 2
+		dip = 5
+		mil = 2
+	}
+}

@@ -1,0 +1,44 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = azerbaijani
+technology_group = muslim
+religion = sunni
+capital = 421
+religious_school = shafii_school
+
+1382.1.1 = {
+	monarch = {
+		name = "Ibrahim"
+		dynasty = "Kesrani"
+		adm = 4
+		dip = 6
+		mil = 5
+	}
+}
+
+1418.1.1 = {
+	monarch = {
+		name = "Khalilullah"
+		dynasty = "Kesrani"
+		adm = 4
+		dip = 4
+		mil = 4
+		birth_date = 1400.1.1
+	}
+	add_ruler_personality = fertile_personality
+	add_ruler_personality = architectural_visionary_personality
+	add_ruler_personality = lawgiver_personality
+}
+
+1441.1.1 = {
+	heir = {
+		name = "Farrukhsiyar Khalil"
+		dynasty = "Kesrani"
+		birth_date = 1405.1.1
+		death_date = 1500.1.1
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 1
+	}
+}

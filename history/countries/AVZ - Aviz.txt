@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = castillian
+add_accepted_culture = andalucian
+add_accepted_culture = leonese
+religion = catholic
+technology_group = western
+historical_friend = POR
+historical_rival = CAS
+capital = 4553 # Zamora
+national_focus = MIL
+
+add_army_professionalism = 0.1
+
+change_estate_land_share = {
+	estate = estate_nobles
+	share = 10
+}
+change_estate_land_share = {
+	estate = estate_church
+	share = -10
+}

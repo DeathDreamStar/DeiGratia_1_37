@@ -1,0 +1,72 @@
+########################################
+# Flavor Events for Habsan / Janjira
+#
+# Scripted by Henrik Lohmander
+########################################
+
+namespace = flavor_jaj
+normal_or_historical_nations = yes
+
+#Creation of Habsan/Janjira
+country_event = {
+	id = flavor_jaj.1
+	title = "flavor_jaj.1.t"
+	desc = "flavor_jaj.1.d"
+	picture = FORT_eventPicture
+	fire_only_once = yes
+
+	trigger = {
+		is_year = 1500
+		owns = 6741
+		NOT = { exists = JAJ }
+		is_subject = no
+		is_at_war = no
+		num_of_ports = 2
+		religion_group = muslim
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	immediate = {
+		hidden_effect = {
+			6741 = {
+				add_core = JAJ
+				add_building = fort_15th
+			}
+			release = JAJ
+			JAJ = {
+				change_government = monarchy
+				add_government_reform = indian_sultanate_reform
+				adopt_reform_progress = ROOT
+				define_ruler = {
+					dynasty = "Yaqut Khan"
+					culture = siddi
+					claim = 100
+				}
+				change_religion = sunni
+			}
+		}
+	}
+	
+	option = {
+		name = "flavor_jaj.1.a"
+		ai_chance = {
+			factor = 1
+		}
+		create_march = JAJ
+	}
+	option = {
+		name = "flavor_jaj.1.b"
+		ai_chance = {
+			factor = 0
+		}
+		JAJ = {
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_independence_war
+			}
+		}
+	}
+}

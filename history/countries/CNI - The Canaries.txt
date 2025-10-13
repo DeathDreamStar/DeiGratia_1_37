@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+technology_group = western
+primary_culture = normand
+add_accepted_culture = canarian
+religion = catholic
+capital = 366
+
+1425.1.1 = {
+	monarch = {
+		name = "Maciot"
+		dynasty = "de Béthencourt"
+		birth_date = 1385.1.1
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+	add_ruler_personality = cruel_personality
+	add_ruler_personality = embezzler_personality
+}

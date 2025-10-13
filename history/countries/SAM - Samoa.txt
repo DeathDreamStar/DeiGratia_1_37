@@ -1,0 +1,23 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 2
+primary_culture = polynesian
+religion = animism
+technology_group = polynesian_tech
+capital = 1243 #Samoa
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Salamasina"
+		dynasty = "Tui A'ana"
+		adm = 3
+		dip = 3
+		mil = 3
+		female = yes
+	}
+	add_country_modifier = {
+		name = pacific_isolation
+		duration = -1
+	}
+}

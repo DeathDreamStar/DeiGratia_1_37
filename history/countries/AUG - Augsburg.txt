@@ -1,0 +1,223 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = swabian
+religion = catholic
+technology_group = western
+capital = 6841 # Dillingen
+
+1373.4.1 = {
+	monarch = {
+		name = "Burkhard"
+		dynasty = "von Ellerbach"
+		adm = 0
+		dip = 2
+		mil = 1
+	}
+}
+1404.1.1 = {
+	monarch = {
+		name = "Eberhard II"
+		dynasty = "von Kirchberg"
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+1413.1.1 = {
+	monarch = {
+		name = "Friedrich II"
+		dynasty = "von Grafeneck"
+		adm = 1
+		mil = 1
+		dip = 0
+	}
+}
+1414.1.1 = {
+	monarch = {
+		name = "Anselm"
+		dynasty = "von Nenningen"
+		birth_date = 1350.1.1
+		adm = 1
+		mil = 2
+		dip = 0
+	}
+}
+1423.1.1 = {
+	monarch = {
+		name = "Peter"
+		dynasty = "von Schaumberg"
+		birth_date = 1388.2.22
+		adm = 1
+		mil = 2
+		dip = 0
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = calm_personality
+	add_ruler_personality = pious_personality
+}
+1469.1.1 = {
+	monarch = {
+		name = "Johann II"
+		dynasty = "von Werdenberg"
+		birth_date = 1430.1.1
+		adm = 1
+		dip = 5
+		mil = 0
+	}
+}
+1486.1.1 = {
+	monarch = {
+		name = "Friedrich II"
+		dynasty = "von Hohenzollern"
+		birth_date = 1451.1.1
+		adm = 0
+		dip = 2
+		mil = 3
+	}
+}
+1505.1.1 = {
+	monarch = {
+		name = "Heinrich IV"
+		dynasty = "von Lichtenau"
+		birth_date = 1443.1.1
+		adm = 2
+		dip = 0
+		mil = 3
+	}
+}
+1517.1.1 = {
+	monarch = {
+		name = "Christoph"
+		dynasty = "von Stadion"
+		birth_date = 1487.1.1
+		adm = 1
+		mil = 2
+		dip = 0
+	}
+}
+1543.1.1 = {
+	monarch = {
+		name = "Otto Truchsess"
+		dynasty = "von Waldburg"
+		birth_date = 1514.2.25
+		adm = 0
+		dip = 4
+		mil = 1
+	}
+}
+1573.1.1 = {
+	monarch = {
+		name = "Johann Eglof"
+		dynasty = "von Knöringen"
+		birth_date = 1537.7.25
+		adm = 0
+		dip = 5
+		mil = 0
+	}
+}
+1575.1.1 = {
+	monarch = {
+		name = "Marquard II"
+		dynasty = "von Berg"
+		birth_date = 1528.1.1
+		adm = 0
+		dip = 1
+		mil = 2
+	}
+}
+1591.1.1 = {
+	monarch = {
+		name = "Johann Otto"
+		dynasty = "von Gemmingen"
+		birth_date = 1545.10.23
+		adm = 0
+		dip = 2
+		mil = 0
+	}
+}
+1598.1.1 = {
+	monarch = {
+		name = "Heinrich V"
+		dynasty = "von Knöringen"
+		birth_date = 1570.2.5
+		adm = 0
+		dip = 2
+		mil = 0
+	}
+}
+1609.7.1 = { join_league = catholic }
+1646.1.1 = {
+	monarch = {
+		name = "Sigismund Franz"
+		dynasty = "von Habsburg"
+		birth_date = 1630.11.27
+		adm = 2
+		mil = 0
+		dip = 4
+	}
+}
+1648.10.24 = { leave_league = catholic }
+1666.1.1 = {
+	monarch = {
+		name = "Johann Christoph"
+		dynasty = "von Freyberg"
+		birth_date = 1616.9.28
+		adm = 0
+		dip = 2
+		mil = 0
+	}
+}
+1690.1.1 = {
+	monarch = {
+		name = "Alexander Sigmund"
+		dynasty = "von Wittelsbach"
+		birth_date = 1663.4.16
+		culture = bavarian
+		adm = 1
+		dip = 2
+		mil = 0
+	}
+}
+1737.1.1 = {
+	monarch = {
+		name = "Johann Franz"
+		dynasty = "von Stauffenberg"
+		birth_date = 1658.2.18
+		adm = 0
+		dip = 4
+		mil = 1
+	}
+}
+1740.1.1 = {
+	monarch = {
+		name = "Joseph Ignaz Philipp"
+		dynasty = "von Hessen"
+		birth_date = 1699.1.22
+		adm = 2
+		dip = 0
+		mil = 0
+	}
+}
+1768.1.12 = {
+	monarch = {
+		name = "Clemens Wenzel"
+		dynasty = "von Wettin"
+		birth_date = 1739.9.28
+		culture = saxon
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1812.1.1 = {
+	monarch = {
+		name = "Franz Friedrich"
+		dynasty = "von Hohenlohe"
+		birth_date = 1758.12.11
+		culture = franconian
+		adm = 0
+		dip = 3
+		mil = 0
+	}
+}

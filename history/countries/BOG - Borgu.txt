@@ -1,0 +1,16 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = bariba
+religion = shamanism #Fetishism
+technology_group = sub_saharan
+capital = 6291 # Djougou
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Kiseru"
+		dynasty = "Borgu"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

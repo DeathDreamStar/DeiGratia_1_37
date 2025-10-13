@@ -1,0 +1,19 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = burgundian 
+religion = catholic
+technology_group = western
+capital = 193
+fixed_capital = 193
+
+1054.1.1 = {
+	monarch = {
+		name = "Conseil Municipal"
+		adm = 2
+		dip = 2
+		mil = 2
+		regent = yes
+	}
+}

@@ -1,0 +1,11 @@
+embraced_bika_rathore = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+rejected_bika_rathore = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}

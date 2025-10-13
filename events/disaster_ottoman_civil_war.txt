@@ -1,0 +1,1740 @@
+namespace = ottoman_civil_war
+normal_or_historical_nations = yes
+
+# The Ottoman Civil War
+country_event = {
+	id = ottoman_civil_war.1
+	title = ottoman_civil_war.1.t
+	desc = ottoman_civil_war.1.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		set_country_flag = ottoman_brothers_ambition
+		set_global_flag = had_ottoman_civil_war
+		add_stability = -6
+		add_legitimacy = -50
+	}
+
+	option = { # Unnerving...
+		name = ottoman_civil_war.1.a
+		add_yearly_manpower = -5
+		custom_tooltip = ottoman_civil_war.1.a.tooltip
+	}
+}
+
+# The Ambition of Ahmed
+country_event = {
+	id = ottoman_civil_war.2
+	title = ottoman_civil_war.2.t
+	desc = ottoman_civil_war.2.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_disaster = ottoman_civil_war
+		has_country_flag = ottoman_brothers_ambition
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	immediate = {
+		set_country_flag = ahmed_rises
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					area = rum_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = cukurova_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = dulkadir_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = erzurum_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = karaman_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = north_kurdistan_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = ankara_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = western_cukurova_area
+				}
+				add_core = AMS
+			}
+			release = AMS
+			AMS = {
+				change_religion = sunni
+				set_capital = 1846
+				1846 = {
+					add_building = fort_15th
+				}
+				change_government = monarchy
+				add_government_reform = ottoman_government
+				adopt_reform_progress = ROOT
+				add_historical_rival = MAM
+				add_historical_rival = BYZ
+				add_historical_rival = HAB
+				add_historical_rival = SPA
+				add_historical_rival = ARA
+				add_historical_rival = POL
+				add_historical_rival = PLC
+				add_historical_rival = RUS
+				add_historical_rival = HUN
+				add_historical_rival = STY
+				add_historical_rival = RME
+				add_historical_rival = TEK
+				add_historical_rival = TUR
+				if = {
+					limit = {
+						TUR = {
+							government_rank = 1
+						}
+					}
+					set_government_rank = 1
+				}
+				if = {
+					limit = {
+						TUR = {
+							government_rank = 2
+						}
+					}
+					set_government_rank = 2
+				}
+				if = {
+					limit = {
+						TUR = {
+							government_rank = 3
+						}
+					}
+					set_government_rank = 3
+				}
+				define_ruler = {
+					name = "Ahmed"
+					dynasty = "Osmanoglu"
+					adm = 2
+					dip = 2
+					mil = 2
+				}
+				# define_ruler_to_general = {
+				#	fire = 1
+				#	shock = 1
+				#	manuever = 1
+				#	siege = 0
+				# }
+				if = {
+					limit = {
+						has_dlc = "Rights of Man" 
+					}
+					hidden_effect = { add_ruler_personality = craven_personality }
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 2.4
+						cavalry = 0.8
+						artillery = 0.8
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						light_ship = 1
+						galley = 2
+						transport = 1
+					}
+				}
+				add_yearly_manpower = 5
+				add_treasury = 500
+			}
+		}
+	}
+
+	option = { # We will crush Ahmed!
+		name = ottoman_civil_war.2.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			every_owned_province = {
+				add_core = AMS
+			}
+		}
+		add_historical_rival = AMS
+		declare_war_with_cb = {
+			who = AMS
+			casus_belli = cb_civil_war
+		}
+	}
+
+	option = { # Negotiate with Ahmed and allow him to take the throne.
+		name = ottoman_civil_war.2.b
+		ai_chance = {
+			factor = 0
+		}
+		set_country_flag = negotiated_peace
+		add_country_modifier = {
+			name = dishonorable_surrender
+			duration = 1825
+		}
+		add_estate_loyalty = {
+			estate = estate_janissaries
+			loyalty = -20
+		}
+		AMS = {
+			every_owned_province = {
+				cede_province = TUR
+			}
+		}
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = AMS
+				}
+				remove_core = AMS
+			}
+		}
+		define_heir = {
+			name = "Ahmed"
+			dynasty = "Osmanoglu"
+			adm = 2
+			dip = 2
+			mil = 2
+			age = 20
+		}
+		kill_ruler = yes
+		if = {
+			limit = {
+				has_dlc = "Rights of Man" 
+			}
+			hidden_effect = { add_ruler_personality = craven_personality }
+		}
+		add_prestige = -50
+		add_legitimacy = -50
+	}
+}
+
+# The Ambition of Selim
+country_event = {
+	id = ottoman_civil_war.3
+	title = ottoman_civil_war.3.t
+	desc = ottoman_civil_war.3.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_disaster = ottoman_civil_war
+		has_country_flag = ottoman_brothers_ambition
+		has_country_flag = ahmed_rises
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	immediate = {
+		set_country_flag = selim_rises
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					area = bulgaria_area
+				}
+				add_core = RME	
+			}
+			every_owned_province = {
+				limit = {
+					area = silistria_area
+				}
+				add_core = RME	
+			}
+			every_owned_province = {
+				limit = {
+					area = northern_bulgaria_area
+				}
+				add_core = RME	
+			}
+			every_owned_province = {
+				limit = {
+					area = serbia_area
+				}
+				add_core = RME
+			}
+			every_owned_province = {
+				limit = {
+					area = rascia_area
+				}
+				add_core = RME	
+			}
+			every_owned_province = {
+				limit = {
+					area = nis_area
+				}
+				add_core = RME
+			}
+			every_owned_province = {
+				limit = {
+					area = vardar_area
+				}
+				add_core = RME
+			}
+			release = RME
+			RME = {
+				change_religion = sunni
+				set_capital = 159
+				159 = {
+					add_building = fort_15th
+				}
+				change_government = monarchy
+				add_government_reform = ottoman_government
+				adopt_reform_progress = ROOT
+				add_historical_rival = MAM
+				add_historical_rival = BYZ
+				add_historical_rival = HAB
+				add_historical_rival = SPA
+				add_historical_rival = ARA
+				add_historical_rival = POL
+				add_historical_rival = PLC
+				add_historical_rival = RUS
+				add_historical_rival = HUN
+				add_historical_rival = STY
+				add_historical_rival = AMS
+				add_historical_rival = TEK
+				if = {
+					limit = {
+						TUR = {
+							government_rank = 1
+						}
+					}
+					set_government_rank = 1
+				}
+				if = {
+					limit = {
+						TUR = {
+							government_rank = 2
+						}
+					}
+					set_government_rank = 2
+				}
+				if = {
+					limit = {
+						TUR = {
+							government_rank = 3
+						}
+					}
+					set_government_rank = 3
+				}
+				define_ruler = {
+					name = "Selim Yavuz"
+					dynasty = "Osmanoglu"
+					adm = 2
+					dip = 4
+					mil = 5
+				}
+				# define_ruler_to_general = {
+				#	fire = 6
+				#	shock = 2
+				#	manuever = 2
+				#	siege = 0
+				# }
+				if = {
+					limit = {
+						has_dlc = "Rights of Man" 
+					}
+					hidden_effect = { add_ruler_personality = conqueror_personality }
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 2.4
+						cavalry = 0.8
+						artillery = 0.8
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						light_ship = 1
+						galley = 2
+						transport = 1
+					}
+				}
+				add_yearly_manpower = 5
+				add_treasury = 500
+			}
+			AMS = {
+				every_owned_province = {
+					add_core = RME
+				}
+			}
+			RME = {
+				declare_war_with_cb = {
+					who = AMS
+					casus_belli = cb_civil_war
+				}
+			}
+		}
+		clr_country_flag = ahmed_rises
+	}
+
+	option = { # We will crush Selim!
+		name = ottoman_civil_war.3.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			every_owned_province = {
+				add_core = RME
+			}
+		}
+		declare_war_with_cb = {
+			who = RME
+			casus_belli = cb_civil_war
+		}
+	}
+
+	option = { # Negotiate with Selim and allow him to take the throne.
+		name = ottoman_civil_war.3.b
+		ai_chance = {
+			factor = 0
+		}
+		set_country_flag = negotiated_peace
+		trigger = {
+			NOT = {
+				has_country_flag = negotiated_peace
+			}
+		}
+		add_country_modifier = {
+			name = dishonorable_surrender
+			duration = 1825
+		}
+		add_estate_loyalty = {
+			estate = estate_janissaries
+			loyalty = -20
+		}
+		RME = {
+			every_owned_province = {
+				cede_province = TUR
+			}
+		}
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = RME
+				}
+				remove_core = RME
+			}
+		}
+		define_heir = {
+			name = "Selim Yavuz"
+			dynasty = "Osmanoglu"
+			adm = 2
+			dip = 4
+			mil = 5
+			age = 20
+		}
+		kill_ruler = yes
+		if = {
+			limit = {
+				has_dlc = "Rights of Man" 
+			}
+			hidden_effect = { add_ruler_personality = conqueror_personality }
+		}
+		add_prestige = -50
+		add_legitimacy = -50
+	}
+}
+
+# The Ambition of Korkut
+country_event = {
+	id = ottoman_civil_war.4
+	title = ottoman_civil_war.4.t
+	desc = ottoman_civil_war.4.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_disaster = ottoman_civil_war
+		has_country_flag = ottoman_brothers_ambition
+		has_country_flag = selim_rises
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	immediate = {
+		clr_country_flag = selim_rises
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					area = aydin_area
+				}
+				add_core = TEK
+			}
+			every_owned_province = {
+				limit = {
+					area = germiyan_area
+				}
+				add_core = TEK
+			}
+			every_owned_province = {
+				limit = {
+					area = mugla_area
+				}
+				add_core = TEK
+			}
+			release = TEK
+			TEK = {
+				change_religion = sunni
+				set_capital = 2298
+				2298 = {
+					add_building = fort_15th
+				}
+				change_government = monarchy
+				add_government_reform = ottoman_government
+				adopt_reform_progress = ROOT
+				add_historical_rival = MAM
+				add_historical_rival = BYZ
+				add_historical_rival = HAB
+				add_historical_rival = SPA
+				add_historical_rival = ARA
+				add_historical_rival = POL
+				add_historical_rival = PLC
+				add_historical_rival = RUS
+				add_historical_rival = HUN
+				add_historical_rival = STY
+				add_historical_rival = AMS
+				add_historical_rival = RME
+				add_historical_rival = TUR
+				if = {
+					limit = {
+						TUR = {
+							government_rank = 1
+						}
+					}
+					set_government_rank = 1
+				}
+				if = {
+					limit = {
+						TUR = {
+							government_rank = 2
+						}
+					}
+					set_government_rank = 2
+				}
+				if = {
+					limit = {
+						TUR = {
+							government_rank = 3
+						}
+					}
+					set_government_rank = 3
+				}
+				define_ruler = {
+					name = "Korkut"
+					dynasty = "Osmanoglu"
+					adm = 2
+					dip = 2
+					mil = 2
+				}
+				# define_ruler_to_general = {
+				#	fire = 1
+				#	shock = 1
+				#	manuever = 1
+				#	siege = 0
+				# }
+				if = {
+					limit = {
+						has_dlc = "Rights of Man" 
+					}
+					hidden_effect = { add_ruler_personality = babbling_buffoon_personality }
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 2.4
+						cavalry = 0.8
+						artillery = 0.8
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						light_ship = 1
+						galley = 2
+						transport = 1
+					}
+				}
+				add_yearly_manpower = 5
+				add_treasury = 500
+			}
+			AMS = {
+				every_owned_province = {
+					add_core = TEK
+				}
+			}
+			RME = {
+				every_owned_province = {
+					add_core = TEK
+				}
+			}
+			TEK = {
+				declare_war_with_cb = {
+					who = AMS
+					casus_belli = cb_civil_war
+				}
+			}
+			TEK = {
+				declare_war_with_cb = {
+					who = RME
+					casus_belli = cb_civil_war
+				}
+			}
+		}
+	}
+
+	option = { # We will crush Korkut!
+		name = ottoman_civil_war.4.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			every_owned_province = {
+				add_core = TEK
+			}
+		}
+		add_historical_rival = TEK
+		declare_war_with_cb = {
+			who = TEK
+			casus_belli = cb_civil_war
+		}
+	}
+
+	option = { # Negotiate with Korkut and allow him to take the throne.
+		name = ottoman_civil_war.4.b
+		ai_chance = {
+			factor = 0
+		}
+		set_country_flag = negotiated_peace
+		trigger = {
+			NOT = {
+				has_country_flag = negotiated_peace
+			}
+		}
+		add_country_modifier = {
+			name = dishonorable_surrender
+			duration = 1825
+		}
+		add_estate_loyalty = {
+			estate = estate_janissaries
+			loyalty = -20
+		}
+		TEK = {
+			every_owned_province = {
+				cede_province = TUR
+			}
+		}
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = TEK
+				}
+				remove_core = TEK
+			}
+		}
+		define_heir = {
+			name = "Korkut"
+			dynasty = "Osmanoglu"
+			adm = 2
+			dip = 2
+			mil = 2
+			age = 20
+		}
+		kill_ruler = yes
+		if = {
+			limit = {
+				has_dlc = "Rights of Man" 
+			}
+			hidden_effect = { add_ruler_personality = babbling_buffoon_personality }
+		}
+		add_prestige = -50
+		add_legitimacy = -50
+	}
+}
+
+# Ahmed Offers Peace
+country_event = {
+	id = ottoman_civil_war.5
+	title = ottoman_civil_war.5.t
+	desc = ottoman_civil_war.5.d
+	picture = DIPLOMACY_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		has_disaster = ottoman_civil_war
+		AMS = {
+			exists = yes
+		}
+		OR = {
+			is_in_war = {
+				attacker_leader = ROOT
+				defender_leader = AMS
+				duration = 365
+			}
+		}
+		OR = {
+			is_in_war = {
+				attacker_leader = AMS
+				defender_leader = ROOT
+				duration = 365
+			}
+		}
+		NOT = {
+			has_country_flag = negotiating_peace
+		}
+		NOT = {
+			has_country_flag = negotiated_peace
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		set_country_flag = negotiating_peace
+	}
+
+	option = { # Let us make peace with Ahmed.
+		name = ottoman_civil_war.5.a
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = negotiated_peace
+		clr_country_flag = negotiating_peace
+		inherit = AMS
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = AMS
+				}
+				remove_core = AMS
+			}
+		}
+		define_heir = {
+			name = "Ahmed"
+			dynasty = "Osmanoglu"
+			age = 23
+			adm = 2
+			dip = 2
+			mil = 2
+		}
+		kill_ruler = yes
+		if = {
+			limit = {
+				has_dlc = "Rights of Man" 
+			}
+			hidden_effect = { add_ruler_personality = craven_personality }
+		}
+		add_legitimacy = -25
+	}
+
+	option = { # Ahmed is unworthy!
+		name = ottoman_civil_war.5.b
+		ai_chance = {
+			factor = 90
+		}
+		add_legitimacy = 25
+		clr_country_flag = negotiating_peace
+	}
+}
+
+# Selim Offers Peace
+country_event = {
+	id = ottoman_civil_war.6
+	title = ottoman_civil_war.6.t
+	desc = ottoman_civil_war.6.d
+	picture = DIPLOMACY_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		has_disaster = ottoman_civil_war
+		RME = {
+			exists = yes
+		}
+		OR = {
+			is_in_war = {
+				attacker_leader = ROOT
+				defender_leader = RME
+				duration = 365
+			}
+		}
+		OR = {
+			is_in_war = {
+				attacker_leader = RME
+				defender_leader = ROOT
+				duration = 365
+			}
+		}
+		NOT = {
+			has_country_flag = negotiating_peace
+		}
+		NOT = {
+			has_country_flag = negotiated_peace
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	immediate = {
+		set_country_flag = negotiating_peace
+	}
+
+	option = { # Let us make peace with Selim.
+		name = ottoman_civil_war.6.a
+		ai_chance = {
+			factor = 90
+		}
+		set_country_flag = negotiated_peace
+		clr_country_flag = negotiating_peace
+		inherit = RME
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = RME
+				}
+				remove_core = RME
+			}
+		}
+		define_heir = {
+			name = "Selim Yavuz"
+			dynasty = "Osmanoglu"
+			age = 23
+			adm = 2
+			dip = 4
+			mil = 5
+		}
+		kill_ruler = yes
+		if = {
+			limit = {
+				has_dlc = "Rights of Man" 
+			}
+			hidden_effect = { add_ruler_personality = conqueror_personality }
+		}
+		add_legitimacy = 25
+	}
+
+	option = { # Selim is unworthy!
+		name = ottoman_civil_war.6.b
+		ai_chance = {
+			factor = 10
+		}
+		add_legitimacy = -25
+		clr_country_flag = negotiating_peace
+	}
+}
+
+# Korkut Offers Peace
+country_event = {
+	id = ottoman_civil_war.7
+	title = ottoman_civil_war.7.t
+	desc = ottoman_civil_war.7.d
+	picture = DIPLOMACY_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		has_disaster = ottoman_civil_war
+		TEK = {
+			exists = yes
+		}
+		OR = {
+			is_in_war = {
+				attacker_leader = ROOT
+				defender_leader = TEK
+				duration = 365
+			}
+		}
+		OR = {
+			is_in_war = {
+				attacker_leader = TEK
+				defender_leader = ROOT
+				duration = 365
+			}
+		}
+		NOT = {
+			has_country_flag = negotiating_peace
+		}
+		NOT = {
+			has_country_flag = negotiated_peace
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		set_country_flag = negotiating_peace
+	}
+
+	option = { # Let us make peace with Korkut.
+		name = ottoman_civil_war.7.a
+		ai_chance = {
+			factor = 5
+		}
+		set_country_flag = negotiated_peace
+		clr_country_flag = negotiating_peace
+		inherit = TEK
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = TEK
+				}
+				remove_core = TEK
+			}
+		}
+		define_heir = {
+			name = "Korkut"
+			dynasty = "Osmanoglu"
+			age = 23
+			adm = 2
+			dip = 2
+			mil = 2
+		}
+		kill_ruler = yes
+		if = {
+			limit = {
+				has_dlc = "Rights of Man" 
+			}
+			hidden_effect = { add_ruler_personality = babbling_buffoon_personality }
+		}
+		add_legitimacy = -50
+	}
+
+	option = { # Korkut is unworthy!
+		name = ottoman_civil_war.7.b
+		ai_chance = {
+			factor = 95
+		}
+		add_legitimacy = 25
+		clr_country_flag = negotiating_peace
+	}
+}
+
+# The Death of Ahmed
+country_event = {
+	id = ottoman_civil_war.8
+	title = ottoman_civil_war.8.t
+	desc = ottoman_civil_war.8.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = TUR
+		AMS = {
+			exists = yes
+			NOT = {
+				has_ruler = "Ahmed"
+				dynasty = "Osmanoglu"
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = { # We welcome the arrival of peace.
+		name = ottoman_civil_war.8.a
+		inherit = AMS
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = AMS
+				}
+				remove_core = AMS
+			}
+		}
+		add_stability = 1
+		add_legitimacy = 25
+	}
+}
+
+# The Death of Selim
+country_event = {
+	id = ottoman_civil_war.9
+	title = ottoman_civil_war.9.t
+	desc = ottoman_civil_war.9.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = TUR
+		RME = {
+			exists = yes
+			NOT = {
+				has_ruler = "Selim Yavuz"
+				dynasty = "Osmanoglu"
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = { # We welcome the arrival of peace.
+		name = ottoman_civil_war.9.a
+		inherit = RME
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = RME
+				}
+				remove_core = RME
+			}
+		}
+		add_stability = 1
+		add_legitimacy = 25
+	}
+}
+
+# The Death of Korkut
+country_event = {
+	id = ottoman_civil_war.10
+	title = ottoman_civil_war.10.t
+	desc = ottoman_civil_war.10.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = TUR
+		TEK = {
+			exists = yes
+			NOT = {
+				has_ruler = "Korkut"
+				dynasty = "Osmanoglu"
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = { # We welcome the arrival of peace.
+		name = ottoman_civil_war.10.a
+		inherit = TEK
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = TEK
+				}
+				remove_core = TEK
+			}
+		}
+		add_stability = 1
+		add_legitimacy = 25
+	}
+}
+
+# The Ottoman Succession
+country_event = {
+	id = ottoman_civil_war.11
+	title = ottoman_civil_war.11.t
+	desc = ottoman_civil_war.11.d
+	picture = BATTLE_eventPicture
+
+	major = yes
+
+	trigger = {
+		OR = {
+			tag = AMS
+			tag = RME
+			tag = TEK
+		}
+		is_subject = no
+		TUR = {
+			capital_scope = {
+				controlled_by = ROOT
+			}
+			has_disaster = ottoman_civil_war
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = { # I am Sultan now!
+		name = ottoman_civil_war.11.a
+		inherit = TUR
+		change_tag = TUR
+		add_stability = 1
+		add_legitimacy = 25
+		remove_country_modifier = janissary_support
+	}
+}
+
+# The Fall of Ahmed
+country_event = {
+	id = ottoman_civil_war.12
+	title = ottoman_civil_war.12.t
+	desc = ottoman_civil_war.12.d
+	picture = BATTLE_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		has_disaster = ottoman_civil_war
+		AMS = {
+			exists = yes
+			capital_scope = {
+				controlled_by = ROOT
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = { # We welcome the arrival of peace.
+		name = ottoman_civil_war.12.a
+		inherit = AMS
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = AMS
+				}
+				remove_core = AMS
+			}
+		}
+		add_stability = 1
+		add_legitimacy = 25
+	}
+}
+
+# The Fall of Selim
+country_event = {
+	id = ottoman_civil_war.13
+	title = ottoman_civil_war.13.t
+	desc = ottoman_civil_war.13.d
+	picture = BATTLE_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		has_disaster = ottoman_civil_war
+		RME = {
+			exists = yes
+			capital_scope = {
+				controlled_by = ROOT
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = { # We welcome the arrival of peace.
+		name = ottoman_civil_war.13.a
+		inherit = RME
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = RME
+				}
+				remove_core = RME
+			}
+		}
+		add_stability = 1
+		add_legitimacy = 25
+	}
+}
+
+# The Fall of Korkut
+country_event = {
+	id = ottoman_civil_war.14
+	title = ottoman_civil_war.14.t
+	desc = ottoman_civil_war.14.d
+	picture = BATTLE_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		has_disaster = ottoman_civil_war
+		TEK = {
+			exists = yes
+			capital_scope = {
+				controlled_by = ROOT
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = { # We welcome the arrival of peace.
+		name = ottoman_civil_war.14.a
+		inherit = TEK
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = TEK
+				}
+				remove_core = TEK
+			}
+		}
+		add_stability = 1
+		add_legitimacy = 25
+	}
+}
+
+# The Sahkulu Rebellion
+country_event = {
+	id = ottoman_civil_war.15
+	title = ottoman_civil_war.15.t
+	desc = ottoman_civil_war.15.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = AMS
+			AND = {
+				tag = TUR
+				owns = 1846
+			}
+		}
+		TUR = {
+			has_disaster = ottoman_civil_war
+		}
+		OR = {
+			ARL = {
+				exists = yes
+				religion = shiite
+				dynasty = "Safavi"
+			}
+			PER = {
+				exists = yes
+				religion = shiite
+				dynasty = "Safavi"
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # We will slay Sahkulu!
+		name = ottoman_civil_war.15.a
+		set_global_flag = sahkulu_rebellion
+		random_owned_province = {
+			limit = {
+				is_capital = no
+				region = anatolia_region
+			}
+			spawn_rebels = {
+				type = shiite_rebels
+				size = 1
+				leader = "Sahkulu"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+				region = anatolia_region
+			}
+			spawn_rebels = {
+				type = shiite_rebels
+				size = 1
+			}
+		}
+		if = {
+			limit = {
+				ARL = {
+					exists = yes
+					religion = shiite
+				}
+			}
+			ARL = {
+				country_event = {
+					id = ottoman_civil_war.16
+					days = 30
+				}
+			}
+		}
+		if = {
+			limit = {
+				PER = {
+					exists = yes
+					religion = shiite
+				}
+			}
+			PER = {
+				country_event = {
+					id = ottoman_civil_war.16
+					days = 30
+				}
+			}
+		}
+	}
+}
+
+# The Sahkulu Rebellion
+country_event = {
+	id = ottoman_civil_war.16
+	title = ottoman_civil_war.15.t
+	desc = ottoman_civil_war.16.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Support the rebels.
+		name = ottoman_civil_war.16.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				is_rival = TUR
+			}
+			modifier = {
+				factor = 0
+				alliance_with = TUR
+			}
+		}
+		AMS = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					region = anatolia_region
+				}
+				spawn_rebels = {
+					type = shiite_rebels
+					size = 1
+				}
+			}
+			country_event = {
+				id = ottoman_civil_war.17
+				days = 1
+			}
+		}
+		if = {
+			limit = {
+				exists = TEK
+			}
+			TEK = {
+				random_owned_province = {
+					limit = {
+						is_capital = no
+						region = anatolia_region
+					}
+					spawn_rebels = {
+						type = shiite_rebels
+						size = 1
+					}
+				}
+				country_event = {
+					id = ottoman_civil_war.17
+					days = 1
+				}
+			}
+		}
+		TUR = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					region = anatolia_region
+				}
+				spawn_rebels = {
+					type = shiite_rebels
+					size = 1
+				}
+			}
+			country_event = {
+				id = ottoman_civil_war.17
+				days = 1
+			}
+		}
+	}
+
+	option = { # Sahkulu's rebellion is not of importance to us.
+		name = ottoman_civil_war.16.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				is_rival = TUR
+			}
+			modifier = {
+				factor = 0
+				alliance_with = TUR
+			}
+		}
+		add_prestige = -5
+	}
+}
+
+# The Safavids Support Sahkulu
+country_event = {
+	id = ottoman_civil_war.17
+	title = ottoman_civil_war.17.t
+	desc = ottoman_civil_war.17.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will punish them all!
+		name = ottoman_civil_war.17.a
+		add_opinion = {
+			who = FROM
+			modifier = supported_sahkulu
+		}
+	}
+}
+
+# Sahkulu's Army Grows
+country_event = {
+	id = ottoman_civil_war.18
+	title = ottoman_civil_war.18.t
+	desc = ottoman_civil_war.18.d
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		has_global_flag = sahkulu_rebellion
+		has_disaster = ottoman_civil_war
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # They will pay for this!
+		name = ottoman_civil_war.18.a
+		add_yearly_manpower = -1
+	}
+}
+
+# Sahkulu's Raiders
+country_event = {
+	id = ottoman_civil_war.19
+	title = ottoman_civil_war.19.t
+	desc = ottoman_civil_war.19.d
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		has_global_flag = sahkulu_rebellion
+		has_disaster = ottoman_civil_war
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Unpleasant.
+		name = ottoman_civil_war.19.a
+		add_years_of_income = -0.5
+	}
+}
+
+# Peasants Revolt for Sahkulu
+country_event = {
+	id = ottoman_civil_war.20
+	title = ottoman_civil_war.20.t
+	desc = ottoman_civil_war.20.d
+	picture = ANGRY_MOB_eventPicture
+
+	trigger = {
+		has_global_flag = sahkulu_rebellion
+		has_disaster = ottoman_civil_war
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Kill them all!
+		name = ottoman_civil_war.20.a
+		random_owned_province = {
+			limit = {
+				is_capital = no
+				region = anatolia_region
+			}
+			spawn_rebels = {
+				type = shiite_rebels
+				size = 2
+			}
+		}
+	}
+}
+
+# The Abdication
+country_event = {
+	id = ottoman_civil_war.21
+	title = ottoman_civil_war.21.t
+	desc = ottoman_civil_war.21.d
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		OR = {
+			tag = AMS
+			tag = RME
+			tag = TEK
+		}
+		TUR = {
+			has_country_modifier = dishonorable_surrender
+		}
+		NOT = {
+			has_country_modifier = janissary_support
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Their help will be invaluable.
+		name = ottoman_civil_war.21.a
+		add_country_modifier = {
+			name = janissary_support
+			duration = 1825
+		}
+		add_estate_loyalty = {
+			estate = estate_janissaries
+			loyalty = 20
+		}
+		capital_scope = {
+			build_to_forcelimit = {
+				infantry = 0.6
+				cavalry = 0.2
+				artillery = 0.2
+			}
+		}
+	}
+}
+
+# The Ottoman Throne
+country_event = {
+	id = ottoman_civil_war.22
+	title = ottoman_civil_war.22.t
+	desc = ottoman_civil_war.22.d
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		OR = {
+			tag = AMS
+			tag = RME
+			tag = TEK
+		}
+		is_subject = no
+		TUR = {
+			exists = yes
+			has_disaster = ottoman_civil_war
+		}
+		NOT = {
+			war_with = TUR
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # To war!
+		name = ottoman_civil_war.22.a
+		declare_war_with_cb = {
+			who = TUR
+			casus_belli = cb_civil_war
+		}
+		TUR = {
+			country_event = {
+				id = ottoman_civil_war.23
+			}
+		}
+	}
+}
+
+# The Ottoman Civil War Resumes
+country_event = {
+	id = ottoman_civil_war.23
+	title = ottoman_civil_war.23.t
+	desc = ottoman_civil_war.23.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will finish them this time!
+		name = ottoman_civil_war.23.a
+		tooltip = {
+			FROM = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_civil_war
+				}
+			}
+		}
+	}
+}
+
+# The Subjugation of $COUNTRY$
+country_event = {
+	id = ottoman_civil_war.24
+	title = ottoman_civil_war.24.t
+	desc = ottoman_civil_war.24.d
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		OR = {
+			tag = TEK
+			tag = AMS
+			tag = RME
+		}
+		is_subject = yes
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = { # Unfortunate.
+		name = ottoman_civil_war.24.a
+		TUR = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+}
+
+# The End of the Ottoman Civil War
+country_event = {
+	id = ottoman_civil_war.100
+	title = ottoman_civil_war.100.t
+	desc = ottoman_civil_war.100.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # A great day for the empire of Osman.
+		name = ottoman_civil_war.100.a
+		clr_country_flag = ottoman_brothers_ambition
+		custom_tooltip = ottoman_civil_war.100.a.tooltip
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = AMS
+				}
+				remove_core = AMS
+			}
+			every_province = {
+				limit = {
+					is_core = RME
+				}
+				remove_core = RME
+			}
+			every_province = {
+				limit = {
+					is_core = TEK
+				}
+				remove_core = TEK
+			}
+		}
+		add_prestige = 50
+		if = {
+			limit = {
+				has_country_modifier = dishonorable_surrender
+			}
+			remove_country_modifier = dishonorable_surrender
+		}
+		clr_country_flag = negotiated_peace
+		clr_global_flag = sahkulu_rebellion
+	}
+}

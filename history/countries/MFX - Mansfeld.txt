@@ -1,0 +1,397 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = saxon
+religion = catholic
+technology_group = western
+capital = 3668
+fixed_capital = 3668
+
+1051.1.1 = {
+	monarch = {
+		name = "Hoyer I"
+		dynasty = "von Mansfeld"
+		adm = 5
+		dip = 3
+		mil = 3
+	}
+}
+1070.1.1 = {
+	monarch = {
+		name = "Hoyer II"
+		dynasty = "von Mansfeld"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1115.2.11 = {
+	monarch = {
+		name = "Hoyer III"
+		dynasty = "von Mansfeld"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1157.8.3 = {
+	monarch = {
+		name = "Hoyer IV"
+		dynasty = "von Mansfeld"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1183.7.3 = {
+	monarch = {
+		name = "Burkhard I"
+		dynasty = "von Mansfeld"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1229.12.13 = {
+	monarch = {
+		name = "Burkhard II"
+		dynasty = "von Querfurt"
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1255.1.1 = {
+	monarch = {
+		name = "Burkhard III"
+		dynasty = "von Querfurt"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1274.12.1 = {
+	monarch = {
+		name = "Burkhard IV"
+		dynasty = "von Querfurt"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1311.1.1 = {
+	monarch = {
+		name = "Burkhard V"
+		dynasty = "von Querfurt"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1354.9.21 = {
+	monarch = {
+		name = "Albrecht I"
+		dynasty = "von Querfurt"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1362.1.1 = {
+	monarch = {
+		name = "Gebhard I"
+		dynasty = "von Querfurt"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1382.11.5 = {
+	monarch = {
+		name = "Burkhard VI"
+		dynasty = "von Querfurt"
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1391.1.1 = {
+	monarch = {
+		name = "Albrecht II"
+		dynasty = "von Querfurt"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1416.4.5 = {
+	monarch = {
+		name = "Hoyer V"
+		dynasty = "von Querfurt"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1424.1.1 = {
+	monarch = {
+		name = "Volrad I"
+		dynasty = "von Querfurt"
+		birth_date = 1380.1.1
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1434.1.1 = {
+	heir = {
+		name = "Burkhard"
+		monarch_name = "Burkhard VII"
+		dynasty = "von Querfurt"
+		birth_date = 1434.1.1
+		death_date = 1460.9.23
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1450.1.1 = {
+	monarch = {
+		name = "Burkhard VII"
+		dynasty = "von Querfurt"
+		birth_date = 1434.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1460.9.23 = {
+	monarch = {
+		name = "Volrad II"
+		dynasty = "von Querfurt"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1499.11.27 = {
+	monarch = {
+		name = "Gebhard II"
+		dynasty = "von Querfurt"
+		birth_date = 1483.1.1
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1520.9.11 = {
+	heir = {
+		name = "Christoph"
+		monarch_name = "Christoph I"
+		dynasty = "von Querfurt"
+		birth_date = 1520.9.11
+		death_date = 1591.8.29
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1525.1.1 = { religion = protestant }
+1558.9.13 = {
+	monarch = {
+		name = "Christoph I"
+		dynasty = "von Querfurt"
+		birth_date = 1520.9.11
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Wilhelm"
+		monarch_name = "Wilhelm I"
+		dynasty = "von Querfurt"
+		birth_date = 1554.1.1
+		death_date = 1601.1.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1591.8.29 = {
+	monarch = {
+		name = "Wilhelm I"
+		dynasty = "von Querfurt"
+		birth_date = 1554.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1601.1.1 = {
+	monarch = {
+		name = "Bruno I"
+		dynasty = "von Querfurt"
+		birth_date = 1545.11.17
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+	heir = {
+		name = "Bruno"
+		monarch_name = "Bruno II"
+		dynasty = "von Querfurt"
+		birth_date = 1576.9.18
+		death_date = 1644.9.16
+		claim = 95
+		adm = 2
+		dip = 5
+		mil = 5
+	}
+}
+1615.4.14 = {
+	monarch = {
+		name = "Bruno II"
+		dynasty = "von Querfurt"
+		birth_date = 1576.9.18
+		adm = 2
+		dip = 5
+		mil = 5
+	}
+}
+1639.11.22 = {
+	heir = {
+		name = "Franz Maximilian"
+		monarch_name = "Franz Maximilian"
+		dynasty = "von Querfurt"
+		birth_date = 1639.11.22
+		death_date = 1692.9.12
+		claim = 95
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1644.9.16 = {
+	monarch = {
+		name = "Philipp I"
+		dynasty = "von Querfurt"
+		birth_date = 1589.1.1
+		adm = 2
+		dip = 3
+		mil = 6
+	}
+	heir = {
+		name = "Franz Maximilian"
+		monarch_name = "Franz Maximilian"
+		dynasty = "von Querfurt"
+		birth_date = 1639.11.22
+		death_date = 1692.9.12
+		claim = 95
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1657.4.8 = {
+	monarch = {
+		name = "Franz Maximilian"
+		dynasty = "von Querfurt"
+		birth_date = 1639.11.22
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1678.11.2 = {
+	heir = {
+		name = "Karl Franz"
+		monarch_name = "Karl Franz"
+		dynasty = "von Querfurt"
+		birth_date = 1678.11.2
+		death_date = 1717.7.9
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1692.9.12 = {
+	monarch = {
+		name = "Karl Franz"
+		dynasty = "von Querfurt"
+		birth_date = 1678.11.2
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1712.7.6 = {
+	heir = {
+		name = "Heinrich Franz"
+		monarch_name = "Heinrich Franz"
+		dynasty = "von Querfurt"
+		birth_date = 1712.7.6
+		death_date = 1780.2.15
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1717.7.9 = {
+	monarch = {
+		name = "(Regency Council)"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Heinrich Franz"
+		monarch_name = "Heinrich Franz"
+		dynasty = "von Querfurt"
+		birth_date = 1712.7.6
+		death_date = 1780.2.15
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1727.7.6 = {
+	monarch = {
+		name = "Heinrich Franz"
+		dynasty = "von Querfurt"
+		birth_date = 1712.7.6
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1735.9.12 = {
+	heir = {
+		name = "Josef Wenzel"
+		monarch_name = "Josef Wenzel"
+		dynasty = "von Querfurt"
+		birth_date = 1735.9.12
+		death_date = 1780.3.31
+		claim = 95
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}
+1780.2.15 = {
+	monarch = {
+		name = "Josef Wenzel"
+		dynasty = "von Querfurt"
+		birth_date = 1735.9.12
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}
+#1780 done

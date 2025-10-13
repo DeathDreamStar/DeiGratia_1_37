@@ -1,0 +1,47 @@
+polish_king_in_bohemia = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+no_polish_king_in_bohemia = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+accepted_gorizian_inheritance = {
+    opinion = 100
+    years = 100
+    yearly_decay = 1
+}
+
+refused_gorizian_inheritance = {
+    opinion = -100
+    years = 100
+    yearly_decay = 1
+}
+
+murdered_ladislaus = {
+    opinion = -100
+    years = 100
+    yearly_decay = 1
+}
+
+rejected_the_habsburgs = {
+    opinion = -200
+    years = 100
+    yearly_decay = 2
+}
+
+hussite_king_1 = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+hussite_king_2 = {
+    opinion = -200
+    years = 50
+    yearly_decay = 4
+}

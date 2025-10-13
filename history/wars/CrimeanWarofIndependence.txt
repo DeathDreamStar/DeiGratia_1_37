@@ -1,0 +1,16 @@
+name = "Crimean War of Independence"
+war_goal = {
+	type = defend_capital_independence
+	casus_belli = cb_independence_war
+	tag = CRI
+}
+
+1420.1.1 = {
+	add_attacker = CRI
+	add_defender = GOL
+}
+
+1440.1.1 = {
+	rem_attacker = CRI
+	rem_defender = GOL
+}

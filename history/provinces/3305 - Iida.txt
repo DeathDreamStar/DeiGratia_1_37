@@ -1,0 +1,15 @@
+#3305 - Iida
+
+owner = SUW
+controller = SUW
+culture = togoku
+religion = shinto
+capital = "Iida"
+trade_goods = silk
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = SUW
+discovered_by = chinese

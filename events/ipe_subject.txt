@@ -1,0 +1,1157 @@
+namespace = ipe_subject
+
+# $FROMCOUNTRY$ Lays Claim to the Lands of $COUNTRY$
+country_event = {
+	id = ipe_subject.1
+	title = ipe_subject.1.t
+	desc = ipe_subject.1.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = this_fief_will_die
+	}
+
+	option = { # This is a distrubing precedent.
+		name = ipe_subject.1.a
+		custom_tooltip = ipe_subject.1.a.tooltip
+	}
+}
+
+# The Inheritance of $FROMCOUNTRY$
+country_event = {
+	id = ipe_subject.3
+	title = ipe_subject.3.t
+	desc = ipe_subject.3.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			log = "[This.GetName] annexes subject**"
+		}
+	}
+
+	option = { # My rule is absolute.
+		name = ipe_subject.3.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# The Secularization of $COUNTRY$
+country_event = {
+	id = ipe_subject.4
+	title = ipe_subject.4.t
+	desc = ipe_subject.4.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			log = "[This.GetName] annexes subject**"
+		}
+	}
+
+	option = { # Unfortunate.
+		name = ipe_subject.4.a
+		FROM = {
+			hidden_effect = {
+				diplo_annex_cost = yes
+			}
+			inherit = ROOT
+		}
+		FROM = {
+			country_event = {
+				id = ipe_subject.5
+			}
+		}
+	}
+}
+
+# The Secularization of $FROMCOUNTRY$
+country_event = {
+	id = ipe_subject.5
+	title = ipe_subject.5.t
+	desc = ipe_subject.5.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The church is subservient to the state.
+		name = ipe_subject.5.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# The Deposition of the Republic of $COUNTRY$
+country_event = {
+	id = ipe_subject.6
+	title = ipe_subject.6.t
+	desc = ipe_subject.6.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # And this is how democracy dies.
+		name = ipe_subject.6.a
+		FROM = {
+			hidden_effect = {
+				diplo_annex_cost = yes
+			}
+			inherit = ROOT
+		}
+		FROM = {
+			country_event = {
+				id = ipe_subject.7
+			}
+		}
+	}
+}
+
+# The Deposition of the Republic of $FROMCOUNTRY$
+country_event = {
+	id = ipe_subject.7
+	title = ipe_subject.7.t
+	desc = ipe_subject.7.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # There is no enlightenment in their democracy.
+		name = ipe_subject.7.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# Papal Interdict Imposed
+country_event = {
+	id = ipe_subject.8
+	title = ipe_subject.8.t
+	desc = ipe_subject.8.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This decision is not infallible!
+		name = ipe_subject.8.a
+		FROM = {
+			hidden_effect = {
+				diplo_annex_cost = yes
+			}
+			inherit = ROOT
+		}
+		FROM = {
+			country_event = {
+				id = ipe_subject.9
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Claimed for the Papacy
+country_event = {
+	id = ipe_subject.9
+	title = ipe_subject.9.t
+	desc = ipe_subject.9.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Our rule is both spiritual and temporal.
+		name = ipe_subject.9.a
+		add_prestige = 5
+	}
+}
+
+# $FROMCOUNTRY$ Appoints a Bishop of $COUNTRY$
+country_event = {
+	id = ipe_subject.10
+	title = ipe_subject.10.t
+	desc = ipe_subject.10.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This cannot be good for the faith.
+		name = ipe_subject.10.a
+		define_ruler = {
+			dynasty = FROM
+			culture = FROM
+		}
+		set_ruler_flag = puppeted_bishopric
+		clr_country_flag = puppeting_bishopric
+		add_devotion = -10
+		add_corruption = 2
+		add_treasury = 200
+		custom_tooltip = ipe_subject.10.a.tooltip
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject_type = puppet_bishopric
+					subject = ROOT
+				}
+			}
+		}
+	}
+}
+
+# The Puppet Bishopric
+country_event = {
+	id = ipe_subject.11
+	title = ipe_subject.11.t
+	desc = ipe_subject.11.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = pb_fate
+	}
+
+	option = { # We still need the protection of a greater power.
+		name = ipe_subject.11.a
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 25
+				ruler_has_personality_ancestor = { key = pious }
+			}
+			modifier = {
+				factor = 0
+				total_development = 50
+			}
+			modifier = {
+				factor = 0
+				liberty_desire = 50
+			}
+			modifier = {
+				factor = 0
+				overlord = {
+					NOT = {
+						has_matching_religion = ROOT
+					}
+				}
+			}
+		}
+		add_devotion = -10
+		add_corruption = 2
+		overlord = {
+			country_event = {
+				id = ipe_subject.12
+			}
+		}
+		clr_country_flag = pb_fate
+		set_ruler_flag = puppeted_bishopric
+	}
+
+	option = { # Let us avoid foreign entanglements.
+		name = ipe_subject.11.b
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 75
+				ruler_has_personality_ancestor = { key = pious }
+			}
+			modifier = {
+				factor = 100
+				total_development = 100
+			}
+			modifier = {
+				factor = 100
+				liberty_desire = 50
+			}
+		}
+		overlord = {
+			country_event = {
+				id = ipe_subject.13
+			}
+		}
+		grant_independence = yes
+		clr_country_flag = pb_fate
+	}
+}
+
+# $FROMCOUNTRY$ Remains Allegiant!
+country_event = {
+	id = ipe_subject.12
+	title = ipe_subject.12.t
+	desc = ipe_subject.12.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very good.
+		name = ipe_subject.12.a
+		if = {
+			limit = {
+				religion = catholic
+			}
+			add_papal_influence = 10
+			add_reform_desire = 0.001
+		}
+		if = {
+			limit = {
+				OR = {
+					religion = anglican
+					religion = hussite
+					religion = protestant
+				}
+			}
+			add_church_power = 10
+		}
+		if = {
+			limit = {
+				religion = reformed
+			}
+			add_fervor = 10
+		}
+		if = {
+			limit = {
+				religion = orthodox
+			}
+			add_patriarch_authority = 0.1
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Becomes Independent!
+country_event = {
+	id = ipe_subject.13
+	title = ipe_subject.13.t
+	desc = ipe_subject.13.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They can be bribed once again.
+		name = ipe_subject.13.a
+		add_prestige = -5
+	}
+}
+
+# $MONARCH$ of $FROMCOUNTRY$
+country_event = {
+	id = ipe_subject.15
+	title = ipe_subject.15.t
+	desc = ipe_subject.15.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We welcome new leadership.
+		name = ipe_subject.15.a
+		custom_tooltip = ipe_subject.15.a.tooltip
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# The Accession of $MONARCH$ in $FROMCOUNTRY$
+country_event = {
+	id = ipe_subject.16
+	title = ipe_subject.16.t
+	desc = ipe_subject.16.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It is time for $MONARCHTITLE$ $MONARCH$ to do greater things.
+		name = ipe_subject.16.a
+		every_subject_country = {
+			limit = {
+				is_lesser_in_union = yes
+			}
+			overlord = {
+				inherit = PREV
+			}
+		}
+		FROM = {
+			hidden_effect = {
+				define_ruler = {
+					regency = yes
+				}
+			}
+			create_union = ROOT
+			inherit = ROOT
+			hidden_effect = {
+				country_event = {
+					id = ipe_subject.15
+				}
+			}
+		}
+	}
+}
+
+# Conversion of Vassals and Marches
+country_event = {
+	id = ipe_subject.18
+	title = ipe_subject.18.t
+	desc = ipe_subject.18.d
+	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		OR = {
+			is_subject_of_type = defensive_vassal
+			is_subject_of_type = defensive_march
+			is_subject_of_type = defensive_puppet_bishopric
+			is_subject_of_type = defensive_league_associate
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				is_subject_of_type = defensive_vassal
+			}
+			overlord = {
+				create_subject = {
+					subject = ROOT
+					subject_type = vassal
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_subject_of_type = defensive_march
+			}
+			overlord = {
+				create_subject = {
+					subject = ROOT
+					subject_type = march
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_subject_of_type = defensive_puppet_bishopric
+			}
+			overlord = {
+				create_subject = {
+					subject = ROOT
+					subject_type = puppet_bishopric
+				}
+			}
+		}
+		if = {
+			limit = {
+				is_subject_of_type = defensive_league_associate
+			}
+			overlord = {
+				create_subject = {
+					subject = ROOT
+					subject_type = league_associate
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ipe_subject.18.a
+	}
+}
+
+# $MONARCH$ Dies
+country_event  = {
+	id = ipe_subject.19
+	title = ipe_subject.19.t
+	desc = ipe_subject.19.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		religion_group = christian
+		OR = {
+			AND = {
+				has_heir = no
+				has_consort_regency = no
+				any_subject_country = {
+					religion_group = christian
+					dynasty = ROOT
+					has_consort_regency = no
+					is_subject_of_type = vassal
+					NOT = {
+						total_development = ROOT
+					}
+					government_rank = 1
+				}
+				NOT = {
+					tag = STY # to prevent Styria's ruler from dying prematurely and being replaced by the Count of Tirol
+				}
+			}
+			AND = {
+				dynasty = "de Valois"
+				has_heir = no
+				has_consort_regency = no
+				all_subject_country = {
+					NOT = {
+						dynasty = "de Valois"
+					}
+				}
+				any_subject_country = {
+					religion_group = christian
+					OR = {
+						dynasty = "de Bourbon"
+						dynasty = "de Bourgogne"
+						dynasty = "de Artois"
+					}
+					has_consort_regency = no
+					is_subject_of_type = vassal
+					NOT = {
+						total_development = ROOT
+					}
+					government_rank = 1
+				}
+			}
+			AND = {
+				dynasty = "de Bourbon"
+				has_heir = no
+				has_consort_regency = no
+				all_subject_country = {
+					NOT = {
+						dynasty = "de Bourbon"
+					}
+				}
+				any_subject_country = {
+					religion_group = christian
+					OR = {
+						dynasty = "de Valois"
+						dynasty = "de Bourgogne"
+						dynasty = "de Artois"
+					}
+					has_consort_regency = no
+					is_subject_of_type = vassal
+					NOT = {
+						total_development = ROOT
+					}
+					government_rank = 1
+				}
+			}
+			AND = {
+				dynasty = "de Bourgogne"
+				has_heir = no
+				has_consort_regency = no
+				all_subject_country = {
+					NOT = {
+						dynasty = "de Bourgogne"
+					}
+				}
+				any_subject_country = {
+					religion_group = christian
+					OR = {
+						dynasty = "de Valois"
+						dynasty = "de Bourbon"
+						dynasty = "de Artois"
+					}
+					has_consort_regency = no
+					is_subject_of_type = vassal
+					NOT = {
+						total_development = ROOT
+					}
+					government_rank = 1
+				}
+			}
+			AND = {
+				dynasty = "d'Artois"
+				has_heir = no
+				has_consort_regency = no
+				all_subject_country = {
+					NOT = {
+						dynasty = "d'Artois"
+					}
+				}
+				any_subject_country = {
+					religion_group = christian
+					OR = {
+						dynasty = "de Valois"
+						dynasty = "de Bourbon"
+						dynasty = "de Bourgogne"
+					}
+					has_consort_regency = no
+					is_subject_of_type = vassal
+					NOT = {
+						total_development = ROOT
+					}
+					government_rank = 1
+				}
+			}
+		}
+	}	
+
+	mean_time_to_happen = {
+		months = 360
+		modifier = {
+			factor = 0.5
+			ruler_has_personality = infertile_personality
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_heir = no
+				has_consort_regency = no
+			}
+			random_subject_country = {
+				limit = {
+					AND = {
+						religion_group = christian
+						dynasty = ROOT
+						has_consort_regency = no
+						is_subject_of_type = vassal
+						NOT = {
+							total_development = ROOT
+						}
+						government_rank = 1
+					}
+				}
+				country_event = {
+					id = ipe_subject.16
+				}
+			}
+		}
+		if = {
+			limit = {
+				dynasty = "de Valois"
+				has_heir = no
+				has_consort_regency = no
+				all_subject_country = {
+					NOT = {
+						dynasty = "de Valois"
+					}
+				}
+			}
+			random_subject_country = {
+				limit = {
+					religion_group = christian
+					OR = {
+						dynasty = "de Bourbon"
+						dynasty = "de Bourgogne"
+					}
+					has_consort_regency = no
+					is_subject_of_type = vassal
+					NOT = {
+						total_development = ROOT
+					}
+					government_rank = 1
+				}
+				country_event = {
+					id = ipe_subject.16
+				}
+			}
+		}
+		if = {
+			limit = {
+				dynasty = "de Bourbon"
+				has_heir = no
+				has_consort_regency = no
+				all_subject_country = {
+					NOT = {
+						dynasty = "de Bourbon"
+					}
+				}
+			}
+			random_subject_country = {
+				limit = {
+					religion_group = christian
+					OR = {
+						dynasty = "de Valois"
+						dynasty = "de Bourgogne"
+					}
+					has_consort_regency = no
+					is_subject_of_type = vassal
+					NOT = {
+						total_development = ROOT
+					}
+					government_rank = 1
+				}
+				country_event = {
+					id = ipe_subject.16
+				}
+			}
+		}
+		if = {
+			limit = {
+				dynasty = "de Bourgogne"
+				has_heir = no
+				has_consort_regency = no
+				all_subject_country = {
+					NOT = {
+						dynasty = "de Bourgogne"
+					}
+				}
+			}
+			random_subject_country = {
+				limit = {
+					religion_group = christian
+					OR = {
+						dynasty = "de Valois"
+						dynasty = "de Bourbon"
+					}
+					has_consort_regency = no
+					is_subject_of_type = vassal
+					NOT = {
+						total_development = ROOT
+					}
+					government_rank = 1
+				}
+				country_event = {
+					id = ipe_subject.16
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ipe_subject.19.a
+	}
+}
+
+# Confiscation of Fief
+country_event = {
+	id = ipe_subject.20
+	title = ipe_subject.20.t
+	desc = ipe_subject.20.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We must obey the commands of the Shogun.
+		name = ipe_subject.20.a
+		ai_chance = {
+			factor = 80
+			modifier = {
+				factor = 0
+				OR = {
+					total_development = 75
+					total_development = FROM
+				}
+			}
+		}
+		custom_tooltip = ipe_subject.20.a.tooltip
+		hidden_effect = {
+			if = {
+				limit = {
+					total_development = 200
+					capital_scope = {
+						region = japan_region
+					}
+				}
+				FROM = {
+					country_event = {
+						id = ipe_subject.23
+						days = 30
+					}
+				}
+				random_neighbor_country = {
+					limit = {
+						OR = {
+							is_subject_of_type = daimyo_vassal
+							is_subject_of_type = kanrei_vassal
+							is_subject_of_type = kubo_vassal
+						}
+					}
+					country_event = {
+						id = ipe_subject.28
+						days = 30
+					}
+				}
+			}
+			if = {
+				limit = {
+					total_development = 150
+					capital_scope = {
+						region = japan_region
+					}
+				}
+				FROM = {
+					country_event = {
+						id = ipe_subject.24
+						days = 30
+					}
+				}
+				random_neighbor_country = {
+					limit = {
+						OR = {
+							is_subject_of_type = daimyo_vassal
+							is_subject_of_type = kanrei_vassal
+							is_subject_of_type = kubo_vassal
+						}
+					}
+					country_event = {
+						id = ipe_subject.28
+						days = 30
+					}
+				}
+			}
+			if = {
+				limit = {
+					total_development = 100
+					capital_scope = {
+						region = japan_region
+					}
+				}
+				FROM = {
+					country_event = {
+						id = ipe_subject.25
+						days = 30
+					}
+				}
+				random_neighbor_country = {
+					limit = {
+						OR = {
+							is_subject_of_type = daimyo_vassal
+							is_subject_of_type = kanrei_vassal
+							is_subject_of_type = kubo_vassal
+						}
+					}
+					country_event = {
+						id = ipe_subject.28
+						days = 30
+					}
+				}
+			}
+			if = {
+				limit = {
+					total_development = 50
+					capital_scope = {
+						region = japan_region
+					}
+				}
+				FROM = {
+					country_event = {
+						id = ipe_subject.26
+						days = 30
+					}
+				}
+				random_neighbor_country = {
+					limit = {
+						OR = {
+							is_subject_of_type = daimyo_vassal
+							is_subject_of_type = kanrei_vassal
+							is_subject_of_type = kubo_vassal
+						}
+					}
+					country_event = {
+						id = ipe_subject.28
+						days = 30
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						total_development = 50
+					}
+					capital_scope = {
+						region = japan_region
+					}
+				}
+				FROM = {
+					country_event = {
+						id = ipe_subject.27
+						days = 30
+					}
+				}
+				random_neighbor_country = {
+					limit = {
+						OR = {
+							is_subject_of_type = daimyo_vassal
+							is_subject_of_type = kanrei_vassal
+							is_subject_of_type = kubo_vassal
+						}
+					}
+					country_event = {
+						id = ipe_subject.28
+						days = 30
+					}
+				}
+			}
+		}
+		FROM = {
+			hidden_effect = {
+				diplo_annex_cost = yes
+			}
+			inherit = ROOT
+			hidden_effect = {
+				country_event = {
+					id = ipe_subject.21
+				}
+			}
+		}
+	}
+
+	option = { # The $FROMCOUNTRY$ clan is not fit to rule Japan!
+		name = ipe_subject.20.b
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 100
+				OR = {
+					total_development = 75
+					total_development = FROM
+				}
+			}
+		}
+		declare_war_with_cb = {
+			who = FROM
+			casus_belli = cb_daimyo_annex
+		}
+		FROM = {
+			hidden_effect = {
+				country_event = {
+					id = ipe_subject.22
+				}
+			}
+		}
+		every_owned_province = {
+			limit = {
+				is_core = ROOT
+			}
+			add_core = FROM
+		}
+	}
+}
+
+# Submission to the Shogun
+country_event = {
+	id = ipe_subject.21
+	title = ipe_subject.21.t
+	desc = ipe_subject.21.d
+	picture = SHOGUNATE_AUTHORITY_INCIDENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They are wise to respect our authority.
+		name = ipe_subject.21.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# Resistance to the Shogun!
+country_event = {
+	id = ipe_subject.22
+	title = ipe_subject.22.t
+	desc = ipe_subject.22.d
+	picture = SENGOKU_eventPicture
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # They will pay for this!
+		name = ipe_subject.22.a
+		tooltip = {
+			FROM = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_daimyo_annex
+				}
+				every_owned_province = {
+					limit = {
+						is_core = FROM
+					}
+					add_core = ROOT
+				}
+			}
+		}
+	}
+}
+
+# Wandering Ronin (200 Development)
+country_event = {
+	id = ipe_subject.23
+	title = ipe_subject.23.t
+	desc = ipe_subject.23.d
+	picture = SENGOKU_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will have to deal with them.
+		name = ipe_subject.23.a
+		every_owned_province = {
+			limit = {
+				region = japan_region
+			}
+			add_unrest = 10
+		}
+	}
+}
+
+# Wandering Ronin (150 Development)
+country_event = {
+	id = ipe_subject.24
+	title = ipe_subject.23.t
+	desc = ipe_subject.23.d
+	picture = SENGOKU_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will have to deal with them.
+		name = ipe_subject.23.a
+		every_owned_province = {
+			limit = {
+				region = japan_region
+			}
+			add_unrest = 8
+		}
+	}
+}
+
+# Wandering Ronin (100 Development)
+country_event = {
+	id = ipe_subject.25
+	title = ipe_subject.23.t
+	desc = ipe_subject.23.d
+	picture = SENGOKU_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will have to deal with them.
+		name = ipe_subject.23.a
+		every_owned_province = {
+			limit = {
+				region = japan_region
+			}
+			add_unrest = 6
+		}
+	}
+}
+
+# Wandering Ronin (50 Development)
+country_event = {
+	id = ipe_subject.26
+	title = ipe_subject.23.t
+	desc = ipe_subject.23.d
+	picture = SENGOKU_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will have to deal with them.
+		name = ipe_subject.23.a
+		every_owned_province = {
+			limit = {
+				region = japan_region
+			}
+			add_unrest = 4
+		}
+	}
+}
+
+# Wandering Ronin (0 Development)
+country_event = {
+	id = ipe_subject.27
+	title = ipe_subject.23.t
+	desc = ipe_subject.23.d
+	picture = SENGOKU_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will have to deal with them.
+		name = ipe_subject.23.a
+		every_owned_province = {
+			limit = {
+				region = japan_region
+			}
+			add_unrest = 2
+		}
+	}
+}
+
+# Wandering Ronin (Neighbor Country)
+country_event = {
+	id = ipe_subject.28
+	title = ipe_subject.23.t
+	desc = ipe_subject.28.d
+	picture = SENGOKU_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will make for excellent retainers.
+		name = ipe_subject.28.a
+		add_manpower = 5
+		add_army_tradition = 10
+	}
+}
+
+# Tributary State Fix
+country_event = {
+	id = ipe_subject.30
+	title = ipe_subject.30.t
+	desc = ipe_subject.30.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	immediate = {
+		overlord = {
+			save_event_target_as = overlord_target
+		}
+		if = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = event_target:overlord_target
+					}
+					is_in_war = {
+						defender_leader = event_target:overlord_target
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					war_with = ROOT
+					OR = {
+						is_in_war = {
+							attacker_leader = event_target:overlord_target
+						}
+						is_in_war = {
+							defender_leader = event_target:overlord_target
+						}
+						NOT = {
+							is_in_war = {
+								attacker_leader = ROOT
+							}
+							is_in_war = {
+								defender_leader = ROOT
+							}
+						}
+					}
+				}
+				white_peace = ROOT
+			}
+		}
+	}
+
+	option = {
+		name = ipe_subject.30.a
+	}
+}

@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = angevin
+add_accepted_culture = picard
+religion = catholic
+capital = 3682
+fixed_capital = 177
+
+1441.1.1 = {
+	monarch = {
+		name = "Charles IV"
+		dynasty = "de Valois"
+		birth_date = 1414.10.14
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}

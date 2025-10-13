@@ -1,0 +1,283 @@
+namespace = ipeMNA
+normal_or_historical_nations = yes
+
+# The Expedition to Maynila
+country_event = {
+	id = ipeMNA.1
+	title = ipeMNA.1.t
+	desc = ipeMNA.1.d
+	picture = NAVAL_MILITARY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BEI
+		is_free_or_tributary_trigger = yes
+		is_at_war = no
+		religion_group = muslim
+		TDO = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+		}
+		656 = {
+			owned_by = TDO
+			is_core = MNA
+			is_capital = no
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.5
+			1395 = {
+				trade_share = {
+					country = ROOT
+					share = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			1395 = {
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+		}
+	}
+
+	option = { # Found a new settlement at Maynila.
+		name = ipeMNA.1.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeMNA.1.a.tooltip
+		hidden_effect = {
+			TDO = {
+				country_event = {
+					id = ipeMNA.2
+					days = 30
+				}
+			}
+		}
+		add_sailors = -1000
+	}
+
+	option = { # Do not interfere in Philippine affairs.
+		name = ipeMNA.1.b
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -10
+	}
+}
+
+# The Founding of Maynila
+country_event = {
+	id = ipeMNA.2
+	title = ipeMNA.2.t
+	desc = ipeMNA.2.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	major_trigger = {
+		technology_group = chinese
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = MNA
+            MNA = {
+				capital_scope = {
+					add_province_modifier = {
+						name = encouraged_growth_tax
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_production
+						duration = 18250
+					}
+					add_province_modifier = {
+						name = encouraged_growth_manpower
+						duration = 18250
+					}
+				}
+				if = {
+					limit = {
+						BEI = {
+							religion = sunni
+						}
+					}
+					change_religion = sunni
+				}
+				if = {
+					limit = {
+						BEI = {
+							religion = shiite
+						}
+					}
+					change_religion = shiite
+				}
+				if = {
+					limit = {
+						BEI = {
+							religion = ibadi
+						}
+					}
+					change_religion = ibadi
+				}
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Salilla"
+					dynasty = "Mayilla"
+					adm = 3
+					dip = 4
+					mil = 3
+					claim = 80
+				}
+                change_government = monarchy
+                add_government_reform = plutocratic_reform
+                adopt_reform_progress = ROOT
+				create_alliance = BEI
+            }
+		}
+	}
+
+	option = { # Cooperate with the new polity.
+		name = ipeMNA.2.a
+		ai_chance = {
+			factor = 80
+		}
+		create_alliance = MNA
+		MNA = {
+			add_opinion = {
+				who = ROOT
+				modifier = luzon_alliance
+			}
+		}
+		hidden_effect = {
+			BEI = {
+				country_event = {
+					id = ipeMNA.3
+				}
+			}
+		}
+	}
+
+	option = { # Maynila is part of Tondo!
+		name = ipeMNA.2.b
+		ai_chance = {
+			factor = 20
+		}
+		declare_war_with_cb = {
+			who = MNA
+			casus_belli = cb_civil_war
+		}
+		hidden_effect = {
+			BEI = {
+				country_event = {
+					id = ipeMNA.4
+				}
+			}
+		}
+	}
+
+	option = { # Play as Maynila.
+		name = ipeMNA.2.c
+		hidden_effect = {
+			create_alliance = MNA
+			MNA = {
+				add_opinion = {
+					who = ROOT
+					modifier = luzon_alliance
+				}
+			}
+			BEI = {
+				country_event = {
+					id = ipeMNA.3
+				}
+			}
+		}
+		switch_tag = MNA
+	}
+}
+
+# The Founding of Maynila
+country_event = {
+	id = ipeMNA.3
+	title = ipeMNA.2.t
+	desc = ipeMNA.3.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We have a new ally to the north.
+		name = ipeMNA.3.a
+		tooltip = {
+			TDO = {
+				release = MNA
+				MNA = {
+					define_ruler = {
+						name = "Salilla"
+						dynasty = "Mayilla"
+						adm = 3
+						dip = 4
+						mil = 3
+						claim = 80
+					}
+				}
+			}
+		}
+		add_navy_tradition = 20
+		1395 = {
+			add_trade_modifier = {
+				who = ROOT
+				duration = 9125
+				power = 10
+				key = ALLIANCE_WITH_MAYNILA
+			}
+		}
+	}
+}
+
+# The War for Maynila
+country_event = {
+	id = ipeMNA.4
+	title = ipeMNA.4.t
+	desc = ipeMNA.4.d
+	picture = BATTLE_eventPicture
+	
+	is_triggered_only = yes
+
+	option = { # Then war it is!
+		name = ipeMNA.4.a
+		tooltip = {
+			TDO = {
+				declare_war_with_cb = {
+					who = MNA
+					casus_belli = cb_civil_war
+				}
+			}
+		}
+		add_navy_tradition = 20
+		1395 = {
+			add_trade_modifier = {
+				who = ROOT
+				duration = 9125
+				power = 10
+				key = ALLIANCE_WITH_MAYNILA
+			}
+		}
+	}
+}

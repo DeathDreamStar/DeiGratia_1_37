@@ -1,0 +1,53 @@
+name = "Ottoman Reconquest of Kruje"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 4750 # Kruje
+}
+
+1444.3.2 = {
+	add_attacker = TUR
+	add_attacker = EPI
+	add_defender = KST
+	add_defender = XBT
+	add_defender = ARI
+	add_defender = DKG
+	add_defender = MON
+}
+
+1444.6.29 = {
+	battle = {
+		name = "Torvioll"
+		location = 4750
+		attacker = {
+			commander = "Ali Pasha"
+			infantry = 28000
+			cavalry = 12000
+			losses = 55	# percent
+			country = TUR
+		}
+		defender = {
+			commander = "Skanderbeg"
+			infantry = 7000
+			cavalry = 8000
+			losses = 27	# percent
+			country = KST
+		}
+		result = no
+	}
+}
+
+1444.8.15 = {
+	add_attacker = SER
+}
+
+1450.11.23 = {
+	rem_attacker = TUR
+	rem_attacker = SER
+	rem_attacker = EPI
+	rem_defender = KST
+	rem_defender = XBT
+	rem_defender = ARI
+	rem_defender = DKG
+	rem_defender = MON
+}

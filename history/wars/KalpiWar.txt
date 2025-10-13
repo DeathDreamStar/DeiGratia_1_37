@@ -1,0 +1,26 @@
+name = "First Kalpi War" #Quite a few of them
+war_goal = {
+	type = take_border
+	casus_belli = cb_border_war
+	province = 2059 # Kalpi
+}
+
+1442.1.1 = {
+	add_attacker = MLW
+	add_attacker = GDW
+	add_attacker = BGL
+	add_attacker = BND
+	add_attacker = PAN
+	add_defender = JNP
+	add_defender = KLP
+}
+
+1443.1.1 = {
+	rem_attacker = MLW
+	rem_attacker = GDW
+	rem_attacker = BGL
+	rem_attacker = BND
+	rem_attacker = PAN
+	rem_defender = JNP
+	rem_defender = KLP
+}

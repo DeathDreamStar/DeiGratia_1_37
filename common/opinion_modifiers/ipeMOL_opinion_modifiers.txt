@@ -1,0 +1,5 @@
+moldavia_sent_aid = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}

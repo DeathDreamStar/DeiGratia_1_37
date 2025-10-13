@@ -1,0 +1,964 @@
+namespace = war_of_the_roses
+
+# The War of the Roses
+country_event = {
+	id = war_of_the_roses.1
+	title = ipe_war_of_the_roses.1.t
+	desc = ipe_war_of_the_roses.1.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+	major = yes
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+		
+	immediate = {
+		set_global_flag = had_war_of_the_roses
+		add_stability = -2
+		hidden_effect = {
+			if = {
+				limit = {
+					owns = 245
+				}
+				245 = {
+					add_core = YRK
+				}
+			}
+			if = {
+				limit = {
+					owns = 239
+				}
+				239 = {
+					add_core = YRK
+				}
+			}
+			if = {
+				limit = {
+					owns = 1860
+				}
+				1860 = {
+					add_core = YRK
+				}
+			}
+			if = {
+				limit = {
+					owns = 4365
+				}
+				4365 = {
+					add_core = YRK
+				}
+			}
+			if = {
+				limit = {
+					owns = 4367
+				}
+				4367 = {
+					add_core = YRK
+				}
+			}
+			if = {
+				limit = {
+					owns = 4368
+				}
+				4368 = {
+					add_core = YRK
+				}
+			}
+			if = {
+				limit = {
+					owns = 4371
+				}
+				4371 = {
+					add_core = YRK
+				}
+			}
+			if = {
+				limit = {
+					owns = 241
+				}
+				241 = {
+					add_core = YRK
+				}
+			}
+			if = {
+				limit = {
+					owns = 4366
+				}
+				4366 = {
+					add_core = YRK
+				}
+			}
+			if = {
+				limit = {
+					owns = 6428
+				}
+				6428 = {
+					add_core = YRK
+				}
+			}
+			if = {
+				limit = {
+					owns = 6431
+				}
+				6431 = {
+					add_core = YRK
+				}
+			}
+			release = YRK
+			YRK = {
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+				if = {
+					limit = {
+						FRA = {
+							NOT = {
+								is_subject_of = ENG
+							}
+						}
+					}
+					add_trust = {
+						who = FRA
+						value = -30
+						mutual = yes
+					}
+				}
+			}
+			if = {
+				limit = {
+					DBG = {
+						has_ruler = "Richard"
+						dynasty = "York"
+					}
+				}
+				YRK = {
+					define_heir = {
+						name = "Richard"
+						dynasty = "York"
+						birth_date = 1411.9.22
+						adm = 5
+						dip = 4
+						mil = 4
+					}
+					kill_ruler = yes
+					add_stability = 1
+					if = {
+						limit = {
+							has_dlc = "Rights of Man" 
+						}
+						hidden_effect = { add_ruler_personality = tactical_genius_personality }
+					}
+				}
+			}
+			if = {
+				limit = {
+					DBG = {
+						has_ruler = "Edward"
+						dynasty = "York"
+					}
+				}
+				YRK = {
+					define_heir = {
+						name = "Edward"
+						dynasty = "York"
+						birth_date = 1411.9.22
+						adm = 4
+						dip = 3
+						mil = 4
+					}
+					kill_ruler = yes
+					add_stability = 1
+					if = {
+						limit = {
+							has_dlc = "Rights of Man" 
+						}
+						hidden_effect = { add_ruler_personality = tactical_genius_personality }
+					}
+				}
+			}
+			if = {
+				limit = {
+					DBG = {
+						has_ruler = "Richard"
+						has_heir = "Edward"
+						dynasty = "York"
+					}
+					YRK = {
+						has_ruler = "Richard"
+						dynasty = "York"
+					}
+				}
+				YRK = {
+					define_heir = {
+						name = "Edward"
+						dynasty = "York"
+						birth_date = 1442.4.28
+						adm = 4
+						dip = 3
+						mil = 4
+					}
+					if = {
+						limit = {
+							has_dlc = "Rights of Man"
+							heir_age = 15
+						}
+						hidden_effect = { add_heir_personality = tactical_genius_personality }
+					}
+				}
+			}
+			if = {
+				limit = {
+					YRK = {
+						NOT = {
+							dynasty = "York"
+						}
+					}
+				}
+				YRK = {
+					define_ruler = {
+						dynasty = "York"
+						age = 31
+					}
+					if = {
+						limit = {
+							has_dlc = "Rights of Man" 
+						}
+						hidden_effect = { add_ruler_personality = tactical_genius_personality }
+					}
+				}
+			}
+			if = {
+				limit = {
+					DBG = {
+						exists = yes
+						dynasty = "York"
+					}
+				}
+				YRK = {
+					create_union = DBG
+					add_historical_friend = DBG
+				}
+				DBG = {
+					country_event = {
+						id = new_war_of_the_roses.1
+					}
+					add_historical_friend = YRK
+					if = {
+						limit = {
+							has_leader = "Richard York"
+						}
+						kill_leader = {
+							type = "Richard York"
+						}
+					}
+				}
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						culture_group = french
+						culture_group = germanic
+						culture_group = iberian
+						culture_group = basque_group
+						culture = irish
+					}
+					controlled_by = ENG
+				}
+				add_core = YRK
+				cede_province = YRK
+			}
+			YRK = {
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1.6
+						cavalry = 0.4
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						heavy_ship = 0.5
+						light_ship = 0.5
+						transport = 0.5
+					}
+				}
+				add_manpower = 10
+				add_treasury = 250
+				# define_ruler_to_general = {
+				#	fire = 2
+				#	shock = 4
+				#	manuever = 4
+				#	siege = 0
+				# }
+				if = {
+					limit = {
+						has_heir = yes
+						heir_age = 15
+					}
+					define_heir_to_general = {
+						fire = 2
+						shock = 4
+						manuever = 4
+						siege = 0
+					}
+				}
+				add_country_modifier = {
+					name = waging_war_of_roses
+					duration = -1
+				}
+				capital_scope = {
+					add_building = fort_15th
+				}
+			}
+			every_owned_province = {
+				add_core = YRK
+			}
+			declare_war_with_cb = {
+				who = YRK
+				casus_belli = cb_civil_war
+			}
+			every_subject_country = {
+				limit = {
+					OR = {
+						culture_group = french
+						culture_group = germanic
+						culture_group = iberian
+						culture_group = basque_group
+						capital_scope = {
+							OR = {
+								area = munster_area
+								area = connacht_area
+								area = leinster_area
+								area = ulster_area
+								area = eastern_ulster_area
+								area = wales_area
+								area = powys_area
+								area = deheubarth_area
+							}
+						}
+					}
+					is_lesser_in_union = no
+				}
+				country_event = {
+					id = new_war_of_the_roses.4
+				}
+			}
+		}
+	}
+
+	option = { # Support the House of Lancaster.
+		name = ipe_war_of_the_roses.1.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipe_war_of_the_roses.1.a.tooltip
+		set_country_flag = war_of_the_roses
+
+		if = {
+			limit = {
+				NOT = {
+					dynasty = "Lancaster"
+				}
+			}
+			define_ruler = {
+				dynasty = "Lancaster"
+				age = 31
+			}
+		}
+		if = {
+			limit = {
+				has_states_general_mechanic = yes
+			}
+			change_statists_vs_orangists = 1
+		}
+		if = {
+			limit = {
+				has_dlc = "Rights of Man" 
+			}
+			hidden_effect = { add_ruler_personality = well_connected_personality }
+		}
+		add_yearly_manpower = -3
+	}
+
+	option = { # Play as York.
+		name = ipe_war_of_the_roses.1.b
+
+		ai_chance = {
+			factor = 0
+		}
+
+		set_country_flag = war_of_the_roses
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						dynasty = "Lancaster"
+					}
+				}
+				define_ruler = {
+					dynasty = "Lancaster"
+					age = 31
+				}
+			}
+			if = {
+				limit = {
+					has_states_general_mechanic = yes
+				}
+				change_statists_vs_orangists = 1
+			}
+			if = {
+				limit = {
+					has_dlc = "Rights of Man" 
+				}
+				hidden_effect = { add_ruler_personality = well_connected_personality }
+			}
+			add_yearly_manpower = -3
+		}
+
+		switch_tag = YRK
+	}
+}
+
+########################################
+# Provinces Declare their Support
+########################################
+
+# Support for $DYNASTY$
+country_event = {
+	id = war_of_the_roses.2
+	title = war_of_the_roses.2.t
+	desc = war_of_the_roses.2.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+	
+	trigger = {
+		any_owned_province = {
+			is_overseas = no
+			is_capital = no
+			NOT = { has_province_modifier = wotr_local_support }
+			NOT = { has_province_modifier = disgruntled_nobles }
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # This is most welcomed.
+		name = ipe_war_of_the_roses.2.a
+		random_owned_province = {
+			limit = {
+				is_overseas = no
+				is_capital = no
+				NOT = { has_province_modifier = wotr_local_support }
+				NOT = { has_province_modifier = disgruntled_nobles }
+			}
+			add_province_modifier = {
+				name = wotr_local_support
+				duration = 3650
+			}
+		}
+	}
+}
+
+# Declaration for the Yorkist Pretenders!
+country_event = {
+	id = war_of_the_roses.4
+	title = ipe_war_of_the_roses.4.t
+	desc = ipe_war_of_the_roses.4.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+	
+	trigger = {
+		any_owned_province = {
+			is_overseas = no
+			is_capital = no
+			controlled_by = YRK
+			NOT = { has_province_modifier = wotr_local_support }
+		}
+	}
+
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # Dire news.
+		name = ipe_war_of_the_roses.4.a
+		
+		random_owned_province = {
+			limit = {
+				is_overseas = no
+				is_capital = no
+				controlled_by = YRK
+				NOT = { has_province_modifier = wotr_local_support }
+			}
+			add_core = YRK
+			cede_province = YRK
+		}
+	}
+}
+
+########################################
+# Internal Problems
+########################################
+
+# Nobles Disgruntled
+country_event = {
+	id = war_of_the_roses.5
+	title = war_of_the_roses.5.t
+	desc = war_of_the_roses.5.d
+	
+	picture = WAR_OF_THE_ROSES_eventPicture
+	
+	trigger = {
+		any_owned_province = {
+			has_province_modifier = wotr_local_support
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # These gifts should show our gratitude.
+		name = ipe_war_of_the_roses.5.a
+		ai_chance = { factor = 50 }
+		add_years_of_income = -0.1
+	}
+	option = { # It is nothing but their duty!
+		name = ipe_war_of_the_roses.5.b
+		ai_chance = { factor = 50 }
+		random_owned_province = {
+			limit = {
+				has_province_modifier = wotr_local_support
+			}
+			remove_province_modifier = wotr_local_support
+			add_province_modifier = {
+				name = disgruntled_nobles
+				duration = 1825
+			}
+		}
+	}
+}
+
+# Soldiers Desert
+country_event = {
+	id =  war_of_the_roses.7
+	title = war_of_the_roses.7.t
+	desc = ipe_war_of_the_roses.7.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # There is nothing we can do.
+		name = ipe_war_of_the_roses.7.a
+		ai_chance = { factor = 10 }
+		add_yearly_manpower = -2.5
+		add_legitimacy = -5
+	}
+
+	option = { # Import food from abroad.
+		name = ipe_war_of_the_roses.7.b
+		ai_chance = { factor = 70 }
+		add_country_modifier = {
+			name = importing_food
+			duration = 1825
+		}
+	}
+
+	option = { # Let them take from the local peasants.
+		name = ipe_war_of_the_roses.7.c
+		ai_chance = { factor = 20 }
+		add_country_modifier = {
+			name = plundering_soldiers
+			duration = 1825
+		}
+	}
+}
+
+# Legitimacy Questioned
+country_event = {
+	id =  war_of_the_roses.8
+	title =  war_of_the_roses.8.t
+	desc =  war_of_the_roses.8.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+	
+	trigger = {
+		NOT = { legitimacy = 50 }
+	}
+	
+	is_triggered_only = yes
+
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { # Buy their continued support.
+		name = ipe_war_of_the_roses.8.a
+		ai_chance = { factor = 50 }
+		add_years_of_income = -0.25
+	}
+
+	option = { # How dare they question me?
+		name = war_of_the_roses.8.b
+		ai_chance = { factor = 50 }
+		add_country_modifier = {
+			name = legitimacy_questioned
+			duration = 1825
+		}
+	}
+}
+
+########################################
+# Foreign Support
+########################################
+
+# The House of Lancaster
+country_event = {
+	id = war_of_the_roses.12
+	title = ipe_war_of_the_roses.12.t
+	desc = ipe_war_of_the_roses.12.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+	
+	trigger = {
+		OR = {
+			capital_scope = {
+				region = british_isles_region
+			}
+			tag = FRA
+			tag = BUR
+		}
+		ENG = {
+			has_disaster = war_of_the_roses
+		}
+		NOT = { has_country_flag = support_for_war_of_the_roses }
+		NOT = { has_country_flag = no_support_for_rose_rebels_lancaster }
+		NOT = {
+			tag = ENG
+			is_subject_of = ENG
+		}
+		NOT = {
+			tag = YRK
+			is_subject_of = YRK
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = { # Send them a token force.
+		name = ipe_war_of_the_roses.12.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_rival = ENG
+			}
+			modifier = {
+				factor = 100
+				alliance_with = ENG
+			}
+			modifier = {
+				factor = 0
+				war_with = ENG
+			}
+		}
+		set_country_flag = support_for_war_of_the_roses
+		add_manpower = -3
+		ENG = {
+			add_opinion = {
+				who = ROOT
+				modifier = grateful_for_help_roses
+			}
+		}
+		add_truce_with = ENG
+		YRK = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_lancaster
+			}
+		}
+		hidden_effect = {
+			ENG = {
+				country_event = { id = war_of_the_roses.14 }
+			}
+		}
+	}
+	option = { # Send them money.
+		name = ipe_war_of_the_roses.12.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				is_rival = ENG
+			}
+			modifier = {
+				factor = 100
+				alliance_with = ENG
+			}
+			modifier = {
+				factor = 0
+				war_with = ENG
+			}
+		}
+		set_country_flag = support_for_war_of_the_roses
+		add_years_of_income = -0.5
+		ENG = {
+			add_opinion = {
+				who = ROOT
+				modifier = grateful_for_help_roses
+			}
+		}
+		add_truce_with = ENG
+		YRK = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_lancaster
+			}
+		}
+		hidden_effect = {
+			ENG = {
+				country_event = { id = war_of_the_roses.14 }
+			}
+		}
+	}
+	option = { # We will not support the House of Lancaster.
+		name = ipe_war_of_the_roses.12.c
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 100
+				is_rival = ENG
+			}
+		}
+		set_country_flag = no_support_for_rose_rebels_lancaster
+		add_prestige = 5
+	}
+}
+
+# The House of York
+country_event = {
+	id = war_of_the_roses.13
+	title = ipe_war_of_the_roses.13.t
+	desc = war_of_the_roses.13.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+	
+	trigger = {
+		OR = {
+			capital_scope = {
+				region = british_isles_region
+			}
+			tag = FRA
+			tag = BUR
+		}
+		ENG = {
+			has_disaster = war_of_the_roses
+		}
+		NOT = { has_country_flag = support_for_war_of_the_roses }
+		NOT = { has_country_flag = no_support_for_rose_rebels_york }
+		NOT = {
+			tag = ENG
+			is_subject_of = ENG
+		}
+		NOT = {
+			tag = YRK
+			is_subject_of = YRK
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = { # Send them a token force.
+		name = ipe_war_of_the_roses.12.a
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				alliance_with = ENG
+			}
+			modifier = {
+				factor = 100
+				is_rival = ENG
+			}
+			modifier = {
+				factor = 0
+				war_with = YRK
+			}
+		}
+		set_country_flag = support_for_war_of_the_roses
+		add_manpower = -3
+		YRK = {
+			add_opinion = {
+				who = ROOT
+				modifier = grateful_for_help_roses
+			}
+		}
+		add_truce_with = YRK
+		ENG = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_york
+			}
+		}
+		hidden_effect = {
+			YRK = {
+				country_event = {
+					id = war_of_the_roses.14
+				}
+			}
+		}
+	}
+	option = { # Send them money.
+		name = ipe_war_of_the_roses.12.b
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 0
+				alliance_with = ENG
+			}
+			modifier = {
+				factor = 100
+				is_rival = ENG
+			}
+			modifier = {
+				factor = 0
+				war_with = YRK
+			}
+		}
+		set_country_flag = support_for_war_of_the_roses
+		add_years_of_income = -0.5
+		YRK = {
+			add_opinion = {
+				who = ROOT
+				modifier = grateful_for_help_roses
+			}
+		}
+		add_truce_with = YRK
+		ENG = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_york
+			}
+		}
+		hidden_effect = {
+			YRK = {
+				country_event = {
+					id = war_of_the_roses.14
+				}
+			}
+		}
+	}
+	option = { # We will not support rebels.
+		name = ipe_war_of_the_roses.12.c
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				is_rival = ENG
+			}
+		}
+		set_country_flag = no_support_for_rose_rebels_york
+		add_prestige = 5
+	}
+}
+
+# [From.GetName] Intervenes!
+country_event = {
+	id = war_of_the_roses.14
+	title = war_of_the_roses.14.t
+	desc = ipe_war_of_the_roses.14.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = { # We are grateful.
+		name = ipe_war_of_the_roses.14.a
+		add_manpower = 3
+	}
+}
+
+
+########################################
+# The End of the War
+########################################
+
+# The End of the War of the Roses
+country_event = {
+	id = war_of_the_roses.100
+	title = war_of_the_roses.100.t
+	desc = ipe_war_of_the_roses.100.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+	
+	major = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			# Clear Country Modifiers
+			remove_country_modifier = importing_food
+			remove_country_modifier = plundering_soldiers
+			remove_country_modifier = legitimacy_questioned
+
+			# Clear Province Modifiers
+			every_owned_province = {
+				if = {
+					limit = {
+						has_province_modifier = wotr_local_support
+					}
+					remove_province_modifier = wotr_local_support
+				}
+			}
+			if = {
+				limit = {
+					exists = DBG
+					DBG = {
+						dynasty = "York"
+					}
+				}
+				inherit = DBG
+			}
+			if = {
+				limit = {
+					exists = ULS
+					ULS = {
+						dynasty = "York"
+					}
+				}
+				inherit = ULS
+			}
+			set_country_flag = war_of_the_roses_ended
+		}
+	}
+	
+	option = {		# Order has finally been restored
+		name = war_of_the_roses.100.a
+		add_stability_or_adm_power = yes
+		add_prestige = 50
+		set_country_flag = roses_mission
+		every_province = {
+			limit = {
+				is_core = YRK
+			}
+			remove_core = YRK
+		}
+	}
+}

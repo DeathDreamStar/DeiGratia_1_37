@@ -1,0 +1,27 @@
+#6949 - Elsterwerda
+
+owner = SAX
+controller = SAX
+culture = saxon
+religion = catholic
+capital = "Elsterwerda"
+trade_goods = grain
+hre = yes
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+add_core = SAX
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_core = MEI
+fort_15th = yes
+
+
+
+1531.1.1 = { religion = protestant }
+1790.8.1 = { unrest = 5 } # Peasant revolt
+1791.1.1 = { unrest = 0 }
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved

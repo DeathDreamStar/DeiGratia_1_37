@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = poitevin
+religion = catholic
+technology_group = western
+capital = 3706
+fixed_capital = 3706
+
+1415.1.1 = {
+	monarch = {
+		name = "Arthur"
+		dynasty = "de Dreux"
+		birth_date = 1393.8.24
+		death_date = 1458.12.26
+		adm = 3
+		dip = 2
+		mil = 4
+		leader = { name = "Arthur de Dreux"	type = general	fire = 4	shock = 4	manuever = 4	siege = 1 }
+	}
+}

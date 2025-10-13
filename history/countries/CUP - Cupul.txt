@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = yucatec
+religion = mesoamerican_religion
+technology_group = mesoamerican 
+capital = 6559
+fixed_capital = 6559
+
+1444.1.1 = {
+	monarch = {
+		name = "Ah Kauil"
+		dynasty = "Cupul"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

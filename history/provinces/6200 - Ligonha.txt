@@ -1,0 +1,18 @@
+#6200 - Ligonha
+
+owner = MKU
+controller = MKU
+add_core = MKU
+culture = makua #tonga
+religion = shamanism
+capital = "Ligonha"
+is_city = yes
+trade_goods = ivory
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+
+discovered_by = central_african
+discovered_by = east_african
+1513.1.1 = { discovered_by = POR } #Travels of Antonio Fernandes in hinterland of Sofala

@@ -1,0 +1,122 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = mazandarani
+religion = shiite
+technology_group = muslim
+capital = 3508 # Chalus
+religious_school = jafari_school
+
+1379.5.1 = {
+	monarch = {
+		name = "'Adud ud-Dawlah Qubad"
+		dynasty = "Baduspan"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+
+1390.1.1 = {
+	monarch = {
+		name = "Sa'ad ud-Dawlah Tus"
+		dynasty = "Baduspan"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+
+1394.1.1 = {
+	monarch = {
+		name = "Kayumarth"
+		dynasty = "Baduspan"
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = zealot_personality
+	add_ruler_personality = righteous_personality
+}
+
+1448.1.1 = {
+	monarch = {
+		name = "Bakir Almaluf"
+		dynasty = "Baduspan"
+		adm = 4
+		dip = 2
+		mil = 6
+	}
+}
+
+1453.3.1 = {
+	monarch = {
+		name = "Kai-Ka'us II"
+		dynasty = "Baduspan"
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+
+1467.1.1 = {
+	monarch = {
+		name = "Jahangir"
+		dynasty = "Baduspan"
+		adm = 2
+		dip = 2
+		mil = 4
+	}
+}
+
+
+1499.1.1 = {
+	monarch = {
+		name = "Bisutun II"
+		dynasty = "Baduspan"
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+
+
+1507.5.1 = {
+	monarch = {
+		name = "Bahman"
+		dynasty = "Baduspan"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+
+1550.5.1 = {
+	monarch = {
+		name = "Kayumarth II"
+		dynasty = "Baduspan"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+
+1570.5.1 = {
+	monarch = {
+		name = "Aziz"
+		dynasty = "Baduspan"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+
+1580.5.1 = {
+	monarch = {
+		name = "Jahangir II"
+		dynasty = "Baduspan"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+} # Conquered in 1598 by the Safavids

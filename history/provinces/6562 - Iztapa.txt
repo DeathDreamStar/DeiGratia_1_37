@@ -1,0 +1,30 @@
+#6562 - Iztapa
+
+owner = CUZ
+controller = CUZ
+culture = aztek
+religion = nahuatl
+capital = "Iztapa"
+trade_goods = cocoa
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = CUZ
+
+
+
+discovered_by = mesoamerican
+
+
+1524.1.1 = {
+           discovered_by = SPA
+           owner = SPA
+           controller = SPA
+           culture = castillian
+           religion = catholic
+} # Colonized and conquered by Spanish armies
+1549.1.1 = { add_core = SPA }
+1578.1.1 = { discovered_by = ENG } # Drake
+1810.9.16 = { owner = MEX add_core = MEX controller = SPA } # Mexican War of Independence

@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = poitevin
+religion = catholic
+technology_group = western
+capital = 6408
+fixed_capital = 6408
+
+1420.5.12 = {
+	monarch = {
+		name = "Jean VI"
+		dynasty = "d'Harcourt"
+		birth_date = 1369.1.1
+		adm = 1
+		dip = 0
+		mil = 0
+	}
+} 

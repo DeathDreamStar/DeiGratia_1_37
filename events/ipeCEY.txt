@@ -1,0 +1,473 @@
+namespace = ipeCEY
+normal_or_historical_nations = yes
+
+# The Kingdom of Kandy
+country_event = {
+	id = ipeCEY.1
+	title = ipeCEY.1.t
+	desc = ipeCEY.1.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	major_trigger = {
+		technology_group = indian
+	}
+
+	trigger = {
+		tag = CEY
+		is_free_or_tributary_trigger = yes
+		owns = 2099
+		2099 = {
+			is_core = KND
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		NOT = {
+			exists = KND
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = KND
+            KND = {
+				change_religion = buddhism
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 0.8
+						cavalry = 0.2
+                    }
+                }
+				define_ruler = {
+					name = "Sena Sammatha Wickramabahu"
+					dynasty = "Siri Sanga Bo"
+					adm = 3
+					dip = 2
+					mil = 3
+					claim = 80
+					religion = buddhism
+				}
+                change_government = monarchy
+                add_government_reform = nayankara_reform
+				set_government_rank = 2
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # We cannot keep Kandy within our influence.
+		name = ipeCEY.1.a
+		ai_chance = {
+			factor = 80
+		}
+		KND = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+
+	option = { # Bring Kandy back into the fold!
+		name = ipeCEY.1.b
+		ai_chance = {
+			factor = 20
+		}
+		declare_war_with_cb = {
+			who = KND
+			casus_belli = cb_civil_war
+		}
+	}
+
+	option = { # Play as Kandy.
+		name = ipeCEY.1.c
+		ai_chance = {
+			factor = 0
+		}
+		KND = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+		switch_tag = KND
+	}
+}
+
+# The Spoiling of $MONARCH$
+country_event = {
+	id = ipeCEY.2
+	title = ipeCEY.2.t
+	desc = ipeCEY.2.d
+	picture = BUDDHISM_BAD_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	major_trigger = {
+		technology_group = indian
+	}
+
+	trigger = {
+		tag = CEY
+		government = monarchy
+		OR = {
+			NOT = {
+				legitimacy = 50
+				stability = 0
+			}
+		}
+		has_regency = no
+		has_heir = yes
+		is_at_war = no
+		NOT = {
+			current_age = age_of_discovery
+		}
+		572 = {
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		6864 = {
+			owned_by = ROOT
+			is_core = RGM
+			is_capital = no
+		}
+		6865 = {
+			owned_by = ROOT
+			is_core = STW
+			is_capital = no
+		}
+		is_free_or_tributary_trigger = yes
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = RGM
+            RGM = {
+				change_religion = buddhism
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                    }
+                }
+                define_ruler = {
+                    name = "Pararajasinghe"
+                    dynasty = "Siri Sanga Bo"
+					adm = 4
+					dip = 1
+					mil = 1
+					claim = 70
+                }
+				add_ruler_personality = malevolent_personality
+                adopt_reform_progress = ROOT
+				add_truce_with = STW
+            }
+			add_truce_with = RGM
+			release = STW
+            STW = {
+				change_religion = buddhism
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                    }
+                }
+                define_ruler = {
+                    name = "Mayadunne"
+                    dynasty = "Siri Sanga Bo"
+					adm = 4
+					dip = 6
+					mil = 6
+					claim = 70
+                }
+				add_ruler_personality = malevolent_personality
+                adopt_reform_progress = ROOT
+				add_truce_with = RGM
+            }
+			add_truce_with = STW
+		}
+	}
+
+	option = { # We have come upon an age of darkness.
+		name = ipeCEY.2.a
+		kill_heir = { allow_new_heir = no }
+		kill_ruler = yes
+		add_stability = -3
+		add_years_of_income = -1
+		define_ruler = {
+			name = "Bhuvanaikabahu"
+			dynasty = "Siri Sanga Bo"
+			adm = 2
+			dip = 2
+			mil = 2
+			claim = 70
+		}
+		tooltip = {
+			release = RGM
+			RGM = {
+				define_ruler = {
+                    name = "Pararajasinghe"
+                    dynasty = "Siri Sanga Bo"
+					adm = 4
+					dip = 1
+					mil = 1
+					claim = 70
+				}
+			}
+			add_truce_with = RGM
+			release = STW
+			STW = {
+                define_ruler = {
+                    name = "Mayadunne"
+                    dynasty = "Siri Sanga Bo"
+					adm = 4
+					dip = 6
+					mil = 6
+					claim = 70
+                }
+			}
+			add_truce_with = STW
+		}
+		set_country_flag = decline_of_kotte
+	}
+}
+
+# The Decline of Kotte
+country_event = {
+	id = ipeCEY.3
+	title = ipeCEY.3.t
+	desc = ipeCEY.3.d
+	picture = BUDDHISM_BAD_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	major_trigger = {
+		technology_group = indian
+	}
+
+	trigger = {
+		tag = CEY
+		has_country_flag = decline_of_kotte
+		any_owned_province = {
+			has_discovered = POR
+		}
+		is_free_or_tributary_trigger = yes
+		NOT = {
+			religion = catholic
+		}
+		POR = {
+			any_owned_province = {
+				has_discovered = ROOT
+			}
+			exists = yes
+			is_subject = no
+			religion = catholic
+		}
+		OR = {
+			STW = {
+				exists = yes
+				is_subject = no
+			}
+			RGM = {
+				exists = yes
+				is_subject = no
+			}
+			KND = {
+				exists = yes
+				is_subject = no
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # We must ask the Portuguese for protection.
+		name = ipeCEY.3.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeCEY.3.a.tooltip
+		change_religion = catholic
+		hidden_effect = {
+			POR = {
+				country_event = {
+					id = ipeCEY.4
+				}
+			}
+		}
+	}
+
+	option = { # We don't need European help!
+		name = ipeCEY.3.b
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = 10
+	}
+}
+
+# The Decline of Kotte
+country_event = {
+	id = ipeCEY.4
+	title = ipeCEY.3.t
+	desc = ipeCEY.4.d
+	picture = BUDDHISM_BAD_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will protect this new Christian ruler.
+		name = ipeCEY.4.a
+		ai_chance = {
+			factor = 100
+		}
+		vassalize = FROM
+		add_prestige = 10
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = offered_protection
+			}
+			add_liberty_desire = -25
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeCEY.5
+				}
+			}
+		}
+	}
+
+	option = { # We will not support Kotte.
+		name = ipeCEY.4.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = withheld_protection
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeCEY.6
+				}
+			}
+		}
+	}
+}
+
+# Portugal Offers Protection
+country_event = {
+	id = ipeCEY.5
+	title = ipeCEY.5.t
+	desc = ipeCEY.5.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Excellent.
+		name = ipeCEY.5.a
+		tooltip = {
+			FROM = {
+				vassalize = ROOT
+			}
+			add_opinion = {
+				who = FROM
+				modifier = offered_protection
+			}
+		}
+	}
+}
+
+# Portugal Withholds Protection
+country_event = {
+	id = ipeCEY.6
+	title = ipeCEY.6.t
+	desc = ipeCEY.6.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Unfortunate.
+		name = ipeCEY.6.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = withheld_protection
+			}
+		}
+	}
+}
+
+# The Inheritance of Kotte
+country_event = {
+	id = ipeCEY.7
+	title = ipeCEY.7.t
+	desc = ipeCEY.7.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CEY
+		is_subject_of = POR
+		has_heir = no
+		government = monarchy
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Promise Kotte to Portugal.
+		name = ipeCEY.7.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeCEY.7.a.tooltip
+		set_country_flag = inheritance_of_kotte
+	}
+
+	option = { # Kotte's monarchy shall endure.
+		name = ipeCEY.7.b
+		ai_chance = {
+			factor = 0
+		}
+		add_legitimacy = 10
+	}
+}
+
+# The Inheritance of Kotte
+country_event = {
+	id = ipeCEY.8
+	title = ipeCEY.7.t
+	desc = ipeCEY.8.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Kotte will be a useful addition to our dominions.
+		name = ipeCEY.8.a
+		inherit = CEY
+		add_prestige = 5
+	}
+}

@@ -1,0 +1,21 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = saxon
+religion = catholic
+technology_group = western
+capital = 63 # Erfurt
+fixed_capital = 63
+
+1806.7.12 = { elector = no } # The HRE is formally abolished
+
+1444.1.1  = {
+	monarch = {
+		name = "Stadtrat"
+		ADM = 3
+		DIP = 3
+		MIL = 3
+		regent = yes
+	}
+}

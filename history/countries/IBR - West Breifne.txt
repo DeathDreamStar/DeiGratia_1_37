@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = gaelic_overkingdom
+government_rank = 1
+technology_group = western
+primary_culture = irish
+religion = catholic
+capital = 3738 
+fixed_capital = 3738
+add_historical_rival = ENG
+
+1435.1.1 = {
+	monarch = {
+		name = "Donnchadh bacagh"
+		dynasty = "Ó Ruairc"
+		birth_date = 1410.1.1
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}

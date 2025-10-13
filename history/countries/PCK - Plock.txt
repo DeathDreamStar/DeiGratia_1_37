@@ -1,0 +1,84 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = eastern
+religion = catholic
+primary_culture = polish
+capital = 256
+fixed_capital = 256
+
+#Third Creation
+1434.1.1 = {
+	monarch = {
+		name = "Wladyslaw I"
+		dynasty = "Piast"
+		birth_date = 1409.1.1
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1455.12.12 = {
+	monarch = {
+		name = "Paul Gizyck"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Siemowit"
+		monarch_name = "Siemowit VI"
+		dynasty = "Piast"
+		birth_date = 1446.1.2
+		death_date = 1462.1.1
+		claim = 95
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+1459.7.5 = {
+	monarch = {
+		name = "Siemowit VI"
+		dynasty = "Piast"
+		birth_date = 1446.1.2
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+1462.1.1 = {
+	monarch = {
+		name = "Wladyslaw II"
+		dynasty = "Piast"
+		birth_date = 1448.8.31
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+#done 1462.2.27
+
+#Fourth Creation
+1471.1.1 = {
+	monarch = {
+		name = "Kazimierz III"
+		dynasty = "Piast"
+		birth_date = 1448.6.10
+		adm = 2
+		dip = 0
+		mil = 1
+	}
+}
+1475.1.1 = {
+	monarch = {
+		name = "Janusz II"
+		dynasty = "Piast"
+		birth_date = 1455.1.1
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+#POL 1495.2.16

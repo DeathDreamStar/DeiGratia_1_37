@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = schlesian
+add_accepted_culture = lower_silesian
+religion = catholic
+capital = 3761
+fixed_capital = 3761
+
+1443.1.1 = {
+	monarch = {
+		name = "Jan"
+		dynasty = "Piast"
+		birth_date = 1425.1.1
+		adm = 4
+		dip = 2
+		mil = 0
+	}
+}

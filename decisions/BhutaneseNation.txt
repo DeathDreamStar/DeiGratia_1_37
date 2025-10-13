@@ -1,0 +1,84 @@
+country_decisions = {
+
+	bhutanese_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_bhutan_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = BHU }
+			OR = {
+				primary_culture = bhutanese
+				tag = RLU
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 565 # Bumthang
+				province_id = 4481 # Punakha
+				province_id = 6804 # Paro
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 20
+			is_at_war = no
+			OR = {
+				is_subject = no
+				is_subject_of_type = tributary_state
+				is_subject_of_type = guard
+			}
+			is_nomad = no
+			owns_core_province = 565
+			owns_core_province = 4481
+			owns_core_province = 6804
+		}
+		effect = {
+			4481 = {
+				ipe_add_base_tax_1 = yes
+				move_capital_effect = yes
+			}
+			change_tag = BHU
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = { NOT = { government_rank = 2 } }
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					4482 = {
+						NOT = { is_core = ROOT }
+					}
+				}
+				4482 = {
+					add_permanent_claim = BHU
+				}
+			}
+			add_prestige = 10
+			set_country_flag = formed_bhutan_flag
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

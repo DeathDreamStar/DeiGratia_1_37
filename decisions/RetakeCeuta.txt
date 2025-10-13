@@ -1,0 +1,125 @@
+country_decisions = {
+	retake_ceuta = {
+		major = yes
+		potential = {
+			tag = MOR
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = retook_ceuta }
+			NOT = { mission_completed = gc_mor_ceuta }
+			OR = {
+				POR = {
+					OR = {
+						owns = 1751
+						any_subject_country = {
+							owns = 1751
+						}
+					}
+				}
+				CAS = {
+					OR = {
+						owns = 1751
+						any_subject_country = {
+							owns = 1751
+						}
+					}
+				}
+				SPA = {
+					OR = {
+						owns = 1751
+						any_subject_country = {
+							owns = 1751
+						}
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			province_id = 1751
+		}
+		allow = {
+			controls = 1751
+			1751 = {
+				all_neighbor_province = {
+					controlled_by = ROOT
+					owned_by = ROOT
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = retake_ceuta.tooltip
+				MRK = {
+					OR = {
+						NOT = {
+							is_subject_of = ROOT
+						}
+						AND = {
+							is_subject_of = ROOT
+							all_owned_province = {
+								controlled_by = MRK
+								region = maghreb_region
+							}
+						}
+					}
+				}
+				TFL = {
+					OR = {
+						NOT = {
+							is_subject_of = ROOT
+						}
+						AND = {
+							is_subject_of = ROOT
+							all_owned_province = {
+								controlled_by = TFL
+								region = maghreb_region
+							}
+						}
+					}
+				}
+				SOS = {
+					OR = {
+						NOT = {
+							is_subject_of = ROOT
+						}
+						AND = {
+							is_subject_of = ROOT
+							all_owned_province = {
+								controlled_by = SOS
+								region = maghreb_region
+							}
+						}
+					}
+				}
+				DBD = {
+					OR = {
+						NOT = {
+							is_subject_of = ROOT
+						}
+						AND = {
+							is_subject_of = ROOT
+							all_owned_province = {
+								controlled_by = DBD
+								region = maghreb_region
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			set_country_flag = retook_ceuta
+			1751 = {
+				owner = {
+					country_event = {
+						id = ipeMOR.3
+					}
+				}
+				cede_province = ROOT
+			}
+			country_event = {
+				id = ipeMOR.3
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

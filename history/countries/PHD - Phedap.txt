@@ -1,0 +1,19 @@
+government = tribal
+add_government_reform = tribal_kingdom
+technology_group = indian
+primary_culture = limbu
+religion = vajrayana
+capital = 2071	#Phedap
+fixed_capital = 2071
+add_historical_friend = LWA
+
+# Ing dynasty of Phedap
+1444.1.1 = {
+	monarch = {
+		name = "Sidi"
+		dynasty = "Ing"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}

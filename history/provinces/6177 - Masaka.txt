@@ -1,0 +1,16 @@
+#6177 - Masaka
+
+owner = BUG
+controller = BUG
+add_core = BUG
+culture = ganda
+religion = shamanism #Fetishism
+capital = "Masaka" #Should really change with each monarch
+trade_goods = livestock
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+
+discovered_by = central_african

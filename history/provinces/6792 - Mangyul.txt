@@ -1,0 +1,17 @@
+#6792 - Mangyül
+
+owner = GNT
+controller = GNT
+add_core = GNT
+culture = tibetan
+religion = vajrayana
+capital = "Dzongkhar"
+trade_goods = livestock
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = nomad_group

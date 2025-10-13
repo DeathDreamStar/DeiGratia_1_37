@@ -1,0 +1,23 @@
+#4831 - Thonburi
+
+owner = AYU
+controller = AYU
+culture = central_thai
+religion = buddhism
+capital = "Thonburi"
+trade_goods = grain
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = AYU
+center_of_trade = 1
+extra_cost = 8
+
+
+
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman

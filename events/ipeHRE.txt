@@ -1,0 +1,1240 @@
+namespace = ipeHRE
+
+# Imperial Mediatization
+country_event = {
+	id = ipeHRE.1
+	title = ipeHRE.1.t
+	desc = ipeHRE.1.d
+	picture = HRE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		government = monarchy
+		is_part_of_hre = yes
+		any_neighbor_country = {
+			is_part_of_hre = yes
+			OR = {
+				has_reform = free_city
+				government = theocracy
+			}
+			NOT = {
+				total_development = 50
+			}
+			is_elector = no
+			ai = yes
+			NOT = { # escaped mediatization
+				tag = HAM
+				tag = BRE
+				tag = HSA
+				tag = FRN
+			}
+		}
+		any_known_country = {
+			is_revolution_target = yes
+			capital_scope = {
+				continent = europe
+			}
+		}
+		NOT = { active_imperial_incident = any }
+		has_dlc = "Emperor"
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # It will be a time of great change in the Empire.
+		name = ipeHRE.1.a
+		set_imperial_incident = incident_mediatization
+	}
+}
+
+# Imperial Mediatization
+country_event = {
+	id = ipeHRE.2
+	title = ipeHRE.1.t
+	desc = ipeHRE.2.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Abandon all plans of mediatization.
+		name = ipeHRE.2.a
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 100
+				OR = {
+					has_reform = free_city
+					government = theocracy
+					NOT = {
+						total_development = 50
+					}
+					is_elector = no
+				}
+			}
+			modifier = {
+				factor = 0
+				government = monarchy
+				is_elector = yes
+			}
+		}
+		add_imperial_influence = 10
+		custom_tooltip = ipeHRE.2.a.tooltip
+	}
+
+	option = { # Secularize only the ecclesiastical holdings.
+		name = ipeHRE.2.b
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				government = theocracy
+				NOT = {
+					total_development = 50
+				}
+				is_elector = no
+			}
+			modifier = {
+				factor = 30
+				government = monarchy
+			}
+			modifier = {
+				factor = 0
+				government = monarchy
+				is_elector = yes
+			}
+		}
+		custom_tooltip = ipeHRE.2.b.tooltip
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					ai = yes
+					government = theocracy
+					NOT = {
+						total_development = 50
+					}
+					is_elector = no
+					any_neighbor_country = {
+						government = monarchy
+						is_part_of_hre = yes
+						total_development = PREV
+					}
+				}
+				country_event = {
+					id = ipeHRE.3
+				}
+			}
+		}
+	}
+
+	option = { # Secularize the theocracies and annex the free imperial cities.
+		name = ipeHRE.2.c
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				OR = {
+					has_reform = free_city
+					government = theocracy
+					NOT = {
+						total_development = 50
+					}
+					is_elector = no
+				}
+			}
+			modifier = {
+				factor = 60
+				government = monarchy
+			}
+			modifier = {
+				factor = 100
+				government = monarchy
+				is_elector = yes
+			}
+		}
+		custom_tooltip = ipeHRE.2.c.tooltip
+		add_imperial_influence = -10
+		hidden_effect = {
+			every_country = {
+				limit = {
+					is_part_of_hre = yes
+					ai = yes
+					OR = {
+						has_reform = free_city
+						government = theocracy
+					}
+					NOT = {
+						total_development = 50
+					}
+					is_elector = no
+					any_neighbor_country = {
+						government = monarchy
+						is_part_of_hre = yes
+						total_development = PREV
+					}
+					NOT = { # escaped mediatization
+						tag = HAM
+						tag = BRE
+						tag = HSA
+						tag = FRN
+					}
+				}
+				country_event = {
+					id = ipeHRE.3
+				}
+			}
+		}
+	}
+}
+
+# The Mediatization of $COUNTRY$
+country_event = {
+	id = ipeHRE.3
+	title = ipeHRE.3.t
+	desc = ipeHRE.3.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Curse the Empire...
+		name = ipeHRE.3.a
+		random_neighbor_country = {
+			limit = {
+				government = monarchy
+				is_part_of_hre = yes
+				total_development = ROOT
+			}
+			inherit = ROOT
+			hidden_effect = {
+				country_event = {
+					id = ipeHRE.4
+				}
+			}
+		}
+	}
+}
+
+# The Mediatization of $FROMCOUNTRY$
+country_event = {
+	id = ipeHRE.4
+	title = ipeHRE.4.t
+	desc = ipeHRE.4.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is a wonderful addition to $COUNTRY$.
+		name = ipeHRE.4.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# The Augsburg Confession
+country_event = {
+	id = ipeHRE.5
+	title = ipeHRE.5.t
+	desc = ipeHRE.5.d
+	picture = RELIGION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+	
+	trigger = {
+		is_elector = yes
+		OR = {
+			religion = protestant
+			religion = reformed
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 180
+	}
+
+	option = { # Nothing has been received on our part against Scripture or the Church Catholic.
+		name = ipeHRE.5.a
+		custom_tooltip = ipeHRE.5.a.tooltip
+		set_global_flag = schmalkaldic_league_formed
+		set_country_flag = subscribed_to_augsburg_confession
+		set_country_flag = schmalkaldic_league_leader
+		every_known_country = {
+			limit = {
+				alliance_with = ROOT
+				OR = {
+					religion = protestant
+					religion = reformed
+					religion = hussite
+				}
+			}
+			country_event = {
+				id = ipeHRE.6
+			}
+		}
+	}
+}
+
+# The Augsburg Confession
+country_event = {
+	id = ipeHRE.6
+	title = ipeHRE.5.t
+	desc = ipeHRE.6.d
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Subscribe to the Augsburg Confession.
+		name = ipeHRE.6.a
+		ai_chance = {
+			factor = 100
+		}
+		set_country_flag = subscribed_to_augsburg_confession
+		add_prestige = 10
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+			create_subject = {
+				who = ROOT
+				subject_type = league_associate
+			}
+			country_event = {
+				id = ipeHRE.7
+			}
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_irritated
+			}
+		}
+		set_country_flag = schmalkaldic_league_member
+	}
+
+	option = { # We will do no such thing.
+		name = ipeHRE.6.b
+		ai_chance = {
+			factor = 0
+		}
+		set_country_flag = rejected_augsburg_confession
+		add_prestige = -10
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_irritated
+			}
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Joins the Schmalkaldic League!
+country_event = {
+	id = ipeHRE.7
+	title = ipeHRE.7.t
+	desc = ipeHRE.7.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Wonderful.
+		name = ipeHRE.7.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = opinion_grateful
+			}
+			create_subject = {
+				subject = FROM
+				subject_type = league_associate
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					is_elector = yes
+				}
+			}
+			add_prestige = 10
+		}
+	}
+}
+
+# The Augsburg Confession (Catholic Free Cities)
+country_event = {
+	id = ipeHRE.8
+	title = ipeHRE.5.t
+	desc = ipeHRE.8.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		any_known_country = {
+			has_country_flag = schmalkaldic_league_leader
+			exists = yes
+		}
+		is_part_of_hre = yes
+		religion = catholic
+		has_reform = free_city
+		NOT = {
+			has_country_flag = subscribed_to_augsburg_confession
+			has_country_flag = rejected_augsburg_confession
+		}
+		is_subject = no
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = { # Subscribe to the Augsburg Confession.
+		name = ipeHRE.6.a
+		set_country_flag = subscribed_to_augsburg_confession
+		if = {
+			limit = {
+				capital_scope = {
+					NOT = {
+						religion = protestant
+					}
+				}
+			}
+			capital_scope = {
+				change_religion = protestant
+			}
+		}
+		change_religion = protestant
+		random_known_country = {
+			limit = {
+				has_country_flag = schmalkaldic_league_leader
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+			create_subject = {
+				who = ROOT
+				subject_type = league_associate
+			}
+			country_event = {
+				id = ipeHRE.7
+			}
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_irritated
+			}
+		}
+		set_country_flag = schmalkaldic_league_member
+	}
+
+	option = { # Burn these documents and make sure they are never read again.
+		name = ipeHRE.8.b
+		set_country_flag = rejected_augsburg_confession
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_irritated
+			}
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+		}
+		add_republican_tradition = -10
+	}
+}
+
+# The Augsburg Confession (Protestant, Reformed, and Hussite Free Cities)
+country_event = {
+	id = ipeHRE.9
+	title = ipeHRE.5.t
+	desc = ipeHRE.9.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		any_known_country = {
+			has_country_flag = schmalkaldic_league_leader
+			exists = yes
+		}
+		is_part_of_hre = yes
+		OR = {
+			religion = protestant
+			religion = reformed
+			religion = hussite
+		}
+		has_reform = free_city
+		NOT = {
+			has_country_flag = subscribed_to_augsburg_confession
+			has_country_flag = rejected_augsburg_confession
+		}
+		is_subject = no
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Subscribe to the Augsburg Confession.
+		name = ipeHRE.6.a
+		ai_chance = {
+			factor = 90
+		}
+		set_country_flag = subscribed_to_augsburg_confession
+		random_known_country = {
+			limit = {
+				has_country_flag = schmalkaldic_league_leader
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+			create_subject = {
+				who = ROOT
+				subject_type = league_associate
+			}
+			country_event = {
+				id = ipeHRE.7
+			}
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_irritated
+			}
+		}
+		set_country_flag = schmalkaldic_league_member
+	}
+
+	option = { # We will do no such thing.
+		name = ipeHRE.6.b
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = rejected_augsburg_confession
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_irritated
+			}
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+		}
+	}
+}
+
+# The Augsburg Confession (Protestant, Reformed, and Hussite Non-Free Cities)
+country_event = {
+	id = ipeHRE.10
+	title = ipeHRE.5.t
+	desc = ipeHRE.10.d
+	picture = RELIGION_eventPicture
+
+	trigger = {
+		any_known_country = {
+			has_country_flag = schmalkaldic_league_leader
+			exists = yes
+		}
+		is_part_of_hre = yes
+		OR = {
+			religion = protestant
+			religion = reformed
+			religion = hussite
+		}
+		NOT = {
+			has_reform = free_city
+		}
+		NOT = {
+			has_country_flag = subscribed_to_augsburg_confession
+			has_country_flag = rejected_augsburg_confession
+		}
+		is_subject = no
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			is_elector = yes
+		}
+	}
+
+	option = { # Subscribe to the Augsburg Confession.
+		name = ipeHRE.6.a
+		ai_chance = {
+			factor = 90
+		}
+		set_country_flag = subscribed_to_augsburg_confession
+		if = {
+			limit = {
+				is_elector = yes
+			}
+			add_prestige = 10
+		}
+		random_known_country = {
+			limit = {
+				has_country_flag = schmalkaldic_league_leader
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+			create_subject = {
+				who = ROOT
+				subject_type = league_associate
+			}
+			country_event = {
+				id = ipeHRE.7
+			}
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_irritated
+			}
+		}
+		set_country_flag = schmalkaldic_league_member
+	}
+
+	option = { # We will do no such thing.
+		name = ipeHRE.6.b
+		ai_chance = {
+			factor = 10
+		}
+		set_country_flag = rejected_augsburg_confession
+		if = {
+			limit = {
+				is_elector = yes
+			}
+			add_prestige = -10
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_irritated
+			}
+		}
+		emperor = {
+			add_opinion = {
+				who = ROOT
+				modifier = opinion_grateful
+			}
+		}
+	}
+}
+
+# $COUNTRY$ Leaves the Schmalkaldic League!
+country_event = {
+	id = ipeHRE.11
+	title = ipeHRE.11.t
+	desc = ipeHRE.11.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We wish them the best of luck.
+		name = ipeHRE.11.a
+		if = {
+			limit = {
+				is_subject_of_type = league_associate
+				has_country_flag = schmalkaldic_league_member
+			}
+			hidden_effect = {
+				overlord = {
+					country_event = {
+						id = ipeHRE.12
+					}
+				}
+			}
+			grant_independence = yes
+			clr_country_flag = schmalkaldic_league_member
+		}
+		if = {
+			limit = {
+				has_country_flag = schmalkaldic_league_leader
+			}
+			clr_country_flag = schmalkaldic_league_leader
+			if = {
+				limit = {
+					any_subject_country = {
+						is_subject_of_type = league_associate
+						has_country_flag = schmalkaldic_league_member
+						is_elector = yes
+					}
+				}
+				random_subject_country = {
+					limit = {
+						is_subject_of_type = league_associate
+						has_country_flag = schmalkaldic_league_member
+						is_elector = yes
+					}
+					set_country_flag = schmalkaldic_league_leader
+					country_event = {
+						id = ipeHRE.13
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_subject_country = {
+							is_subject_of_type = league_associate
+							has_country_flag = schmalkaldic_league_member
+							is_elector = yes
+						}
+					}
+				}
+				random_subject_country = {
+					limit = {
+						is_subject_of_type = league_associate
+						has_country_flag = schmalkaldic_league_member
+					}
+					set_country_flag = schmalkaldic_league_leader
+					country_event = {
+						id = ipeHRE.13
+					}
+				}
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Leaves the Schmalkaldic League!
+country_event = {
+	id = ipeHRE.12
+	title = ipeHRE.12.t
+	desc = ipeHRE.12.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We don't need them!
+		name = ipeHRE.12.a
+		add_prestige = -5
+	}
+}
+
+# $COUNTRY$ Leads the Schmalkaldic League!
+country_event = {
+	id = ipeHRE.13
+	title = ipeHRE.13.t
+	desc = ipeHRE.13.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We are glad to lead the League.
+		name = ipeHRE.13.a
+		custom_tooltip = ipeHRE.13.a.tooltip
+		grant_independence = yes
+		clr_country_flag = schmalkaldic_league_member
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					is_subject_of_type = league_associate
+					has_country_flag = schmalkaldic_league_member
+				}
+				country_event = {
+					id = ipeHRE.14
+				}
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Leads the Schmalkaldic League!
+country_event = {
+	id = ipeHRE.14
+	title = ipeHRE.14.t
+	desc = ipeHRE.14.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We hope that they will act wisely.
+		name = ipeHRE.14.a
+		FROM = {
+			create_subject = {
+				subject = ROOT
+				subject_type = league_associate
+			}
+		}
+		set_country_flag = schmalkaldic_league_member
+	}
+}
+
+# The Beginning of the Schmalkaldic War
+country_event = {
+	id = ipeHRE.15
+	title = ipeHRE.15.t
+	desc = ipeHRE.15.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = schmalkaldic_league_leader
+				}
+				emperor = {
+					ROOT = {
+						declare_war_with_cb = {
+							who = PREV
+							casus_belli = cb_religious_conformance
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = { # The time has come for confrontation.
+		name = ipeHRE.15.a
+		custom_tooltip = ipeHRE.15.a.tooltip
+	}
+}
+
+# The Disbanding of the Schmalkaldic League
+country_event = {
+	id = ipeHRE.16
+	title = ipeHRE.16.t
+	desc = ipeHRE.16.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_global_flag = schmalkaldic_league_disbanded
+	}
+
+	option = { # But how will we protect ourselves from the Emperor?
+		name = ipeHRE.16.a
+		custom_tooltip = ipeHRE.16.a.tooltip
+	}
+
+	after = {
+		clr_country_flag = schmalkaldic_league_leader
+		clr_country_flag = subscribed_to_augsburg_confession
+		every_known_country = {
+			limit = {
+				has_country_flag = rejected_augsburg_confession
+			}
+			clr_country_flag = rejected_augsburg_confession
+		}
+	}
+}
+
+# The Disbanding of the Schmalkaldic League
+country_event = {
+	id = ipeHRE.17
+	title = ipeHRE.16.t
+	desc = ipeHRE.17.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		is_emperor = yes
+		has_global_flag = schmalkaldic_league_formed
+		NOT = {
+			any_country = {
+				OR = {
+					is_subject_of_type = league_associate
+					has_country_flag = schmalkaldic_league_leader
+				}
+			}
+			has_global_flag = schmalkaldic_league_disbanded
+		}
+	}
+
+	immediate = {
+		set_global_flag = schmalkaldic_league_disbanded
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # A relief.
+		name = ipeHRE.16.b
+		custom_tooltip = ipeHRE.16.a.tooltip
+	}
+
+	after = {
+		every_known_country = {
+			limit = {
+				has_country_flag = subscribed_to_augsburg_confession
+			}
+			clr_country_flag = subscribed_to_augsburg_confession
+		}
+		every_known_country = {
+			limit = {
+				has_country_flag = rejected_augsburg_confession
+			}
+			clr_country_flag = rejected_augsburg_confession
+		}
+	}
+}
+
+# The Disbanding of the Schmalkaldic League
+country_event = {
+	id = ipeHRE.18
+	title = ipeHRE.16.t
+	desc = ipeHRE.18.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	fire_only_once = yes
+
+	major = yes
+
+	immediate = {
+		set_global_flag = schmalkaldic_league_disbanded
+	}
+
+	option = { # They will be punished...
+		name = ipeHRE.18.a
+		custom_tooltip = ipeHRE.16.a.tooltip
+		random_known_country = {
+			limit = {
+				has_country_flag = schmalkaldic_league_leader
+			}
+			clr_country_flag = schmalkaldic_league_leader
+			every_subject_country = {
+				limit = {
+					is_subject_of_type = league_associate
+					has_country_flag = schmalkaldic_league_member
+				}
+				grant_independence = yes
+				hidden_effect = {
+					country_event = {
+						id = ipeHRE.19
+					}
+				}
+				clr_country_flag = schmalkaldic_league_member
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeHRE.20
+				}
+			}
+		}
+		add_imperial_influence = 10
+		add_prestige = 10
+	}
+
+	after = {
+		every_known_country = {
+			limit = {
+				has_country_flag = subscribed_to_augsburg_confession
+			}
+			clr_country_flag = subscribed_to_augsburg_confession
+		}
+		every_known_country = {
+			limit = {
+				has_country_flag = rejected_augsburg_confession
+			}
+			clr_country_flag = rejected_augsburg_confession
+		}
+	}
+}
+
+# The Disbanding of the Schmalkaldic League
+country_event = {
+	id = ipeHRE.19
+	title = ipeHRE.16.t
+	desc = ipeHRE.18.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We were unable to resist...
+		name = ipeHRE.19.a
+		custom_tooltip = ipeHRE.16.a.tooltip
+		tooltip = {
+			grant_independence = yes
+		}
+		add_war_exhaustion = 2
+	}
+}
+
+# The Disbanding of the Schmalkaldic League
+country_event = {
+	id = ipeHRE.20
+	title = ipeHRE.16.t
+	desc = ipeHRE.18.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We were unable to resist...
+		name = ipeHRE.19.a
+		custom_tooltip = ipeHRE.16.a.tooltip
+		add_war_exhaustion = 2
+		add_prestige = -10
+	}
+}
+
+# The Disbanding of the Schmalkaldic League
+country_event = {
+	id = ipeHRE.21
+	title = ipeHRE.16.t
+	desc = ipeHRE.21.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_country_flag = schmalkaldic_league_leader
+		had_global_flag = {
+			flag = schmalkaldic_league_formed
+			days = 10950
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		set_global_flag = schmalkaldic_league_disbanded
+		clr_country_flag = schmalkaldic_league_leader
+	}
+
+	option = { # It has served its purpose.
+		name = ipeHRE.21.a
+		custom_tooltip = ipeHRE.16.a.tooltip
+		every_subject_country = {
+			limit = {
+				is_subject_of_type = league_associate
+				has_country_flag = schmalkaldic_league_member
+			}
+			grant_independence = yes
+			hidden_effect = {
+				country_event = {
+					id = ipeHRE.22
+				}
+			}
+			clr_country_flag = schmalkaldic_league_member
+		}
+	}
+
+	after = {
+		every_known_country = {
+			limit = {
+				has_country_flag = subscribed_to_augsburg_confession
+			}
+			clr_country_flag = subscribed_to_augsburg_confession
+		}
+		every_known_country = {
+			limit = {
+				has_country_flag = rejected_augsburg_confession
+			}
+			clr_country_flag = rejected_augsburg_confession
+		}
+	}
+}
+
+# The Disbanding of the Schmalkaldic League
+country_event = {
+	id = ipeHRE.22
+	title = ipeHRE.16.t
+	desc = ipeHRE.21.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It will not be the last league.
+		name = ipeHRE.22.a
+		custom_tooltip = ipeHRE.16.a.tooltip
+		tooltip = {
+			grant_independence = yes
+		}
+	}
+}
+
+# The Disbanding of the Schmalkaldic League
+country_event = {
+	id = ipeHRE.23
+	title = ipeHRE.16.t
+	desc = ipeHRE.21.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We have peace, for now.
+		name = ipeHRE.23.a
+		custom_tooltip = ipeHRE.16.a.tooltip
+	}
+}
+
+# The Beginning of the Schmalkaldic War
+country_event = {
+	id = ipeHRE.24
+	title = ipeHRE.15.t
+	desc = ipeHRE.15.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # They will regret this...
+		name = ipeHRE.15.b
+		custom_tooltip = ipeHRE.15.b.tooltip
+		tooltip = {
+			FROM = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_religious_conformance
+				}
+			}
+		}
+		add_imperial_influence = -10
+	}
+}
+
+# The Disbanding of the Schmalkaldic League
+country_event = {
+	id = ipeHRE.25
+	title = ipeHRE.16.t
+	desc = ipeHRE.16.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # A relief.
+		name = ipeHRE.16.b
+		custom_tooltip = ipeHRE.16.a.tooltip
+		add_imperial_influence = 10
+	}
+}
+
+# The Disbanding of the Schmalkaldic League
+country_event = {
+	id = ipeHRE.26
+	title = ipeHRE.26.t
+	desc = ipeHRE.26.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = {
+		has_global_flag = schmalkaldic_league_formed
+		NOT = {
+			has_global_flag = schmalkaldic_league_disbanded
+			any_country = {
+				has_country_flag = schmalkaldic_league_leader
+				exists = yes
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	immediate = {
+		set_global_flag = schmalkaldic_league_disbanded
+		every_known_country = {
+			limit = {
+				has_country_flag = subscribed_to_augsburg_confession
+			}
+			clr_country_flag = subscribed_to_augsburg_confession
+		}
+		every_known_country = {
+			limit = {
+				has_country_flag = rejected_augsburg_confession
+			}
+			clr_country_flag = rejected_augsburg_confession
+		}
+	}
+
+	option = {
+		name = ipeHRE.26.a
+	}
+}
+
+# The Inheritance of $FROMCOUNTRY$
+country_event = {
+	id = ipeHRE.27
+	title = ipeHRE.27.t
+	desc = ipeHRE.27.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			inherit = FROM
+		}
+	}
+
+	option = { # We will use our vote wisely.
+		name = ipeHRE.27.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# The Inheritance of $COUNTRY$
+country_event = {
+	id = ipeHRE.28
+	title = ipeHRE.28.t
+	desc = ipeHRE.28.d
+	picture = HRE_eventPicture
+
+	is_triggered_only = yes
+
+	hidden = yes
+
+	immediate = {
+		FROM = {
+			diplo_annex_cost = yes
+			country_event = {
+				id = ipeHRE.27
+			}
+		}
+	}
+
+	option = {
+		name = ipeHRE.28.a
+	}
+}

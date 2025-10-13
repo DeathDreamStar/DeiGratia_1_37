@@ -1,0 +1,40 @@
+government = tribal
+add_government_reform = tribal_kingdom
+technology_group = chinese
+religion = vajrayana
+primary_culture = bhutanese
+capital = 6804	# Paro
+fixed_capital = 6804
+
+1444.10.10 = {
+	monarch = {
+		name = "Drung Drung"
+		dynasty = "Hungrel"
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+	heir = {
+		name = "Namkha Gyeltshen"
+		monarch_name = "Namkha Gyeltshen"
+		dynasty = "Hungrel"
+		birth_date = 1444.1.1
+		claim = 95
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+	queen = {
+		name = "Gedun Zangmo"
+		country_of_origin = TSG
+		dynasty = "Dakini"
+		birth_date = 1420.1.25
+		female = yes
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = architectural_visionary_personality
+	add_queen_personality = calm_personality
+}

@@ -1,0 +1,82 @@
+country_decisions = {
+	silesia_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { tag = SIL }
+			NOT = { has_country_flag = formed_silesia_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				NOT = { exists = SIL }
+			}
+			OR = {
+				primary_culture = lower_silesian
+				primary_culture = schlesian
+			}
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = northern_silesia_area
+				area = legnica_area
+				area = breslau_area
+				area = olesnica_area
+				area = silesia_area
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			northern_silesia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			legnica_area = {
+				type = all
+				owned_by = ROOT
+			}
+			breslau_area = {
+				type = all
+				owned_by = ROOT
+			}
+			olesnica_area = {
+				type = all
+				owned_by = ROOT
+			}
+			silesia_area = {
+				type = all
+				owned_by = ROOT
+			}
+			NOT = { exists = SIL }
+		}
+		effect = {
+			change_tag = SIL
+			swap_non_generic_missions = yes
+			add_prestige = 25
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = { has_idea_group = SIL_ideas }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_silesia_flag
+		}
+	}
+}

@@ -1,0 +1,28 @@
+name = "Ayutthaya Conquest of Nan"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 1817
+}
+
+1442.1.1 = {
+	add_attacker = AYU
+	add_attacker = SUK
+	add_attacker = LIG
+	add_attacker = PAT
+	add_defender = LNA
+	add_defender = MPA
+	add_defender = KET
+	add_defender = SSP
+}
+
+1443.3.1 = {
+	rem_attacker = AYU
+	rem_attacker = SUK
+	rem_attacker = LIG
+	rem_attacker = PAT
+	rem_defender = LNA
+	rem_defender = MPA
+	rem_defender = KET
+	rem_defender = SSP
+}

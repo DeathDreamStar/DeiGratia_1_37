@@ -1,0 +1,9 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+technology_group = east_african
+unit_type = sub_saharan
+religion = sunni
+primary_culture = somali
+capital = 2776 #Afgooye
+
+

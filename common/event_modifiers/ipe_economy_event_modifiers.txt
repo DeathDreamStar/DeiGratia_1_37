@@ -1,0 +1,15 @@
+growing_commercial_ventures_100 = {
+	placed_merchant_power = 2.5
+}
+
+growing_commercial_ventures_300 = {
+	placed_merchant_power = 5
+}
+
+growing_commercial_ventures_1000 = {
+	placed_merchant_power = 10
+}
+
+curtailed_the_hansa = {
+	mercantilism_cost = -0.25
+}

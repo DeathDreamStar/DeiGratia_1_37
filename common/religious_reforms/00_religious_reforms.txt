@@ -1,0 +1,287 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+# ai_will do does not actually determine weighting, but AI will not pick an idea with ai_will_do = 0
+# ROOT = country picking the idea
+# groups set to colonial=yes will be higher prioritized by the AI when spending power
+
+nahuatl_reforms = {
+	trigger = {
+		religion = nahuatl
+	}	
+
+	can_buy_idea = {
+		OR = {
+			AND = {
+				vassal = 10
+				custom_trigger_tooltip = {
+					tooltip = nahuatl_reforms_0.tooltip
+					NOT = {
+						has_country_flag = passed_one_reform
+						has_country_flag = passed_two_reforms
+						has_country_flag = passed_three_reforms
+						has_country_flag = passed_four_reforms
+					}
+				}
+			}
+			AND = {
+				vassal = 15
+				custom_trigger_tooltip = {
+					tooltip = nahuatl_reforms_1.tooltip
+					has_country_flag = passed_one_reform
+					NOT = {
+						has_country_flag = passed_two_reforms
+						has_country_flag = passed_three_reforms
+						has_country_flag = passed_four_reforms
+					}
+				}
+			}
+			AND = {
+				vassal = 20
+				custom_trigger_tooltip = {
+					tooltip = nahuatl_reforms_2.tooltip
+					has_country_flag = passed_two_reforms
+					NOT = {
+						has_country_flag = passed_three_reforms
+						has_country_flag = passed_four_reforms
+					}
+				}
+			}
+			AND = {
+				vassal = 25
+				custom_trigger_tooltip = {
+					tooltip = nahuatl_reforms_3.tooltip
+					has_country_flag = passed_three_reforms
+					NOT = {
+						has_country_flag = passed_four_reforms
+					}
+				}
+			}
+			AND = {
+				vassal = 30
+				custom_trigger_tooltip = {
+					tooltip = nahuatl_reforms_4.tooltip
+					has_country_flag = passed_four_reforms
+				}
+			}
+		}
+		is_at_war = no
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+		stability = 1
+		NOT = { doom = 50 }
+	}
+	
+	nahuatl_reform_1 = {
+		war_exhaustion = -0.05
+	}
+	nahuatl_reform_2 = {
+		trade_efficiency = 0.1
+	}
+	nahuatl_reform_3 = {
+		discipline = 0.05
+	}
+	nahuatl_reform_4 = {
+		governing_capacity_modifier = 0.1
+	}
+	nahuatl_reform_5 = {
+		stability_cost_modifier = -0.2
+	}	
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+inti_reforms = {
+	trigger = {
+		religion = inti
+	}	
+
+	can_buy_idea = {
+		is_at_war = no
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+		stability = 1
+		authority = 100
+		num_of_cities = 10
+	}
+	
+	inti_reform_1 = {
+		manpower_recovery_speed = 0.1
+	}
+	inti_reform_2 = {
+		governing_capacity_modifier = 0.1
+	}
+	inti_reform_3 = {
+		legitimacy = 0.5
+		devotion = 0.5
+	}
+	inti_reform_4 = {
+		land_morale = 0.1
+	}
+	inti_reform_5 = {
+		core_creation = -0.1
+	}	
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+mesoamerican_reforms = {
+	trigger = {
+		religion = mesoamerican_religion
+	}	
+
+	can_buy_idea = {
+		calc_true_if = {
+			all_subject_country = {
+				is_subject_of_type = vassal
+				NOT = {
+					liberty_desire = 1
+				}
+			}
+			amount = 10
+		}
+		is_at_war = no
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+		stability = 1
+	}
+	
+	mesoamerican_reform_1 = {
+		land_maintenance_modifier = -0.1
+	}
+	mesoamerican_reform_2 = {
+		global_unrest = -2
+	}
+	mesoamerican_reform_3 = {
+		infantry_power = 0.1
+	}
+	mesoamerican_reform_4 = {
+		governing_capacity_modifier = 0.1
+	}
+	mesoamerican_reform_5 = {
+		core_creation = -0.1
+	}	
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+mixtec_reforms = {
+	trigger = {
+		religion = mixtec_religion
+	}	
+
+	can_buy_idea = {
+		calc_true_if = {
+			all_subject_country = {
+				is_subject_of_type = vassal
+				NOT = {
+					liberty_desire = 1
+				}
+			}
+			amount = 10
+		}
+		is_at_war = no
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+		stability = 1
+	}
+
+	mixtec_reform_1 = { # Refine Smithing Techniques
+		production_efficiency = 0.1
+	}
+	mixtec_reform_2 = { # Scribe New Codices
+		legitimacy = 0.5
+		devotion = 0.5
+	}
+	mixtec_reform_3 = { # The Legacy of 8 Deer
+		infantry_power = 0.1
+	}
+	mixtec_reform_4 = { # Tribal Expansion
+		governing_capacity_modifier = 0.1
+	}
+	mixtec_reform_5 = { # Reaffirm Social Stratification
+		stability_cost_modifier = -0.2
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+purepecha_reforms = {
+	trigger = {
+		religion = purepecha_religion
+	}	
+
+	can_buy_idea = {
+		is_at_war = no
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+		stability = 1
+		authority = 100
+		num_of_cities = 10
+	}
+	
+	purepecha_reform_1 = { # Spread the Cults
+		global_missionary_strength = 0.02
+	}
+	purepecha_reform_2 = { # Advance Metallurgy
+		global_trade_goods_size_modifier = 0.1
+	}
+	purepecha_reform_3 = { # Emphasize Human Sacrifice
+		discipline = 0.05
+	}
+	purepecha_reform_4 = { # Tribal Expansion
+		governing_capacity_modifier = 0.1
+	}
+	purepecha_reform_5 = { # The Quest for Saltpeter
+		war_exhaustion = -0.05
+	}	
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+zapotec_reforms = {
+	trigger = {
+		religion = zapotec_religion
+	}	
+
+	can_buy_idea = {
+		calc_true_if = {
+			all_subject_country = {
+				is_subject_of_type = vassal
+				NOT = {
+					liberty_desire = 1
+				}
+			}
+			amount = 10
+		}
+		is_at_war = no
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+		stability = 1
+	}
+	
+	zapotec_reform_1 = { # Recreate Monte Albán
+		build_cost = -0.1
+	}
+	zapotec_reform_2 = { # Integrate Foreign Cultures
+		num_accepted_cultures = 2
+	}
+	zapotec_reform_3 = { # Zapotec Unity
+		land_morale = 0.1
+	}
+	zapotec_reform_4 = { # Tribal Expansion
+		governing_capacity_modifier = 0.1
+	}
+	zapotec_reform_5 = { # Support Artisans
+		production_efficiency = 0.1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}

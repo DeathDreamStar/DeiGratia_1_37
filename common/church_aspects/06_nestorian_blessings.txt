@@ -1,0 +1,50 @@
+blessing_interfaith_contacts = {
+	is_blessing = yes
+
+	modifier = {
+		diplomatic_reputation = 1
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+blessing_revive_the_faith = {
+	is_blessing = yes
+	
+	modifier = {
+		global_missionary_strength = 0.02
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.9
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.7
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.5
+			}
+		}
+	}
+}
+
+blessing_merchant_missionaries = {
+	is_blessing = yes
+	
+	modifier = {
+		merchants = 1
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}

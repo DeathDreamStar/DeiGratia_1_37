@@ -1,0 +1,29 @@
+impaled_saxons = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+released_hunyadi = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+handed_over_hunyadi = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+imprisoned_hunyadi = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+executed_hunyadi = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}

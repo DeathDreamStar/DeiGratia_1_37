@@ -1,0 +1,17 @@
+version="4.0.1"
+replace_path="missions"
+tags={
+	"Balance"
+	"Events"
+	"Graphics"
+	"Missions And Decisions"
+	"New Nations"
+	"Historical"
+	"Technologies"
+	"Trade"
+	"Religion"
+	"Gameplay"
+}
+name="Dei Gratia (UNOFFICIAL 1.37 UPDATE)"
+supported_version="v1.37.5.0"
+remote_file_id="3581887400"

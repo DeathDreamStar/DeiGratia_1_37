@@ -1,0 +1,7 @@
+# 6462 - Lake Skadar
+
+
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = western

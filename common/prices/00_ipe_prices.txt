@@ -1,0 +1,32 @@
+whales = {
+    base_price = 3
+}
+
+opium = {
+    base_price = 4
+}
+
+marble = {
+    base_price = 3
+}
+
+lead = {
+    base_price = 3.5
+}
+
+mercury = {
+    base_price = 3
+}
+
+saltpeter = {
+    base_price = 4
+}
+
+tin = {
+    base_price = 3
+}
+
+silver = {
+    base_price = 0
+    goldtype = yes
+}

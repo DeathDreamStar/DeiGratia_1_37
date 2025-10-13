@@ -1,0 +1,24 @@
+government = monarchy
+add_government_reform = timurid_emirate
+government_rank = 1
+primary_culture = pamir
+add_accepted_culture = tajik
+religion = sunni
+technology_group = muslim
+capital = 452 # Badakhshan
+religious_school = hanafi_school
+historical_rival = DLH
+
+1445.1.1 = {
+    monarch = {
+        name = "Abu Bakr"
+        dynasty = "Gurkani"
+        culture = uzbehk
+        adm = 2
+        dip = 2
+        mil = 1
+        birth_date = 1427.1.1
+    }
+	clear_scripted_personalities = yes
+    add_ruler_personality = malevolent_personality
+}

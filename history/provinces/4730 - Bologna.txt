@@ -1,0 +1,42 @@
+# 4730 - Bologna
+
+owner = BLG
+controller = BLG
+culture = romagnan 
+religion = catholic 
+hre = no
+base_tax = 9
+base_production = 9
+trade_goods = cloth
+base_manpower = 8
+capital = "Bologna"
+is_city = yes
+add_core = BLG
+university = yes
+center_of_trade = 2
+extra_cost = 8
+
+
+
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+
+1506.10.7 = { 
+	owner = PAP
+	controller = PAP
+	add_core = PAP
+}
+1805.12.26 = {
+	owner = ITA
+	controller = ITA
+	add_core = ITA
+	remove_core = PAP
+} # Treaty of Pressburg
+1814.4.11 = {
+	owner = PAP
+	controller = PAP
+	add_core = PAP
+	remove_core = ITA
+} # Treaty of Fontainebleau, Napoleon abdicates unconditionally

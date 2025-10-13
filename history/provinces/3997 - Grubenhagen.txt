@@ -1,0 +1,74 @@
+#3997 - Grubenhagen
+owner = GBU
+controller = GBU
+culture = eastphalian
+religion = catholic
+hre = yes
+base_tax = 1
+base_production = 1
+trade_goods = wool
+base_manpower = 1
+capital = "Grubenhagen"
+is_city = yes
+add_core = GBU
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = western
+discovered_by = muslim
+
+
+1529.1.1 = { religion = protestant }
+1596.4.4 = {
+           owner = CLB
+           controller = CLB
+           add_core = CLB
+}
+1617.1.1 = {
+           owner = LUN
+           controller = LUN
+           add_core = LUN
+           remove_core = CLB
+}
+1648.10.24 = { remove_core = GBU }
+1705.8.28 = {
+           owner = HAN
+           controller = HAN
+           add_core = HAN
+           remove_core = LUN
+}
+1757.7.26 = { controller = FRA }
+1757.11.5 = { controller = HAN }
+1803.7.5 = { controller = FRA }
+1805.12.15 = {
+           owner = PRU
+           controller = PRU
+           add_core = PRU
+}
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+1806.11.1 = { controller = FRA }
+1807.7.9 = {
+           owner = WES
+           controller = WES
+           add_core = WES
+           remove_core = PRU
+}
+1813.10.13 = {
+           owner = HAN
+           controller = HAN
+           remove_core = WES
+}
+1866.9.20 = {
+           owner = PRU
+           controller = PRU
+           add_core = PRU
+}
+1871.1.18 = {
+           owner = PRU
+           controller = PRU
+           add_core = PRU
+           remove_core = PRU
+           hre = no
+           base_tax = 1
+           base_production = 1
+           base_manpower = 1
+}

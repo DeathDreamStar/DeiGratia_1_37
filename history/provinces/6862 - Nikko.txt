@@ -1,0 +1,17 @@
+#6862 - Nikko
+
+owner = UTN
+controller = UTN
+culture = togoku
+religion = shinto
+capital = "Nikko"
+trade_goods = grain
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = UTN
+discovered_by = chinese
+
+1597.1.1   = { remove_core = UTN add_core = TKG owner = TKG controller = TKG } # The Utsunomiya clan was banished from Shimotsuke

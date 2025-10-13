@@ -1,0 +1,19 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = lorrainer
+religion = catholic
+technology_group = western
+capital = 188
+fixed_capital = 188
+
+1416.1.1 = {
+	monarch = {
+		name = "Conrad II"
+		dynasty = "de Boppard"		
+		birth_date = 1390.1.1
+		adm = 4
+		dip = 3
+		mil = 2
+	}
+}

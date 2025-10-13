@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+technology_group = indian
+religion = hinduism
+primary_culture = oriya
+capital = 6749	# Baramba
+fixed_capital = 6749
+
+1444.1.1 = {
+	monarch = {
+		name = "Bholeswar Raut"
+		dynasty = "Bhattarika" # maybe?
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

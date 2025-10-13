@@ -1,0 +1,8 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = miao
+religion = animism
+technology_group = chinese
+capital = 2174	# Umung
+

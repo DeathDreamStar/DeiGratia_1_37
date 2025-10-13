@@ -1,0 +1,108 @@
+binary_ad2 = {
+	if = {
+		limit = {
+			check_variable = {
+				which = $variable$
+				value = $valueAdd$
+			}
+		}
+		add_$addcommand$_power = $valueSub$
+		
+		subtract_variable = {
+			which = $variable$
+			value = $valueAdd$
+		}
+	}
+}
+
+diplo_annex_cost = {
+	save_event_target_as = inheriting_country
+
+	set_variable = { #100% base cost
+		which = finaldannexCost
+		value = 1
+	}
+
+	export_to_variable = {
+		which = adminEff
+		value = modifier:administrative_efficiency
+		who = event_target:inheriting_country
+	}
+	subtract_variable = { # admin efficiency modifiers
+		which = finaldannexCost
+		which = adminEff
+	}
+
+	export_to_variable = {
+		which = dannexCost
+		value = modifier:diplomatic_annexation_cost
+		who = event_target:inheriting_country
+	}
+	change_variable = { # diplo annexation cost modifiers
+		which = finaldannexCost
+		which = dannexCost
+	}
+
+	export_to_variable = {
+		which = apowerCost
+		value = modifier:all_power_cost
+		who = event_target:inheriting_country
+	}
+	change_variable = { # power cost modifiers
+		which = finaldannexCost
+		which = apowerCost
+	}
+
+	ROOT = {
+		every_owned_province = {
+			limit = {
+				OR = {
+					is_core = event_target:inheriting_country
+					NOT = {
+						is_core = ROOT
+					}
+				}
+			}
+			cede_province = event_target:inheriting_country
+		}
+	}
+
+	export_to_variable = {
+		which = totalDev
+		value = total_development
+		who = ROOT
+	}
+
+	if = {
+		limit = {
+			has_country_flag = papal_interdict_used
+		}
+		multiply_variable = { # 4 diplomatic points per development for papal interdict
+			which = totalDev
+			value = 2
+		}
+	}
+	else = {
+		multiply_variable = { # 8 diplomatic points per development
+			which = totalDev
+			value = 4
+		}
+	}
+	clr_country_flag = papal_interdict_used
+	multiply_variable = {
+		which = finaldannexCost
+		which = totalDev
+	}
+
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 1024 	valueSub = -1024 }
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 512		valueSub = -512 }
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 256		valueSub = -256 }
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 128		valueSub = -128 }
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 64		valueSub = -64 }
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 32		valueSub = -32 }
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 16		valueSub = -16 }
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 8		valueSub = -8 }
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 4		valueSub = -4 }
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 2		valueSub = -2 }
+	binary_ad2 = { variable = finaldannexCost	addcommand = dip	valueAdd = 1		valueSub = -1 }
+}

@@ -1,0 +1,134 @@
+########################################
+# Events for the Carib
+#
+# written by Henrik Lohmander
+########################################
+
+namespace = flavor_cab
+normal_or_historical_nations = yes
+
+#The Orinoco Trade
+country_event = {
+	id = flavor_cab.1
+	title = flavor_cab.1.t
+	desc = flavor_cab.1.d
+	picture = TRADEGOODS_eventPicture
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAB
+		owns = 2803 #Orinoco Delta
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = {
+		name = flavor_cab.1.b #We can dominate the river through trade alone.
+		add_dip_power = -100
+		2803 = {
+			add_province_modifier = {	#Lasts for as long as the area remains under Carib control.
+				name = "hub_of_orinoco_trade"
+				duration = -1
+			}
+		}
+	}
+}
+
+#Refugees from the Carib Wars, Carib Expulsion, etc
+country_event = {
+	id = flavor_cab.2
+	title = flavor_cab.2.t
+	desc = flavor_cab.2.d
+	picture = SHIP_SAILING_eventPicture
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAB
+		is_year = 1580
+		capital_scope = {
+			colonial_region = colonial_colombia
+		} #Need to be in the mainland when the refugees arrive for this to make sense.
+		any_province = {
+			OR = { #Islands with at least some Carib population
+				province_id = 500 # St Vincent
+				province_id = 501 # Barbados
+				province_id = 499 # St Lucia
+				province_id = 498 # Martinique
+				province_id = 497 # Dominica
+				province_id = 496 # Guadalupe
+				province_id = 495 # Antigua
+			}
+			owner = {
+				OR = {
+					capital_scope = {
+						continent = europe
+					}
+					colonial_parent = {
+						capital_scope = {
+							continent = europe
+						}
+					}
+				}
+			}
+			trade_goods = sugar
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 48
+	}
+	
+	
+	option = {
+		name = flavor_cab.2.a #Incorporate them into our society.
+		ai_chance = { factor = 95 }
+		add_stability = -1
+		add_country_modifier = {
+			name = "garifuna_migration"
+			duration = 7300
+		}
+	}
+	option = {
+		name = flavor_cab.2.b #They'll have to find their own place to live.
+		ai_chance = { factor = 5 }
+		add_stability_or_adm_power = yes
+	}
+}
+
+#Arawak settle the mouth of the Orinoco
+country_event = {
+	id = flavor_cab.3
+	title = flavor_cab.3.t
+	desc = flavor_cab.3.d
+	picture = COLONIZATION_eventPicture
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAB
+		any_owned_province = {
+			colonial_region = colonial_colombia
+		}
+		ARW = {
+			owns = 2803 #Orinoco Delta
+			NOT = { alliance_with = ROOT }
+			NOT = { has_opinion = { who = ROOT value = 50 } }
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {
+		name = flavor_cab.3.a #This is unacceptable!
+		ai_chance = { factor = 80 }
+		add_claim = 2803
+	}
+	option = {
+		name = flavor_cab.3.b #We have no interest in this area.
+		ai_chance = { factor = 20 }
+		add_prestige = -5
+	}
+}

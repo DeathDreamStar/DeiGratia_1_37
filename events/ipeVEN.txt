@@ -1,0 +1,212 @@
+namespace = ipeVEN
+normal_or_historical_nations = yes
+
+# The Queen of Cyprus
+country_event = {
+	id = ipeVEN.1
+	title = ipeVEN.1.t
+	desc = ipeVEN.1.d
+	picture = KING_DOING_GREAT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CYP
+		is_subject = no
+		government = monarchy
+		is_female = no
+		VEN = {
+			is_subject = no
+			exists = yes
+		}
+		has_consort = no
+		is_year = 1460
+	}
+
+	mean_time_to_happen = {
+		months = 6
+		modifier = {
+			factor = 0.5
+			alliance_with = VEN
+		}
+	}
+
+	option = { # Let us take a Venetian bride!
+		name = ipeVEN.1.a
+		set_country_flag = venetian_inheritance
+		define_consort = {
+			name = "Catarina"
+			dynasty = "Corner"
+			country_of_origin = VEN
+			religion = VEN
+			culture = venetian
+			adm = 1
+			dip = 1
+			mil = 1
+		}
+		create_marriage = VEN
+		VEN = {
+			add_opinion = {
+				who = CYP
+				modifier = accepted_venetian_queen
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeVEN.5
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { # Let us marry a local talent instead.
+		name = ipeVEN.1.b
+		define_consort = {
+			country_of_origin = ROOT
+			religion = ROOT
+			culture = ROOT
+		}
+	}
+}
+
+# The Inheritance of Cyprus
+country_event = {
+	id = ipeVEN.2
+	title = ipeVEN.2.t
+	desc = ipeVEN.2.d
+	picture = KING_SICK_IN_BED_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Allow the Venetians to take over Cyprus.
+		name = ipeVEN.2.a
+		ai_chance = {
+			factor = 100
+		}
+		VEN = {
+			inherit = ROOT
+			hidden_effect = {
+				country_event = {
+					id = ipeVEN.3
+					days = 1
+				}
+			}
+		}
+	}
+
+	option = { # Ward off these vultures!
+		name = ipeVEN.2.b
+		ai_chance = {
+			factor = 0
+		}
+		VEN = {
+			remove_opinion = {
+				who = CYP
+				modifier = accepted_venetian_queen
+			}
+			add_opinion = {
+				who = CYP
+				modifier = claim_to_cyprus
+			}
+			add_casus_belli = {
+				target = CYP
+				type = cb_insult
+				months = 120
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeVEN.4
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+# The Inheritance of Cyprus
+country_event = {
+	id = ipeVEN.3
+	title = ipeVEN.3.t
+	desc = ipeVEN.3.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Glory to the Stato da Màr!
+		name = ipeVEN.3.a
+		add_prestige = 5
+	}
+}
+
+# Cyprus Rejects Venetian Interference!
+country_event = {
+	id = ipeVEN.4
+	title = ipeVEN.4.t
+	desc = ipeVEN.4.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will pay for this!
+		name = ipeVEN.4.a
+		tooltip = {
+			add_casus_belli = {
+				target = CYP
+				type = cb_insult
+				months = 60
+			}
+		}
+	}
+}
+
+# The Queen of Cyprus
+country_event = {
+	id = ipeVEN.5
+	title = ipeVEN.1.t
+	desc = ipeVEN.5.d
+	picture = KING_DOING_GREAT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # An intriguing development.
+		name = ipeVEN.5.a
+		tooltip = {
+			add_opinion = {
+				who = CYP
+				modifier = accepted_venetian_queen
+			}
+		}
+		custom_tooltip = ipeVEN.5.a.tooltip
+	}
+}
+
+# Il Ridotto
+country_event = {
+	id = ipeVEN.6
+	title = ipeVEN.6.t
+	desc = ipeVEN.6.d
+	picture = GREAT_BUILDING_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = VEN
+		owns_core_province = 112
+		is_year = 1600
+		has_reform = venice_merchants_reform
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = { # We can take advantage of this!
+		name = ipeVEN.6.a
+		add_years_of_income = 1
+		add_prestige = 5
+	}
+}

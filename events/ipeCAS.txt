@@ -1,0 +1,771 @@
+namespace = ipeCAS
+normal_or_historical_nations = yes
+
+# The Kingdom of the Canaries
+country_event = {
+	id = ipeCAS.1
+	title = ipeCAS.1.t
+	desc = ipeCAS.1.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CNI
+		is_subject_of = CAS
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Sell the islands to Portugal.
+		name = ipeCAS.1.a
+		ai_chance = {
+			factor = 50
+		}
+		every_owned_province = {
+			add_core = CAS
+		}
+		POR = {
+			inherit = ROOT
+			country_event = {
+				id = ipeCAS.2
+				days = 1
+			}
+		}
+	}
+
+	option = { # Sell the islands to Castile.
+		name = ipeCAS.1.b
+		ai_chance = {
+			factor = 25
+		}
+		CAS = {
+			inherit = ROOT
+			country_event = {
+				id = ipeCAS.3
+				days = 1
+			}
+		}
+	}
+
+	option = { # Maintain independence.
+		name = ipeCAS.1.c
+		ai_chance = {
+			factor = 25
+		}
+		every_owned_province = {
+			add_core = CAS
+			add_core = POR
+		}
+		CAS = {
+			country_event = {
+				id = ipeCAS.4
+				days = 1
+			}
+		}
+		POR = {
+			country_event = {
+				id = ipeCAS.4
+				days = 1
+			}
+		}
+	}
+}
+
+# The Fate of the Canary Islands
+country_event = {
+	id = ipeCAS.2
+	title = ipeCAS.2.t
+	desc = ipeCAS.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Let us keep this new possession!
+		name = ipeCAS.2.a
+		ai_chance = {
+			factor = 75
+		}
+		tooltip = {
+			inherit = CNI
+		}
+		add_prestige = 10
+		CAS = {
+			add_opinion = {
+				who = POR
+				modifier = stole_the_canaries
+			}
+			country_event = {
+				id = ipeCAS.5
+				days = 1
+			}
+		}
+	}
+
+	option = { # We do not wish to anger Castile.
+		name = ipeCAS.2.b
+		ai_chance = {
+			factor = 25
+		}
+		tooltip = {
+			inherit = CNI
+		}
+		366 = {
+			cede_province = CAS
+			remove_core = POR
+		}
+		if = {
+			limit = {
+				owns = 4565
+			}
+			4565 = {
+				cede_province = CAS
+				remove_core = POR
+			}
+		}
+		add_prestige = -10
+		CAS = {
+			add_opinion = {
+				who = POR
+				modifier = returned_the_canaries
+			}
+			country_event = {
+				id = ipeCAS.12
+				days = 1
+			}
+		}
+	}
+}
+
+# The Fate of the Canary Islands
+country_event = {
+	id = ipeCAS.3
+	title = ipeCAS.2.t
+	desc = ipeCAS.3.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A welcome surprise.
+		name = ipeCAS.3.a
+		tooltip = {
+			inherit = CNI
+		}
+		add_prestige = 10
+	}
+}
+
+# The Fate of the Canary Islands
+country_event = {
+	id = ipeCAS.4
+	title = ipeCAS.2.t
+	desc = ipeCAS.4.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Interesting.
+		name = ipeCAS.4.a
+		tooltip = {
+			CNI = {
+				every_owned_province = {
+					add_core = ROOT
+				}
+			}
+		}
+	}
+}
+
+# The Fate of the Canary Islands
+country_event = {
+	id = ipeCAS.5
+	title = ipeCAS.2.t
+	desc = ipeCAS.5.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Aggravating
+		name = ipeCAS.5.a
+		tooltip = {
+			add_opinion = {
+				who = POR
+				modifier = stole_the_canaries
+			}
+		}
+	}
+}
+
+# The Canarian Revolt
+country_event = {
+	id = ipeCAS.6
+	title = ipeCAS.6.t
+	desc = ipeCAS.6.d
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		owns = 366
+		CAS = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = stole_the_canaries
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Crush them!
+		name = ipeCAS.6.a
+		set_country_flag = canaries_rebel
+		366 = {
+			spawn_rebels = {
+				size = 1
+				friend = CAS
+				type = nationalist_rebels
+			}
+		}
+	}
+}
+
+# The Treaty of Alcáçovas
+country_event = {
+	id = ipeCAS.7
+	title = ipeCAS.7.t
+	desc = ipeCAS.7.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POR
+		NOT = {
+			war_with = CAS
+		}
+		CAS = {
+			exists = yes
+			has_country_flag = had_cas_civil_war
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Let us sign the Treaty of Alcáçovas.
+		name = ipeCAS.7.a
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				owns = 366
+				has_country_flag = canaries_rebel
+			}
+			366 = {
+				cede_province = CAS
+				remove_core = POR
+			}
+		}
+		if = {
+			limit = {
+				owns = 4565
+				has_country_flag = canaries_rebel
+			}
+			4565 = {
+				cede_province = CAS
+				remove_core = POR
+			}
+		}
+		add_historical_friend = CAS
+		CAS = {
+			add_historical_friend = POR
+			add_opinion = {
+				who = POR
+				modifier = treaty_of_alcacovas
+			}
+			country_event = {
+				id = ipeCAS.8
+			}
+		}
+		clr_country_flag = canaries_rebel
+	}
+
+	option = { # We will never align with Castile.
+		name = ipeCAS.7.b
+		ai_chance = {
+			factor = 0
+		}
+		tooltip = {
+			if = {
+				limit = {
+					owns = 366
+					366 = {
+						NOT = {
+							is_core = CAS
+						}
+					}
+				}
+				366 = {
+					add_core = CAS
+				}
+			}
+			if = {
+				limit = {
+					owns = 4565
+					4565 = {
+						NOT = {
+							is_core = CAS
+						}
+					}
+				}
+				4565 = {
+					add_core = CAS
+				}
+			}
+		}
+		clr_country_flag = canaries_rebel
+	}
+}
+
+# The Treaty of Alcáçovas
+country_event = {
+	id = ipeCAS.8
+	title = ipeCAS.7.t
+	desc = ipeCAS.8.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # May our friendship come to last.
+		name = ipeCAS.8.a
+		tooltip = {
+			add_opinion = {
+				who = POR
+				modifier = treaty_of_alcacovas
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Portugal Rejects the Treaty of Alcáçovas!
+country_event = {
+	id = ipeCAS.9
+	title = ipeCAS.9.t
+	desc = ipeCAS.9.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will soon learn the error of their ways.
+		name = ipeCAS.9.a
+		if = {
+			limit = {
+				POR = {
+					owns = 366
+				}
+				366 = {
+					NOT = {
+						is_core = CAS
+					}
+				}
+			}
+			366 = {
+				add_core = CAS
+			}
+		}
+		if = {
+			limit = {
+				POR = {
+					owns = 4565
+				}
+				4565 = {
+					NOT = {
+						is_core = CAS
+					}
+				}
+			}
+			4565 = {
+				add_core = CAS
+			}
+		}
+	}
+}
+
+# Sugar in Tenerife
+country_event = {
+	id = ipeCAS.10
+	title = ipeCAS.10.t
+	desc = ipeCAS.10.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		religion_group = christian
+		owns = 4565
+		is_core = 4565
+		controls = 4565
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Money is a sweetness in itself.
+		name = ipeCAS.10.a
+		4565 = {
+			change_trade_goods = sugar
+		}
+	}
+}
+
+# The Disappearance of the Guanches
+country_event = {
+	id = ipeCAS.11
+	title = ipeCAS.11.t
+	desc = ipeCAS.11.d
+	picture = CONQUEST_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = CAS
+		owns = 4565
+		is_core = 4565
+		controls = 4565
+		owns = 366
+		is_core = 366
+		controls = 366
+		366 = {
+			culture = canarian
+			has_owner_religion = yes
+		}
+		4565 = {
+			culture = canarian
+			has_owner_religion = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Tragic.
+		name = ipeCAS.11.a
+		366 = {
+			change_culture = andalucian
+			remove_core = GNC
+		}
+		4565 = {
+			change_culture = andalucian
+			remove_core = GNC
+		}
+	}
+}
+
+# The Fate of the Canary Islands (Returned to Castile)
+country_event = {
+	id = ipeCAS.12
+	title = ipeCAS.2.t
+	desc = ipeCAS.12.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # May our friendship come to last.
+		name = ipeCAS.8.a
+		add_prestige = 10
+	}
+}
+
+# The Rise of the Genovese Bankers
+country_event = {
+	id = ipeCAS.13
+	title = ipeCAS.13.t
+	desc = ipeCAS.13.d
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Fantastic!
+		name = ipeCAS.13.a
+		add_country_modifier = {
+			name = genovese_banking_spa
+			duration = -1
+		}
+		add_historical_friend = GEN
+		GEN = {
+			add_historical_friend = ROOT
+		}
+		tooltip = {
+			GEN = {
+				add_country_modifier = {
+					name = genovese_banking_gen
+					duration = -1
+				}
+			}
+		}
+		hidden_effect = {
+			GEN = {
+				country_event = {
+					id = ipeCAS.14
+				}
+			}
+		}
+	}
+}
+
+# The Rise of the Genoese Bankers
+country_event = {
+	id = ipeCAS.14
+	title = ipeCAS.13.t
+	desc = ipeCAS.13.d
+	picture = ECONOMY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will profit greatly from this.
+		name = ipeCAS.14.a
+		add_years_of_income = 1
+		add_country_modifier = {
+			name = genovese_banking_gen
+			duration = -1
+		}
+		tooltip = {
+			add_historical_friend = FROM
+			FROM = {
+				add_historical_friend = ROOT
+				add_country_modifier = {
+					name = genovese_banking_spa
+					duration = -1
+				}
+			}
+		}
+	}
+}
+
+# Joanna la Beltraneja
+country_event = {
+	id = ipeCAS.15
+	title = ipeCAS.15.t
+	desc = ipeCAS.15.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Joanna is certainly unworthy of the crown.
+		name = ipeCAS.15.a
+		custom_tooltip = ipeCAS.15.a.tooltip
+		add_legitimacy = -10
+	}
+}
+
+# End of the Castilian Civil War (Aviz)
+country_event = {
+	id = ipeCAS.16
+	title = castilian_civil_war.100.t
+	desc = ipeCAS.16.d
+	picture = CONQUEST_eventPicture
+
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		tag = AVZ
+		NOT = {
+			exists = CAS
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # This will bring us closer to Portugal.
+		name = ipeCAS.16.a
+		add_stability_or_adm_power = yes
+		change_tag = CAS
+		add_opinion = {
+			who = POR
+			modifier = cas_civil_war_winner
+		}
+		POR = {
+			add_opinion = {
+				who = ROOT
+				modifier = cas_civil_war_winner
+			}
+			country_event = {
+				id = ipeCAS.17
+			}
+		}
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = AVZ
+				}
+				remove_core = AVZ
+			}
+		}
+	}
+}
+
+# End of the Castilian Civil War (Portugal)
+country_event = {
+	id = ipeCAS.17
+	title = castilian_civil_war.100.t
+	desc = ipeCAS.17.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This will bring us closer to Castile.
+		name = ipeCAS.17.a
+		add_stability_or_adm_power = yes
+		tooltip = {
+			AVZ = {
+				change_tag = CAS
+			}
+			add_opinion = {
+				who = FROM
+				modifier = cas_civil_war_winner
+			}
+			FROM = {
+				add_opinion = {
+					who = ROOT
+					modifier = cas_civil_war_winner
+				}
+			}
+		}
+	}
+}
+
+# End of the Castilian Civil War (Aragon)
+country_event = {
+	id = ipeCAS.18
+	title = castilian_civil_war.100.t
+	desc = ipeCAS.18.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This will bring us closer to Castile.
+		name = ipeCAS.17.a
+		add_stability_or_adm_power = yes
+		tooltip = {
+			add_opinion = {
+				who = CAS
+				modifier = cas_civil_war_winner
+			}
+			CAS = {
+				add_opinion = {
+					who = ARA
+					modifier = cas_civil_war_winner
+				}
+			}
+		}
+	}
+}
+
+# Decline of the English Wool Trade
+country_event = {
+	id = ipeCAS.19
+	title = ipeCAS.19.t
+	desc = ipeCAS.19.d
+	picture = ECONOMY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = ENG
+			was_tag = ENG
+		}
+		has_global_flag = rise_of_the_merino_wool_trade
+	}
+
+	mean_time_to_happen = {
+		months = 360
+	}
+
+	option = { # Pity.
+		name = ipeCAS.19.a
+		set_global_flag = decline_of_the_english_wool_trade
+		add_years_of_income = -0.1
+		if = {
+			limit = {
+				has_estate_privilege = estate_burghers_english_wool_trade
+			}
+			remove_estate_privilege = estate_burghers_english_wool_trade
+		}
+	}
+}
+
+# The Foundation of Santo Domingo
+country_event = {
+	id = ipeCAS.20
+	title = ipeCAS.20.t
+	desc = ipeCAS.20.d
+	picture = COLONIZATION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # We will build it in a day!
+		name = ipeCAS.20.a
+		490 = {
+			if = {
+				limit = {
+					is_empty = no
+				}
+				owner = {
+					hidden_effect = {
+						country_event = {
+							id = ipeCAS.21
+						}
+					}
+				}
+			}
+			cede_province = ROOT
+			add_core = ROOT
+			change_culture = ROOT
+			change_religion = ROOT
+			rename_capital = "Santo Domingo de Guzmán"
+		}
+	}
+}
+
+# The Foundation of Santo Domingo
+country_event = {
+	id = ipeCAS.21
+	title = ipeCAS.20.t
+	desc = ipeCAS.21.d
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This does not bode well.
+		name = ipeCAS.21.a
+		tooltip = {
+			490 = {
+				cede_province = FROM
+				add_core = FROM
+				change_culture = FROM
+				change_religion = FROM
+				rename_capital = "Santo Domingo de Guzmán"
+			}
+		}
+	}
+}

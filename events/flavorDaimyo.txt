@@ -1,0 +1,1222 @@
+########################################
+# Events for the various Daimyos of Japan
+# And the Shogunate/a United Japan
+#
+# written by Henrik Lohmander
+########################################
+
+namespace = flavor_daimyo
+normal_or_historical_nations = yes
+
+#Shiba Yoshikado
+country_event = {
+	id = flavor_daimyo.4
+	title = flavor_daimyo.4.t
+	desc = flavor_daimyo.4.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+	is_triggered_only = yes #On new monarch
+
+	trigger = {
+		tag = SBA
+		has_reform = daimyo
+		num_of_cities = 2
+		OR = {
+			has_regency = no
+			has_heir = yes
+			has_consort_regency = yes
+		}
+		NOT = { has_country_flag = shiba_yoshikado_flag } #Set in history
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					is_city = yes
+				}
+				save_event_target_as = yoshikado_pretender_province
+			}
+		}
+	}
+	
+	option = {	
+		name = flavor_daimyo.4.a #Stay true to [Root.Monarch.GetName]
+		event_target:yoshikado_pretender_province = {
+			spawn_rebels = {
+				size = 1
+				type = pretender_rebels
+				leader = "Yoshikado"
+				leader_dynasty = "Shiba"
+			}
+		}
+	}
+	option = {	
+		name = flavor_daimyo.4.b #Support Yoshikado
+		capital_scope = {
+			if = {
+				limit = { can_spawn_rebels = nationalist_rebels }
+				spawn_rebels = {
+					type = nationalist_rebels
+					size = 1
+				}
+			}
+			else = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1
+				}
+			}
+		}
+	}
+}
+
+#Rightful Succession
+country_event = {
+	id = flavor_daimyo.5
+	title = flavor_daimyo.5.t
+	desc = flavor_daimyo.5.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = HTK
+		has_reform = daimyo
+		has_heir = yes
+		num_of_cities = 2
+		NOT = { is_year = 1490 }
+		is_year = 1460
+		has_government_attribute = heir
+	}
+	
+	immediate = {
+		hidden_effect = {
+			overlord = {
+				save_event_target_as = shogunate_clan
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					is_city = yes
+				}
+				save_event_target_as = rebel_province
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 90
+	}	
+	
+	option = {	
+		name = flavor_daimyo.5.a #Side with [Root.Heir.GetName].
+		event_target:rebel_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Mochitomi"
+				leader_dynasty = "Hatakeyama"
+			}
+		}
+	}
+	option = {
+		name = flavor_daimyo.5.b #Support Mochitomi's claim.
+		remove_heir = {}
+		define_heir = {
+			name = "Mochitomi"
+			dynasty = ROOT
+			age = 30
+			claim = 75
+		}
+		add_stability = -1
+	}
+}
+
+#Succession of [Root.Monarch.GetName]
+country_event = {
+	id = flavor_daimyo.6
+	title = flavor_daimyo.6.t
+	desc = flavor_daimyo.6.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = HSK
+		has_reform = daimyo
+		has_heir = no
+		num_of_cities = 4
+		is_year = 1500
+		NOT = { is_year = 1520 }
+		has_government_attribute = heir
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					is_city = yes
+				}
+				save_event_target_as = sumitomo_province
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					is_city = yes
+					NOT = { province_id = event_target:sumitomo_province }
+				}
+				save_event_target_as = sumiyuki_province
+			}
+			random_owned_province = {
+				limit = {
+					is_capital = no
+					is_city = yes
+					NOT = { province_id = event_target:sumitomo_province }
+					NOT = { province_id = event_target:sumiyuki_province }
+				}
+				save_event_target_as = takakuni_province
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 180
+	}	
+	
+	option = {	
+		name = flavor_daimyo.6.a #I will name Sumitomo as the heir apparent.
+		define_heir = {
+			name = "Sumitomo"
+			dynasty = ROOT
+			claim = 50
+			age = 30
+		}
+		
+		event_target:takakuni_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Takakuni"
+				leader_dynasty = "Hosokawa"
+			}
+		}
+		if = {
+			limit = {
+				num_of_cities = 7
+			}
+			event_target:sumiyuki_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1
+					leader = "Sumiyuki"
+					leader_dynasty = "Hosokawa"
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_daimyo.6.b #Sumiyuki of the Kujo would be best.
+		define_heir = {
+			name = "Sumiyuki"
+			dynasty = ROOT
+			claim = 50
+			age = 30
+		}
+		
+		event_target:takakuni_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Takakuni"
+				leader_dynasty = "Hosokawa"
+			}
+		}
+		if = {
+			limit = {
+				num_of_cities = 7
+			}
+			event_target:sumitomo_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1
+					leader = "Sumitomo"
+					leader_dynasty = "Hosokawa"
+				}
+			}
+		}
+	}
+	option = {
+		name = flavor_daimyo.6.c #Takakuni is a worthy successor.
+		define_heir = {
+			name = "Takakuni"
+			dynasty = ROOT
+			claim = 50
+			age = 30
+		}
+		event_target:sumitomo_province = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Sumitomo"
+				leader_dynasty = "Hosokawa"
+			}
+		}
+		if = {
+			limit = {
+				num_of_cities = 7
+			}
+			event_target:sumiyuki_province = {
+				spawn_rebels = {
+					type = pretender_rebels
+					size = 1
+					leader = "Sumiyuki"
+					leader_dynasty = "Hosokawa"
+				}
+			}
+		}
+	}
+}
+
+#The Ogigayatsu
+country_event = {
+	id = flavor_daimyo.8
+	title = flavor_daimyo.8.t
+	desc = flavor_daimyo.8.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = UES
+		has_reform = daimyo
+		is_year = 1480
+		NOT = { is_year = 1530 }
+		owns = 1028 #Musashi
+	}
+	
+	mean_time_to_happen = {
+		months = 150
+	}	
+	
+	option = {	
+		name = flavor_daimyo.8.a #Death to all traitors!
+		1028 = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Sadamasa"
+				leader_dynasty = "Uesugi"
+			}
+		}
+	}
+	option = {
+		name = flavor_daimyo.8.b #We must keep the family together.
+		1028 = {
+			add_local_autonomy = 50
+		}
+	}
+}
+
+# The Great Fire of Edo
+country_event = {
+	id = flavor_daimyo.10
+	title = flavor_daimyo.10.t
+	desc = flavor_daimyo.10.d
+	picture = BURNING_CITY_eventPicture
+	goto = 1028
+	
+	fire_only_once = yes
+
+	trigger = {
+		owns = 1028 #Musashi
+		1028 = {
+			development = 30
+		}
+		is_year = 1625
+		NOT = { is_year = 1675 }
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}	
+	
+	option = {	
+		name = flavor_daimyo.10.a #We need large boulevards and dedicated fire brigades.
+		ai_chance = {
+			factor = 100
+		}
+		add_stability = -1
+		add_years_of_income = -1
+		1028 = {
+			add_base_tax = -3
+			add_base_production = -3
+			add_base_manpower = -3
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+			add_permanent_province_modifier = {
+				name = "restructuring_edo_safer"
+				duration = -1
+			}
+			add_devastation = 50
+		}
+	}
+	option = {
+		name = flavor_daimyo.10.c #Fires and quarrels are the flowers of Edo.
+		ai_chance = {
+			factor = 0
+		}
+		add_stability = -1
+		1028 = {
+			add_base_tax = -3
+			add_base_production = -3
+			add_base_manpower = -3
+			add_devastation = 50
+		}
+	}
+}
+
+# $YEAR$ Nankai Earthquake
+country_event = {
+	id = flavor_daimyo.11
+	title = ipe_plague.27.t
+	desc = flavor_daimyo.11.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 3309 # Totomi
+	
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 3309
+		is_year = 1575
+		NOT = {
+			is_year = 1625
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # We will remember the dead.
+		name = flavor_daimyo.11.a
+		4189 = { # Kamakura
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+        3108 = { # Odawara
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3304 = { # Izu
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        1839 = { # Suruga
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3309 = { # Totomi
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        4360 = { # Mikawa
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        6860 = { # Nagoya
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        1030 = { # Kiyosu
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3319 = { # Kameyama
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        4359 = { # Kiriyama
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        4187 = { # Kii
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        6853 = { # Tama
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        1028 = { # Musashi
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3325 = { # Koga
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3302 = { # Kazusa
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        6802 = { # Awa
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+	}
+
+    after = {
+        every_country = {
+            limit = {
+                OR = {
+                    owns = 3108
+                    owns = 3304
+                    owns = 1839
+                    owns = 3309
+                    owns = 4360
+                    owns = 6860
+                    owns = 1030
+                    owns = 3319
+                    owns = 4359
+                    owns = 4187
+                    owns = 6853
+                    owns = 1028
+                    owns = 3325
+                    owns = 3302
+                    owns = 6802
+                }
+                NOT = {
+                    tag = ROOT
+                }
+            }
+            country_event = {
+                id = flavor_daimyo.12
+            }
+        }
+    }
+}
+
+
+# $YEAR$ Nankai Earthquake
+country_event = {
+	id = flavor_daimyo.12
+	title = flavor_daimyo.12.t
+	desc = flavor_daimyo.12.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	is_triggered_only = yes
+	
+    option = { # Amitabhaya.
+        name = ipe_plague.27.a
+        tooltip = {
+            4189 = { # Kamakura
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3108 = { # Odawara
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3304 = { # Izu
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            1839 = { # Suruga
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3309 = { # Totomi
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            4360 = { # Mikawa
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            6860 = { # Nagoya
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            1030 = { # Kiyosu
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3319 = { # Kameyama
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            4359 = { # Kiriyama
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            4187 = { # Kii
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            6853 = { # Tama
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            1028 = { # Musashi
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3325 = { # Koga
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3302 = { # Kazusa
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            6802 = { # Awa
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+        }
+    }
+}
+
+#Hoei Eruption of Mt Fuji
+country_event = {
+	id = flavor_daimyo.13
+	title = flavor_daimyo.13.t
+	desc = flavor_daimyo.13.d
+	picture = VOLCANO_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 1029 # Kai
+		is_year = 1707
+		NOT = {
+			is_year = 1717
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+		
+	option = {	
+		name = flavor_daimyo.13.a #We will remember the dead.
+		add_stability = -1
+		1029 = { # Kai
+			add_devastation = 50
+			add_base_tax = -3
+			add_base_production = -3
+			add_base_manpower = -3
+			add_permanent_province_modifier = {
+				name = peace_famine
+				duration = 730
+			}
+		}
+		1839 = { # Suruga
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = peace_famine
+				duration = 730
+			}
+		}
+		3304 = { # Izu
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = peace_famine
+				duration = 730
+			}
+		}
+		4189 = { # Kamakura
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = peace_famine
+				duration = 730
+			}
+		}
+		3108 = { # Odawara
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = peace_famine
+				duration = 730
+			}
+		}
+		kanto_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = peace_famine
+				duration = 730
+			}
+		}
+		eastern_kanto_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = peace_famine
+				duration = 730
+			}
+		}
+		northern_kanto_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = peace_famine
+				duration = 730
+			}
+		}
+	}
+
+	after = {
+		every_country = {
+			limit = {
+				any_owned_province = {
+					OR = {
+						province_id = 1029
+						province_id = 1839
+						province_id = 3304
+						province_id = 4189
+						province_id = 3108
+						area = kanto_area
+						area = eastern_kanto_area
+						area = northern_kanto_area
+					}
+					has_province_modifier = peace_famine
+				}
+				NOT = {
+					tag = ROOT
+				}
+			}
+			country_event = {
+				id = flavor_daimyo.14
+			}
+		}
+	}
+}
+
+#Hoei Eruption of Mt Fuji
+country_event = {
+	id = flavor_daimyo.14
+	title = flavor_daimyo.14.t
+	desc = flavor_daimyo.14.d
+	picture = VOLCANO_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {	
+		name = flavor_daimyo.14.a #We will remember the dead.
+		tooltip = {
+			1029 = { # Kai
+				add_devastation = 50
+				add_base_tax = -3
+				add_base_production = -3
+				add_base_manpower = -3
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 730
+				}
+			}
+			1839 = { # Suruga
+				add_devastation = 50
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 730
+				}
+			}
+			3304 = { # Izu
+				add_devastation = 50
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 730
+				}
+			}
+			4189 = { # Kamakura
+				add_devastation = 50
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 730
+				}
+			}
+			3108 = { # Odawara
+				add_devastation = 50
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 730
+				}
+			}
+			kanto_area = {
+				add_devastation = 50
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 730
+				}
+			}
+			eastern_kanto_area = {
+				add_devastation = 50
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 730
+				}
+			}
+			northern_kanto_area = {
+				add_devastation = 50
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 730
+				}
+			}
+		}
+	}
+}
+
+#Shimabara Rebellion
+country_event = {
+	id = flavor_daimyo.15
+	title = flavor_daimyo.15.t
+	desc = flavor_daimyo.15.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_reform = shogunate
+		is_year = 1630 #
+		NOT = { is_year = 1650 } #
+		owns = 1017 #Suo
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	
+	option = {	
+		name = flavor_daimyo.15.a #Crush them.
+		1017 = {
+			spawn_rebels = {
+				type = anti_tax_rebels
+				size = 2
+			}
+		}
+		random_owned_province = {
+			limit = {
+				any_neighbor_province = {
+					province_id = 1017
+				}
+			}
+			spawn_rebels = {
+				type = anti_tax_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+#The Ako Vendetta
+country_event = {
+	id = flavor_daimyo.16
+	title = flavor_daimyo.16.t
+	desc = flavor_daimyo.16.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		has_reform = shogunate
+		is_year = 1700
+		NOT = { is_year = 1730 }
+	}
+	
+	mean_time_to_happen = {
+		months = 90
+	}
+
+	
+	option = {	
+		name = flavor_daimyo.16.a #Let them take their own life honorably through Seppuku.
+		add_stability = -2
+		add_country_modifier = {
+			name = "chushingura"
+			duration = 3650
+		}
+	}
+	
+	option = {	
+		name = flavor_daimyo.16.b #Law and order must rule, let us execute these ronin.
+		add_stability_or_adm_power = yes
+		add_country_modifier = {
+			name = "chushingura_popular_bandits"
+			duration = 3650
+		}
+	}
+}
+
+#The Rise of the Yamana
+country_event = {
+	id = flavor_daimyo.17
+	title = flavor_daimyo.17.t
+	desc = flavor_daimyo.17.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = YMN
+		NOT = { is_year = 1455 }
+		exists = HSK
+		NOT = { war_with = HSK }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	
+	option = {	
+		name = flavor_daimyo.17.a #Let us bide our time and build our power to challenge the Hosokawa in the future.
+		add_adm_power = 50
+		add_yearly_manpower = 1
+	}
+	
+	option = {	
+		name = flavor_daimyo.17.b #Let us forge alliances and pacts to contain the Hosokawa influence.
+		add_dip_power = 75
+		add_years_of_income = 0.25
+	}
+}
+
+#Kyoto of the West
+country_event = {
+	id = flavor_daimyo.18
+	title = flavor_daimyo.18.t
+	desc = flavor_daimyo.18.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = OUC
+		owns = 1017
+		is_year = 1460
+		NOT = { is_year = 1510 }
+	}
+	
+	mean_time_to_happen = {
+		months = 150
+	}
+
+	
+	option = {	
+		name = flavor_daimyo.18.a #A nice dream, but an expensive one.
+		add_prestige = -5
+	}
+	
+	option = {	
+		name = flavor_daimyo.18.b #Yamaguchi shall be like no city before it.
+		add_years_of_income = -1.5
+		1017 = {
+			add_province_modifier = {
+				name = "kyoto_of_the_west_modifier"
+				duration = -1
+			}
+		}
+	}
+}
+
+# The Merchants of Sakai
+country_event = {
+	id = flavor_daimyo.19
+	title = flavor_daimyo.19.t
+	desc = flavor_daimyo.19.d
+	picture = NAVAL_MILITARY_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = HSK
+		owns = 3310
+		is_year = 1470
+		NOT = { is_year = 1500 }
+	}
+	
+	mean_time_to_happen = {
+		months = 90
+	}
+
+	option = {	
+		name = flavor_daimyo.19.a #Let us support Sakai.
+		ai_chance = {
+			factor = 100
+		}
+		3310 = {
+			add_permanent_province_modifier = {
+				name = "merchant_council_of_sakai"
+				duration = -1
+			}
+		}
+	}
+	
+	option = {	
+		name = flavor_daimyo.19.b #Confiscate their properties.
+		ai_chance = {
+			factor = 0
+		}
+		add_years_of_income = 1
+	}
+}
+
+#Revolt of Harunobu
+country_event = {
+	id = flavor_daimyo.20
+	title = flavor_daimyo.20.t
+	desc = flavor_daimyo.20.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = TKD
+		is_year = 1535
+		NOT = { is_year = 1550 }
+	}
+	
+	mean_time_to_happen = {
+		months = 45
+	}
+
+	
+	option = {	
+		name = flavor_daimyo.20.a #We must look to Harunobu for leadership.
+		add_stability = -1
+		define_ruler = {
+			name = "Shingen"
+			dynasty = "Takeda"
+			adm = 5
+			dip = 5
+			mil = 5
+		}
+	}
+	
+	option = {	
+		name = flavor_daimyo.20.b #Crush him.
+		add_stability_or_adm_power = yes
+		random_owned_province = {
+			limit = {
+				is_in_capital_area = yes
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+				leader = "Shingen"
+				leader_dynasty = "Takeda"
+			}
+		}
+	}
+}
+
+#Azuchi Castle
+country_event = {
+	id = flavor_daimyo.22
+	title = flavor_daimyo.22.t
+	desc = flavor_daimyo.22.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ODA
+		has_reform = shogunate
+		is_at_war = no
+		capital = 1020
+	}
+	
+	mean_time_to_happen = {
+		months = 30
+	}
+
+	
+	option = {	
+		name = flavor_daimyo.22.a #A marvelous project!
+		add_years_of_income = -1.5
+		1020 = {
+			add_province_modifier = {
+				name = "azuchi_castle"
+				duration = -1
+			}
+		}
+		
+	}
+	
+	option = {
+		name = flavor_daimyo.22.b #We have no time for such vanities.
+		add_prestige = -5
+	}
+}
+
+#Economic Reforms of [Root.Monarch.GetName]
+country_event = {
+	id = flavor_daimyo.25
+	title = flavor_daimyo.25.t
+	desc = flavor_daimyo.25.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = ODA
+		is_year = 1560
+		NOT = { is_year = 1580 }
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	
+	option = {	
+		name = flavor_daimyo.25.a #Excellent.
+		add_mercantilism = 1
+		add_dip_power = 75
+		add_adm_power = 75
+	}
+}
+
+#The Great Days of Chuzan
+country_event = {
+	id = flavor_daimyo.26
+	title = flavor_daimyo.26.t
+	desc = flavor_daimyo.26.d
+	picture = COURT_eventPicture
+	
+	fire_only_once = yes
+
+	trigger = {
+		tag = RYU
+		stability = 2
+		is_at_war = no
+		is_year = 1475
+		NOT = { is_year = 1525 }
+	}
+	
+	mean_time_to_happen = {
+		months = 150
+	}
+
+	
+	option = {	
+		name = flavor_daimyo.26.a #This is truly a golden era for our kingdom.
+		add_prestige = 10
+		add_dip_power = 35
+		add_adm_power = 35
+		add_mil_power = 35
+	}
+}

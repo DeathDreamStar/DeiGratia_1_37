@@ -1,0 +1,21 @@
+#3369 - Palaw
+
+owner = AYU
+controller = AYU
+culture = mon
+religion = buddhism
+capital = "Palaw"
+trade_goods = fish
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = AYU
+
+
+
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman

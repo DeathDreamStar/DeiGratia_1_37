@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = purepecha
+religion = purepecha_religion
+technology_group = mesoamerican
+capital = 4573
+fixed_capital = 4573
+
+1444.1.1 = {
+	monarch = {
+		name = "Tanguaxuan"
+		dynasty = "Acam"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

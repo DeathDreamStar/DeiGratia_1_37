@@ -1,0 +1,100 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_holy_site_default"
+		texturefile = "gfx//interface//holy_sites//aksum.dds"
+	}
+
+	spriteType = {
+		name = "GFX_holy_site_1227"
+		texturefile = "gfx//interface//holy_sites//aksum.dds"
+		loadType = "INGAME"
+	}	
+
+	spriteType = {
+		name = "GFX_holy_site_358"
+		texturefile = "gfx//interface//holy_sites//alexandria.dds"
+		loadType = "INGAME"
+	}	
+
+	spriteType = {
+		name = "GFX_holy_site_2313"
+		texturefile = "gfx//interface//holy_sites//antioch.dds"
+		loadType = "INGAME"
+	}	
+
+	spriteType = {
+		name = "GFX_holy_site_1234"
+		texturefile = "gfx//interface//holy_sites//qasr_ibrim.dds"
+		loadType = "INGAME"
+	}	
+
+	spriteType = {
+		name = "GFX_holy_site_419"
+		texturefile = "gfx//interface//holy_sites//yerevan.dds"
+		loadType = "INGAME"
+	}
+	
+### Zoroastrian Holy sites ###
+	
+		spriteType = {
+		name = "GFX_holy_site_4430"
+		texturefile = "gfx//interface//holy_sites//daman.dds"
+		loadType = "INGAME"
+	}
+	
+		spriteType = {
+		name = "GFX_holy_site_441"
+		texturefile = "gfx//interface//holy_sites//khiva.dds"
+		loadType = "INGAME"
+	}
+	
+		spriteType = {
+		name = "GFX_holy_site_2223"
+		texturefile = "gfx//interface//holy_sites//larestan.dds"
+		loadType = "INGAME"
+	}
+	
+		spriteType = {
+		name = "GFX_holy_site_2235"
+		texturefile = "gfx//interface//holy_sites//sabzevar.dds"
+		loadType = "INGAME"
+	}
+	
+		spriteType = {
+		name = "GFX_holy_site_421"
+		texturefile = "gfx//interface//holy_sites//shirvan.dds"
+		loadType = "INGAME"
+	}
+
+### Nestorian Holy Sites ###
+
+		spriteType = {
+		name = "GFX_holy_site_379"
+		texturefile = "gfx//interface//holy_sites//blessing_jerusalem.dds"
+		loadType = "INGAME"
+	}
+
+		spriteType = {
+		name = "GFX_holy_site_410"
+		texturefile = "gfx//interface//holy_sites//baghdad.dds"
+		loadType = "INGAME"
+	}
+
+		spriteType = {
+		name = "GFX_holy_site_537"
+		texturefile = "gfx//interface//holy_sites//quilon.dds"
+		loadType = "INGAME"
+	}
+
+		spriteType = {
+		name = "GFX_holy_site_2308"
+		texturefile = "gfx//interface//holy_sites//edessa.dds"
+		loadType = "INGAME"
+	}
+
+		spriteType = {
+		name = "GFX_holy_site_445"
+		texturefile = "gfx//interface//holy_sites//merv.dds"
+		loadType = "INGAME"
+	}
+}

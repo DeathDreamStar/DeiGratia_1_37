@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = berber
+add_accepted_culture = fur_culture
+religion = shamanism
+technology_group = sub_saharan
+unit_type = sub_saharan
+capital = 6063
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Daud"
+		dynasty = "Banû Hilal"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

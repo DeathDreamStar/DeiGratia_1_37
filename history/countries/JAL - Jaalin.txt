@@ -1,0 +1,19 @@
+government = tribal
+add_government_reform = tribal_federation
+technology_group = east_african
+unit_type = sub_saharan
+religion = sunni
+primary_culture = nubian
+capital = 2797 # Shendy
+government_rank = 1
+religious_school = maliki_school
+
+1444.1.1 = { # Fictional
+	monarch = {
+		name = "Nimr Muhammad"
+		dynasty = "Ja'al"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

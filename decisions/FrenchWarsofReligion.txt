@@ -1,0 +1,155 @@
+country_decisions = {
+	reunite_france = {
+		major = yes
+		potential = {
+            normal_or_historical_nations = yes
+			tag = FRA
+			OR = {
+				exists = CTL
+				exists = HUG
+			}
+		}
+		allow = {
+			OR = {
+				CTL = {
+					capital_scope = {
+						controlled_by = ROOT
+					}
+				}
+				HUG = {
+					capital_scope = {
+						controlled_by = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					exists = CTL
+				}
+				CTL = {
+					white_peace = ROOT
+					every_owned_province = {
+						cede_province = ROOT
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							owns = 183
+						}
+						set_capital = 183
+					}
+				}
+				country_event = {
+					id = new_french_wars_of_religion.12
+				}
+			}
+			if = {
+				limit = {
+					exists = HUG
+				}
+				HUG = {
+					white_peace = ROOT
+					every_owned_province = {
+						cede_province = ROOT
+					}
+				}
+				hidden_effect = {
+					if = {
+						limit = {
+							owns = 183
+						}
+						set_capital = 183
+					}
+				}
+				country_event = {
+					id = new_french_wars_of_religion.13
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	reunite_france_catholic_league = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			tag = CTL
+			exists = FRA
+		}
+		allow = {
+			FRA = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			FRA = {
+				white_peace = ROOT
+				every_owned_province = {
+					cede_province = ROOT
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						owns = 183
+					}
+					set_capital = 183
+				}
+			}
+			country_event = {
+				id = new_french_wars_of_religion.14
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	reunite_france_protestant_league = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			tag = HUG
+			exists = FRA
+		}
+		allow = {
+			FRA = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+			}
+		}
+		effect = {
+			FRA = {
+				white_peace = ROOT
+				every_owned_province = {
+					cede_province = ROOT
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						owns = 183
+					}
+					set_capital = 183
+				}
+			}
+			country_event = {
+				id = new_french_wars_of_religion.14
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

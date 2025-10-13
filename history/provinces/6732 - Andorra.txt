@@ -1,0 +1,23 @@
+# 6372 - Andorra
+
+owner = ADR
+controller = ADR
+add_core = ADR
+capital = "Andorra la Vella"
+is_city = yes
+culture = catalan
+religion = catholic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = copper
+base_manpower = 1
+add_core = CAT
+fort_15th = yes
+university = yes
+
+
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman

@@ -1,0 +1,34 @@
+# 3980 - Furstenberg
+owner = FNB
+controller = FNB
+add_core = FNB
+culture = swabian
+religion = catholic
+hre = yes
+base_tax = 1
+base_production = 1
+trade_goods = livestock
+base_manpower = 1
+capital = "Fürstenberg"
+is_city = yes
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = western
+discovered_by = muslim
+
+
+1806.7.12 = {
+           owner = BAD
+           controller = BAD
+           add_core = BAD
+           remove_core = FNB
+           hre = no
+} # The Holy Roman Empire is dissolved
+1871.1.18 = {
+           owner = PRU
+           controller = PRU
+           add_core = PRU
+           base_tax = 1
+           base_production = 1
+           base_manpower = 2
+}

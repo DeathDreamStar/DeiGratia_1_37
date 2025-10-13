@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = burusho
+religion = vajrayana
+technology_group = indian
+capital = 6791	# Nagar
+fixed_capital = 6791 # Cannot move capital away from this province & no power cost to move to it
+
+1444.1.1 = {
+	monarch = {
+		name = "Fadl Khan"
+		dynasty = "Trakhan"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

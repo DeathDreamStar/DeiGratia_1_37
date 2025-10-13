@@ -1,0 +1,1808 @@
+namespace = ipeBUR
+normal_or_historical_nations = yes
+
+# The Duchy of Guelders (Berg)
+country_event = {
+	id = ipeBUR.1
+	title = ipeBUR.1.t
+	desc = ipeBUR.1.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BRG
+		NOT = {
+			war_with = BUR
+		}
+		BUR = {
+			exists = yes
+			is_subject = no
+		}
+		GEL = {
+			NOT = {
+				is_subject_of = BRG
+				is_subject_of = BUR
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Let us try to dispose of our claims.
+		name = ipeBUR.1.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 100
+				is_subject = yes
+			}
+		}
+		custom_tooltip = ipeBUR.1.a.tooltip
+		BUR = {
+			country_event = {
+				id = ipeBUR.2
+				days = 30
+			}
+		}
+	}
+
+	option = { # But Gelre will be ours!
+		name = ipeBUR.1.b
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				is_subject = yes
+			}
+		}
+		add_casus_belli = {
+            target = GEL
+            type = cb_restore_personal_union
+            months = 480
+		}
+	}
+}
+
+# The Duchy of Guelders (Burgundy)
+country_event = {
+	id = ipeBUR.2
+	title = ipeBUR.1.t
+	desc = ipeBUR.2.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We shall purchase their claim!
+		name = ipeBUR.2.a
+		add_treasury = -50
+		add_casus_belli = {
+            target = GEL
+            type = cb_restore_personal_union
+            months = 300
+		}
+		BRG = {
+			country_event = {
+				id = ipeBUR.3
+			}
+		}
+	}
+
+	option = { # Sounds troublesome.
+		name = ipeBUR.2.b
+		BRG = {
+			country_event = {
+				id = ipeBUR.4
+			}
+		}
+	}
+}
+
+# The Duke of Burgundy Claims Guelders!
+country_event = {
+	id = ipeBUR.3
+	title = ipeBUR.3.t
+	desc = ipeBUR.3.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Best of luck to them.
+		name = ipeBUR.3.a
+		add_treasury = 50
+	}
+}
+
+# The Duke of Burgundy Turns Us Down
+country_event = {
+	id = ipeBUR.4
+	title = ipeBUR.4.t
+	desc = ipeBUR.4.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They are not entirely wrong.
+		name = ipeBUR.4.a
+		add_prestige = -5
+	}
+}
+
+# The Question of Guelders
+country_event = {
+	id = ipeBUR.5
+	title = ipeBUR.5.t
+	desc = ipeBUR.5.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = GEL
+		is_subject = no
+		valid_for_personal_unions_trigger = yes
+		BUR = {
+			has_casus_belli = {
+				type = cb_restore_personal_union
+				target = GEL
+			}
+			is_subject = no
+			valid_for_personal_unions_trigger = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = { # We should not oppose them.
+		name = ipeBUR.5.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipeBUR.5.a.tooltip
+		BUR = {
+			country_event = {
+				id = ipeBUR.6
+			}
+		}
+	}
+
+	option = { # They are of no concern to us.
+		name = ipeBUR.5.b
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+
+# The Sale of Guelders
+country_event = {
+	id = ipeBUR.6
+	title = ipeBUR.6.t
+	desc = ipeBUR.6.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It would be a worthy possession!
+		name = ipeBUR.6.a
+		ai_chance = {
+			factor = 100
+		}
+		add_treasury = -50
+		create_union = GEL
+		hidden_effect = {
+			GEL = {
+				country_event = {
+					id = ipeBUR.7
+				}
+			}
+		}
+	}
+
+	option = { # Their fears of us are unfounded.
+		name = ipeBUR.6.b
+		ai_chance = {
+			factor = 0
+		}
+		add_prestige = -5
+		GEL = {
+			country_event = {
+				id = ipeBUR.8
+			}
+		}
+	}
+}
+
+# The Duchy of Guelders Sold!
+country_event = {
+	id = ipeBUR.7
+	title = ipeBUR.7.t
+	desc = ipeBUR.7.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # May they rule justly.
+		name = ipeBUR.7.a
+		tooltip = {
+			BUR = {
+				create_union = ROOT
+			}
+		}
+		add_treasury = 50
+	}
+}
+
+# Burgundy Refuses to Purchase Guelders!
+country_event = {
+	id = ipeBUR.8
+	title = ipeBUR.8.t
+	desc = ipeBUR.8.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We admire their magnanimity.
+		name = ipeBUR.8.a
+		add_legitimacy = 5
+	}
+}
+
+# The End of the Treaty of Arras
+country_event = {
+	id = ipeBUR.9
+	title = ipeBUR.9.t
+	desc = ipeBUR.9.d
+	picture = ACCUSATION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = FRA
+		NOT = {
+			mission_completed = emp_fra_end_hyw
+		}
+		ENG = {
+			war_with = FRA
+			any_owned_province = {
+				is_core = FRA
+			}
+		}
+		BUR = {
+			has_ruler_modifier = congress_of_arras
+			war_with = FRA
+			OR = {
+				is_in_war = {
+					attacker_leader = ENG
+					defender_leader = FRA
+				}
+				is_in_war = {
+					attacker_leader = FRA
+					defender_leader = ENG
+				}
+				is_in_war = {
+					attacker_leader = BUR
+					defender_leader = FRA
+				}
+			}
+			NOT = {
+				is_in_war = {
+					attacker_leader = FRA
+					defender_leader = BUR
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Their rights are forfeit!
+		name = ipeBUR.9.a
+		BUR = {
+			every_owned_province = {
+				limit = {
+					region = france_region
+					is_core = BUR
+				}
+				add_core = FRA
+			}
+		}
+		tooltip = {
+			add_opinion = {
+				who = BUR
+				modifier = broke_the_treaty_of_arras
+			}
+			every_subject_country = {
+				add_opinion = {
+					who = BUR
+					modifier = broke_the_treaty_of_arras
+				}
+			}
+			PAP = {
+				add_opinion = {
+					who = BUR
+					modifier = broke_the_treaty_of_arras
+				}
+			}
+		}
+		hidden_effect = {
+			BUR = {
+				country_event = {
+					id = ipeBUR.10
+				}
+			}
+		}
+	}
+}
+
+# The End of the Treaty of Arras
+country_event = {
+	id  = ipeBUR.10
+	title = ipeBUR.9.t
+	desc = ipeBUR.10.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We care for no such treaties!
+		name = ipeBUR.10.a
+		tooltip = {
+			every_owned_province = {
+				limit = {
+					region = france_region
+					is_core = BUR
+				}
+				add_core = FRA
+			}
+		}
+		FRA = {
+			add_opinion = {
+				who = ROOT
+				modifier = broke_the_treaty_of_arras
+			}
+			every_subject_country = {
+				add_opinion = {
+					who = BUR
+					modifier = broke_the_treaty_of_arras
+				}
+			}
+		}
+		PAP = {
+			add_opinion = {
+				who = ROOT
+				modifier = broke_the_treaty_of_arras
+			}
+		}
+		add_stability = -5
+		add_war_exhaustion = 5
+	}
+}
+
+# Charles the Bold
+country_event = {
+	id = ipeBUR.11
+	title = ipeBUR.11.t
+	desc = ipeBUR.11.d
+	picture = MILITARY_CAMP_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BUR
+		has_ruler = "Charles"
+		dynasty = "de Bourgogne"
+		ruler_has_personality_ancestor = { key = bold_fighter }
+		is_monarch_leader = no
+		always = no # define_ruler_to_general is bugged
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # He will make an excellent general.
+		name = ipeBUR.11.a
+		define_ruler_to_general = {
+			fire = 3
+			shock = 3
+			manuever = 3
+			siege = 1
+		}
+	}
+}
+
+# The Extinction of the House de Bourgogne
+country_event = {
+	id = ipeBUR.12
+	title = ipeBUR.12.t
+	desc = ipeBUR.12.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # It belongs to France.
+		name = ipeBUR.12.a
+		trigger = {
+			tag = FRA
+		}
+		custom_tooltip = ipeBUR.12.a.tooltip
+	}
+
+	option = { # It belongs to the Empire.
+		name = ipeBUR.12.b
+		trigger = {
+			is_emperor = yes
+		}
+		custom_tooltip = ipeBUR.12.b.tooltip
+	}
+
+	option = { # It belongs to us.
+		name = ipeBUR.12.c
+		trigger = {
+			tag = BUR
+		}
+		custom_tooltip = ipeBUR.12.c.tooltip
+	}
+}
+
+# The House de Bourgogne
+country_event = {
+	id = ipeBUR.13
+	title = ipeBUR.13.t
+	desc = ipeBUR.13.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BUR
+	}
+
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	option = { # Unnerving.
+		name = ipeBUR.13.a
+		custom_tooltip = ipeBUR.13.a.tooltip
+	}
+}
+
+# The Inheritance of Nevers
+country_event = {
+	id = ipeBUR.14
+	title = ipeBUR.14.t
+	desc = ipeBUR.14.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # We welcome back the citizens of Nevers.
+		name = ipeBUR.14.a
+		inherit = FROM
+		add_prestige = 5
+	}
+}
+
+# The Inheritance of Saint-Pol
+country_event = {
+	id = ipeBUR.15
+	title = ipeBUR.15.t
+	desc = ipeBUR.15.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # Saint-Pol's lands are a fine addition to our own.
+		name = ipeBUR.15.a
+		inherit = FROM
+		add_prestige = 5
+	}
+}
+
+# The Allegiance of Nevers
+country_event = {
+	id = ipeBUR.16
+	title = ipeBUR.16.t
+	desc = ipeBUR.16.d
+	picture = ACCUSATION_eventPicture
+
+	fire_only_once = yes
+	
+	trigger = {
+		tag = NEV
+		is_subject_of = BUR
+		is_subject_of_type = vassal
+		FRA = {
+			exists = yes
+			government_rank = 2
+			is_subject = no
+			NOT = {
+				war_with = ROOT
+			}
+		}
+		BUR = {
+			has_ruler = "Charles"
+			dynasty = "de Bourgogne"
+			ruler_has_personality_ancestor = { key = bold_fighter }
+		}
+		has_regency = no
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # We are better off siding with France.
+		name = ipeBUR.16.a
+		ai_chance = {
+			factor = 75
+		}
+		FRA = {
+			create_subject = {
+				subject = NEV
+				subject_type = vassal
+			}
+			add_opinion = {
+				who = NEV
+				modifier = loyal_to_france
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeBUR.17
+				}
+			}
+		}
+		BUR = {
+			add_opinion = {
+				who = NEV
+				modifier = betrayed_burgundy
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeBUR.18
+				}
+			}
+		}
+		add_liberty_desire = -100
+	}
+
+	option = { # No, we must remain loyal to Burgundy.
+		name = ipeBUR.16.b
+		ai_chance = {
+			factor = 25
+		}
+		add_prestige = 10
+	}
+}
+
+# The Allegiance of Nevers (France)
+country_event = {
+	id = ipeBUR.17
+	title = ipeBUR.16.t
+	desc = ipeBUR.17.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We welcome them back into the fold.
+		name = ipeBUR.17.a
+		tooltip = {
+			create_subject = {
+				subject = NEV
+				subject_type = vassal
+			}
+			add_opinion = {
+				who = NEV
+				modifier = loyal_to_france
+			}
+			NEV = {
+				add_liberty_desire = -100
+			}
+		}
+	}
+}
+
+# The Allegiance of Nevers (Burgundy)
+country_event = {
+	id = ipeBUR.18
+	title = ipeBUR.16.t
+	desc = ipeBUR.18.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Curse them!
+		name = ipeBUR.18.a
+		tooltip = {
+			FRA = {
+				create_subject = {
+					subject = NEV
+					subject_type = vassal
+				}
+			}
+			add_opinion = {
+				who = NEV
+				modifier = betrayed_burgundy
+			}
+		}
+	}
+}
+
+# French Pleasantries
+country_event = {
+	id = ipeBUR.19
+	title = ipeBUR.19.t
+	desc = ipeBUR.19.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BUR
+		NOT = {
+			government_rank = 2
+		}
+		NOT = {
+			war_with = FRA
+		}
+		NOT = {
+			mission_completed = emp_bur_league_of_public_weal
+		}
+		FRA = {
+			any_subject_country = {
+				NOT = {
+					war_with = BUR
+					has_opinion_modifier = {
+						who = BUR
+						modifier = exchanged_pleasantries
+					}
+				}
+				culture_group = french
+				capital_scope = {
+					region = france_region
+				}
+			}
+		}
+	}
+
+	option = { # We would gladly welcome them again.
+		name = ipeBUR.19.a
+		FRA = {
+			random_subject_country = {
+				limit = {
+					NOT = {
+						war_with = BUR
+						has_opinion_modifier = {
+							who = BUR
+							modifier = exchanged_pleasantries
+						}
+					}
+					culture_group = french
+					capital_scope = {
+						region = france_region
+					}
+				}
+				add_opinion = {
+					who = BUR
+					modifier = exchanged_pleasantries
+				}
+			}
+		}
+	}
+}
+
+# The Pawning of Further Austria
+country_event = {
+	id = ipeBUR.20
+	title = ipeBUR.20.t
+	desc = ipeBUR.20.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # We desperately need the money.
+		name = ipeBUR.20.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				tag = STY
+			}
+			modifier = {
+				factor = 0
+				tag = HAB
+			}
+		}
+		set_country_flag = pawning_of_further_austria
+		if = {
+			limit = {
+				tag = TIR
+				overlord = {
+					tag = STY
+				}
+			}
+			STY = {
+				set_country_flag = pawning_of_further_austria
+			}
+		}
+		add_treasury = 800
+		1880 = {
+			cede_province = FROM
+			add_core = FROM
+		}
+		72 = {
+			cede_province = FROM
+			add_core = FROM
+		}
+		FROM = {
+			set_country_flag = owns_further_austria
+			add_opinion = {
+				who = ROOT
+				modifier = pawned_further_austria
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeBUR.21
+				}
+			}
+		}
+	}
+
+	option = { # We cannot be selling our lands.
+		name = ipeBUR.20.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				tag = STY
+			}
+			modifier = {
+				factor = 100
+				tag = HAB
+			}
+		}
+		1880 = {
+			add_core = FROM
+		}
+		72 = {
+			add_core = FROM
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = kept_further_austria
+			}
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeBUR.22
+				}
+			}
+		}
+	}
+}
+
+# Further Austria Pawned
+country_event = {
+	id = ipeBUR.21
+	title = ipeBUR.21.t
+	desc = ipeBUR.21.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A wonderful addition to our lands.
+		name = ipeBUR.21.a
+		add_treasury = -800
+		tooltip = {
+			1880 = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			72 = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+			add_opinion = {
+				who = FROM
+				modifier = pawned_further_austria
+			}
+		}
+	}
+}
+
+# Further Austria Kept
+country_event = {
+	id = ipeBUR.22
+	title = ipeBUR.22.t
+	desc = ipeBUR.22.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will take these lands by force!
+		name = ipeBUR.22.a
+		tooltip = {
+			1880 = {
+				add_core = ROOT
+			}
+			72 = {
+				add_core = ROOT
+			}
+			add_opinion = {
+				who = FROM
+				modifier = kept_further_austria
+			}
+		}
+	}
+}
+
+# The Repurchase of Further Austria
+country_event = {
+	id = ipeBUR.23
+	title = ipeBUR.23.t
+	desc = ipeBUR.23.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # Very well, return these lands.
+		name = ipeBUR.23.a
+		ai_chance = {
+			factor = 25
+		}
+		add_treasury = 1200
+		1880 = {
+			cede_province = FROM
+			remove_core = ROOT
+		}
+		72 = {
+			cede_province = FROM
+			remove_core = ROOT
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeBUR.24
+				}
+			}
+		}
+	}
+
+	option = { # No takebacks.
+		name = ipeBUR.23.b
+		ai_chance = {
+			factor = 75
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_right_of_repurchase
+			}
+		}
+		1880 = {
+			add_unrest = 10
+		}
+		72 = {
+			add_unrest = 10
+		}
+		hidden_effect = {
+			FROM = {
+				add_trust = {
+					who = ROOT
+					value = -15
+				}
+			}
+			every_known_country = {
+				add_trust = {
+					who = ROOT
+					value = -5
+				}
+			}
+			FROM = {
+				country_event = {
+					id = ipeBUR.25
+				}
+			}
+		}
+	}
+}
+
+# The Repurchase of Further Austria
+country_event = {
+	id = ipeBUR.24
+	title = ipeBUR.23.t
+	desc = ipeBUR.24.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # All is well.
+		name = ipeBUR.24.a
+		add_treasury = -1200
+		tooltip = {
+			1880 = {
+				cede_province = ROOT
+				remove_core = FROM
+			}
+			72 = {
+				cede_province = ROOT
+				remove_core = FROM
+			}
+		}
+	}
+}
+
+# The Repurchase of Further Austria
+country_event = {
+	id = ipeBUR.25
+	title = ipeBUR.23.t
+	desc = ipeBUR.25.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will pay for this!
+		name = ipeBUR.25.a
+		tooltip = {
+			1880 = {
+				add_unrest = 10
+			}
+			72 = {
+				add_unrest = 10
+			}
+			add_opinion = {
+				who = FROM
+				modifier = refused_right_of_repurchase
+			}
+		}
+	}
+}
+
+# Lothair's Legacy
+country_event = {
+	id = ipeBUR.26
+	title = ipeBUR.26.t
+	desc = ipeBUR.26.d
+	picture = FEAST_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # We acknowledge the new King of Lotharingia.
+		name = ipeBUR.26.a
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				has_opinion = {
+					who = BUR
+					value = 200
+				}
+			}
+			modifier = {
+				factor = 90
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 200
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 190
+				}
+			}
+			modifier = {
+				factor = 80
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 190
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 180
+				}
+			}
+			modifier = {
+				factor = 70
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 180
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 170
+				}
+			}
+			modifier = {
+				factor = 60
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 170
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 160
+				}
+			}
+			modifier = {
+				factor = 50
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 160
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 150
+				}
+			}
+			modifier = {
+				factor = 40
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 150
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 140
+				}
+			}
+			modifier = {
+				factor = 30
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 140
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 130
+				}
+			}
+			modifier = {
+				factor = 20
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 130
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 120
+				}
+			}
+			modifier = {
+				factor = 10
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 120
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 110
+				}
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 110
+					}
+				}
+			}
+		}
+		FRA = {
+			add_opinion = {
+				who = ROOT
+				modifier = supported_lotharingia_fra
+			}
+		}
+		FROM = {
+			country_event = {
+				id = new_flavour_bur.4
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = supported_lotharingia
+			}
+			tooltip = {
+				change_tag = LOT
+				elector = yes
+				if = {
+					limit = {
+						NOT = {
+							government_rank = 2
+						}
+					}
+					set_government_rank = 2
+				}
+				if = {
+					limit = {
+						MTZ = {
+							is_subject_of = FROM
+							is_subject_of_type = puppet_bishopric
+						}
+					}
+					vassalize = MTZ
+				}
+				if = {
+					limit = {
+						TOL = {
+							is_subject_of = FROM
+							is_subject_of_type = puppet_bishopric
+						}
+					}
+					vassalize = TOL
+				}
+				if = {
+					limit = {
+						VDD = {
+							is_subject_of = FROM
+							is_subject_of_type = puppet_bishopric
+						}
+					}
+					vassalize = VDD
+				}
+				if = {
+					limit = {
+						CMB = {
+							is_subject_of = FROM
+							is_subject_of_type = puppet_bishopric
+						}
+					}
+					vassalize = CMB
+				}
+				if = {
+					limit = {
+						UTR = {
+							is_subject_of = FROM
+							is_subject_of_type = puppet_bishopric
+						}
+					}
+					vassalize = UTR
+				}
+				if = {
+					limit = {
+						BSL = {
+							is_subject_of = FROM
+							is_subject_of_type = puppet_bishopric
+						}
+					}
+					vassalize = BSL
+				}
+				if = {
+					limit = {
+						KLE = {
+							alliance_with = FROM
+							ai = yes
+						}
+					}
+					vassalize = KLE
+				}
+				if = {
+					limit = {
+						HOL = {
+							is_subject_of = FROM
+							is_lesser_in_union = yes
+						}
+					}
+					inherit = HOL
+				}
+				if = {
+					limit = {
+						BRB = {
+							is_subject_of = FROM
+							is_lesser_in_union = yes
+						}
+					}
+					inherit = BRB
+				}
+				if = {
+					limit = {
+						FLA = {
+							is_subject_of = FROM
+							is_lesser_in_union = yes
+						}
+					}
+					inherit = FLA
+				}
+				if = {
+					limit = {
+						GEL = {
+							is_subject_of = FROM
+							is_lesser_in_union = yes
+						}
+					}
+					inherit = GEL
+				}
+				add_core = 95 # Breda
+				add_core = 6840 # Montbéliard
+			}
+		}
+	}
+
+	option = { # This is an affront to the Empire!
+		name = ipeBUR.26.b
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_opinion = {
+					who = BUR
+					value = 200
+				}
+			}
+			modifier = {
+				factor = 10
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 200
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 190
+				}
+			}
+			modifier = {
+				factor = 20
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 190
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 180
+				}
+			}
+			modifier = {
+				factor = 30
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 180
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 170
+				}
+			}
+			modifier = {
+				factor = 40
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 170
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 160
+				}
+			}
+			modifier = {
+				factor = 50
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 160
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 150
+				}
+			}
+			modifier = {
+				factor = 60
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 150
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 140
+				}
+			}
+			modifier = {
+				factor = 70
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 140
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 130
+				}
+			}
+			modifier = {
+				factor = 80
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 130
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 120
+				}
+			}
+			modifier = {
+				factor = 90
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 120
+					}
+				}
+				has_opinion = {
+					who = BUR
+					value = 110
+				}
+			}
+			modifier = {
+				factor = 100
+				NOT = {
+					has_opinion = {
+						who = BUR
+						value = 110
+					}
+				}
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ipeBUR.27
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = denied_lotharingia
+			}
+		}
+	}
+}
+
+# The Emperor Flees
+country_event = {
+	id = ipeBUR.27
+	title = ipeBUR.27.t
+	desc = ipeBUR.27.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Damnation!
+		name = ipeBUR.27.a
+		custom_tooltip = ipeBUR.27.a.tooltip
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = denied_lotharingia
+			}
+		}
+		add_stability = -1
+		add_prestige = -25
+		add_legitimacy = -25
+	}
+}
+
+# Lothair's Legacy
+country_event = {
+	id = ipeBUR.28
+	title = ipeBUR.26.t
+	desc = ipeBUR.28.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Their kingdom is only but a sham.
+		name = ipeBUR.28.a
+		add_stability = -1
+		add_prestige = -25
+		add_legitimacy = -25
+		tooltip = {
+			emperor = {
+				reverse_add_opinion = {
+					who = ROOT
+					modifier = supported_lotharingia_fra
+				}
+			}
+			add_opinion = {
+				who = FROM
+				modifier = supported_lotharingia_fra
+			}
+		}
+		FROM = {
+			every_owned_province = {
+				limit = {
+					region = france_region
+				}
+				add_core = ROOT
+			}
+		}
+	}
+}
+
+# The Soest Feud
+country_event = {
+	id = ipeBUR.29
+	title = ipeBUR.29.t
+	desc = ipeBUR.29.d
+	picture = SIEGE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BUR
+		NOT = {
+			war_with = KLE
+		}
+		KLE = {
+			is_subject = no
+			war_with = KOL
+		}
+		KOL = {
+			ai = yes
+		}
+		NOT = {
+			is_year = 1449
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 0.5
+			alliance_with = KLE
+		}
+	}
+
+	option = { # Intervene on Cleves' behalf.
+		name = ipeBUR.29.a
+		ai_chance = {
+			factor = 100
+		}
+		add_dip_power = 50
+		KLE = {
+			add_opinion = {
+				who = ROOT
+				modifier = helped_in_feud
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeBUR.30
+				}
+			}
+		}
+		KOL = {
+			add_opinion = {
+				who = ROOT
+				modifier = interfered_in_feud
+			}
+			white_peace = KLE
+		}
+	}
+
+	option = { # Stay out of it.
+		name = ipeBUR.29.b
+		add_prestige = -5
+	}
+}
+
+# The Soest Feud Ends
+country_event = {
+	id = ipeBUR.30
+	title = ipeBUR.30.t
+	desc = ipeBUR.30.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A great relief.
+		name = ipeBUR.30.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = helped_in_feud
+			}
+			KOL = {
+				white_peace = ROOT
+			}
+		}
+	}
+}
+
+# The Liège Wars
+country_event = {
+	id = ipeBUR.31
+	title = ipeBUR.31.t
+	desc = ipeBUR.31.d
+	picture = SIEGE_eventPicture
+	goto = 93
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BUR
+		93 = {
+			owned_by = ROOT
+			is_core = ROOT
+			controlled_by = ROOT
+			is_core = LIE
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		2974 = {
+			owned_by = ROOT
+			is_core = ROOT
+			controlled_by = ROOT
+			is_core = LIE
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		NOT = {
+			exists = LIE
+		}
+		has_global_flag = liege_revolt_1
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			is_at_war = yes
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = LIE
+			LIE = {
+				change_religion = catholic
+				capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                    }
+				}
+				change_government = theocracy
+				add_government_reform = leading_clergy_reform
+                adopt_reform_progress = ROOT
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		set_global_flag = liege_revolt_2
+		clr_global_flag = liege_revolt_1
+	}
+
+	option = { # Burn the city to the ground!
+		name = ipeBUR.31.a
+		custom_tooltip = ipeBUR.31.a.tooltip
+		tooltip = {
+			release = LIE
+			LIE = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+}
+
+# The Liège Wars
+country_event = {
+	id = ipeBUR.32
+	title = ipeBUR.31.t
+	desc = ipeBUR.31.d
+	picture = SIEGE_eventPicture
+	goto = 93
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BUR
+		93 = {
+			owned_by = ROOT
+			is_core = ROOT
+			controlled_by = ROOT
+			is_core = LIE
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		2974 = {
+			owned_by = ROOT
+			is_core = ROOT
+			controlled_by = ROOT
+			is_core = LIE
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		NOT = {
+			exists = LIE
+		}
+		has_global_flag = liege_revolt_2
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			is_at_war = yes
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = LIE
+			LIE = {
+				change_religion = catholic
+				capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                    }
+				}
+				change_government = theocracy
+				add_government_reform = leading_clergy_reform
+                adopt_reform_progress = ROOT
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		set_global_flag = liege_revolt_3
+		clr_global_flag = liege_revolt_2
+	}
+
+	option = { # Burn the city to the ground!
+		name = ipeBUR.31.a
+		custom_tooltip = ipeBUR.31.a.tooltip
+		tooltip = {
+			release = LIE
+			LIE = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+}
+
+# The Liège Wars
+country_event = {
+	id = ipeBUR.33
+	title = ipeBUR.31.t
+	desc = ipeBUR.31.d
+	picture = SIEGE_eventPicture
+	goto = 93
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BUR
+		93 = {
+			owned_by = ROOT
+			is_core = ROOT
+			controlled_by = ROOT
+			is_core = LIE
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		2974 = {
+			owned_by = ROOT
+			is_core = ROOT
+			controlled_by = ROOT
+			is_core = LIE
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		NOT = {
+			exists = LIE
+		}
+		has_global_flag = liege_revolt_3
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			is_at_war = yes
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = LIE
+			LIE = {
+				change_religion = catholic
+				capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                    }
+				}
+				change_government = theocracy
+				add_government_reform = leading_clergy_reform
+                adopt_reform_progress = ROOT
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+		clr_global_flag = liege_revolt_3
+	}
+
+	option = { # Burn the city to the ground!
+		name = ipeBUR.31.a
+		custom_tooltip = ipeBUR.33.a.tooltip
+		tooltip = {
+			release = LIE
+			LIE = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+}

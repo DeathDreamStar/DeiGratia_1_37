@@ -1,0 +1,20 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = baluchi
+religion = sunni
+technology_group = muslim
+capital = 3511	# Awaran
+religious_school = shafii_school
+
+#Mirwaris, ancestors of later Kambarani dynasty:
+
+1444.1.1 = { # fictional
+	monarch = {
+	name = "Jelaleddin"
+		dynasty = "Kalmati"
+		dip = 2
+		adm = 2 
+		mil = 2
+	}
+}

@@ -1,0 +1,182 @@
+country_decisions = {
+	leave_the_schmalkaldic_league = {
+		major = yes
+		potential = {
+			OR = {
+				AND = {
+					has_country_flag = schmalkaldic_league_leader
+					any_subject_country = {
+						is_subject_of_type = league_associate
+						has_country_flag = schmalkaldic_league_member
+					}
+				}
+				AND = {
+					is_subject_of_type = league_associate
+					has_country_flag = schmalkaldic_league_member
+					overlord = {
+						has_country_flag = schmalkaldic_league_leader
+					}
+				}
+			}
+		}
+		allow = {
+			is_at_war = no
+		}
+		effect = {
+			country_event = {
+				id = ipeHRE.11
+			}
+		}
+        ai_will_do = {
+            factor = 0
+			modifier = {
+				factor = 1
+				NOT = {
+					religion = protestant
+					religion = reformed
+					religion = hussite
+				}
+			}
+			modifier = {
+				factor = 1
+				is_part_of_hre = no
+			}
+        }
+	}
+
+	start_the_schmalkaldic_war = {
+		major = yes
+		potential = {
+			had_country_flag = {
+				flag = schmalkaldic_league_leader
+				days = 3600
+			}
+			NOT = {
+				emperor = {
+					war_with = ROOT
+				}
+				has_global_flag = schmalkaldic_war_started
+			}
+		}
+		allow = {
+			is_part_of_hre = yes
+			calc_true_if = {
+				all_subject_country = {
+					is_subject_of_type = league_associate
+					has_country_flag = schmalkaldic_league_member
+				}
+				amount = 10
+			}
+			is_at_war = no
+		}
+		effect = {
+			set_global_flag = schmalkaldic_war_started
+			country_event = {
+				id = ipeHRE.15
+			}
+			hidden_effect = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = league_associate
+						has_country_flag = schmalkaldic_league_member
+					}
+					country_event = {
+						id = ipeHRE.15
+					}
+				}
+				emperor = {
+					country_event = {
+						id = ipeHRE.24
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	disband_the_schmalkaldic_league = {
+		major = yes
+		potential = {
+			had_country_flag = {
+				flag = schmalkaldic_league_leader
+				days = 3600
+			}
+			NOT = {
+				has_global_flag = schmalkaldic_league_disbanded
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = disband_the_schmalkaldic_league.tooltip
+				OR = {
+					NOT = {
+						any_subject_country = {
+							is_subject_of_type = league_associate
+							has_country_flag = schmalkaldic_league_member
+						}
+					}
+					all_known_country = {
+						is_part_of_hre = no
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = ipeHRE.16
+			}
+			hidden_effect = {
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = league_associate
+						has_country_flag = schmalkaldic_league_member
+					}
+					country_event = {
+						id = ipeHRE.16
+					}
+				}
+				emperor = {
+					country_event = { 
+						id = ipeHRE.25
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	disband_the_schmalkaldic_league_war = {
+		major = yes
+		potential = {
+			is_emperor = yes
+			any_known_country = {
+				has_country_flag = schmalkaldic_league_leader
+				war_with = ROOT
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = disband_the_schmalkaldic_league_war.tooltip
+				any_known_country = {
+					has_country_flag = schmalkaldic_league_leader
+					war_with = ROOT
+					capital_scope = {
+						controlled_by = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			country_event = {
+				id = ipeHRE.18
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

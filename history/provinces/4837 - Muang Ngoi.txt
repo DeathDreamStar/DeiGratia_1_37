@@ -1,0 +1,20 @@
+#4837 - Muang Ngoi
+
+owner = LXA
+controller = LXA
+culture = lao
+religion = animism
+capital = "Muang Ngoi"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = LXA
+add_core = LUA
+
+
+
+discovered_by = chinese
+discovered_by = indian

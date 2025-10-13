@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = iqta
+technology_group = sub_saharan
+religion = shamanism #Fetishism
+primary_culture = kotoko
+capital = 2287 # Kotoko
+religion = sunni
+religious_school = maliki_school
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Garwa"
+		dynasty = "Kotoko"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

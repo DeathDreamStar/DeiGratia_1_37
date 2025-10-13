@@ -1,0 +1,19 @@
+#373 - Meath
+
+owner = WME
+controller = WME
+add_core = WME
+culture = irish
+religion = catholic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = livestock
+base_manpower = 1
+capital = "Delvin"
+is_city = yes
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+fort_15th = yes

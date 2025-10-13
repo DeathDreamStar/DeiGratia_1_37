@@ -1,0 +1,17 @@
+#6069 - Kurmuk
+
+culture = shilluk
+religion = shamanism
+capital = "Kurmuk"
+native_size = 50
+native_ferocity = 4
+native_hostileness = 9 
+base_manpower = 1
+trade_goods = unknown
+hre = no
+base_tax = 1
+base_production = 1
+discovered_by = east_african
+
+1633.1.1 = { unrest = 6 } #Jieng migrations disrupt region
+1696.1.1 = { unrest = 3 } #Disruptions caused by Shilluk migrations from famine areas to South

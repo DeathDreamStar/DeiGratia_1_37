@@ -1,0 +1,30 @@
+#6581 - Tonallan
+
+owner = TON
+controller = TON
+add_core = TON
+culture = chichimecan
+religion = nahuatl
+capital = "Tonallan"
+trade_goods = cocoa
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+native_size = 5
+native_ferocity = 1
+native_hostileness = 2
+
+
+
+discovered_by = mesoamerican
+
+
+1532.1.1 = {
+           discovered_by = SPA
+           owner = SPA
+           controller = SPA
+           add_core = SPA
+           is_city = yes
+}
+1810.9.16 = { owner = MEX add_core = MEX controller = MEX } # Mexican War of Independence

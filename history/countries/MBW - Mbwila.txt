@@ -1,0 +1,22 @@
+government = tribal
+government_rank = 1
+add_government_reform = tribal_kingdom
+primary_culture = kongolese
+religion = shamanism
+technology_group = central_african
+unlock_cult = mwari_cult
+unlock_cult = central_african_ancestor_cult
+unlock_cult = cwezi_cult
+
+unit_type = sub_saharan
+capital = 798 # Mbwila
+
+1444.11.11 = { # fictional
+	monarch = {
+		name = "Mayangi"
+		dynasty = "Mbwila"
+		adm = 2
+		mil = 2
+		dip = 2
+	}
+}

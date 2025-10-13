@@ -1,0 +1,45 @@
+########################################
+# Events for Hausa
+#
+# written by Ogulcan Yildirim
+########################################
+
+namespace = flavor_hau
+normal_or_historical_nations = yes
+
+#Contact with the Fulani
+country_event = {
+	id = flavor_hau.5
+	title = flavor_hau.5.t
+	desc = flavor_hau.5.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = flavor_hau.5.a
+		if = {
+			limit = {
+				NOT = { accepted_culture = fulani }
+				OR = {
+					NOT = { government_rank = 3 }
+					AND = {
+						NOT = { culture_group = senegambian_group }
+						government_rank = 3
+					}
+				}
+			}
+			add_accepted_culture = fulani
+		}
+		else = {
+			add_dip_power = 50
+		}
+		define_advisor = {
+			type = theologian
+			skill = 3
+			cost_multiplier = 0.25
+			culture = fulani
+			religion = sunni
+		}
+	}
+}

@@ -1,0 +1,17 @@
+#3381 - Manglon
+
+owner = HSE
+controller = HSE
+culture = shan
+religion = buddhism
+capital = "Manglon"
+trade_goods = tropical_wood
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = HSE
+
+discovered_by = chinese
+discovered_by = indian

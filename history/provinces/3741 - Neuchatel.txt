@@ -1,0 +1,23 @@
+#3741 - Neuchatel
+
+owner = NCT
+controller = NCT
+culture = arpitan
+religion = catholic
+capital = "Neuchâtel"
+trade_goods = livestock
+hre = yes
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = NCT
+
+
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+
+1648.10.24 = { hre = no } # end of Thirty Years War
+1707.6.16 = { owner = PRU controller = PRU add_core = PRU }

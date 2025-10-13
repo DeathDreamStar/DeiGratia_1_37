@@ -1,0 +1,30 @@
+#2348 - Lemnos
+
+owner = BYZ
+controller = BYZ
+add_core = BYZ
+culture = greek
+religion = orthodox
+capital = "Lemnos"
+trade_goods = wine
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+
+
+
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = western
+
+
+1453.5.29 = {
+           owner = TUR
+           controller = TUR
+           add_core = TUR
+} # The fall of the Byzantine Empire
+1555.1.1 = { unrest = 5 } # General discontent with the Janissaries' dominance
+1556.1.1 = { unrest = 0 }

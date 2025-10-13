@@ -1,0 +1,7 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = fur_culture
+religion = shamanism #Fetishism
+technology_group = sub_saharan
+unit_type = sub_saharan
+capital = 2932

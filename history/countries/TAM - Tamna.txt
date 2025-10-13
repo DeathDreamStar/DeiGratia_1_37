@@ -1,0 +1,9 @@
+government = monarchy
+add_government_reform = celestial_kingdom
+primary_culture = jeju
+religion = confucianism
+add_harmonized_religion = mahayana
+# add_harmonized_religion = taoism
+technology_group = chinese
+capital = 2741
+government_rank = 2

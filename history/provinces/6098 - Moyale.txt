@@ -1,0 +1,23 @@
+#6098 - Moyale
+
+owner = BOA
+controller = BOA
+add_core = BOA
+culture = oromo
+religion = shamanism
+capital = "Moyale"
+native_size = 40
+native_ferocity = 4
+native_hostileness = 9 
+is_city = yes
+base_manpower = 1
+trade_goods = coffee
+hre = no
+base_tax = 1
+base_production = 1
+
+discovered_by = east_african
+discovered_by = muslim
+discovered_by = ottoman
+
+1550.1.1 = { discovered_by = TUR }

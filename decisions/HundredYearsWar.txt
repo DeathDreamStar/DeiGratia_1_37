@@ -1,0 +1,345 @@
+country_decisions = {
+	retake_normandy = {
+		major = yes
+		potential = {
+			current_age = age_of_discovery
+			tag = FRA
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = retook_normandy }
+			NOT = { mission_completed = emp_fra_end_hyw }
+			ENG = {
+				OR = {
+					any_owned_province = {
+						OR = {
+							area = normandy_area
+							area = madrie_area
+							area = western_normandy_area
+							area = cotentin_area
+							area = loire_area
+						}
+						NOT = {
+							province_id = 3695
+							province_id = 6385
+						}
+					}
+					any_subject_country = {
+						any_owned_province = {
+							OR = {
+								area = normandy_area
+								area = madrie_area
+								area = western_normandy_area
+								area = cotentin_area
+							}
+							NOT = {
+								province_id = 3695
+								province_id = 6385
+							}
+						}
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = normandy_area
+				area = madrie_area
+				area = western_normandy_area
+				area = cotentin_area
+				area = loire_area
+			}
+			NOT = {
+				province_id = 3695
+				province_id = 6385
+			}
+			OR = {
+				owned_by = ENG
+				owner = {
+					is_subject_of = ENG
+				}
+			}
+		}
+		allow = {
+			ENG = {
+				NOT = {
+					any_owned_province = {
+						OR = {
+							area = normandy_area
+							area = madrie_area
+							area = western_normandy_area
+							area = cotentin_area
+							area = loire_area
+						}
+						NOT = {
+							province_id = 3695
+							province_id = 6385
+						}
+						NOT = {
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+									alliance_with = FRA
+								}
+							}
+						}
+					}
+				}
+				all_subject_country = {
+					NOT = {
+						any_owned_province = {
+							OR = {
+								area = normandy_area
+								area = madrie_area
+								area = western_normandy_area
+								area = cotentin_area
+								area = loire_area
+							}
+							NOT = {
+								province_id = 3695
+								province_id = 6385
+							}
+							NOT = {
+								controller = {
+									OR = {
+										tag = FRA
+										is_subject_of = FRA
+										alliance_with = FRA
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			ENG = {
+				if = {
+					limit = {
+						any_owned_province = {
+							OR = {
+								area = normandy_area
+								area = madrie_area
+								area = western_normandy_area
+								area = cotentin_area
+								area = loire_area
+							}
+							NOT = {
+								province_id = 3695
+								province_id = 6385
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							OR = {
+								area = normandy_area
+								area = madrie_area
+								area = western_normandy_area
+								area = cotentin_area
+								area = loire_area
+							}
+							NOT = {
+								province_id = 3695
+								province_id = 6385
+							}
+						}
+						cede_province = FRA
+					}
+				}
+				if = {
+					limit = {
+						any_subject_country = {
+							any_owned_province = {
+								OR = {
+									area = normandy_area
+									area = madrie_area
+									area = western_normandy_area
+									area = cotentin_area
+									area = loire_area
+								}
+								NOT = {
+									province_id = 3695
+									province_id = 6385
+								}
+							}
+						}
+					}
+					every_subject_country = {
+						every_owned_province = {
+							limit = {
+								OR = {
+									area = normandy_area
+									area = madrie_area
+									area = western_normandy_area
+									area = cotentin_area
+									area = loire_area
+								}
+								NOT = {
+									province_id = 3695
+									province_id = 6385
+								}
+							}
+							cede_province = FRA
+						}
+					}
+				}
+			}
+			set_country_flag = retook_normandy
+			FRA = {
+				country_event = {
+					id = ipeFRA.42
+				}
+			}
+			ENG = {
+				country_event = {
+					id = ipeFRA.42
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = retook_gascony
+				}
+				white_peace = ENG
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	retake_gascony = {
+		major = yes
+		potential = {
+			current_age = age_of_discovery
+			tag = FRA
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = retook_gascony }
+			NOT = { mission_completed = emp_fra_end_hyw }
+			ENG = {
+				OR = {
+					any_owned_province = {
+						OR = {
+							area = guyenne_area
+							area = pyrenees_area
+						}
+					}
+					any_subject_country = {
+						any_owned_province = {
+							OR = {
+								area = guyenne_area
+								area = pyrenees_area
+							}
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			ENG = {
+				NOT = {
+					any_owned_province = {
+						OR = {
+							area = guyenne_area
+							area = pyrenees_area
+						}
+						NOT = {
+							controller = {
+								OR = {
+									tag = FRA
+									is_subject_of = FRA
+									alliance_with = FRA
+								}
+							}
+						}
+					}
+				}
+				all_subject_country = {
+					NOT = {
+						any_owned_province = {
+							OR = {
+								area = guyenne_area
+								area = pyrenees_area
+							}
+							NOT = {
+								controller = {
+									OR = {
+										tag = FRA
+										is_subject_of = FRA
+										alliance_with = FRA
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			ENG = {
+				if = {
+					limit = {
+						any_owned_province = {
+							OR = {
+								area = guyenne_area
+								area = pyrenees_area
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							OR = {
+								area = guyenne_area
+								area = pyrenees_area
+							}
+						}
+						cede_province = FRA
+					}
+				}
+				if = {
+					limit = {
+						any_subject_country = {
+							any_owned_province = {
+								OR = {
+									area = guyenne_area
+									area = pyrenees_area
+								}
+							}
+						}
+					}
+					every_subject_country = {
+						every_owned_province = {
+							limit = {
+								OR = {
+									area = guyenne_area
+									area = pyrenees_area
+								}
+							}
+							cede_province = FRA
+						}
+					}
+				}
+			}
+			set_country_flag = retook_gascony
+			FRA = {
+				country_event = {
+					id = ipeFRA.43
+				}
+			}
+			ENG = {
+				country_event = {
+					id = ipeFRA.43
+				}
+			}
+			if = {
+				limit = {
+					has_country_flag = retook_normandy
+				}
+				white_peace = ENG
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

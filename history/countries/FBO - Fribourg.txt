@@ -1,0 +1,18 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+technology_group = western
+primary_culture = arpitan 
+religion = catholic
+capital = 4721
+fixed_capital = 4721
+
+1054.1.1 = {
+	monarch = {
+		name = "Conseil Municipal"
+		adm = 2
+		dip = 2
+		mil = 2
+		regent = yes
+	}
+}

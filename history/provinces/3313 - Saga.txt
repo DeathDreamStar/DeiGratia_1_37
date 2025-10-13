@@ -1,0 +1,16 @@
+#3313 - Saga
+
+owner = SHN
+controller = SHN
+culture = kyushuan
+religion = shinto
+capital = "Saga"
+trade_goods = tea
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = SHN
+add_core = RZJ
+discovered_by = chinese

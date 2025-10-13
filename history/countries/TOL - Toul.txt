@@ -1,0 +1,395 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = lorrainer
+religion = catholic
+technology_group = western
+capital = 3700
+fixed_capital = 3700
+
+1052.1.1 = {
+	monarch = {
+		name = "Odon"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1069.1.1 = {
+	monarch = {
+		name = "Pibon"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1107.1.1 = {
+	monarch = {
+		name = "Riquin"
+		dynasty = "de Commercy"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1126.1.1 = {
+	monarch = {
+		name = "Henri I"
+		dynasty = "Gerharding"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1165.6.6 = {
+	monarch = {
+		name = "Pierre I"
+		dynasty = "de Brixey"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1192.1.1 = {
+	monarch = {
+		name = "Eudes I"
+		dynasty = "d'Alsace"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1198.12.27 = {
+	monarch = {
+		name = "Matthieu"
+		dynasty = "Gerharding"
+		birth_date = 1170.1.1
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1206.1.1 = {
+	monarch = {
+		name = "Renaud"
+		dynasty = "de Bouthilliers"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1217.4.10 = {
+	monarch = {
+		name = "Gérard II"
+		dynasty = "d'Alsace"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1219.1.1 = {
+	monarch = {
+		name = "Eudes II"
+		dynasty = "de Sorcy"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1228.1.1 = {
+	monarch = {
+		name = "Garin"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1231.1.1 = {
+	monarch = {
+		name = "Roger"
+		dynasty = "de Mercy"
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}
+1251.1.1 = {
+	monarch = {
+		name = "Gilles"
+		dynasty = "de Sorcy"
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}
+1271.1.1 = {
+	monarch = {
+		name = "Konrad"
+		dynasty = "von Tübingen"
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}
+1296.5.1 = { #previously BM utrecht
+	monarch = {
+		name = "Jean I"
+		dynasty = "de Sierck"
+		birth_date = 1245.1.1 #est
+		dip = 2
+		adm = 4
+		mil = 2
+	}
+}
+1305.1.1 = {
+	monarch = {
+		name = "Guy"
+		dynasty = "de Pernes"
+		dip = 1
+		adm = 1
+		mil = 2
+	}
+}
+1306.1.1 = { #later BM basel
+	monarch = {
+		name = "Eudes III"
+		dynasty = "de Grançon"
+		dip = 1
+		adm = 1
+		mil = 2
+	}
+}
+1306.12.1 = {
+	monarch = {
+		name = "Jacques"
+		dynasty = "Colonna"
+		dip = 2
+		adm = 1
+		mil = 2
+	}
+}
+1308.1.1 = {
+	monarch = {
+		name = "Jean II"
+		dynasty = "d'Arzillières"
+		dip = 2
+		adm = 1
+		mil = 2
+	}
+}
+1320.1.1 = {
+	monarch = {
+		name = "Amédée"
+		dynasty = "de Genève"
+		birth_date = 1294.1.1
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}
+1330.7.22 = {
+	monarch = {
+		name = "Thomas"
+		dynasty = "de Bourlémont"
+		birth_date = 1294.1.1
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}
+1353.4.1 = {
+	monarch = {
+		name = "Bertrand"
+		dynasty = "de la Tour"
+		birth_date = 1330.1.1
+		dip = 2
+		adm = 3
+		mil = 2
+	}
+}
+1361.1.1 = {
+	monarch = {
+		name = "Pierre II"
+		dynasty = "de La Barrière"
+		birth_date = 1330.1.1
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}
+1363.1.1 = {
+	monarch = {
+		name = "Jean III"
+		dynasty = "de Heu"
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}
+1372.8.9 = {
+	monarch = {
+		name = "Jean IV"
+		dynasty = "de Neuchâtel"
+		birth_date = 1340.1.1
+		dip = 3
+		adm = 4
+		mil = 2
+	}
+}
+1384.1.1 = {
+	monarch = {
+		name = "Savin"
+		dynasty = "di Firenze"
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}
+1385.1.1 = {
+	monarch = {
+		name = "Jean IV"
+		dynasty = "de Neuchâtel"
+		birth_date = 1340.1.1
+		dip = 3
+		adm = 4
+		mil = 2
+	}
+}
+1398.10.4 = {
+	monarch = {
+		name = "Philippe"
+		dynasty = "de Ville-sur-Illon"
+		birth_date = 1371.1.1
+		dip = 5
+		adm = 5
+		mil = 2
+	}
+}
+1409.1.1 = {
+	monarch = {
+		name = "Henri II"
+		dynasty = "de Ville-sur-Illon"
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}
+1436.3.12 = {
+	monarch = {
+		name = "Louis"
+		dynasty = "de Haraucourt"
+		birth_date = 1390.1.1 #est
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	set_ruler_flag = puppeted_bishopric
+}
+1449.1.1 = {
+	monarch = {
+		name = "Guillaume"
+		dynasty = "Filastre"
+		birth_date = 1403.1.1
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1460.1.1 = {
+	monarch = {
+		name = "Jean V"
+		dynasty = "Chevrot"
+		birth_date = 1395.1.1
+		adm = 6
+		dip = 6
+		mil = 2
+	}
+}
+1460.9.23 = { #also ab Luxeuil 1468-1495.2.28
+	monarch = {
+		name = "Antoine I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1444.1.1
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1495.2.28 = {
+	monarch = {
+		name = "Olry"
+		dynasty = "von Salm"
+		birth_date = 1425.1.1
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1506.5.3 = {
+	monarch = {
+		name = "Hugues"
+		dynasty = "des Hazards"
+		birth_date = 1454.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1517.10.14 = {
+	monarch = {
+		name = "Jean VII"
+		dynasty = "de Vaudémont"
+		birth_date = 1498.4.9
+		adm = 3
+		dip = 6
+		mil = 3
+	}
+} #also bm Metz and Verdun
+1523.1.1 = {
+	monarch = {
+		name = "Hector"
+		dynasty = "de Rochefort"
+		birth_date = 1467.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1532.3.1 = {
+	monarch = {
+		name = "Jean VII"
+		dynasty = "de Vaudémont"
+		birth_date = 1498.4.9
+		adm = 3
+		dip = 6
+		mil = 3
+	}
+} #also bm Metz and Verdun
+1537.1.1 = {
+	monarch = {
+		name = "Antoine II"
+		dynasty = "Pelegrin"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1542.12.1 = {
+	monarch = {
+		name = "Jean VII"
+		dynasty = "de Vaudémont"
+		birth_date = 1498.4.9
+		adm = 3
+		dip = 6
+		mil = 3
+	}
+} #also bm Metz and Verdun
+1543.1.1 = {
+	monarch = {
+		name = "Toussaint"
+		dynasty = "de Hocédy"
+		adm = 2
+		dip = 2
+		mil = 0
+	}
+}

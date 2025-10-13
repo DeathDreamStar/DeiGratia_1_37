@@ -1,0 +1,868 @@
+namespace = new_war_of_the_roses
+
+# The War of the Roses
+country_event = {
+	id = new_war_of_the_roses.1
+	title = ipe_war_of_the_roses.1.t
+	desc = new_war_of_the_roses.1.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Play as York.
+		name = ipe_war_of_the_roses.1.b
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = YRK
+	}
+	
+	option = { # We can fight the war from Wales.
+		name = new_war_of_the_roses.1.b
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+# The War of the Roses
+country_event = {
+	id = new_war_of_the_roses.4
+	title = ipe_war_of_the_roses.1.t
+	desc = new_war_of_the_roses.4.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Long live the House of York!
+		name = new_war_of_the_roses.4.a
+		ai_chance = {
+			factor = 100
+			modifier = {
+				factor = 0
+				dynasty = "Lancaster"
+			}
+		}
+		YRK = {
+			create_subject = {
+				subject = ROOT
+				subject_type = vassal
+			}
+		}
+	}
+	
+	option = { # We will support the House of Lancaster!
+		name = new_war_of_the_roses.4.b
+		ai_chance = {
+			factor = 0
+			modifier = {
+				factor = 100
+				dynasty = "Lancaster"
+			}
+		}
+		ENG = {
+			add_opinion = {
+				who = ROOT
+				modifier = rejected_york
+			}
+		}
+	}
+}
+
+# The End of the War of the Roses
+country_event = {
+	id = new_war_of_the_roses.5
+	title = new_war_of_the_roses.5.t
+	desc = new_war_of_the_roses.5.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = YRK
+		OR = {
+			is_subject = no
+			is_lesser_in_union = yes
+		}
+		is_in_war = {
+			casus_belli = cb_civil_war
+		}
+		ENG = {
+			capital_scope = {
+				controlled_by = YRK
+			}
+		}
+		NOT = {
+			capital_scope = {
+				controlled_by = ENG
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Has order been restored?
+		name = new_war_of_the_roses.5.a
+		ENG = {
+			every_subject_country = {
+				limit = {
+					is_vassal = yes
+				}
+				YRK = {
+					vassalize = PREV
+				}
+				country_event = {
+					id = new_war_of_the_roses.6
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_march = yes
+				}
+				YRK = {
+					create_march = PREV
+				}
+				country_event = {
+					id = new_war_of_the_roses.6
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+				}
+				YRK = {
+					create_union = PREV
+				}
+				country_event = {
+					id = new_war_of_the_roses.6
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+						defender_leader = ENG
+					}
+					is_in_war = {
+						attacker_leader = ENG
+						defender_leader = ROOT
+					}
+				}
+			}
+			white_peace = ENG
+		}
+		inherit = ENG
+		change_tag = ENG
+		if = {
+			limit = {
+				owns = 236
+			}
+			set_capital = 236
+		}
+		add_government_reform = english_monarchy
+		set_government_rank = 2
+		add_stability_or_adm_power = yes
+		add_prestige = 50
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = YRK
+				}
+				remove_core = YRK
+			}
+		}
+		remove_country_modifier = waging_war_of_roses
+		set_country_flag = lancaster_lost
+	}
+}
+
+# The End of the War of the Roses
+country_event = {
+	id = new_war_of_the_roses.6
+	title = new_war_of_the_roses.5.t
+	desc = new_war_of_the_roses.6.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Tragic.
+		name = new_war_of_the_roses.6.a
+		add_prestige = -10
+	}
+}
+
+# The Demise of the House of York
+country_event = {
+	id = new_war_of_the_roses.8
+	title = new_war_of_the_roses.8.t
+	desc = new_war_of_the_roses.8.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		OR = {
+			is_subject = no
+			is_lesser_in_union = yes
+		}
+		is_in_war = {
+			casus_belli = cb_civil_war
+		}
+		YRK = {
+			capital_scope = {
+				controlled_by = ENG
+			}
+		}
+		NOT = {
+			capital_scope = {
+				controlled_by = YRK
+			}
+		}
+		YRK = {
+			exists = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Peace has finally arrived.
+		name = new_war_of_the_roses.8.a
+		YRK = {
+			every_subject_country = {
+				limit = {
+					is_vassal = yes
+				}
+				ROOT = {
+					vassalize = PREV
+				}
+				country_event = {
+					id = new_war_of_the_roses.9
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_march = yes
+				}
+				ROOT = {
+					create_march = PREV
+				}
+				country_event = {
+					id = new_war_of_the_roses.9
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+				}
+				ROOT = {
+					create_union = PREV
+				}
+				country_event = {
+					id = new_war_of_the_roses.9
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+						defender_leader = YRK
+					}
+					is_in_war = {
+						attacker_leader = YRK
+						defender_leader = ROOT
+					}
+				}
+			}
+			white_peace = ENG
+		}
+		inherit = YRK
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = YRK
+				}
+				remove_core = YRK
+			}
+		}
+	}
+}
+
+# The End of the War of the Roses
+country_event = {
+	id = new_war_of_the_roses.9
+	title = new_war_of_the_roses.5.t
+	desc = new_war_of_the_roses.9.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+	
+	option = { # Tragic.
+		name = new_war_of_the_roses.6.a
+		add_prestige = -10
+	}
+}
+
+# The Renewal of the War of the Roses
+country_event = {
+	id = new_war_of_the_roses.10
+	title = new_war_of_the_roses.10.t
+	desc = new_war_of_the_roses.10.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		tag = YRK
+		ENG = {
+			exists = yes
+		}
+		NOT = {
+			war_with = ENG
+		}
+		is_subject = no
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # To war!
+		name = new_war_of_the_roses.10.a
+		ENG = {
+			country_event = {
+				id = new_war_of_the_roses.11
+			}
+			declare_war_with_cb = {
+				who = ROOT
+				casus_belli = cb_civil_war
+			}
+		}
+	}
+}
+
+# The Renewal of the War of the Roses
+country_event = {
+	id = new_war_of_the_roses.11
+	title = new_war_of_the_roses.10.t
+	desc = new_war_of_the_roses.11.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This time we will achieve total victory!
+		name = new_war_of_the_roses.11.a
+		add_manpower = 3
+	}
+}
+
+
+country_event = {
+	id = new_war_of_the_roses.12
+	title = new_war_of_the_roses.5.t
+	desc = new_war_of_the_roses.5.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		tag = ENG
+		has_country_modifier = waging_war_of_roses
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = {
+		name = new_war_of_the_roses.5.a
+		if = {
+			limit = {
+				WLS = {
+					is_subject_of = ROOT
+					ai = yes
+				}
+			}
+			inherit = WLS
+		}
+		add_government_reform = english_monarchy
+		add_stability_or_adm_power = yes
+		add_prestige = 50
+		remove_country_modifier = waging_war_of_roses
+		set_country_flag = lancaster_lost
+	}
+}
+
+# The End of the War of the Roses
+country_event = {
+	id = new_war_of_the_roses.14
+	title = new_war_of_the_roses.5.t
+	desc = new_war_of_the_roses.14.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = LNC
+		OR = {
+			is_subject = no
+			is_lesser_in_union = yes
+		}
+		is_in_war = {
+			casus_belli = cb_civil_war
+		}
+		ENG = {
+			capital_scope = {
+				controlled_by = LNC
+			}
+		}
+		NOT = {
+			capital_scope = {
+				controlled_by = ENG
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Order has finally been restored.
+		name = new_war_of_the_roses.14.a
+		ENG = {
+			every_subject_country = {
+				limit = {
+					is_vassal = yes
+				}
+				ROOT = {
+					vassalize = PREV
+				}
+				country_event = {
+					id = new_war_of_the_roses.15
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_march = yes
+				}
+				ROOT = {
+					create_march = PREV
+				}
+				country_event = {
+					id = new_war_of_the_roses.15
+				}
+			}
+			every_subject_country = {
+				limit = {
+					is_lesser_in_union = yes
+				}
+				ROOT = {
+					create_union = PREV
+				}
+				country_event = {
+					id = new_war_of_the_roses.15
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+						defender_leader = ENG
+					}
+					is_in_war = {
+						attacker_leader = ENG
+						defender_leader = ROOT
+					}
+				}
+			}
+			white_peace = ENG
+		}
+		inherit = ENG
+		change_tag = ENG
+		if = {
+			limit = {
+				owns = 236
+			}
+			set_capital = 236
+		}
+		add_government_reform = english_monarchy
+		set_government_rank = 2
+		add_stability_or_adm_power = yes
+		add_prestige = 50
+		hidden_effect = {
+			every_core_province = {
+				remove_core = LNC
+			}
+			every_owned_province = {
+				remove_core = LNC
+			}
+		}
+		remove_country_modifier = waging_war_of_roses_2
+		set_country_flag = end_of_war_of_roses_2
+		set_country_flag = roses_mission
+	}
+}
+
+# The End of the War of the Roses
+country_event = {
+	id = new_war_of_the_roses.15
+	title = new_war_of_the_roses.5.t
+	desc = new_war_of_the_roses.15.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Tragic.
+		name = new_war_of_the_roses.6.a
+		add_prestige = -10
+	}
+}
+
+# The Demise of the House of Lancaster
+country_event = {
+	id = new_war_of_the_roses.17
+	title = new_war_of_the_roses.17.t
+	desc = new_war_of_the_roses.17.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ENG
+		OR = {
+			is_subject = no
+			is_lesser_in_union = yes
+		}
+		is_in_war = {
+			casus_belli = cb_civil_war
+		}
+		LNC = {
+			capital_scope = {
+				controlled_by = ENG
+			}
+		}
+		NOT = {
+			capital_scope = {
+				controlled_by = LNC
+			}
+		}
+		LNC = {
+			exists = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Peace has finally arrived.
+		name = new_war_of_the_roses.8.a
+		if = {
+			limit = {
+				OR = {
+					is_in_war = {
+						attacker_leader = ROOT
+						defender_leader = LNC
+					}
+					is_in_war = {
+						attacker_leader = LNC
+						defender_leader = ROOT
+					}
+				}
+			}
+			white_peace = ENG
+		}
+		inherit = LNC
+		hidden_effect = {
+			every_province = {
+				limit = {
+					is_core = LNC
+				}
+				remove_core = LNC
+			}
+		}
+	}
+}
+
+# The Renewal of the War of the Roses
+country_event = {
+	id = new_war_of_the_roses.18
+	title = new_war_of_the_roses.10.t
+	desc = new_war_of_the_roses.10.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		tag = LNC
+		ENG = {
+			exists = yes
+		}
+		NOT = {
+			war_with = ENG
+		}
+		is_subject = no
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # To war!
+		name = new_war_of_the_roses.10.a
+		ENG = {
+			country_event = {
+				id = new_war_of_the_roses.19
+			}
+			declare_war_with_cb = {
+				who = ENG
+				casus_belli = cb_civil_war
+			}
+		}
+	}
+}
+
+# The Renewal of the War of the Roses
+country_event = {
+	id = new_war_of_the_roses.19
+	title = new_war_of_the_roses.10.t
+	desc = new_war_of_the_roses.19.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This time we will achieve total victory!
+		name = new_war_of_the_roses.11.a
+		add_manpower = 3
+	}
+}
+
+# The End of the War of the Roses
+country_event = {
+	id = new_war_of_the_roses.20
+	title = new_war_of_the_roses.5.t
+	desc = new_war_of_the_roses.14.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		tag = ENG
+		has_country_modifier = waging_war_of_roses_2
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Order has finally been restored.
+		name = new_war_of_the_roses.14.a
+		add_government_reform = english_monarchy
+		add_stability_or_adm_power = yes
+		add_prestige = 50
+		remove_country_modifier = waging_war_of_roses_2
+		set_country_flag = end_of_war_of_roses_2
+	}
+}
+
+# The Rise of a Dynasty
+country_event = { 
+	id = new_war_of_the_roses.21
+	title = new_war_of_the_roses.21.t
+	desc = new_war_of_the_roses.21.d
+	picture = DIPLOMACY_eventPicture
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	trigger = {
+		OR = {
+			AND = {
+				tag = LNC
+				has_country_modifier = waging_war_of_roses_2
+			}
+			AND = {
+				tag = ENG
+				has_country_flag = end_of_war_of_roses_2
+			}
+		}
+	}
+
+	option = { # There will never be reconciliation between our two dynasties!
+		name = new_war_of_the_roses.21.a
+		ai_chance = { factor = 0 }
+		if = {
+			limit = {
+				tag = ENG
+			}
+			every_owned_province = {
+				add_province_modifier = {
+					name = add_unrest_5_modifier
+					duration = 1825
+				}
+			}
+		}
+		add_prestige = 10
+		clr_country_flag = end_of_war_of_roses_2
+	}
+
+	option = { # Allow Henry to make his attempt at creating peace.
+		name = new_war_of_the_roses.21.b
+		ai_chance = { factor = 100 }
+		add_stability_or_adm_power = yes
+		define_heir = {
+			claim = 100
+			name = "Henry #0"
+			dynasty = "Tudor"
+			culture = english
+			adm = 3
+			dip = 4
+			mil = 4
+			age = 24
+			block_disinherit = yes
+		}
+		set_heir_flag = henry_tudor
+		if = {
+			limit = {
+				tag = LNC
+			}
+			ENG = {
+				country_event = {
+					id = new_war_of_the_roses.23
+				}
+			}
+		}
+		clr_country_flag = end_of_war_of_roses_2
+	}
+}
+
+# The Marriage of Henry Tudor
+country_event = {
+	id = new_war_of_the_roses.22
+	title = new_war_of_the_roses.22.t
+	desc = new_war_of_the_roses.22.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			tag = ENG
+			tag = LNC
+		}
+		has_ruler = "Henry"
+		dynasty = "Tudor"
+		has_ruler_flag = henry_tudor
+		has_consort = no
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # May we learn to love peace again.
+		name = new_war_of_the_roses.22.a
+		add_stability_or_adm_power = yes
+		define_consort = {
+			name = "Elizabeth"
+			dynasty = "York"
+			adm = 2
+			dip = 5
+			mil = 2
+		}
+	}
+}
+
+# Henry Tudor Claims the Throne
+country_event = {
+	id = new_war_of_the_roses.23
+	title = new_war_of_the_roses.23.t
+	desc = new_war_of_the_roses.23.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The fools! There can be no peace with the Lancasters!
+		name = new_war_of_the_roses.23.a
+		add_stability = -1
+		add_war_exhaustion = 2
+		add_manpower = -3
+		add_country_modifier = {
+			name = tiring_of_roses
+			duration = 1095
+		}
+	}
+}
+
+# The Lancastrian Revolt
+country_event = {
+	id = new_war_of_the_roses.24
+	title = new_war_of_the_roses.24.t
+	desc = new_war_of_the_roses.24.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		tag = ENG
+		dynasty = "York"
+		has_country_flag = lancaster_lost
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = { # Lancastrian scoundrels!
+		name = new_war_of_the_roses.24.a
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# The Subjugation of the House of $DYNASTY$
+country_event = {
+	id = new_war_of_the_roses.25
+	title = new_war_of_the_roses.25.t
+	desc = new_war_of_the_roses.25.d
+	picture = WAR_OF_THE_ROSES_eventPicture
+
+	trigger = {
+		OR = {
+			tag = YRK
+			tag = LNC
+		}
+		is_subject = yes
+		is_lesser_in_union = no
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Unfortunate.
+		name = new_war_of_the_roses.25.a
+		ENG = {
+			every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				remove_core = ROOT
+			}
+		}
+	}
+}

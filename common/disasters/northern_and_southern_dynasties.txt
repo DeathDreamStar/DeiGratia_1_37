@@ -1,0 +1,105 @@
+northern_and_southern_dynasties = {
+	potential = {
+		has_dlc = "Leviathan"
+		tag = DAI
+		normal_or_historical_nations = yes
+		has_reform = celestial_kingdom
+		is_free_or_tributary_trigger = yes
+		uses_doom = no
+		NOT = { mission_completed = mnd_dai_prevent_division }
+		NOT = {
+			has_global_flag = had_northern_and_southern_dynasties
+		}
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		has_regency = no
+		NOT = { current_age = age_of_discovery }
+		NOT = { ADM = 3 }
+		NOT = { DIP = 3 }
+		NOT = { MIL = 3 }
+		NOT = { stability = 1 }
+		NOT = { exists = TOK }
+		NOT = { exists = ANN }
+		owns = 610
+		controls = 610
+		owns = 613
+		controls = 613
+	}
+	
+	can_stop = {
+		has_any_disaster = yes
+		mission_completed = mnd_dai_prevent_division
+		OR = {
+			exists = ANN
+			exists = TOK 
+		}
+		NOT = {
+			owns = 610
+			owns = 613
+		}
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 2
+			NOT = { ADM = 2 }
+		}
+		modifier = {
+			factor = 5
+			NOT = { ADM = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { DIP = 2 }
+		}
+		modifier = {
+			factor = 5
+			NOT = { DIP = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { MIL = 2 }
+		}
+		modifier = {
+			factor = 5
+			NOT = { MIL = 1 }
+		}
+		modifier = {
+			factor = 2
+			NOT = { crown_land_share = 50 }
+		}
+		modifier = {
+			factor = 5
+			NOT = { crown_land_share = 30 }
+		}
+	}
+	
+	can_end = {
+		OR = {
+			exists = ANN
+			exists = TOK
+		}
+	}
+
+	modifier = {
+		global_unrest = 5
+	}
+	
+	on_start = vietnamese_civil_war.1
+	on_end = vietnamese_civil_war.100
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = {
+			1000 = 0
+			100 = vietnamese_civil_war.5
+			100 = vietnamese_civil_war.6
+			100 = vietnamese_civil_war.7
+		}
+	}
+}
+

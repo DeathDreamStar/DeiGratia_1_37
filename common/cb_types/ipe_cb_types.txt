@@ -1,0 +1,119 @@
+# Civil War
+cb_civil_war = {
+	is_triggered_only = yes
+
+	war_goal = civil_war_wargoal
+
+	attacker_disabled_po = {
+		po_become_tributary_state
+	}
+}
+
+# Castilian Civil War
+cb_castilian_civil_war = {
+	is_triggered_only = yes
+
+	war_goal = castilian_civil_war_wargoal
+
+	attacker_disabled_po = {
+		po_become_tributary_state
+	}
+}
+
+# Prussian Confederation
+cb_prussian_confederation = {
+	is_triggered_only = yes
+
+	war_goal = prussian_confederation_wargoal
+
+	attacker_disabled_po = {
+		po_become_tributary_state
+	}
+}
+
+# Fraternal War
+cb_fraternal_war = {
+
+	prerequisites = {
+		FROM = {
+			is_part_of_hre = yes
+			dynasty = ROOT
+			primary_culture = ROOT
+			is_neighbor_of = ROOT
+			religion_group = christian
+			is_subject = no
+			has_consort_regency = no
+		}
+		is_part_of_hre = yes
+		religion_group = christian
+		is_subject = no
+		has_consort_regency = no
+		NOT = {
+			AND = {
+				OR = {
+					is_subject_of_type = daimyo_vassal
+					is_subject_of_type = kanrei_vassal
+					is_subject_of_type = kubo_vassal
+				}
+				has_global_flag = ended_sengoku
+			}
+		}
+	}
+
+	war_goal = fraternal_war_wargoal
+
+	attacker_disabled_po = {
+		po_become_tributary_state
+	}
+}
+
+cb_feudal_prerogative = {
+
+	prerequisites = {
+		FROM = {
+			is_part_of_hre = yes
+			OR = {
+				government = republic
+				government = tribal
+			}
+			is_neighbor_of = ROOT
+			is_elector = no
+			NOT = {
+				culture_group = latin
+			}
+		}
+		is_part_of_hre = yes
+		NOT = {
+			culture_group = latin
+		}
+		OR = {
+			government = monarchy
+			government = theocracy
+		}
+		OR = {
+			is_subject = no
+			overlord = {
+				OR = {
+					government = monarchy
+					government = theocracy
+				}
+			}
+		}
+		NOT = {
+			AND = {
+				OR = {
+					is_subject_of_type = daimyo_vassal
+					is_subject_of_type = kanrei_vassal
+					is_subject_of_type = kubo_vassal
+				}
+				has_global_flag = ended_sengoku
+			}
+		}
+	}
+
+	war_goal = feudal_prerogative_wargoal
+
+	attacker_disabled_po = {
+		po_become_tributary_state
+	}
+}

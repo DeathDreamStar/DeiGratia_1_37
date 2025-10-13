@@ -1,0 +1,180 @@
+government = monarchy
+add_government_reform = barbary_state
+technology_group = muslim
+religion = sunni
+primary_culture = tunisian
+government_rank = 2
+capital = 354	# Tripoli
+fixed_capital = 354 # Cannot move capital away from this province & no power cost to move to it
+religious_school = maliki_school
+
+1398.1.1 = {
+	monarch = {
+		name = "‘Abd al-‘Azîz"
+		dynasty = "al-Hafsiyun"
+		adm = 2
+		dip = 3
+		mil = 0
+	}
+}
+1420.1.1 = {
+	monarch = {
+		name = "Muhammad"
+		dynasty = "al-Hafsiyun"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1429.1.1 = {
+	monarch = {
+		name = "‘Abd al-Wâhid"
+		dynasty = "al-Hafsiyun"
+		adm = 4
+		dip = 1
+		mil = 1
+	}
+}
+1456.1.1 = {
+	monarch = {
+		name = "Abû Bakr"
+		dynasty = "al-Hafsiyun"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1470.1.1 = {
+	monarch = {
+		name = "Mansûr"
+		dynasty = "al-Hafsiyun"
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}
+1472.1.1 = {
+	monarch = {
+		name = "Yûsuf"
+		dynasty = "al-Hafsiyun"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1480.1.1 = {
+	monarch = {
+		name = "Muhammad"
+		dynasty = "al-Hafsiyun"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1492.1.1 = {
+	monarch = {
+		name = "‘Abd Allâh"
+		dynasty = "al-Hafsiyun"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+#1510.7.25 to SPA
+#1551.8.1 to TUR
+
+#Karamanoglu Dynasty
+1711.7.30 = {
+	monarch = {
+		name = "Ahmad I"
+		dynasty = "Karamanoglu"
+		birth_date = 1686.1.1
+		adm = 4
+		dip = 1
+		mil = 3
+	}
+	heir = {
+		name = "Muhammad"
+		monarch_name = "Muhammad I"
+		dynasty = "Karamanoglu"
+		birth_date = 1700.1.1
+		death_Date = 1754.7.25
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1745.11.4 = {
+	monarch = {
+		name = "Muhammad I"
+		dynasty = "Karamanoglu"
+		birth_date = 1700.1.1
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+	heir = {
+		name = "‘Alî"
+		monarch_name = "‘Alî I"
+		dynasty = "Karamanoglu"
+		birth_date = 1730.1.1
+		death_date = 1793.7.30
+		claim = 95
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+}
+1754.7.25 = {
+	monarch = {
+		name = "‘Alî I"
+		dynasty = "Karamanoglu"
+		birth_date = 1730.1.1
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+	heir = {
+		name = "‘Alî Borgul"
+		monarch_name = "‘Alî Borgul"
+		dynasty = "Karamanoglu"
+		birth_date = 1750.1.1
+		death_date = 1795.1.22
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 0
+	}
+}
+1793.7.30 = {
+	monarch = {
+		name = "‘Alî Borgul"
+		dynasty = "Karamanoglu"
+		birth_date = 1750.1.1
+		adm = 1
+		dip = 2
+		mil = 0
+	}
+	heir = {
+		name = "Yûsuf"
+		monarch_name = "Yûsuf"
+		dynasty = "Karamanoglu"
+		birth_date = 1780.1.1
+		death_date = 1832.8.20
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1795.1.22 = {
+	monarch = {
+		name = "Yusuf"
+		dynasty = "Karamanoglu"
+		birth_date = 1780.1.1
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

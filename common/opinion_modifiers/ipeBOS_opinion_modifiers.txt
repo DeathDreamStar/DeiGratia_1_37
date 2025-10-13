@@ -1,0 +1,23 @@
+bosnian_convert = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+betrayed_bosnia = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+bosnian_heretic = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+defended_bosnia = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}

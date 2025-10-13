@@ -1,0 +1,132 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 255  178  107 }
+
+historical_idea_groups = {
+	defensive_ideas
+	trade_ideas
+	religious_ideas
+	diplomatic_ideas
+	economic_ideas
+	innovativeness_ideas
+	spy_ideas
+	quantity_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	western_medieval_knights
+	western_men_at_arms
+	swiss_landsknechten
+	dutch_maurician
+	french_caracolle
+	anglofrench_line
+	french_dragoon
+	french_bluecoat
+	french_cuirassier
+	french_impulse
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Charles #0" = 10
+	"Raimbaut #3" = 20
+	"Guillaume #2" = 20
+	"Raimond #0" = 20
+	"Tiburge #1" = 10
+	"Laugier #1" = 10
+	"Louis #0" = 10
+	"René #0" = 10
+	"Nicolas #0" = 10
+	"Jean #0" = 10
+	"Alphonse #0" = 10
+	"Robert #0" = 10
+	"Philibert #0" = 10
+	"Maurice #0" = 10
+	"Henri #0" = 10
+	"Adhémar #0" = 1
+	"Aymeric #0" = 1
+	"Bartomiu #0" = 0
+	"Benedit #0" = 0
+	"Bernat #0" = 1
+	"Bertran #1" = 1
+	"Damián #0" = 0
+	"Emeric #0" = 0
+	"Enric #0" = 1
+	"Estève #0" = 0
+	"Ferrán #0" = 1
+	"Folquet #0" = 0
+	"Frances #0" = 0
+	"Gastó #0" = 0
+	"Guilhem #0" = 1
+	"Huc #0" = 0
+	"Jacme #0" = 0
+	"Jaufre #0" = 0
+	"Jordan #0" = 1
+	"Loys #0" = 0
+	"Lucas #0" = 0
+	"Martí #0" = 1
+	"Matheu #0" = 1
+	"Miqueu #0" = 0
+	"Per #0" = 0
+	"Pol #0" = 0
+	"Pons #2" = 20
+	"Sanc #0" = 0
+	"Thibaud #0" = 1
+	"Vicentz #0" = 0
+	"Victor #0" = 1
+	"Xavier #0" = 0
+	
+	"Mary #0" = -1
+	"Nadine #0" = -1
+	"Osanne #0" = -1
+	"Yolande #0" = -1
+}
+
+leader_names = {
+	"d'Abeille" "d'Adhémar" "d'Agoult" "d'Aiglun" "d'Aiguières" "d'Allemagne" "d'Amalric" "d'Audiffredi"
+	"de Bagnols" "de Barberin" "de Barcillon" "de Baschi" "des Baux" "de Bermond" "de Bionneau" "de Brunet"
+	"de Cadenet" "de Cascaris-Castellet" "de Castaing" "de Castellane" "de Castillon" Coquerel "de Cordes" "de Cormis" "de Crillon"
+	"d'Entrecasteaux" "d'Espagnet" Esparron "d'Espinouze"
+	"de Fargis" "Fauque de Jonquières" "Ferré de la Grange" 
+	"de Gassendi" "de Gévaudan" "de Gombert" "de Gordes" "de Grignan" Grimaldi "de Grimaud" "de Guast" "des Isnards" "de Arlay"
+	"de Lauris" "de Libertat" "de Loménie" "de Chalon"
+	"de Monteil" "de Montpezat" "d'Ivrea"
+	"de Paule" "de Pena" "Pene de la Borde" "de la Pérusse" "de Pontevès"
+	"de Raimondis" "de Revest" "de Riquetti"
+	"de Sabran" "de Sade" "de Saint Victoret" "de Séguiran" "de Simiane"
+	"de Valbelle" "de Chalon-Arlay" "d'Orange" "de Baux-Orange" "d'Orange-Chalon"
+}
+
+ship_names = {
+	Achille Agréable "Aigle Volant" Alcyon Alouette
+	Altier Aquilon Ardente Assuré Avenant
+	Aventurier Baleine Bécasse Bienvenu Bizarre
+	Borée "Branche d'Olivier" Brillant Bucentaure Caché
+	Caille Capable Centaure César "Cheval Marin"
+	Coche "Principauté d'Orange" Conquérant
+	Constant Content Croissant Dauphine Diamant
+	Dieppoise Dur Dromadaire Eclatant Eole
+	Espérance Fantasque Ferme Fidèle Fier
+	Florissant Formidable Fort Foudroyant Gaillard
+	Heureux Héros Jason Lion Mignon
+	Minerve Océan Orphée Parfait Phénix
+	Poli Pompeux Portefaix Protecteur Provençal
+	Provence Prudent Puissant Réale Redoutable
+	Requin Sage Sagittaire Sardine Sceptre
+	"Saint Esprit" "Saint Joseph" "Saint Philippe"
+	Séduisant Seine Sérieux Solide Souverain
+	Suffisant Téméraire Terrible Tigre Tonnant
+	Toulon Toulouse Trident Triomphant Triton
+	Union Vaillant Vigilant Volontaire Zélé
+}
+
+army_names = {
+	"Armée d'Orange"
+	"Armée de $PROVINCE$"
+}

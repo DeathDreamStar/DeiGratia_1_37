@@ -1,0 +1,9 @@
+ulugh_begs_observatory = {
+	technology_cost = -0.05
+	prestige = 0.5
+}
+
+timurid_renaissance = {
+	prestige = 0.5
+	global_institution_spread = 0.1
+}

@@ -1,0 +1,19 @@
+#1925 - Tana
+
+owner = RMA
+controller = RMA
+add_core = RMA
+capital = "Tana"
+is_city = yes
+culture = oromo
+religion = shamanism #Fetishism
+trade_goods = livestock
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+native_size = 40
+native_ferocity = 4
+native_hostileness = 9
+discovered_by = central_african
+discovered_by = east_african

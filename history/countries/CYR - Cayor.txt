@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = senegambian
+religion = shamanism
+technology_group = sub_saharan
+unlock_cult = yemoja_cult
+unlock_cult = roog_cult
+unlock_cult = nyame_cult
+capital = 1113 # Cayor
+fixed_capital = 1113
+religious_school = maliki_school
+
+1444.11.11 = {
+	monarch = { # fictional
+		name = "Manguinak"
+        dynasty = "Joof"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

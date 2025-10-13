@@ -1,0 +1,125 @@
+name = "Old Zürich War"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 1869
+}
+
+1440.11.2 = {
+	add_attacker = SWI
+	add_attacker = FBS
+	add_defender = ZUR
+	add_defender = FRA
+	add_defender = ORL
+	add_defender = AMG
+	add_defender = AUV
+	add_defender = FOI
+	add_defender = ADR
+	add_defender = BOU
+	add_defender = ANG
+	add_defender = PGD
+	add_defender = MNE
+	add_defender = NRB
+	add_defender = CMN
+	add_defender = ABT
+	add_defender = XPT
+	add_defender = ATI
+	add_defender = DNO
+	add_defender = XLO
+	add_defender = XVD
+	add_defender = XEV
+	add_defender = XTR
+	add_defender = LMR
+	add_defender = XTO
+
+	add_defender = STY
+	add_defender = TIR
+	add_defender = TNT
+	add_defender = FBS
+	add_defender = AUT
+	add_defender = SEG
+}
+
+1443.7.22 = {
+	battle = {
+		name = "St. Jakob an der Sihl"
+		location = 1869
+		attacker = {
+			commander = "Ital Reding"
+			infantry = 5000 
+			cavalry = 1000 
+			losses = 5	#percent
+			country = SWI
+		}
+		defender = {
+			commander = "Rudolf Stüssi"
+			infantry = 500 # Estimate
+			cavalry = 500 # Estimate
+			losses = 30	#percent
+			country = ZUR
+		}
+		result = yes
+	}
+}
+
+1444.5.14 = {
+	rem_defender = STY
+	rem_defender = TIR
+	rem_defender = TNT
+	rem_defender = FBS
+	rem_defender = AUT
+	rem_defender = SEG
+}
+
+1444.8.26 = {
+	battle = {
+		name = "St. Jakob an der Birs"
+		location = 3712
+		attacker = {
+			commander = "Louis de Valois"
+			infantry = 25000
+			cavalry = 5000
+			losses = 25	#percent
+			country = FRA
+		}
+		defender = {
+			commander = "Ital Reding"
+			infantry = 1000 # Estimate
+			cavalry = 500 # Estimate
+			losses = 95	#percent
+			country = SWI
+		}
+		result = no
+	}
+}
+
+1444.10.1 = {
+	rem_defender = FRA
+	rem_defender = ORL
+	rem_defender = AMG
+	rem_defender = AUV
+	rem_defender = FOI
+	rem_defender = ADR
+	rem_defender = BOU
+	rem_defender = ANG
+	rem_defender = PGD
+	rem_defender = MNE
+	rem_defender = NRB
+	rem_defender = CMN
+	rem_defender = ABT
+	rem_defender = XPT
+	rem_defender = ATI
+	rem_defender = DNO
+	rem_defender = XLO
+	rem_defender = XVD
+	rem_defender = XEV
+	rem_defender = XTR
+	rem_defender = LMR
+	rem_defender = XTO
+}
+
+1446.6.12 = {
+	rem_attacker = SWI
+	rem_attacker = FBS
+	rem_defender = ZUR
+}

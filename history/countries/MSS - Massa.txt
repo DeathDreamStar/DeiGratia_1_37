@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+mercantilism = 25
+primary_culture = lombard
+add_accepted_culture = romagnan
+religion = catholic
+technology_group = western
+capital = 3771
+fixed_capital = 3771 # Cannot move capital away from this province & no power cost to move to it
+
+ 1442.1.1 = {
+	monarch = {
+		name = "Antonio"
+		dynasty = Malaspina
+		birth_date = 1390.1.1
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+	set_estate_privilege = estate_nobles_recruit_condottieri
+}

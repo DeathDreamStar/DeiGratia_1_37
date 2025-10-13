@@ -1,0 +1,1000 @@
+# Hard-coded functions made fully or partly scripted
+#
+# Note that most functions use unique mechanics
+
+# ROOT = country
+can_join_hre_league = {
+	condition = {
+		tooltip = "CANNOT_JOIN_LEAGUE_AT_WAR"
+		potential = {
+		}
+		allow = {
+			is_at_war = no
+		}
+	}
+	condition = {
+		tooltip = "CANNOT_JOIN_LEAGUE_AT_WAR_IPE"
+		potential = {
+			NOT = {
+				OR = {
+					religion = catholic
+					religion = protestant
+					religion = reformed
+					religion = anglican
+					religion = hussite
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_leave_hre_league = {
+}
+
+can_harsh_treatment = {
+}
+
+can_reduce_war_exhaustion = {
+}
+
+can_reduce_inflation = {
+}
+
+can_declare_bankruptcy = {
+}
+
+can_release_colonial_nation = {
+	condition = {
+		tooltip = "CAN_RELEASE_CN_WE_ARE_AT_WAR"
+		potential = {
+		}
+		allow = {
+			is_at_war = no
+		}
+	}
+}
+
+can_claim_defender_of_faith = {
+	condition = {
+		tooltip = "INDIAN_AI_WILL_NOT_CLAIM_DEFENDER"
+		potential = {
+			technology_group = indian
+			ai = yes
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = "AFRICAN_AI_WILL_NOT_CLAIM_DEFENDER"
+		potential = {
+			OR = {
+				technology_group = east_african
+				technology_group = central_african
+				technology_group = sub_saharan
+			}
+			ai = yes
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = "TIMURID_AI_WILL_NOT_CLAIM_DEFENDER"
+		potential = {
+			has_reform = timurid_emirate
+			ai = yes
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_change_national_focus = {
+}
+
+can_increase_stability = {
+}
+
+# ROOT = province, FROM = country
+can_add_province_to_hre = {
+	condition = {
+		tooltip = COUNTRIES_OUTSIDE_OF_THE_HOLY_ROMAN_EMPIRE_CANNOT_ADD_PROVINCES
+		potential = {
+			FROM = {
+				is_part_of_hre = no
+				ai = yes
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = NOT_HRE_REGION
+		potential = {
+			FROM = {
+				ai = yes
+			}
+			NOT = {
+				region = france_region
+			}
+		}
+		allow = {
+			OR = {
+				region = north_german_region
+				region = south_german_region
+				region = low_countries_region
+				region = italy_region
+			}
+		}
+	}
+	condition = {
+		tooltip = FRANCE_EXISTS_CANNOT_ADD_TO_HRE
+		potential = {
+			region = france_region
+			exists = FRA
+		}
+		allow = {
+			FROM = {
+				government_rank = 2
+			}
+		}
+	}
+}
+
+can_remove_province_from_hre = {
+	condition = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			owner = {
+				NOT = {
+					has_country_flag = permanently_left_hre_flag
+				}
+			}
+		}
+	}
+}
+
+can_increase_autonomy = {
+}
+
+can_decrease_autonomy = {
+}
+
+can_make_core = {
+}
+
+can_make_state = {
+}
+
+can_abandon_state = {
+}
+
+can_improve_tax = {
+	condition = {
+		tooltip = "CANNOT_MANUALLY_IMPROVE_BASE_TAX"
+		potential = {
+			owned_by = ROOT
+		}
+		allow = {
+			NOT = {
+				has_province_modifier = encouraged_growth_tax
+			}
+		}
+	}
+	condition = {
+		tooltip = "CANNOT_IMPROVE_TERRAIN"
+		potential = {
+			OR = {
+				has_terrain = desert
+				has_terrain = urban_palmyra
+				has_terrain = glacier
+				has_terrain = mountains_himalaya
+				has_terrain = mountains_rocky_mountains
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_improve_production = {
+	condition = {
+		tooltip = "CANNOT_MANUALLY_IMPROVE_BASE_PRODUCTION"
+		potential = {
+			owned_by = ROOT
+		}
+		allow = {
+			NOT = {
+				has_province_modifier = encouraged_growth_production
+			}
+		}
+	}
+	condition = {
+		tooltip = "CANNOT_IMPROVE_TERRAIN"
+		potential = {
+			OR = {
+				has_terrain = desert
+				has_terrain = urban_palmyra
+				has_terrain = glacier
+				has_terrain = mountains_himalaya
+				has_terrain = mountains_rocky_mountains
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_improve_manpower = {
+	condition = {
+		tooltip = "CANNOT_MANUALLY_IMPROVE_BASE_MANPOWER"
+		potential = {
+			owned_by = ROOT
+		}
+		allow = {
+			NOT = {
+				has_province_modifier = encouraged_growth_manpower
+			}
+		}
+	}
+	condition = {
+		tooltip = "CANNOT_IMPROVE_TERRAIN"
+		potential = {
+			OR = {
+				has_terrain = desert
+				has_terrain = urban_palmyra
+				has_terrain = glacier
+				has_terrain = mountains_himalaya
+				has_terrain = mountains_rocky_mountains
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_exploit_tax = {
+}
+
+can_exploit_production = {
+}
+
+can_exploit_manpower = {
+}
+
+can_change_culture = {
+	condition = {
+		tooltip = "CANNOT_CULTURE_CONVERT_SLAVES"
+		potential = {
+			has_province_modifier = imported_slave_labor
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_move_capital = {
+	condition = {
+		tooltip = "NO_CAPITAL_MOVE_SHOGUN"
+		potential = {
+			FROM = {
+				has_reform = shogunate
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = "NO_CAPITAL_MOVE_EMPEROR_OF_CHINA"
+		potential = {
+			FROM = {
+				has_reform = celestial_empire
+			}
+		}
+		allow = {
+			OR = {
+				region = north_china_region
+				region = south_china_region
+				region = xinan_region
+			}
+		}
+	}
+}
+
+can_move_trade_port = {
+}
+
+can_order_assault = {
+}
+
+can_order_force_march = {
+}
+
+can_scorch_earth = {
+	condition = {
+		tooltip = NOT_CONTROLLED_CANT_SCORCH
+		potential = {
+			ROOT = {
+				NOT = {
+					controlled_by = FROM
+				}
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_garrison_sorties = {
+}
+
+can_seize_colony = {
+}
+
+can_burn_colony = {
+}
+
+can_colonize_province = {
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = alaskan_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_alaska
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = canadian_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_canada
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = eastern_american_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_eastern_america
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = louisianan_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_louisiana
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = californian_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_california
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = mexican_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_mexico
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = cuban_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_cuba
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = colombian_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_colombia
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = peruvian_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_peru
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = la_platan_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_la_plata
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = chilean_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_chile
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = brazilian_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_brazil
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = australian_charter
+					technology_group = north_american
+					technology_group = mesoamerican
+					technology_group = south_american
+					technology_group = andean
+					technology_group = high_american
+					technology_group = caribbean
+				}
+			}
+			colonial_region = colonial_australia
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		tooltip = colonial_charter_tooltip
+		potential = {
+			FROM = {
+				NOT = {
+					has_country_modifier = cape_charter
+				}
+			}
+			colonial_region = colonial_cape
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_colonize_province_siberian_frontier = {
+}
+
+can_add_seat_in_parliament = {
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 200
+				}
+				current_size_of_parliament = 8
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 300
+				}
+				current_size_of_parliament = 12
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 400
+				}
+				current_size_of_parliament = 16
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 500
+				}
+				current_size_of_parliament = 20
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 600
+				}
+				current_size_of_parliament = 24
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 700
+				}
+				current_size_of_parliament = 28
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 800
+				}
+				current_size_of_parliament = 32
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 900
+				}
+				current_size_of_parliament = 36
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 1000
+				}
+				current_size_of_parliament = 40
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 1100
+				}
+				current_size_of_parliament = 44
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 1200
+				}
+				current_size_of_parliament = 48
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 1300
+				}
+				current_size_of_parliament = 52
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 1400
+				}
+				current_size_of_parliament = 56
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 1500
+				}
+				current_size_of_parliament = 60
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 1600
+				}
+				current_size_of_parliament = 64
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 1700
+				}
+				current_size_of_parliament = 68
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 1800
+				}
+				current_size_of_parliament = 72
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 1900
+				}
+				current_size_of_parliament = 76
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 2000
+				}
+				current_size_of_parliament = 80
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 2100
+				}
+				current_size_of_parliament = 84
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 2200
+				}
+				current_size_of_parliament = 88
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 2300
+				}
+				current_size_of_parliament = 92
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 2400
+				}
+				current_size_of_parliament = 96
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+	condition = {
+		potential = {
+			FROM = {
+				NOT = {
+					total_development = 2500
+				}
+				current_size_of_parliament = 100
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+can_add_estate = {
+}
+
+can_expel_minority_from = {
+	condition = {
+		potential = {
+			OR = {
+				is_religious_center_province = yes
+				is_reformation_center = yes
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+#hardcoded: has a colonial parent or is in the same colonial region as the capital
+can_have_colonial_nations = {
+	condition = {
+		potential = {
+			FROM = {
+				has_country_flag = no_colonial_nations
+			}
+		}
+		allow = {
+			always = no
+		}
+	}
+}
+
+### Special functions
+
+# Called by can_add_province_to_hre
+is_possible_hre_province = {
+	condition = {
+		tooltip = "APH_ONLY_EUROPE"
+		potential = {
+		}
+		allow = {
+			continent = europe
+		}
+	}
+}
+
+will_demand_annexation = {
+	condition = {
+		potential = {
+			is_elector = yes
+		}
+		allow = {
+			NOT = { hre_reform_passed = landfriede }
+		}
+	}
+}

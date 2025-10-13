@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = umbrian
+religion = catholic
+capital = 6756
+fixed_capital = 6756
+add_army_professionalism = 0.05
+set_estate_privilege = estate_church_papal_emissary
+
+1434.4.1 = {
+	monarch = {
+		name = "Nicolò"
+		dynasty = "Piccinino"
+		dip = 1
+		mil = 4
+		adm = 1
+	}
+	set_estate_privilege = estate_nobles_recruit_condottieri
+}
+1435.4.1 = {
+	monarch = {
+		name = "Gentile"
+		dynasty = "Monaldeschi"
+		dip = 2
+		mil = 1
+		adm = 1
+	}
+}

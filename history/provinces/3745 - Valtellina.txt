@@ -1,0 +1,36 @@
+#3745 - Valtellina
+
+owner = MLO
+controller = MLO
+culture = lombard
+religion = catholic
+hre = yes
+base_tax = 1
+base_production = 1
+trade_goods = wool
+base_manpower = 1
+capital = "Sondrio"
+is_city = yes# Estimated
+add_core = MLO
+add_core = TTL
+
+
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+
+
+1495.1.1 = { hre = no }
+1499.8.10 = { controller = FRA } # Louis XII of France invades...
+1504.1.31 = { owner = FRA add_core = FRA } # ...and seizes Milan, Treaty of Lyon
+1512.1.1 = { controller = TTL owner = TTL add_core = TTL hre = yes } # Massimiliano Sforza restored by the Swiss
+1513.7.3 = { unrest = 7 } # Luzern Peasant War
+1515.1.1 = { unrest = 0 }
+1524.1.1 = { religion = reformed }
+1526.1.1 = { owner = SWI controller = SWI add_core = SWI }
+1648.10.24 = { hre = no } # end of Thirty Years War
+1653.1.1 = { unrest = 5 } # Peasant rebellion against overtaxation
+1654.1.1 = { unrest = 0 }
+1656.1.1 = { unrest = 7 } # Protestants are expelled from Schwyz which lead to the First War of Villmergen
+1657.1.1 = { unrest = 2 } # An agreement is concluded at Villmergren but tensions remain

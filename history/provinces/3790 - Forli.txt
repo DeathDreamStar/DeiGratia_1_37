@@ -1,0 +1,42 @@
+#3790 - Forli
+
+owner = FRL           #Bologna was independent until 1506, but the rest of Romagna was mainly under Papal control.
+controller = FRL
+culture = romagnan
+religion = catholic
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = silk
+base_manpower = 2
+capital = "Forlì"
+is_city = yes# Estimated
+add_core = FRL
+
+
+
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+
+
+1503.9.1 = { revolt = { type = revolutionary_rebels size = 2 } controller = REB } # Loss of Papal authority after the death of Alexander III, Venetian influence
+1506.1.1 = {
+           controller = PAP
+           owner = PAP
+           add_core = PAP
+           remove_core = FRL
+}
+1805.12.26 = {
+           owner = ITA
+           controller = ITA
+           add_core = ITA
+           remove_core = PAP
+} # Treaty of Pressburg
+1814.4.11 = {
+           owner = PAP
+           controller = PAP
+           add_core = PAP
+           remove_core = ITA
+} # Treaty of Fontainebleau, Napoleon abdicates unconditionally

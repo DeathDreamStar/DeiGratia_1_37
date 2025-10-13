@@ -1,0 +1,29 @@
+grateful_for_help_roses = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+supported_lancaster = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+supported_york = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+rejected_york = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+rejected_lancaster = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}

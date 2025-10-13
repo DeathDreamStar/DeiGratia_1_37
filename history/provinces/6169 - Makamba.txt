@@ -1,0 +1,21 @@
+#6169 - Makamba
+
+owner = UBH
+controller = UBH
+add_core = UBH
+culture = rwandan
+religion = shamanism #Fetishism
+capital = "Makamba"
+trade_goods = wool
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+discovered_by = central_african
+
+1750.1.1 = { #Bugesera divided between Rwanda and Burundi
+           owner = BUU
+           controller = BUU
+           add_core = BUU
+}

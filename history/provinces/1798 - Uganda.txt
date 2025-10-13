@@ -1,0 +1,5 @@
+#1798 - Imatong
+
+
+discovered_by = east_african
+

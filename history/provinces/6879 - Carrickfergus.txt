@@ -1,0 +1,19 @@
+#6879 - Carrickfergus
+
+owner = ULS
+controller = ULS
+culture = irish
+religion = catholic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = grain
+base_manpower = 1
+capital = "Carrickfergus"
+is_city = yes
+add_core = ULS
+fort_15th = yes
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern

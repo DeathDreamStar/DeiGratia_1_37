@@ -1,0 +1,16 @@
+name = "Béjaïa War of Independence"
+war_goal = {
+	type = defend_capital_independence
+	casus_belli = cb_independence_war
+	tag = AAB
+}
+
+1436.3.1 = {
+	add_attacker = AAB
+	add_defender = TUN
+}
+
+1452.1.1 = {
+	rem_attacker = AAB
+	rem_defender = TUN
+}

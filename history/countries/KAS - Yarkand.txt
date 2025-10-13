@@ -1,0 +1,42 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = uyghur
+religion = sunni
+technology_group = chinese
+capital = 739	# Kashgar
+fixed_capital = 739
+religious_school = hanafi_school
+
+1434.1.1 = {
+	monarch = {
+		name = "Sayyid Ali"
+		dynasty = "Dughlat"
+		adm = 4
+		dip = 2
+		mil = 3
+	}
+}
+
+1440.1.1 = {
+	heir = {
+		name = "Mirza Abu Bakr"
+		monarch_name = "Mirza Abu Bakr"
+		dynasty = "Dughlat"
+		birth_date = 1440.1.1
+		death_date = 1514.1.1
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+
+1457.1.1 = {
+	monarch = {
+		name = "Mirza Abu Bakr"
+		dynasty = "Dughlat"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

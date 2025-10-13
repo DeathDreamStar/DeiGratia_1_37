@@ -1,0 +1,23 @@
+accepted_protection = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+refused_protection = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+conquered_goa = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+refused_to_sell = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}

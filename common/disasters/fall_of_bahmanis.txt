@@ -1,0 +1,172 @@
+fall_of_bahmanis = {
+	potential = {
+		tag = BAH
+		normal_or_historical_nations = yes
+		government = monarchy
+		is_free_or_tributary_trigger = yes
+		uses_doom = no
+		NOT = {
+			has_global_flag = fall_of_bahmanis
+		}
+		owns = 1948 # Bidar
+		OR = {
+			542 = { # Golconda
+				owned_by = BAH
+				is_core = GOC
+				is_capital = no
+			}
+			544 = { # Ahmadnagar
+				owned_by = BAH
+				is_core = AHM
+				is_capital = no
+			}
+			548 = { # West Berar
+				owned_by = BAH
+				is_core = BRR
+				is_capital = no
+			}
+			569 = { # Bijapur
+				owned_by = BAH
+				is_core = BIJ
+				is_capital = no
+			}
+		}
+		OR = {
+			NOT = {
+				exists = GOC # Golconda
+			}
+			NOT = {
+				exists = AHM # Ahmadnagar
+			}
+			NOT = {
+				exists = BRR # Berar
+			}
+			NOT = {
+				exists = BIJ # Bijapur
+			}
+		}
+		NOT = {
+			exists = BID # Bidar
+		}
+	}
+
+	can_start = {
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+		has_any_disaster = no
+		has_regency = no
+		has_country_modifier = gharbian_settlement
+		OR = {
+			has_country_modifier = bah_deccanis_gharbians
+			has_country_modifier = bah_gharbians
+			has_country_modifier = bah_deccanis
+		}
+		NOT = {
+			legitimacy = 50
+		}
+	}
+	
+	can_stop = { 
+		OR = {
+			has_any_disaster = yes
+			NOT = {
+				tag = BAH
+				government = monarchy
+				has_country_modifier = gharbian_settlement
+			}
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			has_country_modifier = bah_gharbians
+		}
+		modifier = {
+			factor = 1
+			has_country_modifier = bah_deccanis
+		}
+		modifier = {
+			factor = 1
+			has_country_modifier = adm_mahmud_gawans_reforms
+		}
+		modifier = {
+			factor = 1
+			has_country_modifier = mil_mahmud_gawans_reforms
+		}
+		modifier = {
+			factor = 1
+			has_country_modifier = centralization_of_bahmanis
+		}
+		modifier = {
+			factor = 0.5
+			has_country_modifier = gharbian_settlement
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { legitimacy = 50 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { stability = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { ADM = 2 }
+		}		
+		modifier = {
+			factor = 0.5
+			NOT = { DIP = 2 }
+		}		
+		modifier = {
+			factor = 0.5
+			NOT = { MIL = 2 }
+		}
+		modifier = {
+			factor = -2.5
+			has_country_modifier = bah_deccanis_gharbians
+		}
+	}
+
+	can_end = {
+		stability = 1
+		OR = {
+			legitimacy = 90
+			NOT = {
+				government = monarchy
+			}
+		}
+		NOT = {
+			war_with = GOC
+			war_with = AHM
+			war_with = BRR
+			war_with = BIJ
+		}
+	}
+	
+	modifier = {
+		stability_cost_modifier = 0.5
+		legitimacy = -1
+	}
+	
+	on_start = fall_of_bahmanis.1
+	on_end = fall_of_bahmanis.100
+	
+	on_monthly = {
+		events = {
+			fall_of_bahmanis.2 # The Uprising of Ahmadnagar
+			fall_of_bahmanis.3 # The Uprising of Bijapur
+			fall_of_bahmanis.5 # The Uprising of Berar
+		}
+		random_events = {
+			2000 = 0
+			100 = fall_of_bahmanis.6 # The Assassination Plot (Hidden)
+			100 = fall_of_bahmanis.7 # The Assassination Plot (Sultan Lives)
+			100 = fall_of_bahmanis.8 # The Assassination Plot (Sultan Dies)
+			100 = fall_of_bahmanis.9 # A Powerful Vizier
+			100 = fall_of_bahmanis.4 # The Uprising of Golkonda
+		}
+	}
+}

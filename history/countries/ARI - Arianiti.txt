@@ -1,0 +1,23 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+primary_culture = albanian
+religion = orthodox
+technology_group = eastern
+capital = 3847 # Elbasan
+
+# The League of Lezhe
+1432.1.1 = {
+	monarch = {
+		name = "Gjerj"
+		dynasty = "Arianiti"
+		birth_date = 1383.1.1		
+		adm = 4
+		dip = 5
+		mil = 4
+	}
+}
+
+1444.3.2 = {
+	set_country_flag = lezhe_league_member
+}

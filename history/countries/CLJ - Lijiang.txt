@@ -1,0 +1,19 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = naxi
+add_accepted_culture = kham
+religion = vajrayana
+technology_group = chinese
+capital = 2167	# Lijiang
+fixed_capital = 2167
+
+1442.1.1 = {
+    monarch = {
+        name = "A-hsi"
+        dynasty = "Mu"
+        adm = 2
+        dip = 2
+        mil = 2
+    }
+}

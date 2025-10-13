@@ -1,0 +1,17 @@
+#3333 - Awaji
+
+owner = HSK
+controller = HSK
+culture = japanese
+religion = shinto
+capital = "Yagi"
+trade_goods = fish
+hre = no
+base_tax = 1
+base_manpower = 1
+base_production = 1
+is_city = yes
+add_core = HSK
+add_core = MYI
+fort_15th = yes # Yagi-Yakata Ruins
+discovered_by = chinese

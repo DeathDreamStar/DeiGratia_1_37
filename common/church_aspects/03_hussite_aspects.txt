@@ -1,0 +1,141 @@
+clerical_poverty_aspect = {
+	cost = 100
+	modifier = {
+		church_influence_modifier = -0.1
+		stability_cost_modifier = -0.2
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			NOT = { religious_unity = 0.8 }
+		}
+		modifier = {
+			factor = 2
+			unrest = 4
+			NOT = { stability = 0 }
+		}
+	}
+}
+
+punishment_of_sins_aspect = {
+	cost = 100
+	modifier = {
+		nobles_influence_modifier = -0.1
+		yearly_corruption = -0.05
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			corruption = 2
+		}
+		modifier = {
+			factor = 2
+			yearly_corruption_increase = 0.1
+		}
+	}
+}
+
+orphan_hetmans_aspect = {
+	cost = 100
+	modifier = {
+		army_tradition_decay = -0.01
+	}
+}
+
+bread_and_wine_aspect = {
+	cost = 100
+	modifier = {
+		tolerance_own = 1
+		global_trade_goods_size_modifier = 0.05
+	}
+	ai_will_do = {
+		factor = 12
+	}
+}
+
+sola_scriptura_aspect = {
+	cost = 100
+	modifier = {
+		warscore_cost_vs_other_religion = -0.1
+	}
+	ai_will_do = {
+		factor = 2
+		modifier = {
+			factor = 2
+			AND = { 
+				has_border_with_religious_enemy = yes 
+				any_neighbor_country = { is_rival = ROOT }					
+			}
+		}
+	}
+}
+
+adamite_services_aspect = {
+	cost = 100
+	modifier = {
+		culture_conversion_cost = -0.2
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+pacifism_aspect = {
+	cost = 100
+	modifier = {
+		stability_cost_to_declare_war = 1
+		development_cost = -0.05
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+regular_defenestrations_aspect = {
+	cost = 100
+	modifier = {
+		harsh_treatment_cost = -0.25
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 2
+			unrest = 2
+		}
+	}
+}
+
+taborite_resurgence_aspect = {
+	cost = 100
+	modifier = {
+		global_manpower_modifier = 0.2
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+freedom_to_preach_aspect = {
+	cost = 100
+	modifier = {
+		religious_unity = 0.1
+		tolerance_heretic = 1
+	}
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 2.2
+			NOT = { religious_unity = 0.8 }
+		}
+		modifier = {
+			factor = 0
+			NOT = {
+				any_owned_province = {
+					has_owner_religion = no
+				}
+			}
+		}
+	}
+}

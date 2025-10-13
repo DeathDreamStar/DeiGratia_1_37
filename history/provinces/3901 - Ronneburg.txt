@@ -1,0 +1,33 @@
+#3901 - Ronneburg
+
+owner = RIG
+controller = RIG
+add_core = RIG
+add_core = LVA
+culture = latvian
+religion = catholic
+capital = "Ronneburg"
+trade_goods = livestock
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+
+discovered_by = western
+discovered_by = eastern
+
+
+1561.1.1 = {
+           owner = LIT
+           controller = LIT
+           add_core = LIT
+           remove_core = RIG
+} # Conquered by Lithuania
+1569.7.1 = {
+           owner = PLC
+           controller = PLC
+           add_core = PLC
+} # Union of Lublin
+1710.7.1 = { controller = RUS } # The Great Nordic War-Captured Riga
+1721.8.30 = { owner = RUS add_core = RUS remove_core = PLC } # The Peace of Nystad

@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = plutocratic_reform
+technology_group = chinese
+primary_culture = bikolano
+capital = 2699 #Bikol
+religion = animism
+government_rank = 2
+
+1444.1.1 = { # anachronistic
+	monarch = {
+		name = "Dumaraog"
+		dynasty = "Ibal"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

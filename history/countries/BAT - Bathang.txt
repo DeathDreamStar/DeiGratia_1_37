@@ -1,0 +1,8 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = kham
+religion = vajrayana
+technology_group = chinese
+capital = 6639	# Bathang
+fixed_capital = 6639
+government_rank = 1

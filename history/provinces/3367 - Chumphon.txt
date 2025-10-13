@@ -1,0 +1,21 @@
+#3367 - Chumphon
+
+owner = AYU
+controller = AYU
+culture = southern_thai
+religion = buddhism
+capital = "Chumphon"
+trade_goods = grain
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = AYU
+
+
+
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman

@@ -1,0 +1,36 @@
+#2348 - Chios
+
+owner = GEN
+controller = GEN
+culture = greek
+religion = orthodox
+capital = "Chio"
+trade_goods = wine
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+add_core = GEN
+center_of_trade = 1
+extra_cost = 8
+fort_15th = yes
+
+
+
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern
+discovered_by = western
+
+
+add_local_autonomy = 75
+
+
+1555.1.1 = { unrest = 5 } # General discontent with the Janissaries' dominance
+1556.1.1 = { unrest = 0 }
+1566.1.1 = {
+	owner = TUR
+	controller = TUR
+	add_core = TUR
+}

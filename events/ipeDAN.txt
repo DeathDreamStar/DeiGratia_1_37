@@ -1,0 +1,739 @@
+namespace = ipeDAN
+normal_or_historical_nations = yes
+
+# The Gryfs Return to Denmark
+country_event = {
+	id = ipeDAN.1
+	title = ipeDAN.1.t
+	desc = ipeDAN.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		hidden_effect = {
+			DAN = {
+				every_subject_country = {
+					limit = {
+						is_lesser_in_union = yes
+					}
+					grant_independence = yes
+					country_event = {
+						id = ipeDAN.2
+					}
+				}
+			}
+		}
+	}
+
+	option = { # It's good to be home.
+		name = ipeDAN.1.a
+		white_peace = DAN
+		inherit = DAN
+		change_tag = DAN
+		set_government_rank = 2
+		if = {
+			limit = {
+				has_custom_ideas = no
+			}
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		add_prestige = 10
+	}
+}
+
+# The Gryfs Return to Denmark
+country_event = {
+	id = ipeDAN.2
+	title = ipeDAN.1.t
+	desc = ipeDAN.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will not align with the House of Gryf!
+		name = ipeDAN.2.a
+		tooltip = {
+			grant_independence = yes
+		}
+		GOT = {
+			add_casus_belli = {
+				target = ROOT
+				type = cb_restore_personal_union
+				months = 300
+			}
+		}
+	}
+}
+
+# The Death of Christopher of Bavaria
+country_event = {
+	id = ipeDAN.3
+	title = ipeDAN.3.t
+	desc = ipeDAN.3.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = DAN
+		has_country_flag = christopher_of_bavaria
+		is_subject = no
+		NOR = {
+			is_subject_of = ROOT
+			is_lesser_in_union = yes
+		}
+		SWE = {
+			is_subject_of = ROOT
+			is_lesser_in_union = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 36
+	}
+
+	immediate = {
+		clr_country_flag = christopher_of_bavaria
+		hidden_effect = {
+			if = {
+				limit = {
+					NEU = {
+						is_subject_of = ROOT
+						is_lesser_in_union = yes
+					}
+					any_known_country = {
+						is_subject = no
+						dynasty = "von Wittelsbach"
+						has_consort_regency = no
+					}
+				}
+				NEU = {
+					set_country_flag = neumarkter_inheritance
+				}
+				random_known_country = {
+					limit = {
+						is_subject = no
+						dynasty = "von Wittelsbach"
+						has_consort_regency = no
+					}
+					set_country_flag = neumarkter_inheritance
+					inherit = NEU
+					country_event = {
+						id = ipeDAN.9
+					}
+				}
+			}
+			SWE = {
+				grant_independence = yes
+				add_truce_with = DAN
+				define_heir = {
+					name = "Karl"
+					dynasty = "Bonde"
+					adm = 3
+					dip = 0
+					mil = 2
+					birth_date = 1409.10.5
+				}
+				kill_ruler = yes
+				add_stability_or_adm_power = yes
+				country_event = {
+					id = ipeDAN.4
+				}
+				set_ruler_flag = reign_of_karl_bonde
+			}
+			every_known_country = {
+				limit = {
+					war_with = SWE
+				}
+				white_peace = SWE
+			}
+			DAN = {
+				add_truce_with = SWE
+			}
+			kill_ruler = yes
+			if = {
+				limit = {
+					OLD = {
+						has_regency = no
+						ai = yes
+						NOT = {
+							war_with = DAN
+						}
+						has_ruler_flag = christian_of_oldenburg
+					}
+				}
+				DAN = {
+					country_event = {
+						id = ipeDAN.12
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Karl VIII is not fit to rule!
+		name = ipeDAN.3.a
+		custom_tooltip = ipeDAN.3.a.tooltip
+		tooltip = {
+			SWE = {
+				grant_independence = yes
+				add_truce_with = DAN
+				define_ruler = {
+					name = "Karl"
+					dynasty = "Bonde"
+					adm = 3
+					dip = 0
+					mil = 2
+				}
+			}
+			DAN = {
+				add_truce_with = SWE
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					is_subject_of = DAN
+					is_lesser_in_union = yes
+				}
+			}
+			NOR = {
+				country_event = {
+					id = ipeDAN.5
+					days = 30
+				}
+			}
+		}
+		random_known_country = {
+			limit = {
+				has_country_flag = neumarkter_inheritance
+			}
+			inherit = NEU
+		}
+	}
+}
+
+# The Death of Christopher of Bavaria
+country_event = {
+	id = ipeDAN.4
+	title = ipeDAN.3.t
+	desc = ipeDAN.3.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We will lead this union ourselves!
+		name = ipeDAN.4.a
+		custom_tooltip = ipeDAN.3.a.tooltip
+		tooltip = {
+			grant_independence = yes
+			define_ruler = {
+				name = "Karl"
+				dynasty = "Bonde"
+				adm = 3
+				dip = 0
+				mil = 2
+			}
+		}
+	}
+}
+
+# The Death of Christopher of Bavaria
+country_event = {
+	id = ipeDAN.5
+	title = ipeDAN.3.t
+	desc = ipeDAN.5.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We choose to remain with Denmark!
+		name = ipeDAN.5.a
+		ai_chance = {
+			factor = 100
+		}
+		hidden_effect = {
+			DAN = {
+				country_event = {
+					id = ipeDAN.6
+				}
+			}
+			SWE = {
+				country_event = {
+					id = ipeDAN.6
+				}
+			}
+		}
+		DAN = {
+			add_opinion = {
+				who = ROOT
+				modifier = chose_denmark_positive
+			}
+		}
+		SWE = {
+			add_opinion = {
+				who = ROOT
+				modifier = chose_denmark_negative
+			}
+		}
+	}
+
+	option = { # We choose to remain with Sweden!
+		name = ipeDAN.5.b
+		ai_chance = {
+			factor = 0
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_subject_of = SWE
+				}
+			}
+			SWE = {
+				create_union = NOR
+			}
+		}
+		hidden_effect = {
+			DAN = {
+				country_event = {
+					id = ipeDAN.7
+				}
+			}
+			SWE = {
+				hidden_effect = {
+					country_event = {
+						id = ipeDAN.7
+					}
+				}
+			}
+		}
+		DAN = {
+			add_opinion = {
+				who = ROOT
+				modifier = chose_sweden_negative
+			}
+		}
+		SWE = {
+			add_opinion = {
+				who = ROOT
+				modifier = chose_sweden_positive
+			}
+		}
+	}
+}
+
+# Norway Chooses Denmark!
+country_event = {
+	id = ipeDAN.6
+	title = ipeDAN.6.t
+	desc = ipeDAN.6.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will soon bring Sweden back into the fold.
+		name = ipeDAN.6.a
+		trigger = {
+			tag = DAN
+		}
+		add_legitimacy = 10
+		add_prestige = 10
+		add_casus_belli = {
+			target = SWE
+			type = cb_restore_personal_union
+			months = 300
+		}
+		tooltip = {
+			add_opinion = {
+				who = NOR
+				modifier = chose_denmark_positive
+			}
+		}
+	}
+
+	option = { # Pity...
+		name = ipeDAN.6.b
+		trigger = {
+			tag = SWE
+		}
+		ai_chance = {
+			factor = 100
+		}
+		add_legitimacy = -10
+		add_prestige = -10
+		tooltip = {
+			add_opinion = {
+				who = NOR
+				modifier = chose_denmark_negative
+			}
+		}
+		set_global_flag = norway_fate
+	}
+
+	option = { # We must contest the union!
+		name = ipeDAN.6.c
+		trigger = {
+			tag = SWE
+		}
+		ai_chance = { # Historical route but Sweden often just gets annihilated
+			factor = 0
+		}
+		add_legitimacy = -10
+		add_prestige = -10
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -20
+		}
+		declare_war_with_cb = {
+			who = NOR
+			casus_belli = cb_restore_personal_union
+		}
+		add_casus_belli = {
+			target = DAN
+			type = cb_restore_personal_union
+			months = 300
+		}
+		NOR = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = laponia_area
+						area = northern_norway
+					}
+				}
+				change_controller = SWE
+			}
+		}
+		hidden_effect = {
+			DAN = {
+				country_event = {
+					id = ipeDAN.11
+				}
+			}
+		}
+		custom_tooltip = ipeDAN.6.c.tooltip
+		set_global_flag = norway_fate
+	}
+}
+
+# Norway Chooses Sweden!
+country_event = {
+	id = ipeDAN.7
+	title = ipeDAN.7.t
+	desc = ipeDAN.7.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Pity...
+		name = ipeDAN.6.b
+		trigger = {
+			tag = DAN
+		}
+		add_legitimacy = -10
+		add_prestige = -10
+		add_casus_belli = {
+			target = SWE
+			type = cb_restore_personal_union
+			months = 300
+		}
+		tooltip = {
+			add_opinion = {
+				who = NOR
+				modifier = chose_sweden_negative
+			}
+		}
+	}
+
+	option = { # We will soon bring Denmark back into the fold.
+		name = ipeDAN.7.b
+		trigger = {
+			tag = SWE
+		}
+		add_legitimacy = 10
+		add_prestige = 10
+		add_casus_belli = {
+			target = DAN
+			type = cb_restore_personal_union
+			months = 300
+		}
+		tooltip = {
+			add_opinion = {
+				who = NOR
+				modifier = chose_sweden_positive
+			}
+		}
+	}
+}
+
+# Sten Sture
+country_event = {
+	id = ipeDAN.8
+	title = ipeDAN.8.t
+	desc = ipeDAN.8.d
+	picture = ADVISOR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SWE
+		has_ruler_flag = reign_of_karl_bonde
+		OR = {
+			has_heir = no
+			NOT = {
+				heir_claim = 50
+			}
+		}
+		is_year = 1460
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Appoint Sten Sture as the future Regent of Sweden.
+		name = ipeDAN.8.a
+		define_heir = {
+			name = "Sten Gustavsson"
+			dynasty = "Sture"
+			adm = 5
+			dip = 3
+			mil = 5
+			birth_date = 1440.1.1
+			claim = 75
+		}
+		set_heir_flag = regent_sten_sture
+		hidden_effect = {
+			add_heir_personality = inspiring_leader_personality
+		}
+	}
+
+	option = { # Allow him to be a trusted advisor.
+		name = ipeDAN.8.b
+		define_advisor = {
+			type = statesman
+			name = "Sten Sture"
+			skill = 3
+			discount = yes
+			culture = swedish
+		}
+	}
+}
+
+# The Death of Christopher of Bavaria
+country_event = {
+	id = ipeDAN.9
+	title = ipeDAN.3.t
+	desc = ipeDAN.9.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Wittelsbach lands will be reunited!
+		name = ipeDAN.9.a
+		tooltip = {
+			inherit = NEU
+		}
+		add_prestige = 5
+		NEU = {
+			clr_country_flag = neumarkter_inheritance
+		}
+		clr_country_flag = neumarkter_inheritance
+	}
+}
+
+# The Rebirth of Copenhagen
+country_event = {
+	id = ipeDAN.10
+	title = ipeDAN.10.t
+	desc = ipeDAN.10.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		owns = 12
+		12 = {
+			has_province_modifier = reconstruction_of_copenhagen
+		}
+	}
+
+	option = { # Sometimes change is necessary.
+		name = ipeDAN.10.a
+		add_stability_or_adm_power = yes
+		add_prestige = 25
+		12 = {
+			add_base_tax = 5
+			add_base_production = 5
+			add_base_manpower = 5
+			remove_province_modifier = reconstruction_of_copenhagen
+		}
+	}
+}
+
+# Sweden Contests Norway!
+country_event = {
+	id = ipeDAN.11
+	title = ipeDAN.11.t
+	desc = ipeDAN.11.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We will fight to the end!
+		name = ipeDAN.11.a
+		tooltip = {
+			FROM = {
+				declare_war_with_cb = {
+					who = NOR
+					casus_belli = cb_restore_personal_union
+				}
+			}
+		}
+		custom_tooltip = ipeDAN.6.c.tooltip
+	}
+}
+
+# Union with Oldenburg
+country_event = {
+	id = ipeDAN.12
+	title = ipeDAN.12.t
+	desc = ipeDAN.12.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We welcome this dynasty.
+		name = ipeDAN.12.a
+		hidden_effect = {
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				remove_heir = {}
+			}
+		}
+		create_union = OLD
+		hidden_effect = {
+			define_heir = {
+				name = "Christian"
+				dynasty = "von Oldenburg"
+				adm = 2
+				dip = 2
+				mil = 2
+				birth_date = 1426.2.1
+			}
+			kill_ruler = yes
+			add_stability = 1
+		}
+		tooltip = {
+			define_ruler = {
+				name = "Christian"
+				dynasty = "von Oldenburg"
+				adm = 2
+				dip = 2
+				mil = 2
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$'s Merchants in Tranquebar
+country_event = {
+	id = ipeDAN.13
+	title = ipeDAN.13.t
+	desc = ipeDAN.13.d
+	picture = SHIP_SAILING_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major_trigger = {
+		technology_group = indian
+	}
+
+	option = { # Allow the Danish to purchase Tranquebar.
+		name = ipeDAN.13.a
+		ai_chance = {
+			factor = 100
+		}
+		4416 = {
+			cede_province = FROM
+			add_core = FROM
+		}
+		add_treasury = 500
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeDAN.14
+				}
+			}
+		}
+	}
+
+	option = { # Europeans must stay out.
+		name = ipeDAN.13.b
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeDAN.15
+				}
+			}
+		}
+	}
+}
+
+# Tranquebar Sold!
+country_event = {
+	id = ipeDAN.14
+	title = ipeDAN.14.t
+	desc = ipeDAN.14.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A worthwhile purchase.
+		name = ipeDAN.14.a
+		tooltip = {
+			4416 = {
+				cede_province = ROOT
+				add_core = ROOT
+			}
+		}
+		add_treasury = -500
+	}
+}
+
+# Danish Merchants Rebuffed
+country_event = {
+	id = ipeDAN.15
+	title = ipeDAN.15.t
+	desc = ipeDAN.15.d
+	picture = SHIP_SAILING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Unfortunate.
+		name = ipeDAN.15.a
+		4416 = {
+			add_permanent_claim = ROOT
+		}
+	}
+}

@@ -1,0 +1,88 @@
+namespace = ipeBOS
+normal_or_historical_nations = yes
+
+# The Faith of $MONARCHTITLE$ $MONARCH$
+country_event = {
+	id = ipeBOS.1
+	title = ipeBOS.1.t
+	desc = ipeBOS.1.d
+	picture = POPE_PREACHING_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BOS
+		religion = bosnian_christian
+		has_regency = no
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = { # Convert to Catholicism.
+		name = ipeBOS.1.a
+		ai_chance = {
+			factor = 80
+		}
+		add_stability = -1
+		add_legitimacy = -25
+		change_religion = catholic
+		PAP = {
+			add_opinion = {
+				who = ROOT
+				modifier = bosnian_convert
+			}
+		}
+		HUN = {
+			add_opinion = {
+				who = ROOT
+				modifier = bosnian_convert
+			}
+		}
+		if = {
+			limit = {
+				exists = HRZ
+			}
+			HRZ = {
+				add_opinion = {
+					who = ROOT
+					modifier = betrayed_bosnia
+				}
+			}
+		}
+	}
+
+	option = { # Remain an adherent of the Bosnian Church.
+		name = ipeBOS.1.b
+		ai_chance = {
+			factor = 20
+		}
+		add_stability_or_adm_power = yes
+		add_legitimacy = 10
+		add_prestige = 10
+		PAP = {
+			add_opinion = {
+				who = ROOT
+				modifier = bosnian_heretic
+			}
+		}
+		HUN = {
+			add_opinion = {
+				who = ROOT
+				modifier = bosnian_heretic
+			}
+		}
+		if = {
+			limit = {
+				exists = HRZ
+			}
+			HRZ = {
+				add_opinion = {
+					who = ROOT
+					modifier = defended_bosnia
+				}
+			}
+		}
+	}
+}

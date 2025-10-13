@@ -1,0 +1,41 @@
+namespace = estate_mamluks_disaster
+
+# The Mamluks Break Free
+country_event = {
+	id = estate_mamluks_disaster.1
+	title = estate_mamluks_disaster.1.t
+	desc = estate_mamluks_disaster.1.d
+	picture = BATTLE_eventPicture
+
+	major = yes
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = mamluks_estate_triggered
+	}
+
+	option = {
+		name = estate_mamluks_disaster.1.a
+		create_independent_estate = {
+			estate = estate_mamluks
+			government = monarchy
+			government_reform = mamluk_government
+			custom_national_ideas = MAM_ideas
+			play_as = no
+		}
+	}
+
+	option = {
+		name = estate_mamluks_disaster.1.b
+		trigger = {
+			ai = no
+		}
+		create_independent_estate = {
+			estate = estate_mamluks
+			government = monarchy
+			government_reform = mamluk_government
+			custom_national_ideas = MAM_ideas
+			play_as = yes
+		}
+	}
+}

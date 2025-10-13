@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = romagnan
+capital = 3791
+fixed_capital = 3791
+set_estate_privilege = estate_church_papal_emissary
+
+1429.9.14 = {
+	monarch = {
+		name = "Domenico I"
+		dynasty = "Malatesta"
+		birth_date = 1418.8.5
+		adm = 5
+		dip = 4
+		mil = 1
+	}
+	set_estate_privilege = estate_nobles_recruit_condottieri
+}
+#1465.11.20 annexed to papal state

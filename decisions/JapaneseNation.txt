@@ -1,0 +1,243 @@
+country_decisions = {
+
+	# Restore the Emperor
+	unite_japan = {
+		major = yes
+		potential = {
+			NOT = { tag = JAP }
+			NOT = { has_country_flag = formed_japan_flag }
+			was_never_end_game_tag_trigger = yes
+			has_reform = shogunate
+			has_global_flag = ended_sengoku
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					province_id = 1020
+					NOT = { owned_by = ROOT }
+				}
+				AND = {
+					region = japan_region
+					NOT = { country_or_non_sovereign_subject_holds = ROOT }
+				}
+			}
+		}
+		allow = {
+			NOT = { exists = JAP }
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			owns = 1020
+			has_regency = no
+			adm_tech = 20
+			stability = 3
+			legitimacy = 100
+			OR = {
+				ruler_age = 60
+				months_of_ruling = 240
+			}
+			japan_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			custom_trigger_tooltip = {
+				tooltip = unite_japan_trigger_1.tooltip
+				NOT = {
+					any_subject_country = {
+						capital_scope = {
+							region = japan_region
+						}
+						OR = {
+							is_subject_of_type = daimyo_vassal
+							is_subject_of_type = kanrei_vassal
+							is_subject_of_type = kubo_vassal
+						}
+						liberty_desire = 25
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = unite_japan_trigger_2.tooltip
+				NOT = {
+					any_subject_country = {
+						capital_scope = {
+							region = japan_region
+						}
+						OR = {
+							is_subject_of_type = daimyo_vassal
+							is_subject_of_type = kanrei_vassal
+							is_subject_of_type = kubo_vassal
+						}
+						any_owned_province = {
+							NOT = {
+								region = japan_region
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = unite_japan_emperor_tooltip
+			custom_tooltip = unite_japan_subject_tooltip
+			hidden_effect = {
+				every_subject_country = {
+					limit = {
+						capital_scope = {
+							region = japan_region
+						}
+						OR = {
+							is_subject_of_type = daimyo_vassal
+							is_subject_of_type = kanrei_vassal
+							is_subject_of_type = kubo_vassal
+						}
+					}
+					ROOT = {
+						inherit = PREV
+					}
+				}
+			}
+			add_stability = -3
+			add_prestige = 25
+			change_tag = JAP
+			add_government_reform = chrysanthemum_throne
+			hidden_effect = {
+				set_government_rank = 3
+			}
+			set_country_flag = formed_japan_flag
+			swap_non_generic_missions = yes
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			country_event = {
+				id = ipeJAP.121
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+		
+	# Sakoku
+	enforce_sakoku_law = {
+		potential = {
+			has_country_modifier = western_trade
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			stability = 2
+			legitimacy = 75
+			adm_power = 200
+			mil_power = 200
+			dip_power = 200
+		}
+		effect = {
+			ROOT = {
+				remove_country_modifier = "western_trade"
+				add_country_modifier = {
+					name = "sakoku_law"
+					duration = -1
+				}
+				set_country_flag = sakoku_law
+				every_subject_country = {
+					limit = {
+						has_country_modifier = western_trade
+					}
+					remove_country_modifier = "western_trade"
+					add_country_modifier = {
+						name = "sakoku_law"
+						duration = -1
+					}
+					set_country_flag = sakoku_law
+				}
+			}
+			set_global_flag = japan_is_closed
+			add_adm_power = -200
+			add_dip_power = -200
+			add_mil_power = -200
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_country_modifier = western_trade
+				NOT = {
+					any_owned_province = {
+						religion = catholic
+						has_missionary = no
+					}
+				}
+			}
+		}
+	}
+
+	send_western_embassy_mission = {
+		potential = {
+			always = no
+			NOT = {
+				has_global_flag = japan_is_closed
+				has_country_modifier = western_embassy_mission
+			}
+			has_reform = daimyo
+			NOT = { has_institution = global_trade }
+			has_global_flag = japan_has_encountered_the_west
+			any_known_country = {
+				technology_group = western
+				has_institution = global_trade
+			}
+		}
+	
+		allow = {
+			treasury = 200
+			dip_power = 50
+		}
+	
+		effect = {
+			add_country_modifier = {
+				name = western_embassy_mission
+				duration = 3650
+			}
+			add_treasury = -200
+			add_dip_power = -50
+		}
+	}
+	
+	restore_the_shrine_of_ise = {
+		potential = {
+			religion = shinto
+			4359 = {
+				NOT = {
+					has_province_modifier = ise_grand_shrine
+				}
+			}
+		}
+		allow = {
+			treasury = 300
+			owns = 4359
+			4359 = {
+				NOT = {
+					has_province_modifier = ise_grand_shrine
+				}
+			}
+		}
+		effect = {
+			add_treasury = -300
+			add_prestige = 20
+			4359 = {
+				if = {
+					limit = {
+						NOT = { religion = shinto }
+						
+					}
+					change_religion = shinto
+				}
+				add_permanent_province_modifier = {
+					name = ise_grand_shrine
+					duration = -1
+				}
+			}
+		}
+	}
+	
+}

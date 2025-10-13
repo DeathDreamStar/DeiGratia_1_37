@@ -1,0 +1,16 @@
+#3308 - Hikone
+
+owner = KGK
+controller = KGK
+culture = japanese
+religion = shinto
+capital = "Hikone"
+trade_goods = silk
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = KGK
+add_core = AZI
+discovered_by = chinese

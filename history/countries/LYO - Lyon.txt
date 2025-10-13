@@ -1,0 +1,268 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = arpitan
+capital = 203 # Lyon
+fixed_capital = 203
+
+1052.7.29 = {
+	monarch = {
+		name = "Humbert I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1056.1.1 = {
+	monarch = {
+		name = "Geoffroy I"
+		dynasty = "de Vergy"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1070.1.1 = {
+	monarch = {
+		name = "Humbert II"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1076.1.1 = {
+	monarch = {
+		name = "Gébuin I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1082.1.1 = {
+	monarch = {
+		name = "Hugues I"
+		dynasty = "de Bourgogne"
+		birth_date = 1040.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1106.10.7 = {
+	monarch = {
+		name = "Josserand I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1118.1.1 = {
+	monarch = {
+		name = "Humbaud I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1128.1.1 = {
+	monarch = {
+		name = "Renaud I"
+		dynasty = "de Semur"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1129.1.1 = {
+	monarch = {
+		name = "Pierre I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1139.1.1 = {
+	monarch = {
+		name = "Falque I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1142.1.1 = {
+	monarch = {
+		name = "Amédée I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1148.1.1 = {
+	monarch = {
+		name = "Humbert I"
+		dynasty = "de Baugé"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1153.1.1 = {
+	monarch = {
+		name = "Héracle I"
+		dynasty = "de Montboissier"
+		birth_date = 1102.1.1
+		adm = 4
+		dip = 3
+		mil = 2
+	}
+}
+1163.1.1 = {
+	monarch = {
+		name = "Dreux I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1165.1.1 = {
+	monarch = {
+		name = "Guichard I"
+		dynasty = "de Pontigny"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1181.9.27 = {
+	monarch = {
+		name = "Jean I"
+		dynasty = "Belles-mains"
+		birth_date = 1120.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1193.1.1 = {
+	monarch = {
+		name = "Renaud II"
+		dynasty = "de Forez"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1226.10.22 = {
+	monarch = {
+		name = "Robert I"
+		dynasty = "d'Auvergne"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1234.1.1 = {
+	monarch = {
+		name = "Raoul I"
+		dynasty = "de la Roche"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1236.3.5 = {
+	monarch = {
+		name = "Aimery I"
+		dynasty = "de Rives"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1245.1.1 = {
+	monarch = {
+		name = "Philippe I"
+		dynasty = "di Savoia"
+		birth_date = 1207.1.1
+		adm = 4
+		dip = 5
+		mil = 4
+	}
+}
+1267.7.11 = {
+	monarch = {
+		name = "Guy II"
+		dynasty = "de la Tour"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1270.1.1 = {
+	monarch = {
+		name = "Peter II"
+		dynasty = "de Tarentaise"
+		birth_date = 1225.1.1
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1273.1.1 = {
+	monarch = {
+		name = "Adhémar I"
+		dynasty = "de Roussillon"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1283.1.1 = {
+	monarch = {
+		name = "Raoul II"
+		dynasty = "de la Tourette"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1288.1.1 = {
+	monarch = {
+		name = "Bérard I"
+		dynasty = "de Got"
+		birth_date = 1250.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1294.9.18 = {
+	monarch = {
+		name = "Henri I"
+		dynasty = "de Villars"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1301.7.18 = {
+	monarch = {
+		name = "Louis I"
+		dynasty = "de Villars"
+		birth_date = 1268.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1308.7.13 = {
+	monarch = {
+		name = "Peter III"
+		dynasty = "di Savoia"
+		adm = 2
+		dip = 4
+		mil = 1
+	}
+}

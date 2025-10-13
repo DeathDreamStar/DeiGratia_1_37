@@ -1,0 +1,81 @@
+#
+# Example mercenary companies
+#
+
+merc__local_free_company = {
+    regiments_per_development = 0.05
+    cavalry_weight = 0.1
+    artillery_weight = 0
+    cavalry_cap = 2
+    cost_modifier = 0.75
+    trigger = {
+        total_own_and_non_tributary_subject_development = 100
+    }
+    # No home province means local mercenary company
+}
+
+merc__local_grand_company = {
+    regiments_per_development = 0.05
+    cavalry_weight = 0.1
+    artillery_weight = 0
+    cavalry_cap = 2
+    cost_modifier = 0.75
+    trigger = {
+        total_own_and_non_tributary_subject_development = 100
+    }
+    # No home province means local mercenary company
+}
+
+merc__local_independent_army = {
+    regiments_per_development = 0.05
+    cavalry_weight = 0.1
+    artillery_weight = 0
+    cavalry_cap = 2
+    cost_modifier = 0.75
+    trigger = {
+        total_own_and_non_tributary_subject_development = 100
+    }
+    # No home province means local mercenary company
+}
+
+merc__local_small_company = {
+    regiments_per_development = 0.1
+    cavalry_weight = 0.1
+    artillery_weight = 0
+    cavalry_cap = 2
+    trigger = {
+        NOT = { total_own_and_non_tributary_subject_development = 100 }
+    }
+    cost_modifier = 0.5
+    # No home province means local mercenary company
+}
+
+merc__local_free_city_company = {
+    regiments_per_development = 0.1
+    cavalry_weight = 0.1
+    artillery_weight = 0
+    cavalry_cap = 2
+    trigger = {
+        has_reform = free_city
+    }
+    cost_modifier = 0.5
+    # No home province means local mercenary company
+}
+
+twenty_good_men = {
+    regiments_per_development = 0.025
+    cavalry_weight = 0.2
+	artillery_weight = 0
+    cavalry_cap = 4
+	cost_modifier = 1.1
+    home_province = 4365
+	trigger = {
+		capital_scope = {
+			province_id = 4365
+		}
+	}
+	modifier = {
+		land_morale = 0.05
+        shock_damage = 0.1
+	}
+}

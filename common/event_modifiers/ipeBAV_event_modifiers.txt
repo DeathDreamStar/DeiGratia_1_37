@@ -1,0 +1,4 @@
+ipe_fought_robber_barons = {
+	global_unrest = -5
+	global_autonomy = -0.10
+}

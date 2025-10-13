@@ -1,0 +1,17 @@
+#3216 - Yushe
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = jin
+religion = confucianism
+capital = "Yushe"
+trade_goods = tea
+hre = no
+base_tax = 8
+base_production = 8
+base_manpower = 7
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = JIN

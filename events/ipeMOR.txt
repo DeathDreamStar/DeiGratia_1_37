@@ -1,0 +1,118 @@
+namespace = ipeMOR
+normal_or_historical_nations = yes
+
+# A Wattasid Vizier
+country_event = {
+	id = ipeMOR.1
+	title = ipeMOR.1.t
+	desc = ipeMOR.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MOR
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = ipeMOR.1.a
+		custom_tooltip = ipeMOR.1.a.tooltip
+	}
+}
+
+# The Reunification of Morocco
+country_event = {
+	id = ipeMOR.2
+	title = ipeMOR.2.t
+	desc = ipeMOR.2.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Morocco shall be one!
+		name = ipeMOR.2.a
+		if = {
+			limit = {
+				MRK = {
+					is_subject_of = ROOT
+					NOT = {
+						num_of_cities = 10
+					}
+				}
+			}
+			inherit = MRK
+		}
+		if = {
+			limit = {
+				TFL = {
+					is_subject_of = ROOT
+					NOT = {
+						num_of_cities = 10
+					}
+				}
+			}
+			inherit = TFL
+		}
+		if = {
+			limit = {
+				SOS = {
+					is_subject_of = ROOT
+					NOT = {
+						num_of_cities = 10
+					}
+				}
+			}
+			inherit = SOS
+		}
+		if = {
+			limit = {
+				DBD = {
+					is_subject_of = ROOT
+					NOT = {
+						num_of_cities = 10
+					}
+				}
+			}
+			inherit = DBD
+		}
+		add_prestige = 20
+		add_piety = -0.1
+		set_global_flag = reunited_morocco
+	}
+}
+
+# The Reconquest of Ceuta
+country_event = {
+	id = ipeMOR.3
+	title = ipeMOR.3.t
+	desc = ipeMOR.3.d
+	picture = SIEGE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will retake it!
+		name = ipeMOR.3.a
+		trigger = {
+			NOT = {
+				tag = MOR
+			}
+		}
+		tooltip = {
+			1751 = {
+				cede_province = FROM
+			}
+		}
+	}
+
+	option = { # Fantastic.
+		name = ipeMOR.3.b
+		trigger = {
+			tag = MOR
+		}
+		add_prestige = 20
+	}
+}

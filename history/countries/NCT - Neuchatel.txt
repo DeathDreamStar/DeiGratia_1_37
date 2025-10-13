@@ -1,0 +1,393 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = arpitan
+religion = catholic
+technology_group = western
+capital = 3741
+fixed_capital = 3741
+
+1040.1.1 = {
+	monarch = {
+		name = "Ulrich I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1020.1.1
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1065.1.1 = {
+	heir = {
+		name = "Mangold"
+		monarch_name = "Mangold I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1065.1.1
+		death_date = 1125.1.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1090.1.1 = {
+	monarch = {
+		name = "Mangold I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1065.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Rodolphe"
+		monarch_name = "Rodolphe I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1088.1.1
+		death_date = 1148.1.1
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1125.1.1 = {
+	monarch = {
+		name = "Rodolphe I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1088.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+	heir = {
+		name = "Ulrich"
+		monarch_name = "Ulrich II"
+		dynasty = "de Neuchâtel"
+		birth_date = 1125.1.1
+		death_date = 1191.1.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1148.1.1 = {
+	monarch = {
+		name = "Ulrich II"
+		dynasty = "de Neuchâtel"
+		birth_date = 1125.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1191.1.1 = {
+	monarch = {
+		name = "Ulrich III"
+		dynasty = "de Neuchâtel"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Berthold"
+		monarch_name = "Berthold I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1191.1.1
+		death_date = 1259.1.1
+		claim = 95
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1225.1.1 = {
+	monarch = {
+		name = "Berthold I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1191.1.1
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+	heir = {
+		name = "Rodolphe"
+		monarch_name = "Rodolphe III"
+		dynasty = "de Neuchâtel"
+		birth_date = 1225.1.1
+		death_date = 1263.1.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1259.1.1 = {
+	monarch = {
+		name = "Rodolphe III"
+		dynasty = "de Neuchâtel"
+		birth_date = 1225.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1263.1.1 = {
+	monarch = {
+		name = "Henri I"
+		dynasty = "de Neuchâtel"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1283.1.1 = {
+	monarch = {
+		name = "Amédée I"
+		dynasty = "de Neuchâtel"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Rodolphe"
+		monarch_name = "Rodolphe IV"
+		dynasty = "de Neuchâtel"
+		birth_date = 1274.9.25
+		death_date = 1343.3.1
+		claim = 95
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}
+1288.2.3 = {
+	monarch = {
+		name = "Rodolphe IV"
+		dynasty = "de Neuchâtel"
+		birth_date = 1274.9.25
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}
+1305.3.2 = {
+	heir = {
+		name = "Louis"
+		monarch_name = "Louis I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1305.3.2
+		death_date = 1373.6.5
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1343.3.1 = {
+	monarch = {
+		name = "Louis I"
+		dynasty = "de Neuchâtel"
+		birth_date = 1305.3.2
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1373.6.5 = {
+	monarch = {
+		name = "Isabelle"
+		dynasty = "de Neuchâtel"
+		female = yes
+		birth_date = 1335.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1395.12.25 = {
+	monarch = {
+		name = "Conrad I"
+		dynasty = "von Freiburg"
+		birth_date = 1372.1.1
+		adm = 0
+		dip = 3
+		mil = 2
+	}
+}
+1424.1.1 = {
+	monarch = {
+		name = "Jean I"
+		dynasty = "von Freiburg"
+		birth_date = 1396.5.26
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}
+#1458 under UUS
+1503.9.9 = {
+	monarch = {
+		name = "Louis II"
+		dynasty = "de Dunois"
+		birth_date = 1480.1.1
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1508.1.1 = {
+	heir = {
+		name = "Claude"
+		monarch_name = "Claude I"
+		dynasty = "de Dunois"
+		birth_date = 1508.1.1
+		death_date = 1524.11.9
+		claim = 85
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1516.8.1 = {
+	monarch = {
+		name = "Claude I"
+		dynasty = "de Dunois"
+		birth_date = 1508.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1524.11.9 = {
+	monarch = {
+		name = "Louis III"
+		dynasty = "de Dunois"
+		birth_date = 1510.6.5
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1531.1.1 = { religion = reformed }
+1535.10.30 = {
+	heir = {
+		name = "François"
+		monarch_name = "François I"
+		dynasty = "de Dunois"
+		birth_date = 1535.10.30
+		death_date = 1551.9.22
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1537.6.9 = {
+	monarch = {
+		name = "(Regency Council)"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "François"
+		monarch_name = "François I"
+		dynasty = "de Dunois"
+		birth_date = 1535.10.30
+		death_date = 1551.9.22
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1551.9.22 = {
+	monarch = {
+		name = "Léonor I"
+		dynasty = "de Dunois"
+		birth_date = 1540.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1565.1.1 = {
+	heir = {
+		name = "Henri"
+		monarch_name = "Henri I"
+		dynasty = "de Dunois"
+		birth_date = 1565.1.1
+		death_date = 1595.4.8
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1573.8.7 = {
+	monarch = {
+		name = "Henri I"
+		dynasty = "de Dunois"
+		birth_date = 1565.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1595.4.6 = {
+	heir = {
+		name = "Henri"
+		monarch_name = "Henri II"
+		dynasty = "de Dunois"
+		birth_date = 1595.4.6
+		death_date = 1663.5.11
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1595.4.8 = {
+	monarch = {
+		name = "(Regency Council)"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Henri"
+		monarch_name = "Henri II"
+		dynasty = "de Dunois"
+		birth_date = 1595.4.6
+		death_date = 1663.5.11
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1610.4.6 = {
+	monarch = {
+		name = "Henri II"
+		dynasty = "de Dunois"
+		birth_date = 1595.4.6
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+#done 1648
+1806.1.1 = {
+	monarch = {
+		name = "Louis-Alexandre"
+		dynasty = "Berthier"
+		birth_date = 1753.11.20
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,9 @@
+﻿l_english:
+ ipe_ChineseEmpire.1.t: "The Empire of China"
+ ipe_ChineseEmpire.1.d: "We have now claimed the Empire of China for ourselves, and have therefore become the new masters of the Middle Kingdom. As the most powerful sovereigns in the entire world, we are now preeminent over the barbarians, who are too lowly for us to recognize as even allies."
+ ipe_ChineseEmpire.1.a: "The Emperor of China knows no allies, and only subjects."
+ ipe_ChineseEmpire.1.a.tooltip: "All of our alliances will be broken, as the Emperor of China recognizes no equal."
+ ipe_ChineseEmpire.2.t: "$FROMCOUNTRY$ Declares the Mandate of Heaven"
+ ipe_ChineseEmpire.2.d: "In a shocking turn of events, our former allies from $FROMCOUNTRY$ have defeated the previous dynasty ruling China, and declared that they now hold the Mandate of Heaven, thus possessing the right to govern the Middle Kingdom. However, the diplomats from $FROMCOUNTRY$ have swiftly changed in their attitude toward us, addressing us not as equals, but as barbarians. Now that $FROMCOUNTRY$ rules China, the monarchs of $FROMCOUNTRY$ will seek nothing less than our subjugation."
+ ipe_ChineseEmpire.2.a: "We will not kowtow to these new emperors!"
+ ipe_ChineseEmpire.2.a.tooltip: "Our alliance with the Emperor of China will be broken, because the Emperor of China recognizes no equal."

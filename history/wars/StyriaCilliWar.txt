@@ -1,0 +1,26 @@
+name = "Styrian Conquest of Cilli"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 4751 # Cilli
+}
+
+1442.1.1 = {
+	add_attacker = STY
+	add_attacker = AUT
+	add_attacker = SEG
+	add_attacker = TIR
+	add_attacker = FBO
+	add_attacker = TNT
+	add_defender = CLI
+}
+
+1443.1.1 = {
+	rem_attacker = STY
+	rem_attacker = AUT
+	rem_attacker = SEG
+	rem_attacker = TIR
+	rem_attacker = FBO
+	rem_attacker = TNT
+	rem_defender = CLI
+}

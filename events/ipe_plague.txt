@@ -1,0 +1,4518 @@
+namespace = ipe_plague
+
+# Old World Diseases
+province_event = {
+    id = ipe_plague.1
+    title = ipe_plague.1.t
+    desc = ipe_plague.1.d
+    picture = PLAGUE_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        OR = {
+            continent = north_america
+            continent = south_america
+            continent = oceania
+        }
+        has_new_world_culture = yes
+        NOT = {
+            has_province_flag = old_world_diseases_struck
+        }
+        OR = {
+            any_neighbor_province = {
+                owner = {
+                    NOT = {
+                        technology_group = north_american
+                        technology_group = mesoamerican
+                        technology_group = south_american
+                        technology_group = andean
+                        technology_group = caribbean
+                        technology_group = polynesian_tech
+                    }
+                }
+            }
+            owner = {
+                NOT = {
+                    technology_group = north_american
+                    technology_group = mesoamerican
+                    technology_group = south_american
+                    technology_group = andean
+                    technology_group = caribbean
+                    technology_group = polynesian_tech
+                }
+            }
+            any_neighbor_province = {
+                OR = {
+                    has_province_modifier = old_world_diseases_normal
+                    has_province_modifier = old_world_diseases_bad
+                }
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 48
+        modifier = {
+            factor = 0.5
+            any_neighbor_province = {
+                owner = {
+                    NOT = {
+                        technology_group = north_american
+                        technology_group = mesoamerican
+                        technology_group = south_american
+                        technology_group = andean
+                        technology_group = caribbean
+                        technology_group = polynesian_tech
+                    }
+                }
+            }
+        }
+        modifier = {
+            factor = 0.5
+            owner = {
+                NOT = {
+                    technology_group = north_american
+                    technology_group = mesoamerican
+                    technology_group = south_american
+                    technology_group = andean
+                    technology_group = caribbean
+                    technology_group = polynesian_tech
+                }
+            }
+        }
+        modifier = {
+            factor = 0.5
+            any_neighbor_province = {
+                OR = {
+                    has_province_modifier = old_world_diseases_normal
+                    has_province_modifier = old_world_diseases_bad
+                }
+            }
+        }
+        modifier = {
+            factor = 0.5
+            is_city = yes
+        }
+    }
+
+    option = {
+        name = ipe_plague.1.a
+        set_province_flag = old_world_diseases_struck
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.7
+                }
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    development = 20
+                }
+            }
+            add_permanent_province_modifier = {
+                name = old_world_diseases_normal
+                duration = 1825
+            }
+        }
+        if = {
+            limit = {
+                development = 20
+            }
+            add_permanent_province_modifier = {
+                name = old_world_diseases_bad
+                duration = 1825
+            }
+        }
+    }
+}
+
+# Old World Diseases
+country_event = {
+    id = ipe_plague.2
+    title = ipe_plague.2.t
+    desc = ipe_plague.2.d
+    picture = PLAGUE_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        NOT = {
+            technology_group = north_american
+            technology_group = mesoamerican
+            technology_group = south_american
+            technology_group = andean
+            technology_group = caribbean
+            technology_group = polynesian_tech
+        }
+        OR = {
+            2935 = { # Amazonas
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1556 = { # California
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            2499 = { # Río Grande
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1507 = { # Mississippi
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            2526 = { # Ohio
+                 OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }        
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1411 = { # Australia
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1551 = { # Acapulco
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1509 = { # Mexico
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            800 = { # Cuiaba
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1536 = { # La Plata
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            809 = { # Lima
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1531 = { # Brazil
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            835 = { # Panama
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1516 = { # Caribbean
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1500 = { # Chesapeake Bay
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1486 = { # Hudson Bay
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+            1490 = { # St. Lawrence
+                OR = {
+                    has_merchant = ROOT
+                    trade_share = {
+                        country = ROOT
+                        share = 5
+                    }
+                }
+                any_trade_node_member_province = {
+                    NOT = {
+                        has_province_flag = old_world_diseases_struck
+                    }
+                    has_new_world_culture = yes
+                    is_city = yes
+                }
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    option = {
+        name = ipe_plague.2.a
+        if = {
+            limit = {
+                2935 = { # Amazonas
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            2935 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1556 = { # California
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1556 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                2499 = { # Río Grande
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            2499 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1507 = { # Mississippi
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1507 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                2526 = { # Ohio
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            2526 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1411 = { # Australia
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1411 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1551 = { # Acapulco
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1551 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1509 = { # Mexico
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1509 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                800 = { # Cuiaba
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            800 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1536 = { # La Plata
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1536 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                809 = { # Lima
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            809 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1531 = { # Brazil
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1531 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                835 = { # Panama
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            835 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1516 = { # Caribbean
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1516 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1500 = { # Chesapeake Bay
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1500 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1486 = { # Hudson Bay
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1486 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                1490 = { # St. Lawrence
+                    OR = {
+                        has_merchant = ROOT
+                        trade_share = {
+                            country = ROOT
+                            share = 5
+                        }
+                    }
+                }
+            }
+            1490 = {
+                random_trade_node_member_province = {
+                    limit = {
+                        NOT = {
+                            has_province_flag = old_world_diseases_struck
+                        }
+                        has_new_world_culture = yes
+                        is_city = yes
+                    }
+                    set_province_flag = old_world_diseases_struck
+                    if = {
+                        limit = {
+                            NOT = {
+                                development = 20
+                            }
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_normal
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            development = 20
+                        }
+                        add_permanent_province_modifier = {
+                            name = old_world_diseases_bad
+                            duration = 1825
+                        }
+                    }
+                    if = {
+                        limit = {
+                            owner = {
+                                has_country_flag = development_display_on
+                            }
+                        }
+                        owner = {
+                            country_event = {
+                                id = ipe_development_display.7
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+# Old World Diseases
+province_event = {
+    id = ipe_plague.3
+    title = ipe_plague.3.t
+    desc = ipe_plague.3.d
+    picture = PLAGUE_eventPicture
+
+    is_triggered_only = yes
+
+    hidden = yes
+
+	trigger = {
+		has_dlc = "El Dorado"
+		is_empty = no
+		OR = {
+			continent = new_world
+			continent = south_america
+			continent = north_america
+		}
+        has_new_world_culture = yes
+        NOT = {
+            has_province_flag = old_world_diseases_struck
+        }
+	}
+
+    option = {
+        name = ipe_plague.3.a
+        set_province_flag = old_world_diseases_struck
+        if = {
+            limit = {
+                NOT = {
+                    development = 20
+                }
+            }
+            add_permanent_province_modifier = {
+                name = old_world_diseases_normal
+                duration = 1825
+            }
+        }
+        if = {
+            limit = {
+                development = 20
+            }
+            add_permanent_province_modifier = {
+                name = old_world_diseases_bad
+                duration = 1825
+            }
+        }
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.7
+                }
+            }
+        }
+    }
+}
+
+# Spread of Plague
+province_event = {
+    id = ipe_plague.4
+    title = ipe_plague.4.t
+    desc = ipe_plague.4.d
+    picture = PLAGUE_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        NOT = {
+            has_province_modifier = peace_plague
+            has_province_modifier = quarantined_plague
+        }
+        any_neighbor_province = {
+            has_province_modifier = peace_plague
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 240
+        modifier = {
+            factor = 0.95
+            devastation = 20
+        }
+        modifier = {
+            factor = 0.95
+            devastation = 40
+        }
+        modifier = {
+            factor = 0.95
+            devastation = 60
+        }
+        modifier = {
+            factor = 0.95
+            devastation = 80
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.5
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.5
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.5
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.5
+            has_province_modifier = peace_famine
+        }
+        modifier = {
+            factor = 0.5
+            has_province_modifier = war_famine
+        }
+    }
+
+    immediate = {
+        add_province_modifier = {
+            name = peace_plague
+            duration = 730
+        }
+    }
+
+    option = {
+        name = ipe_plague.4.a
+    }
+}
+
+# The Great Plague of Milan
+country_event = {
+    id = ipe_plague.5
+    title = ipe_plague.5.t
+    desc = ipe_plague.5.d
+    picture = PLAGUE_eventPicture
+
+    fire_only_once = yes
+
+    major = yes
+
+    trigger = {
+        owns = 104
+        104 = { # Milan
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+        108 = { # Verona
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+        105 = { # Parma
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+        112 = { # Venice
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+        4730 = { # Bologna
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+        116 = { # Florence
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+        is_year = 1600
+        NOT = {
+            is_year = 1650
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.5
+            104 = {
+                devastation = 50
+            }
+        }
+        modifier = {
+            factor = 0.5
+            104 = {
+                has_province_modifier = peace_famine
+            }
+        }
+        modifier = {
+            factor = 0.5
+            104 = {
+                has_province_modifier = war_famine
+            }
+        }
+    }
+
+	option = { # This is a crisis!
+		name = ipe_plague.5.a
+		add_stability = -1
+        104 = { # Milan
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+        108 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+            if = {
+                limit = {
+                    owner = {
+                        NOT = {
+                            tag = ROOT
+                        }
+                    }
+                }
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = ipe_plague.6
+						}
+						set_country_flag = italian_plague_notification
+					}
+				}
+            }
+        }
+        105 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+            if = {
+                limit = {
+                    owner = {
+                        NOT = {
+                            tag = ROOT
+                            has_country_flag = italian_plague_notification
+                        }
+                    }
+                }
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = ipe_plague.6
+						}
+						set_country_flag = italian_plague_notification
+					}
+				}
+            }
+        }
+        112 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+            if = {
+                limit = {
+                    owner = {
+                        NOT = {
+                            tag = ROOT
+                            has_country_flag = italian_plague_notification
+                        }
+                    }
+                }
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = ipe_plague.6
+						}
+						set_country_flag = italian_plague_notification
+					}
+				}
+            }
+        }
+        4730 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+            if = {
+                limit = {
+                    owner = {
+                        NOT = {
+                            tag = ROOT
+                            has_country_flag = italian_plague_notification
+                        }
+                    }
+                }
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = ipe_plague.6
+						}
+						set_country_flag = italian_plague_notification
+					}
+				}
+            }
+        }
+        116 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+            if = {
+                limit = {
+                    owner = {
+                        NOT = {
+                            tag = ROOT
+                            has_country_flag = italian_plague_notification
+                        }
+                    }
+                }
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = ipe_plague.6
+						}
+						set_country_flag = italian_plague_notification
+					}
+				}
+            }
+        }
+	}
+}
+
+# The Great Plague of Milan
+country_event = {
+    id = ipe_plague.6
+    title = ipe_plague.5.t
+    desc = ipe_plague.5.d
+    picture = PLAGUE_eventPicture
+
+    is_triggered_only = yes
+
+    immediate = {
+        clr_country_flag = italian_plague_notification
+    }
+
+    option = { # This is a crisis!
+        name = ipe_plague.5.a
+        add_stability = -1
+        tooltip = {
+            104 = { # Milan
+                add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            108 = { # Verona
+                add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            105 = { # Parma
+                  add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            112 = { # Venice
+                 add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            4730 = { # Bologna
+                add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            116 = { # Florence
+                add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+        }
+    }
+}
+
+# The Naples Plague
+country_event = {
+    id = ipe_plague.7
+    title = flavor_nap.6.t
+    desc = flavor_nap.6.d
+    picture = PLAGUE_eventPicture
+
+    is_triggered_only = yes
+
+    immediate = {
+        clr_country_flag = italian_plague_notification
+    }
+
+    option = { # This is a scene from Hell.
+        name = flavor_nap.6.a
+        add_stability = -1
+        tooltip = {
+            121 = { # Naples
+                add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            101 = { # Genoa
+                add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            118 = { # Rome
+                  add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            3778 = { # Barletta
+                 add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+        }
+    }
+}
+
+# The Great Plague of Vienna
+country_event = {
+    id = ipe_plague.8
+    title = flavor_hab.13.t
+    desc = flavor_hab.13.d
+    picture = PLAGUE_eventPicture
+
+    is_triggered_only = yes
+
+    immediate = {
+        clr_country_flag = german_plague_notification
+    }
+
+    option = { # Oh du lieber Augustin!
+        name = flavor_hab.13.a
+        add_stability = -1
+        tooltip = {
+            134 = { # Vienna
+                add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            266 = { # Prague
+                add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            61 = { # Dresden
+                  add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            52 = { # Magdeburg
+                 add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            4741 = { # Halle
+                 add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+        }
+    }
+}
+
+# Horsemen of the Apocalypse
+province_event = {
+    id = ipe_plague.9
+    title = ipe_plague.9.t
+    desc = ipe_plague.9.d
+    picture = PLAGUE_eventPicture
+	goto = root
+
+    trigger = {
+        OR = {
+            has_province_modifier = peace_famine
+            has_province_modifier = war_famine
+            devastation = 5
+        }
+        NOT = {
+            has_province_modifier = peace_plague
+            has_province_modifier = quarantined_plague
+        }
+        devastation = 5
+    }
+
+    mean_time_to_happen = {
+        months = 600
+        modifier = {
+            factor = 0.95
+            devastation = 20
+        }
+        modifier = {
+            factor = 0.95
+            devastation = 40
+        }
+        modifier = {
+            factor = 0.95
+            devastation = 60
+        }
+        modifier = {
+            factor = 0.95
+            devastation = 80
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.5
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.5
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.5
+            province_has_center_of_trade_of_level = 3
+        }
+    }
+
+    option = { # This could be disastrous.
+        name = ipe_plague.9.a
+        add_permanent_province_modifier = {
+            name = peace_plague
+            duration = 730
+        }
+    }
+}
+
+# The $YEAR$ London Plague
+country_event = {
+    id = ipe_plague.10
+    title = ipe_plague.10.t
+    desc = ipe_plague.10.d
+    picture = PLAGUE_eventPicture
+    goto = 236
+
+    fire_only_once = yes
+    
+    trigger = {
+        owns = 236 # London 
+        236 = {
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+            development = 20
+        }
+        is_year = 1550
+        NOT = {
+            is_year = 1600
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.5
+            236 = {
+                devastation = 50
+            }
+        }
+        modifier = {
+            factor = 0.5
+            236 = {
+                has_province_modifier = peace_famine
+            }
+        }
+        modifier = {
+            factor = 0.5
+            236 = {
+                has_province_modifier = war_famine
+            }
+        }
+    }
+
+    option = { # We pray for the end of such a calamity.
+        name = ipe_plague.10.a
+        add_stability = -1
+        236 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+    }
+}
+
+# The Great Plague of London
+country_event = {
+    id = ipe_plague.11
+    title = ipe_plague.11.t
+    desc = ipe_plague.11.d
+    picture = PLAGUE_eventPicture
+    goto = 236
+
+    fire_only_once = yes
+    
+    trigger = {
+        owns = 236 # London 
+        236 = {
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+            development = 20
+        }
+        is_year = 1650
+        NOT = {
+            is_year = 1700
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.5
+            236 = {
+                devastation = 50
+            }
+        }
+        modifier = {
+            factor = 0.5
+            236 = {
+                has_province_modifier = peace_famine
+            }
+        }
+        modifier = {
+            factor = 0.5
+            236 = {
+                has_province_modifier = war_famine
+            }
+        }
+    }
+
+    option = { # It is the end of times.
+        name = ipe_plague.11.a
+        add_stability = -1
+        236 = {
+            add_devastation = 50
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+            set_province_flag = great_fire_of_london
+        }
+    }
+}
+
+# The Great Plague of Seville
+country_event = {
+    id = ipe_plague.12
+    title = ipe_plague.12.t
+    desc = ipe_plague.12.d
+    picture = PLAGUE_eventPicture
+
+    fire_only_once = yes
+
+    major = yes
+
+    trigger = {
+        owns = 224
+        224 = { # Seville
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+        4546 = { # Málaga
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+        213 = { # Barcelona
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+        220 = { # València
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+        is_year = 1625
+        NOT = {
+            is_year = 1675
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.5
+            224 = {
+                devastation = 50
+            }
+        }
+        modifier = {
+            factor = 0.5
+            224 = {
+                has_province_modifier = peace_famine
+            }
+        }
+        modifier = {
+            factor = 0.5
+            224 = {
+                has_province_modifier = war_famine
+            }
+        }
+    }
+
+	option = { # Dark times befall us.
+		name = ipe_plague.12.a
+		add_stability = -1
+        224 = { # Seville
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+        4546 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+            if = {
+                limit = {
+                    owner = {
+                        NOT = {
+                            tag = ROOT
+                        }
+                    }
+                }
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = ipe_plague.13
+						}
+						set_country_flag = spanish_plague_notification
+					}
+				}
+            }
+        }
+        213 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+            if = {
+                limit = {
+                    owner = {
+                        NOT = {
+                            tag = ROOT
+                            has_country_flag = spanish_plague_notification
+                        }
+                    }
+                }
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = ipe_plague.13
+						}
+						set_country_flag = spanish_plague_notification
+					}
+				}
+            }
+        }
+        220 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+            if = {
+                limit = {
+                    owner = {
+                        NOT = {
+                            tag = ROOT
+                            has_country_flag = spanish_plague_notification
+                        }
+                    }
+                }
+				hidden_effect = {
+					owner = {
+						country_event = {
+							id = ipe_plague.13
+						}
+						set_country_flag = spanish_plague_notification
+					}
+				}
+            }
+        }
+	}
+}
+
+# The Great Plague of Seville
+country_event = {
+    id = ipe_plague.13
+    title = ipe_plague.12.t
+    desc = ipe_plague.12.d
+    picture = PLAGUE_eventPicture
+
+    is_triggered_only = yes
+
+    immediate = {
+        clr_country_flag = spanish_plague_notification
+    }
+
+    option = { # Dark times befall us.
+        name = ipe_plague.12.a
+        add_stability = -1
+        tooltip = {
+            224 = { # Seville
+                add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            4546 = { # Málaga
+                add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            213 = { # Barcelona
+                  add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+            220 = { # València
+                 add_permanent_province_modifier = {
+                    name = peace_plague
+                    duration = 730
+                }
+            }
+        }
+    }
+}
+
+# The Plague of Amsterdam
+country_event = {
+    id = ipe_plague.14
+    title = ipe_plague.14.t
+    desc = ipe_plague.14.d
+    picture = PLAGUE_eventPicture
+    goto = 97
+
+    fire_only_once = yes
+
+    trigger = {
+        owns = 97 # Amsterdam 
+        97 = {
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+            development = 20
+        }
+        is_year = 1650
+        NOT = {
+            is_year = 1700
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.5
+            97 = {
+                devastation = 50
+            }
+        }
+        modifier = {
+            factor = 0.5
+            97 = {
+                has_province_modifier = peace_famine
+            }
+        }
+        modifier = {
+            factor = 0.5
+            97 = {
+                has_province_modifier = war_famine
+            }
+        }
+    }
+
+    option = { # We must brace ourselves.
+        name = ipe_plague.14.a
+        add_stability = -1
+        97 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+    }
+}
+
+# The Great Plague of Marseilles
+country_event = {
+    id = ipe_plague.15
+    title = ipe_plague.15.t
+    desc = ipe_plague.15.d
+    picture = PLAGUE_eventPicture
+    goto = 6196
+
+    fire_only_once = yes
+
+    trigger = {
+        owns = 6196 # Marseilles 
+        6196 = {
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+            development = 20
+        }
+        is_year = 1700
+        NOT = {
+            is_year = 1750
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.5
+            6196 = {
+                devastation = 50
+            }
+        }
+        modifier = {
+            factor = 0.5
+            6196 = {
+                has_province_modifier = peace_famine
+            }
+        }
+        modifier = {
+            factor = 0.5
+            6196 = {
+                has_province_modifier = war_famine
+            }
+        }
+    }
+
+    option = { # Get the doctors!
+        name = ipe_plague.15.a
+        add_stability = -1
+        6196 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+    }
+}
+
+# The Persian Plague
+country_event = {
+    id = ipe_plague.16
+    title = ipe_plague.16.t
+    desc = ipe_plague.16.d
+    picture = PLAGUE_eventPicture
+
+    fire_only_once = yes
+
+    major = yes
+
+    trigger = {
+		num_of_owned_provinces_with = {
+			value = 25
+			region = persia_region
+		}
+        is_year = 1750
+        NOT = {
+            is_year = 1800
+        }
+    }
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					region = persia_region
+					NOT = {
+						has_province_modifier = peace_plague
+						has_province_modifier = quarantined_plague
+					}
+				}
+				set_province_flag = persia_plague_1_flag
+			}
+			random_owned_province = {
+				limit = {
+					region = persia_region
+					NOT = {
+						has_province_modifier = peace_plague
+						has_province_modifier = quarantined_plague
+						has_province_flag = persia_plague_1_flag
+					}
+				}
+				set_province_flag = persia_plague_2_flag
+			}
+			random_owned_province = {
+				limit = {
+					region = persia_region
+					NOT = {
+						has_province_modifier = peace_plague
+						has_province_modifier = quarantined_plague
+						has_province_flag = persia_plague_1_flag
+						has_province_flag = persia_plague_2_flag
+					}
+				}
+				set_province_flag = persia_plague_3_flag
+			}
+			random_owned_province = {
+				limit = {
+					region = persia_region
+					NOT = {
+						has_province_modifier = peace_plague
+						has_province_modifier = quarantined_plague
+						has_province_flag = persia_plague_1_flag
+						has_province_flag = persia_plague_2_flag
+						has_province_flag = persia_plague_3_flag
+					}
+				}
+				set_province_flag = persia_plague_4_flag
+			}
+			random_owned_province = {
+				limit = {
+					region = persia_region
+					NOT = {
+						has_province_modifier = peace_plague
+						has_province_modifier = quarantined_plague
+						has_province_flag = persia_plague_1_flag
+						has_province_flag = persia_plague_2_flag
+						has_province_flag = persia_plague_3_flag
+						has_province_flag = persia_plague_4_flag
+					}
+				}
+				set_province_flag = persia_plague_5_flag
+			}
+		}
+	}
+
+	option = { # This is horrific...
+		name = ipe_plague.16.a
+		add_stability = -1
+		random_owned_province = {
+			limit = {
+				has_province_flag = persia_plague_1_flag
+			}
+			add_permanent_province_modifier = {
+				name = peace_plague
+				duration = 730
+			}
+			clr_province_flag = persia_plague_1_flag
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = persia_plague_2_flag
+			}
+			add_permanent_province_modifier = {
+				name = peace_plague
+				duration = 730
+			}
+			clr_province_flag = persia_plague_2_flag
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = persia_plague_3_flag
+			}
+			add_permanent_province_modifier = {
+				name = peace_plague
+				duration = 730
+			}
+			clr_province_flag = persia_plague_3_flag
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = persia_plague_4_flag
+			}
+			add_permanent_province_modifier = {
+				name = peace_plague
+				duration = 730
+			}
+			clr_province_flag = persia_plague_4_flag
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = persia_plague_5_flag
+			}
+			add_permanent_province_modifier = {
+				name = peace_plague
+				duration = 730
+			}
+			clr_province_flag = persia_plague_5_flag
+		}
+	}
+}
+
+# $MONARCH$'s Plague
+country_event = {
+    id = ipe_plague.17
+    title = ipe_plague.17.t
+    desc = ipe_plague.17.d
+    picture = PLAGUE_eventPicture
+    goto = 4531
+
+    fire_only_once = yes
+
+    trigger = {
+        owns = 4531 # Bucharest 
+        4531 = {
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+            development = 20
+        }
+        is_year = 1800
+    }
+
+    mean_time_to_happen = {
+        months = 120
+        modifier = {
+            factor = 0.5
+            4531 = {
+                devastation = 50
+            }
+        }
+        modifier = {
+            factor = 0.5
+            4531 = {
+                has_province_modifier = peace_famine
+            }
+        }
+        modifier = {
+            factor = 0.5
+            4531 = {
+                has_province_modifier = war_famine
+            }
+        }
+    }
+
+    option = { # This is a travesty!
+        name = ipe_plague.15.a
+        add_stability = -1
+        4531 = {
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+    }
+}
+
+# Cholera Epidemic
+province_event = {
+    id = ipe_plague.18
+    title = ipe_plague.18.t
+    desc = ipe_plague.18.d
+    picture = PLAGUE_eventPicture
+    goto = root
+
+    trigger = {
+        NOT = {
+            has_province_modifier = peace_plague
+            has_province_modifier = quarantined_plague
+        }
+        has_climate = tropical
+        OR = {
+            superregion = india_superregion
+            superregion = china_superregion
+            region = indo_china_region
+            region = malaya_region
+            region = khorasan_region
+            region = persia_region
+        }
+        is_year = 1800
+    }
+
+    mean_time_to_happen = {
+        months = 300
+        modifier = {
+            factor = 0.5
+            6196 = {
+                devastation = 50
+            }
+        }
+        modifier = {
+            factor = 0.5
+            6196 = {
+                has_province_modifier = peace_famine
+            }
+        }
+        modifier = {
+            factor = 0.5
+            6196 = {
+                has_province_modifier = war_famine
+            }
+        }
+    }
+
+    option = { # Terrible...
+        name = ipe_plague.18.a
+        add_permanent_province_modifier = {
+            name = peace_plague
+            duration = 730
+        }
+    }
+}
+
+# The Plague of War (Europe)
+country_event = {
+    id = ipe_plague.19
+    title = ipe_plague.19.t
+    desc = ipe_plague.19.d
+    picture = PLAGUE_eventPicture
+    goto = vector_province
+
+    trigger = {
+        any_known_country = {
+            war_with = ROOT
+            any_owned_province = {
+                num_of_units_in_province = {
+                    who = ROOT
+                    amount = 10
+                }
+                OR = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+                continent = europe
+            }
+        }
+        any_owned_province = {
+            continent = europe
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    immediate = {
+        hidden_effect = {
+            random_known_country = {
+                limit = {
+                    war_with = ROOT
+                }
+                random_owned_province = {
+                    limit = {
+                        num_of_units_in_province = {
+                            who = ROOT
+                            amount = 10
+                        }
+                        OR = {
+                            has_province_modifier = peace_plague
+                            has_province_modifier = quarantined_plague
+                        }
+                        continent = europe
+                    }
+					save_event_target_as = vector_province
+                }
+            }
+        }
+    }
+
+    option = { # It is a necessary cost of war.
+        name = ipe_plague.19.a
+        random_owned_province = {
+            limit = {
+                continent = europe
+                NOT = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+            }
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+    }
+}
+
+# The Plague of War (Asia)
+country_event = {
+    id = ipe_plague.20
+    title = ipe_plague.19.t
+    desc = ipe_plague.19.d
+    picture = PLAGUE_eventPicture
+    goto = vector_province
+
+    trigger = {
+        any_known_country = {
+            war_with = ROOT
+            any_owned_province = {
+                num_of_units_in_province = {
+                    who = ROOT
+                    amount = 10
+                }
+                OR = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+                continent = asia
+            }
+        }
+        any_owned_province = {
+            continent = asia
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    immediate = {
+        hidden_effect = {
+            random_known_country = {
+                limit = {
+                    war_with = ROOT
+                }
+                random_owned_province = {
+                    limit = {
+                        num_of_units_in_province = {
+                            who = ROOT
+                            amount = 10
+                        }
+                        OR = {
+                            has_province_modifier = peace_plague
+                            has_province_modifier = quarantined_plague
+                        }
+                        continent = asia
+                    }
+					save_event_target_as = vector_province
+                }
+            }
+        }
+    }
+
+    option = { # It is a necessary cost of war.
+        name = ipe_plague.19.a
+        random_owned_province = {
+            limit = {
+                continent = asia
+                NOT = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+            }
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+    }
+}
+
+# The Plague of War (Africa)
+country_event = {
+    id = ipe_plague.21
+    title = ipe_plague.19.t
+    desc = ipe_plague.19.d
+    picture = PLAGUE_eventPicture
+    goto = vector_province
+
+    trigger = {
+        any_known_country = {
+            war_with = ROOT
+            any_owned_province = {
+                num_of_units_in_province = {
+                    who = ROOT
+                    amount = 10
+                }
+                OR = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+                continent = africa
+            }
+        }
+        any_owned_province = {
+            continent = africa
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    immediate = {
+        hidden_effect = {
+            random_known_country = {
+                limit = {
+                    war_with = ROOT
+                }
+                random_owned_province = {
+                    limit = {
+                        num_of_units_in_province = {
+                            who = ROOT
+                            amount = 10
+                        }
+                        OR = {
+                            has_province_modifier = peace_plague
+                            has_province_modifier = quarantined_plague
+                        }
+                        continent = africa
+                    }
+					save_event_target_as = vector_province
+                }
+            }
+        }
+    }
+
+    option = { # It is a necessary cost of war.
+        name = ipe_plague.19.a
+        random_owned_province = {
+            limit = {
+                continent = africa
+                NOT = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+            }
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+    }
+}
+
+# The Plague of War (North America)
+country_event = {
+    id = ipe_plague.22
+    title = ipe_plague.19.t
+    desc = ipe_plague.19.d
+    picture = PLAGUE_eventPicture
+    goto = vector_province
+
+    trigger = {
+        any_known_country = {
+            war_with = ROOT
+            any_owned_province = {
+                num_of_units_in_province = {
+                    who = ROOT
+                    amount = 10
+                }
+                OR = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+                continent = north_america
+            }
+        }
+        any_owned_province = {
+            continent = north_america
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    immediate = {
+        hidden_effect = {
+            random_known_country = {
+                limit = {
+                    war_with = ROOT
+                }
+                random_owned_province = {
+                    limit = {
+                        num_of_units_in_province = {
+                            who = ROOT
+                            amount = 10
+                        }
+                        OR = {
+                            has_province_modifier = peace_plague
+                            has_province_modifier = quarantined_plague
+                        }
+                        continent = north_america
+                    }
+					save_event_target_as = vector_province
+                }
+            }
+        }
+    }
+
+    option = { # It is a necessary cost of war.
+        name = ipe_plague.19.a
+        random_owned_province = {
+            limit = {
+                continent = north_america
+                NOT = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+            }
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+    }
+}
+
+# The Plague of War (South America)
+country_event = {
+    id = ipe_plague.23
+    title = ipe_plague.19.t
+    desc = ipe_plague.19.d
+    picture = PLAGUE_eventPicture
+    goto = vector_province
+
+    trigger = {
+        any_known_country = {
+            war_with = ROOT
+            any_owned_province = {
+                num_of_units_in_province = {
+                    who = ROOT
+                    amount = 10
+                }
+                OR = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+                continent = south_america
+            }
+        }
+        any_owned_province = {
+            continent = south_america
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    immediate = {
+        hidden_effect = {
+            random_known_country = {
+                limit = {
+                    war_with = ROOT
+                }
+                random_owned_province = {
+                    limit = {
+                        num_of_units_in_province = {
+                            who = ROOT
+                            amount = 10
+                        }
+                        OR = {
+                            has_province_modifier = peace_plague
+                            has_province_modifier = quarantined_plague
+                        }
+                        continent = south_america
+                    }
+					save_event_target_as = vector_province
+                }
+            }
+        }
+    }
+
+    option = { # It is a necessary cost of war.
+        name = ipe_plague.19.a
+        random_owned_province = {
+            limit = {
+                continent = south_america
+                NOT = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+            }
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+    }
+}
+
+# The Plague of War (Oceania)
+country_event = {
+    id = ipe_plague.24
+    title = ipe_plague.19.t
+    desc = ipe_plague.19.d
+    picture = PLAGUE_eventPicture
+    goto = vector_province
+
+    trigger = {
+        any_known_country = {
+            war_with = ROOT
+            any_owned_province = {
+                num_of_units_in_province = {
+                    who = ROOT
+                    amount = 10
+                }
+                OR = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+                continent = oceania
+            }
+        }
+        any_owned_province = {
+            continent = oceania
+            NOT = {
+                has_province_modifier = peace_plague
+                has_province_modifier = quarantined_plague
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 60
+    }
+
+    immediate = {
+        hidden_effect = {
+            random_known_country = {
+                limit = {
+                    war_with = ROOT
+                }
+                random_owned_province = {
+                    limit = {
+                        num_of_units_in_province = {
+                            who = ROOT
+                            amount = 10
+                        }
+                        OR = {
+                            has_province_modifier = peace_plague
+                            has_province_modifier = quarantined_plague
+                        }
+                        continent = oceania
+                    }
+					save_event_target_as = vector_province
+                }
+            }
+        }
+    }
+
+    option = { # It is a necessary cost of war.
+        name = ipe_plague.19.a
+        random_owned_province = {
+            limit = {
+                continent = oceania
+                NOT = {
+                    has_province_modifier = peace_plague
+                    has_province_modifier = quarantined_plague
+                }
+            }
+            add_permanent_province_modifier = {
+                name = peace_plague
+                duration = 730
+            }
+        }
+    }
+}
+
+# $YEAR$ Rhodes Earthquake
+country_event = {
+	id = ipe_plague.25	
+	title = ipe_plague.25.t
+	desc = ipe_plague.25.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 227
+	
+	fire_only_once = yes
+
+	trigger = {
+		owns = 320 # Rhodes
+		is_year = 1450
+		NOT = {
+			is_year = 1500
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { # We must rebuild.
+		name = ipe_plague.25.a
+		320 = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+        3573 = { # Marmaris
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3572 = { # Finike
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        2298 = { # Tekke
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+	}
+
+    after = {
+        every_country = {
+            limit = {
+                OR = {
+                    owns = 3573
+                    owns = 3572
+                    owns = 2298
+                }
+                NOT = {
+                    tag = ROOT
+                }
+            }
+            country_event = {
+                id = ipe_plague.26
+            }
+        }
+    }
+}
+
+# $YEAR Rhodes Earthquake
+country_event = {
+    id = ipe_plague.26
+    title = ipe_plague.25.t
+    desc = ipe_plague.25.d
+    picture = EARTHQUAKE_eventPicture
+    goto = 227
+
+    is_triggered_only = yes
+
+    option = { # We must rebuild.
+        name = ipe_plague.25.a
+        tooltip = {
+            320 = {
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3573 = { # Marmaris
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3572 = { # Finike
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            2298 = { # Tekke
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+        }
+    }
+}
+
+# $YEAR$ Nankai Earthquake
+country_event = {
+    id = ipe_plague.27
+    title = ipe_plague.27.t
+    desc = ipe_plague.27.d
+    picture = EARTHQUAKE_eventPicture
+    goto = 4189 # Kamakura
+
+    fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+		owns = 4189 # Kamakura
+		is_year = 1475
+		NOT = {
+			is_year = 1525
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { # Amitabhaya.
+		name = ipe_plague.27.a
+        add_stability_or_adm_power = yes
+		4189 = { # Kamakura
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+        3108 = { # Odawara
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3304 = { # Izu
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        1839 = { # Suruga
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3309 = { # Totomi
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        4360 = { # Mikawa
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        6860 = { # Nagoya
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        1030 = { # Kiyosu
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3319 = { # Kameyama
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        4359 = { # Kiriyama
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        4187 = { # Kii
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        6853 = { # Tama
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        1028 = { # Musashi
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3325 = { # Koga
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        3302 = { # Kazusa
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+        6802 = { # Awa
+            add_devastation = 25
+            add_permanent_province_modifier = {
+                name = earthquake
+                duration = 730
+            }
+        }
+	}
+
+    after = {
+        every_country = {
+            limit = {
+                OR = {
+                    owns = 3108
+                    owns = 3304
+                    owns = 1839
+                    owns = 3309
+                    owns = 4360
+                    owns = 6860
+                    owns = 1030
+                    owns = 3319
+                    owns = 4359
+                    owns = 4187
+                    owns = 6853
+                    owns = 1028
+                    owns = 3325
+                    owns = 3302
+                    owns = 6802
+                }
+                NOT = {
+                    tag = ROOT
+                }
+            }
+            country_event = {
+                id = ipe_plague.28
+            }
+        }
+    }
+}
+
+# $YEAR$ Nankai Earthquake
+country_event = {
+    id = ipe_plague.28
+    title = ipe_plague.27.t
+    desc = ipe_plague.27.d
+    picture = EARTHQUAKE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # Amitabhaya.
+        name = ipe_plague.27.a
+        tooltip = {
+            4189 = { # Kamakura
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3108 = { # Odawara
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3304 = { # Izu
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            1839 = { # Suruga
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3309 = { # Totomi
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            4360 = { # Mikawa
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            6860 = { # Nagoya
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            1030 = { # Kiyosu
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3319 = { # Kameyama
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            4359 = { # Kiriyama
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            4187 = { # Kii
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            6853 = { # Tama
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            1028 = { # Musashi
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3325 = { # Koga
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            3302 = { # Kazusa
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            6802 = { # Awa
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+        }
+    }
+}
+
+# $YEAR$ Lisbon Earthquake
+country_event = {
+	id = ipe_plague.29
+	title = ipe_plague.29.t
+	desc = ipe_plague.29.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 227
+	
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 227 # Lisboa
+		is_year = 1500
+		NOT = {
+			is_year = 1550
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { # Pray for Lisbon.
+		name = ipe_plague.29.a
+		add_stability = -1
+		227 = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+		}
+		add_years_of_income = -0.5
+	}
+}
+
+# $YEAR$ Lo Mustang Earthquake
+country_event = {
+    id = ipe_plague.30
+    title = ipe_plague.30.t
+    desc = ipe_plague.30.d
+    picture = EARTHQUAKE_eventPicture
+    goto = 6836 # Lo Manthang
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 6836 # Lo Manthang
+		is_year = 1475
+		NOT = {
+			is_year = 1525
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # It is a catastrophe...
+		name = ipe_plague.30.a
+		add_stability = -1
+		nepal_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+        baisi_rajya_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+        eastern_nepal_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+	}
+
+	after = {
+		every_country = {
+			limit = {
+				any_owned_province = {
+                    OR = {
+                        area = nepal_area
+                        area = baisi_rajya_area
+                        area = eastern_nepal_area
+                    }
+					has_province_modifier = earthquake
+				}
+				NOT = {
+					tag = ROOT
+				}
+			}
+			country_event = {
+				id = ipe_plague.31
+			}
+		}
+	}
+}
+
+# $YEAR$ Lo Mustang Earthquake
+country_event = {
+    id = ipe_plague.31
+    title = ipe_plague.30.t
+    desc = ipe_plague.30.d
+    picture = EARTHQUAKE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # It is a catastrophe...
+        name = ipe_plague.30.a
+        add_stability = -1
+        tooltip = {
+            nepal_area = {
+                add_devastation = 50
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            baisi_rajya_area = {
+                add_devastation = 50
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            eastern_nepal_area = {
+                add_devastation = 50
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+        }
+    }
+}
+
+
+# $YEAR$ Sannio Earthquake
+country_event = {
+    id = ipe_plague.32
+    title = ipe_plague.32.t
+    desc = ipe_plague.32.d
+    picture = EARTHQUAKE_eventPicture
+
+    fire_only_once = yes
+
+	trigger = {
+		owns = 3780 # Benevento
+		is_year = 1675
+		NOT = {
+			is_year = 1725
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { # Pray for Benevento.
+		name = ipe_plague.32.a
+		3780 = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+            add_base_tax = -1
+            add_base_production = -1
+            add_base_manpower = -1
+		}
+	}
+}
+
+# $YEAR$ Sicily Earthquake
+country_event = {
+    id = ipe_plague.33
+    title = ipe_plague.33.t
+    desc = ipe_plague.33.d
+    picture = EARTHQUAKE_eventPicture
+    goto = 3795 # Catania
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 3795 # Catania
+		is_year = 1675
+		NOT = {
+			is_year = 1725
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # Pray for Catania.
+		name = ipe_plague.33.a
+		add_stability = -1
+		3795 = {
+			add_base_tax = -3
+			add_base_production = -3
+			add_base_manpower = -3
+		}
+		sicily_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+        calabria_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+	}
+
+	after = {
+		every_country = {
+			limit = {
+				any_owned_province = {
+                    OR = {
+                        area = sicily_area
+                        area = calabria_area
+                    }
+					has_province_modifier = earthquake
+				}
+				NOT = {
+					tag = ROOT
+				}
+			}
+			country_event = {
+				id = ipe_plague.34
+			}
+		}
+	}
+}
+
+# $YEAR$ Sicily Earthquake
+country_event = {
+    id = ipe_plague.34
+    title = ipe_plague.33.t
+    desc = ipe_plague.33.d
+    picture = EARTHQUAKE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # Pray for Catania.
+        name = ipe_plague.33.a
+        tooltip = {
+            3795 = {
+                add_base_tax = -3
+                add_base_production = -3
+                add_base_manpower = -3
+            }
+            sicily_area = {
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            calabria_area = {
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+        }
+    }
+}
+
+# $YEAR$ Linfen Earthquake
+country_event = {
+	id = ipe_plague.35
+	title = ipe_plague.35.t
+	desc = ipe_plague.35.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 694
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 694 # Linfen
+		is_year = 1675
+		NOT = {
+			is_year = 1725
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # Send relief immediately!
+		name = ipe_plague.35.a
+		add_stability = -1
+		694 = {
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+		}
+		south_shanxi_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
+	}
+
+	after = {
+		every_country = {
+			limit = {
+				any_owned_province = {
+                    area = south_shanxi_area
+					has_province_modifier = earthquake
+				}
+				NOT = {
+					tag = ROOT
+				}
+			}
+			country_event = {
+				id = ipe_plague.36
+			}
+		}
+	}
+}
+
+# The $YEAR$ Linfen Earthquake
+country_event = {
+    id = ipe_plague.36
+    title = ipe_plague.35.t
+    desc = ipe_plague.35.d
+    picture = EARTHQUAKE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # Send relief immediately!
+        name = ipe_plague.35.a
+        add_stability = -1
+        tooltip = {
+            694 = {
+                add_base_tax = -2
+                add_base_production = -2
+                add_base_manpower = -2
+            }
+            south_shanxi_area = {
+                add_devastation = 50
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+        }
+        if = {
+            limit = {
+                is_emperor_of_china = yes
+            }
+            add_mandate = -10
+        }
+    }
+}
+
+# $YEAR$ Algiers Earthquake
+country_event = {
+	id = ipe_plague.37
+	title = ipe_plague.37.t
+	desc = ipe_plague.37.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 338
+	
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+		owns = 338 # Algiers
+		is_year = 1700
+		NOT = {
+			is_year = 1750
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { # Algiers will be rebuilt.
+		name = ipe_plague.37.a
+        add_stability = -1
+		338 = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+		}
+	}
+}
+
+# $YEAR$ Tongwei-Gansu Earthquake
+country_event = {
+	id = ipe_plague.38
+	title = ipe_plague.38.t
+	desc = ipe_plague.38.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 699 # Lanzhou
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 699 # Lanzhou
+		is_year = 1700
+		NOT = {
+			is_year = 1750
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # We must help Gansu.
+		name = ipe_plague.38.a
+		add_stability = -1
+		699 = {
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+		}
+		gansu_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
+	}
+
+	after = {
+		every_country = {
+			limit = {
+				any_owned_province = {
+                    area = gansu_area
+					has_province_modifier = earthquake
+				}
+				NOT = {
+					tag = ROOT
+				}
+			}
+			country_event = {
+				id = ipe_plague.38
+			}
+		}
+	}
+}
+
+# $YEAR$ Tongwei-Gansu Earthquake
+country_event = {
+    id = ipe_plague.39
+    title = ipe_plague.38.t
+    desc = ipe_plague.38.d
+    picture = EARTHQUAKE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # We must help Gansu.
+        name = ipe_plague.38.a
+        add_stability = -1
+        tooltip = {
+            699 = {
+                add_base_tax = -2
+                add_base_production = -2
+                add_base_manpower = -2
+            }
+            gansu_area = {
+                add_devastation = 50
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+        }
+        if = {
+            limit = {
+                is_emperor_of_china = yes
+            }
+            add_mandate = -10
+        }
+    }
+}
+
+# $YEAR$ Tabriz Earthquake
+country_event = {
+	id = ipe_plague.40
+	title = ipe_plague.40.t
+	desc = ipe_plague.40.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 416
+	
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+		owns = 416 # Tabriz
+		is_year = 1700
+		NOT = {
+			is_year = 1750
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { # Tabriz will heal.
+		name = ipe_plague.40.a
+        add_stability = -1
+		416 = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+			add_base_tax = -5
+			add_base_production = -5
+			add_base_manpower = -5
+		}
+	}
+}
+
+# $YEAR$ Yinchuan-Pingluo Earthquake
+country_event = {
+	id = ipe_plague.41
+	title = ipe_plague.41.t
+	desc = ipe_plague.41.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 698 # Yinchuan
+
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+		owns = 698 # Yinchuan
+		is_year = 1725
+		NOT = {
+			is_year = 1775
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # We must help Ningxia.
+		name = ipe_plague.41.a
+		add_stability = -1
+		698 = {
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+		}
+		ningxia_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
+	}
+
+	after = {
+		every_country = {
+			limit = {
+				any_owned_province = {
+                    area = ningxia_area
+					has_province_modifier = earthquake
+				}
+				NOT = {
+					tag = ROOT
+				}
+			}
+			country_event = {
+				id = ipe_plague.42
+			}
+		}
+	}
+}
+
+# $YEAR$ Tongwei-Gansu Earthquake
+country_event = {
+    id = ipe_plague.42
+    title = ipe_plague.41.t
+    desc = ipe_plague.41.d
+    picture = EARTHQUAKE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # We must help Ningxia.
+        name = ipe_plague.41.a
+        add_stability = -1
+        tooltip = {
+            698 = {
+                add_base_tax = -2
+                add_base_production = -2
+                add_base_manpower = -2
+            }
+            ningxia_area = {
+                add_devastation = 50
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+        }
+        if = {
+            limit = {
+                is_emperor_of_china = yes
+            }
+            add_mandate = -10
+        }
+    }
+}
+
+# $YEAR$ Tabriz Earthquake
+country_event = {
+	id = ipe_plague.43
+	title = ipe_plague.40.t
+	desc = ipe_plague.43.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 416
+	
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+		owns = 416 # Tabriz
+		is_year = 1750
+		NOT = {
+			is_year = 1800
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { # The horror!
+		name = ipe_plague.43.a
+        add_stability = -1
+		416 = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+			add_base_tax = -5
+			add_base_production = -5
+			add_base_manpower = -5
+		}
+	}
+}
+
+# $YEAR$ Calabrian Earthquakes
+country_event = {
+    id = ipe_plague.44
+    title = ipe_plague.44.t
+    desc = ipe_plague.44.d
+    picture = EARTHQUAKE_eventPicture
+    goto = 124 # Messina
+
+	fire_only_once = yes
+
+	trigger = {
+		owns = 124 # Messina
+		is_year = 1750
+		NOT = {
+			is_year = 1800
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # We must help them.
+		name = ipe_plague.44.a
+		add_stability = -1
+		124 = {
+			add_base_tax = -3
+			add_base_production = -3
+			add_base_manpower = -3
+		}
+		sicily_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+        calabria_area = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+	}
+
+	after = {
+		every_country = {
+			limit = {
+				any_owned_province = {
+                    OR = {
+                        area = sicily_area
+                        area = calabria_area
+                    }
+					has_province_modifier = earthquake
+				}
+				NOT = {
+					tag = ROOT
+				}
+			}
+			country_event = {
+				id = ipe_plague.45
+			}
+		}
+	}
+}
+
+# $YEAR$ Calabrian Earthquakes
+country_event = {
+    id = ipe_plague.45
+    title = ipe_plague.44.t
+    desc = ipe_plague.44.d
+    picture = EARTHQUAKE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # We must help them.
+        name = ipe_plague.44.a
+        tooltip = {
+            124 = {
+                add_base_tax = -3
+                add_base_production = -3
+                add_base_manpower = -3
+            }
+            sicily_area = {
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            calabria_area = {
+                add_devastation = 25
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+        }
+    }
+}
+
+# $YEAR$ Kangding-Luding Earthquake
+country_event = {
+	id = ipe_plague.46
+	title = ipe_plague.46.t
+	desc = ipe_plague.46.d
+	picture = EARTHQUAKE_eventPicture
+	goto = 4213 # Luzhou
+
+	fire_only_once = yes
+
+    major = yes
+
+	trigger = {
+		owns = 4213 # Luzhou
+		is_year = 1750
+		NOT = {
+			is_year = 1800
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # This is not good.
+		name = ipe_plague.46.a
+		add_stability = -1
+		4213 = {
+			add_base_tax = -2
+			add_base_production = -2
+			add_base_manpower = -2
+		}
+        chuannan_area = {
+			add_devastation = 50
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+        sichuan_area = {
+			add_devastation = 10
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+        678 = {
+			add_devastation = 10
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		if = {
+			limit = {
+				is_emperor_of_china = yes
+			}
+			add_mandate = -10
+		}
+	}
+
+	after = {
+		every_country = {
+			limit = {
+				any_owned_province = {
+                    OR = {
+                        area = chuannan_area
+                        area = sichuan_area
+                        province_id = 678
+                    }
+					has_province_modifier = earthquake
+				}
+				NOT = {
+					tag = ROOT
+				}
+			}
+			country_event = {
+				id = ipe_plague.47
+			}
+		}
+	}
+}
+
+# $YEAR$ Kangding-Luding Earthquake
+country_event = {
+    id = ipe_plague.47
+    title = ipe_plague.46.t
+    desc = ipe_plague.46.d
+    picture = EARTHQUAKE_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # This is not good.
+        name = ipe_plague.46.a
+        add_stability = -1
+        tooltip = {
+            4213 = {
+                add_base_tax = -2
+                add_base_production = -2
+                add_base_manpower = -2
+            }
+            chuannan_area = {
+                add_devastation = 50
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            sichuan_area = {
+                add_devastation = 10
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+            678 = {
+                add_devastation = 10
+                add_permanent_province_modifier = {
+                    name = earthquake
+                    duration = 730
+                }
+            }
+        }
+        if = {
+            limit = {
+                is_emperor_of_china = yes
+            }
+            add_mandate = -10
+        }
+    }
+}

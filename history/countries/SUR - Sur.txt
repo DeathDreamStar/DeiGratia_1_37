@@ -1,0 +1,82 @@
+government = monarchy
+add_government_reform = indian_sultanate_reform
+technology_group = indian
+religion = sunni
+primary_culture = bihari # rulers were afghani
+capital = 4469 #Rohtas
+religious_school = hanafi_school
+government_rank = 3
+
+#Suri Dynasty
+
+1538.1.1 = {
+	monarch = {
+		name = "Sher Shah"
+		dynasty = "Suri"
+		culture = afghani
+		ADM = 6
+		DIP = 4
+		MIL = 6
+		leader = {	name = "Sher Shah"	type = general	fire = 5	shock = 5	manuever = 5	siege = 3}
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = conqueror_personality
+	add_ruler_personality = lawgiver_personality
+	add_ruler_personality = strict_personality
+	add_government_reform = mughal_government
+}
+
+1538.4.1 = {
+	heir = {
+		name = "Islam Shah"
+		monarch_name = "Islam Shah"
+		culture = afghani
+		dynasty = "Suri"
+		birth_date = 1510.1.1
+		death_date = 1545.4.23
+		claim = 95
+		ADM = 2
+		DIP = 2
+		MIL = 3
+	}
+}
+
+1545.5.22 = {
+	monarch = {
+		name = "Islam Shah"
+		dynasty = "Suri"
+		culture = afghani
+		ADM = 2
+		DIP = 2
+		MIL = 3
+	}
+}
+
+1545.5.23 = {
+	heir = {
+		name = "Shams ud-Din Muhammad"
+		monarch_name = "Shams ud-Din Muhammad"
+		dynasty = "Suri"
+		culture = afghani
+		birth_date = 1520.1.1
+		death_date = 1555.1.1
+		claim = 45
+		ADM = 3
+		DIP = 3
+		MIL = 1
+	}
+}
+
+1553.1.1 = {
+	monarch = {
+		name = "Shams ud-Din Muhammad"
+		dynasty = "Suri"
+		culture = afghani
+		ADM = 3
+		DIP = 3
+		MIL = 1
+	}
+	remove_accepted_culture = panjabi
+	remove_accepted_culture = avadhi
+	remove_accepted_culture = kanauji
+}

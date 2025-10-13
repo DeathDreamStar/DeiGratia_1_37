@@ -1,0 +1,5 @@
+union_of_the_crowns = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}

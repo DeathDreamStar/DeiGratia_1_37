@@ -1,0 +1,151 @@
+country_decisions = {
+
+	habsburg_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			was_never_german_regional_tag_trigger = yes
+			NOT = { has_country_flag = formed_austria_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			primary_culture = austrian
+			NOT = { tag = HAB }
+			OR = {
+				NOT = { exists = HAB }
+				ai = no
+			}
+			NOT = {
+				has_ruler = "Ladislaus Postumus"
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 134
+				AND = {
+					culture = austrian
+					continent = europe
+					root = {
+						NOT = {
+							num_of_owned_provinces_with = {
+								value = 6
+								is_core = root
+								culture = austrian
+								continent = europe
+							}
+						}
+						owns_core_province = 134
+					}
+				}
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			NOT = { exists = HAB }
+			OR = {
+				tag = AUT
+				NOT = {
+					exists = AUT
+				}
+			}
+			has_regency = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no			
+			is_at_war = no
+			owns = 134
+			num_of_owned_provinces_with = {
+				value = 6
+				is_core = root
+				culture = austrian
+				continent = europe
+			}
+		}
+		effect = {
+			change_tag = HAB
+			if = {
+				limit = {
+					government = monarchy
+				}
+				add_government_reform = austrian_archduchy_reform
+			}
+			add_prestige = 25
+			add_legitimacy = 25
+			austria_proper_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = HAB
+			}
+			upper_austria_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = HAB
+			}
+			inner_austria_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = HAB
+			}
+			tirol_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = HAB
+			}
+			carinthia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = HAB
+			}
+			western_carniola_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = HAB
+			}
+			HAB = {
+				set_capital = 134
+			}
+			swap_non_generic_missions = yes
+			set_country_flag = formed_austria_flag
+
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			every_province = {
+				limit = {
+					is_core = STY
+				}
+				add_core = ROOT
+			}
+			every_province = {
+				limit = {
+					is_core = TIR
+				}
+				add_core = ROOT
+			}
+			every_province = {
+				limit = {
+					is_core = AUT
+				}
+				add_core = ROOT
+				remove_core = AUT
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

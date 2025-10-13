@@ -1,0 +1,16 @@
+government = tribal
+add_government_reform = tribal_federation
+primary_culture = mauritanian
+religion = sunni
+technology_group = muslim
+capital = 6344 # Ouadane
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Gwafa"
+		dynasty = "Maqil"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

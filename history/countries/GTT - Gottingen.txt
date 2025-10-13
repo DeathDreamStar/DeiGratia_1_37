@@ -1,0 +1,55 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = eastphalian
+religion = catholic
+capital = 4773 # Gottingen
+fixed_capital = 4773
+
+
+1432.1.1 = {
+	monarch = {
+		name = "Otto II"
+		dynasty = "von Welf"
+		birth_date = 1394.1.1
+		dip = 2
+		adm = 2
+		mil = 2
+	}
+}
+
+1463.1.1 = {
+	monarch = {
+		name = "Wilhelm"
+		dynasty = "von Welf"
+		DIP = 3
+		ADM = 3
+		MIL = 3
+	}
+	heir = {
+		name = "Wilhelm"
+		monarch_name = "Wilhelm II"
+		dynasty = "von Welf"
+		birth_date = 1425.1.1
+		death_date = 1503.7.7
+		claim = 95
+		ADM = 3
+		DIP = 3
+		MIL = 3
+	}
+} #PU with Calenberg
+
+1473.1.1 = {
+	monarch = {
+		name = "Wilhelm II"
+		dynasty = "von Welf"
+		DIP = 3
+		ADM = 3
+		MIL = 3
+	}
+} #Still PU with Calenberg
+
+#1482 PU with Braunschweig
+
+#1495 Erbteilung that cemented Calenberg-Göttingen, Göttingen vanishes from the map

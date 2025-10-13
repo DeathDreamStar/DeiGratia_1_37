@@ -1,0 +1,16 @@
+name = "Tahirid Conquest of Lahij"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 6039
+}
+
+1443.1.1 = {
+	add_attacker = ADE
+	add_defender = RSU
+}
+
+1444.1.1 = {
+	rem_attacker = ADE
+	rem_defender = RSU
+}

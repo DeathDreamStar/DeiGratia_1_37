@@ -1,0 +1,42 @@
+refused_henrician_articles = {
+	global_unrest = 10
+	manpower_recovery_speed = -0.25
+}
+
+admin_pact = {
+	adm_tech_cost_modifier = -0.05
+	dip_tech_cost_modifier = 0.05
+	mil_tech_cost_modifier = 0.05
+	stability_cost_modifier = -0.1
+}
+
+dip_pact = {
+	dip_tech_cost_modifier = -0.05
+	adm_tech_cost_modifier = 0.05
+	mil_tech_cost_modifier = 0.05
+	diplomatic_upkeep = 1
+}
+
+mil_pact = {
+	mil_tech_cost_modifier = -0.05
+	adm_tech_cost_modifier = 0.05
+	dip_tech_cost_modifier = 0.05
+	manpower_recovery_speed = 0.15
+}
+
+liberum_veto = {
+	war_exhaustion_cost = 0.5
+	inflation_action_cost = 0.5
+}
+
+teutonic_hre_lands = {
+	global_tax_income = 5
+}
+
+baltic_ambition = {
+	global_own_trade_power = 0.20
+}
+
+bohemian_interregnum = {
+	heir_chance = -10
+}

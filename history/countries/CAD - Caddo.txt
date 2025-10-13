@@ -1,0 +1,24 @@
+government = native
+government_rank = 1
+add_government_reform = indigenous_society
+primary_culture = caddo
+religion = totemism
+technology_group = north_american
+capital = 894 # Kadohadacho
+
+federation = { 
+	name = "caddo_federation_name" 
+	members = { HNI NTC }
+}
+
+
+
+1444.11.11 = {
+	monarch = {
+		name = "Native Council"
+		adm = 3
+		dip = 3
+		mil = 3
+		regent = yes
+	}
+}

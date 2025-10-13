@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+technology_group = eastern
+religion = orthodox
+primary_culture = russian
+capital = 4249
+fixed_capital = 4249
+
+#Princes of Zubtsov
+1426.1.1 = {
+	monarch = {
+		name = "Ivan I"
+		dynasty = "Rurik"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+#done 1460.1.1

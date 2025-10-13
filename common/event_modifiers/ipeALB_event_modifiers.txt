@@ -1,0 +1,9 @@
+# The Treaty of Gaeta
+treaty_of_gaeta = {
+    manpower_recovery_speed = 0.1
+}
+
+# Dishonored the Treaty of Gaeta
+broke_treaty_of_gaeta = {
+    diplomatic_reputation = -1
+}

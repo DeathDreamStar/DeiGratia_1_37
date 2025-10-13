@@ -1,0 +1,42 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = english
+add_accepted_culture = welsh
+religion = catholic
+capital = 241
+fixed_capital = 241
+
+1439.1.25 = {
+	monarch = {
+		name = "Henry"
+		dynasty = "de Beauchamp"
+		birth_date = 1425.3.22
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+	queen = {
+		name = "Cecily"
+		dynasty = "Neville"
+		country_of_origin = ENG
+		female = yes
+		birth_date = 1425.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1444.2.14 = {
+	heir = {
+		name = "Anne"
+		dynasty = "de Beauchamp"
+		female = yes
+		birth_date = 1444.2.14
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

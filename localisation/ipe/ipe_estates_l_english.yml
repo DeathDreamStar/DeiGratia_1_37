@@ -1,0 +1,90 @@
+﻿l_english:
+ # Janissaries
+ estate_janissaries: "Janissaries"
+ estate_janissaries_desc: "This estate represents the Janissary caste, an elite military unit originating in the Ottoman Empire which was instituted through the devshirme system of child slavery, by which young Christian boys were forcibly taken from their families, enslaved and converted to Islam, and incorporated into the Ottoman army.\n\nThey became famed for internal cohesion cemented by strict discipline and order. Unlike typical slaves, they are paid regular salaries. Forbidden to marry before the age of 40 or engage in trade, their complete loyalty to the Sultan is expected."
+ estate_janissaries_ownership: "Janissaries Land Ownership"
+ janissaries_loyalty_modifier: "Janissaries Loyalty Equilibrium"
+ janissaries_influence_modifier: "Janissaries Influence"
+
+ EST_VAL_HIGH_JANISSARY_PERCENTAGE_INF: "Has Janissary units comprising at least 50% of the force limit: §Y$VAL$%§!"
+ EST_VAL_MEDIUM_JANISSARY_PERCENTAGE_INF: "Has Janissary units comprising at least 25% of the force limit: §Y$VAL$%§!"
+ EST_VAL_LOW_JANISSARY_PERCENTAGE_INF: "Has Janissary units comprising at least 10% of the force limit: §Y$VAL$%§!"
+ EST_VAL_VERY_LOW_JANISSARY_PERCENTAGE_INF: "Has Janissary units comprising less than 10% of the force limit: §Y$VAL$%§!"
+
+ EST_VAL_EMPLOYED_ARMY_REFORMER: "Has Army Reformer advisor: §R$VAL$§!"
+ EST_VAL_HIGH_CAVALRY_FRACTION_LOY: "Has Cavalry units comprising at least 50% of the force limit: §R$VAL$§!"
+ EST_VAL_MEDIUM_CAVALRY_FRACTION_LOY: "Has Cavalry units comprising at least 25% of the force limit: §R$VAL$§!"
+ EST_VAL_HIGH_JANISSARY_PERCENTAGE_LOY: "Has Janissary units comprising at least 50% of the force limit: §G$VAL$§!"
+ EST_VAL_MEDIUM_JANISSARY_PERCENTAGE_LOY: "Has Janissary units comprising at least 25% of the force limit: §G$VAL$§!"
+ EST_VAL_VERY_LOW_JANISSARY_PERCENTAGE_LOY: "Has Janissary units comprising less than 10% of the force limit: §R$VAL$§!"
+ EST_VAL_MEDIUM_MAINTENANCE: "Land maintenance under 75%: §R$VAL$§!"
+ EST_VAL_LOW_MAINTENANCE: "Land maintenance under 50%: §R$VAL$§!"
+
+ estate_janissaries_develop_x: "Increase Manpower in [agenda_province.GetName]"
+ estate_janissaries_develop_x_desc: "The Janissaries request that we invest in the prosperity of their lands in [agenda_province.GetName]."
+ estate_janissaries_build_army_building_in_y: "Expand Military Infrastructure in [agenda_province.GetName]"
+ estate_janissaries_build_army_building_in_y_desc: "The Janissaries of [agenda_province.GetName] urge us to build new army training and recruitment centers in the province so that our supply of high-quality recruits to the army may be made more secure."
+ estate_janissaries_build_fort_building_in_y: "Fortify [agenda_province.GetName]"
+ estate_janissaries_build_fort_building_in_y_desc: "The Janissaries call for us to strengthen our fortifications in [agenda_province.GetName]. They argue that it is imperative we protect this key strategic position from attack."
+ estate_janissaries_build_an_army: "Build an Army for our Nation"
+ estate_janissaries_build_an_army_desc: "The Janissaries consider our army to be an embarrassment to our nation. They urgently call for it to be expanded, so that our forces may present sufficient deterrence to enemies that may covet our lands."
+ estate_janissaries_bigger_army_than_rival: "Protect against [agenda_country.GetUsableName]"
+ estate_janissaries_bigger_army_than_rival_desc: "The Janissaries are worried that our army would fare poorly against the [agenda_country.GetAdjective] in a war. They insist that we must increase our recruitment so that our armed forces are no longer outmatched by our rivals."
+ estate_janissaries_hire_advisor: "Hire a Military Advisor"
+ estate_janissaries_hire_advisor_desc: "The Janissaries desire the [Root.Monarch.GetTitle] to hire a new military advisor."
+ estate_janissaries_fire_advisor: "Fire our Military Advisor"
+ estate_janissaries_fire_advisor_desc: "[Root.Mil_Advisor.GetTitle] [Root.Mil_Advisor.GetName] has insulted the Janissaries. They demand that we fire [Root.Mil_Advisor.GetHerHim]!"
+ estate_janissaries_expand_into_x: "Expand into [agenda_province.GetAreaName]"
+ estate_janissaries_expand_into_x_desc: "The Janissaries have been casting a jealous eye on [agenda_province.GetAreaName], an area they claim would make a fine addition to our nation. They call for a military campaign to secure part of it for ourselves."
+ estate_janissaries_complete_conquest_of_x: "Complete the Conquest of [agenda_province.GetAreaName]"
+ estate_janissaries_complete_conquest_of_x_desc: "The Janissaries see [agenda_province.GetAreaName] as an integral part of [Root.GetUsableName] and resent the fact that it is not entirely our own. They exhort us to secure the rest of the area for ourselves!"
+
+ local_janissaries_displeased: "Local Janissaries Displeased"
+
+ estate_privileges_and_agendas_events.3.l: "The Proposal of the Janissaries"
+
+ # Dhimmi
+ EST_VAL_EMPLOYED_INQUISITOR: "Has Inquisitor advisor"
+
+ # Mamluks
+ estate_mamluks: "Mamluks"
+ estate_mamluks_desc: "This estate represents the Mamluk caste, members of one of the armies of slaves established during the Abbasid era, which later won political control of several Muslim states. Typically of foreign extraction, the Mamluks form a distinct military and political class, and through their martial skills and ruthlessness, they have been able to become powerful assets, as well as wealthy landowners. Their reputation for rebelliousness and infighting makes others quite wary of their influence."
+ estate_mamluks_ownership: "Mamluks Land Ownership"
+ mamluks_loyalty_modifier: "Mamluks Loyalty Equilibrium"
+ mamluks_influence_modifier: "Mamluks Influence"
+
+ EST_VAL_HIGH_CAVALRY_FRACTION_INF: "Has Cavalry units comprising at least 50% of the force limit: §Y$VAL$%§!"
+ EST_VAL_MEDIUM_CAVALRY_FRACTION_INF: "Has Cavalry units comprising at least 25% of the force limit: §Y$VAL$%§!"
+ EST_VAL_LOW_CAVALRY_FRACTION_INF: "Has Cavalry units comprising at least 10% of the force limit: §Y$VAL$%§!"
+ EST_VAL_VERY_LOW_CAVALRY_FRACTION_INF: "Has Cavalry units comprising less than 10% of the force limit: §Y$VAL$%§!"
+ 
+ EST_VAL_HIGH_CAVALRY_FRACTION_MAM_LOY: "Has Cavalry units comprising at least 50% of the force limit: §G$VAL$§!"
+ EST_VAL_MEDIUM_CAVALRY_FRACTION_MAM_LOY: "Has Cavalry units comprising at least 25% of the force limit: §G$VAL$§!"
+ EST_VAL_VERY_LOW_CAVALRY_FRACTION_MAM_LOY: "Has Cavalry units comprising less than 10% of the force limit: §R$VAL$§!"
+
+ estate_mamluks_develop_x: "Increase Manpower in [agenda_province.GetName]"
+ estate_mamluks_develop_x_desc: "The Mamluks request that we invest in the prosperity of their lands in [agenda_province.GetName]."
+ estate_mamluks_build_army_building_in_y: "Expand Military Infrastructure in [agenda_province.GetName]"
+ estate_mamluks_build_army_building_in_y_desc: "The Mamluks of [agenda_province.GetName] urge us to build new army training and recruitment centers in the province so that our supply of high-quality recruits to the army may be made more secure."
+ estate_mamluks_build_fort_building_in_y: "Fortify [agenda_province.GetName]"
+ estate_mamluks_build_fort_building_in_y_desc: "The Mamluks call for us to strengthen our fortifications in [agenda_province.GetName]. They argue that it is imperative we protect this key strategic position from attack."
+ estate_mamluks_build_an_army: "Build an Army for our Nation"
+ estate_mamluks_build_an_army_desc: "The Mamluks consider our army to be an embarrassment to our nation. They urgently call for it to be expanded, so that our forces may present sufficient deterrence to enemies that may covet our lands."
+ estate_mamluks_bigger_army_than_rival: "Protect against [agenda_country.GetUsableName]"
+ estate_mamluks_bigger_army_than_rival_desc: "The Mamluks are worried that our army would fare poorly against the [agenda_country.GetAdjective] in a war. They insist that we must increase our recruitment so that our armed forces are no longer outmatched by our rivals."
+ estate_mamluks_hire_advisor: "Hire a Military Advisor"
+ estate_mamluks_hire_advisor_desc: "The Mamluks desire the [Root.Monarch.GetTitle] to hire a new military advisor."
+ estate_mamluks_fire_advisor: "Fire our Military Advisor"
+ estate_mamluks_fire_advisor_desc: "[Root.Mil_Advisor.GetTitle] [Root.Mil_Advisor.GetName] has insulted the Mamluks. They demand that we fire [Root.Mil_Advisor.GetHerHim]!"
+ estate_mamluks_expand_into_x: "Expand into [agenda_province.GetAreaName]"
+ estate_mamluks_expand_into_x_desc: "The Mamluks have been casting a jealous eye on [agenda_province.GetAreaName], an area they claim would make a fine addition to our nation. They call for a military campaign to secure part of it for ourselves."
+ estate_mamluks_complete_conquest_of_x: "Complete the Conquest of [agenda_province.GetAreaName]"
+ estate_mamluks_complete_conquest_of_x_desc: "The Mamluks see [agenda_province.GetAreaName] as an integral part of [Root.GetUsableName] and resent the fact that it is not entirely our own. They exhort us to secure the rest of the area for ourselves!"
+
+ local_mamluks_displeased: "Local Mamluks Displeased"
+
+ estate_privileges_and_agendas_events.3.m: "The Proposal of the Mamluks"
+
+ # Nomadic Tribes
+ estate_qizilbash: "Qizilbash"
+ estate_cumans: "Cumans"

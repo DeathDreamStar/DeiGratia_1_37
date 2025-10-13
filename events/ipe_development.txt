@@ -1,0 +1,6808 @@
+namespace = ipe_development
+
+# Farmlands (Base Tax)
+province_event = {
+    id = ipe_development.1
+    title = ipe_development.1.t
+    desc = ipe_development.1.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = farmlands
+            has_terrain = urban_vienna
+            has_terrain = urban_linz
+            has_terrain = urban_hanseatic
+            has_terrain = urban_brugge
+            has_terrain = urban_antwerp
+            has_terrain = urban_amsterdam
+            has_terrain = urban_denbosch
+            has_terrain = urban_gelre
+            has_terrain = urban_utrecht
+            has_terrain = urban_den_haag
+            has_terrain = urban_brussel
+            has_terrain = urban_hamburg
+            has_terrain = urban_munich
+            has_terrain = urban_heidelberg
+            has_terrain = urban_augsburg
+            has_terrain = urban_ingolstadt
+            has_terrain = urban_landshut
+            has_terrain = urban_mainz
+            has_terrain = urban_nuernberg
+            has_terrain = urban_regensburg
+            has_terrain = urban_straubing
+            has_terrain = urban_stuttgart
+            has_terrain = urban_swabian_hall
+            has_terrain = urban_ulm
+            has_terrain = urban_memmingen
+            has_terrain = urban_dessau
+            has_terrain = urban_kleve
+            has_terrain = urban_luebeck
+            has_terrain = urban_muenster
+            has_terrain = urban_magdeburg
+            has_terrain = urban_bremen
+            has_terrain = urban_frankfurt
+            has_terrain = urban_koeln
+            has_terrain = urban_danzig
+            has_terrain = urban_marienburg
+            has_terrain = urban_praga
+            has_terrain = urban_breslau
+            has_terrain = urban_pilsen
+            has_terrain = urban_copenhagen
+            has_terrain = urban_stockholm
+            has_terrain = urban_london
+            has_terrain = urban_edinborough
+            has_terrain = urban_oxford
+            has_terrain = urban_nottingham
+            has_terrain = urban_salisbury
+            has_terrain = urban_york
+            has_terrain = urban_lincoln
+            has_terrain = urban_kent
+            has_terrain = urban_paris
+            has_terrain = urban_marseille
+            has_terrain = urban_kiev
+            has_terrain = urban_lwow
+            has_terrain = urban_warsaw
+            has_terrain = urban_lublin
+            has_terrain = urban_cracow
+            has_terrain = urban_budapest
+            has_terrain = urban_milano
+            has_terrain = urban_mantua
+            has_terrain = urban_siena
+            has_terrain = urban_pisa
+            has_terrain = urban_rome
+            has_terrain = urban_naples
+            has_terrain = urban_verona
+            has_terrain = urban_thessaloniki
+            has_terrain = urban_athens
+            has_terrain = urban_constantinople
+            has_terrain = urban_lisboa
+            has_terrain = urban_porto
+            has_terrain = pyramids
+            has_terrain = urban_cairo
+            has_terrain = urban_alexandria
+            has_terrain = 1beijing
+            has_terrain = 2nanjing
+            has_terrain = 3guangzhou
+            has_terrain = 4hangzhou
+            has_terrain = 5xian
+            has_terrain = 6chengdu
+            has_terrain = 7wuchang
+            has_terrain = 8xiangyang
+            has_terrain = 10yangzhou
+            has_terrain = 12luoyang
+            has_terrain = 13nanchang
+            has_terrain = 14jinan
+            has_terrain = 15hefei
+            has_terrain = 16shaoxing
+            has_terrain = kyoto
+            has_terrain = 22kaifeng
+            has_terrain = 29changsha
+            has_terrain = 30suzhou
+            has_terrain = 31huaian
+            has_terrain = 672wulin
+            has_terrain = 680chongqing
+            has_terrain = 690qingzhou
+            has_terrain = 692huaiqing
+            has_terrain = 695hejian
+            has_terrain = 696baoding
+            has_terrain = naniwa
+            has_terrain = kawagoe
+            has_terrain = kiyosu
+            has_terrain = 2137daming
+            has_terrain = 2138wuding
+            has_terrain = 2139laizhou
+            has_terrain = 2140yanzhou
+            has_terrain = 2141xuzhou
+            has_terrain = 2143fengyang
+            has_terrain = 2144fuyang
+            has_terrain = 2145zhenjiang
+            has_terrain = 2149ningbo
+            has_terrain = 2151poyang
+            has_terrain = 2172jingzhou
+            has_terrain = 2175runing
+            has_terrain = 2176shangqiu
+            has_terrain = 4194yongping
+            has_terrain = 4195zhending
+            has_terrain = 4196haizhou
+            has_terrain = 4197huangzhou
+            has_terrain = 4212jiazhou
+            has_terrain = 4213luzhou
+            has_terrain = kiriyama
+            has_terrain = okazaki
+            has_terrain = sakura
+            has_terrain = aizu
+            has_terrain = Hwangju
+            has_terrain = Hanseong
+            has_terrain = Cheongju
+            has_terrain = DongKinh
+            has_terrain = Ayutthaya
+            has_terrain = urban_damietta
+            has_terrain = urban_nilefayyum
+            has_terrain = urban_baghdad
+            has_terrain = urban_delhi
+            has_terrain = urban_dhaka
+            has_terrain = urban_gingee
+            has_terrain = urban_gird
+            has_terrain = urban_jaunpur
+            has_terrain = urban_lahore
+            has_terrain = urban_lucknow
+            has_terrain = urban_multan
+            has_terrain = urban_groeningen
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 900
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.1.a
+    }
+}
+
+# Farmlands (Base Production)
+province_event = {
+    id = ipe_development.2
+    title = ipe_development.2.t
+    desc = ipe_development.2.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = farmlands
+            has_terrain = urban_vienna
+            has_terrain = urban_linz
+            has_terrain = urban_hanseatic
+            has_terrain = urban_brugge
+            has_terrain = urban_antwerp
+            has_terrain = urban_amsterdam
+            has_terrain = urban_denbosch
+            has_terrain = urban_gelre
+            has_terrain = urban_utrecht
+            has_terrain = urban_den_haag
+            has_terrain = urban_brussel
+            has_terrain = urban_hamburg
+            has_terrain = urban_munich
+            has_terrain = urban_heidelberg
+            has_terrain = urban_augsburg
+            has_terrain = urban_ingolstadt
+            has_terrain = urban_landshut
+            has_terrain = urban_mainz
+            has_terrain = urban_nuernberg
+            has_terrain = urban_regensburg
+            has_terrain = urban_straubing
+            has_terrain = urban_stuttgart
+            has_terrain = urban_swabian_hall
+            has_terrain = urban_ulm
+            has_terrain = urban_memmingen
+            has_terrain = urban_dessau
+            has_terrain = urban_kleve
+            has_terrain = urban_luebeck
+            has_terrain = urban_muenster
+            has_terrain = urban_magdeburg
+            has_terrain = urban_bremen
+            has_terrain = urban_frankfurt
+            has_terrain = urban_koeln
+            has_terrain = urban_danzig
+            has_terrain = urban_marienburg
+            has_terrain = urban_praga
+            has_terrain = urban_breslau
+            has_terrain = urban_pilsen
+            has_terrain = urban_copenhagen
+            has_terrain = urban_stockholm
+            has_terrain = urban_london
+            has_terrain = urban_edinborough
+            has_terrain = urban_oxford
+            has_terrain = urban_nottingham
+            has_terrain = urban_salisbury
+            has_terrain = urban_york
+            has_terrain = urban_lincoln
+            has_terrain = urban_kent
+            has_terrain = urban_paris
+            has_terrain = urban_marseille
+            has_terrain = urban_kiev
+            has_terrain = urban_lwow
+            has_terrain = urban_warsaw
+            has_terrain = urban_lublin
+            has_terrain = urban_cracow
+            has_terrain = urban_budapest
+            has_terrain = urban_milano
+            has_terrain = urban_mantua
+            has_terrain = urban_siena
+            has_terrain = urban_pisa
+            has_terrain = urban_rome
+            has_terrain = urban_naples
+            has_terrain = urban_verona
+            has_terrain = urban_thessaloniki
+            has_terrain = urban_athens
+            has_terrain = urban_constantinople
+            has_terrain = urban_lisboa
+            has_terrain = urban_porto
+            has_terrain = pyramids
+            has_terrain = urban_cairo
+            has_terrain = urban_alexandria
+            has_terrain = 1beijing
+            has_terrain = 2nanjing
+            has_terrain = 3guangzhou
+            has_terrain = 4hangzhou
+            has_terrain = 5xian
+            has_terrain = 6chengdu
+            has_terrain = 7wuchang
+            has_terrain = 8xiangyang
+            has_terrain = 10yangzhou
+            has_terrain = 12luoyang
+            has_terrain = 13nanchang
+            has_terrain = 14jinan
+            has_terrain = 15hefei
+            has_terrain = 16shaoxing
+            has_terrain = kyoto
+            has_terrain = 22kaifeng
+            has_terrain = 29changsha
+            has_terrain = 30suzhou
+            has_terrain = 31huaian
+            has_terrain = 672wulin
+            has_terrain = 680chongqing
+            has_terrain = 690qingzhou
+            has_terrain = 692huaiqing
+            has_terrain = 695hejian
+            has_terrain = 696baoding
+            has_terrain = naniwa
+            has_terrain = kawagoe
+            has_terrain = kiyosu
+            has_terrain = 2137daming
+            has_terrain = 2138wuding
+            has_terrain = 2139laizhou
+            has_terrain = 2140yanzhou
+            has_terrain = 2141xuzhou
+            has_terrain = 2143fengyang
+            has_terrain = 2144fuyang
+            has_terrain = 2145zhenjiang
+            has_terrain = 2149ningbo
+            has_terrain = 2151poyang
+            has_terrain = 2172jingzhou
+            has_terrain = 2175runing
+            has_terrain = 2176shangqiu
+            has_terrain = 4194yongping
+            has_terrain = 4195zhending
+            has_terrain = 4196haizhou
+            has_terrain = 4197huangzhou
+            has_terrain = 4212jiazhou
+            has_terrain = 4213luzhou
+            has_terrain = kiriyama
+            has_terrain = okazaki
+            has_terrain = sakura
+            has_terrain = aizu
+            has_terrain = Hwangju
+            has_terrain = Hanseong
+            has_terrain = Cheongju
+            has_terrain = DongKinh
+            has_terrain = Ayutthaya
+            has_terrain = urban_damietta
+            has_terrain = urban_nilefayyum
+            has_terrain = urban_baghdad
+            has_terrain = urban_delhi
+            has_terrain = urban_dhaka
+            has_terrain = urban_gingee
+            has_terrain = urban_gird
+            has_terrain = urban_jaunpur
+            has_terrain = urban_lahore
+            has_terrain = urban_lucknow
+            has_terrain = urban_multan
+            has_terrain = urban_groeningen
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 900
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.2.a
+    }
+}
+
+# Farmlands (Base Manpower)
+province_event = {
+    id = ipe_development.3
+    title = ipe_development.3.t
+    desc = ipe_development.3.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = farmlands
+            has_terrain = urban_vienna
+            has_terrain = urban_linz
+            has_terrain = urban_hanseatic
+            has_terrain = urban_brugge
+            has_terrain = urban_antwerp
+            has_terrain = urban_amsterdam
+            has_terrain = urban_denbosch
+            has_terrain = urban_gelre
+            has_terrain = urban_utrecht
+            has_terrain = urban_den_haag
+            has_terrain = urban_brussel
+            has_terrain = urban_hamburg
+            has_terrain = urban_munich
+            has_terrain = urban_heidelberg
+            has_terrain = urban_augsburg
+            has_terrain = urban_ingolstadt
+            has_terrain = urban_landshut
+            has_terrain = urban_mainz
+            has_terrain = urban_nuernberg
+            has_terrain = urban_regensburg
+            has_terrain = urban_straubing
+            has_terrain = urban_stuttgart
+            has_terrain = urban_swabian_hall
+            has_terrain = urban_ulm
+            has_terrain = urban_memmingen
+            has_terrain = urban_dessau
+            has_terrain = urban_kleve
+            has_terrain = urban_luebeck
+            has_terrain = urban_muenster
+            has_terrain = urban_magdeburg
+            has_terrain = urban_bremen
+            has_terrain = urban_frankfurt
+            has_terrain = urban_koeln
+            has_terrain = urban_danzig
+            has_terrain = urban_marienburg
+            has_terrain = urban_praga
+            has_terrain = urban_breslau
+            has_terrain = urban_pilsen
+            has_terrain = urban_copenhagen
+            has_terrain = urban_stockholm
+            has_terrain = urban_london
+            has_terrain = urban_edinborough
+            has_terrain = urban_oxford
+            has_terrain = urban_nottingham
+            has_terrain = urban_salisbury
+            has_terrain = urban_york
+            has_terrain = urban_lincoln
+            has_terrain = urban_kent
+            has_terrain = urban_paris
+            has_terrain = urban_marseille
+            has_terrain = urban_kiev
+            has_terrain = urban_lwow
+            has_terrain = urban_warsaw
+            has_terrain = urban_lublin
+            has_terrain = urban_cracow
+            has_terrain = urban_budapest
+            has_terrain = urban_milano
+            has_terrain = urban_mantua
+            has_terrain = urban_siena
+            has_terrain = urban_pisa
+            has_terrain = urban_rome
+            has_terrain = urban_naples
+            has_terrain = urban_verona
+            has_terrain = urban_thessaloniki
+            has_terrain = urban_athens
+            has_terrain = urban_constantinople
+            has_terrain = urban_lisboa
+            has_terrain = urban_porto
+            has_terrain = pyramids
+            has_terrain = urban_cairo
+            has_terrain = urban_alexandria
+            has_terrain = 1beijing
+            has_terrain = 2nanjing
+            has_terrain = 3guangzhou
+            has_terrain = 4hangzhou
+            has_terrain = 5xian
+            has_terrain = 6chengdu
+            has_terrain = 7wuchang
+            has_terrain = 8xiangyang
+            has_terrain = 10yangzhou
+            has_terrain = 12luoyang
+            has_terrain = 13nanchang
+            has_terrain = 14jinan
+            has_terrain = 15hefei
+            has_terrain = 16shaoxing
+            has_terrain = kyoto
+            has_terrain = 22kaifeng
+            has_terrain = 29changsha
+            has_terrain = 30suzhou
+            has_terrain = 31huaian
+            has_terrain = 672wulin
+            has_terrain = 680chongqing
+            has_terrain = 690qingzhou
+            has_terrain = 692huaiqing
+            has_terrain = 695hejian
+            has_terrain = 696baoding
+            has_terrain = naniwa
+            has_terrain = kawagoe
+            has_terrain = kiyosu
+            has_terrain = 2137daming
+            has_terrain = 2138wuding
+            has_terrain = 2139laizhou
+            has_terrain = 2140yanzhou
+            has_terrain = 2141xuzhou
+            has_terrain = 2143fengyang
+            has_terrain = 2144fuyang
+            has_terrain = 2145zhenjiang
+            has_terrain = 2149ningbo
+            has_terrain = 2151poyang
+            has_terrain = 2172jingzhou
+            has_terrain = 2175runing
+            has_terrain = 2176shangqiu
+            has_terrain = 4194yongping
+            has_terrain = 4195zhending
+            has_terrain = 4196haizhou
+            has_terrain = 4197huangzhou
+            has_terrain = 4212jiazhou
+            has_terrain = 4213luzhou
+            has_terrain = kiriyama
+            has_terrain = okazaki
+            has_terrain = sakura
+            has_terrain = aizu
+            has_terrain = Hwangju
+            has_terrain = Hanseong
+            has_terrain = Cheongju
+            has_terrain = DongKinh
+            has_terrain = Ayutthaya
+            has_terrain = urban_damietta
+            has_terrain = urban_nilefayyum
+            has_terrain = urban_baghdad
+            has_terrain = urban_delhi
+            has_terrain = urban_dhaka
+            has_terrain = urban_gingee
+            has_terrain = urban_gird
+            has_terrain = urban_jaunpur
+            has_terrain = urban_lahore
+            has_terrain = urban_lucknow
+            has_terrain = urban_multan
+            has_terrain = urban_groeningen
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 900
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.3.a
+    }
+}
+
+# Grasslands (Base Tax)
+province_event = {
+    id = ipe_development.4
+    title = ipe_development.4.t
+    desc = ipe_development.4.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = grasslands
+            has_terrain = urban_osnabrueck
+            has_terrain = urban_prenzlau
+            has_terrain = urban_lauenburg
+            has_terrain = urban_kiel
+            has_terrain = urban_slesvig
+            has_terrain = urban_oldenburg
+            has_terrain = urban_greifswald
+            has_terrain = urban_meppen
+            has_terrain = urban_rostock
+            has_terrain = urban_stralsund
+            has_terrain = urban_wismar
+            has_terrain = urban_koenigsberg
+            has_terrain = urban_kulm
+            has_terrain = urban_kolberg
+            has_terrain = urban_stetin
+            has_terrain = urban_stolp
+            has_terrain = urban_fyn
+            has_terrain = urban_ostjylland
+            has_terrain = urban_vestjylland
+            has_terrain = urban_nordjylland
+            has_terrain = urban_kolding
+            has_terrain = urban_kalmar
+            has_terrain = urban_bristol
+            has_terrain = urban_exeter
+            has_terrain = urban_dublin
+            has_terrain = urban_moscow
+            has_terrain = urban_saint_petersburg
+            has_terrain = urban_minsk
+            has_terrain = urban_reval
+            has_terrain = urban_sevilla
+            has_terrain = urban_toledo
+            has_terrain = urban_cadiz
+            has_terrain = urban_madrid
+            has_terrain = urban_barcelona
+            has_terrain = urban_bilbao
+            has_terrain = urban_smyrna
+            has_terrain = urban_bursa
+            has_terrain = 11shenyang
+            has_terrain = 21dongchangcheng
+            has_terrain = 665zhaoqing
+            has_terrain = matsue
+            has_terrain = 2113gaizhou
+            has_terrain = 2154jilong
+            has_terrain = 2155dadu
+            has_terrain = 2159leizhou
+            has_terrain = kagoshima
+            has_terrain = yamaguchi
+            has_terrain = shiribeshi
+            has_terrain = Haeju
+            has_terrain = Palembang
+            has_terrain = urban_edirne
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.4.a
+    }
+}
+
+# Grasslands (Base Production)
+province_event = {
+    id = ipe_development.5
+    title = ipe_development.5.t
+    desc = ipe_development.5.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = grasslands
+            has_terrain = urban_osnabrueck
+            has_terrain = urban_prenzlau
+            has_terrain = urban_lauenburg
+            has_terrain = urban_kiel
+            has_terrain = urban_slesvig
+            has_terrain = urban_oldenburg
+            has_terrain = urban_greifswald
+            has_terrain = urban_meppen
+            has_terrain = urban_rostock
+            has_terrain = urban_stralsund
+            has_terrain = urban_wismar
+            has_terrain = urban_koenigsberg
+            has_terrain = urban_kulm
+            has_terrain = urban_kolberg
+            has_terrain = urban_stetin
+            has_terrain = urban_stolp
+            has_terrain = urban_fyn
+            has_terrain = urban_ostjylland
+            has_terrain = urban_vestjylland
+            has_terrain = urban_nordjylland
+            has_terrain = urban_kolding
+            has_terrain = urban_kalmar
+            has_terrain = urban_bristol
+            has_terrain = urban_exeter
+            has_terrain = urban_dublin
+            has_terrain = urban_moscow
+            has_terrain = urban_saint_petersburg
+            has_terrain = urban_minsk
+            has_terrain = urban_reval
+            has_terrain = urban_sevilla
+            has_terrain = urban_toledo
+            has_terrain = urban_cadiz
+            has_terrain = urban_madrid
+            has_terrain = urban_barcelona
+            has_terrain = urban_bilbao
+            has_terrain = urban_smyrna
+            has_terrain = urban_bursa
+            has_terrain = 11shenyang
+            has_terrain = 21dongchangcheng
+            has_terrain = 665zhaoqing
+            has_terrain = matsue
+            has_terrain = 2113gaizhou
+            has_terrain = 2154jilong
+            has_terrain = 2155dadu
+            has_terrain = 2159leizhou
+            has_terrain = kagoshima
+            has_terrain = yamaguchi
+            has_terrain = shiribeshi
+            has_terrain = Haeju
+            has_terrain = Palembang
+            has_terrain = urban_edirne
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.5.a
+    }
+}
+
+# Grasslands (Base Manpower)
+province_event = {
+    id = ipe_development.6
+    title = ipe_development.6.t
+    desc = ipe_development.6.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = grasslands
+            has_terrain = urban_osnabrueck
+            has_terrain = urban_prenzlau
+            has_terrain = urban_lauenburg
+            has_terrain = urban_kiel
+            has_terrain = urban_slesvig
+            has_terrain = urban_oldenburg
+            has_terrain = urban_greifswald
+            has_terrain = urban_meppen
+            has_terrain = urban_rostock
+            has_terrain = urban_stralsund
+            has_terrain = urban_wismar
+            has_terrain = urban_koenigsberg
+            has_terrain = urban_kulm
+            has_terrain = urban_kolberg
+            has_terrain = urban_stetin
+            has_terrain = urban_stolp
+            has_terrain = urban_fyn
+            has_terrain = urban_ostjylland
+            has_terrain = urban_vestjylland
+            has_terrain = urban_nordjylland
+            has_terrain = urban_kolding
+            has_terrain = urban_kalmar
+            has_terrain = urban_bristol
+            has_terrain = urban_exeter
+            has_terrain = urban_dublin
+            has_terrain = urban_moscow
+            has_terrain = urban_saint_petersburg
+            has_terrain = urban_minsk
+            has_terrain = urban_reval
+            has_terrain = urban_sevilla
+            has_terrain = urban_toledo
+            has_terrain = urban_cadiz
+            has_terrain = urban_madrid
+            has_terrain = urban_barcelona
+            has_terrain = urban_bilbao
+            has_terrain = urban_smyrna
+            has_terrain = urban_bursa
+            has_terrain = 11shenyang
+            has_terrain = 21dongchangcheng
+            has_terrain = 665zhaoqing
+            has_terrain = matsue
+            has_terrain = 2113gaizhou
+            has_terrain = 2154jilong
+            has_terrain = 2155dadu
+            has_terrain = 2159leizhou
+            has_terrain = kagoshima
+            has_terrain = yamaguchi
+            has_terrain = shiribeshi
+            has_terrain = Haeju
+            has_terrain = Palembang
+            has_terrain = urban_edirne
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.6.a
+    }
+}
+
+# Drylands (Base Tax)
+province_event = {
+    id = ipe_development.7
+    title = ipe_development.7.t
+    desc = ipe_development.7.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = drylands
+            has_terrain = urban_samarkand
+            has_terrain = urban_nicosia
+            has_terrain = urban_valencia
+            has_terrain = urban_jerusalem
+            has_terrain = urban_akkon
+            has_terrain = urban_tunis
+            has_terrain = 19xichangcheng
+            has_terrain = 26yumen
+            has_terrain = 28dunhuang
+            has_terrain = Yarkant
+            has_terrain = Hotan
+            has_terrain = Hami
+            has_terrain = urban_ceuta
+            has_terrain = urban_mitija-algiers
+            has_terrain = urban_sousse
+            has_terrain = urban_tangiers
+            has_terrain = urban_tripolitania
+            has_terrain = urban_aleppo
+            has_terrain = urban_antioch
+            has_terrain = urban_gaza
+            has_terrain = urban_hama
+            has_terrain = urban_homs
+            has_terrain = urban_kerak
+            has_terrain = urban_mosul
+            has_terrain = urban_najaf
+            has_terrain = urban_suwayda
+            has_terrain = urban_tikrit
+            has_terrain = urban_trablussham
+            has_terrain = urban_qom
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.7.a
+    }
+}
+
+# Drylands (Base Production)
+province_event = {
+    id = ipe_development.8
+    title = ipe_development.8.t
+    desc = ipe_development.8.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = drylands
+            has_terrain = urban_samarkand
+            has_terrain = urban_nicosia
+            has_terrain = urban_valencia
+            has_terrain = urban_jerusalem
+            has_terrain = urban_akkon
+            has_terrain = urban_tunis
+            has_terrain = 19xichangcheng
+            has_terrain = 26yumen
+            has_terrain = 28dunhuang
+            has_terrain = Yarkant
+            has_terrain = Hotan
+            has_terrain = Hami
+            has_terrain = urban_ceuta
+            has_terrain = urban_mitija-algiers
+            has_terrain = urban_sousse
+            has_terrain = urban_tangiers
+            has_terrain = urban_tripolitania
+            has_terrain = urban_aleppo
+            has_terrain = urban_antioch
+            has_terrain = urban_gaza
+            has_terrain = urban_hama
+            has_terrain = urban_homs
+            has_terrain = urban_kerak
+            has_terrain = urban_mosul
+            has_terrain = urban_najaf
+            has_terrain = urban_suwayda
+            has_terrain = urban_tikrit
+            has_terrain = urban_trablussham
+            has_terrain = urban_qom
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.8.a
+    }
+}
+
+# Drylands (Base Manpower)
+province_event = {
+    id = ipe_development.9
+    title = ipe_development.9.t
+    desc = ipe_development.9.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = drylands
+            has_terrain = urban_samarkand
+            has_terrain = urban_nicosia
+            has_terrain = urban_valencia
+            has_terrain = urban_jerusalem
+            has_terrain = urban_akkon
+            has_terrain = urban_tunis
+            has_terrain = 19xichangcheng
+            has_terrain = 26yumen
+            has_terrain = 28dunhuang
+            has_terrain = Yarkant
+            has_terrain = Hotan
+            has_terrain = Hami
+            has_terrain = urban_ceuta
+            has_terrain = urban_mitija-algiers
+            has_terrain = urban_sousse
+            has_terrain = urban_tangiers
+            has_terrain = urban_tripolitania
+            has_terrain = urban_aleppo
+            has_terrain = urban_antioch
+            has_terrain = urban_gaza
+            has_terrain = urban_hama
+            has_terrain = urban_homs
+            has_terrain = urban_kerak
+            has_terrain = urban_mosul
+            has_terrain = urban_najaf
+            has_terrain = urban_suwayda
+            has_terrain = urban_tikrit
+            has_terrain = urban_trablussham
+            has_terrain = urban_qom
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.9.a
+    }
+}
+
+# Woods (Base Tax)
+province_event = {
+    id = ipe_development.10
+    title = ipe_development.10.t
+    desc = ipe_development.10.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = woods
+            has_terrain = urban_berlin
+            has_terrain = urban_cotbus
+            has_terrain = thuringian_woods
+            has_terrain = urban_amberg
+            has_terrain = urban_baden
+            has_terrain = urban_bamberg
+            has_terrain = urban_freiburg
+            has_terrain = urban_worms
+            has_terrain = urban_wuerzburg
+            has_terrain = urban_strassburg
+            has_terrain = urban_neuruppin
+            has_terrain = urban_stendal
+            has_terrain = urban_lueneburg
+            has_terrain = urban_sternberg
+            has_terrain = urban_wittenberg
+            has_terrain = urban_aachen
+            has_terrain = urban_brunswik
+            has_terrain = urban_duesseldorf
+            has_terrain = urban_hannover
+            has_terrain = urban_hoya
+            has_terrain = urban_kassel
+            has_terrain = urban_koblenz
+            has_terrain = urban_leipzig
+            has_terrain = urban_marburg
+            has_terrain = urban_potsdam
+            has_terrain = urban_trier
+            has_terrain = urban_wiesbaden
+            has_terrain = urban_paderborn
+            has_terrain = urban_arnsberg
+            has_terrain = urban_luxemburg
+            has_terrain = urban_landsberg
+            has_terrain = urban_memel
+            has_terrain = urban_budweis
+            has_terrain = sweden_forest
+            has_terrain = urban_chester
+            has_terrain = urban_coventry
+            has_terrain = urban_novgorod
+            has_terrain = urban_mozhaisk
+            has_terrain = urban_pleskau
+            has_terrain = urban_smolensk
+            has_terrain = urban_grodno
+            has_terrain = urban_vilna
+            has_terrain = urban_polotsk
+            has_terrain = urban_vitebsk
+            has_terrain = urban_trakai
+            has_terrain = urban_mogilyov
+            has_terrain = urban_coimbra
+            has_terrain = urban_new_york
+            has_terrain = urban_boston
+            has_terrain = 728hrb
+            has_terrain = 730jilin
+            has_terrain = 2111htal
+            has_terrain = kumamoto
+            has_terrain = yuzuki
+            has_terrain = nakamura
+            has_terrain = okayama
+            has_terrain = sunpu
+            has_terrain = kamakura
+            has_terrain = ota
+            has_terrain = Pyeongyang
+            has_terrain = Jeonju
+            has_terrain = Jinju
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.10.a
+    }
+}
+
+# Woods (Base Production)
+province_event = {
+    id = ipe_development.11
+    title = ipe_development.11.t
+    desc = ipe_development.11.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = woods
+            has_terrain = urban_berlin
+            has_terrain = urban_cotbus
+            has_terrain = thuringian_woods
+            has_terrain = urban_amberg
+            has_terrain = urban_baden
+            has_terrain = urban_bamberg
+            has_terrain = urban_freiburg
+            has_terrain = urban_worms
+            has_terrain = urban_wuerzburg
+            has_terrain = urban_strassburg
+            has_terrain = urban_neuruppin
+            has_terrain = urban_stendal
+            has_terrain = urban_lueneburg
+            has_terrain = urban_sternberg
+            has_terrain = urban_wittenberg
+            has_terrain = urban_aachen
+            has_terrain = urban_brunswik
+            has_terrain = urban_duesseldorf
+            has_terrain = urban_hannover
+            has_terrain = urban_hoya
+            has_terrain = urban_kassel
+            has_terrain = urban_koblenz
+            has_terrain = urban_leipzig
+            has_terrain = urban_marburg
+            has_terrain = urban_potsdam
+            has_terrain = urban_trier
+            has_terrain = urban_wiesbaden
+            has_terrain = urban_paderborn
+            has_terrain = urban_arnsberg
+            has_terrain = urban_luxemburg
+            has_terrain = urban_landsberg
+            has_terrain = urban_memel
+            has_terrain = urban_budweis
+            has_terrain = sweden_forest
+            has_terrain = urban_chester
+            has_terrain = urban_coventry
+            has_terrain = urban_novgorod
+            has_terrain = urban_mozhaisk
+            has_terrain = urban_pleskau
+            has_terrain = urban_smolensk
+            has_terrain = urban_grodno
+            has_terrain = urban_vilna
+            has_terrain = urban_polotsk
+            has_terrain = urban_vitebsk
+            has_terrain = urban_trakai
+            has_terrain = urban_mogilyov
+            has_terrain = urban_coimbra
+            has_terrain = urban_new_york
+            has_terrain = urban_boston
+            has_terrain = 728hrb
+            has_terrain = 730jilin
+            has_terrain = 2111htal
+            has_terrain = kumamoto
+            has_terrain = yuzuki
+            has_terrain = nakamura
+            has_terrain = okayama
+            has_terrain = sunpu
+            has_terrain = kamakura
+            has_terrain = ota
+            has_terrain = Pyeongyang
+            has_terrain = Jeonju
+            has_terrain = Jinju
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.11.a
+    }
+}
+
+# Woods (Base Manpower)
+province_event = {
+    id = ipe_development.12
+    title = ipe_development.12.t
+    desc = ipe_development.12.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = woods
+            has_terrain = urban_berlin
+            has_terrain = urban_cotbus
+            has_terrain = thuringian_woods
+            has_terrain = urban_amberg
+            has_terrain = urban_baden
+            has_terrain = urban_bamberg
+            has_terrain = urban_freiburg
+            has_terrain = urban_worms
+            has_terrain = urban_wuerzburg
+            has_terrain = urban_strassburg
+            has_terrain = urban_neuruppin
+            has_terrain = urban_stendal
+            has_terrain = urban_lueneburg
+            has_terrain = urban_sternberg
+            has_terrain = urban_wittenberg
+            has_terrain = urban_aachen
+            has_terrain = urban_brunswik
+            has_terrain = urban_duesseldorf
+            has_terrain = urban_hannover
+            has_terrain = urban_hoya
+            has_terrain = urban_kassel
+            has_terrain = urban_koblenz
+            has_terrain = urban_leipzig
+            has_terrain = urban_marburg
+            has_terrain = urban_potsdam
+            has_terrain = urban_trier
+            has_terrain = urban_wiesbaden
+            has_terrain = urban_paderborn
+            has_terrain = urban_arnsberg
+            has_terrain = urban_luxemburg
+            has_terrain = urban_landsberg
+            has_terrain = urban_memel
+            has_terrain = urban_budweis
+            has_terrain = sweden_forest
+            has_terrain = urban_chester
+            has_terrain = urban_coventry
+            has_terrain = urban_novgorod
+            has_terrain = urban_mozhaisk
+            has_terrain = urban_pleskau
+            has_terrain = urban_smolensk
+            has_terrain = urban_grodno
+            has_terrain = urban_vilna
+            has_terrain = urban_polotsk
+            has_terrain = urban_vitebsk
+            has_terrain = urban_trakai
+            has_terrain = urban_mogilyov
+            has_terrain = urban_coimbra
+            has_terrain = urban_new_york
+            has_terrain = urban_boston
+            has_terrain = 728hrb
+            has_terrain = 730jilin
+            has_terrain = 2111htal
+            has_terrain = kumamoto
+            has_terrain = yuzuki
+            has_terrain = nakamura
+            has_terrain = okayama
+            has_terrain = sunpu
+            has_terrain = kamakura
+            has_terrain = ota
+            has_terrain = Pyeongyang
+            has_terrain = Jeonju
+            has_terrain = Jinju
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.12.a
+    }
+}
+
+# Coastline (Base Tax)
+province_event = {
+    id = ipe_development.13
+    title = ipe_development.13.t
+    desc = ipe_development.13.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = coastline
+            has_terrain = urban_bornholm
+            has_terrain = urban_gotland
+            has_terrain = urban_hebrids
+            has_terrain = urban_oesel
+            has_terrain = urban_venice
+            has_terrain = urban_ragusa
+            has_terrain = urban_malta
+            has_terrain = urban_rhodos
+            has_terrain = urban_corfu
+            has_terrain = urban_kilwa
+            has_terrain = urban_nassau
+            has_terrain = easter_island
+            has_terrain = coast_baltic_sea
+            has_terrain = coast_north_sea
+            has_terrain = coast_america
+            has_terrain = generic_isle
+            has_terrain = 668aomen
+            has_terrain = 1824wenzhou
+            has_terrain = katsuyama
+            has_terrain = shuri
+            has_terrain = Jeju
+            has_terrain = urban_mombasa
+            has_terrain = urban_zanzibar
+            has_terrain = urban_ternate
+            has_terrain = urban_creta
+            has_terrain = urban_fife
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.13.a
+    }
+}
+
+# Coastline (Base Production)
+province_event = {
+    id = ipe_development.14
+    title = ipe_development.14.t
+    desc = ipe_development.14.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = coastline
+            has_terrain = urban_bornholm
+            has_terrain = urban_gotland
+            has_terrain = urban_hebrids
+            has_terrain = urban_oesel
+            has_terrain = urban_venice
+            has_terrain = urban_ragusa
+            has_terrain = urban_malta
+            has_terrain = urban_rhodos
+            has_terrain = urban_corfu
+            has_terrain = urban_kilwa
+            has_terrain = urban_nassau
+            has_terrain = easter_island
+            has_terrain = coast_baltic_sea
+            has_terrain = coast_north_sea
+            has_terrain = coast_america
+            has_terrain = generic_isle
+            has_terrain = 668aomen
+            has_terrain = 1824wenzhou
+            has_terrain = katsuyama
+            has_terrain = shuri
+            has_terrain = Jeju
+            has_terrain = urban_mombasa
+            has_terrain = urban_zanzibar
+            has_terrain = urban_ternate
+            has_terrain = urban_creta
+            has_terrain = urban_fife
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.14.a
+    }
+}
+
+# Coastline (Base Manpower)
+province_event = {
+    id = ipe_development.15
+    title = ipe_development.15.t
+    desc = ipe_development.15.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = coastline
+            has_terrain = urban_bornholm
+            has_terrain = urban_gotland
+            has_terrain = urban_hebrids
+            has_terrain = urban_oesel
+            has_terrain = urban_venice
+            has_terrain = urban_ragusa
+            has_terrain = urban_malta
+            has_terrain = urban_rhodos
+            has_terrain = urban_corfu
+            has_terrain = urban_kilwa
+            has_terrain = urban_nassau
+            has_terrain = easter_island
+            has_terrain = coast_baltic_sea
+            has_terrain = coast_north_sea
+            has_terrain = coast_america
+            has_terrain = generic_isle
+            has_terrain = 668aomen
+            has_terrain = 1824wenzhou
+            has_terrain = katsuyama
+            has_terrain = shuri
+            has_terrain = Jeju
+            has_terrain = urban_mombasa
+            has_terrain = urban_zanzibar
+            has_terrain = urban_ternate
+            has_terrain = urban_creta
+            has_terrain = urban_fife
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.15.a
+    }
+}
+
+# Savannah (Base Tax)
+province_event = {
+    id = ipe_development.16
+    title = ipe_development.16.t
+    desc = ipe_development.16.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = savannah
+            has_terrain = urban_havanna
+            has_terrain = urban_timbuktu
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.16.a
+    }
+}
+
+# Savannah (Base Production)
+province_event = {
+    id = ipe_development.17
+    title = ipe_development.17.t
+    desc = ipe_development.17.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = savannah
+            has_terrain = urban_havanna
+            has_terrain = urban_timbuktu
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.17.a
+    }
+}
+
+# Savannah (Base Manpower)
+province_event = {
+    id = ipe_development.18
+    title = ipe_development.18.t
+    desc = ipe_development.18.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = savannah
+            has_terrain = urban_havanna
+            has_terrain = urban_timbuktu
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.18.a
+    }
+}
+
+# Highlands (Base Tax)
+province_event = {
+    id = ipe_development.19
+    title = ipe_development.19.t
+    desc = ipe_development.19.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = highlands
+            has_terrain = urban_iverness
+            has_terrain = scottish_highlands
+            has_terrain = urban_braganca
+            has_terrain = urban_medina
+            has_terrain = urban_tenochtitlan
+            has_terrain = urban_gondar
+            has_terrain = 673zhenyuan
+            has_terrain = 674guiyang
+            has_terrain = 2168bozhou
+            has_terrain = 4199tongren
+            has_terrain = urban_constantine
+            has_terrain = urban_hautesplaines
+            has_terrain = urban_kef
+            has_terrain = urban_mountsinai
+            has_terrain = urban_ourzazate
+            has_terrain = urban_tetouan
+            has_terrain = urban_damascus
+            has_terrain = urban_golconda
+            has_terrain = urban_mysore
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.19.a
+    }
+}
+
+# Highlands (Base Production)
+province_event = {
+    id = ipe_development.20
+    title = ipe_development.20.t
+    desc = ipe_development.20.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = highlands
+            has_terrain = urban_iverness
+            has_terrain = scottish_highlands
+            has_terrain = urban_braganca
+            has_terrain = urban_medina
+            has_terrain = urban_tenochtitlan
+            has_terrain = urban_gondar
+            has_terrain = 673zhenyuan
+            has_terrain = 674guiyang
+            has_terrain = 2168bozhou
+            has_terrain = 4199tongren
+            has_terrain = urban_constantine
+            has_terrain = urban_hautesplaines
+            has_terrain = urban_kef
+            has_terrain = urban_mountsinai
+            has_terrain = urban_ourzazate
+            has_terrain = urban_tetouan
+            has_terrain = urban_damascus
+            has_terrain = urban_golconda
+            has_terrain = urban_mysore
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.20.a
+    }
+}
+
+# Highlands (Base Manpower)
+province_event = {
+    id = ipe_development.21
+    title = ipe_development.21.t
+    desc = ipe_development.21.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = highlands
+            has_terrain = urban_iverness
+            has_terrain = scottish_highlands
+            has_terrain = urban_braganca
+            has_terrain = urban_medina
+            has_terrain = urban_tenochtitlan
+            has_terrain = urban_gondar
+            has_terrain = 673zhenyuan
+            has_terrain = 674guiyang
+            has_terrain = 2168bozhou
+            has_terrain = 4199tongren
+            has_terrain = urban_constantine
+            has_terrain = urban_hautesplaines
+            has_terrain = urban_kef
+            has_terrain = urban_mountsinai
+            has_terrain = urban_ourzazate
+            has_terrain = urban_tetouan
+            has_terrain = urban_damascus
+            has_terrain = urban_golconda
+            has_terrain = urban_mysore
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 1800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.21.a
+    }
+}
+
+# Forest (Base Tax)
+province_event = {
+    id = ipe_development.22
+    title = ipe_development.22.t
+    desc = ipe_development.22.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = forest
+            has_terrain = finnmark_forest
+            has_terrain = urban_vladimir
+            has_terrain = urban_rostov
+            has_terrain = urban_tver
+            has_terrain = urban_suzdal
+            has_terrain = urban_nizhny_novgorod
+            has_terrain = urban_rzhev
+            has_terrain = urban_yaroslavl
+            has_terrain = urban_kasimov
+            has_terrain = urban_ustjug
+            has_terrain = urban_vologda
+            has_terrain = urban_galich
+            has_terrain = urban_kostroma
+            has_terrain = urban_baloozero
+            has_terrain = urban_cherdyn
+            has_terrain = wakayama
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.22.a
+    }
+}
+
+# Forest (Base Production)
+province_event = {
+    id = ipe_development.23
+    title = ipe_development.23.t
+    desc = ipe_development.23.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = forest
+            has_terrain = finnmark_forest
+            has_terrain = urban_vladimir
+            has_terrain = urban_rostov
+            has_terrain = urban_tver
+            has_terrain = urban_suzdal
+            has_terrain = urban_nizhny_novgorod
+            has_terrain = urban_rzhev
+            has_terrain = urban_yaroslavl
+            has_terrain = urban_kasimov
+            has_terrain = urban_ustjug
+            has_terrain = urban_vologda
+            has_terrain = urban_galich
+            has_terrain = urban_kostroma
+            has_terrain = urban_baloozero
+            has_terrain = urban_cherdyn
+            has_terrain = wakayama
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.23.a
+    }
+}
+
+# Forest (Base Manpower)
+province_event = {
+    id = ipe_development.24
+    title = ipe_development.24.t
+    desc = ipe_development.24.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = forest
+            has_terrain = finnmark_forest
+            has_terrain = urban_vladimir
+            has_terrain = urban_rostov
+            has_terrain = urban_tver
+            has_terrain = urban_suzdal
+            has_terrain = urban_nizhny_novgorod
+            has_terrain = urban_rzhev
+            has_terrain = urban_yaroslavl
+            has_terrain = urban_kasimov
+            has_terrain = urban_ustjug
+            has_terrain = urban_vologda
+            has_terrain = urban_galich
+            has_terrain = urban_kostroma
+            has_terrain = urban_baloozero
+            has_terrain = urban_cherdyn
+            has_terrain = wakayama
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.24.a
+    }
+}
+
+# Steppe (Base Tax)
+province_event = {
+    id = ipe_development.25
+    title = ipe_development.25.t
+    desc = ipe_development.25.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = steppe
+            has_terrain = urban_kazan
+            has_terrain = urban_tula
+            has_terrain = urban_kolomna
+            has_terrain = urban_ryasan
+            has_terrain = urban_kursk
+            has_terrain = urban_theodoro
+            has_terrain = Urumqi
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.25.a
+    }
+}
+
+# Steppe (Base Production)
+province_event = {
+    id = ipe_development.26
+    title = ipe_development.26.t
+    desc = ipe_development.26.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = steppe
+            has_terrain = urban_kazan
+            has_terrain = urban_tula
+            has_terrain = urban_kolomna
+            has_terrain = urban_ryasan
+            has_terrain = urban_kursk
+            has_terrain = urban_theodoro
+            has_terrain = Urumqi
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.26.a
+    }
+}
+
+# Steppe (Base Manpower)
+province_event = {
+    id = ipe_development.27
+    title = ipe_development.27.t
+    desc = ipe_development.27.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = steppe
+            has_terrain = urban_kazan
+            has_terrain = urban_tula
+            has_terrain = urban_kolomna
+            has_terrain = urban_ryasan
+            has_terrain = urban_kursk
+            has_terrain = urban_theodoro
+            has_terrain = Urumqi
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.27.a
+    }
+}
+
+# Hills (Base Tax)
+province_event = {
+    id = ipe_development.28
+    title = ipe_development.28.t
+    desc = ipe_development.28.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = hills
+            has_terrain = urban_bern
+            has_terrain = urban_dresden
+            has_terrain = urban_litomerice
+            has_terrain = bohemian_mountains
+            has_terrain = urban_trondheim
+            has_terrain = urban_bergen
+            has_terrain = urban_christiania
+            has_terrain = urban_sogn
+            has_terrain = urban_agder
+            has_terrain = urban_halogaland
+            has_terrain = urban_carlisle
+            has_terrain = urban_lyon
+            has_terrain = urban_nice
+            has_terrain = urban_besancon
+            has_terrain = urban_carcassonne
+            has_terrain = urban_genoa
+            has_terrain = urban_firenze
+            has_terrain = urban_palermo
+            has_terrain = 9quanzhou
+            has_terrain = 27fuzhou
+            has_terrain = 681yichang
+            has_terrain = 686anqing
+            has_terrain = 687nanyang
+            has_terrain = 2146ningguo
+            has_terrain = 2147huizhou
+            has_terrain = 2150jinhua
+            has_terrain = 2163liuzhou
+            has_terrain = hakata
+            has_terrain = himeji
+            has_terrain = nagasaki
+            has_terrain = funai
+            has_terrain = obi
+            has_terrain = tokushima
+            has_terrain = hamada
+            has_terrain = tottori
+            has_terrain = miyazu
+            has_terrain = nara
+            has_terrain = takefu
+            has_terrain = kanazawa
+            has_terrain = naoetsu
+            has_terrain = tokachi
+            has_terrain = Gyeongju
+            has_terrain = urban_goa
+            has_terrain = urban_ayr_glasgow
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.28.a
+    }
+}
+
+# Hills (Base Production)
+province_event = {
+    id = ipe_development.29
+    title = ipe_development.29.t
+    desc = ipe_development.29.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = hills
+            has_terrain = urban_bern
+            has_terrain = urban_dresden
+            has_terrain = urban_litomerice
+            has_terrain = bohemian_mountains
+            has_terrain = urban_trondheim
+            has_terrain = urban_bergen
+            has_terrain = urban_christiania
+            has_terrain = urban_sogn
+            has_terrain = urban_agder
+            has_terrain = urban_halogaland
+            has_terrain = urban_carlisle
+            has_terrain = urban_lyon
+            has_terrain = urban_nice
+            has_terrain = urban_besancon
+            has_terrain = urban_carcassonne
+            has_terrain = urban_genoa
+            has_terrain = urban_firenze
+            has_terrain = urban_palermo
+            has_terrain = 9quanzhou
+            has_terrain = 27fuzhou
+            has_terrain = 681yichang
+            has_terrain = 686anqing
+            has_terrain = 687nanyang
+            has_terrain = 2146ningguo
+            has_terrain = 2147huizhou
+            has_terrain = 2150jinhua
+            has_terrain = 2163liuzhou
+            has_terrain = hakata
+            has_terrain = himeji
+            has_terrain = nagasaki
+            has_terrain = funai
+            has_terrain = obi
+            has_terrain = tokushima
+            has_terrain = hamada
+            has_terrain = tottori
+            has_terrain = miyazu
+            has_terrain = nara
+            has_terrain = takefu
+            has_terrain = kanazawa
+            has_terrain = naoetsu
+            has_terrain = tokachi
+            has_terrain = Gyeongju
+            has_terrain = urban_goa
+            has_terrain = urban_ayr_glasgow
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.29.a
+    }
+}
+
+# Hills (Base Manpower)
+province_event = {
+    id = ipe_development.30
+    title = ipe_development.30.t
+    desc = ipe_development.30.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = hills
+            has_terrain = urban_bern
+            has_terrain = urban_dresden
+            has_terrain = urban_litomerice
+            has_terrain = bohemian_mountains
+            has_terrain = urban_trondheim
+            has_terrain = urban_bergen
+            has_terrain = urban_christiania
+            has_terrain = urban_sogn
+            has_terrain = urban_agder
+            has_terrain = urban_halogaland
+            has_terrain = urban_carlisle
+            has_terrain = urban_lyon
+            has_terrain = urban_nice
+            has_terrain = urban_besancon
+            has_terrain = urban_carcassonne
+            has_terrain = urban_genoa
+            has_terrain = urban_firenze
+            has_terrain = urban_palermo
+            has_terrain = 9quanzhou
+            has_terrain = 27fuzhou
+            has_terrain = 681yichang
+            has_terrain = 686anqing
+            has_terrain = 687nanyang
+            has_terrain = 2146ningguo
+            has_terrain = 2147huizhou
+            has_terrain = 2150jinhua
+            has_terrain = 2163liuzhou
+            has_terrain = hakata
+            has_terrain = himeji
+            has_terrain = nagasaki
+            has_terrain = funai
+            has_terrain = obi
+            has_terrain = tokushima
+            has_terrain = hamada
+            has_terrain = tottori
+            has_terrain = miyazu
+            has_terrain = nara
+            has_terrain = takefu
+            has_terrain = kanazawa
+            has_terrain = naoetsu
+            has_terrain = tokachi
+            has_terrain = Gyeongju
+            has_terrain = urban_goa
+            has_terrain = urban_ayr_glasgow
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.30.a
+    }
+}
+
+# Marsh (Base Tax)
+province_event = {
+    id = ipe_development.31
+    title = ipe_development.31.t
+    desc = ipe_development.31.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = marsh
+            has_terrain = urban_emden
+            has_terrain = urban_bremervoerde
+            has_terrain = urban_heide
+            has_terrain = urban_newcastle
+            has_terrain = urban_hajitarkhan
+            has_terrain = urban_new_orleans
+            has_terrain = urban_basra
+            has_terrain = urban_shatt
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.31.a
+    }
+}
+
+# Marsh (Base Production)
+province_event = {
+    id = ipe_development.32
+    title = ipe_development.32.t
+    desc = ipe_development.32.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = marsh
+            has_terrain = urban_emden
+            has_terrain = urban_bremervoerde
+            has_terrain = urban_heide
+            has_terrain = urban_newcastle
+            has_terrain = urban_hajitarkhan
+            has_terrain = urban_new_orleans
+            has_terrain = urban_basra
+            has_terrain = urban_shatt
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.32.a
+    }
+}
+
+# Marsh (Base Manpower)
+province_event = {
+    id = ipe_development.33
+    title = ipe_development.33.t
+    desc = ipe_development.33.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = marsh
+            has_terrain = urban_emden
+            has_terrain = urban_bremervoerde
+            has_terrain = urban_heide
+            has_terrain = urban_newcastle
+            has_terrain = urban_hajitarkhan
+            has_terrain = urban_new_orleans
+            has_terrain = urban_basra
+            has_terrain = urban_shatt
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.33.a
+    }
+}
+
+# Mountain (Base Tax)
+province_event = {
+    id = ipe_development.34
+    title = ipe_development.34.t
+    desc = ipe_development.34.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = mountain
+            has_terrain = urban_salzburg
+            has_terrain = terrain_orderland
+            has_terrain = urban_steiermark
+            has_terrain = urban_tirol
+            has_terrain = urban_tiflis
+            has_terrain = urban_trebizond
+            has_terrain = urban_granada
+            has_terrain = urban_arabic
+            has_terrain = urban_mecca
+            has_terrain = urban_kars
+            has_terrain = mountains_appalachian
+            has_terrain = mountains_ural
+            has_terrain = 17lasa
+            has_terrain = 20zhongchangcheng
+            has_terrain = 23yunnan
+            has_terrain = 24xuanhua
+            has_terrain = 25datong
+            has_terrain = 660xsbn
+            has_terrain = 661dali
+            has_terrain = 663guangnan
+            has_terrain = 675wumeng
+            has_terrain = 689hanzhong
+            has_terrain = 2183taozhou
+            has_terrain = 693taiyuan
+            has_terrain = 694pingyang
+            has_terrain = kofu
+            has_terrain = inabayama
+            has_terrain = 2108hunchun
+            has_terrain = 2112andong
+            has_terrain = 2133dege
+            has_terrain = 2165puer
+            has_terrain = 2167lijiang
+            has_terrain = 2169langzhong
+            has_terrain = 2170songqu
+            has_terrain = 2180tianshui
+            has_terrain = 2181pingliang
+            has_terrain = 2184xining
+            has_terrain = 2190hlhl
+            has_terrain = 2748jianchang
+            has_terrain = 4198fengxiang
+            has_terrain = 4201jianzhou
+            has_terrain = 4211dazhou
+            has_terrain = nagasaki
+            has_terrain = mayabashi
+            has_terrain = utsunomiya
+            has_terrain = yamagata
+            has_terrain = akita
+            has_terrain = sannohe
+            has_terrain = kamikawa
+            has_terrain = Wonju
+            has_terrain = Tsaidam
+            has_terrain = Balikul
+            has_terrain = Nedong
+            has_terrain = urban_aqabah
+            has_terrain = urban_sanaa
+            has_terrain = urban_isfahan
+            has_terrain = urban_kabul
+            has_terrain = urban_kashmir
+            has_terrain = urban_kermanshah
+            has_terrain = urban_shiraz
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.34.a
+    }
+}
+
+# Mountain (Base Production)
+province_event = {
+    id = ipe_development.35
+    title = ipe_development.35.t
+    desc = ipe_development.35.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = mountain
+            has_terrain = urban_salzburg
+            has_terrain = terrain_orderland
+            has_terrain = urban_steiermark
+            has_terrain = urban_tirol
+            has_terrain = urban_tiflis
+            has_terrain = urban_trebizond
+            has_terrain = urban_granada
+            has_terrain = urban_arabic
+            has_terrain = urban_mecca
+            has_terrain = urban_kars
+            has_terrain = mountains_appalachian
+            has_terrain = mountains_ural
+            has_terrain = 17lasa
+            has_terrain = 20zhongchangcheng
+            has_terrain = 23yunnan
+            has_terrain = 24xuanhua
+            has_terrain = 25datong
+            has_terrain = 660xsbn
+            has_terrain = 661dali
+            has_terrain = 663guangnan
+            has_terrain = 675wumeng
+            has_terrain = 689hanzhong
+            has_terrain = 2183taozhou
+            has_terrain = 693taiyuan
+            has_terrain = 694pingyang
+            has_terrain = kofu
+            has_terrain = inabayama
+            has_terrain = 2108hunchun
+            has_terrain = 2112andong
+            has_terrain = 2133dege
+            has_terrain = 2165puer
+            has_terrain = 2167lijiang
+            has_terrain = 2169langzhong
+            has_terrain = 2170songqu
+            has_terrain = 2180tianshui
+            has_terrain = 2181pingliang
+            has_terrain = 2184xining
+            has_terrain = 2190hlhl
+            has_terrain = 2748jianchang
+            has_terrain = 4198fengxiang
+            has_terrain = 4201jianzhou
+            has_terrain = 4211dazhou
+            has_terrain = nagasaki
+            has_terrain = mayabashi
+            has_terrain = utsunomiya
+            has_terrain = yamagata
+            has_terrain = akita
+            has_terrain = sannohe
+            has_terrain = kamikawa
+            has_terrain = Wonju
+            has_terrain = Tsaidam
+            has_terrain = Balikul
+            has_terrain = Nedong
+            has_terrain = urban_aqabah
+            has_terrain = urban_sanaa
+            has_terrain = urban_isfahan
+            has_terrain = urban_kabul
+            has_terrain = urban_kashmir
+            has_terrain = urban_kermanshah
+            has_terrain = urban_shiraz
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.35.a
+    }
+}
+
+# Mountain (Base Manpower)
+province_event = {
+    id = ipe_development.36
+    title = ipe_development.36.t
+    desc = ipe_development.36.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = mountain
+            has_terrain = urban_salzburg
+            has_terrain = terrain_orderland
+            has_terrain = urban_steiermark
+            has_terrain = urban_tirol
+            has_terrain = urban_tiflis
+            has_terrain = urban_trebizond
+            has_terrain = urban_granada
+            has_terrain = urban_arabic
+            has_terrain = urban_mecca
+            has_terrain = urban_kars
+            has_terrain = mountains_appalachian
+            has_terrain = mountains_ural
+            has_terrain = 17lasa
+            has_terrain = 20zhongchangcheng
+            has_terrain = 23yunnan
+            has_terrain = 24xuanhua
+            has_terrain = 25datong
+            has_terrain = 660xsbn
+            has_terrain = 661dali
+            has_terrain = 663guangnan
+            has_terrain = 675wumeng
+            has_terrain = 689hanzhong
+            has_terrain = 2183taozhou
+            has_terrain = 693taiyuan
+            has_terrain = 694pingyang
+            has_terrain = kofu
+            has_terrain = inabayama
+            has_terrain = 2108hunchun
+            has_terrain = 2112andong
+            has_terrain = 2133dege
+            has_terrain = 2165puer
+            has_terrain = 2167lijiang
+            has_terrain = 2169langzhong
+            has_terrain = 2170songqu
+            has_terrain = 2180tianshui
+            has_terrain = 2181pingliang
+            has_terrain = 2184xining
+            has_terrain = 2190hlhl
+            has_terrain = 2748jianchang
+            has_terrain = 4198fengxiang
+            has_terrain = 4201jianzhou
+            has_terrain = 4211dazhou
+            has_terrain = nagasaki
+            has_terrain = mayabashi
+            has_terrain = utsunomiya
+            has_terrain = yamagata
+            has_terrain = akita
+            has_terrain = sannohe
+            has_terrain = kamikawa
+            has_terrain = Wonju
+            has_terrain = Tsaidam
+            has_terrain = Balikul
+            has_terrain = Nedong
+            has_terrain = urban_aqabah
+            has_terrain = urban_sanaa
+            has_terrain = urban_isfahan
+            has_terrain = urban_kabul
+            has_terrain = urban_kashmir
+            has_terrain = urban_kermanshah
+            has_terrain = urban_shiraz
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 2700
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.36.a
+    }
+}
+
+# Jungle (Base Tax)
+province_event = {
+    id = ipe_development.37
+    title = ipe_development.37.t
+    desc = ipe_development.37.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = jungle
+            has_terrain = urban_angkor_wat
+            has_terrain = 664lingyun
+            has_terrain = 666qiongzhou
+            has_terrain = 2160yazhou
+            has_terrain = 670ganzhou
+            has_terrain = 738ck
+            has_terrain = 1833jian
+            has_terrain = 1840guilin
+            has_terrain = 2152jianning
+            has_terrain = 2153tingzhou
+            has_terrain = 2156chaozhou
+            has_terrain = 2157huizhou
+            has_terrain = 2158shaoguan
+            has_terrain = 2161lianzhou
+            has_terrain = 2162wuzhou
+            has_terrain = 2164nanning
+            has_terrain = 2173yuanling
+            has_terrain = 2174hengyang
+            has_terrain = urban_kumari
+            has_terrain = urban_malacca
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 4800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.37.a
+    }
+}
+
+# Jungle (Base Production)
+province_event = {
+    id = ipe_development.38
+    title = ipe_development.38.t
+    desc = ipe_development.38.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = jungle
+            has_terrain = urban_angkor_wat
+            has_terrain = 664lingyun
+            has_terrain = 666qiongzhou
+            has_terrain = 2160yazhou
+            has_terrain = 670ganzhou
+            has_terrain = 738ck
+            has_terrain = 1833jian
+            has_terrain = 1840guilin
+            has_terrain = 2152jianning
+            has_terrain = 2153tingzhou
+            has_terrain = 2156chaozhou
+            has_terrain = 2157huizhou
+            has_terrain = 2158shaoguan
+            has_terrain = 2161lianzhou
+            has_terrain = 2162wuzhou
+            has_terrain = 2164nanning
+            has_terrain = 2173yuanling
+            has_terrain = 2174hengyang
+            has_terrain = urban_kumari
+            has_terrain = urban_malacca
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 4800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.38.a
+    }
+}
+
+# Jungle (Base Manpower)
+province_event = {
+    id = ipe_development.39
+    title = ipe_development.39.t
+    desc = ipe_development.39.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = jungle
+            has_terrain = urban_angkor_wat
+            has_terrain = 664lingyun
+            has_terrain = 666qiongzhou
+            has_terrain = 2160yazhou
+            has_terrain = 670ganzhou
+            has_terrain = 738ck
+            has_terrain = 1833jian
+            has_terrain = 1840guilin
+            has_terrain = 2152jianning
+            has_terrain = 2153tingzhou
+            has_terrain = 2156chaozhou
+            has_terrain = 2157huizhou
+            has_terrain = 2158shaoguan
+            has_terrain = 2161lianzhou
+            has_terrain = 2162wuzhou
+            has_terrain = 2164nanning
+            has_terrain = 2173yuanling
+            has_terrain = 2174hengyang
+            has_terrain = urban_kumari
+            has_terrain = urban_malacca
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 4800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.39.a
+    }
+}
+
+# Coastal Desert (Base Tax)
+province_event = {
+    id = ipe_development.40
+    title = ipe_development.40.t
+    desc = ipe_development.40.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = coastal_desert
+            has_terrain = urban_suakin
+            has_terrain = urban_aden
+            has_terrain = urban_muscat
+            has_terrain = urban_socotra
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 4800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_tax
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = temple
+                has_building = cathedral
+            }
+        }
+    }
+
+    immediate = {
+        add_base_tax = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.40.a
+    }
+}
+
+# Coastal Desert (Base Production)
+province_event = {
+    id = ipe_development.41
+    title = ipe_development.41.t
+    desc = ipe_development.41.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = coastal_desert
+            has_terrain = urban_suakin
+            has_terrain = urban_aden
+            has_terrain = urban_muscat
+            has_terrain = urban_socotra
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 4800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_production
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = workshop
+                has_building = counting_house
+            }
+        }
+    }
+
+    immediate = {
+        add_base_production = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.2
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.41.a
+    }
+}
+
+# Coastal Desert (Base Manpower)
+province_event = {
+    id = ipe_development.42
+    title = ipe_development.42.t
+    desc = ipe_development.42.d
+    picture = CITY_DEVELOPMENT_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        OR = {
+            has_terrain = coastal_desert
+            has_terrain = urban_suakin
+            has_terrain = urban_aden
+            has_terrain = urban_muscat
+            has_terrain = urban_socotra
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 4800
+        modifier = {
+            factor = 0.5
+            has_province_modifier = encouraged_growth_manpower
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 1
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 2
+        }
+        modifier = {
+            factor = 0.95
+            province_has_center_of_trade_of_level = 3
+        }
+        modifier = {
+            factor = 0.95
+            development = 10
+        }
+        modifier = {
+            factor = 0.95
+            development = 20
+        }
+        modifier = {
+            factor = 0.95
+            development = 30
+        }
+        modifier = {
+            factor = 0.95
+            development = 40
+        }
+        modifier = {
+            factor = 0.95
+            development = 50
+        }
+        modifier = {
+            factor = 0.75
+            owner = {
+                has_institution = industrialization
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 1
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 2
+            }
+        }
+        modifier = {
+            factor = 0.95
+            is_capital = yes
+            owner = {
+                government_rank = 3
+            }
+        }
+        modifier = {
+            factor = 10
+            has_climate = arctic
+        }
+        modifier = {
+            factor = 0.95
+            OR = {
+                has_building = barracks
+                has_building = training_fields
+            }
+        }
+    }
+
+    immediate = {
+        add_base_manpower = 1
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.3
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_development.42.a
+    }
+}
+
+# Development Loss (Tax)
+province_event = {
+    id = ipe_development.43
+    title = ipe_development.43.t
+    desc = ipe_development.43.d
+    picture = FAMINE_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        devastation = 10
+        base_tax = 2
+        NOT = {
+            has_province_modifier = devastated_province
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 6
+    }
+
+    immediate = {
+        random_list = {
+            50 = {
+            }
+            40 = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_province_modifier = old_world_diseases_normal
+                            has_province_modifier = old_world_diseases_bad
+                        }
+                        owner = {
+                            any_owned_province = {
+                                religion = ROOT
+                                culture_group = ROOT
+                                NOT = {
+                                    devastation = 10
+                                    province_distance = {
+                                        who = ROOT
+                                        distance = 125
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    owner = {
+                        random_owned_province = {
+                            limit = {
+                                religion = ROOT
+                                culture_group = ROOT
+                                NOT = {
+                                    devastation = 10
+                                    province_distance = {
+                                        who = ROOT
+                                        distance = 125
+                                    }
+                                }
+                            }
+                            add_base_tax = 1
+                            if = {
+                                limit = {
+                                    owner = {
+                                        has_country_flag = development_display_on
+                                    }
+                                }
+                                set_province_flag = tax_refugee_recipient
+                            }
+                        }
+                    }
+                }
+            }
+            10 = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_province_modifier = old_world_diseases_normal
+                            has_province_modifier = old_world_diseases_bad
+                        }
+                        owner = {
+                            any_neighbor_country = {
+                                NOT = {
+                                    war_with = PREV
+                                }
+                                any_owned_province = {
+                                    religion = ROOT
+                                    NOT = {
+                                        devastation = 10
+                                        province_distance = {
+                                            who = ROOT
+                                            distance = 250
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    owner = {
+                        random_neighbor_country = {
+                            limit = {
+                                NOT = {
+                                    war_with = PREV
+                                }
+                            }
+                            random_owned_province = {
+                                limit = {
+                                    religion = ROOT
+                                    NOT = {
+                                        devastation = 10
+                                        province_distance = {
+                                            who = ROOT
+                                            distance = 250
+                                        }
+                                    }
+                                }
+                                add_base_tax = 1
+                                if = {
+                                    limit = {
+                                        owner = {
+                                            has_country_flag = development_display_on
+                                        }
+                                    }
+                                    set_province_flag = international_tax_refugee_recipient
+                                    owner = {
+                                        country_event = {
+                                            id = ipe_development_display.8
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.4
+                }
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_province_modifier = old_world_diseases_normal
+                    has_province_modifier = old_world_diseases_bad
+                }
+            }
+            random = {
+                chance = 0
+                add_permanent_province_modifier = {
+                    name = devastated_province
+                    duration = 3650
+                }
+            }
+        }
+        add_base_tax = -1
+        add_devastation = -5
+    }
+
+    option = {
+        name = ipe_development.43.a
+    }
+}
+
+# Development Loss (Production)
+province_event = {
+    id = ipe_development.44
+    title = ipe_development.44.t
+    desc = ipe_development.44.d
+    picture = FAMINE_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        devastation = 10
+        base_production = 2
+        NOT = {
+            has_province_modifier = devastated_province
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 6
+    }
+
+    immediate = {
+        random_list = {
+            50 = {
+            }
+            40 = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_province_modifier = old_world_diseases_normal
+                            has_province_modifier = old_world_diseases_bad
+                        }
+                        owner = {
+                            any_owned_province = {
+                                religion = ROOT
+                                culture_group = ROOT
+                                NOT = {
+                                    devastation = 10
+                                    province_distance = {
+                                        who = ROOT
+                                        distance = 125
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    owner = {
+                        random_owned_province = {
+                            limit = {
+                                religion = ROOT
+                                culture_group = ROOT
+                                NOT = {
+                                    devastation = 10
+                                    province_distance = {
+                                        who = ROOT
+                                        distance = 125
+                                    }
+                                }
+                            }
+                            add_base_production = 1
+                            if = {
+                                limit = {
+                                    owner = {
+                                        has_country_flag = development_display_on
+                                    }
+                                }
+                                set_province_flag = production_refugee_recipient
+                            }
+                        }
+                    }
+                }
+            }
+            10 = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_province_modifier = old_world_diseases_normal
+                            has_province_modifier = old_world_diseases_bad
+                        }
+                        owner = {
+                            any_neighbor_country = {
+                                NOT = {
+                                    war_with = PREV
+                                }
+                                any_owned_province = {
+                                    religion = ROOT
+                                    NOT = {
+                                        devastation = 10
+                                        province_distance = {
+                                            who = ROOT
+                                            distance = 250
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    owner = {
+                        random_neighbor_country = {
+                            limit = {
+                                NOT = {
+                                    war_with = PREV
+                                }
+                            }
+                            random_owned_province = {
+                                limit = {
+                                    religion = ROOT
+                                    NOT = {
+                                        devastation = 10
+                                        province_distance = {
+                                            who = ROOT
+                                            distance = 250
+                                        }
+                                    }
+                                }
+                                add_base_production = 1
+                                if = {
+                                    limit = {
+                                        owner = {
+                                            has_country_flag = development_display_on
+                                        }
+                                    }
+                                    set_province_flag = international_production_refugee_recipient
+                                    owner = {
+                                        country_event = {
+                                            id = ipe_development_display.9
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.5
+                }
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_province_modifier = old_world_diseases_normal
+                    has_province_modifier = old_world_diseases_bad
+                }
+            }
+            random = {
+                chance = 0
+                add_permanent_province_modifier = {
+                    name = devastated_province
+                    duration = 3650
+                }
+            }
+        }
+        add_base_production = -1
+        add_devastation = -5
+    }
+
+    option = {
+        name = ipe_development.44.a
+    }
+}
+
+# Development Loss (Manpower)
+province_event = {
+    id = ipe_development.45
+    title = ipe_development.45.t
+    desc = ipe_development.45.d
+    picture = FAMINE_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        is_city = yes
+        devastation = 10
+        base_manpower = 2
+        NOT = {
+            has_province_modifier = devastated_province
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 6
+    }
+
+    immediate = {
+        random_list = {
+            50 = {
+            }
+            40 = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_province_modifier = old_world_diseases_normal
+                            has_province_modifier = old_world_diseases_bad
+                        }
+                        owner = {
+                            any_owned_province = {
+                                religion = ROOT
+                                culture_group = ROOT
+                                NOT = {
+                                    devastation = 10
+                                    province_distance = {
+                                        who = ROOT
+                                        distance = 125
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    owner = {
+                        random_owned_province = {
+                            limit = {
+                                religion = ROOT
+                                culture_group = ROOT
+                                NOT = {
+                                    devastation = 10
+                                    province_distance = {
+                                        who = ROOT
+                                        distance = 125
+                                    }
+                                }
+                            }
+                            add_base_manpower = 1
+                            if = {
+                                limit = {
+                                    owner = {
+                                        has_country_flag = development_display_on
+                                    }
+                                }
+                                set_province_flag = manpower_refugee_recipient
+                            }
+                        }
+                    }
+                }
+            }
+            10 = {
+                if = {
+                    limit = {
+                        NOT = {
+                            has_province_modifier = old_world_diseases_normal
+                            has_province_modifier = old_world_diseases_bad
+                        }
+                        owner = {
+                            any_neighbor_country = {
+                                NOT = {
+                                    war_with = PREV
+                                }
+                                any_owned_province = {
+                                    religion = ROOT
+                                    NOT = {
+                                        devastation = 10
+                                        province_distance = {
+                                            who = ROOT
+                                            distance = 250
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    owner = {
+                        random_neighbor_country = {
+                            limit = {
+                                NOT = {
+                                    war_with = PREV
+                                }
+                            }
+                            random_owned_province = {
+                                limit = {
+                                    religion = ROOT
+                                    NOT = {
+                                        devastation = 10
+                                        province_distance = {
+                                            who = ROOT
+                                            distance = 250
+                                        }
+                                    }
+                                }
+                                add_base_manpower = 1
+                                if = {
+                                    limit = {
+                                        owner = {
+                                            has_country_flag = development_display_on
+                                        }
+                                    }
+                                    set_province_flag = international_manpower_refugee_recipient
+                                    owner = {
+                                        country_event = {
+                                            id = ipe_development_display.10
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = development_display_on
+                }
+            }
+            owner = {
+                country_event = {
+                    id = ipe_development_display.6
+                }
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_province_modifier = old_world_diseases_normal
+                    has_province_modifier = old_world_diseases_bad
+                }
+            }
+            random = {
+                chance = 0
+                add_permanent_province_modifier = {
+                    name = devastated_province
+                    duration = 3650
+                }
+            }
+        }
+        add_base_manpower = -1
+        add_devastation = -5
+    }
+
+    option = {
+        name = ipe_development.45.a
+    }
+}

@@ -1,0 +1,23 @@
+#6412 - Soest
+owner = SOE
+controller = SOE
+add_core = SOE
+add_core = KOL
+culture = hannoverian
+religion = catholic
+trade_goods = cotton
+capital = "Soest"
+base_tax = 4
+base_production = 4
+base_manpower = 2
+extra_cost = 16
+center_of_trade = 2
+is_city = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+add_province_triggered_modifier = kontor
+fort_15th = yes
+
+hre = yes

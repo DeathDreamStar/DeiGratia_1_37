@@ -1,0 +1,70 @@
+country_decisions = {
+
+	unite_hawaii = {
+		major = yes
+		potential = {
+			NOT = { tag = HLR }
+			NOT = { tag = PAP }
+			NOT = { tag = UHW }
+			primary_culture = polynesian
+			capital_scope = {
+				area = northern_polynesia_area
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 2	
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1240
+				province_id = 4934
+				province_id = 4935
+				province_id = 4936
+			}
+			NOT = {
+				owned_by = ROOT
+				is_core = ROOT
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			capital_scope = {
+				area = northern_polynesia_area
+				is_core = ROOT
+			}
+			owns_core_province = 1240
+			owns_core_province = 4934
+			owns_core_province = 4935
+			owns_core_province = 4936
+			NOT = { exists = UHW }
+		}
+		effect = {
+			change_tag = UHW
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			northern_polynesia_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = UHW
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

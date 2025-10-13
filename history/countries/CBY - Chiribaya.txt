@@ -1,0 +1,16 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = pukina
+religion = inti
+technology_group = andean
+capital = 805 # Arequipa
+
+1444.1.1 = {
+	monarch = {
+		name = "Luyes"
+		dynasty = "Chiribaya"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}

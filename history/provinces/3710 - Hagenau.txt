@@ -1,0 +1,52 @@
+# 3710 - Hagenau
+owner = HGA
+controller = HGA
+culture = swabian
+religion = catholic
+hre = yes
+base_tax = 2
+base_production = 2
+trade_goods = paper
+base_manpower = 1
+capital = "Hagenau"
+is_city = yes
+add_core = HGA
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = western
+discovered_by = muslim
+
+
+1648.10.24 = { add_core = FRA } #westphalia
+1674.1.1 = {
+           owner = FRA
+           controller = FRA
+           base_tax = 2
+           base_production = 2
+           base_manpower = 3
+}
+1679.1.26 = {
+           hre = no
+           remove_core = HGA
+}
+1685.10.18 = { unrest = 8 }
+1686.1.17 = { unrest = 0 }
+1800.1.1 = {
+           base_tax = 1
+           base_production = 1
+           base_manpower = 1
+}
+1814.1.1 = {
+           base_tax = 3
+           base_production = 3
+           base_manpower = 2
+}
+1870.8.6 = { controller = PRU }
+1871.5.10 = {
+           owner = PRU
+           add_core = PRU
+           remove_core = PRU
+           base_tax = 1
+           base_production = 2
+           base_manpower = 1
+}

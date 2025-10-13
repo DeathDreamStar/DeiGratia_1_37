@@ -1,0 +1,35 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = picard
+religion = catholic
+technology_group = western
+capital = 6389
+fixed_capital = 6389
+
+1433.1.1 = {
+	monarch = {
+		name = "Louis"
+		dynasty = "von Luxemburg"
+		birth_date = 1418.1.1
+		adm = 2
+		dip = 0
+		mil = 2
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = intricate_web_weaver_personality
+	add_ruler_personality = malevolent_personality
+}
+
+1435.7.16 = {
+	queen = {
+		name = "Jeanne"
+		dynasty = "de Montbéliard"
+		birth_date = 1415.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+		female = yes
+		country_of_origin = BAR
+	}
+}

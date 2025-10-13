@@ -1,0 +1,217 @@
+country_decisions = {
+	subjugate_wallachia = {
+		major = yes
+		potential = {
+			OR = {
+				tag = HUN
+				tag = POL
+				tag = PLC
+				tag = TUR
+			}
+			war_with = WAL
+			OR = {
+				current_age = age_of_discovery
+				current_age = age_of_reformation
+			}
+		}
+		provinces_to_highlight = {
+			owner = {
+				tag = WAL
+				capital_scope = {
+					region = carpathia_region
+				}
+			}
+		}
+		allow = {
+			WAL = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+				NOT = {
+					total_development = 300
+				}
+			}
+		}
+		effect = {
+			tooltip = {
+				white_peace = WAL
+			}
+			country_event = {
+				id = ipeWAL.4
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+
+	subjugate_moldavia = {
+		major = yes
+		potential = {
+			OR = {
+				tag = HUN
+				tag = POL
+				tag = PLC
+				tag = TUR
+			}
+			war_with = MOL
+			OR = {
+				current_age = age_of_discovery
+				current_age = age_of_reformation
+			}
+		}
+		provinces_to_highlight = {
+			owner = {
+				tag = MOL
+				capital_scope = {
+					region = carpathia_region
+				}
+			}
+		}
+		allow = {
+			MOL = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+				NOT = {
+					total_development = 300
+				}
+			}
+		}
+		effect = {
+			tooltip = {
+				white_peace = MOL
+			}
+			country_event = {
+				id = ipeMOL.3
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+
+	fall_of_hungary = {
+		major = yes
+		potential = {
+			tag = TUR
+			is_subject = no
+			mission_completed = conquer_serbia
+			HUN = {
+				is_subject = no
+			}
+			OR = {
+				current_age = age_of_discovery
+				current_age = age_of_reformation
+			}
+			NOT = {
+				has_global_flag = hungary_collapse
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				owner = {
+					tag = HUN
+					capital_scope = {
+						region = carpathia_region
+					}
+				}
+				owner = {
+					tag = TRA
+					capital_scope = {
+						region = carpathia_region
+					}
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				current_age = age_of_discovery
+			}
+			total_development = HUN
+			war_score_against = {
+				who = HUN
+				value = 75
+			}
+			OR = {
+				custom_trigger_tooltip = {
+					tooltip = fall_of_hungary_tooltip_1
+					AND = {
+						NOT = {
+							exists = TRA
+						}
+						TUR = {
+							any_owned_province = {
+								is_core = TRA
+								culture = hungarian
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = fall_of_hungary_tooltip_2
+					AND = {
+						NOT = {
+							exists = TRA
+						}
+						HUN = {
+							any_owned_province = {
+								is_core = TRA
+								culture = hungarian
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = fall_of_hungary_tooltip_3
+					TRA = {
+						is_subject_of = TUR
+						OR = {
+							is_subject_of_type = vassal
+							is_subject_of_type = march
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = fall_of_hungary_tooltip_4
+					TRA = {
+						is_subject_of = HUN
+						OR = {
+							is_subject_of_type = vassal
+							is_subject_of_type = march
+						}
+					}
+				}
+			}
+			HUN = {
+				capital_scope = {
+					controlled_by = ROOT
+				}
+				NOT = {
+					total_development = 600
+				}
+			}
+		}
+		effect = {
+			tooltip = {
+				white_peace = HUN
+				if = {
+					limit = {
+						war_with = TRA
+					}
+					white_peace = TRA
+				}
+			}
+			country_event = {
+				id = ipeHUN.1
+			}
+			set_global_flag = hungary_collapse
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 200
+	}
+}

@@ -1,0 +1,73 @@
+country_decisions = {
+	repurchase_further_austria = {
+		major = yes
+		potential = {
+			NOT = {
+				has_global_flag = further_austria_repurchase_request_made
+			}
+			has_country_flag = pawning_of_further_austria
+			any_known_country = {
+				has_country_flag = owns_further_austria
+				owns = 1880
+				owns = 72
+			}
+			1880 = {
+				is_core = ROOT
+			}
+			72 = {
+				is_core = ROOT
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1880
+				province_id = 72
+			}
+			owner = {
+				has_country_flag = owns_further_austria
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = repurchase_further_austria_tooltip
+				had_country_flag = {
+					flag = pawning_of_further_austria
+					days = 1825
+				}
+			}
+			treasury = 1200
+			is_at_war = no
+			any_known_country = {
+				custom_trigger_tooltip = {
+					tooltip = repurchase_further_austria_tooltip_2
+					has_country_flag = owns_further_austria
+				}
+				owns = 1880
+				controls = 1880
+				owns = 72
+				controls = 72
+				is_at_war = no
+			}
+		}
+		effect = {
+			set_global_flag = further_austria_repurchase_request_made
+			random_known_country = {
+				limit = {
+					has_country_flag = owns_further_austria
+					owns = 1880
+					controls = 1880
+					owns = 72
+					controls = 72
+					is_at_war = no
+				}
+				country_event = {
+					id = ipeBUR.23
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

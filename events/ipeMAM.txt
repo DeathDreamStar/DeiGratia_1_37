@@ -1,0 +1,318 @@
+namespace = ipeMAM
+normal_or_historical_nations = yes
+
+# Mamluk Rule in Egypt
+country_event = {
+	id = ipeMAM.1
+	title = ipeMAM.1.t
+	desc = ipeMAM.1.d
+	picture = BATTLE_eventPicture
+
+	trigger = {
+		NOT = {
+			tag = MAM
+			tag = EGY
+			primary_culture = al_misr_arabic
+			current_age = age_of_absolutism
+			current_age = age_of_revolutions
+			has_estate_privilege = estate_mamluks_mamluk_rule_in_egypt
+		}
+		any_owned_province = {
+			region = egypt_region
+		}
+		has_estate = estate_mamluks
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # It will be difficult to end Mamluk rule.
+		name = ipeMAM.1.a
+		set_estate_privilege = estate_mamluks_mamluk_rule_in_egypt
+	}
+}
+
+
+# Advancement of the Mamluks
+country_event = {
+	id = ipeMAM.2
+	title = ipeMAM.2.t
+	desc = ipeMAM.2.d
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_estate = estate_mamluks
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_mamluks
+				modifier = EST_VAL_MAMLUKS_DECLINES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_mamluks
+				modifier = EST_VAL_MAMLUKS_ADVANCES
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Ok.
+		name = ipeMAM.2.a
+		add_estate_influence_modifier = {
+			estate = estate_mamluks
+			desc = EST_VAL_MAMLUKS_ADVANCES
+			influence = 10
+			duration = 5475
+		}
+	}
+}
+
+# Declining Power of the Mamluks
+country_event = {
+	id = ipeMAM.3
+	title = ipeMAM.3.t
+	desc = ipeMAM.3.d
+	picture = MILITARY_CAMP_eventPicture
+	
+	trigger = {
+		has_estate = estate_mamluks
+		estate_influence = {
+			estate = estate_mamluks
+			influence = 15
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_mamluks
+				modifier = EST_VAL_MAMLUKS_DECLINES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_mamluks
+				modifier = EST_VAL_MAMLUKS_ADVANCES
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Ok.
+		name = ipeMAM.2.a
+		add_estate_influence_modifier = {
+			estate = estate_mamluks
+			desc = EST_VAL_MAMLUKS_DECLINES
+			influence = -10
+			duration = 5475
+		}
+	}
+}
+
+# Mamluk-Janissary Rivalry
+country_event = {
+	id = ipeMAM.4
+	title = ipeMAM.4.t
+	desc = ipeMAM.4.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_estate = estate_mamluks
+		has_estate = estate_janissaries
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Let us side with the Janissaries.
+		name = ipeMAM.4.a
+		ai_chance = {
+			factor = 60
+		}
+		add_estate_loyalty = {
+			estate = estate_janissaries
+			loyalty = 20
+		}
+		add_estate_loyalty = {
+			estate = estate_mamluks
+			loyalty = -20
+		}
+	}
+
+	option = { # Let us side with the Mamluks.
+		name = ipeMAM.4.b
+		ai_chance = {
+			factor = 20
+		}
+		add_estate_loyalty = {
+			estate = estate_mamluks
+			loyalty = 20
+		}
+		add_estate_loyalty = {
+			estate = estate_janissaries
+			loyalty = -20
+		}
+	}
+
+	option = { # Pick neither side.
+		name = ipeMAM.4.c
+		ai_chance = {
+			factor = 20
+		}
+		add_estate_loyalty = {
+			estate = estate_janissaries
+			loyalty = -10
+		}
+		add_estate_loyalty = {
+			estate = estate_mamluks
+			loyalty = -10
+		}
+	}
+}
+
+# The Great Plague of Egypt
+country_event = {
+	id = ipeMAM.6
+	title = ipeMAM.6.t
+	desc = ipeMAM.6.d
+	picture = PLAGUE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MAM
+		NOT = {
+			is_year = 1470
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.1
+			is_year = 1460
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			random_owned_province = {
+				limit = {
+					culture = al_misr_arabic
+					region = egypt_region
+					is_capital = no
+					NOT = {
+						has_province_modifier = peace_plague
+						has_province_modifier = quarantined_plague
+					}
+				}
+				set_province_flag = egypt_plague_1_flag
+			}
+			random_owned_province = {
+				limit = {
+					culture = al_misr_arabic
+					region = egypt_region
+					is_capital = no
+					NOT = {
+						has_province_flag = egypt_plague_1_flag
+						has_province_modifier = peace_plague
+						has_province_modifier = quarantined_plague
+					}
+				}
+				set_province_flag = egypt_plague_2_flag
+			}
+			random_owned_province = {
+				limit = {
+					culture = al_misr_arabic
+					region = egypt_region
+					is_capital = no
+					NOT = {
+						has_province_flag = egypt_plague_1_flag
+						has_province_flag = egypt_plague_2_flag
+						has_province_modifier = peace_plague
+						has_province_modifier = quarantined_plague
+					}
+				}
+				set_province_flag = egypt_plague_3_flag
+			}
+			random_owned_province = {
+				limit = {
+					culture = al_misr_arabic
+					region = egypt_region
+					is_capital = no
+					NOT = {
+						has_province_flag = egypt_plague_1_flag
+						has_province_flag = egypt_plague_2_flag
+						has_province_flag = egypt_plague_3_flag
+						has_province_modifier = peace_plague
+						has_province_modifier = quarantined_plague
+					}
+				}
+				set_province_flag = egypt_plague_4_flag
+			}
+		}
+	}
+
+	option = { # The times are unforgiving to us.
+		name = ipeMAM.6.a
+		add_stability = -1
+		capital_scope = {
+			add_permanent_province_modifier = {
+				name = peace_plague
+				duration = 730
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = egypt_plague_1_flag
+			}
+			add_permanent_province_modifier = {
+				name = peace_plague
+				duration = 730
+			}
+			clr_province_flag = egypt_plague_1_flag
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = egypt_plague_2_flag
+			}
+			add_permanent_province_modifier = {
+				name = peace_plague
+				duration = 730
+			}
+			clr_province_flag = egypt_plague_2_flag
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = egypt_plague_3_flag
+			}
+			add_permanent_province_modifier = {
+				name = peace_plague
+				duration = 730
+			}
+			clr_province_flag = egypt_plague_3_flag
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = egypt_plague_4_flag
+			}
+			add_permanent_province_modifier = {
+				name = peace_plague
+				duration = 730
+			}
+			clr_province_flag = egypt_plague_4_flag
+		}
+	}
+}

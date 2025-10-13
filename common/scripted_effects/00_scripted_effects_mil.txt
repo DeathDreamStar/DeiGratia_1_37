@@ -1,0 +1,193 @@
+
+##########################################################
+#Country effect
+# For tooltip use the following scheme: "§Y<amount>§! of §Y<unit_type>§! will be created in §Y[<province>.GetName]§! for §Y[This.GetName]§!."
+create_units_of_type = {
+	[[custom_tooltip]
+		custom_tooltip = $custom_tooltip$
+	]
+	hidden_effect = {
+		for = {
+			amount = $amount$
+			effect = "
+				$province$ = { $unit_type$ = PREV }
+			"
+		}
+	}
+}
+
+#Province effect
+# For tooltip use the following scheme: "§Y<amount>§! of §Y<unit_type>§! will be created in §Y[This.GetName]§! for §Y[<who>.GetName]§!."
+create_units_of_type_in_province = {
+	[[custom_tooltip]
+		custom_tooltip = $custom_tooltip$
+	]
+	hidden_effect = {
+		$who$ = {
+			for = {
+				amount = $amount$
+				effect = "
+					PREV = { $unit_type$ = $who$ }
+				"
+			}
+		}
+	}
+}
+
+#type = army/navy
+#leader = general/conquistador/admiral/explorer
+create_leader_scaling_with_tradition = {
+	if = {
+		limit = {
+			$type$_tradition = 80
+		}
+		create_$leader$ = {
+			tradition = 100
+		}
+	}
+	else_if = {
+		limit = {
+			$type$_tradition = 70
+		}
+		create_$leader$ = {
+			tradition = 90
+		}
+	}
+	else_if = {
+		limit = {
+			$type$_tradition = 60
+		}
+		create_$leader$ = {
+			tradition = 80
+		}
+	}
+	else_if = {
+		limit = {
+			$type$_tradition = 50
+		}
+		create_$leader$ = {
+			tradition = 70
+		}
+	}
+	else_if = {
+		limit = {
+			$type$_tradition = 40
+		}
+		create_$leader$ = {
+			tradition = 60
+		}
+	}
+	else_if = {
+		limit = {
+			$type$_tradition = 30
+		}
+		create_$leader$ = {
+			tradition = 50
+		}
+	}
+	else = {
+		create_$leader$ = {
+			tradition = 40
+		}
+	}
+	custom_tooltip = create_leader_scaling_with_tradition_tt
+}
+
+#A Specific case of the above
+create_general_scaling_with_tradition_and_pips = {
+	if = {
+		limit = {
+			army_tradition = 80
+		}
+		create_general_with_pips = {
+			tradition = 100
+			[[add_fire] add_fire = $add_fire$ ]
+			[[add_shock] add_shock = $add_shock$ ]
+			[[add_manuever] add_manuever = $add_manuever$ ]
+			[[add_siege] add_siege = $add_siege$ ]
+		}
+	}
+	else_if = {
+		limit = {
+			army_tradition = 70
+		}
+		create_general_with_pips = {
+			tradition = 90
+			[[add_fire] add_fire = $add_fire$ ]
+			[[add_shock] add_shock = $add_shock$ ]
+			[[add_manuever] add_manuever = $add_manuever$ ]
+			[[add_siege] add_siege = $add_siege$ ]
+		}
+	}
+	else_if = {
+		limit = {
+			army_tradition = 60
+		}
+		create_general_with_pips = {
+			tradition = 80
+			[[add_fire] add_fire = $add_fire$ ]
+			[[add_shock] add_shock = $add_shock$ ]
+			[[add_manuever] add_manuever = $add_manuever$ ]
+			[[add_siege] add_siege = $add_siege$ ]
+		}
+	}
+	else_if = {
+		limit = {
+			army_tradition = 50
+		}
+		create_general_with_pips = {
+			tradition = 70
+			[[add_fire] add_fire = $add_fire$ ]
+			[[add_shock] add_shock = $add_shock$ ]
+			[[add_manuever] add_manuever = $add_manuever$ ]
+			[[add_siege] add_siege = $add_siege$ ]
+		}
+	}
+	else_if = {
+		limit = {
+			army_tradition = 40
+		}
+		create_general_with_pips = {
+			tradition = 60
+			[[add_fire] add_fire = $add_fire$ ]
+			[[add_shock] add_shock = $add_shock$ ]
+			[[add_manuever] add_manuever = $add_manuever$ ]
+			[[add_siege] add_siege = $add_siege$ ]
+		}
+	}
+	else_if = {
+		limit = {
+			army_tradition = 30
+		}
+		create_general_with_pips = {
+			tradition = 50
+			[[add_fire] add_fire = $add_fire$ ]
+			[[add_shock] add_shock = $add_shock$ ]
+			[[add_manuever] add_manuever = $add_manuever$ ]
+			[[add_siege] add_siege = $add_siege$ ]
+		}
+	}
+	else = {
+		create_general_with_pips = {
+			tradition = 40
+			[[add_fire] add_fire = $add_fire$ ]
+			[[add_shock] add_shock = $add_shock$ ]
+			[[add_manuever] add_manuever = $add_manuever$ ]
+			[[add_siege] add_siege = $add_siege$ ]
+		}
+	}
+	custom_tooltip = create_leader_scaling_with_tradition_tt
+}
+
+create_general_with_pips = {
+	create_general = {
+		tradition = $tradition$
+		[[add_fire] add_fire = $add_fire$ ]
+		[[add_shock] add_shock = $add_shock$ ]
+		[[add_manuever] add_manuever = $add_manuever$ ]
+		[[add_siege] add_siege = $add_siege$ ]
+		[[name] name = "$name$" ]
+		[[culture] culture = $culture$ ]
+	}
+	custom_tooltip = ME_GENERAL_$add_fire$_$add_shock$_$add_manuever$_$add_siege$
+}

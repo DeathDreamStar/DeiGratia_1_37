@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = wastek
+religion = mesoamerican_religion
+technology_group = mesoamerican 
+capital = 6578
+fixed_capital = 6578
+
+1444.1.1 = {
+	monarch = {
+		name = "Axayacatl"
+		dynasty = "Tuxpan"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

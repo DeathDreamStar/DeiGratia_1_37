@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = kham
+religion = vajrayana
+technology_group = chinese
+capital = 2130	# Nyingchi
+government_rank = 2
+
+1444.1.1 = {
+    monarch = {
+        name = "Nyima Jiebu"
+        dynasty = "Powo"
+        adm = 2
+        dip = 2
+        mil = 2
+    }
+}

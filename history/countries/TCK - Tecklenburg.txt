@@ -1,0 +1,100 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = hannoverian
+religion = catholic
+capital = 3991
+fixed_capital = 3991
+
+
+1328.1.1 = {
+	monarch = {
+		name = "Nikolaus I"
+		dynasty = "von Tecklenburg"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1364.1.1 = {
+	monarch = {
+		name = "Otto VI"
+		dynasty = "von Tecklenburg"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1366.1.1 = {
+	monarch = {
+		name = "Nikolaus II"
+		dynasty = "von Tecklenburg"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1388.1.1 = {
+	monarch = {
+		name = "Otto VII"
+		dynasty = "von Tecklenburg"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1450.1.1 = {
+	monarch = {
+		name = "Otto VIII"
+		dynasty = "von Tecklenburg"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1493.1.1 = {
+	monarch = {
+		name = "Nikolaus III"
+		dynasty = "von Tecklenburg"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1508.1.1 = {
+	monarch = {
+		name = "Otto IX"
+		dynasty = "von Tecklenburg"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+	heir = {
+		name = "Otto"
+		monarch_name = "Otto IX"
+		dynasty = "von Tecklenburg"
+		birth_date = 1501.1.1
+		death_date = 1557.1.1
+		claim = 100
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1534.1.1 = {
+	monarch = {
+		name = "Otto IX"
+		dynasty = "von Tecklenburg"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}

@@ -1,0 +1,86 @@
+namespace = ipeSAV
+normal_or_historical_nations = yes
+
+# Antipope Felix V
+country_event = {
+	id = ipeSAV.1
+	title = ipeSAV.1.t
+	desc = ipeSAV.1.d
+	picture = POPE_PREACHING_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		OR = {
+			tag = PAP
+			AND = {
+				NOT = {
+					exists = PAP
+				}
+				religion = catholic
+				government = theocracy
+			}
+		}
+		OR = {
+			any_province = {
+				religion = catholique
+			}
+			any_country = {
+				religion = catholique
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # We have regained authority.
+		name = ipeSAV.1.a
+		add_devotion = 10
+		every_province = {
+			limit = {
+				religion = catholique
+			}
+			change_religion = catholic
+		}
+		every_country = {
+			limit = {
+				religion = catholique
+			}
+			hidden_effect = {
+				change_religion = catholic
+				country_event = {
+					id = ipeSAV.2
+				}
+			}
+		}
+		hidden_effect = {
+			every_country = {
+				limit = {
+					has_spawned_rebels = catholique_rebels
+				}
+				disband_rebels = catholique_rebels
+			}
+		}
+	}
+}
+
+# Antipope Felix V
+country_event = {
+	id = ipeSAV.2
+	title = ipeSAV.1.t
+	desc = ipeSAV.2.d
+	picture = POPE_PREACHING_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We must look to Rome.
+		name = ipeSAV.2.a
+		tooltip = {
+			change_religion = catholic
+		}
+	}
+}

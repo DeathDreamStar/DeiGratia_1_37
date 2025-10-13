@@ -1,0 +1,38 @@
+name = "Qara Qoyunlu Conquest of Tbilisi"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 423
+}
+
+1440.3.1 = {
+	add_attacker = QAR
+	add_attacker = IRQ
+	add_attacker = BTL
+	add_attacker = MLK
+	add_attacker = HAK
+	add_attacker = BHT
+	add_attacker = SNJ
+	add_attacker = ERB
+	add_attacker = ASY
+	add_attacker = ARL
+	add_defender = GEO
+	add_defender = IME
+	add_defender = SME
+}
+
+1444.3.1 = {
+	rem_attacker = QAR
+	rem_attacker = IRQ
+	rem_attacker = BTL
+	rem_attacker = MLK
+	rem_attacker = HAK
+	rem_attacker = BHT
+	rem_attacker = SNJ
+	rem_attacker = ERB
+	rem_attacker = ASY
+	rem_attacker = ARL
+	rem_defender = GEO
+	rem_defender = IME
+	rem_defender = SME
+}

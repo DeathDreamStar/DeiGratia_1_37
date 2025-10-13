@@ -1,0 +1,15 @@
+# 6236 - Tshikapa
+
+owner = LND
+controller = LND
+add_core = LND
+culture = lunda
+religion = shamanism #Fetishism
+capital = "Tshikapa"
+trade_goods = ivory
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = central_african

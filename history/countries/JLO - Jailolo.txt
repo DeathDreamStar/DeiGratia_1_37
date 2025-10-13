@@ -1,0 +1,16 @@
+government = monarchy
+add_government_reform = plutocratic_reform
+primary_culture = halmahera
+religion = animism
+technology_group = chinese
+capital = 3077	# Jailolo
+
+1444.1.1 = { # Fictional
+	monarch = {
+		name = "Kaicil Yusuf"
+		dynasty = "Jailolo"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

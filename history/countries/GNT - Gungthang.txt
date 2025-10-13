@@ -1,0 +1,20 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = tibetan
+religion = vajrayana
+technology_group = chinese
+capital = 6792 # Mangyül
+fixed_capital = 6792
+
+
+1399.1.1 = { decision = monastic_education }
+
+1444.1.1 = {
+	monarch = {
+		name = "Lhawang Gyaltsen"
+		dynasty = "Thri"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

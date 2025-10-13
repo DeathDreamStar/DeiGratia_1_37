@@ -1,0 +1,251 @@
+merc_varangian_guard = { #enjoy you byzanophiles
+    regiments_per_development = 0.025
+    home_province = 151
+	cost_modifier = 1.1
+    artillery_weight = 0
+	sprites = { easterngfx_sprite_pack }
+    trigger = {
+		OR = {
+			tag = BYZ
+			tag = ROM
+		}
+		has_global_flag = constantinople_restored
+	}
+	modifier = { 
+		discipline = 0.05
+		shock_damage_received = -0.1
+	}
+}
+
+## Special limited mercs	
+# Black Army Cannoneers (Hungary)
+merc_black_army_cannoneers = {
+	regiments_per_development = 0.05
+	artillery_weight = 1.0
+	home_province = 153
+	sprites = { easterngfx_sprite_pack }
+	trigger = {
+		has_reform = black_army_reform
+	}
+	cost_modifier = 0.75
+	modifier = {
+		discipline = 0.05
+		fire_damage = 0.1
+	}
+}
+
+# Black Army Hussars (Hungary)
+merc_black_army_hussars = {
+	regiments_per_development = 0.05
+	cavalry_weight = 1
+    artillery_weight = 0
+	cavalry_cap = 20
+	home_province = 153
+	sprites = { easterngfx_sprite_pack }
+	trigger = {
+		has_reform = black_army_reform
+	}
+	cost_modifier = 0.75
+	modifier = {
+		discipline = 0.05
+		shock_damage = 0.1
+	}
+}
+
+merc_patricians_guard = {
+    regiments_per_development = 0.05
+	cavalry_weight = 0.2
+    artillery_weight = 0
+	cavalry_cap = 4
+	cost_modifier = 0.75
+    trigger = {
+		NOT = { total_development = 250 }
+		OR = {
+			has_reform = merchants_reform
+			has_reform = venice_merchants_reform
+		}
+	}
+	modifier = {
+	}
+}
+
+merc_reformed_patricians_guard = {
+    regiments_per_development = 0.05
+	cavalry_weight = 0.2
+    artillery_weight = 0
+	cavalry_cap = 4
+    trigger = {
+		total_development = 250
+		OR = {
+			has_reform = merchants_reform
+			has_reform = venice_merchants_reform
+		}
+	}
+	modifier = {
+		infantry_power = 0.05
+		discipline = 0.025
+	}
+}
+
+merc_staatse_leger = {
+    regiments_per_development = 0.05
+	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack westerngfx_sprite_pack }
+	cost_modifier = 1.1
+    artillery_weight = 0
+    trigger = {
+		NOT = {
+			total_development = 500
+		}
+		tag = NED
+		has_reform = dutch_republic
+	}
+
+	modifier = { #small buffs to give NED a bit of much needed land unit quality
+		infantry_power = 0.05
+		discipline = 0.025
+	}
+}
+
+merc_blue_guard = {
+    regiments_per_development = 0.05
+	sprites = { dlc028_ned_sprite_pack dlc042_ned_sprite_pack westerngfx_sprite_pack }
+	cost_modifier = 1.5
+    artillery_weight = 0
+    trigger = {
+		total_development = 500
+		tag = NED
+		has_reform = dutch_republic
+	}
+
+	modifier = { #bigger buffs
+		infantry_power = 0.1
+		discipline = 0.05
+	}
+}
+
+merc_farfanes  = { #Christian Andalusian mercs
+    regiments_per_development = 0.025
+	cavalry_cap = 20
+	cavalry_weight = 0.4
+    artillery_weight = 0
+    home_province = 217 # Madrid
+	cost_modifier = 1.1
+	sprites = { dlc020_ara_sprite_pack dlc029_spa_sprite_pack dlc049_SPA_sprite_pack dlc053_spa_sprite_pack westerngfx_sprite_pack }
+    trigger = {
+		tag = ADU
+		catholic = 0 #has to tolerate christianity at least a bit
+		any_owned_province = { #christian presence in iberia
+			region = iberia_region
+			religion_group = christian
+		}
+	}
+	
+	modifier = {
+		infantry_power = 0.05
+		shock_damage = 0.1
+	}
+}
+
+merc_ghazis = {
+    regiments_per_development = 0.05
+	cost_modifier = 0.5
+    artillery_weight = 0
+	sprites = { muslimgfx_sprite_pack }
+	trigger = {
+		religion_group = muslim
+		OR = {
+			is_defender_of_faith = yes
+			at_war_with_religious_enemy = yes
+			any_rival_country = {
+				NOT = {
+					religion_group = muslim
+				}
+			}
+		}
+	}
+    modifier = { 
+		reinforce_speed = 0.50
+		discipline = -0.05
+		land_morale = 0.1
+		prestige_from_land = 0.33
+	}
+}
+
+merc_royal_elephants  = {
+    regiments_per_development = 0.005
+	cavalry_cap = 20
+	cavalry_weight = 1.0
+    artillery_weight = 0
+	cost_modifier = 1.5
+	sprites = { dlc091_gdw_sprite_pack dlc091_ori_sprite_pack ayu_base_sprite_pack vij_base_sprite_pack indiangfx_sprite_pack}
+    trigger = {
+		government_rank = 2
+		government = monarchy
+		capital_scope = {
+			OR = { 
+				superregion = india_superregion
+				region = burma_region
+				region = indo_china_region
+				region = malaya_region
+			}
+		}
+	}
+	
+	modifier = {
+		cavalry_power = 0.2
+		shock_damage = 0.2
+		prestige_from_land = 0.50
+	}
+}
+
+merc_caucasian_ghilman = {
+    regiments_per_development = 0.025
+    home_province = 2204 # Lomsia
+	cavalry_cap = 20
+	cavalry_weight = 0.4
+    artillery_weight = 0
+	cost_modifier = 1.1
+	sprites = { dlc079_tab_sprite_pack muslimgfx_sprite_pack } #change?
+	trigger = {
+		tag = PER
+		religion_group = muslim
+		any_owned_province = {
+			OR = { 	
+				culture_group = caucasian
+				culture_group = northwest_caucasian
+				culture_group = east_caucasian
+				culture_group = armenian_group
+			}
+		}
+	}
+    modifier = { 
+		discipline = 0.025
+		fire_damage = 0.1
+	}
+}
+	
+# Zamburak
+merc_zamburaks = {
+    regiments_per_development = 0.025
+	cost_modifier = 1.1
+	artillery_weight = 1.0
+	sprites = { dlc002_per_sprite_pack muslimgfx_sprite_pack }
+	trigger = {
+		mil_tech = 13
+		OR = {
+			any_owned_province = {
+				superregion = persia_superregion 
+			}
+			capital_scope = {
+				OR = {
+					region = hindusthan_region
+					region = central_asia_region
+				}
+			}
+		}
+	}
+    modifier = {
+		fire_damage = 0.1
+		fire_damage_received = -0.1
+	}
+}

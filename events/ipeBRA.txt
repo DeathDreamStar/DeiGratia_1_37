@@ -1,0 +1,189 @@
+namespace = ipeBRA
+normal_or_historical_nations = yes
+
+# The Fate of Cottbus
+country_event = {
+    id = ipeBRA.1
+    title = ipeBRA.1.t
+    desc = ipeBRA.1.d
+    picture = DIPLOMACY_eventPicture
+
+    fire_only_once = yes
+
+    is_triggered_only = yes
+
+    option = { # Make the Bohemians a generous offer.
+        name = ipeBRA.1.a
+        ai_chance = {
+            factor = 100
+        }
+		custom_tooltip = ipeBRA.1.a.tooltip
+        BOH = {
+            country_event = {
+                id = ipeBRA.2
+            }
+        }
+    }
+    option = { # We must conserve our funds.
+        name = ipeBRA.1.b
+        ai_chance = {
+            factor = 0
+        }
+        custom_tooltip = ipeBRA.1.b.tooltip
+        add_prestige = -5
+    }
+}
+
+# The Fate of Cottbus
+country_event = {
+    id = ipeBRA.2
+    title = ipeBRA.1.t
+    desc = ipeBRA.2.d
+    picture = DIPLOMACY_eventPicture
+
+    fire_only_once = yes
+
+    is_triggered_only = yes
+
+    option = { # We need the money.
+        name = ipeBRA.2.a
+        ai_chance = {
+            factor = 100
+        }
+        tooltip = {
+            3665 = {
+                cede_province = BRA
+                add_core = BRA
+                remove_core = BOH
+            }
+        }
+        add_treasury = 50
+        FROM = {
+            country_event = {
+                id = ipeBRA.3
+            }
+            add_opinion = {
+                who = ROOT
+                modifier = sale_of_cottbus
+            }
+        }
+    }
+
+    option = { # Cottbus shall remain ours until the end of days.
+    name = ipeBRA.2.b
+        ai_chance = {
+            factor = 0
+        }
+        custom_tooltip = ipeBRA.2.b.tooltip
+        FROM = {
+            country_event = {
+                id = ipeBRA.4
+            }
+        }
+    }
+}
+
+# The Treaty of Guben
+country_event = {
+    id = ipeBRA.3
+    title = ipeBRA.3.t
+    desc = ipeBRA.3.d
+    picture = DIPLOMACY_eventPicture
+
+    fire_only_once = yes
+
+    is_triggered_only = yes
+
+    option = { # Excellent!
+        name = ipeBRA.3.a
+        BOH = {
+            3665 = {
+                cede_province = BRA
+                add_core = BRA
+                remove_core = BOH
+            }
+        }
+        add_treasury = -50
+        FROM = {
+            add_opinion = {
+                who = ROOT
+                modifier = sale_of_cottbus
+            }
+        }
+    }
+}
+
+# The Kingdom of Bohemia Declines
+country_event = {
+    id = ipeBRA.4
+    title = ipeBRA.4.t
+    desc = ipeBRA.4.d
+    picture = DIPLOMACY_eventPicture
+
+    fire_only_once = yes
+
+    is_triggered_only = yes
+
+    option = { # Most regrettable.
+        name = ipeBRA.4.a
+    }
+}
+
+# The Administration of Magdeburg
+country_event = {
+    id = ipeBRA.5
+    title = ipeBRA.5.t
+    desc = ipeBRA.5.d
+    picture = CITY_VIEW_eventPicture
+
+    fire_only_once = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+        set_country_flag = brandenburg_administrators
+    }
+
+    option = { # Very well.
+        name = ipeBRA.5.a
+        custom_tooltip = ipeBRA.5.a.tooltip
+        hidden_effect = {
+            FROM = {
+                country_event = {
+                    id = ipeBRA.6
+                }
+            }
+        }
+    }
+}
+
+# The Administration of Magdeburg
+country_event = {
+    id = ipeBRA.6
+    title = ipeBRA.5.t
+    desc = ipeBRA.6.d
+    picture = CITY_VIEW_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # This is good.
+        name = ipeBRA.6.a
+        custom_tooltip = ipeBRA.6.a.tooltip
+    }
+}
+
+# The Administration of Magdeburg
+country_event = {
+    id = ipeBRA.7
+    title = ipeBRA.5.t
+    desc = ipeBRA.7.d
+    picture = CITY_VIEW_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # Excellent.
+        name = ipeBRA.7.a
+        inherit = MAG
+        add_prestige = 5
+    }
+}

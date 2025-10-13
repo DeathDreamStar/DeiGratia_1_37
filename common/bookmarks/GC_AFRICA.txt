@@ -1,0 +1,21 @@
+bookmark =
+{
+	name = "GC_AFRICA_BOOKMARK"
+	desc = "GC_AFRICA_BOOKMARK_DESC"
+	date = 1444.11.11
+	
+	center = 1149
+	
+	country = MAL
+	country = SON
+	country = ETH
+	country = ADA
+	country = AJU
+	country = MOR
+	country = TUN
+	country = ZAN
+	country = ZIM
+	country = BEN
+	country = OYO
+	
+}

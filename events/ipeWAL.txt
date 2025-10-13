@@ -1,0 +1,689 @@
+namespace = ipeWAL
+normal_or_historical_nations = yes
+
+# Conflict with the Transylvanian Saxons
+country_event = {
+	id = ipeWAL.1
+	title = ipeWAL.1.t
+	desc = ipeWAL.1.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = WAL
+		dynasty = "Draculesti"
+		KLY = {
+			is_subject_of = HUN
+		}
+		is_neighbor_of = KLY
+		is_subject = no
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # IMPALE THEM ALL!
+		name = ipeWAL.1.a
+		ai_chance = {
+			factor = 75
+		}
+		add_mil_power = 100
+		HUN = {
+			add_opinion = {
+				who = WAL
+				modifier = impaled_saxons
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeWAL.2
+				}	
+			}
+		}
+		KLY = {
+			add_opinion = {
+				who = WAL
+				modifier = impaled_saxons
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeWAL.2
+				}
+			}
+		}
+		KLY = {
+			every_owned_province = {
+				add_devastation = 25
+			}
+		}
+	}
+
+	option = { # Ignore them.
+		name = ipeWAL.1.b
+		ai_chance = {
+			factor = 25
+		}
+		add_legitimacy = -5
+	}
+}
+
+# The Fate of the Transylvanian Saxons
+country_event = {
+	id = ipeWAL.2
+	title = ipeWAL.2.t
+	desc = ipeWAL.2.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We must avenge them!
+		name = ipeWAL.2.a
+		tooltip = {
+			add_opinion = {
+				who = WAL
+				modifier = impaled_saxons
+			}
+		}
+		add_casus_belli = {
+			target = WAL
+			type = cb_border_war
+			months = 300
+		}
+	}
+}
+
+# Bulgarian Refugees
+country_event = {
+	id = ipeWAL.3
+	title = ipeWAL.3.t
+	desc = ipeWAL.3.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = WAL
+		is_neighbor_of = TUR
+		TUR = {
+			any_owned_province = {
+				culture = bulgarian
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = { # They are welcome to stay here.
+		name = ipeWAL.3.a
+		capital_scope = {
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+}
+
+# The Subjugation of Wallachia
+country_event = {
+	id = ipeWAL.4
+	title = ipeWAL.4.t
+	desc = ipeWAL.4.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Excellent.
+		name = ipeWAL.4.a
+		if = {
+			limit = {
+				WAL = {
+					is_subject = yes
+				}
+			}
+			WAL = {
+				hidden_effect = {
+					overlord = {
+						country_event = {
+							id = ipeWAL.6
+						}
+					}
+				}
+				grant_independence = yes
+			}
+		}
+		white_peace = WAL
+		tooltip = {
+			WAL = {
+				kill_ruler = yes
+			}
+		}
+		create_subject = {
+			subject = WAL
+			subject_type = march
+		}
+		WAL = {
+			add_liberty_desire = -50
+		}
+		hidden_effect = {
+			WAL = {
+				country_event = {
+					id = ipeWAL.5
+				}
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Subjugates Wallachia
+country_event = {
+	id = ipeWAL.5
+	title = ipeWAL.5.t
+	desc = ipeWAL.5.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = wallachia_subjugated
+	}
+
+	option = { # This is not good.
+		name = ipeWAL.5.a
+		kill_ruler = yes
+		define_ruler = {
+			max_random_adm = 3
+			max_random_dip = 3
+			max_random_mil = 3
+		}
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject = WAL
+					subject_type = march
+				}
+			}
+			add_liberty_desire = -50
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Subjugates Wallachia
+country_event = {
+	id = ipeWAL.6
+	title = ipeWAL.5.t
+	desc = ipeWAL.6.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is not good.
+		name = ipeWAL.5.a
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject = WAL
+					subject_type = march
+				}
+			}
+			WAL = {
+				add_liberty_desire = -50
+			}
+		}
+	}
+}
+
+# Vlad the Impaler
+country_event = {
+	id = ipeWAL.7
+	title = flavor_wal.EVTNAME1
+	desc = flavor_wal.EVTDESC1
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will have to deal with the likes of him.
+		name = ipeWAL.7.a
+		tooltip = {
+			WAL = {
+				define_ruler = {
+					name = "Vlad Tepes"
+					dynasty = "Draculesti"
+					adm = 1
+					dip = 0
+					mil = 5
+					age = 23
+				}
+			}
+			grant_independence = yes
+			add_opinion = {
+				who = WAL
+				modifier = opinion_displeased
+				years = 50
+			}
+		}
+	}
+}
+
+# The Saxons of Tîrgoviste
+country_event = {
+	id = ipeWAL.8
+	title = ipeWAL.8.t
+	desc = ipeWAL.8.d
+	picture = CITY_VIEW_eventPicture
+	goto = 161
+
+	fire_only_once = yes
+
+	trigger = {
+		161 = {
+			owned_by = ROOT
+			culture = moselle
+		}
+		primary_culture = romanian
+		NOT = {
+			current_age = age_of_discovery
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # Tîrgoviste will always be a Romanian city.
+		name = ipeWAL.8.a
+		161 = {
+			change_culture = romanian
+			change_religion = ROOT
+		}
+	}
+}
+
+# The Fate of János Hunyadi
+country_event = {
+	id = ipeWAL.9
+	title = ipeWAL.9.t
+	desc = ipeWAL.9.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = WAL
+		is_subject = no
+		TRA = {
+			has_ruler_flag = hunyadi_imprisoned
+			is_subject_of = HUN
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Allow Hunyadi to go free.
+		name = ipeWAL.9.a
+		ai_chance = {
+			factor = 90
+			modifier = {
+				factor = 50
+				HUN = {
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_domineering
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				OR = {
+					alliance_with = HUN
+					is_subject_of = HUN
+				}
+			}
+		}
+		HUN = {
+			add_opinion = {
+				who = ROOT
+				modifier = released_hunyadi
+			}
+			country_event = {
+				id = ipeWAL.10
+			}
+		}
+		TRA = {
+			add_opinion = {
+				who = ROOT
+				modifier = released_hunyadi
+			}
+			country_event = {
+				id = ipeWAL.10
+			}
+		}
+	}
+
+	option = { # Hand Hunyadi over to the Sultan.
+		name = ipeWAL.9.b
+		custom_tooltip = ipeWAL.9.b.tooltip
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 25
+				HUN = {
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_domineering
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					alliance_with = HUN
+					is_subject_of = HUN
+				}
+			}
+		}
+		TUR = {
+			create_subject = {
+				subject = ROOT
+				subject_type = march
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = handed_over_hunyadi
+			}
+			country_event = {
+				id = ipeWAL.11
+			}
+		}
+		HUN = {
+			add_opinion = {
+				who = ROOT
+				modifier = imprisoned_hunyadi
+			}
+		}
+		TRA = {
+			add_opinion = {
+				who = ROOT
+				modifier = imprisoned_hunyadi
+			}
+		}
+	}
+
+	option = { # I personally order Hunyadi's execution.
+		name = ipeWAL.9.c
+		ai_chance = {
+			factor = 5
+			modifier = {
+				factor = 25
+				HUN = {
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_rivalry
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_hostile
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_outraged
+					}
+					ai_attitude = {
+						who = ROOT
+						attitude = attitude_domineering
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				OR = {
+					alliance_with = HUN
+					is_subject_of = HUN
+				}
+			}
+		}
+		tooltip = {
+			if = {
+				limit = {
+					HUN = {
+						has_ruler_flag = janos_is_here
+					}
+				}
+				HUN = {
+					kill_ruler = yes
+				}
+			}
+			if = {
+				limit = {
+					TRA = {
+						has_ruler_flag = hunyadi_imprisoned
+					}
+				}
+				TRA = {
+					kill_ruler = yes
+				}
+			}
+		}
+		HUN = {
+			add_opinion = {
+				who = ROOT
+				modifier = executed_hunyadi
+			}
+			country_event = {
+				id = ipeWAL.13
+			}
+		}
+		TRA = {
+			add_opinion = {
+				who = ROOT
+				modifier = executed_hunyadi
+			}
+			country_event = {
+				id = ipeWAL.13
+			}
+		}
+	}
+}
+
+# The Release of János Hunyadi
+country_event = {
+	id = ipeWAL.10
+	title = ipeWAL.10.t
+	desc = ipeWAL.10.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # A relief.
+		name = ipeWAL.10.a
+		tooltip = {
+			add_opinion = {
+				who = WAL
+				modifier = released_hunyadi
+			}
+		}
+	}
+}
+
+# The Fate of János Hunyadi
+country_event = {
+	id = ipeWAL.11
+	title = ipeWAL.9.t
+	desc = ipeWAL.11.d
+	picture = BATTLE_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Execute Hunyadi for his crimes.
+		name = ipeWAL.11.a
+		tooltip = {
+			create_subject = {
+				subject = FROM
+				subject_type = march
+			}
+			add_opinion = {
+				who = FROM
+				modifier = handed_over_hunyadi
+			}
+		}
+		if = {
+			limit = {
+				TRA = {
+					has_ruler_flag = hunyadi_imprisoned
+				}
+			}
+			TRA = {
+				tooltip = {
+					kill_ruler = yes
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = executed_hunyadi
+				}
+				country_event = {
+					id = ipeWAL.12
+				}
+			}
+		}
+		tooltip = {
+			if = {
+				limit = {
+					HUN = {
+						has_ruler_flag = janos_is_here
+					}
+				}
+				HUN = {
+					kill_ruler = yes
+				}
+			}
+		}
+		HUN = {
+			add_opinion = {
+				who = ROOT
+				modifier = executed_hunyadi
+			}
+			country_event = {
+				id = ipeWAL.12
+			}
+		}
+		add_prestige = 25
+	}
+}
+
+# The Execution of János Hunyadi
+country_event = {
+	id = ipeWAL.12
+	title = ipeWAL.12.t
+	desc = ipeWAL.12.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is a catastrophe!
+		name = ipeWAL.12.a
+		tooltip = {
+			TUR = {
+				create_subject = {
+					subject = WAL
+					subject_type = march
+				}
+			}
+			add_opinion = {
+				who = WAL
+				modifier = imprisoned_hunyadi
+			}
+			add_opinion = {
+				who = FROM
+				modifier = executed_hunyadi
+			}
+		}
+		if = {
+			limit = {
+				has_ruler_flag = janos_is_here
+			}
+			kill_ruler = yes
+		}
+		if = {
+			limit = {
+				has_ruler_flag = hunyadi_imprisoned
+			}
+			kill_ruler = yes
+		}
+		add_stability = -1
+	}
+}
+
+# The Execution of János Hunyadi
+country_event = {
+	id = ipeWAL.13
+	title = ipeWAL.12.t
+	desc = ipeWAL.13.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is a catastrophe!
+		name = ipeWAL.12.a
+		tooltip = {
+			add_opinion = {
+				who = WAL
+				modifier = executed_hunyadi
+			}
+		}
+		if = {
+			limit = {
+				has_ruler_flag = janos_is_here
+			}
+			kill_ruler = yes
+		}
+		if = {
+			limit = {
+				has_ruler_flag = hunyadi_imprisoned
+			}
+			kill_ruler = yes
+		}
+		add_stability = -1
+	}
+}

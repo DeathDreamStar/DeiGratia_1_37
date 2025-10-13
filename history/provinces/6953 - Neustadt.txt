@@ -1,0 +1,18 @@
+#6953 - Neustadt
+
+capital = "Neustadt"
+culture = moselle
+religion = catholic
+trade_goods = livestock
+owner = PAL
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+controller = PAL
+add_core = PAL
+hre = yes
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman

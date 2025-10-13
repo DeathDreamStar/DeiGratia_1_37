@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = turkish
+religion = sunni
+technology_group = ottoman
+capital = 2304	# Canik
+religious_school = hanafi_school
+
+1427.1.1 = {
+	monarch = {
+		name = "Hacemirogullar"
+		dynasty = Canik
+		birth_date = 1400.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}

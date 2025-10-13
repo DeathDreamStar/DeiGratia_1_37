@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = aztek
+religion = nahuatl
+technology_group = mesoamerican
+capital = 839
+fixed_capital = 839
+
+
+1440.1.1 = {
+	monarch = {
+		name = "Cuachimicín"
+		dynasty = "Cuzcatlan"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+} #No known Tlapanec rulers in-timeline

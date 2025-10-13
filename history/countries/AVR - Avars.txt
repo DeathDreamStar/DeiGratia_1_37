@@ -1,0 +1,252 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = avar
+religion = sunni
+technology_group = muslim
+capital = 2198
+religious_school = shafii_school
+
+#Avar State
+1105.1.1 = {
+	monarch = {
+		name = "Surakat"
+		dynasty = "Avari"
+		adm = 4
+		dip = 2
+		mil = 3
+	}
+}
+1150.1.1 = {
+	monarch = {
+		name = "Andunik"
+		dynasty = "Avari"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1190.1.1 = {
+	monarch = {
+		name = "Nutsal"
+		dynasty = "Avari"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1230.1.1 = {
+	monarch = {
+		name = "Dugry"
+		dynasty = "Avari"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1270.1.1 = {
+	monarch = {
+		name = "Nutsal"
+		dynasty = "Avari"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1309.1.1 = {
+	monarch = {
+		name = "Muslima"
+		dynasty = "Avari"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1356.1.1 = {
+	monarch = {
+		name = "Abu Auhar"
+		dynasty = "Avari"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1400.1.1 = {
+	monarch = {
+		name = "Auhar"
+		dynasty = "Avari"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1440.1.1 = {
+	monarch = {
+		name = "Gebek"
+		dynasty = "Avari"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1480.1.1 = {
+	monarch = {
+		name = "Dugru"
+		dynasty = "Avari"
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1520.1.1 = {
+	monarch = {
+		name = "Ahmad"
+		dynasty = "Avari"
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1560.1.1 = {
+	monarch = {
+		name = "Muhammad I"
+		dynasty = "Avari"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1606.1.1 = {
+	monarch = {
+		name = "Umma Khan"
+		dynasty = "Avari"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1634.1.1 = { 
+	monarch = {
+		name = "Mirza Vltava"
+		dynasty = "Avari"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1650.1.1 = { 
+	monarch = {
+		name = "Muhammad II"
+		dynasty = "Avari"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1668.1.1 = { 
+	monarch = {
+		name = "Dugru"
+		dynasty = "Avari"
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1668.6.1 = { 
+	monarch = {
+		name = "Muhammad III"
+		dynasty = "Avari"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1720.1.1 = { 
+	monarch = {
+		name = "Umma Khan II"
+		dynasty = "Avari"
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+1730.1.1 = { 
+	monarch = {
+		name = "Ankalav"
+		dynasty = "Avari"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1735.1.1 = { 
+	monarch = {
+		name = "Umma Khan II"
+		dynasty = "Avari"
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}
+1740.1.1 = { 
+	monarch = {
+		name = "Khan II"
+		dynasty = "Avari"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1753.1.1 = { 
+	monarch = {
+		name = "Muhammad IV"
+		dynasty = "Avari"
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+1765.1.1 = { 
+	monarch = {
+		name = "Beg"
+		dynasty = "Avari"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1774.1.1 = { 
+	monarch = {
+		name = "Umma Khan III"
+		dynasty = "Avari"
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1802.1.1 = { 
+	monarch = {
+		name = "Gebek Janku"
+		dynasty = "Avari"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1802.6.1 = {
+	monarch = {
+		name = "Muhammad V"
+		dynasty = "Avari"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1802.10.1 = {
+	monarch = {
+		name = "Ahmed Khan"
+		dynasty = "Avari"
+		adm = 4
+		dip = 3
+		mil = 2
+	}
+}

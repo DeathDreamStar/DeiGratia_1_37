@@ -1,0 +1,17 @@
+#3379 - Haka
+
+owner = MIZ
+controller = MIZ
+culture = chin
+religion = animism
+capital = "Haka"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = MIZ
+
+discovered_by = chinese
+discovered_by = indian

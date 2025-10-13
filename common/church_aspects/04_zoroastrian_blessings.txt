@@ -1,0 +1,84 @@
+blessing_yasna = {
+	is_blessing = yes
+
+	modifier = {
+		legitimacy = 1
+		horde_unity = 1
+		republican_tradition = 0.3
+		devotion = 1
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+blessing_haoma = {
+	is_blessing = yes
+
+	modifier = {
+		global_trade_goods_size_modifier = 0.1
+	}
+
+	ai_will_do = {
+		factor = 15
+	}
+}
+
+blessing_navjote = {
+	is_blessing = yes
+
+	modifier = {
+		global_missionary_strength = 0.02
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.9
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.7
+			}
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				religious_unity = 0.5
+			}
+		}
+	}
+}
+
+blessing_manthras = {
+	is_blessing = yes
+
+	modifier = {
+		reform_progress_growth = 0.25
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 2
+			governing_capacity_percentage = 0.9
+		}
+		modifier = {
+			factor = 3
+			governing_capacity_percentage = 1.0
+		}
+	}
+}
+
+blessing_dakhma = {
+	is_blessing = yes
+
+	modifier = {
+		build_cost = -0.10
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}

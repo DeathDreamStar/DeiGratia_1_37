@@ -1,0 +1,59 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = gascon
+religion = catholic
+technology_group = western
+capital = 3671 # Comminges
+fixed_capital = 3671
+historical_rival = AMG
+
+
+1341.1.1 = {
+	monarch = {
+		name = "Pierre Raymond II"
+		dynasty = "de Comminges"
+		DIP = 4
+		ADM = 2
+		MIL = 3
+	}
+}
+
+1363.1.1 = {
+	heir = {
+		name = "Marguerite"
+		monarch_name = "Marguerite"
+		dynasty = "de Comminges"
+		birth_date = 1363.1.1
+		death_date = 1443.1.1
+		claim = 95
+		DIP = 4
+		ADM = 3
+		MIL = 2
+	}
+}
+
+1376.1.1 = {
+	monarch = {
+		name = "Marguerite"
+		dynasty = "de Comminges"
+		DIP = 4
+		ADM = 3
+		MIL = 2
+	}
+}
+
+1443.1.1 = {
+	monarch = {
+		name = "Mathieu"
+		dynasty = "de Foix"
+		DIP = 4
+		ADM = 6
+		MIL = 3
+	}
+
+	set_country_flag = this_fief_will_die
+	set_ruler_flag = inheritable_fief
+}
+
+1560.1.1 = { religion = reformed }

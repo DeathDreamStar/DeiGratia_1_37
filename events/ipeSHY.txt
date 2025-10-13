@@ -1,0 +1,331 @@
+namespace = ipeSHY
+normal_or_historical_nations = yes
+
+# Death of Shah Rukh
+country_event = {
+	id = ipeSHY.1
+	title = ipeSHY.1.t
+	desc = ipeSHY.1.d
+	picture = HORSE_ON_HORSEBACK_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SHY
+		TIM = {
+			NOT = {
+				has_ruler_modifier = shahrukhs_empire
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # We move in search of greener pastures.
+		name = ipeSHY.1.a
+		TRS = {
+			every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = SHY
+					}
+					NOT = {
+						is_permanent_claim = SHY
+					}
+				}
+				add_permanent_claim = SHY
+			}
+		}
+		TIM = {
+			every_owned_province = {
+				limit = {
+					is_core = TRS
+				}
+				add_permanent_claim = SHY
+			}
+		}
+	}
+}
+
+# A Southern Capital
+country_event = {
+	id = ipeSHY.2
+	title = ipeSHY.2.t
+	desc = ipeSHY.2.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = SHY
+		owns = 1970
+		NOT = {
+			capital = 1970
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # It is time we find a new home.
+		name = ipeSHY.2.a
+		ai_chance = {
+			factor = 90
+		}
+		add_years_of_income = -0.5
+		set_capital = 1970
+		1970 = {
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+
+	option = { # We cannot stray too far from the lands of old.
+		name = ipeSHY.2.b
+		ai_chance = {
+			factor = 10
+		}
+		add_prestige = -10
+	}
+}
+
+# The Sibir Khanate
+country_event = {
+	id = ipeSHY.3
+	title = ipeSHY.3.t
+	desc = ipeSHY.3.d
+	picture = HORSE_ON_HORSEBACK_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = SHY
+		capital_scope = {
+			NOT = {
+				is_core = SIB
+			}
+		}
+		any_owned_province = {
+			is_core = SIB
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.5
+			NOT = {
+				horde_unity = 75
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				horde_unity = 50
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				horde_unity = 25
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = SIB
+			SIB = {
+				change_government = tribal
+				add_government_reform = steppe_horde
+				adopt_reform_progress = ROOT
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.4
+					}
+				}
+			}
+			if = {
+				limit = {
+					dynasty = "Shaybani"
+				}
+				SIB = {
+					define_ruler = {
+						name = "Ibak"
+						dynasty = "Shaybani"
+						adm = 2
+						dip = 2
+						mil = 2
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Our reign over the Sibir Khanate has come to an end.
+		name = ipeSHY.3.a
+		ai_chance = {
+			factor = 75
+		}
+		SIB = {
+			every_owned_province = {
+				remove_core = SHY
+			}
+		}
+	}
+
+	option = { # The Uzbek Khanate is indivisible!
+		name = ipeSHY.3.b
+		ai_chance = {
+			factor = 25
+		}
+		add_historical_rival = SIB
+		SIB = {
+			add_historical_rival = SHY
+		}
+	}
+
+	option = { # Play as Sibir.
+		name = ipeSHY.3.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_historical_rival = SIB
+			SIB = {
+				add_historical_rival = SHY
+			}
+		}
+		switch_tag = SIB
+	}
+}
+
+# The Uprising of the Kazakhs
+country_event = {
+	id = ipeSHY.4
+	title = ipeSHY.4.t
+	desc = ipeSHY.4.d
+	picture = HORSE_ON_HORSEBACK_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = SHY
+		SIB = {
+			exists = yes
+			NOT = {
+				is_subject_of = SHY
+			}
+		}
+		any_owned_province = {
+			culture = khazak
+		}
+		NOT = {
+			primary_culture = khazak
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			NOT = {
+				horde_unity = 75
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				horde_unity = 50
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				horde_unity = 25
+			}
+		}
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					culture = khazak
+					OR = {
+						area = jetysuu_area
+						area = balchasj_area
+					}
+				}
+				add_core = KZH
+			}
+			release = KZH
+			KZH = {
+				change_government = tribal
+				add_government_reform = steppe_horde
+				adopt_reform_progress = ROOT
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 0.6
+						cavalry = 0.4
+					}
+				}
+			}
+		}
+	}
+
+	option = { # Let them go free.
+		name = ipeSHY.4.a
+		ai_chance = {
+			factor = 75
+		}
+		KZH = {
+			every_owned_province = {
+				remove_core = SHY
+			}
+		}
+	}
+
+	option = { # These dissidents must be crushed!
+		name = ipeSHY.4.b
+		ai_chance = {
+			factor = 25
+		}
+		add_historical_rival = KZH
+		KZH = {
+			add_historical_rival = SHY
+		}
+	}
+
+	option = { # Play as Kazakh.
+		name = ipeSHY.4.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_historical_rival = KZH
+			KZH = {
+				add_historical_rival = SHY
+			}
+		}
+		switch_tag = KZH
+	}
+}

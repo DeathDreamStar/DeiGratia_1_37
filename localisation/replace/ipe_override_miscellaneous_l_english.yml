@@ -1,0 +1,714 @@
+﻿l_english:
+ valencia: "València"
+ emp_pap_patrimony_of_st_peter_tt: "§Y10§! provinces in the §YMarche§! or §YRomagna§! areas are owned by you or your non-tributary subjects"
+ fra_hyw_tt: "No province in the §YFrance§! region, except for §Y[87.GetName]§!, §Y[3695.GetName]§!, or §Y[6385.GetName]§!, is owned by §YEngland§! or §YGreat Britain§!"
+ emp_swi_vaud_wallis_title: "Conquer Vaud"
+ emp_swi_vaud_wallis_desc: "The people of Vaud are discontent under the rule of their Savoyard masters. We must bring them liberty through inclusion in the Confederacy."
+ estate_cossacks_exploration_expedition_effect_tooltip: "§G-5%§! local development cost in all Steppe provinces"
+ adm_tech_cs_17_name: "Modern Education"
+ mechanic_has_parliament_yes: "Enables Parliament."
+ emperor_reichsreform: "Call for Reichsreform"
+ emperor_reichsregiment_emperor_per_prince: "Reichsregiment per Prince"
+ emperor_reichsregiment_elector_per_prince: "Reichsregiment per Prince"
+ emperor_reichsstabilitaet_emperor: "Absolute Reichsstabilität"
+ emperor_gemeinerpfennig_elector_per_prince: "Enact Gemeiner Pfennig"
+ emperor_perpetual_diet: "Perpetual Diet"
+ emperor_reichstag_collegia: "Reichstag Collegia"
+ emperor_reichstag_collegia_province: "Reichstag Collegia"
+ emperor_landsknechtswesen_province: "Create the Landsknechtswesen"
+ emperor_landsknechtswesen_emperor_per_prince: "Create the Landsknechtswesen"
+ emperor_landsknechtswesen_elector_per_prince: "Create the Landsknechtswesen"
+ emperor_geteilte_macht_emperor: "Geteilte Macht"
+ emperor_reichskrieg: "Reichskrieg"
+ english_monarchy: "British Monarchy"
+ english_monarchy_desc: "The kingdoms of Britain are ruled by representative monarchies, with parliaments regularly called by the ruling monarch. In England, this is based on the privileges defined in the Magna Carta."
+ emperor_privilegia_de_non_appelando_member: "Revoke the Privilegia"
+ spanish_nation_desc: "Global expansion in newly discovered areas and the establishment of colonies is transforming Spain into one of the most powerful and wealthiest nations of our time. Spanish explorers are constantly moving into new lands and expanding our borders. Immense amounts of gold and silver are being brought back to our motherland, filling the coffers of our state treasury."
+ ab_transfer_vassal_wargoal: "Chain Claims"
+ MODIFIER_RELATION_WITH_HERETICS: "Opinion of Heretics"
+ dnz_decision_available_tooltip: "The decision §Y'Curtail the Prussian Confederation'§! is now available."
+ alb_inspire_resistance_desc: "Our continued survival inspires the Christians of the Balkans to take up arms against their Turkish oppressors. We must support their efforts and expand the rebellion to include people of all nations."
+ spanish_nation_diplomatically_title: "Form Spanish Nation Diplomatically (Aragon)"
+ laplata: "Río de la Plata"
+ MODIFIER_ACCEPT_VASSALIZATION_REASONS: "Vassalization Acceptance"
+ carribeans_region: "The Caribbean"
+ carribean_trade: "The Caribbean"
+ spa_rb_zapotecs_title: "Conquer the Purépechas"
+ spa_rb_zapotecs_desc: "The indigenous Purépecha people made the egregious error of greeting us with gifts of gold and precious jewelry. They must have more. Find it."
+ string_start_aztecs: "From the early fourteenth century, the valley of §YMexico§! and its neighboring regions have labored under the sway of the rulers of the §YTepanec§! rulers of §YAzcapotzalco§!. Their reign, however, has faded. A bitter feud for the throne between the rival brothers Tayatzin and Maxtla left them vulnerable, and in 1428 they were overthrown by the nascent alliance between the city-states of §YMexico-Tenochtilan§!, §YTlacopan§! and §YTexcoco§!. Having now consolidated their power, this §YAztec§! triple alliance led by §YMontezuma Ilhuicamina§! now look to expand beyond their homes, in particular toward the wealth of the §YMixtec§! cities (such as §YCoixtlahuaca§!) to the south.\n\nEast of the Aztec, the allied city-states of §YTlaxcala§! are determined to maintain their independence in the face of Aztec aggression. The Aztecs are willing to accept it: Tlaxcalan captives taken in war to offer as sacrifice have far greater value to the empire than Tlaxcalan subjects. Meanwhile, to the south, the Nahuatl people of §YTeotitlan§! play the dangerous game of trying to maintain their independence through friendship with the Empire, rather than through warfare.\n\nTo the west, in the highlands of §YMichoacan§!, the cities of Lake Patzcuaro were unified between 1300 and 1350 under the rule of §YTariacuri of Tzintzuntzan§!. From this power, Tariacuri's §YPurépecha§! successors have spread further, creating a powerful state that can rival the Aztecs. Between them both Purépechas and Aztecs eye the §YMatlatzinca§! of the valley of §YTolluca§! warily: while they would make a nice addition to either empire, they may be more valuable as a buffer state, and aggression in that direction may well draw the two powers in a war they do not wish to fight.\n\nBut Tolluca is not the only worry of the Purépecha rulers. To the west and north of their realm, a plethora of small states like §YColima§!, §YTonalla§! and §YXalixco§! watch over wealthy saltpeter deposits that the Purépecha would like to control. Independently, they are unlikely to resist Purépecha expansion, but if they were to assist one another, they could be a formidable obstacle to Purépecha expansion.\n\nFinally, at the northern edge of the region, the various people that the Aztec collectively call §YChichimeca§! are a perennial source of problem for the more settled states to the south. The most powerful of them are likely the §YGuamar§! confederacy, but far more familiar to the Mesoamerican people are the §YOtomies§!, who are often settled among them, or found serving as mercenaries in countless wars."
+ string_start_tag_central_america: "Recent years have seen the rise of the §YAztec§! triple alliance in the valley of Mexico, while the §YPurépecha§! empire has similarly started to expand their domain in the west. Further east, the Yucatan peninsula is home to the fractured remains of the Mayan Empire and the recently collapsed League of Mayapan."
+ great_lakes_region: "Midwest"
+ MODIFIER_NATIVE_ADVANCEMENT_COST: "Native Advancement Cost"
+ entrepot: "Entrepôt"
+ entrepot_desc: "This province is a major entrepôt for trade. Merchants from the entire region gather here to buy and sell goods."
+ slave_entrepot: "Slave Entrepôt"
+ desc_slave_entrepot: "This was one of our earliest slave entrepôts in this region and has remained a major center of the slave trade ever since."
+ siberian_investors: "Siberian Trade Entrepôt"
+ desc_coffea_arabica_modifier: "As no beans can rival the quality or quantity of Mochan Coffee it has become the main entrepôt for Coffee in the world and its name has become synonymous with the name of the drink itself. In order to preserve this advantage the Merchants of Mocha guard the bushes native to these land with greatest possible care."
+ desc_bookmarket_of_x: "This province has grown to a major entrepôt for the sale and resale of books. With a great local production as well as a major influx of people from the entire region coming here to buy and sell books."
+ desc_growing_importance_of_golconda: "Recent military conquests have strengthened the standing of this province as a major local entrepôt."
+ desc_coromandel_exports: "The growth of a major entrepôt in the eastern Deccan has strengthened our grip on commerce and as a result our economy is booming."
+ conquer_andhra_desc: "The seaports of Andhra are of vital importance for the growth of our economy. They would both offer a new outlet for us to export the riches of our kingdom, and allow us to control the diamond mines in the area.\nWith all of coastal Andhra in our control Golconda could grow to be the major entrepôt of the Eastern Deccan that it deserves to be."
+ coromandel_entrepot_title: "Entrepôt of India"
+ mer_conquer_sindh_desc: "It is said that Sindh was once a Rajput kingdom much like our own state.\nThe Indus estuary is perhaps not as great a trade entrepôt as that of the Ganges, or even some of the other great rivers of India, but it is still a major center of trade in its region. It is time we claim the lands of Sindh for ourselves."
+ mug_bengal_entrepot_title: "Bengal Entrepôt"
+ mug_bengal_entrepot_desc: "The Ganges Delta has been a focal point for trade and commerce for thousands of years. Here eastern traders market their wares to the Indian public, while goods from all over northern India can flow in the other direction.\nThe recent arrival of western traders have, if anything, further accentuated this dynamic and trade cities have begun to spring up all over the delta. We must further encourage this development and foster the growth of a major entrepôt here in Bengal under our supervision."
+ gc_por_burma_desc: "Several entrepôts along the Burmese coast control a sizable portion of trade that flows through the Bay of Bengal. To secure our trade dominance in the East, we must control these ports and thus control the commerce that passes through them."
+ habsburg_nation_title: "Unite the House of Habsburg"
+ habsburg_nation_desc: "By uniting the Leopoldian and Albertinian lines of the house of Habsburg we will once again assert our influence over European politics and secure our place as the most prestigious member of the Holy Roman Empire."
+ desc_enderun_academy: "The Enderun trains promising devshirmes and sons of prominent Ottoman officials in literature, theology, engineering and mathematics, preparing them for government service as civil servants and janissaries."
+ pol_sejm_veto: "Policies Vetoed by the Sejm"
+ desc_pol_sejm_veto: "The Sejm has vetoed the monarch's policies, putting the country in a position of weakness because of the lack of meaningful legislation during the Sejm's most recent session."
+ pol_sejm_comply_policies: "Policies Ratified by the Sejm"
+ desc_pol_sejm_comply_policies: "The Sejm has ratified the monarch's policies, putting the country in a position of strength because of the unity between the interests of the monarch and the magnates, which allowed for the passing of much meaningful legislation during the Sejm's proceedings."
+ MODIFIER_RELATION_WITH_HERETICS: "Opinion of Heathens and Heretics"
+ estate_church_ownership: "Clergy Land Ownership"
+ estate_brahmins_ownership: "Brahmins Land Ownership"
+ estate_maratha_ownership: "Marathas Land Ownership"
+ estate_nobles_ownership: "Nobility Land Ownership"
+ estate_burghers_ownership: "Burghers Land Ownership"
+ estate_vaisyas_ownership: "Vaishyas Land Ownership"
+ estate_cossacks_ownership: "Cossacks Land Ownership"
+ estate_nomadic_tribes_ownership: "Nomadic Tribes Land Ownership"
+ estate_dhimmi_ownership: "Dhimmi Land Ownership"
+ estate_jains_ownership: "Jains Land Ownership"
+ estate_rajput_ownership: "Rajputs Land Ownership"
+ CROWN_LAND_LEVEL_DESC: "Crown Land is a measure of how much land is directly in control by the state. Having higher than §Y50%§! land will see us benefits to our rule. Holding less than §Y30%§! Land will have adverse penalties to our Authority.\n\nCrown Land can be gained by:\n  §YSeizing Land§! from Estates.\n  §YConquer Land§! with less than §Y60%§! estate influence.\n  §YConquer Land§! with high absolutism."
+ ability_mamluk_mechanic: "Mamluk Culture"
+
+ # Miaphysite
+ coptic: "Miaphysite"
+ flavor_eth.15.d: "The Mamluk Sultan has sent word that he is looking into the situation of Copts in his lands. He assures us that he has nothing but feelings of friendship towards the Ethiopian people and the Coptic Church."
+ tengri_events.38.d: "Used to acting far away from the Patriarch of their church, the Miaphysite monastic orders have quickly made themselves at home in our lands. They are now growing in numbers and influence, especially in the frontier regions under our control. Under ideal circumstances the orders stand ready to move into a newly conquered region, establishing new monasteries, quickly stabilizing and converting the region to their faith. Our shamans are alarmed at this practice as they feel they should be the ones to welcome our new subjects rather than these foreign monks."
+ coptic_christianity_string: "Miaphysite Christianity"
+ HINT_RELIGION_TEXT: "A major cause of division, other than cultural differences, are religious differences. A Catholic country, for example, will consider other countries that are Protestant, Reformed, Miaphysite or Orthodox as heretics, while it would consider other religions to be heathens. All the provinces in your country affect your Religious Unity. You can convert provinces to your religion with a Missionary."
+ coptic_conquest_of_yerevan_desc: "The Armenian mother see of Holy Etchmiadzin still stands strong but the Armenian Miaphysites have not had their own state since the fall of their Kingdoms in 1360 and 1375. Let us liberate the Armenian Miaphysites once and for all under our own banner!"
+ religious_events.EVTDESC1: "Our tolerant religious policy seems to have led to unwanted results. It seems that some of our people have decided to embrace the Miaphysite faith."
+ religious_events.18.c: "We must send word to the Patriarch."
+ coptic_flavor.2.d: "The ancient city of Aksum rests safely in Miaphysite hands. Once it was the heart of the ancient Aksumite Empire, a bastion of Christian power, situated at the crossroads of Africa, Arabia and the Greco-Roman world. Among the obelisks and palace [From.GetName] is rebuilding the churches of this mighty nation of old.\n\nThe greatest of them all is the Church of Our Lady Mary of Zion. It is the place where the Ethiopian Emperors have been crowned, the descendants of Menelik I, who was the son of King Solomon and the Queen of Sheba. It is here he brought the Ark of the Covenant. Every year, thousands of pilgrims come to visit this holy place."
+ coptic_flavor.3.d: "Rejoice, the holy city of Alexandria is once more under Miaphysite rule! The historical seat of our sacred Church has been liberated.\n\nAlexandria is an ancient and proud city, founded by Alexander the Great. Many of humanity's brightest minds have called her their home. For many hundred years the scholars of Alexandria studied and taught at The Great Library, which was followed by the Catechetical School of Alexandria, first in the world of its kind. In the years to come we will restore the sacred halls of knowledge and produce some of the finest theologians the world has ever known."
+ coptic_flavor.4.d: "Rejoice, the holy city of Alexandria is once more under Miaphysite rule! The historical seat of our sacred Church has been liberated by [From.GetName].\n\nAlexandria is an ancient and proud city, founded by Alexander the Great. Many of humanity's brightest minds have called her their home. For many hundred years the scholars of Alexandria studied and taught at The Great Library, which was followed by the Catechetical School of Alexandria, first in the world of its kind. In the years to come her sacred halls of knowledge will be restored and come to produce some of the finest theologians the world has ever known."
+ coptic_flavor.6.d: "Yerevan has been liberated by our fellow Miaphysite nation [From.GetName]! In the early 4th century the sacred Etchmiadzin Cathedral was built there. For many years the cathedral has been the national and political center of the stateless Armenian people. Throughout centuries of war and loss they have found strength and the will to keep on fighting in her loving embrace. Now she will be restore her to her former glory!"
+ coptic_flavor.10.d: "Glory to the Lord, Qasr Ibrim belongs to the Miaphysite [From.GovernmentName] of [From.GetName]! For many years this great Christian city has persevered, even though surrounded by religious enemies on all sides. Perched atop a cliff by the mighty Nile, Qasr Ibrim has remained a bastion of Christianity in Lower Nubia even as the rest of the region fell into darkness. Now [From.GetName] will utilize the city's great political and economic resources to spread the word of the one true God throughout Nubia."
+ coptic_flavor.15.d: "Praise the Lord on this most glorious day! For centuries to come all Miaphysites shall celebrate on this date in memory of our great victory. Finally we have freed our revered Patriarch, the Pope of Alexandria, from his gilded cage in Cairo! No longer will we have to grovel for our enemies or wait decades to have new bishops appointed. This is a most vital step on our path of restoring the Miaphysite Church to the greatness of old, and beyond."
+ coptic_flavor.33.d: "We are proud to be Miaphysites, followers of the true faith. While we are firm in our convictions and will never abandon Christ, being isolated from the rest of the Christian community is a weakness. We are beset by religious enemies on many fronts. The impending war is not a matter of if, it is a matter of when. Before it breaks out we should try to seek out some powerful allies. There is a mighty Christian realm far to the north, but its exact location and the distance to their lands are unknown to us. However we can fund an expedition with the goal of finding them."
+ coptic_flavor.34.d: "A party of Miaphysite diplomats from our neighbor [From.GetName] have crossed into our territory. They have an unusually large number of priests among them. Our advisors suspect that they are trying to make contact with other Christians to the north. The diplomats are worryingly tight-lipped on the subject of their purpose. Perhaps it is simply a religious matter, but what if they are attempting to gather allies against us? We would be beset on multiple fronts by fanatical infidels!"
+ coptic_flavor.38.d: "After a long and arduous journey the diplomats whom we sent northwards have finally returned. They did indeed reach Christian lands in the end, yet they come back empty-handed. While many of the Christians they encountered listened, few seemed to truly care. In our isolation, we are doubly cursed – not only are we surrounded by enemies, the distance to the rest of the Christian community makes us outcasts. What happens in [Root.GetName] does not influence them and perhaps our ways are too foreign for them to relate to. It seems as if the Miaphysites are alone in the world."
+ coptic_flavor.100.da: "[Root.GetName] has recently seen many a lost soul seeking guidance at the monastery in the area. In fact the region is becoming quite popular for people looking for repentance and absolution in the ways of Saint Anthony - the desert caves are well suited for the life of a hermit, allowing some of the most devoted Miaphysites to spend years in contemplative solitude. \n\nMeanwhile, the population of [Root.GetName] take great pride in this piety. Some well-placed words of encouragement could allow us to bolster their self-esteem even further..."
+ coptic_flavor.100.db: "[Root.GetName] has recently seen many a lost soul seeking guidance at the monastery in the area. In fact the region is becoming quite popular for people looking for repentance and absolution in the ways of Saint Anthony - the surrounding wilderness is well suited for the life of a hermit, allowing some of the most devoted Miaphysites to spend years in contemplative solitude. \n\nMeanwhile, the population of [Root.GetName] take great pride in this piety. Some well-placed words of encouragement could allow us to bolster their enthusiasm even further..."
+ coptic_religion_desc: "Miaphysite Christianity is a branch of Christendom holding the doctrine that Jesus is fully divine and human, in one body, differing from the Council of Chalcedon's wording that Jesus has two natures.\nWith the fall of Egypt to the Muslims hundreds of years ago the Patriarch of Alexandria is controlled by a non-Christian state. Miaphysite religion survives as the majority faith only in Ethiopia, Nubia, and Armenia."
+ string_start_religion_coptic: "[Root.start_religion_intro][Root.start_coptic_blessings]\nMiaphysite is in the §YChristian§! Religion Group, together with the §YOrthodox§!, §YCatholic§!, §YProtestant§! and §YReformed§! faiths."
+ port_jesuits_tooltip: "Own or have a subject own 30 provinces of your religion in Colonial Brazil."
+ at_the_gates_of_europe: "At the Gates of Europe"
+ HEIR_CHANCE_TOOLTIP2: "If our heir dies, then our chance to get a new heir is modified by $CHANCE$."
+ zoroastrian_group: "Iranic"
+ harmonized_zoroastrian_group: "Harmonized with Iranic Faiths"
+ desc_harmonized_zoroastrian_group: "We have incorporated the Iranic faiths in our country and national ethos."
+
+ cb_privateers: "Combat Piracy"
+ cb_privateers_desc: "Protect the coasts and trade from piracy."
+
+ NAHUATL_REFORM_TOOLTIP: "Are you sure you want to unlock §Y$NAME$§!? Doing so will advance your Doom by §R25§! and lower your stability by §R2§!."
+ MESOAMERICAN_REFORM_TOOLTIP: "Are you sure you want to unlock §Y$NAME$§!? Doing so will lower your Legitimacy by §R20§!, lower your stability by §R2§!, and raise Liberty Desire in all your subjects by §R50§!."
+
+ HEGEMON_MAX_MODIFIER: ""
+
+ feudal_de_jure_law: "Allows State Edict '§YFeudal De Jure Law§!'\n (Unrest: §G-1§!)\n"
+
+ TRADE_COMPANY_POLYNESIA_Root_Culture_GetName: "[Root.Culture.GetName] Polynesian Company"
+ trade_company_polynesia: "Polynesian Charter"
+ 
+ desc_heian_kyo: "This is the imperial capital of Japan. Emperors have resided here for centuries and their court with them. This has made Kyoto the political center of Japan and a crucial point to control for anyone who would desire to exert power over the imperial government.\n\n§MA country can take over the Shogunate, and become the overlord of all Daimyo subjects, by taking the province of Kyoto.§!"
+ 
+ kor_fortify_korea_tooltip: "The province that fulfills the conditions of this mission will receive the modifier §YThe Cheolli Jangseong§!, granting §G+25%§! local defensiveness."
+
+ emp_boh_protect_against_turks_title: "Protect Against the Turks"
+
+ emp_pro_marseille_desc: "The Provençal heartland is rich, but could be richer still. We must develop the city of Marseilles as well as the surrounding countryside."
+
+ emp_pap_prester_john_land_tt: "Own §Y5§! provinces in the §YHorn of Africa§! region"
+
+ EXPEL_RONIN_DESCRIPTION: "The ronin are a troublesome lot. These masterless samurai roam the country, often finding new lives as bandits, thugs and vagrants. We shall take censuses in major cities across our subjects' lands and expel all ronin to the countryside, preventing them from causing general mayhem."
+
+ overlord_sankin_kotai: "Sankin-kotai"
+ subject_sankin_kotai: "Sankin-kotai"
+ SANKIN_KOTAI_TITLE: "Sankin-kotai"
+
+ overlord_sword_hunt: "Conscripted Ashigaru"
+ subject_sword_hunt: "Ashigaru Conscripted"
+ SWORD_HUNT_TITLE: "Conscript Ashigaru"
+ SWORD_HUNT_DESCRIPTION: "The ashigaru are infantry employed by the daimyo of Japan. Inconsistently armed, the ashigaru wield a wide variety of weapons including swords, spears, and matchlocks. Furthermore, ashigaru range from being heavily armored to not armored at all. The ashigaru are infamous for their unruly nature, looting and burning wherever they go, but nonetheless serve as a powerful complement to their samurai counterparts."
+
+ shinto_incident_recent_tooltip: "At least 25 years since the last incident and no incident is currently active."
+
+ incident_neo_confucianism_desc: "Neo-Confucianism is not new to Japan, having spread from China during the Kamakura period, quickly taking root like many aspects of Chinese and wider East Asian culture. Its rationalistic outlook is above all very well suited for strengthening the authority of the ruler, and if we were to encourage its development in Japan, we might create a stronger principle for controlling our people."
+
+ incident_nanban_desc: "Western traders have arrived in our lands, bringing goods, ideas, and even weapons that we have not seen before. These foreigners are lacking in manners and even hygiene, but how we handle these merchants could well have a lasting impact on our society."
+
+ incident_firearms_desc: "The gunpowder weapons that the Western traders brought to our shores are clearly very dangerous to our society. Local variants of these guns, known as tanegashima, are now being produced in great numbers, such that it now stands clear that there will be soon a large supply of weapons with which even a common peasant can defeat the best trained of samurai."
+
+ incident_spread_of_christianity_desc: "Missionaries bearing word of a strange western religion have arrived at our shores, and their words have struck home among a surprisingly large segment of the Japanese population. Christian congregations are being formed all over the island and Japanese converts are themselves converting more of their compatriots by the day."
+
+ incident_shogunate_authority_desc: "For centuries, the shogun, rather than the emperor, has been the true power in Japan. However, the authority of the shogunate has not been strong for a long time. It seems that our current shogun has taken it upon himself to change this, demanding obedience and strengthening old laws and traditions to exert greater control over this war-torn land."
+ shinto_incident_shogunate_authority.tt: "This starts the §YRising Shogunate Authority§! Incident."
+
+ become_ikko_ikki_daimyo_desc: "Our ruler has always held sympathies for the Ikko-ikki and their Buddhist faith. Although many people in Japan follow both the Buddhist and Shinto faith simultaneously, perhaps it is time we abandoned the old ways and adopted Shin Buddhism."
+ ikko_ikki_rebels_name: "$COUNTRY$ Ikko-ikki"
+ ikko_ikki_rebels_desc: "Ikko-ikki are mobs of peasant farmers, Buddhist monks, Shinto priests and local nobles who are dissatisfied with their monarch."
+ ikko_ikki_rebels_army: "Ikko-ikki Army"
+ ikko_ikki_rebels_demand_desc: "The Ikko-ikki are peasants upset with the current order in Japan and they will try to tear it down. They would rather be left alone."
+ incident_ikko_shu_title: "Ikko-ikki"
+ incident_ikko_shu_desc: "Free Land Buddhism is not a new religion to our island, and yet during the civil war that has plagued Japan, many more have flocked to its principles. This group movement is becoming increasingly militarized, and their promises of salvation are drawing in farmers, priests, monks, and even nobles. The authority of ancient traditions is being challenged by their strong conviction."
+ support_of_ikkos: "Support of the Ikko-ikki"
+ desc_support_of_ikkos: "We have the support of the fervent Ikko-ikki, Buddhist communities with a great deal of autonomy and influence both in our realm and those of our neighbors."
+ desc_shinto_converted_to_mahayana: "The official state religion of Japan is now Free Land Buddhism and we have integrated the Ikko-ikki's communes in our government to an as high degree as is possible. Buddhist minorities all over Japan are now helping us make the transition to the land of their dreams."
+ shinto_incident_ikko.tt: "This starts the §YIkko-ikki§! Incident."
+ shinto_events.14.d: "Communities of faithful, Ikko-ikki, have started growing into small towns around major Buddhist temples in the realm. These cities are not only influential in a spiritual sense, they also command their own defense forces composed of anything from the Samurai of low level landholders to armed farmers and monks. The Ikko-ikki communes represent a parallel authority not only to the Shogunate but to any Daimyo controlling the surrounding lands.\nOne such commune has sprung up around a temple in [ikko_province.GetName], and while we might be able to benefit from their support, this potent mix of religious fervor, weapons and autonomy poses a threat to Daimyo authority."
+ shinto_events.15.d: "The Ikko-ikki in our realm have been growing stronger, more numerous and above all bolder. Our officials report that sometimes an ikki tax collector has collected already when they arrive in a village, and traders are no longer feeling safe as they pass these communities. The Ikko-ikki are now so strong that many have started to question their privileges."
+ shinto_events.16.d: "We have finally managed to curtail the Ikko-ikki, and towns under their command. The peasantry has been disarmed and our deputies are now the only ones with authority to take up tolls, taxes and mount defenses against outsiders."
+ shinto_events.18.t: "Support of the Ikko-ikki"
+ shinto_events.18.d: "We have continuously patronized the growth of temple communities and therefore we have come to be associated with the Ikko-ikki. The leaders of the Buddhist temple communities may hold a lot of sway in our society but they are also the ardent supporters of our [Root.Monarch.GetTitle]."
+ shinto_events.58.d: "Our long-standing support of the Ikko-ikki has not been without friction and in many situations it is as if there are two parallel authorities in Japan. Still, the Ikko-ikki would arguably not have come as far as they have without our protection according to many.\nWith times of civil strife behind us many expect us to elevate the leaders of the Ikko-ikkis to high positions and make their faith more officially sponsored by the state. To many this would be a grave insult to our old traditions however..."
+ enraged_ikko_ikki: "Enraged Ikko-ikki"
+ desc_enraged_ikko_ikki: "Our actions have enraged the Ikko-ikki in this province and they are now strongly opposing our rule of the area."
+ stk_suppression_of_ikki: "Suppression of ikki"
+ stk_suppression_of_ikki_desc: "Although we are appointed to the Shugo of Hitachi, local lords have organized an ikki coalition against us. We need to remind them who is the legitimate ruler of this land."
+ mri_leader_of_kokujin_ikki: "Leader of Kokujin ikki"
+ mri_leader_of_kokujin_ikki_desc: "Our clan structure is based on traditional alliances of local samurai, so called Kokujin ikki. Building on this solidarity we can quickly mobilize a large army."
+
+ warrior_monks_reform: "Ikko-ikki"
+ warrior_monks_reform_desc: "The Ikko-ikki are rebellious and autonomous groups of people formed in several regions of Japan, backed up by the power of the sect of Free Land Buddhism, opposing the rule of governors and daimyo. Consisting of priests, peasants, merchants, and local lords following the sect, they used religious fervor to defend their settlements, establishing theocratic feudal confederacies."
+
+ incident_urbanization_desc: "Society is changing quickly as more and more people migrate from the countryside to the great castle cities of the nation. The power of the ancient trade guilds is on the rise and landowners are complaining that farmers do not stay in their plots."
+
+ INCOMEGOLD: "Gold and Silver"
+ NO_GOLD_PRODUCING_PROVINCES: "We have no provinces that are producing Gold or Silver."
+
+ miss_discover_horn_africa: "§Y[Root.GetName]§! has discovered any province in the Mogadishu, Majeerteen, Hobyo, Western Somaliland, or Eastern Somaliland areas."
+ gc_portugal_discovers_india_title: "Conqust of Goa"
+ gc_por_surat_title: "Northern Province"
+ gc_por_surat_desc: "Our merchants have watched the Gujarat Coast hungrily as the fortunes of its rulers waver. We must pay close attention to the political happenings of this region, and seize the ideal moment to acquire a foothold in this area, whether through war or peace."
+ gc_por_burma_title: "The Bay of Bengal"
+ gc_por_burma_desc: "The port of Chittagong is one of the oldest in the entire world, and perhaps the most prominent on the Bay of Bengal. If we are fortunate, we can perhaps gain possession of Chittagong."
+
+ war_of_the_roses: "The War of the Roses"
+
+ desc_ise_grand_shrine: "This province is home to the Grand Shrine of Ise. Dedicated to the sun goddess Amaterasu, this is one of the holiest places in Shintoism and major site of pilgrimage for people from all over Japan."
+
+ flavor_sco.EVTNAME6: "Scottish East India Company"
+
+ flavor_spa.EVTNAME3165: "The Plague of $YEAR$"
+
+ flavor_ayu.EVTNAME1: "$MONARCH$'s Administrative Reforms"
+ flavor_ayu.EVTDESC1: "$MONARCHTITLE$ $MONARCH$ has proposed various reforms in order to streamline the government of the state. These reforms include changes such as the separation of military and civil officials and the end of the tradition of appointing royal princes to govern cities. Although such changes are likely necessary, they may prove to be unpopular."
+ flavor_ayu.EVTOPTA1: "Go with the reforms."
+ flavor_ayu.EVTOPTB1: "Ignore the reform ideas."
+
+ flavor_ayu.EVTNAME2: "$MONARCH$'s Military Reforms"
+ flavor_ayu.EVTDESC2: "$MONARCHTITLE$ $MONARCH$ has proposed various reforms to our military forces, including the training of a full-time professional elephant brigade. While these proposals may greatly improve our ability to wage war, they may prove to be unpopular."
+ flavor_ayu.EVTOPTA2: "Go with the reforms."
+ flavor_ayu.EVTOPTB2: "Ignore the reform ideas."
+
+ flavor_ayu.EVTNAME3: "$MONARCH$'s Economic Reforms"
+ flavor_ayu.EVTDESC3: "$MONARCHTITLE$ $MONARCH$ has proposed various reforms concerning trade and the economic well-being of our country, which would make the country more attractive to European merchants. Even though the proposals may help to greatly enrich $COUNTRY$, they may prove to be unpopular."
+ flavor_ayu.EVTOPTA3: "Go with the reforms."
+ flavor_ayu.EVTOPTB3: "Ignore the reform ideas."
+
+ flavor_nap.6.t: "The Naples Plague"
+ flavor_nap.6.d: "The plague broke out when a soldier arrived from Sardinia and was admitted to the Annunziata Hospital. Already, the plague has spread like a wildfire, having reached Genoa by sea. If we do not act quickly, countless people will die."
+ flavor_nap.6.a: "This is a scene from Hell."
+
+ flavor_hab.13.t: "The Great Plague of Vienna"
+ flavor_hab.13.d: "A city as important and well-connected as Vienna will always be vulnerable to epidemics, and has seen many of them come and go through the centuries. The plague outbreak of $YEAR$ is, however, something quite out of the ordinary. The disease has struck our city very hard and a large proportion of the population is now dead or dying. People in other European cities brace themselves for the inevitable spread of death."
+ flavor_hab.13.a: "Oh du lieber Augustin!"
+
+ rus_overthrow_dimitri: "Overthrew Dmitry"
+ armed_brigands: "With the breakdown of local authority, armed brigands are roaming the countryside and terrorizing the local population."
+
+ flavor_spa.EVTOPTA3165: "We will recover."
+
+ unite_japan_title: "Restore the Emperor"
+ unite_japan_desc: "The Imperial House of Japan is the dynasty of the oldest continuous hereditary monarchy in the world. Although the Emperor of Japan has long been the source of the country’s sovereignty, for most of Japanese history the Emperors have been relatively powerless as puppets of the various shoguns who ruled the country through military dictatorship. Now however, the current shogun is tiring of rule, and is willing to step away from power for the good of the nation. Such circumstances make possible the beginning of an imperial restoration in Japan."
+ unite_japan_subject_tooltip: "§GAll Daimyo, Kanrei, and Kubo subjects whose capitals are in the Japan Region will be inherited by our country.§!"
+
+ ab_allow_edict_of_absolutism: "Repress Separatism"
+
+ desc_john_calvin_modifier: "John Calvin serves this nation as its spiritual leader."
+
+ desc_mercenary_monopoly_modifier: "This nation has achieved a complete monopoly of the mercenary market."
+
+ maximize_profits: "Maximize Profits"
+
+ harsh: "Harsh"
+ neutral: "Neutral"
+ concilatory: "Conciliatory"
+ concessions: "Concessions"
+
+ earthquake: "Earthquake"
+ desc_earthquake: "An earthquake has laid waste to the province, destroying infrastructure and inflicting casualties among the population."
+
+ flavor_daimyo.10.t: "The Great Fire of Edo"
+ flavor_daimyo.10.d: "It is not hard to see how this unusually dry year left the city of [1028.GetCapitalName] vulnerable to fires. Few would have guessed however that an unnoticed spark in a wooden temple would be the start of an all-consuming fire. In three days, the fire has reduced our once great city to cinders, claiming over 100,000 lives. It now falls on us to rebuild and restore what once was a great city, and perhaps create a more fireproof settlement for future generations."
+ flavor_daimyo.10.c: "Fires and quarrels are the flowers of Edo."
+
+ flavor_dan.14.a: "We must rebuild."
+
+ flavor_daimyo.19.t: "The Merchants of Sakai"
+ flavor_daimyo.19.d: "Tired of the lawlessness that prevails in Japan, the merchant council of the city of Sakai has taken matters into their own hands, creating a small autonomous community of their own. They have now approached the court of $DYNASTY$ $MONARCH$ asking for protection and continued autonomy to pursue their own mercantile goals."
+
+ restructuring_edo_safer: "Reconstruction of Edo"
+ desc_restructuring_edo_safer: "We are spending great resources to build a new, safer, and more efficient city here after the Great Fire of Edo burnt the existing settlement to the ground."
+
+ flavor_daimyo.13.t: "Hoei Eruption of Mt. Fuji"
+ flavor_daimyo.14.t: "Hoei Eruption of Mt. Fuji"
+
+ emp_ven_plague_doctor_training_desc: "Plague doctors are, for the most part, amateurs. Professional physicians and surgeons tend after the most well-off, while second-rate plague doctors roam the land, tending after people who cannot afford the best treatments. Their quality varies greatly, but if we instituted a training program to provide a standard knowledge base for plague doctors, the health of people in the city of Venice would increase dramatically."
+
+ EVTNAME855: "Warriors Do Not Read Books"
+ EVTDESC855: "With war taking the focus of every capable and productive person in the nation, there is a lot less time for frivolous activities of musicians and poets. And even the best of poets is no better a soldier than a common farmer."
+ warriors_do_not_read_books: "Warriors Do Not Read Books"
+ desc_warriors_do_not_read_books: "Our nation is devoting itself to military matters to the detriment of cultural and administrative advancements."
+
+ estate_burghers_exclusive_trade_rights_enact_tooltip: "Adds §R-50%§! local tax modifier, §G-10%§! local development cost, §G+25%§! local goods produced, and §G+2.5§! local trade power to Centers of Trade in §Y[This.GetTradeNodeName]§! trade node."
+
+ PIETY_BAD_WAR_EFF: ""
+ PIETY_GOOD_WAR_EFF: ""
+
+ estate_church_karma_temples_tt: "§Y+1 Karma§! is added upon construction of §YTemple§! buildings.\n§Y-1 Karma§! is added upon destruction of §YTemple§! buildings."
+
+ estate_church_influence_temples_tt: "§Y+1 Papal Influence§! is added upon construction of §YChurch§! buildings.\n§Y-1 Papal Influence§! is added upon destruction of §YChurch§! buildings."
+
+ enable_propogate_religion_in_abrahamic_provinces_tt: "The '§YPropagateReligion§!' Trading Policy can now convert §YJewish§!, §YChristian§!, §YMuslim§!, and §YDruze§! provinces."
+
+ # Polynesian Units
+ pacific_riflemenDESCR: "A Polynesian army using better fire weapons with better range and accuracy."
+ pacific_dragoonDESCR: "The Polynesian dragoon was a cavalry unit armed with rifles and spears. Although a dragoon by name, it was actually much closer to the Swedish-style charging cavalry. The brave warriors would charge towards the enemy firing carbines and pistols before closing for hand to hand combat."
+ pacific_guerrillasDESCR: "By combining the hit-and-run techniques of the traditional Polynesian warfare and firearms, the ultimate expression of warfare is achieved."
+
+ bulgaria_nation_title: "Found the Third Bulgarian Empire"
+ bulgaria_nation_desc: "After the final conquest of the Second Bulgarian Empire by the Islamic forces of the Ottoman Empire in 1396, the Bulgarian people have been without a nation to call home. In the aftermath, Bulgarian clerics and scholars have fled to other nations all throughout the Orthodox world, while the united Christian attempt to liberate Bulgaria at the Battle of Varna ended in absolute failure. However, our forces have managed to finally wrest control of Bulgaria back from foreign oppressors, emerging triumphant on the field of battle. Let us reclaim the heritage of Simeon the Great, and make our nation known as the Third Bulgarian Empire."
+
+ EVTDESC9479: "The transformation of this nation's government is unconstitutional and unlawful. We demand the restoration of the constitutional monarchy."
+
+ mnd_dai_defy_ming_title: "Defy China"
+ mnd_dai_defy_ming_desc: "Lê Loi cast out the Ming tyrants from Dai Viêt, but the Chinese still hold hegemony over our nation. We must show the Chinese that we will not kowtow to them."
+
+ dai_arms_tt: "Any §YEuropean§! country, with §YWestern§!, §YEastern§! or §YAnatolian§! technology and provinces in the §YIndonesia§! superregion has an opinion of [Root.GetName] of at least §Y100§!"
+
+ buddha_statues: "The Buddhas of Bamiyan"
+
+ native_becomes_horde_reform: "The Call of the Plains"
+
+ bagan_temples: "The Temples of Bagan"
+
+ notre_dame_cathedral: "Notre-Dame de Paris"
+
+ CONFIRM_CONSOLIDATE_DEVELOPMENT_TITLE: "Concentrate Development"
+
+ registan_square: "The Registan"
+
+ borobudur_temple: "Borobudur"
+
+ khami_ruins: "Khami"
+
+ prambanan_temple: "Prambanan"
+
+ belem_tower: "Belém Tower"
+
+ holy_city_jerusalem: "The Old City of Jerusalem"
+
+ imperial_city_hue: "The Imperial City of Huê"
+
+ buda_castle: "Buda Castle"
+
+ chan_chan_citadel: "Chan Chan"
+
+ pyramid_of_cheops: "The Giza Necropolis"
+
+ parthenon: "The Parthenon"
+
+ flavor_son.10.t: "A Widow's Marriage Offer"
+
+ doges_palace: "Il Palazzo Ducale"
+
+ kaaba: "The Kaaba"
+
+ duomo_milano: "Il Duomo di Milano"
+
+ gomateshwara_statue: "The Statue of Gommateshwara"
+
+ chola_temples: "Brihadisvara Temple"
+
+ prague: "The Old Town of Prague"
+
+ holy_city_kairouan: "The Great Mosque of Kairouan"
+
+ imam_hussein_al-abbas: "Imam Husayn Shrine"
+
+ kashi_vishwanath: "Kashi Vishwanath Temple"
+
+ jewish_religion_desc: "The oldest Abrahamic religion in the game, Judaism builds upon the Torah and the traditions and scriptures of the Jewish people going back for thousands of years.\nBy the start of the game however, the Jewish faith is a minority faith in most of the world, with the only independent Jewish nation being the Kingdom of Semien in Ethiopia."
+
+ judaism_rosh_hashanah_aspect: "Festival of Rosh Hashanah"
+
+ nan_madoll: "Nan Madol"
+
+ flavor_efr.EVTOPTA1: "Ask the Emperor for an official title to East Frisia."
+
+ spiral_minaret_samarra: "The Great Mosque of Samarra"
+
+ sultan_ahmed_mosque: "The Blue Mosque"
+
+ sun_temple_konarak: "Konark Sun Temple"
+
+ white_house: "The White House"
+
+ walls_benin: "The Walls of Benin"
+
+ rila_monasteries: "Rila Monastery"
+
+ malta_forts: "Fortifications of Malta"
+
+ churches_lalibela: "The Churches of Lalibela"
+
+ printing_press: "Print Culture"
+ printing_press_origin: "Origin of Printing Culture"
+ institution_events.4.a.tt: "§YEmbracing§! the §YPrinting Culture§! Institution will be vital for future advancements in §YTechnology§!."
+ tooltip_printing_press_clergy: "Adjacent has Print Culture & Loyal Clergy with 30% Land Share Present"
+ tooltip_any_neighbor_has_embraced_printing_press: "Adjacent province has §YPrint Culture§!"
+ tooltip_colonial_overlord_printing_press: "Port/Capital - Colonial Overlord has §YPrint Culture§!"
+ tooltip_printing_press_embraced: "Not Trade Company & Owner has embraced §YPrint Culture§!"
+ tooltip_printing_press_embraced: "Not Trade Company & Owner has embraced §YPrint Culture§!"
+ tooltip_any_friendly_coast_border_province_has_embraced_printing_press: "Nearby Friendly Province has §YPrint Culture§!"
+
+ great_project_kiel_canal: "Kiel Canal"
+ great_project_suez_canal: "Suez Canal"
+ great_project_panama_canal: "Panama Canal"
+ kiel_canal: "Kiel Canal"
+ kiel_canal_title: "Build Kiel Canal"
+ suez_canal: "Suez Canal"
+ suez_canal_title: "Build Suez Canal"
+ panama_canal: "Panama Canal"
+ panama_canal_title: "Build Panama Canal"
+
+ savannah_desc: "Savannah terrain represents large grass-covered areas with a high degree of trees mixed in."
+
+ # Bugfix
+ desc_war_horses_policy: "We protect our horses as much as we protect ourselves. Their speed and endurance have helped us on numerous occasions and are the reason why our ambitions of expansion can reach almost impossible limits. What a simple man travels in one week, we raze in one day."
+ war_canoeDESCR: "A small watercraft used to transport troops near the shore and fight in inland waters."
+ sio_great_spirit_desc: "The Great Spirit is the sacred divine that resides in everything; the great power of holiness that creates, protects and ends everything."
+ sio_tioshpayes_desc: "Tioshpayes are the extended families of our people, being part of one strengthens internal links among our tribes and makes us feel closer to each other."
+ hawaii_prove_prowess_desc: "The ruler that unites the archipielago into a single realm will be blessed by the gods."
+ desc_pap_papal_swiss_guard: "Special contracts allow us to recruit some of the best soldiers money can buy."
+ desc_pow_leeroy_yehakins: "He just ran in."
+ desc_colonize_the_continent: "There is plenty of free land around us that must be claimed by our people if we want to endure new waves of foreigners coming to our shores."
+ desc_ne_fortified_village: "The people of our village can now rest at peace."
+ desc_polynesian_supremacy: "We rule over the Polynesian Triangle with strong hand."
+ desc_colonization_efforts: "As our population grows, the lack of space and arable land can be a good opportunity to settle new lands. By starting a new settlement, we can encourage people to migrate."
+ pig_sides_mod: "We Chose a Side in the Pig Wars"
+ desc_pig_sides_mod: "Our support to our side of this conflict has lead to some unrest."
+
+ obj_convert_60_provinces_tooltip_tt: "At least 100 provinces in the regions of §YIndonesia§!, §YMalaya§! and/or §YMolucca§! must profess the §Y[Root.Religion.GetName]§! religion."
+
+ ada_prepare_second_invasion_title: "Fend Off Ethiopia"
+ ada_prepare_second_invasion_desc: "Since the formation of our nation on the ruins of Ifat, the barbaric Christians of Ethiopia have always been a threat to Adal. While our most recent victory over Ethiopia gave us the province of Chiro in 1443, the Ethiopians have now struck back in earnest, declaring war against our kingdom. We must survive the coming onslaught."
+ ada_restore_the_old_mosque_desc: "Zeila was one of the very first cities which embraced the enlightenment of Islam. Around 700 years ago, the first Muslims in the Horn constructed the Masjid al-Qiblatayn, the oldest mosque to date.  However, time has shown its impact on the mosque and it is not as usable as it once was. We should restore this great monument of our people!"
+ flavor_ada.2.t: "[From.GetAdjective] Regiment Arrives in [Root.Capital.GetName]"
+ flavor_ada.3.t: "The [From.GetAdjective] Alliance"
+ flavor_ada.3.d: "Our diplomat arrived safely back in [Root.Capital.GetName] - and he brings wonderful news! The wise [From.Monarch.GetTitle] of $FROMCOUNTRY$ accepted the alliance, promising military aid when we strike at Ethiopia!"
+ flavor_ada.3.a.tt: "We will receive access to the §YJanissary§! mercenary company if we get into a war with [ETH.GetName]."
+ flavor_ada.4.t: "The [From.GetAdjective] Rejection"
+ flavor_ada.4.d: "Our diplomat returned back home with grim news: the [From.GetAdjective] court rejects the idea of an alliance with us, as they think we are not worth their time. Of course such way of thought is laughable. Yet we are still in no better position diplomatically..."
+ ada_expand_into_arabia_title: "Seize the Holy City"
+ flavor_eth.40.t: "The Kingdom of Semien"
+ flavor_eth.40.desc: "Back in the days when the Aksumite Empire ruled over these lands, there was a group of Jews, who refused to follow the true faith. They resisted Ezana's religious declaration and assembled revolts against the rightful emperor. Centuries later, the Jewish queen Gudit levied an army and destroyed the Aksumite Empire for good.\nThis all is long in the past, but the Beta Israeli remained a troublesome group - even for [Root.GetName]. We can try to convert them to [Root.Religion.GetName] though we will face heavy resistance from the Beta Israeli."
+ desc_eth_accepted_society: "We have negotiated a settlement with the Jews of Semien, allowing them to practice their faith peacefully without fear of persecution."
+ flavor_eth.6.t: "Centralization Reforms of Zara Yakob"
+ flavor_eth.35.desc: "Hadiya has been a vassal of our glorious nation for over 100 years. While Hadiya's contribution in the form of tribute has served us well, many at $MONARCH$'s court argue that Hadiya's time has come to fully join Ethiopia. In the end, it is up to our good $MONARCHTITLE$ to decide what will happen to Hadiya."
+ eth_please_the_vassals_title: "The Hadiya Sultanate"
+ eth_please_the_vassals_desc: "The Hadiya Sultanate has long been a vassal of Ethiopia, having once been part of the Sultanate of Shewa. Zara Amda Seyon I conquered Hadiya in 1309, subjugating it to Etihopia. The time has finally come for Hadiya to join our great empire, but its ruler may need some persuasion first."
+ desc_eth_new_christians: "The Falash Mura are Jews who have been forcibly converted. Although not everyone is happy with their new fate, the majority of the Falash Mura enjoy the significant benefits within Ethiopia, which makes their transition a lot more bearable."
+ eth_retake_suakin_desc: "The port of Suakin has proven important to the trade in the Red Sea. Although the port was never part of Aksumite Empire, it was still home to many [Root.GetAdjective] Christians until the city fell into the hands of the Muslims. As such, we have more than enough reasons to take this port for ourselves and liberate the few Christians who may still be residing there."
+ negusa_nagast: "Negusa Nagast"
+ negusa_nagast_desc: "Although Ethiopia is an empire, it lacks the proper means to enforce the authority of its monarch, the Negusa Nagast. Under these circumstances, the country is afflicted by religious disunity, a lack of central power, and an itinerant capital."
+ flavor_eth.1.a.desc: "More visitors will soon come from Portugal."
+ flavor_eth.11.t: "The Fate of the Egyptian Copts"
+ flavor_eth.11.d: "Word has approached us from Egypt that the Mamluk [MAM.Monarch.GetTitle] is persecuting the Copts in his lands. As a fellow community under the Patriarchy of Alexandria, it is our duty to act. The fact that the Patriarch himself is in Mamluk lands complicates things somewhat however, such that a direct attack might place the foundation of our church at risk."
+ flavor_eth.12.t: "The Letter from Ethiopia"
+ flavor_eth.12.d: "We have received a letter from the [ETH.Monarch.GetTitle] of Ethiopia today. The message is a detailed account of the many perceived misdeeds of our country against the Copts that reside inside our borders.\n\nThere is likely little reason for concern, however, as the Patriarch of Alexandria is our hostage. It seems very unlikely that an Ethiopian monarch would risk the safety of the Patriarch over a matter such as this."
+ flavor_eth.13.t: "The Letter from Ethiopia"
+ flavor_eth.14.t: "The Mamluk Ambassador"
+ flavor_eth.14.d: "Today a Mamluk messenger arrived at our court bearing the reply of the [MAM.Monarch.GetTitle] to our concerns about the Copts in his lands.\n\nThe reply is far from the apology we had expected however. The [MAM.Monarch.GetTitle] has chosen to show his contempt for the Ethiopian court and he ridicules any form of retribution we might attempt."
+ flavor_eth.14.a: "Imprison the ambassador."
+ flavor_eth.15.t: "The Mamluk Apology"
+ flavor_eth.17.d: "The Bishop of Ethiopia has died and the Ethiopian Church has requested a successor from the Coptic Patriarch of Alexandria.\nWhile a successor has been chosen by the Patriarch, this would be a good opportunity to show the Ethiopians who is in charge. The Emperor of Ethiopia has actively pursued a policy of conversion against his Muslim subjects and he still detains the ambassador we sent to chastise him last time."
+ flavor_eth.18.t: "Bishop Missing"
+ flavor_eth.18.d: "It has been a long while now since the last Bishop of Ethiopia died and we requested a successor from Alexandria. Could the Mamluks be interfering?"
+ flavor_eth.18.a: "Unfortunate."
+ flavor_eth.19.d: "One of the greatest strengths of the Ethiopian Church is the great number of successful monasteries that dot the landscape of our state. The monastic orders have contributed to the success of our state by founding new monasteries in newly conquered areas and by spreading the word of the true faith there. The monasteries of Ethiopia are also the source of the education of the Ethiopian clergy, its nobility, and its administrators, as such contributing greatly to the revitalization of the Ethiopian Church in the years past.\nThe other side of this coin, however, is that the monasteries and the orders that run them have grown both rich and autonomous."
+ flavor_eth.20.t: "Independence From the Patriarchate"
+ flavor_eth.20.d: "The dependency of the Ethiopian Church on the Patriarchate of Alexandria has always been a liability for our country. Perhaps there was once a practical need of bishops, clergy and spiritual guidance from abroad. The expansion of the Ethiopian Church over the last two centuries, however, means that our kingdom is now already training its own clergymen and there is a strong religious infrastructure in the form of churches and monasteries throughout or lands.\nWith the Egyptian Patriarchate held hostage by Muslim conquerors, we often have to wait a long time between the death of one bishop and the appointment of the next. It would be far more efficient to appoint our religious leadership from the ranks of our own clergy."
+ flavor_eth.26.b.tt: "The mountain will be used for other purposes."
+ desc_eth_negusa_nagast_issues: "Ethiopia has barely any centralization. The only authority which can be assumed is only possible by the presence of the Negusa Nagast themselves, who moved their capital to the area which needed to be controlled."
+ flavor_eth.41.t: "The Journey Over the Nile"
+ flavor_eth.43.t: "A Strange Ambassador"
+ flavor_eth.42.t: "Contact With the Christians!"
+ flavor_eth.47.t: "$FROMCOUNTRY$ Refuses the Alliance"
+ flavor_eth.49.t: "Turkish Support"
+ flavor_eth.49.desc: "In the great Ethiopian-Adal war in 1529, the Ottomans joined an alliance with the Sultanate of Adal in order to defeat the Ethiopian Empire and to extinguish the last Christian bastion in the Horn of Africa. Although it wasn't a full blown war for the Ottomans, they supported Adal with several companies of Turkish soldiers."
+ flavor_eth.49.a: "Blessed be the Turks for their help!"
+ flavor_eth.51.desc: "The Portuguese and the Ottomans had a long history of rivalry ever since the Ottoman Empire blocked the trade from the Silk Road to Europe. The first real fight, however, started when the Ottomans assisted the Sultanate of Gujarat in the siege of Diu in 1538. Ever since, these two great powers were at war with each other on several occasions with the Ethiopian-Adal war being the most prominent proxy war.\nAfter the small victory of Ethiopia, the Portuguese continued their wins against the Ottoman. In the year 1559, Suleiman the I had to recognize that decisive victories against the Portuguese were a futile project. Because of that, the militaristic activities of these two powers have been greatly reduced in the Horn of Africa."
+ flavor_eth.52.desc: "In the years 1555 and 1557, the first Portuguese Jesuits arrived in Ethiopia. At first they intended to stand for the small Portuguese community, which had been growing in Ethiopia since 1543. However, their influence in the Ethiopian court grew. It went so far that the Catholic Church started to become a real threat to the authority of the Ethiopian Church\nNow, the Jesuits are trying to talk [Root.Monarch.GetName] into converting to Catholicism! How shall we deal with those foreign missionaries?"
+ 
+ gen_hoa_convert_30_provinces_tooltip_tt: "Has converted at least 25 provinces in the region."
+
+ west_africa_salt_cloth_shells: "Salt, Cloth, and Shells"
+ west_africa_sincretic_rituals: "Syncretic Rituals"
+ 
+ aju_gold_trade_deal_refused: "Domestic Focus"
+ flavor_aju.2.t: "$FROMCOUNTRY$ Accepts Our Deal!"
+ flavor_aju.3.t: "$FROMCOUNTRY$ Refuses Our Deal!"
+ flavor_aju.6.t: "A Giraffe for a Son of Heaven"
+ flavor_aju.6.a: "It is beautiful."
+ flavor_aju.7.t: "The Emperor Loves the Giraffe"
+ flavor_aju.7.a: "Excellent."
+ flavor_aju.8.t: "The Emperor Unimpressed"
+ flavor_aju.8.a: "Well..."
+ flavor_aju.9.t: "United Dynasties"
+ flavor_aju.9.d: "Our islands have been a Somali colony in the past. Eventually, we gained our freedom as the Maldives proved too distant and difficult to govern - until now. Ambassadors from $FROMCOUNTRY$ have come asking us to put an end to the situation, asking that our nation be united with theirs, citing our previous shared history."
+ flavor_aju.9.a: "We will return to the fold."
+ flavor_aju.10.t: "United Dynasties"
+ flavor_aju.11.t: "United Dynasties"
+ flavor_aju.11.d: "The ambassadors we sent to [From.GetName] have returned with dire news! The [From.Monarch.GetTitle] of [From.GetName] has refused the proposal of uniting our nations. The fool must think [From.Monarch.GetHerselfHimself] better than us. What [From.Monarch.GetSheHe] doesn't realize is that the offer we presented was a mere formality, and that they are part of our nation whether they like it or not."
+ flavor_aju.12.t: "Ajuuraan Merchants in Indochina"
+ flavor_aju.13.t: "Ajuuraan Merchants in Java"
+ flavor_aju.14.t: "Modernization of the Army"
+
+ NATIVE_TRIBES_CANT_COLONISE: "§RNatives can't colonize. §!"
+ ADD_TRIBAL_LAND_DESC: "Spend $COST|Y$£adm£ to gain $PROV|Y$ as Tribal Land."
+ NATIVE_TRIBE_MIGRATORY_DEVELOPMENT_HEADER_TOOLTIP: "§YTribal Development§!\nThis function has been deprecated in Dei Gratia."
+ NATIVE_TRIBE_SETTLED_DEVELOPMENT_HEADER_TOOLTIP: "§YTribal Development§!\nThis function has been deprecated in Dei Gratia."
+ SETTLE_PROVINCE_NO_DEVELOPMENT: "This function has been deprecated in Dei Gratia."
+ SETTLE_PROVINCE_NEED:0 ""
+ CANNOT_MOVE_GREAT_PROJECT_TOO_BIG: "This function has been deprecated in Dei Gratia."
+ institution_events.4.d: "The ability to mass-produce the written word would revolutionize the spread of information, and in many ways early modern society as a whole. Pioneered by Renaissance men such as Venetian Printer Aldus Manutius, the new art helped fuel the Renaissance by making the translated classics more widely available. Later the Reformation benefitted greatly from the ability to spread critical publications and translations of the Holy Scriptures.\n\nNow that Printing has matured as a technique and spread throughout Europe, hundreds of thousands of copies of everything from religious and political pamphlets to scientific treatises and instructions on how to behave are circulating the continent. With print shops growing evermore commonplace, rulers have found it hard to contain the new technique, as the comparatively easy means of production makes it easy for censorship to be sidestepped by moving business across a border or even just changing the name on a title page."
+ institution_events.400.d: "The ability to mass-produce the written word would revolutionize the spread of information, and in many ways early modern society as a whole. Pioneered by Renaissance men such as Venetian Printer Aldus Manutius, the new art helped fuel the Renaissance by making the translated classics more widely available. Later the Reformation benefitted greatly from the ability to spread critical publications and translations of the Holy Scriptures.\n\nNow that Printing has matured as a technique and spread throughout Europe, hundreds of thousands of copies of everything from religious and political pamphlets to scientific treatises and instructions on how to behave are circulating the continent. With print shops growing evermore commonplace, rulers have found it hard to contain the new technique, as the comparatively easy means of production makes it easy for censorship to be sidestepped by moving business across a border or even just changing the name on a title page."
+
+ annex_mazovia_desc: "Mazovia has the potential to become the center of the Polish Kingdom. Now that we have regained control, we must develop it."
+ revenge_for_varna_mission_desc: "The noble King Wladyslaw III was cruelly slain in battle against the heathen Turks at Varna. His death brought great uncertainty to our nation and ended our dynastic union with Hungary. This grievous wrong must be avenged."
+
+ flavor_jol.2.t: "Trade Deal with Jolof"
+ flavor_jol.3.t: "Trade Deal Accepted"
+ flavor_jol.4.t: "Trade Deal Rejected"
+ flavor_jol.5.t: "Increase in the Demand for Ivory"
+ flavor_zan.8.t: "Send an Embassy to Perisa?"
+ flavor_zan.9.t: "An Ambassador of $FROMCOUNTRY$"
+ flavor_zan.10.t: "Ambassador Welcomed"
+ flavor_zan.11.t: "Ambassador Expelled"
+ flavor_zan.12.t: "Embassy Lost"
+ flavor_zan.12.desc: "Despite our best efforts, we lost our embassy with Kilwa! Our connection with Kilwa has been severed. Only time will tell how this will imapct relations..."
+ flavor_zan.13.t: "Embassy Lost"
+ flavor_zan.14.t: "Embassy Lost"
+ 
+ WE_TRADE_FAVORS_FOR_WAR_PREP_TITLE: "Ask to Prepare for War"
+ WE_TRADE_FAVORS_FOR_WAR_PREP_SETUP: "When we ask a country to Prepare for War as a Favor."
+ WE_TRADE_FAVORS_FOR_WAR_PREP_1: "Asked to Prepare for War"
+ WE_TRADE_FAVORS_FOR_WAR_PREP_3: "Prepare for War"
+ WE_TRADE_FAVORS_FOR_WAR_PREP_LOG: "We have asked $RECIPIENT$ to Prepare for War as a favor."
+ TRADE_FAVORS_FOR_WAR_PREP_TITLE: "Ask to Prepare for War"
+ TRADE_FAVORS_FOR_WAR_PREP_SETUP: "When a Country asks us to Prepare for War as a favor."
+ TRADE_FAVORS_FOR_WAR_PREP_3: "Asked us to Prepare for War"
+ TRADE_FAVORS_FOR_WAR_PREP_LOG: "$ACTOR$ has asked us to Prepare for War as a favor."
+ OTHER_TRADE_FAVORS_FOR_WAR_PREP_TITLE: "Ask to Prepare for War"
+ OTHER_TRADE_FAVORS_FOR_WAR_PREP_SETUP: "When a Country asks a nation to Prepare for War as a favor."
+ OTHER_TRADE_FAVORS_FOR_WAR_PREP_3: "Asked $RECIPIENT$ to Prepare for War"
+ OTHER_TRADE_FAVORS_FOR_WAR_PREP_LOG: "$ACTOR$ has asked $RECIPIENT$ to Prepare for War as a favor."
+ TRADE_FAVORS_FOR_WAR_PREP_DECLINED_TITLE: "A request to Prepare for War has been declined"
+ TRADE_FAVORS_FOR_WAR_PREP_DECLINED_2: "has refused a request to Prepare for War"
+ TRADE_FAVORS_FOR_WAR_PREP_DECLINED_SETUP: "When a nation declines to Prepare for War in exchange for Favors."
+ TRADE_FAVORS_FOR_WAR_PREP_CANNOT_COST: "You need at least §Y$COST$§! Favors with §Y$COUNTRY$§! to ask them to Prepare for War."
+ TRADE_FAVORS_FOR_WAR_PREP_CANNOT_ALLIANCE: "You need an alliance with §Y$COUNTRY$§! to ask them to Prepare for War."
+ TRADE_FAVORS_FOR_WAR_PREP_CANNOT_ALREADY_PREPPING: "§Y$COUNTRY$§! are already Preparing for War."
+ TRADE_FAVORS_FOR_WAR_PREP_CANNOT_OPINION: "You need at least §Y$OPINION$§! Opinion with §Y$COUNTRY$§! to ask them to Prepare for War."
+ TRADE_FAVORS_FOR_WAR_PREP_DESC2: "Spend $FAVOR|Y$ Favors to ask them to Prepare for War."
+ TRADE_FAVORS_FOR_WAR_PREP_DESC: "We will ask $RECIPIENT|Y$ to Prepare for War in exchange for $FAVOR|Y$ Favors."
+ TRADE_FAVORS_FOR_WAR_PREP_REQDESC: "$ACTOR$ is asking us to Prepare for War in exchange for favors. Do you accept?"
+ TRADE_FAVORS_FOR_WAR_PREP_DIPLO_ACTION: "Ask to Prepare for War"
+ refused_to_prepare_for_war_for_favors: "Refused to Prepare for War in exchange for Favors"
+
+ estate_church_scholar_connections: "Grant Local Residence to Scholar"
+ estate_church_integrated_school: "Grant Local Residence to Scholar"
+
+ flavor_zan.15.t: "Our Merchants Visit"
+
+ kon_annex_vassals_desc: "The history of the realms of Ndongo and Loango is obscure and, just like our own history, based on legends. Despite that, these two states are vassals of Kongo - at least in name. Both kingdoms are no longer fit to be governed by their own rulers and should be integrated into our own kingdom instead."
+ kon_become_proper_monarchy_title: "A Proper Monarchy"
+ kon_obliterate_great_power_army_at: "Any §YGreat Power§! has less than §Y-50§! war score against §Y[Root.GetName]§!."
+ kon_collect_cults_title: "Meet the Other Cults"
+ flavor_kon.7.t: "Foreigners Arrive in $COUNTRY$!"
+ flavor_kon.7.d: "Three seriously wounded men wearing heavily damaged robes washed onto our shores. A few locals immediately went to these men and tended to their injuries. After a few weeks, the newcomers were able to stand up again and told us stories of their home - and how it was destroyed by unholy forces. They also tell us stories about their religion, Catholicism, and how one can simply join them. Their stories about their religion and their technology raised an eyebrow of $MONARCH$, but immediately piqued interest."
+ kon_churches_for_the_pope_title: "Churches for the People"
+ flavor_kon.3.t: "Missionaries Rebuffed!"
+ flavor_kon.10.d: "The people of the province [kon_converted_province.GetName] have begun abandoning our old traditions and converted to Catholicism! If we don't interfere then the entire province will be converted. If we decide to repress their new found belief, however, then we will have to face these Catholics on the battlefield!"
+ flavor_kon.10.b.tt: "The Nobility see this as a waste of resources and will try to disrupt our government."
+ flavor_kon.12.d: "Three foreign ships arrived this month in Europe with ambassadors and priests from the African nation of [From.GetName]. They offer a great deal to us: they ask for the seat of a cardinal in exchange for a generous monetary gift."
+ flavor_kon.13.a: "I will take the money, thanks!"
+ flavor_kon.14.d: "Three foreign ships arrived this month in Europe with ambassadors and priests from the African nation of [From.GetName]. They offer a great deal to us: they ask for the seat of cardinal in exchange for a generous monetary gift."
+ flavor_kon.15.a.tt: "§Y[This.GetName]§! gets the triggered modifier '§YCardinal of Africa§!', giving the following effects when active:\nLocal Tax Modifier: §G+25.0%§!\nTolerance of the True Faith: §G+1.00§!\nYearly Papal Influence: §G+1.00§!\n[Root.GetClergyName] Loyalty Equilibrium: §G+10.0%§!\n\nAddtionally, the province will always house a §YCardinal§! as long [Root.GetName] controls [This.GetName], and [Root.GetName] and the inhabitants of the province [This.GetName] are devout followers of the §YCatholic§! faith."
+
+ estate_maratha_levies_for_muslims_effect_tooltip: "Every owned province of §YHindu§! faith gains §Y'Increased Maratha Recruitment'§!, giving the following effects:\nLocal Manpower Modifier: §G+20.0%§!"
+
+ confucian_events.8.t: "Harmonization of Theravada Buddhism"
+ confucian_events.9.t: "Harmonization of Mahayana Buddhism"
+ confucian_events.10.t: "Harmonization of Vajrayana Buddhism"
+ confucianism_religion_desc: "Confucianism is the term for the philosophies of Confucius, a philosopher from the 5th century B.C.E. who stressed personal development and the importance of good government.\nIn game, China and Korea start as Confucian countries, with some spread among the Jurchen states in Manchuria."
+ PROPAGATE_RELIGION_TRADING_POLICY: "You can convert provinces which are not Christian, Muslim, Jewish, or Druze.\n"
+
+ nile_estuary_modifier: "Nile Estuary"
+ desc_red_river_estuary_modifier: "Controlling one of the important mouths of the Red River strengthens our hold of the trade in the region."
+ desc_niger_estuary_modifier: "Controlling one of the important mouths of the Niger River strenghthens our hold of trade in the region."
+
+ maj_muslim_traders_tt: "§YThe merchants will evangelize their Sunni faith in our provinces.§!"
+ irish_trade: "Irish Sea Trade"
+ 
+ FROM_GOLD: "From Gold and Silver: $AMOUNT|%R$"
+ PROV_PROD_GOLD: "From Gold or Silver:"
+
+ khmer_dark_age_tt: "§YThe Dark Age of Cambodia disaster will end once the mission Khmer Resurgence is complete.§!"
+ mnd_mlc_champa_desc: "Champa finds itself in a precarious position on the mainland, having suffered a series of defeats to Dai Viêt. We should become their protectors."
+ desc_mas_all_the_ships_of_aklan: "The waves make way for the hulls of our ships. We should let every other nation know why."
+
+ mal_fan_of_the_ulema: "Support of the Ulema"
+ desc_mal_fan_of_the_ulema: "Our decision to spread the true faith and convert the heathens inspired the Ulema. They are now supporting us as well as they can."
+ mal_fan_of_the_dhimmi: "Support of the Dhimmi"
+ desc_mal_fan_of_the_dhimmi: "Our decision to tolerate the heathens and giving them more rights inspired the Dhimmi. They are now supporting us as well as they can."
+ flavor_mal.24.t: "The Quest for the Lost Fleet"
+ flavor_mal.30.desc: "Prior to 1430, the Songhai were our subjects. In 1430, the [Root.GetName] lost control over the rich city Gao due to the problems and struggles in the homeland, and the city and its territory around it went rogue. They have been taken over by the Sonni dynasty and declared themselves a realm of their own, rivaling our power.\nBut that is now a thing of the past. Gao is again under our control and a majority of the ones who identify themselves as 'Songhai' are our subjects yet again."
+ flavor_mal.37.t: "The Generous Pilgrimage of $MONARCH$"
+ flavor_mal.40.t: "A New Pilgrimage Route"
+ flavor_mal.41.mansa.iberia: "The pilgrimage continues and [Root.Monarch.GetName]'s group arrived later in the Iberian Peninsula, home of the fallen Sultanate of Andalusia. The travelers gazed upon the beauty of Alhambra. Although the Christians in Iberia are very religious and do not trust our kind, they tolerated our presence when the [Root.Monarch.GetTitle] explained to them [Root.Monarch.GetHerHis] situation. Of course the gold we have brought helped too...[Root.GetMaliRegionalCapital]"
+ flavor_mal.41.advisor.iberia: "The pilgrimage continues and the advisor group arrived later in the Iberian Peninsula, home of the fallen Sultanate of Andalusia. The travelers gazed upon the beauty of Alhambra. Although the Christians in Iberia are very religious and do not trust our kind, they tolerated our presence when the three pilgrims explained to them their situation. Of course the gold we have brought helped too...[Root.GetMaliRegionalCapital]"
+ hindu_events.41.d: "The previous ruler of [Root.GetName], also a follower of Ganga, passed on recently. After the funeral, the ashes have been left in your care, along with the ruler's wishes to have them submerged in the water of Ganges, the sacred river.\n\nAlthough we revere Ganga as the supreme goddess, Ganges itself does not flow through [Root.GetName]. While traveling to the river with the ashes may take time, it would also be an opportunity to deepen your insights about Ganga."
+ mal_visiting_foreign_regional_power: "\n\nThe group eventually visited the wondrous city [selected_biggest_country_of_region.Capital.GetName], the capital of [selected_biggest_country_of_region.GetName]. The [selected_biggest_country_of_region.Culture.GetName] attracted the attention of the traveling group and their hospitality impressed the closest of [Root.Monarch.GetName] so much, that they suggested to donate some of our splendid gold to the [selected_biggest_country_of_region.Monarch.GetTitle] of [selected_biggest_country_of_region.GetName]."
+ flavor_mal.41.mansa.france: "[Root.Monarch.GetTitle] [Root.Monarch.GetName] and [Root.Monarch.GetHerHis] companions entered France, a region which is home to many crusaders, who tried to wage wars against the Muslim world. But today, no sword will be swung as the traveling [Root.Monarch.GetTitle] proclaimed [Root.Monarch.GetHerHis] peaceful intentions of pilgrimage to the people. The French welcomed the wise [Root.Monarch.GetTitle], and, as a sign of hospitality, even allowed [Root.Monarch.GetHerHim] entry into their impressive cathedral - the Notre-Dame.[Root.GetMaliRegionalCapital]"
+ flavor_mal.41.mansa.egypt:0 "Egypt is no foreign region for the [Root.Monarch.GetTitle]s of [Root.GetName]. Many of our ancestors gazed upon the great Pyramid of Cheops. As such it is only natural that [Root.Monarch.GetName] visited the Pyramid too.[Root.GetMaliRegionalCapital]"
+ flavor_mal.41.mansa.arabia: "After so many years of traveling, the great and wise [Root.Monarch.GetTitle] and the closest of [Root.Monarch.GetHerHis] followers finally arrived at the holiest of all cities: [385.GetName]! The residents of the city still remember the last [Root.GetAdjective] pilgrimage, and as such welcomed [Root.Monarch.GetName] with open arms.\nThe next two weeks were spent in the city by praying and documenting the experiences the [Root.Monarch.GetTitle] made during the pilgrimage. [Root.Monarch.GetSheHe] decided to leave a farewell gift for the people of [385.GetName] before returning home.[Root.GetMaliRegionalCapital]"
+ flavor_mal.41.mansa.horn_of_africa: "Although the way back home is very well known to the group, [Root.Monarch.GetName] decided to take an alternative route home. By traveling the strait of [1330.GetName], [Root.Monarch.GetSheHe] and [Root.Monarch.GetHerHis] companions found the realm of the one who was called the home of "Prester John".[Root.GetMaliRegionalCapital]"
+ flavor_mal.41.advisor.france: "The advisors entered France, a region which is home to many crusaders, who tried to wage wars against the Muslim world. But today, no sword will be swung as the traveling group proclaimed their peaceful intentions of pilgrimage to the people. The French welcomed the three scholars, and, as a sign of hospitality, even allowed them entry into their impressive cathedral - the Notre-Dame.[Root.GetMaliRegionalCapital]"
+ flavor_mal.41.advisor.arabia: "After so many years of traveling, the three sages finally arrived at the holiest of all cities: [385.GetName]! The residents of the city still remember the last [Root.GetAdjective] pilgrimage, and as such welcomed the men with open arms.\nThe next two weeks were spent in the city by praying and documenting the experiences the former advisors made during the pilgrimage. They decided to leave a farewell gift for the people of [385.GetName] before returning home.[Root.GetMaliRegionalCapital]"
+ flavor_mal.41.advisor.horn_of_africa: "Although the way back home is very well known to the group, the men decided to take an alternative route home. By traveling the strait of [1330.GetName], the three found the realm of the one who was called the home of "Prester John".[Root.GetMaliRegionalCapital]"
+ republic_factions.24.d: "The aristocrats of [Root.GetName] have been pushing for a legislation popularly referred to as the Family Act, an effort to prevent innocent minds from the twisted plays and novels spewed forth by 'libertine' authors of recent years. The main outrage behind the initiative for the Family Act is an obscene play, a family act, traveling the country which satirizes the excesses of the aristocratic classes. Humiliated and revolted, the victims of its mockery are now demanding that the republic prevents it from spreading further."
+ siberian_events.3.d: "The abundance of fur-clad animals in Siberia is a veritable treasure trove, not only for our country, but also for many of our poor serfs and townspeople. It has become increasingly common for adventurous men to form fur-hunting or trading expeditions, traveling far beyond our most distant settlements. When they return they bring precious sable and squirrel furs, worth a fortune back in [russian_center_of_trade.GetName].\nAt times, however, it seems some of them are willing to go very far in their pursuit of wealth. The cut-throat conduct of our 'traders' has enraged the tribal population in [siberian_frontier_province.GetName] and is causing a risk to the local settlement there."
+ flavor_mal.43.t: "[From.GetName] Visits [Root.GetName]!" 
+ flavor_mal.44.t: "[From.GetName] Accepts the Gift!"
+ flavor_mal.45.t: "[From.GetName] Declines the Gift"
+ flavor_mal.47.t: "The Death of the [Root.Monarch.GetTitle]"
+ flavor_mal.48.t: "Visit From [From.GetName]"
+ MODIFIER_TOLERANCE_OF_HERETICS_CAPACITY: "Maximum Tolerance of Heretics"
+ MODIFIER_TOLERANCE_OF_HEATHENS_CAPACITY: "Maximum Tolerance of Heathens"
+ flavor_mal.11.t: "[Root.mal_pretender.GetName] Challenges [Root.Monarch.GetName]!"
+ flavor_mal.12.d: "Ever since the beginning of [Root.GetName]'s decline, the [Root.GetNobilityOrFallbackName] have become overambitious, and are now trying to take over [mal_disaster_estate_province.GetName] for their own needs."
+ flavor_mal.13.d: "The [Root.GetClergyName] have expressed unhappiness with the process of converting the rural Fetishists and the lack of piety in the court. They have now started a rebellion in [mal_disaster_estate_province.GetName] in hopes of taking over [Root.GetName]!"
+ flavor_mal.14.d: "The [Root.GetDhimmiName] have expressed unhappiness with the Muslim hierarchy and demand more rights for the rural Fetishists. Now they started a rebellion in [mal_disaster_estate_province.GetName] in hopes of taking over [Root.GetName]!"
+ flavor_mal.15.d: "Ever since the beginning of [Root.GetName]'s decline, the [Root.GetBurghersOrFallbackName] have become overambitious, and are now trying to take over [mal_disaster_estate_province.GetName] for their own needs."
+ flavor_mal.16.t: "[mal_disaster_independent_province.GetName] Demands Independence!"
+ flavor_mal.17.t: "Kaabu Demands Independence!"
+ flavor_mal.18.t: "Jolof Demands Independence!"
+ flavor_mal.19.t: "Jenné Demands Independence!"
+ flavor_mal.20.t: "Kong Demands Independence!"
+ flavor_mal.21.t: "Subjects Reject the [Root.Monarch.GetTitle]!"
+ flavor_mal.21.d: "Our steady decline destroyed any kind of trust our subjects had in our stability. Now they are turning against the [Root.Monarch.GetTitle] and are waiting for their moment to strike..."
+ flavor_mal.22.t: "[Root.GetAdjective] Peasants Rise Up in [mal_disaster_peasant_province.GetName]!"
+ flavor_mal.38.t: "[From.Monarch.GetName] Donates Gold for a Great Mosque!"
+ flavor_mal.39.t: "[From.Monarch.GetName] Donates Gold for a Counting House!"
+
+ flavor_zim.1.d: "Zimbabwe was once the great capital of the Kingdom of Zimbabwe, which broke apart due to civil wars centuries ago. Ever since, the city continues to serve Zimbabwe as a marvelous capital with its many stone houses.\nBut its days are numbered. The crops which ensured the sustenance of this great city have failed, the resources which maintained the city's economy for so long have depleted and local unrest has driven many residents away, pushing them into the other provinces of Mutapa."
+ flavor_zim.1.a.tt: "Residents from Zimbabwe will move into the provinces of Mutapa."
+ flavor_zim.5.t: "Religious Conflict Amongst Merchants"
+
+ flavor_oyo.4.t: "The Oyo Mesi Force the Ruler to Abdicate"
+ flavor_oyo.4.d: "The Oyo Mesi have always been a crucial part of our government. They are the ones that give the approval for the enthronement of a new ruler, and have the duty to depose the ruler if they deem him a tyrant. Unfortunately, their decision regarding our [Root.Monarch.GetTitle] [Root.Monarch.GetName] has been made and [Root.Monarch.GetSheHe] has received the traditional calabash as a message that [Root.Monarch.GetSheHe] is to abdicate by way of ritual suicide.\nThe Mesi are too strong and influential to be opposed, so our [Root.Monarch.GetTitle] can't do anything except obey their command."
+ flavor_oyo.4.a: "There is no way out of it."
+ 
+ mnd_peg_ceylon: "Ties With Ceylon"
+
+ samoa_tonga_desc: "Samoa was the first center of the Polynesian Triangle before Tonga rose, as almost every island in the Pacific Ocean was colonized from our beautiful islands. We must recover that glory."
+ polynesian.11.d: "Since the settlement of the first islands, dogs have been by our side as companions, but also as food. Almost every islander group has their own breed of dog: the Poi in Hawai'i, the Kuri in Aotearoa, or those in Tahiti. When a source of food is needed, dogs are not always the first to fall, but they are fed with vegetables or fish so they are ready."
+ overseas_exploration_desc: "Setting up colonies in distant lands is usually a one-way trip. If strange new diseases don't prove fatal, the amount of time it takes to sail home discourages doing so. If we remind people of the potential riches, we can encourage them to seek lands further afield."
+ standardisation_of_designs_desc: "Each shipyard and even each shipwright has their own design for a ship. Although such designs can produce what may practically be the same ship, these small differences make supplying materials for the ships much more time-consuming. Setting up a design board to supply standard designs to our yards will allow us to speed up construction."
+ son_songhaian_empire: "Songhai Empire"
+ 
+ flavor_sun.2.d: "Jayakarta is our glorious fortress."
+
+ desc_che_tunnels: "This investment in effective infrastructures has improved our travel time."
+
+ CHINESE_UNIFICATION_WAR_NAME: "$ORDER$$FIRST$-$SECOND$ War for Chinese Hegemony"
+ CELESTIAL_EMPIRE_WAR_NAME: "$ORDER$$FIRST$-$SECOND$ War for the Mandate of Heaven"
+ FORCE_MIGRATION_WAR_NAME: "$ORDER$$FIRST$-$SECOND$ Migration War"
+ TRIBUTARY_MISSION_WAR_NAME: "$ORDER$$FIRST$ War for $SECOND_NAME$ Tribute"
+ CHANGE_GOVERNMENT_WAR_NAME: "$ORDER$$FIRST$-$SECOND$ Intervention War"
+ SUBJUGATION_WAR_NAME: "$ORDER$$FIRST$-$SECOND$ War of Subjugation"
+ WORLD_CRUSADE_WAR_NAME: "$ORDER$$FIRST$ Great Holy War Against $SECOND$"
+
+ papacy_events.1.b: "Do nothing."
+
+ pay_debts_shame_pole_title: "The Shame Pole Debt"
+ pay_debts_shame_pole_desc: "A shame pole has been erect to embarrass us. If we pay our debt, the pole will be removed and we will stop losing face."
+
+ lanfang_decision_formation_desc: "Chinese mining collectives are eager to begin exploting the gold mines of Borneo. We should allow them to set up self-governing communities so that they can perform their work most effectively."
+
+ west_africa_salt_cloth_shells_title: "Salt, Cloth, and Shells"
+ west_africa_sincretic_rituals_title: "Syncretic Rituals"
+ east_africa_horn_trade: "Horn of Africa Trade"
+
+ take_capital_support_rebels_desc: ""
+
+ lunar_new_year: "Lunar New Year"
+ desc_lunar_new_year: "People from all over the nation have come and rejoiced themselves with the dull shimmer of the moon."
+
+ desc_east_indian_trade_route: "Our merchants have managed to reach India, establishing a trade route for commerce. This paves the way for very lucrative trade opportunities."
+
+ flavor_mam.3.d: "We have recently received the illegitimate son of the King of Cyprus, who has attempted to wrest the country’s throne away for himself. Now, he comes to $CAPITAL$ looking for aid. We could promise to install this man, Jacques, as King of Cyprus, making Cyprus effectively a vassal."
+ flavor_mam.3.a: "Demand the Jacques be enthroned."
+ flavor_mam.3.b: "We shall do no such thing."
+ flavor_mam.4.t: "Jacques of Cyprus"
+ flavor_mam.4.d: "Jacques, an illegitimate son of a former Cypriot king, recently left for the lands of the Mamluks and found support there for his tenuous claim to our country’s throne. The Mamluks now demand that Jacques be enthroned as king, or otherwise there may be war."
+ flavor_mam.4.a: "Install Jacques as rightful king."
+ flavor_mam.4.c: "Ignore them."
+ flavor_mam.5.t: "The Enthronement of Jacques"
+ flavor_mam.7.t: "Cyprus Defiant"
+ flavor_mam.7.a: "This is cause for war!"
+
+ string_start_title_denmark: "Christopher, the Arch-King of Denmark"
+ foreign_section: "Found the Foreign Section"
+
+ emp_bur_liege_title: "Conquer Liège"
+ emp_bur_join_the_empire_title: "Win Imperial Favor"
+
+ north_american_dragoon: "North American Dragoon"
+ north_american_dragoonDESCR: ""
+ north_american_horsemen: "North American Horsemen"
+ north_american_horsemenDESCR: ""
+ north_american_swarm: "North American Swarm"
+ north_american_swarmDESCR: ""
+
+ CANNOT_CONSOLIDATE_DEV_STATE: "This function has been deprecated in Dei Gratia."
+ CANNOT_CENCENTRATE_DEVELOPMENT_NOTHING_TO_TAKE: "This function has been deprecated in Dei Gratia."
+ CENTRALIZE_STATE_DESC: "§YCentralize State§!"
+ CENTRALIZE_STATE_COST: "This function has been deprecated in Dei Gratia."
+ CENTRALIZE_STATE_PROVINCES: ""
+
+ flavor_sax.7.desc: "It appears that tensions are still running high among the Saxon and Thuringian nobility following the war between Friedrich and Wilhelm. A knight, Kunz von Kauffungen, who fought on Friedrich's side but was financially ruined by the conflict, has banded together with several disaffected Thuringian knights and hatched a plan to take the [Root.Monarch.GetTitle]'s heir hostage to gain leverage for blackmail. The act was a success, and they were able to cross the border into [neighbour.GetUsableName], from where they have issued a demand: 200 ducats or the heir dies."
+
+ colonial_nation.192.a: "Hopefully our government will do its job well."
+ 
+ string_start_bahmanis: "The sack of §YDelhi§! in 1398 was a monumental event for the subcontinent, but in §YBidar§! it did not have the impact it did elsewhere. The §YBahmani§! Sultans declared their independence from the north 50 years prior and had already built a new state in the dry Deccani upland. Rich in economic assets, among others the fabled diamond mines of Golconda, the Sultans are now wealthier than most kings. Their court, and its fabled Turquoise throne, is famous beyond the subcontinent. Fame that greatly helps to attract the greedy and gifted from the wider Muslim world.\n\nThe Bahmani Sultanate is also a troubled state. Cutting ties with the north has meant that it is without direct access to the west. At the same time the kingdom has a much smaller Muslim minority than most northern Sultanates and in its isolation even the most persianate of nobles have begun to adopt local culture and language. Newcomers and indigenized nobles often end up in conflict with each other and the new capital of Bidar has been built partly to avoid the intrigues of the old one in Gulbarga.\n\nNot far from the kingdom's southern border lies the City of Victory, §YVijayanagar§!. The city is the seat of the Sangama Rajas, and with its 400,000 inhabitants it is a very different place from the orderly fort city of Bidar. This is the capital of an Empire that stretches across Southern India and that has recently conquered almost the entire Tamil country in the far south. Vijayanagar is a formidable rival to Bahmani power, and has continued to advance on the contested zone between the two kingdoms. The seizure of the western Bahmani ports by agents of the Vijayanagara Empire is a strike right at the heart of the Sultanate's lifeline of immigration and imports.\n\nIn the east Kapilendra, founder of the Suryavansha dynasty of §YOrissa§!, has orchestrated the sudden rise of his kingdom as a military power. Striking at §YJaunpur§!, §YBengal§!, Vijayanagar and Bahmani interests at the same time the new king has in short time made a name for himself as a conqueror. Should he choose to turn his attention south, towards §YAndhra§! and §YTelingana§!, his actions may shake up the deadlock entirely."
+
+ string_start_bengal: "The §YBengal§! Sultanate won its independence from the §YTughluq§! dynasty of §YDelhi§! in a long struggle of diplomacy, siegecraft, and warfare that lasted from 1354-1359. Bengal has established itself as a unified and powerful Sultanate over the last century.\n\nThe Sultanate's original §YIlyas Shahi§! dynasty been restored by Sultan Nasir-ud-Din Mahmud, a capable administrator and a man committed to upholding peace and stability. He has thus far presided over the development of Bengal's cities and the construction of magnificent new mosques.\n\nThe most pressing foreign threats facing Bengal are the §YGajapati§! Kingdom of §YOrissa§! and the §YSharqi§! dynasty of §YJaunpur§!. The Suryavanshas command the loyalty of the Garjat tribes, as they traditionally pledge their loyalty to whichever power controls the major coastal cities. If Bengal can defeat the Orissa kingdom, they might be convinced to extend that same loyalty to the Sultan. Like Bengal itself, the Jaunpur Sultanate broke free from the grip of Delhi, though it has enjoyed its independence only since 1393. Jaunpur controls a vast stretch of the Doab, the great riverine lands of the Ganges. Bengal and Jaunpur came to blows as recently as 1420. Though the conflict came to an abrupt end due to the intervention of Timurid and Ming envoys, many sore issues remain between both nations and further wars may be inevitable.\n\nRelations with the Buddhist Sultans of §YArakan§! have fluctuated wildly; in one year they are the Bengal’s loyal subjects, in another they are ambivalent allies, and in yet another they are a pirate menace. Future relations with Arakan are likely to be guided just as much by circumstance.\n\nBengal is a promising regional hegemon, with great potential for expansion. The Bengal tiger may yet become the sovereign of all India."
+
+ ori_jagannath_cult: "Jagannath and the Suryavanshas"
+ desc_ori_jagannath_cult: "More than any other deity Jagannath is connected to the people of Orissa and more than any other deity this, the greatest avatar of Vishnu, is connected to our dynasty. Each Suryavansha king is supported by Jagannath and his priests and the temple at Puri grows richer by the year due to royal patronage."
+
+ majapahit.2.d: "It never gets any easier. Rotten blood still reeks as one's own, the enemies' eyes are still human eyes, the night before the battle still keeps Damarwulan wide awake.\nThe battle ends victoriously, like any other battle has before for him. This is the fifth battle, and he wishes five is the final number. When he returns to court, he is received with the greatest of honors, his name repeated so many times that he forgets it is his name and thinks it is just another word for "victory". [Root.Monarch.GetName] approaches him, [Root.Monarch.GetHerHis] heart filled with joy. "Young Damarwulan," [Root.Monarch.GetSheHe] says, "you are not that young anymore.""
+
+ burghers_estate_events.17.1.d: "As we grow and add new tropical provinces to our realm, the $ESTATE_BURGHERS$ of [Root.GetName] have started their plans for these new places so they can grow big and powerful thanks to their techniques."

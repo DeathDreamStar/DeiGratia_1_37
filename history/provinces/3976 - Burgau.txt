@@ -1,0 +1,43 @@
+#3976 - Burgau
+owner = TIR
+controller = TIR
+culture = swabian
+religion = catholic
+hre = yes
+base_tax = 1
+base_production = 1
+trade_goods = cloth
+base_manpower = 1
+capital = "Burgau"
+is_city = yes
+add_core = TIR
+
+
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = western
+discovered_by = muslim
+
+
+
+1490.1.1 = {
+           owner = HAB
+           controller = HAB
+           add_core = HAB
+}
+1803.2.25 = {
+           owner = BAV
+           controller = BAV
+           add_core = BAV
+           remove_core = HAB
+           remove_core = TIR
+}
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+1871.1.18 = {
+           owner = GER
+           controller = GER
+           add_core = GER
+           base_tax = 1
+           base_production = 1
+           base_manpower = 1
+}

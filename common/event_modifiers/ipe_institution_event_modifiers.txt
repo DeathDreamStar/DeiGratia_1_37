@@ -1,0 +1,14 @@
+birthplace_of_banking = {
+	local_tax_modifier = 0.1
+}
+
+banned_printing_press = {
+	global_institution_spread = -0.1
+	monthly_piety = 0.001
+}
+
+accepted_printing_press = {
+	global_unrest = 10
+	technology_cost = -0.05
+	monthly_piety = -0.001
+}

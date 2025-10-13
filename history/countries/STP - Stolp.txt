@@ -1,0 +1,53 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = pommeranian
+add_accepted_culture = kashubian
+religion = catholic
+technology_group = western
+capital = 2995	# Stolp
+add_historical_friend = STE
+add_historical_friend = WOL
+
+# Pommern-Stolp
+
+1418.1.1 = {
+	monarch = {
+		name = "Bogislaw IX"
+		dynasty = "Gryf"
+		birth_date = 1407.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = charismatic_negotiator_personality
+	add_ruler_personality = intricate_web_weaver_personality
+	add_ruler_personality = secretive_personality
+}
+
+1432.6.24 = {
+	queen = {
+		country_of_origin = MAZ
+		name = "Maria"
+		dynasty = "Piast"
+		birth_date = 1408.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	add_queen_personality = secretive_personality
+}
+
+1432.6.24 = {
+	heir = {
+		monarch_name = "Eric I"
+		name = "Eric"
+		dynasty = "Gryf"
+		birth_date = 1381.1.1
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+	add_heir_personality = babbling_buffoon_personality
+}

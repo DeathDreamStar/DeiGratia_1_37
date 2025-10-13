@@ -1,0 +1,75 @@
+vassal = {
+	first = AVA
+	second = KAL
+	start_date = 1406.1.1
+	end_date = 1502.1.1
+}
+vassal = {
+	first = AVA
+	second = MYA
+	start_date = 1406.1.1
+	end_date = 1502.1.1
+}
+vassal = {
+	first = AVA
+	second = TAU
+	start_date = 1442.1.1
+	end_date = 1527.1.1
+}
+vassal = {
+	first = AVA
+	second = MKA
+	start_date = 1443.1.1
+	end_date = 1502.1.1
+}
+vassal = {
+	first = AVA
+	second = HSI
+	start_date = 1443.1.1
+	end_date = 1502.1.1
+}
+vassal = {
+	first = AVA
+	second = YGW
+	start_date = 1443.1.1
+	end_date = 1502.1.1
+}
+vassal = {
+	first = AVA
+	second = BPR
+	start_date = 1482.1.1
+	end_date = 1527.1.1
+}
+
+vassal = {
+	first = HSE
+	second = MNI
+	start_date = 800.1.1
+	end_date = 1802.1.1
+}
+
+guarantee = {
+	first = BNG
+	second = ARK
+	start_date = 1430.1.1
+	end_date = 1531.1.1
+}
+
+vassal = {
+	first = LNA
+	second = SSP
+	start_date = 1292.1.1
+	end_date = 1558.1.1
+}
+vassal = {
+	first = LNA
+	second = KET
+	start_date = 1292.1.1
+	end_date = 1558.1.1
+}
+vassal = {
+	first = LNA
+	second = MPA
+	start_date = 1292.1.1
+	end_date = 1558.1.1
+}

@@ -1,0 +1,3 @@
+#3602 - Lake Chapala
+
+discovered_by = mesoamerican

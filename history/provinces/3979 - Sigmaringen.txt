@@ -1,0 +1,20 @@
+#3979 - Sigmaringen
+owner = HHZ
+controller = HHZ
+add_core = HHZ
+culture = swabian
+capital = "Sigmaringen"
+religion = catholic
+trade_goods = wine
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+hre = yes
+
+discovered_by = eastern
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved

@@ -1,0 +1,34 @@
+namespace = ipeNAP
+normal_or_historical_nations = yes
+
+# The Princess of Taranto
+country_event = {
+	id = ipeNAP.1
+	title = ipeNAP.1.t
+	desc = ipeNAP.1.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = NAP
+		is_subject = no
+		NOT = {
+			is_origin_of_consort = TRN
+		}
+		TRN = {
+			is_subject_of = NAP
+			is_subject_of_type = vassal
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # It is a worthy addition to the Kingdom.
+		name = ipeNAP.1.a
+		inherit = TRN
+		add_prestige = 5
+	}
+}

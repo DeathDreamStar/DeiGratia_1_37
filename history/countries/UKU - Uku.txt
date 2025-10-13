@@ -1,0 +1,26 @@
+government = monarchy
+add_government_reform = daimyo
+government_rank = 1
+primary_culture = kyushuan
+religion = shinto
+technology_group = chinese
+capital = 6731	# Goto
+
+1444.1.1 = { # fictional?
+	monarch = {
+		name = "Masaru"
+		dynasty = "Uku"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+	heir = {
+		name = "Hata"
+		dynasty = "Uku"
+		birth_date = 1440.1.1
+		death_date = 1470.1.10
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}

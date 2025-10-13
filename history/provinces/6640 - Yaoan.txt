@@ -1,0 +1,39 @@
+#6640 - Yao'an
+
+owner = CYO
+controller = CYO
+add_core = CYO
+add_core = CYI
+culture = yi
+religion = animism
+capital = "Yao'an"
+trade_goods = opium
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = CDL
+
+
+discovered_by = chinese
+discovered_by = indian
+discovered_by = nomad_group
+
+1655.1.1 = { discovered_by = SPA }#Novus Atlas Sinensis
+
+1658.12.1 = {
+	owner = QNG
+	controller = QNG
+}
+1661.6.1 = {
+	owner = CZH
+	controller = CZH
+	add_core = CZH
+	remove_core = MNG
+} # The Three Feudatories
+1681.10.1 = {
+	owner = QNG
+	controller = QNG
+	add_core = QNG
+}

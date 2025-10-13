@@ -1,0 +1,128 @@
+french_wars_of_religion = {
+	potential = {
+		tag = FRA
+		government = monarchy
+		NOT = { has_country_flag = had_religious_turmoil } 
+		NOT = { has_country_flag = FRA_wars_of_religion_ended } 
+		OR = {
+			religion = catholic
+			religion = protestant
+			religion = reformed
+		}
+		is_force_converted = no
+		normal_or_historical_nations = yes
+	}
+	
+	can_start = {
+		current_age = age_of_reformation
+		is_religion_enabled = reformed
+		has_any_disaster = no
+		NOT = { religious_unity = 0.75 }
+		any_owned_province = {
+			continent = europe
+			has_owner_religion = no
+			OR = {
+				religion = catholic
+				religion = protestant
+				religion = reformed
+			}
+		}
+	}
+	
+	can_stop = {
+		OR = {
+			has_any_disaster = yes
+			religious_unity = 0.75
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = { religious_unity = 0.75 }
+			religious_unity = 0.5
+		} 		
+		modifier = {
+			factor = 2
+			NOT = { religious_unity = 0.5 }
+		} 
+		modifier = {
+			factor = 1
+			has_idea_group = religious_ideas
+		}
+		modifier = {
+			factor = 1
+			NOT = { stability = 0 }
+		}
+		modifier = {
+			factor = 2
+			has_hostile_reformation_center = yes
+		}
+		modifier = {
+			factor = -1
+			has_friendly_reformation_center = yes
+		}
+	}
+	
+	can_end = {
+		NOT = { num_of_rebel_controlled_provinces = 1 }
+		stability = 1
+		capital_scope = {
+			controlled_by = ROOT
+		}
+		OR = {
+			is_force_converted = yes
+			religious_unity = 0.9
+		}
+		NOT = {
+			any_owned_province = {
+				region = france_region
+				has_owner_religion = no
+				unrest = 5
+			}
+			exists = CTL
+			exists = HUG
+		}
+	}
+
+	on_start = french_wars_of_religion.1
+	on_end = french_wars_of_religion.100
+	
+	on_monthly = {
+		random_events = {
+			1000 = 0
+			100 = new_french_wars_of_religion.1 # The Surprise of Meaux
+			100 = french_wars_of_religion.2 # The St. Bartholomew's Day Massacre
+
+			100 = new_french_wars_of_religion.2 # The Heretic Succession
+			
+			100 = new_french_wars_of_religion.3 # The Catholic League
+			100 = new_french_wars_of_religion.4 # The Protestant League
+
+			100 = new_french_wars_of_religion.5 # Day of the Barricades
+			100 = new_french_wars_of_religion.6 # Day of the Barricades
+
+			100 = french_wars_of_religion.5 # The Assassination of the Duke of Guise
+			100 = new_french_wars_of_religion.7 # The Assassination of the Prince of Conde
+
+			# new_french_wars_of_religion.8 is triggered if the assassination of the Duke of Guise occurs
+			# new_french_wars_of_religion.9 is triggered if the assassination of the Prince of Conde occurs
+
+			# new_french_wars_of_religion.10 is triggered if France goes to war with the Catholic League
+			# new_french_wars_of_religion.11 is triggered if France goes to war with the Protestant League
+
+			# new_french_wars_of_religion.12 is triggered if France reconquers the Catholic League
+			# new_french_wars_of_religion.13 is triggered if France reconquers the Protestant League
+
+			# new_french_wars_of_religion.14 is triggered if the Catholic League conquers France
+			# new_french_wars_of_religion.15 is triggered if the Protestant League conquers France
+
+			# new_french_wars_of_religion.16 is triggered if France owns Brittany
+
+			# french_wars_of_religion.14 is triggered if France is at war with the Catholic or Protestant League
+
+			# french_wars_of_religion.6, french_wars_of_religion.8 are province events
+			# french_wars_of_religion.7, french_wars_of_religion.9 triggered from sieges
+		}
+	}
+}

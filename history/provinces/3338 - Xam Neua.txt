@@ -1,0 +1,17 @@
+# 3338 - Xam Neua
+
+owner = MPH
+controller = MPH
+add_core = MPH
+add_core = LXA
+culture = lao
+religion = animism
+capital = "Xam Neua"
+trade_goods = grain
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian

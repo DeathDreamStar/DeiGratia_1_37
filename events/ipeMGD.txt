@@ -1,0 +1,116 @@
+namespace = ipeMGD
+normal_or_historical_nations = yes
+
+# The Sultanate of Maguindanao
+country_event = {
+	id = ipeMGD.1
+	title = ipeMGD.1.t
+	desc = ipeMGD.1.d
+	picture = CITY_VIEW_eventPicture
+
+	major = yes
+
+	major_trigger = {
+		technology_group = chinese
+	}
+
+	fire_only_once = yes
+
+	trigger = {
+		652 = { 
+			is_empty = yes
+		}
+		OR = {
+			tag = BEI
+			tag = SUL
+		}
+		current_age = age_of_reformation
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	immediate = {
+		hidden_effect = {
+			652 = {
+				cede_province = ROOT
+				add_core = MGD
+			}
+			if = {
+				limit = {
+					2701 = {
+						is_empty = yes
+					}
+				}
+				2701 = {
+					cede_province = ROOT
+					add_core = MGD
+				}
+			}
+			if = {
+				limit = {
+					4354 = {
+						is_empty = yes
+					}
+				}
+				4354 = {
+					cede_province = ROOT
+					add_core = MGD
+				}
+			}
+			release = MGD
+			MGD = {
+				change_primary_culture = visayan
+				change_government = monarchy
+				add_government_reform = plutocratic_reform
+				adopt_reform_progress = ROOT
+				change_religion = sunni
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1
+						light_ship = 0.5
+						galley = 0.5
+					}
+				}
+			}
+		}
+	}
+
+	option = { # We shall see what becomes of this new kingdom.
+		name = ipeMGD.1.a
+		tooltip = {
+			652 = {
+				add_core = MGD
+			}
+			if = {
+				limit = {
+					MGD = {
+						owns = 2701
+					}
+				}
+				2701 = {
+					add_core = MGD
+				}
+			}
+			if = {
+				limit = {
+					MGD = {
+						owns = 4354
+					}
+				}
+				4354 = {
+					add_core = MGD
+				}
+			}
+			MGD = {
+				change_religion = sunni
+			}
+		}
+	}
+
+	option = { # Play as Maguindanao.
+		name = ipeMGD.1.b
+		switch_tag = MGD
+	}
+}

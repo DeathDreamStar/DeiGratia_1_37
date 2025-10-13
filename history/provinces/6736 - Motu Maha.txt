@@ -1,0 +1,14 @@
+#6736 - Motu Maha
+
+hre = no
+capital = "Motu Maha"
+trade_goods = unknown
+base_tax = 1
+base_production = 1
+base_manpower = 1
+native_size = 0
+native_ferocity = 0
+native_hostileness = 0
+discovered_by = polynesian_tech
+
+1791.11.29 = { discovered_by = GBR } # William R. Broughton

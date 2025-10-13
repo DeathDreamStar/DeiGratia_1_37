@@ -1,0 +1,20 @@
+#4914 - Neosho
+
+culture = osage
+religion = totemism
+capital = "Neosho"
+trade_goods = grain
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+native_size = 30
+native_ferocity = 3
+native_hostileness = 9
+tribal_owner = OSA
+
+
+
+discovered_by = north_american
+
+1541.1.1 = { discovered_by = SPA } # Francisco Vásquez de Coronado

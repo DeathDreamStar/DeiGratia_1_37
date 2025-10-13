@@ -1,0 +1,187 @@
+namespace = ipeMOL
+normal_or_historical_nations = yes
+
+# Our Brothers in Wallachia
+country_event = {
+	id = ipeMOL.1
+	title = ipeMOL.1.t
+	desc = ipeMOL.1.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = MOL
+		NOT = {
+			war_with = TUR
+		}
+		WAL = {
+			war_with = TUR
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # We must help the Wallachians!
+		name = ipeMOL.1.a
+		add_manpower = -1
+		add_mil_power = -50
+		WAL = {
+			add_opinion = {
+				who = MOL
+				modifier = moldavia_sent_aid
+			}
+			hidden_effect = {
+				country_event = {
+					id = ipeMOL.2
+				}
+			}
+		}
+	}
+
+	option = { # Do nothing.
+		name = ipeMOL.1.b
+	}
+}
+
+# Our Brothers in Moldavia
+country_event = {
+	id = ipeMOL.2
+	title = ipeMOL.2.t
+	desc = ipeMOL.2.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # The Moldavians are truly our brothers in arms.
+		name = ipeMOL.2.a
+		add_manpower = 1
+		add_mil_power = 50
+		tooltip = {
+			add_opinion = {
+				who = MOL
+				modifier = moldavia_sent_aid
+			}
+		}
+	}
+}
+
+# The Subjugation of Moldavia
+country_event = {
+	id = ipeMOL.3
+	title = ipeMOL.3.t
+	desc = ipeMOL.3.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Excellent.
+		name = ipeMOL.3.a
+		if = {
+			limit = {
+				tag = TUR
+				MOL = {
+					owns = 1756
+				}
+			}
+			1756 = {
+				cede_province = TUR
+			}
+		}
+		if = {
+			limit = {
+				MOL = {
+					is_subject = yes
+				}
+			}
+			MOL = {
+				hidden_effect = {
+					overlord = {
+						country_event = {
+							id = ipeMOL.5
+						}
+					}
+				}
+				grant_independence = yes
+			}
+		}
+		white_peace = MOL
+		tooltip = {
+			MOL = {
+				kill_ruler = yes
+			}
+		}
+		create_subject = {
+			subject = MOL
+			subject_type = march
+		}
+		MOL = {
+			add_liberty_desire = -50
+		}
+		hidden_effect = {
+			MOL = {
+				country_event = {
+					id = ipeMOL.4
+				}
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Subjugates Moldavia
+country_event = {
+	id = ipeMOL.4
+	title = ipeMOL.4.t
+	desc = ipeMOL.4.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is not good.
+		name = ipeMOL.4.a
+		kill_ruler = yes
+		define_ruler = {
+			max_random_adm = 3
+			max_random_dip = 3
+			max_random_mil = 3
+		}
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject = MOL
+					subject_type = march
+				}
+			}
+			add_liberty_desire = -50
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Subjugates Moldavia
+country_event = {
+	id = ipeMOL.5
+	title = ipeMOL.4.t
+	desc = ipeMOL.5.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # This is not good.
+		name = ipeMOL.4.a
+		tooltip = {
+			FROM = {
+				create_subject = {
+					subject = MOL
+					subject_type = march
+				}
+			}
+			MOL = {
+				add_liberty_desire = -50
+			}
+		}
+	}
+}

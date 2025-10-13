@@ -1,0 +1,16 @@
+#3309 - Totomi
+
+owner = SBA
+controller = SBA
+culture = togoku
+religion = shinto
+capital = "Mitsuke"
+trade_goods = tea
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+add_core = SBA
+add_core = IMG
+discovered_by = chinese

@@ -1,0 +1,18 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+mercantilism = 25
+technology_group = western
+religion = catholic
+primary_culture = arpitan
+capital = 1871 
+
+1437.1.1 = {
+	monarch = {
+		name = "Guillaume VI de Rarogne"		
+		birth_date = 1390.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}

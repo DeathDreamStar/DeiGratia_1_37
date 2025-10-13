@@ -1,0 +1,3 @@
+#4000 - Lake Inawashiro
+
+discovered_by = chinese

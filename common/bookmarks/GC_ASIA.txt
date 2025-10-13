@@ -1,0 +1,22 @@
+bookmark =
+{
+	name = "GC_ASIA_BOOKMARK"
+	desc = "GC_ASIA_BOOKMARK_DESC"
+	date = 1444.11.11
+
+	center = 2133
+	
+	country = KOR
+	country = MNG
+	country = OIR
+	country = ARL
+	country = TRS
+	country = SRH
+	country = BNG
+	country = VIJ
+	country = BAH
+	country = HSK
+	country = YMN
+	
+	easy_country = KOR
+}

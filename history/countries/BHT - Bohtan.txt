@@ -1,0 +1,129 @@
+government = tribal
+add_government_reform = tribal_federation
+government_rank = 1
+primary_culture = kurdish
+religion = sunni
+technology_group = muslim
+capital = 6754 #Cizre
+religious_school = shafii_school
+
+#Emirs of Bokhti
+1335.12.1 = {
+	monarch = {
+		name = "Sulaymân"
+		dynasty = "Bokhti"
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1384.1.1 = {
+	monarch = {
+		name = "‘Izz ad-Dîn"
+		dynasty = "Bokhti"
+		adm = 1
+		dip = 4
+		mil = 4
+	}
+}
+1432.1.1 = {
+	monarch = {
+		name = "‘Abd al-‘Azîz"
+		dynasty = "Bokhti"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1480.1.1 = {
+	monarch = {
+		name = "Khâlid"
+		dynasty = "Bokhti"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1520.1.1 = {
+	monarch = {
+		name = "Abdal"
+		dynasty = "Bokhti"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1560.1.1 = {
+	monarch = {
+		name = "Bawa"
+		dynasty = "Bokhti"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1600.1.1 = {
+	monarch = {
+		name = "Helo"
+		dynasty = "Bokhti"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1640.1.1 = {
+	monarch = {
+		name = "Ahmad"
+		dynasty = "Bokhti"
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}
+1680.1.1 = {
+	monarch = {
+		name = "Bozorg"
+		dynasty = "Bokhti"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1720.1.1 = {
+	monarch = {
+		name = "Husayn"
+		dynasty = "Bokhti"
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1760.1.1 = {
+	monarch = {
+		name = "Kulos"
+		dynasty = "Bokhti"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1790.1.1 = {
+	monarch = {
+		name = "Budak"
+		dynasty = "Bokhti"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1821.1.1 = {
+	monarch = {
+		name = "Bedr Khan"
+		dynasty = "Bokhti"
+		birth_date = 1802.1.1
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}
+#1847 directly to TUR

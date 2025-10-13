@@ -1,0 +1,20 @@
+# 3125 - Meihekou
+
+latent_trade_goods = {
+	coal
+}
+
+owner = HFA
+controller = HFA
+add_core = HFA
+culture = manchu
+religion = confucianism
+capital = "Meihekou"
+trade_goods = iron
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 2
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group

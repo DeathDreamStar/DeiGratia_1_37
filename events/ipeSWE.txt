@@ -1,0 +1,53 @@
+namespace = ipeSWE
+normal_or_historical_nations = yes
+
+# New Sweden
+country_event = {
+	id = ipeSWE.1
+	title = ipeSWE.1.t
+	desc = ipeSWE.1.d
+	picture = COLONIZATION_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # It will be a wealthy and prosperous land.
+		name = ipeSWE.1.a
+		957 = {
+			owner = {
+				hidden_effect = {
+					country_event = {
+						id = ipeSWE.2
+					}
+				}
+			}
+			cede_province = ROOT
+			add_core = ROOT
+			change_culture = ROOT
+			change_religion = ROOT
+		}
+	}
+}
+
+# New Sweden
+country_event = {
+	id = ipeSWE.2
+	title = ipeSWE.1.t
+	desc = ipeSWE.2.d
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # May we get along well.
+		name = ipeSWE.2.a
+		tooltip = {
+			957 = {
+				cede_province = FROM
+				add_core = FROM
+				change_culture = FROM
+				change_religion = FROM
+			}
+		}
+	}
+}

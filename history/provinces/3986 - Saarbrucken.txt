@@ -1,0 +1,67 @@
+#3986 - Saarbrucken
+owner = SAB
+controller = SAB
+culture = moselle
+religion = catholic
+hre = yes
+base_tax = 1
+base_production = 1
+trade_goods = wine
+base_manpower = 1
+capital = "Saarbrücken"
+is_city = yes
+add_core = SAB
+fort_15th = yes
+discovered_by = eastern
+discovered_by = ottoman
+discovered_by = western
+discovered_by = muslim
+
+latent_trade_goods = {
+	coal
+}
+
+1381.3.11 = {
+           owner = NSA
+           controller = NSA
+           add_core = NSA
+}
+1429.7.2 = {
+           owner = SAB
+           controller = SAB
+           remove_core = NSA
+}
+1574.11.23 = {
+           owner = NSA
+           controller = NSA
+           add_core = NSA
+}
+1627.11.8 = {
+           owner = SAB
+           controller = SAB
+           remove_core = NSA
+}
+1792.10.4 = {
+           controller = FRA
+}
+1797.10.17 = {
+           owner = FRA
+           add_core = FRA
+           remove_core = SAB
+           hre = no
+}
+1806.7.12 = { hre = no } # The Holy Roman Empire is dissolved
+1814.4.11 = {
+           owner = PRU
+           controller = PRU
+           add_core = PRU
+           remove_core = FRA
+}
+1870.8.2 = { controller = FRA }
+1870.8.3 = { controller = PRU }
+1871.1.18 = {
+           owner = PRU
+           controller = PRU
+           add_core = PRU
+           remove_core = PRU
+}

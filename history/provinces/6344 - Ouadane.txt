@@ -1,0 +1,16 @@
+#6344 - Ouadane
+
+add_core = MAQ
+owner = MAQ
+controller = MAQ
+culture = mauritanian
+religion = sunni
+capital = "Ouadane"
+trade_goods = slaves
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+discovered_by = sub_saharan
+discovered_by = muslim
+discovered_by = ottoman

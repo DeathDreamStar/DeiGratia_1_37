@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = cara
+religion = inti
+technology_group = andean
+unit_type = south_american
+capital = 817 # Cañari
+
+1402.1.1 = {
+	monarch = {
+		name = "Urqu Qulla"
+		dynasty = "Cañari"
+		ADM = 2
+		DIP = 4
+		MIL = 3
+	}
+}

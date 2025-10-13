@@ -1,0 +1,125 @@
+government = monarchy
+add_government_reform = feudalism_reform
+technology_group = western
+religion = catholic
+primary_culture = gascon
+add_accepted_culture = languedocien
+capital = 176	# Pau
+fixed_capital = 176 # Cannot move capital away from this province & no power cost to move to it
+government_rank = 1
+historical_friend = NAV
+historical_rival = AMG
+
+1398.1.1 = {
+	monarch = {
+		name = "Isabelle"
+		dynasty ="de Foix"
+		female = yes
+		dip = 3
+		adm = 2
+		mil = 1
+	}
+}
+
+1398.1.1 = {
+	heir = {
+		name = "Jean"
+		monarch_name = "Jean I"
+		dynasty = "de Foix"
+		birth_date = 1382.1.1
+		death_date = 1436.1.1
+		claim = 95
+		dip = 1
+		adm = 2
+		mil = 2
+	}
+}
+		
+
+1413.1.1 = {
+	monarch = {
+		name = "Jean I"
+		dynasty ="de Foix"
+		birth_date = 1382.1.1
+		dip = 1
+		adm = 2
+		mil = 2
+	}
+}
+
+1423.2.26 = {
+	heir = {
+		name = "Gaston"
+		monarch_name = "Gaston IV"
+		dynasty = "de Foix"
+		claim = 95
+		birth_date = 1423.2.26
+		death_date = 1472.1.1
+		dip = 4
+		adm = 4
+		mil = 3
+	}
+}
+
+1436.1.1 = {
+	monarch = {
+		name = "Gaston IV"
+		dynasty = "de Foix"
+		birth_date = 1423.2.26
+		dip = 4
+		adm = 4
+		mil = 3
+	}
+	queen = {
+		country_of_origin = NAV
+		name = "Leonor"
+		dynasty = "de Trastámara"
+		birth_date = 1426.2.2
+		death_date = 1479.2.12
+		female = yes
+		adm = 1
+		dip = 2
+		mil = 0
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = fertile_personality
+	add_queen_personality = malevolent_personality
+	set_consort_flag = leonor_lives
+}
+
+1467.12.4 = {
+	heir = {
+		name = "François Phébus"
+		monarch_name = "François I Phébus"
+		dynasty = "de Foix"
+		birth_date = 1467.12.4
+		death_date = 1483.1.1
+		claim = 95
+		dip = 4
+		adm = 4
+		mil = 3
+	}
+}
+
+1472.7.26 = {
+	monarch = {
+		name = "François I Phébus"
+		dynasty ="de Foix"
+		birth_date = 1467.12.4
+		dip = 4
+		adm = 4
+		mil = 3
+	}
+}
+
+1512.9.1 = { government = monarchy
+add_government_reform = autocracy_reform }
+
+1555.5.30 = { set_legacy_government = administrative_monarchy }
+
+1560.1.1 = { religion = reformed }
+
+1661.3.9 = { government = monarchy
+add_government_reform = autocracy_reform }
+
+#Union with Navarra from 1472

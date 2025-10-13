@@ -1,0 +1,23 @@
+excessive_trade_restrictions = {
+    opinion = -200
+    years = 100
+    yearly_decay = 2
+}
+
+shuangyu_piracy = {
+    opinion = -200
+    years = 100
+    yearly_decay = 2
+}
+
+protecting_merchants = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+protecting_pirates = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}

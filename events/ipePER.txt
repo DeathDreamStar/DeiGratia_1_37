@@ -1,0 +1,322 @@
+namespace = ipePER
+normal_or_historical_nations = yes
+
+# The Rise of Twelverism
+country_event = {
+	id = ipePER.1
+	title = ipePER.1.t
+	desc = ipePER.1.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = ARL
+	}
+
+	mean_time_to_happen = {
+		months = 24
+		modifier = {
+			factor = 0.1
+			is_at_war = yes
+		}
+	}
+
+	option = { # We will embrace Joneid's teachings.
+		name = ipePER.1.a
+		ai_chance = {
+			factor = 100
+		}
+		define_heir = {
+			name = "Joneid"
+			dynasty = "Safavi"
+			adm = 3		
+			dip = 6
+			mil = 4
+			age = 30
+		}
+		kill_ruler = yes
+		if = {
+			limit = {
+				has_dlc = "Rights of Man" 
+			}
+			hidden_effect = { add_ruler_personality = inspiring_leader_personality }
+		}
+		hidden_effect = {
+			change_religion = shiite
+			every_owned_province = {
+				limit = {
+					OR = {
+						religion = sunni
+						religion = ibadi
+					}
+				}
+				change_religion = shiite
+			}
+		}
+		custom_tooltip = ipePER.1.a.tooltip
+		hidden_effect = {
+			change_estate_land_share = {
+				estate = estate_church
+				share = -7.5
+			}
+			change_estate_land_share = {
+				estate = estate_burghers
+				share = -7.5
+			}
+			change_estate_land_share = {
+				estate = estate_nobles
+				share = -7.5
+			}
+			change_estate_land_share = {
+				estate = estate_dhimmi
+				share = -7.5
+			}
+			set_ai_personality = {
+				personality = ai_militarist
+				locked = no
+			}
+		}
+	}
+
+	option = { # We reject this heresy!
+		name = ipePER.1.b
+		ai_chance = {
+			factor = 0
+		}
+		capital_scope = {
+			spawn_rebels = {
+				type = shiite_rebels
+				size = 1
+				leader = "Sheikh Joneid"
+			}
+		}
+	}
+}
+
+# The Allegiance of Gilan
+country_event = {
+	id = ipePER.2
+	title = ipePER.2.t
+	desc = ipePER.2.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We should join the Safavid Empire.
+		name = ipePER.2.a
+		ai_chance = {
+			factor = 50
+		}
+		FROM = {
+			inherit = ROOT
+			country_event = {
+				id = ipePER.3
+			}
+		}
+	}
+
+	option = { # Gilan can serve the Safavids as loyal vassals.
+		name = ipePER.2.b
+		ai_chance = {
+			factor = 50
+		}
+		FROM = {
+			create_subject = {
+				subject = ROOT
+				subject_type = vassal
+			}
+			country_event = {
+				id = ipePER.4
+			}
+		}
+	}
+
+	option = { # Our nation will stand alone!
+		name = ipePER.2.c
+		ai_chance = {
+			factor = 0
+		}
+		add_stability = -1
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = refused_to_join_safavids
+			}
+		}
+	}
+}
+
+# Gilan Joins the Safavid Empire!
+country_event = {
+	id = ipePER.3
+	title = ipePER.3.t
+	desc = ipePER.3.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Their people will serve us well.
+		name = ipePER.3.a
+		tooltip = {
+			inherit = FROM
+		}
+		add_prestige = 5
+	}
+}
+
+# Gilan Swears Fealty!
+country_event = {
+	id = ipePER.4
+	title = ipePER.4.t
+	desc = ipePER.4.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They are wise to serve us.
+		name = ipePER.4.a
+		tooltip = {
+			create_subject = {
+				subject = FROM
+				subject_type = vassal
+			}
+		}
+	}
+}
+
+# Gilan Rejects Safavid Authority!
+country_event = {
+	id = ipePER.5
+	title = ipePER.5.t
+	desc = ipePER.5.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Then we must conquer them by war.
+		name = ipePER.5.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = refused_to_join_safavids
+			}
+		}
+		add_casus_belli = {
+			type = cb_vassalize_mission
+			months = 300
+			target = FROM
+		}
+	}
+}
+
+# The Qizilbash Rebellion
+country_event = {
+	id = ipePER.6
+	title = ipePER.6.t
+	desc = ipePER.6.d
+	picture = RELIGIOUS_WARS_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				is_capital = no
+				OR = {
+					religion = sunni
+					religion = shiite
+					religion = ibadi
+				}
+			}
+			set_province_flag = qizilbash_rebels_1
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+				OR = {
+					religion = sunni
+					religion = shiite
+					religion = ibadi
+				}
+				NOT = {
+					has_province_flag = qizilbash_rebels_1
+				}
+			}
+			set_province_flag = qizilbash_rebels_2
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+				OR = {
+					religion = sunni
+					religion = shiite
+					religion = ibadi
+				}
+				NOT = {
+					has_province_flag = qizilbash_rebels_1
+					has_province_flag = qizilbash_rebels_2
+				}
+			}
+			set_province_flag = qizilbash_rebels_3
+		}
+	}
+
+	option = { # We will crush them!
+		name = ipePER.6.a
+		if = {
+			limit = {
+				NOT = {
+					tag = TUR
+				}
+			}
+			capital_scope = {
+				spawn_rebels = {
+					type = shiite_rebels
+					size = 1
+				}
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = qizilbash_rebels_1
+			}
+			spawn_rebels = {
+				type = shiite_rebels
+				size = 1
+			}
+			clr_province_flag = qizilbash_rebels_1
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = qizilbash_rebels_2
+			}
+			spawn_rebels = {
+				type = shiite_rebels
+				size = 1
+			}
+			clr_province_flag = qizilbash_rebels_2
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = qizilbash_rebels_3
+			}
+			spawn_rebels = {
+				type = shiite_rebels
+				size = 1
+			}
+			clr_province_flag = qizilbash_rebels_3
+		}
+		if = {
+			limit = {
+				NOT = {
+					tag = TUR
+				}
+			}
+			add_country_modifier = {
+				name = disloyal_qizilbash
+				duration = 3650
+			}
+		}
+	}
+}

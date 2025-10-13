@@ -1,0 +1,1435 @@
+namespace = ipe_economy
+
+# $YEAR$ Eruption of Kuwae
+country_event = {
+	id = ipe_economy.1
+	title = ipe_economy.1.t
+	desc = ipe_economy.1.d
+	picture = VOLCANO_eventPicture
+
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		any_owned_province = {
+			region = oceanea_region
+		}
+		is_year = 1452
+		NOT = {
+			is_year = 1462
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = { # Agricultural products will be less profitable for now.
+		name = ipe_economy.1.a
+		custom_tooltip = prices.11.a.tooltip
+		set_global_flag = volcanic_winter
+		if = {
+			limit = {
+				1239 = {
+					is_city = yes
+				}
+			}
+			1239 = {
+				add_devastation = 100
+				add_base_tax = -5
+				add_base_production = -5
+				add_base_manpower = -5
+			}
+		}
+		change_price = {
+			trade_goods = grain
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = wine
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = spices
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = tea
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = cocoa
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = coffee
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = cotton
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = sugar
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = tobacco
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = silk
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = opium
+			key = KUWAE
+			value = -0.75
+			duration = 730
+		}
+	}
+}
+
+# Commercial Whaling
+country_event = {
+	id = ipe_economy.2
+	title = ipe_economy.2.t
+	desc = ipe_economy.2.d
+	picture = TRADEGOODS_eventPicture
+
+	fire_only_once = yes
+	
+	major = yes
+
+	trigger = {
+		dip_tech = 11
+		whales = 3
+		NOT = { has_global_flag = commercial_whaling }
+	}
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	option = { # We'll make a whale of a profit!
+		name = ipe_economy.2.a
+		change_price = {
+			trade_goods = whales
+			key = COMMERCIAL_WHALING
+			value = 0.15
+			duration = -1
+		}
+		add_years_of_income  = 0.25
+		add_prestige = 20
+		set_global_flag = commercial_whaling
+	}
+}
+
+# Volcanic Winter
+country_event = {
+	id = ipe_economy.3
+	title = ipe_economy.3.t
+	desc = ipe_economy.3.d
+	picture = VOLCANO_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		had_global_flag = {
+			flag = volcanic_winter
+			days = 730
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	immediate = {
+		clr_global_flag = volcanic_winter
+		every_province = {
+			limit = {
+				has_province_flag = volcanic_winter_struck
+			}
+			clr_province_flag = volcanic_winter_struck
+		}
+	}
+
+	option = {
+		name = ipe_economy.3.a
+	}
+}
+
+# Volcanic Winter
+province_event = {
+	id = ipe_economy.4
+	title = ipe_economy.4.t
+	desc = ipe_economy.4.d
+	picture = VOLCANO_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		OR = {
+			has_global_flag = volcanic_winter
+			has_global_flag = extreme_volcanic_winter
+		}
+		NOT = {
+			has_province_flag = volcanic_winter_struck
+			has_province_modifier = peace_famine
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12
+		modifier = {
+			factor = 1.15
+			owner = {
+				production_efficiency = 0.05
+				NOT = {
+					production_efficiency = 0.1
+				}
+			}
+		}
+		modifier = {
+			factor = 1.3
+			owner = {
+				production_efficiency = 0.1
+				NOT = {
+					production_efficiency = 0.15
+				}
+			}
+		}
+		modifier = {
+			factor = 1.45
+			owner = {
+				production_efficiency = 0.15
+				NOT = {
+					production_efficiency = 0.2
+				}	
+			}
+		}
+		modifier = {
+			factor = 1.6
+			owner = {
+				production_efficiency = 0.2
+				NOT = {
+					production_efficiency = 0.25
+				}
+			}
+		}
+		modifier = {
+			factor = 1.75
+			owner = {
+				production_efficiency = 0.25
+				NOT = {
+					production_efficiency = 0.3
+				}
+			}
+		}
+		modifier = {
+			factor = 1.9
+			owner = {
+				production_efficiency = 0.3
+				NOT = {
+					production_efficiency = 0.35
+				}
+			}
+		}
+		modifier = {
+			factor = 2.05
+			owner = {
+				production_efficiency = 0.35
+				NOT = {
+					production_efficiency = 0.4
+				}
+			}
+		}
+		modifier = {
+			factor = 2.2
+			owner = {
+				production_efficiency = 0.4
+				NOT = {
+					production_efficiency = 0.45
+				}
+			}
+		}
+		modifier = {
+			factor = 2.35
+			owner = {
+				production_efficiency = 0.45
+				NOT = {
+					production_efficiency = 0.5
+				}
+			}
+		}
+		modifier = {
+			factor = 2.5
+			owner = {
+				production_efficiency = 0.5
+				NOT = {
+					production_efficiency = 0.55
+				}
+			}
+		}
+		modifier = {
+			factor = 2.65
+			owner = {
+				production_efficiency = 0.55
+				NOT = {
+					production_efficiency = 0.6
+				}
+			}
+		}
+		modifier = {
+			factor = 2.8
+			owner = {
+				production_efficiency = 0.6
+				NOT = {
+					production_efficiency = 0.65
+				}
+			}
+		}
+		modifier = {
+			factor = 2.95
+			owner = {
+				production_efficiency = 0.65
+				NOT = {
+					production_efficiency = 0.7
+				}
+			}
+		}
+		modifier = {
+			factor = 3.1
+			owner = {
+				production_efficiency = 0.7
+				NOT = {
+					production_efficiency = 0.75
+				}
+			}
+		}
+		modifier = {
+			factor = 3.25
+			owner = {
+				production_efficiency = 0.75
+				NOT = {
+					production_efficiency = 0.8
+				}
+			}
+		}
+		modifier = {
+			factor = 3.4
+			owner = {
+				production_efficiency = 0.8
+				NOT = {
+					production_efficiency = 0.85
+				}
+			}
+		}
+		modifier = {
+			factor = 3.55
+			owner = {
+				production_efficiency = 0.85
+				NOT = {
+					production_efficiency = 0.9
+				}
+			}
+		}
+		modifier = {
+			factor = 3.7
+			owner = {
+				production_efficiency = 0.9
+				NOT = {
+					production_efficiency = 0.95
+				}
+			}
+		}
+		modifier = {
+			factor = 3.85
+			owner = {
+				production_efficiency = 0.95
+				NOT = {
+					production_efficiency = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				production_efficiency = 1
+			}
+		}
+	}
+
+	immediate = {
+		set_province_flag = volcanic_winter_struck
+	}
+
+	option = {
+		name = ipe_economy.4.a
+		if = {
+			limit = {
+				has_global_flag = volcanic_winter
+			}
+			random_list = {
+				75 = {
+				}
+				25 = {
+					add_permanent_province_modifier = {
+						name = peace_famine
+						duration = 1095
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				has_global_flag = extreme_volcanic_winter
+			}
+			random_list = {
+				50 = {
+				}
+				50 = {
+					add_permanent_province_modifier = {
+						name = peace_famine
+						duration = 1095
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		if = { # Time of Troubles
+			limit = {
+				is_year = 1600
+				NOT = {
+					is_year = 1610
+				}
+				region = russia_region
+			}
+			50 = {
+			}
+			50 = {
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 1095
+				}
+			}
+		}
+	}
+}
+
+# Eruption of Mount Tambora
+country_event = {
+	id = ipe_economy.5
+	title = ipe_economy.5.t
+	desc = ipe_economy.5.d
+	picture = VOLCANO_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 632
+		is_year = 1815
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = { # Agricultural products will be less profitable for now.
+		name = ipe_economy.1.a
+		custom_tooltip = prices.11.a.tooltip
+		set_global_flag = extreme_volcanic_winter
+		632 = {
+			add_devastation = 100
+			add_base_tax = -10
+			add_base_production = -10
+			add_base_manpower = -10
+		}
+		3071 = {
+			add_devastation = 75
+			add_base_tax = -5
+			add_base_production = -5
+			add_base_manpower = -5
+		}
+		2693 = {
+			add_devastation = 50
+		}
+		631 = {
+			add_devastation = 50
+		}
+		change_price = {
+			trade_goods = grain
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = wine
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = spices
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = tea
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = cocoa
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = coffee
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = cotton
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = sugar
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = tobacco
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = silk
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = opium
+			key = TAMBORA
+			value = -0.75
+			duration = 1460
+		}
+	}
+}
+
+# Eruption of Laki
+country_event = {
+	id = ipe_economy.6
+	title = ipe_economy.6.t
+	desc = ipe_economy.6.d
+	picture = VOLCANO_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		owns = 370
+		is_year = 1783
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = { # Agricultural products will be less profitable for now.
+		name = ipe_economy.1.a
+		custom_tooltip = prices.11.a.tooltip
+		set_global_flag = volcanic_winter
+		370 = {
+			add_devastation = 100
+			add_base_tax = -5
+			add_base_production = -5
+			add_base_manpower = -5
+		}
+		371 = {
+			add_devastation = 100
+			add_base_tax = -5
+			add_base_production = -5
+			add_base_manpower = -5
+		}
+		change_price = {
+			trade_goods = grain
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = wine
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = spices
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = tea
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = cocoa
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = coffee
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = cotton
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = sugar
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = tobacco
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = silk
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+		change_price = {
+			trade_goods = opium
+			key = LAKI
+			value = -0.75
+			duration = 730
+		}
+	}
+}
+
+# $YEAR$ Eruption of Kuwae
+country_event = {
+	id = ipe_economy.7
+	title = ipe_economy.1.t
+	desc = ipe_economy.7.d
+	picture = VOLCANO_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		any_owned_province = {
+			region = oceanea_region
+		}
+		is_year = 1465
+		NOT = {
+			is_year = 1475
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = { # Agricultural products will be less profitable for now.
+		name = ipe_economy.1.a
+		custom_tooltip = prices.11.a.tooltip
+		set_global_flag = volcanic_winter
+		if = {
+			limit = {
+				1239 = {
+					is_city = yes
+				}
+			}
+			1239 = {
+				add_devastation = 100
+				add_base_tax = -5
+				add_base_production = -5
+				add_base_manpower = -5
+			}
+		}
+		change_price = {
+			trade_goods = grain
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = wine
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = spices
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = tea
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = cocoa
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = coffee
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = cotton
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = sugar
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = tobacco
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = silk
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+		change_price = {
+			trade_goods = opium
+			key = SECOND_KUWAE
+			value = -0.75
+			duration = 1460
+		}
+	}
+}
+
+# Volcanic Winter
+country_event = {
+	id = ipe_economy.8
+	title = ipe_economy.8.t
+	desc = ipe_economy.8.d
+	picture = VOLCANO_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		had_global_flag = {
+			flag = extreme_volcanic_winter
+			days = 1460
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	immediate = {
+		clr_global_flag = extreme_volcanic_winter
+		every_province = {
+			limit = {
+				has_province_flag = volcanic_winter_struck
+			}
+			clr_province_flag = volcanic_winter_struck
+		}
+	}
+
+	option = {
+		name = ipe_economy.3.a
+	}
+}
+
+# Commercial Ventures
+country_event = {
+	id = ipe_economy.9
+	title = ipe_economy.9.t
+	desc = ipe_economy.9.d
+	picture = MERCHANTS_TALKING_eventPicture
+
+	trigger = {
+		OR = {
+			AND = {
+				NOT = {
+					total_development = 100
+				}
+				OR = {
+					has_country_modifier = growing_commercial_ventures_100
+					has_country_modifier = growing_commercial_ventures_300
+					has_country_modifier = growing_commercial_ventures_1000
+				}
+			}
+			AND = {
+				total_development = 100
+				NOT = {
+					total_development = 300
+				}
+				NOT = {
+					has_country_modifier = growing_commercial_ventures_100
+				}
+			}
+			AND = {
+				total_development = 300
+				NOT = {
+					total_development = 1000
+				}
+				NOT = {
+					has_country_modifier = growing_commercial_ventures_300
+				}
+			}
+			AND = {
+				total_development = 1000
+				NOT = {
+					has_country_modifier = growing_commercial_ventures_1000
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # We will soon see how this affects us.
+		name = ipe_economy.9.a
+		if = {
+			limit = {
+				NOT = {
+					total_development = 100
+				}
+				OR = {
+					has_country_modifier = growing_commercial_ventures_100
+					has_country_modifier = growing_commercial_ventures_300
+					has_country_modifier = growing_commercial_ventures_1000
+				}
+			}
+			remove_country_modifier = growing_commercial_ventures_100
+			remove_country_modifier = growing_commercial_ventures_300
+			remove_country_modifier = growing_commercial_ventures_1000
+		}
+		if = {
+			limit = {
+				total_development = 100
+				NOT = {
+					total_development = 300
+				}
+				NOT = {
+					has_country_modifier = growing_commercial_ventures_100
+				}
+			}
+			add_country_modifier = {
+				name = growing_commercial_ventures_100
+				duration = -1
+			}
+			remove_country_modifier = growing_commercial_ventures_300
+			remove_country_modifier = growing_commercial_ventures_1000
+		}
+		if = {
+			limit = {
+				total_development = 300
+				NOT = {
+					total_development = 1000
+				}
+				NOT = {
+					has_country_modifier = growing_commercial_ventures_300
+				}
+			}
+			add_country_modifier = {
+				name = growing_commercial_ventures_300
+				duration = -1
+			}
+			remove_country_modifier = growing_commercial_ventures_100
+			remove_country_modifier = growing_commercial_ventures_1000
+		}
+		if = {
+			limit = {
+				total_development = 1000
+				NOT = {
+					has_country_modifier = growing_commercial_ventures_1000
+				}
+			}
+			add_country_modifier = {
+				name = growing_commercial_ventures_1000
+				duration = -1
+			}
+			remove_country_modifier = growing_commercial_ventures_100
+			remove_country_modifier = growing_commercial_ventures_300
+		}
+	}
+}
+
+# Ravages of the Little Ice Age
+province_event = {
+	id = ipe_economy.10
+	title = ipe_economy.10.t
+	desc = ipe_economy.10.d
+	picture = FAMINE_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		has_global_flag = little_ice_age_started
+		NOT = {
+			has_province_flag = little_ice_age_struck
+			has_province_modifier = peace_famine
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 450
+		modifier = {
+			factor = 1.15
+			owner = {
+				production_efficiency = 0.05
+				NOT = {
+					production_efficiency = 0.1
+				}
+			}
+		}
+		modifier = {
+			factor = 1.3
+			owner = {
+				production_efficiency = 0.1
+				NOT = {
+					production_efficiency = 0.15
+				}
+			}
+		}
+		modifier = {
+			factor = 1.45
+			owner = {
+				production_efficiency = 0.15
+				NOT = {
+					production_efficiency = 0.2
+				}	
+			}
+		}
+		modifier = {
+			factor = 1.6
+			owner = {
+				production_efficiency = 0.2
+				NOT = {
+					production_efficiency = 0.25
+				}
+			}
+		}
+		modifier = {
+			factor = 1.75
+			owner = {
+				production_efficiency = 0.25
+				NOT = {
+					production_efficiency = 0.3
+				}
+			}
+		}
+		modifier = {
+			factor = 1.9
+			owner = {
+				production_efficiency = 0.3
+				NOT = {
+					production_efficiency = 0.35
+				}
+			}
+		}
+		modifier = {
+			factor = 2.05
+			owner = {
+				production_efficiency = 0.35
+				NOT = {
+					production_efficiency = 0.4
+				}
+			}
+		}
+		modifier = {
+			factor = 2.2
+			owner = {
+				production_efficiency = 0.4
+				NOT = {
+					production_efficiency = 0.45
+				}
+			}
+		}
+		modifier = {
+			factor = 2.35
+			owner = {
+				production_efficiency = 0.45
+				NOT = {
+					production_efficiency = 0.5
+				}
+			}
+		}
+		modifier = {
+			factor = 2.5
+			owner = {
+				production_efficiency = 0.5
+				NOT = {
+					production_efficiency = 0.55
+				}
+			}
+		}
+		modifier = {
+			factor = 2.65
+			owner = {
+				production_efficiency = 0.55
+				NOT = {
+					production_efficiency = 0.6
+				}
+			}
+		}
+		modifier = {
+			factor = 2.8
+			owner = {
+				production_efficiency = 0.6
+				NOT = {
+					production_efficiency = 0.65
+				}
+			}
+		}
+		modifier = {
+			factor = 2.95
+			owner = {
+				production_efficiency = 0.65
+				NOT = {
+					production_efficiency = 0.7
+				}
+			}
+		}
+		modifier = {
+			factor = 3.1
+			owner = {
+				production_efficiency = 0.7
+				NOT = {
+					production_efficiency = 0.75
+				}
+			}
+		}
+		modifier = {
+			factor = 3.25
+			owner = {
+				production_efficiency = 0.75
+				NOT = {
+					production_efficiency = 0.8
+				}
+			}
+		}
+		modifier = {
+			factor = 3.4
+			owner = {
+				production_efficiency = 0.8
+				NOT = {
+					production_efficiency = 0.85
+				}
+			}
+		}
+		modifier = {
+			factor = 3.55
+			owner = {
+				production_efficiency = 0.85
+				NOT = {
+					production_efficiency = 0.9
+				}
+			}
+		}
+		modifier = {
+			factor = 3.7
+			owner = {
+				production_efficiency = 0.9
+				NOT = {
+					production_efficiency = 0.95
+				}
+			}
+		}
+		modifier = {
+			factor = 3.85
+			owner = {
+				production_efficiency = 0.95
+				NOT = {
+					production_efficiency = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				production_efficiency = 1
+			}
+		}
+	}
+
+	immediate = {
+		set_province_flag = little_ice_age_struck
+	}
+
+	option = {
+		name = ipe_economy.10.a
+		random_list = {
+			75 = {
+			}
+			25 = {
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 1095
+				}
+			}
+		}
+	}
+}
+
+# Ravages of the Little Ice Age
+country_event = {
+	id = ipe_economy.11
+	title = ipe_economy.11.t
+	desc = ipe_economy.11.d
+	picture = FAMINE_eventPicture
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = {
+		had_global_flag = {
+			flag = little_ice_age_started
+			days = 27375
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	immediate = {
+		clr_global_flag = little_ice_age_started
+		every_province = {
+			limit = {
+				has_province_flag = little_ice_age_struck
+			}
+			clr_province_flag = little_ice_age_struck
+		}
+	}
+
+	option = {
+		name = ipe_economy.11.a
+	}
+}
+
+# The Great Famine of China
+province_event = {
+	id = ipe_economy.12
+	title = ipe_economy.12.t
+	desc = ipe_economy.12.d
+	picture = FAMINE_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		has_global_flag = chinese_famine_started
+		NOT = {
+			has_province_flag = chinese_famine_struck
+			has_province_modifier = peace_famine
+		}
+		OR = {
+			region = north_china_region
+			region = south_china_region
+			region = xinan_region
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+		modifier = {
+			factor = 1.15
+			owner = {
+				production_efficiency = 0.05
+				NOT = {
+					production_efficiency = 0.1
+				}
+			}
+		}
+		modifier = {
+			factor = 1.3
+			owner = {
+				production_efficiency = 0.1
+				NOT = {
+					production_efficiency = 0.15
+				}
+			}
+		}
+		modifier = {
+			factor = 1.45
+			owner = {
+				production_efficiency = 0.15
+				NOT = {
+					production_efficiency = 0.2
+				}	
+			}
+		}
+		modifier = {
+			factor = 1.6
+			owner = {
+				production_efficiency = 0.2
+				NOT = {
+					production_efficiency = 0.25
+				}
+			}
+		}
+		modifier = {
+			factor = 1.75
+			owner = {
+				production_efficiency = 0.25
+				NOT = {
+					production_efficiency = 0.3
+				}
+			}
+		}
+		modifier = {
+			factor = 1.9
+			owner = {
+				production_efficiency = 0.3
+				NOT = {
+					production_efficiency = 0.35
+				}
+			}
+		}
+		modifier = {
+			factor = 2.05
+			owner = {
+				production_efficiency = 0.35
+				NOT = {
+					production_efficiency = 0.4
+				}
+			}
+		}
+		modifier = {
+			factor = 2.2
+			owner = {
+				production_efficiency = 0.4
+				NOT = {
+					production_efficiency = 0.45
+				}
+			}
+		}
+		modifier = {
+			factor = 2.35
+			owner = {
+				production_efficiency = 0.45
+				NOT = {
+					production_efficiency = 0.5
+				}
+			}
+		}
+		modifier = {
+			factor = 2.5
+			owner = {
+				production_efficiency = 0.5
+				NOT = {
+					production_efficiency = 0.55
+				}
+			}
+		}
+		modifier = {
+			factor = 2.65
+			owner = {
+				production_efficiency = 0.55
+				NOT = {
+					production_efficiency = 0.6
+				}
+			}
+		}
+		modifier = {
+			factor = 2.8
+			owner = {
+				production_efficiency = 0.6
+				NOT = {
+					production_efficiency = 0.65
+				}
+			}
+		}
+		modifier = {
+			factor = 2.95
+			owner = {
+				production_efficiency = 0.65
+				NOT = {
+					production_efficiency = 0.7
+				}
+			}
+		}
+		modifier = {
+			factor = 3.1
+			owner = {
+				production_efficiency = 0.7
+				NOT = {
+					production_efficiency = 0.75
+				}
+			}
+		}
+		modifier = {
+			factor = 3.25
+			owner = {
+				production_efficiency = 0.75
+				NOT = {
+					production_efficiency = 0.8
+				}
+			}
+		}
+		modifier = {
+			factor = 3.4
+			owner = {
+				production_efficiency = 0.8
+				NOT = {
+					production_efficiency = 0.85
+				}
+			}
+		}
+		modifier = {
+			factor = 3.55
+			owner = {
+				production_efficiency = 0.85
+				NOT = {
+					production_efficiency = 0.9
+				}
+			}
+		}
+		modifier = {
+			factor = 3.7
+			owner = {
+				production_efficiency = 0.9
+				NOT = {
+					production_efficiency = 0.95
+				}
+			}
+		}
+		modifier = {
+			factor = 3.85
+			owner = {
+				production_efficiency = 0.95
+				NOT = {
+					production_efficiency = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			owner = {
+				production_efficiency = 1
+			}
+		}
+	}
+
+	immediate = {
+		set_province_flag = chinese_famine_struck
+	}
+
+	option = {
+		name = ipe_economy.12.a
+		random_list = {
+			25 = {
+			}
+			75 = {
+				add_permanent_province_modifier = {
+					name = peace_famine
+					duration = 1095
+				}
+			}
+		}
+	}
+}
+
+# The Great Famine of China
+country_event = {
+	id = ipe_economy.13
+	title = ipe_economy.13.t
+	desc = ipe_economy.13.d
+	picture = FAMINE_eventPicture
+
+	fire_only_once = yes
+
+	hidden = yes
+
+	trigger = {
+		had_global_flag = {
+			flag = chinese_famine_started
+			days = 1825
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	immediate = {
+		clr_global_flag = chinese_famine_started
+		every_province = {
+			limit = {
+				has_province_flag = chinese_famine_struck
+			}
+			clr_province_flag = chinese_famine_struck
+		}
+	}
+
+	option = {
+		name = ipe_economy.13.a
+	}
+}

@@ -1,0 +1,23 @@
+#6872 - Denbighshire
+
+latent_trade_goods = {
+	coal
+}
+
+owner = DBG
+controller = DBG
+culture = welsh
+religion = catholic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = wool
+base_manpower = 1
+capital = "Denbigh"
+is_city = yes
+add_core = DBG
+fort_15th = yes
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern

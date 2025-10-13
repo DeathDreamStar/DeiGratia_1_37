@@ -1,0 +1,438 @@
+namespace = vietnamese_civil_war
+normal_or_historical_nations = yes
+
+# The Vietnamese Civil War
+country_event = {
+	id = vietnamese_civil_war.1
+	title = vietnamese_civil_war.1.t
+	desc = vietnamese_civil_war.1.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	major = yes
+
+	immediate = {
+		add_stability = -6
+		set_global_flag = had_northern_and_southern_dynasties
+	}
+
+	option = { # What will become of our dynasty?
+		name = vietnamese_civil_war.1.a
+		capital_scope = {
+			spawn_rebels = {
+				type = anti_tax_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# The Mac and the Trinh
+country_event = {
+	id = vietnamese_civil_war.2
+	title = vietnamese_civil_war.2.t
+	desc = vietnamese_civil_war.2.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_disaster = northern_and_southern_dynasties
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Mac Dang Dung will end the corruption of this dynasty!
+		name = vietnamese_civil_war.2.a
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = sided_with_the_mac
+		custom_tooltip = vietnamese_civil_war.2.a.tooltip
+		kill_ruler = yes
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = {}
+		}
+		define_ruler = {
+			name = "Dang Dung"
+			dynasty = "Mac"
+			adm = 3
+			dip = 4
+			mil = 3
+			claim = 30
+			age = 30
+		}
+		# define_ruler_to_general = {
+		#	fire = 3
+		#	shock = 3
+		#	manuever = 3
+		#	siege = 0
+		# }
+		hidden_effect = {
+			add_ruler_personality = malevolent_personality
+		}
+	}
+
+	option = { # We will not betray our Emperor!
+		name = vietnamese_civil_war.2.b
+		ai_chance = {
+			factor = 50
+		}
+		set_country_flag = sided_with_the_trinh
+		custom_tooltip = vietnamese_civil_war.2.b.tooltip
+	}
+}
+
+# The Trinh-Nguyên Alliance
+country_event = {
+	id = vietnamese_civil_war.3
+	title = vietnamese_civil_war.3.t
+	desc = vietnamese_civil_war.3.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_disaster = northern_and_southern_dynasties
+		has_country_flag = sided_with_the_mac
+		owns = 610
+	}
+
+	mean_time_to_happen = {
+		months = 24
+		modifier = {
+			factor = 0.5
+			stability = 1
+		}
+	}
+
+	immediate = {
+		clr_country_flag = sided_with_the_mac
+		hidden_effect = {
+			every_core_province = {
+				limit = {
+					OR = {
+						area = vietnam_area
+						area = champa_area
+						area = southern_champa_area
+						area = tay_nguyen_area
+						area = dong_nam_bo_area
+						area = mekong_area
+						area = cambodia_area
+						area = eastern_cambodia_area
+						area = cardomom_area
+					}
+				}
+				add_core = ANN
+			}
+			release = ANN
+			ANN = {
+				change_government = monarchy
+				add_government_reform = autocracy_reform
+				set_government_rank = 2
+				if = {
+					limit = {
+						owns = 610
+					}
+					set_capital = 610
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1.6
+						cavalry = 0.4
+					}
+				}
+				define_ruler = {
+					name = "Kiêm"
+					dynasty = "Trinh"
+					adm = 2
+					dip = 3
+					mil = 3
+				}
+			}
+			if = {
+				limit = {
+					is_subject_of_type = tributary_state
+				}
+				overlord = {
+					create_subject = {
+						subject_type = tributary_state
+						subject = ANN
+					}
+				}
+			}
+		}
+	}
+
+	option = { # This upstart regime must be crushed!
+		name = vietnamese_civil_war.3.a
+		tooltip = {
+			release = ANN
+			ANN = {
+				define_ruler = {
+					name = "Kiêm"
+					dynasty = "Trinh"
+					adm = 2
+					dip = 3
+					mil = 3
+				}
+			}
+		}
+		ANN = {
+			add_historical_rival = ROOT
+		}
+		add_historical_rival = ANN
+		every_owned_province = {
+			add_core = ANN
+		}
+	}
+
+	option = { # Play as Annam.
+		name = vietnamese_civil_war.3.b
+		hidden_effect = {
+			ANN = {
+				add_historical_rival = ROOT
+			}
+			add_historical_rival = ANN
+			every_owned_province = {
+				add_core = ANN
+			}
+		}
+		switch_tag = ANN
+	}
+}
+
+# The Mac Dynasty
+country_event = {
+	id = vietnamese_civil_war.4
+	title = vietnamese_civil_war.4.t
+	desc = vietnamese_civil_war.4.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		has_disaster = northern_and_southern_dynasties
+		has_country_flag = sided_with_the_trinh
+		owns = 613
+	}
+
+	mean_time_to_happen = {
+		months = 24
+		modifier = {
+			factor = 0.5
+			stability = 1
+		}
+	}
+
+	immediate = {
+		clr_country_flag = sided_with_the_trinh
+		hidden_effect = {
+			every_core_province = {
+				limit = {
+					OR = {
+						area = tay_bac_area
+						area = dong_bac_area
+						area = red_river_delta_area
+						region = north_china_region
+						region = south_china_region
+					}
+				}
+				add_core = TOK
+			}
+			release = TOK
+			TOK = {
+				change_government = monarchy
+				add_government_reform = celestial_kingdom
+				set_government_rank = 3
+				if = {
+					limit = {
+						owns = 613
+					}
+					set_capital = 613
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1.6
+						cavalry = 0.4
+					}
+				}
+				define_ruler = {
+					name = "Dang Dung"
+					dynasty = "Mac"
+					adm = 3
+					dip = 4
+					mil = 3
+					claim = 30
+					age = 30
+				}
+				# define_ruler_to_general = {
+				#	fire = 3
+				#	shock = 3
+				#	manuever = 3
+				#	siege = 0
+				# }
+				add_ruler_personality = malevolent_personality
+			}
+			if = {
+				limit = {
+					is_subject_of_type = tributary_state
+				}
+				overlord = {
+					create_subject = {
+						subject_type = tributary_state
+						subject = TOK
+					}
+				}
+			}
+		}
+	}
+
+	option = { # This is an atrocity!
+		name = vietnamese_civil_war.4.a
+		kill_ruler = yes
+		tooltip = {
+			release = TOK
+			TOK = {
+				define_ruler = {
+					name = "Dang Dung"
+					dynasty = "Mac"
+					adm = 3
+					dip = 4
+					mil = 3
+					claim = 30
+					age = 30
+				}
+				# define_ruler_to_general = {
+				#	fire = 3
+				#	shock = 3
+				#	manuever = 3
+				#	siege = 0
+				# }
+			}
+		}
+		TOK = {
+			add_historical_rival = ROOT
+		}
+		add_historical_rival = TOK
+		every_owned_province = {
+			add_core = TOK
+		}
+	}
+
+	option = { # Play as Tonkin.
+		name = vietnamese_civil_war.4.b
+			hidden_effect = {
+			TOK = {
+				add_historical_rival = ROOT
+			}
+			add_historical_rival = TOK
+			every_owned_province = {
+				add_core = TOK
+			}
+		}
+		switch_tag = TOK
+	}
+}
+
+# The Insurrection of the Peasantry
+country_event = {
+	id = vietnamese_civil_war.5
+	title = vietnamese_civil_war.5.t
+	desc = vietnamese_civil_war.5.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Kill them all!
+		name = vietnamese_civil_war.5.a
+		random_owned_province = {
+			spawn_rebels = {
+				type = anti_tax_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# The Displeasure of the Nobility
+country_event = {
+	id = vietnamese_civil_war.6
+	title = vietnamese_civil_war.6.t
+	desc = vietnamese_civil_war.6.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They should know better than to challenge authority!
+		name = vietnamese_civil_war.6.a
+		random_owned_province = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# Scholars Condemn the Dynasty
+country_event = {
+	id = vietnamese_civil_war.7
+	title = vietnamese_civil_war.7.t
+	desc = vietnamese_civil_war.7.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_reform = celestial_kingdom
+		NOT = {
+			adm = 3
+			dip = 3
+			mil = 3
+		}
+	}
+
+	option = { # Perhaps they should learn to write facts and not opinions!
+		name = vietnamese_civil_war.7.a
+		add_meritocracy = -10
+		if = {
+			limit = {
+				uses_karma = yes
+			}
+			add_karma = -10
+		}
+	}
+}
+
+# The Fracturing of Vietnam
+country_event = {
+	id = vietnamese_civil_war.100
+	title = vietnamese_civil_war.100.t
+	desc = vietnamese_civil_war.100.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We will one day again rule a united country.
+		name = vietnamese_civil_war.100.a
+		custom_tooltip = vietnamese_civil_war.100.a.tooltip
+		add_stability = 3
+	}
+}

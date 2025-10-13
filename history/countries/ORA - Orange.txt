@@ -1,0 +1,227 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = occitain
+religion = catholic
+technology_group = western
+capital = 6760
+fixed_capital = 6760
+
+#house Ivrea-Chalon-Orange
+1393.2.10 = {
+	monarch = {
+		name = "Jean I"
+		dynasty = "de Ivrea"
+		birth_date = 1361.1.1
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+	queen = {
+		country_of_origin = ORA
+		name = "Marie"
+		dynasty = "d'Orange"
+		birth_date = 1366.1.1 #est
+		death_date = 1417.1.1
+		female = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Louis"
+		monarch_name = "Louis I"
+		dynasty = "d'Orange"
+		birth_date = 1390.1.1
+		death_date = 1463.12.3
+		claim = 85
+		adm = 5
+		dip = 2
+		mil = 5
+	}
+}
+1418.9.2 = {
+	monarch = {
+		name = "Louis I"
+		dynasty = "d'Orange"
+		birth_date = 1390.1.1
+		adm = 5
+		dip = 2
+		mil = 5
+	}
+	heir = {
+		name = "Guillaume"
+		monarch_name = "Guillaume III"
+		dynasty = "d'Orange"
+		birth_date = 1415.1.1
+		death_date = 1475.9.27
+		claim = 95
+		adm = 1
+		dip = 3
+		mil = 3
+	}
+}
+1463.12.3 = {
+	monarch = {
+		name = "Guillaume III"
+		dynasty = "d'Orange"
+		birth_date = 1415.1.1
+		adm = 1
+		dip = 3
+		mil = 3
+	}
+	heir = {
+		name = "Jean"
+		monarch_name = "Jean II"
+		dynasty = "d'Orange"
+		birth_date = 1443.1.1
+		death_date = 1502.4.15
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1475.9.27 = {
+	monarch = {
+		name = "Jean II"
+		dynasty = "d'Orange"
+		birth_date = 1443.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1502.3.18 = {
+	heir = {
+		name = "Philibert"
+		monarch_name = "Philibert I"
+		dynasty = "d'Orange"
+		birth_date = 1502.3.18
+		death_date = 1530.8.3
+		claim = 95
+		adm = 3
+		dip = 1
+		mil = 2
+	}
+}
+1502.4.15 = {
+	monarch = {
+		name = "(Regency Council)"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Philibert"
+		monarch_name = "Philibert I"
+		dynasty = "d'Orange"
+		birth_date = 1502.3.18
+		death_date = 1530.8.3
+		claim = 95
+		adm = 3
+		dip = 1
+		mil = 2
+	}
+}
+1517.3.18 = {
+	monarch = {
+		name = "Philibert I"
+		dynasty = "d'Orange"
+		birth_date = 1502.3.18
+		adm = 3
+		dip = 1
+		mil = 2
+	}
+}
+1519.2.5 = {
+	heir = {
+		name = "René"
+		monarch_name = "René I"
+		dynasty = "d'Orange"
+		birth_date = 1519.2.5
+		death_date = 1544.7.15
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1530.8.3 = {
+	monarch = {
+		name = "René I"
+		dynasty = "d'Orange"
+		birth_date = 1519.2.5
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1533.4.24 = {
+	heir = {
+		name = "Guillaume"
+		monarch_name = "Guillaume IV"
+		dynasty = "d'Orange"
+		birth_date = 1533.4.24
+		death_date = 1584.7.10
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1544.7.15 = {
+	monarch = {
+		name = "Guillaume IV"
+		dynasty = "d'Orange"
+		birth_date = 1533.4.24
+		adm = 5
+		dip = 4
+		mil = 5
+	}
+}
+#1559-1584.7.10 under NED
+1584.7.10 = {
+	monarch = {
+		name = "Philippe Guillaume"
+		dynasty = "d'Orange"
+		birth_date = 1554.12.19
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+#1618-1702.3.8 under NED
+1618.2.20 = { religion = reformed }
+1702.3.8 = {
+	monarch = {
+		name = "Jean Guillaume"
+		dynasty = "van Orange"
+		birth_date = 1687.8.4
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1711.9.1 = {
+	monarch = {
+		name = "(Regency Council)"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Guillaume"
+		monarch_name = "Guillaume V"
+		dynasty = "van Oranje"
+		birth_date = 1711.9.1
+		death_date = 1751.10.22
+		claim = 90
+		adm = 3
+		dip = 1
+		mil = 2
+	}
+}
+#1713 done

@@ -1,0 +1,4 @@
+the_empress_dowager = {
+	legitimacy = -1
+	stability_cost_modifier = 0.50
+}

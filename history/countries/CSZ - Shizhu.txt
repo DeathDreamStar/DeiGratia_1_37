@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = miao
+religion = animism
+technology_group = chinese
+capital = 6660
+
+1444.1.1 = { # ruler at some point
+    monarch = {
+        name = "Zheng"
+        dynasty = "Ma"
+        adm = 2
+        dip = 2
+        mil = 2
+    }
+}

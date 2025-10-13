@@ -1,0 +1,1436 @@
+namespace = ipePOL
+
+# The Last Jagiellon
+country_event = {
+	id = ipePOL.1
+	title = ipePOL.1.t
+	desc = ipePOL.1.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	trigger = {
+		OR = {
+			tag = POL
+			tag = PLC
+		}
+		NOT = {
+			dynasty = "Jagiellon"
+		}
+		has_regency = no
+		has_country_flag = potential_elective_monarchy
+		is_subject = no
+		NOT = {
+			has_reform = states_general_reform
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 15
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				government = monarchy
+				NOT = {
+					is_rival = ROOT
+					war_with = ROOT
+				}
+				is_lesser_in_union = no
+				dynasty = "Jagiellon"
+			}
+			set_country_flag = jagiellon_inheritor
+		}
+	}
+	
+	option = { # Wait for the nobles to convene.
+		name = ipePOL.1.a
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			remove_heir = {}
+		}
+		hidden_effect = {
+			define_ruler = {
+				name = "(Interregnum)"
+				regency = yes
+				max_random_adm = 0
+				max_random_dip = 0
+				max_random_mil = 0
+			}
+		}
+		custom_tooltip = ipePOL.1.a.tooltip
+		clr_country_flag = potential_elective_monarchy
+		set_country_flag = likely_elective_monarchy
+    }
+
+	option = { # We need a Jagiellon!
+		name = ipePOL.1.b
+		ai_chance = {
+			factor = 100
+		}
+		trigger = {
+			any_known_country = {
+				has_country_flag = jagiellon_inheritor
+			}
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			remove_heir = {}
+		}
+		hidden_effect = {
+			define_ruler = {
+				name = "(Interregnum)"
+				regency = yes
+				max_random_adm = 0
+				max_random_dip = 0
+				max_random_mil = 0
+			}
+		}
+		custom_tooltip = ipePOL.1.b.tooltip
+		random_country = {
+			limit = {
+				has_country_flag = jagiellon_inheritor
+			}
+			country_event = {
+				id = ipePOL.2
+				days = 30
+			}
+		}
+	}
+}
+
+# They Need a Jagiellon
+country_event = {
+	id = ipePOL.2
+	title = ipePOL.2.t
+	desc = ipePOL.2.d
+	picture = LIBERUM_VETO_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # I will rule them!
+		name = ipePOL.2.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				is_rival = FROM
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_subject_of = FROM
+				}
+				total_development = FROM
+			}
+			create_union = FROM
+		}
+		if = {
+			limit = {
+				NOT = {
+					is_subject_of = FROM
+					total_development = FROM
+				}
+			}
+			FROM = {
+				create_union = ROOT
+			}
+		}
+		if = {
+			limit = {
+				is_subject_of = FROM
+			}
+			FROM = {
+				create_union = ROOT
+			}
+		}
+		FROM = {
+			country_event = {
+				id = ipePOL.3
+				days = 1
+			}
+		}
+		clr_country_flag = jagiellon_inheritor
+	}
+
+	option = { # One of my kinsmen will rule them.
+		name = ipePOL.2.b
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				is_rival = FROM
+			}
+		}
+		FROM = {
+			define_ruler = {
+				dynasty = "Jagiellon"
+				age = 25
+				claim = 95
+			}
+			FROM = {
+				add_opinion = {
+					who = ROOT
+					modifier = jagiellonian_kinsman
+				}
+			}
+			country_event = {
+				id = ipePOL.4
+				days = 1
+			}
+		}
+		clr_country_flag = jagiellon_inheritor
+	}
+
+	option = { # Hang them out to dry.
+		name = ipePOL.2.c
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 10
+				alliance_with = FROM
+			}
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = denied_jagiellon
+			}
+			country_event = {
+				id = ipePOL.5
+				days = 1
+			}
+		}
+		clr_country_flag = jagiellon_inheritor
+	}
+}
+
+# We Have a Jagiellon!
+country_event = {
+	id = ipePOL.3
+	title = ipePOL.3.t
+	desc = ipePOL.3.d
+	picture = LIBERUM_VETO_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Better foreign rulers than local nobles.
+		name = ipePOL.3.a
+		tooltip = {
+			if = {
+				limit = {
+					FROM = {
+						is_lesser_in_union = yes
+					}
+				}
+				create_union = FROM
+			}
+			if = {
+				limit = {
+					is_lesser_in_union = yes
+				}
+				FROM = {
+					create_union = ROOT
+				}
+			}
+		}
+	}
+}
+
+# We Have a Jagiellon!
+country_event = {
+	id = ipePOL.4
+	title = ipePOL.3.t
+	desc = ipePOL.4.d
+	picture = LIBERUM_VETO_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Bless them!
+		name = ipePOL.4.a
+		add_prestige = 5
+	}
+}
+
+# The End of Jagiellonian Rule
+country_event = {
+	id = ipePOL.5
+	title = ipePOL.5.t
+	desc = ipePOL.5.d
+	picture = LIBERUM_VETO_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Wretched day!
+		name = ipePOL.5.a
+		add_prestige = -5
+		clr_country_flag = potential_elective_monarchy
+		set_country_flag = likely_elective_monarchy
+	}
+}
+
+# A Royal Election
+country_event = {
+	id = ipePOL.6
+	title = ipePOL.6.t
+	desc = ipePOL.6.d
+	picture = LIBERUM_VETO_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = likely_elective_monarchy
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Let us elect a noble of France.
+		name = ipePOL.6.a
+		clr_country_flag = likely_elective_monarchy
+		set_country_flag = henrician_articles_coming
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					war_with = FRA
+					is_rival = FRA
+				}
+			}
+		}
+		trigger = {
+			FRA = {
+				exists = yes
+				government = monarchy
+				is_subject = no
+				religion_group = christian
+			}
+		}
+		hidden_effect = {
+			define_ruler = {
+				age = 25
+				claim = 95
+				culture = cosmopolitan_french
+			}
+			set_dynasty = FRA
+		}
+		custom_tooltip = ipePOL.6.a.tooltip
+		FRA = {
+			add_opinion = {
+				who = ROOT
+				modifier = common_king_poland
+			}
+			country_event = {
+				id = ipePOL.8
+				days = 1
+			}
+		}
+	}
+
+	option = { # A Russian noble will do!
+		name = ipePOL.6.b
+		clr_country_flag = likely_elective_monarchy
+		set_country_flag = henrician_articles_coming
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					war_with = RUS
+					is_rival = RUS
+				}
+			}
+		}
+		trigger = {
+			RUS = {
+				exists = yes
+				government = monarchy
+				is_subject = no
+				religion_group = christian
+			}
+		}
+		hidden_effect = {
+			define_ruler = {
+				age = 25
+				claim = 95
+				culture = russian
+			}
+			set_dynasty = RUS
+		}
+		custom_tooltip = ipePOL.6.b.tooltip
+		RUS = {
+			add_opinion = {
+				who = ROOT
+				modifier = common_king_poland
+			}
+			country_event = {
+				id = ipePOL.8
+				days = 1
+			}
+		}
+	}
+
+	option = { # We should align with Austria.
+		name = ipePOL.6.c
+		clr_country_flag = likely_elective_monarchy
+		set_country_flag = henrician_articles_coming
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					war_with = HAB
+					is_rival = HAB
+				}
+			}
+		}
+		trigger = {
+			HAB = {
+				exists = yes
+				government = monarchy
+				is_subject = no
+				religion_group = christian
+			}
+		}
+		hidden_effect = {
+			define_ruler = {
+				age = 25
+				claim = 95
+				culture = austrian
+			}
+			set_dynasty = HAB
+		}
+		custom_tooltip = ipePOL.6.c.tooltip
+		HAB = {
+			add_opinion = {
+				who = ROOT
+				modifier = common_king_poland
+			}
+			country_event = {
+				id = ipePOL.8
+				days = 1
+			}
+		}
+	}
+
+	option = { # Sweden is a great power!
+		name = ipePOL.6.e
+		clr_country_flag = likely_elective_monarchy
+		set_country_flag = henrician_articles_coming
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				OR = {
+					war_with = SWE
+					is_rival = SWE
+				}
+			}
+		}
+		trigger = {
+			SWE = {
+				exists = yes
+				government = monarchy
+				is_subject = no
+				religion_group = christian
+			}
+		}
+		hidden_effect = {
+			define_ruler = {
+				age = 25
+				claim = 95
+				culture = swedish
+			}
+			set_dynasty = SWE
+		}
+		custom_tooltip = ipePOL.6.e.tooltip
+		SWE = {
+			add_opinion = {
+				who = ROOT
+				modifier = common_king_poland
+			}
+			country_event = {
+				id = ipePOL.8
+				days = 1
+			}
+		}
+	}
+
+	option = { # Appoint a local noble instead.
+		name = ipePOL.6.f
+		clr_country_flag = likely_elective_monarchy
+		set_country_flag = henrician_articles_coming
+		ai_chance = {
+			factor = 20
+		}
+		hidden_effect = {
+			define_ruler = {
+				age = 25
+				claim = 95
+			}
+		}
+		custom_tooltip = ipePOL.6.f.tooltip
+	}
+}
+
+# The Henrician Articles
+country_event = {
+	id = ipePOL.7
+	title = ipePOL.7.t
+	desc = ipePOL.7.d
+	picture = LIBERUM_VETO_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_country_flag = henrician_articles_coming
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Sign these articles to make peace.
+		name = ipePOL.7.a
+		clr_country_flag = henrician_articles_coming
+		add_stability_or_adm_power = yes
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 20
+		}
+		country_event = {
+			id = flavor_pol.20
+		}
+	}
+
+	option = { # We will have nothing to do with these accursed documents!
+		name = ipePOL.7.b
+		clr_country_flag = henrician_articles_coming
+		add_stability = -6
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -20
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = polish_noble_rebels
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				size = 1
+				type = polish_noble_rebels
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = polish_noble_rebels
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				size = 2
+				type = polish_noble_rebels
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				size = 3
+				type = polish_noble_rebels
+			}
+		}
+		random_owned_province = {
+			spawn_rebels = {
+				size = 3
+				type = polish_noble_rebels
+			}
+		}
+		add_country_modifier = {
+			name = refused_henrician_articles
+			duration = 3650
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Elects a Noble of Our Dynasty
+country_event = {
+	id = ipePOL.8
+	title = ipePOL.8.t
+	desc = ipePOL.8.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Excellent news.
+		name = ipePOL.8.a
+		tooltip = {
+			add_opinion = {
+				who = FROM
+				modifier = common_king_poland
+			}
+		}
+		add_legitimacy = 10
+		add_prestige = 10
+	}
+}
+
+# Bribing the Sejm
+country_event = {
+	id = ipePOL.9
+	title = ipePOL.9.t
+	desc = ipePOL.9.d
+	picture = LIBERUM_VETO_eventPicture
+
+	trigger = {
+		OR = {
+			is_rival = POL
+			is_rival = PLC
+		}
+		OR = {
+			POL = {
+				has_reform = elective_monarchy
+				has_country_flag = librium_veto
+				NOT = {
+					has_country_flag = bribed_sejm
+				}
+			}
+			PLC = {
+				has_reform = elective_monarchy
+				has_country_flag = librium_veto
+				NOT = {
+					has_country_flag = bribed_sejm
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 24
+	}
+
+	option = { # We will bribe one of these magnates.
+		name = ipePOL.9.a
+		ai_chance = {
+			factor = 75
+		}
+		if = {
+			limit = {
+				POL = {
+					has_reform = elective_monarchy
+					has_country_flag = librium_veto
+					NOT = {
+						has_country_flag = bribed_sejm
+					}
+				}
+			}
+			POL = {
+				set_country_flag = bribed_sejm
+			}
+			set_country_flag = bribed_the_sejm
+			custom_tooltip = ipePOL.9.a.1.tooltip
+		}
+		if = {
+			limit = {
+				PLC = {
+					has_reform = elective_monarchy
+					has_country_flag = librium_veto
+					NOT = {
+						has_country_flag = bribed_sejm
+					}
+				}
+			}
+			PLC = {
+				set_country_flag = bribed_sejm
+			}
+			set_country_flag = bribed_the_sejm
+			custom_tooltip = ipePOL.9.a.2.tooltip
+		}
+		add_years_of_income = -0.5
+	}
+
+	option = { # We are above dealing with petty parliaments.
+		name = ipePOL.9.b
+		ai_chance = {
+			factor = 25
+		}
+		add_prestige = 5
+	}
+}
+
+# The Sejm Vetos all Policies
+country_event = {
+	id = ipePOL.10
+	title = ipePOL.10.t
+	desc = ipePOL.10.d
+	picture = LIBERUM_VETO_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # It is fortunate that our enemies are so stupid.
+		name = ipePOL.10.a
+		tooltip = {
+			FROM = {
+				add_ruler_modifier = { name = pol_sejm_veto } 
+			}
+		}
+		add_prestige = 5
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipePOL.11
+					days = 1
+				}
+			}
+		}
+		clr_country_flag = bribed_the_sejm
+	}
+}
+
+# $FROMCOUNTRY$ Bribes the Sejm
+country_event = {
+	id = ipePOL.11
+	title = ipePOL.11.t
+	desc = ipePOL.11.d
+	picture = LIBERUM_VETO_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Worrying.
+		name = ipePOL.11.a
+		add_prestige = -25
+		add_casus_belli = {
+			target = FROM
+			type = cb_insult
+			months = 60
+		}
+	}
+}
+
+# The Sejm Ratifies All Policies
+country_event = {
+	id = ipePOL.12
+	title = ipePOL.12.t
+	desc = ipePOL.12.d
+	picture = LIBERUM_VETO_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will try again another time.
+		name = ipePOL.12.a
+		tooltip = {
+			FROM = {
+				add_ruler_modifier = { name = pol_sejm_comply_policies }
+			}
+		}
+		add_prestige = -5
+		clr_country_flag = bribed_the_sejm
+	}
+}
+
+# The Beginning of the Liberum Veto
+country_event = {
+	id = ipePOL.13
+	title = ipePOL.13.t
+	desc = ipePOL.13.d
+	picture = LIBERUM_VETO_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		has_reform = elective_monarchy
+		NOT = {
+			has_country_flag = librium_veto
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1200
+		modifier = {
+			factor = 0.5
+			aristocracy_ideas = 1
+		}
+	}
+
+	option = { # Dark times have begun.
+		name = ipePOL.13.a
+		set_country_flag = librium_veto
+		add_country_modifier = {
+			name = liberum_veto
+			duration = -1
+		}
+	}
+}
+
+# The Continuation of the Jagiellonian Dynasty
+country_event = {
+	id = ipePOL.14
+	title = ipePOL.14.t
+	desc = ipePOL.14.d
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	trigger = {
+		OR = {
+			tag = POL
+			tag = PLC
+		}
+		dynasty = "Jagiellon"
+		heir_has_ruler_dynasty = no
+		has_regency = no
+		has_heir = yes
+		has_country_flag = potential_elective_monarchy
+		is_subject = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # Understood.
+		name = ipePOL.14.a
+		remove_heir = {}
+	}
+}
+
+# The Peace of Thorn
+country_event = {
+	id = ipePOL.15
+	title = ipePOL.15.t
+	desc = ipePOL.15.d
+	picture = CONQUEST_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # It is certainly worth considering.
+		name = ipePOL.15.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipePOL.15.a.tooltip
+		FROM = {
+			country_event = {
+				id = ipePOL.16
+			}
+		}
+	}
+
+	option = { # There will be no peace.
+		name = ipePOL.15.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = ipePOL.15.b.tooltip
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = rejected_peace_of_thorn
+			}
+			country_event = {
+				id = ipePOL.17
+			}
+		}
+	}
+}
+
+# The Peace of Thorn
+country_event = {
+	id = ipePOL.16
+	title = ipePOL.16.t
+	desc = ipePOL.16.d
+	picture = SEJM_eventPicture
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = { # We accept the Peace of Thorn.
+		name = ipePOL.16.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipePOL.16.a.tooltip
+		if = {
+			limit = {
+				WRM = {
+					is_subject_of = TEU
+				}
+			}
+			create_subject = {
+				subject_type = vassal
+				subject = WRM
+			}
+			WRM = {
+				add_liberty_desire = -50
+			}
+		}
+		remove_historical_rival = FROM
+		create_subject = {
+			subject_type = vassal
+			subject = TEU
+		}
+		if = {
+			limit = {
+				271 = {
+					is_core = TEU
+					NOT = {
+						owned_by = TEU
+					}
+				}
+			}
+			271 = {
+				remove_core = TEU
+			}
+		}
+		if = {
+			limit = {
+				3909 = {
+					is_core = TEU
+					NOT = {
+						owned_by = TEU
+					}
+				}
+			}
+			3909 = {
+				remove_core = TEU
+			}
+		}
+		FROM = {
+			remove_historical_rival = ROOT
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_core = DNZ
+					}
+					cede_province = DNZ
+				}
+			}
+			FROM = {
+				add_liberty_desire = -50
+			}
+		}
+		add_prestige = 10
+		FROM = {
+			country_event = {
+				id = ipePOL.18
+			}
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					province_id = 40
+					province_id = 41
+					province_id = 767
+					province_id = 2958
+					province_id = 3925
+					province_id = 3926
+				}
+			}
+			add_core = TEU
+			cede_province = TEU
+		}
+		every_subject_country = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						province_id = 40
+						province_id = 41
+						province_id = 767
+						province_id = 2958
+						province_id = 3925
+						province_id = 3926
+					}
+				}
+				add_core = TEU
+				cede_province = TEU
+			}
+		}
+	}
+
+	option = { # The Teutonic Order must be destroyed!
+		name = ipePOL.16.b
+		ai_chance = {
+			factor = 0
+		}
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = rejected_peace_of_thorn
+			}
+			country_event = {
+				id = ipePOL.19
+			}
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Rejects the Peace of Thorn
+country_event = {
+	id = ipePOL.17
+	title = ipePOL.17.t
+	desc = ipePOL.17.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Then we will keep fighting!
+		name = ipePOL.17.a
+		add_prestige = -5
+	}
+}
+
+# $FROMCOUNTRY$ Accepts the Peace of Thorn
+country_event = {
+	id = ipePOL.18
+	title = ipePOL.18.t
+	desc = ipePOL.18.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Amen.
+		name = ipePOL.18.a
+		tooltip = {
+			remove_historical_rival = FROM
+			FROM = {
+				remove_historical_rival = ROOT
+				create_subject = {
+					subject_type = vassal
+					subject = ROOT
+				}
+			}
+		}
+		remove_historical_friend = LIV
+		LIV = {
+			remove_historical_friend = TEU
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Rejects the Peace of Thorn
+country_event = {
+	id = ipePOL.19
+	title = ipePOL.17.t
+	desc = ipePOL.19.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Amen.
+		name = ipePOL.18.a
+		add_prestige = -5
+	}
+}
+
+# The Prussian Reformation
+country_event = {
+	id = ipePOL.20
+	title = ipePOL.20.t
+	desc = ipePOL.20.d
+	picture = RELIGIOUS_CONVERSION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TEU
+		is_religion_enabled = protestant
+		religion = catholic
+		is_at_war = no
+		is_subject = yes
+		is_lesser_in_union = no
+		overlord = {
+			OR = {
+				tag = POL
+				was_tag = POL
+				tag = PLC
+				was_tag = PLC
+			}
+		}
+		NOT = {
+			num_of_cities = 9
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			has_friendly_reformation_center = yes
+		}
+		modifier = {
+			factor = 0.5
+			41 = {
+				religion = protestant
+			}
+		}
+	}
+
+	option = { # We should reject the Curia's authority!
+		ai_chance = {
+			factor = 100
+		}
+		name = ipePOL.20.a
+		change_religion = protestant
+		set_ruler_religion = protestant
+		every_owned_province = {
+			limit = {
+				is_core = ROOT
+			}
+			change_religion = protestant
+		}
+		add_church_power = 10
+		add_prestige = 25
+		PAP = {
+			add_opinion = {
+				who = TEU
+				modifier = protestant_prussia
+			}
+		}
+	}
+
+	option = { # We must remain servants of the Pope.
+		ai_chance = {
+			factor = 0
+		}
+		name = ipePOL.20.b
+		add_papal_influence = 25
+		PAP = {
+			add_opinion = {
+				who = TEU
+				modifier = no_protestant_prussia
+			}
+		}
+	}
+}
+
+# The Inheritance of Prussia
+country_event = {
+	id = ipePOL.21
+	title = ipePOL.21.t
+	desc = ipePOL.21.d
+	picture = KING_SICK_IN_BED_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		OR = {
+			tag = BRA
+			NOT = {
+				exists = BRA
+				OR = {
+					primary_culture = markish
+					primary_culture = pommeranian
+					primary_culture = saxon
+					primary_culture = eastphalian
+				}
+			}
+		}
+		PRU = {
+			exists = yes
+			has_country_flag = teutons_formed_prussia
+			government = monarchy
+			religion_group = christian
+			NOT = {
+				is_rival = ROOT
+			}
+		}
+		NOT = {
+			is_rival = PRU
+		}
+		government = monarchy
+		religion_group = christian
+		is_subject = no
+	}
+
+	mean_time_to_happen = {
+		months = 1200
+		modifier = {
+			factor = 0.9
+			PRU = {
+				has_heir = no
+			}
+		}
+		modifier = {
+			factor = 0.9
+			prestige = PRU
+		}
+		modifier = {
+			factor = 0.9
+			legitimacy = PRU
+		}
+		modifier = {
+			factor = 0.9
+			religion = PRU
+		}
+		modifier = {
+			factor = 0.5
+			primary_culture = prussian
+		}
+		modifier = {
+			factor = 0.5
+			dynasty = PRU
+		}
+		modifier = {
+			factor = 0.5
+			tag = BRA
+		}
+		modifier = {
+			factor = 0.5
+			is_year = 1600
+		}
+	}
+
+	option = { # We will accomplish great things with the lands of Prussia.
+		name = ipePOL.21.a
+		create_union = PRU
+		PRU = {
+			country_event = {
+				id = ipePOL.22
+			}
+		}
+	}
+}
+
+# The Inheritance of Prussia
+country_event = {
+	id = ipePOL.22
+	title = ipePOL.22.t
+	desc = ipePOL.22.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We wish that their rule will be auspicious.
+		name = ipePOL.22.a
+		tooltip = {
+			FROM = {
+				create_union = ROOT
+			}
+		}
+	}
+}
+
+# The Reunification of the Teutonic Order
+country_event = {
+	id = ipePOL.23
+	title = ipePOL.23.t
+	desc = ipePOL.23.d
+	picture = CONQUEST_eventPicture
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We welcome them as Teutonic Knights!
+		name = ipePOL.23.a
+		ai_chance = {
+			factor = 100
+		}
+		inherit = LIV
+		add_historical_friend = RIG
+		RIG = {
+			add_historical_friend = TEU
+		}
+		add_historical_friend = OSW
+		OSW = {
+			add_historical_friend = TEU
+		}
+		add_historical_friend = DRP
+		DRP = {
+			add_historical_friend = TEU
+		}
+		add_historical_friend = KUR
+		KUR = {
+			add_historical_friend = TEU
+		}
+		add_yearly_manpower = 5
+		add_prestige = 25
+	}
+
+	option = {
+		name = ipePOL.23.b
+		ai_chance = {
+			factor = 0
+		}
+		add_papal_influence = 25
+	}
+}
+
+# The Germanization of the Kashubians
+country_event = {
+	id = ipePOL.24
+	title = ipePOL.24.t
+	desc = ipePOL.24.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		culture_group = germanic
+		OR = {
+			2995 = {
+				owned_by = ROOT
+				culture = kashubian
+			}
+			2997 = {
+				owned_by = ROOT
+				culture = kashubian
+			}
+			3923 = {
+				owned_by = ROOT
+				culture = kashubian
+			}
+			3924 = {
+				owned_by = ROOT
+				culture = kashubian
+			}
+			6253 = {
+				owned_by = ROOT
+				culture = kashubian
+			}
+		}
+		is_year = 1700
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Interesting.
+		name = ipePOL.24.a
+		random_owned_province = {
+			limit = {
+				OR = {
+					province_id = 2995
+					province_id = 2997
+					province_id = 3923
+					province_id = 3924
+					province_id = 6253
+				}
+				culture = kashubian
+			}
+			change_culture = pommeranian
+		}
+	}
+}
+
+# Stolp Drifts Away
+country_event = {
+	id = ipePOL.25
+	title = ipePOL.25.t
+	desc = ipePOL.25.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = STP
+		is_subject_of = POL
+		is_lesser_in_union = no
+		OR = {
+			current_age = age_of_discovery
+			current_age = age_of_reformation
+		}
+		is_at_war = no
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = { # We will venture to decide our own fate.
+		name = ipePOL.25.a
+		grant_independence = yes
+		hidden_effect = {
+			POL = {
+				country_event = {
+					id = ipePOL.26
+				}
+			}
+		}
+	}
+}
+
+# Stolp Drifts Away
+country_event = {
+	id = ipePOL.26
+	title = ipePOL.25.t
+	desc = ipePOL.25.d
+	picture = CITY_VIEW_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well.
+		name = ipePOL.26.a
+		tooltip = {
+			STP = {
+				grant_independence = yes
+			}
+		}
+	}
+}
+
+# The Sale of Oswiecim
+country_event = {
+	id = ipePOL.27
+	title = ipePOL.27.t
+	desc = ipePOL.27.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = POL
+		is_neighbor_of = OSC
+		is_at_war = no
+		OSC = {
+			owns = 6939
+			ai = yes
+			NOT = {
+				num_of_cities = 2
+			}
+			is_at_war = no
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # Let us purchase Oswiecim.
+		name = ipePOL.27.a
+		add_treasury = -50
+		if = {
+			limit = {
+				POL = {
+					is_part_of_hre = no
+				}
+				OSC = {
+					is_part_of_hre = yes
+				}
+			}
+			OSC = {
+				set_in_empire = no
+			}
+		}
+		6939 = {
+			cede_province = ROOT
+			add_core = ROOT
+		}
+	}
+
+	option = { # It is unnecessary.
+		name = ipePOL.27.b
+		add_prestige = 5
+	}
+}

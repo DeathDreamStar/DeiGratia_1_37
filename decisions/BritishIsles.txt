@@ -1,0 +1,130 @@
+country_decisions = {
+
+	wales_acts = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = wales_acts_passed }
+			tag = ENG
+			any_subject_country = {
+				capital_scope = {
+					OR = {
+						area = wales_area
+						area = powys_area
+						area = deheubarth_area
+					}
+				}
+				all_owned_province = {
+					OR = {
+						area = wales_area
+						area = powys_area
+						area = deheubarth_area
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				area = wales_area
+				area = powys_area
+				area = deheubarth_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		allow = {
+			adm_tech = 10
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			legitimacy = 100
+			wales_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			powys_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			deheubarth_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			every_subject_country = {
+				limit = {
+					capital_scope = {
+						OR = {
+							area = wales_area
+							area = powys_area
+							area = deheubarth_area
+						}
+					}
+					all_owned_province = {
+						OR = {
+							area = wales_area
+							area = powys_area
+							area = deheubarth_area
+						}
+					}
+				}
+				ROOT = {
+					inherit = PREV
+				}
+			}
+			add_prestige = 10
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			if = {
+				limit = {
+					has_estate_privilege = estate_nobles_marcher_lords
+				}
+				remove_estate_privilege = estate_nobles_marcher_lords
+			}
+			add_accepted_culture = welsh
+			set_country_flag = wales_acts_passed
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+		do_not_integrate = WLS
+		do_not_integrate = BRC
+		do_not_integrate = DBG
+		do_not_integrate = GLM
+		do_not_integrate = GWR
+		do_not_integrate = MNM
+		do_not_integrate = MTE
+		do_not_integrate = PMB
+	}
+
+	reform_irish_clan_government = {
+		major = yes
+		potential = {
+			has_reform = gaelic_overkingdom
+		}
+		allow = {
+			OR = {
+				adm_tech = 20
+				total_development = 50
+			}
+			is_at_war = no
+			legitimacy = 100
+		}
+		effect = {
+			add_government_reform = feudalism_reform
+			add_prestige = 10
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 3650
+			}
+			remove_historical_rival = ENG
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

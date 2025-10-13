@@ -1,0 +1,3 @@
+#3628 - Echigo Mountains
+
+discovered_by = chinese

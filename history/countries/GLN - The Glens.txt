@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = gaelic_overkingdom
+government_rank = 1
+technology_group = western
+primary_culture = scottish
+add_accepted_culture = irish
+religion = catholic
+capital = 6880	# The Glens
+fixed_capital = 6880
+add_historical_rival = ENG
+
+1444.1.1 = { # anachronistic
+	monarch = {
+		name = "Margery"
+		dynasty = "Bissett"
+		female = yes
+		birth_date = 1400.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

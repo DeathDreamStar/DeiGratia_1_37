@@ -1,0 +1,53 @@
+country_decisions = {
+	commission_adler_von_lubeck = {
+		potential = {
+			tag = HSA
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			owns = 45
+			controls = 45
+			NOT = {
+				has_country_flag = adler_built
+			}
+		}
+		allow = {
+			if = {
+				limit = {
+					NOT = { has_dlc = "Golden Century" }
+				}
+				years_of_income = 0.7
+				adm_power = 30
+			}
+			else = {
+				has_flagship = yes
+			}
+			any_neighbor_country = {
+				is_at_war = yes
+				num_of_ports = 1
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_dlc = "Golden Century" }
+				}
+				add_years_of_income = -0.7
+				add_adm_power = -30
+				45 = {
+					heavy_ship = ROOT
+				}
+			}
+			set_country_flag = adler_built
+			add_country_modifier = {
+				name = "adler_von_lubeck"
+				duration = 10950
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

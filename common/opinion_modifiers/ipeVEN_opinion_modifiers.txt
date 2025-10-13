@@ -1,0 +1,17 @@
+accepted_venetian_queen = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+denied_venetian_queen = {
+    opinion = -50
+    years = 25
+    yearly_decay = 2
+}
+
+claim_to_cyprus = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}

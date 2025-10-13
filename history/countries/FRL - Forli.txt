@@ -1,0 +1,97 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+religion = catholic
+primary_culture = romagnan
+capital = 3790
+fixed_capital = 3790
+set_estate_privilege = estate_church_papal_emissary
+
+1433.1.1 = {
+	monarch = {
+		name = "Antonio I"
+		dynasty = "Ordelaffi"
+		birth_date = 1414.1.1
+		adm = 4
+		dip = 2
+		mil = 4
+	}
+	set_estate_privilege = estate_nobles_recruit_condottieri
+}
+1438.1.1 = {
+	heir = {
+		name = "Francesco"
+		monarch_name = "Francesco IV"
+		dynasty = "Ordelaffi"
+		birth_date = 1435.1.1
+		death_date = 1466.1.1
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1448.1.1 = {
+	monarch = {
+		name = "Ugo Rangoni (Regent)"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Francesco"
+		monarch_name = "Francesco IV"
+		dynasty = "Ordelaffi"
+		birth_date = 1435.1.1
+		death_date = 1466.1.1
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1454.1.1 = {
+	monarch = {
+		name = "Francesco IV"
+		dynasty = "Ordelaffi"
+		birth_date = 1435.1.1
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1466.1.1 = {
+	monarch = {
+		name = "Pino III"
+		dynasty = "Ordelaffi"
+		birth_date = 1436.3.11
+		adm = 3
+		dip = 4
+		mil = 4
+	}
+}
+1480.1.1 = {
+	monarch = {
+		name = "Sinibaldo II"
+		dynasty = "Ordelaffi"
+		birth_date = 1467.1.1
+		adm = 3
+		dip = 1
+		mil = 3
+	}
+}
+#1480.7.14 to Riaro of Imola 
+#1488.4.14 annexed by papal state
+1503.11.1 = {
+	monarch = {
+		name = "Antonio Maria I"
+		dynasty = "Ordelaffi"
+		birth_date = 1480.1.1
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+#1504.1.1 annexed again by papal state

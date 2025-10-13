@@ -1,0 +1,33 @@
+namespace = ipeRYU
+normal_or_historical_nations = yes
+
+# Settlement of the Yaeyama Islands
+country_event = {
+	id = ipeRYU.1
+	title = ipeRYU.1.t
+	desc = ipeRYU.1.d
+	picture = COLONIZATION_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = RYU
+		is_at_war = no
+		3392 = {
+			is_empty = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	option = { # It is a useful addition to our realm.
+		name = ipeRYU.1.a
+		3392 = {
+			add_core = ROOT
+			cede_province = ROOT
+			change_trade_goods = fish
+		}
+	}
+}

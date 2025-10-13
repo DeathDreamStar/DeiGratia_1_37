@@ -1,0 +1,188 @@
+government = monarchy
+add_government_reform = iqta
+primary_culture = azerbaijani
+technology_group = muslim
+religion = sunni
+capital = 4305
+fixed_capital = 4305
+religious_school = shafii_school
+
+#Shaki Khanate
+1444.1.1 = {
+	monarch = {
+		name = "Jandar Qara Keshish"
+		dynasty = "Kesrani"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1468.1.1 = {
+	monarch = {
+		name = "Gutul"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1492.1.1 = {
+	monarch = {
+		name = "Zaki"
+		dynasty = "Kesrani"
+		adm = 3
+		dip = 2
+		mil = 4
+	}
+}
+1519.1.1 = {
+	monarch = {
+		name = "Hasan"
+		dynasty = "Kesrani"
+		birth_date = 1497.1.1
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1524.1.1 = {
+	monarch = {
+		name = "Darvish"
+		dynasty = "Kesrani"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1551.5.1 = { #PER vassal
+	religion = shiite
+	religious_school = jafari_school
+	government_rank = 3
+	monarch = {
+		name = "Bagi"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1580.1.1 = {
+	monarch = {
+		name = "Alijan I"
+		dynasty = "Kesrani"
+		adm = 4
+		dip = 1
+		mil = 2
+	}
+}
+1615.1.1 = {
+	monarch = {
+		name = "Asger"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1648.1.1 = {
+	monarch = {
+		name = "Allahverdi"
+		dynasty = "Kesrani"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1685.1.1 = {
+	monarch = {
+		name = "Alijan II"
+		dynasty = "Kesrani"
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}
+1726.1.1 = {
+	monarch = {
+		name = "Qurban"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1743.1.1 = {
+	monarch = {
+		name = "Haji Chalabi"
+		dynasty = "Kesrani"
+		adm = 1
+		dip = 3
+		mil = 3
+	}
+}
+1755.1.1 = {
+	monarch = {
+		name = "Aghakishi"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1759.1.1 = {
+	monarch = {
+		name = "Muhammad Huseyn"
+		dynasty = "Kesrani"
+		adm = 1
+		dip = 3
+		mil = 2
+	}
+}
+1780.1.1 = {
+	monarch = {
+		name = "Abdulkadir"
+		dynasty = "Kesrani"
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}
+1783.1.1 = {
+	monarch = {
+		name = "Muhammad Hasan"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1795.1.1 = {
+	monarch = {
+		name = "Salim"
+		dynasty = "Kesrani"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1806.1.1 = {
+	monarch = {
+		name = "Jafargulu"
+		dynasty = "Donboli"
+		culture = kurdish
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+1814.1.1 = {
+	monarch = {
+		name = "Ismail"
+		dynasty = "Donboli"
+		culture = kurdish
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+#1819.1.1 RUS

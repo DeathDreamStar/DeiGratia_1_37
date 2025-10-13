@@ -1,0 +1,11 @@
+﻿l_english:
+ ipeKAS.1.t: "The City of Yarkand"
+ ipeKAS.1.d: "For decades, the Dughlat dynasty in Yarkand has served as loyal allies to the Chagatai Khanate, one of the last remaining successor states of the Mongol Empire. $MONARCHTITLE$ $MONARCH$ has a newfound ambition to become one of the most powerful leaders in the Tarim Basin, even if it means he may one day come into conflict with the Chagatai. In order to achieve his aims, $MONARCHTITLE$ $MONARCH$ wishes to construct a new and formidable capital at the city of Yarkand, leaving behind the city of $CAPITAL$."
+ ipeKAS.1.a: "A fitting new capital!"
+ ipeKAS.1.b: "We have more pressing concerns."
+ ipeKAS.2.t: "Saniz Mirza"
+ ipeKAS.2.d: "Since the country’s capital moved to Yarkand, Kashgar has been reduced to a status of lesser importance, although it still remains important as a key Silk Road settlement on the outskirts of the Tarim Basin. One of $MONARCHTITLE$ $MONARCH$’s siblings, Saniz Mirza, increasingly desires a realm of his own for which he can be $MONARCHTITLE$. By giving Saniz Mirza the city of Kashgar, we could avoid a potentially destabilizing conflict with him, and refrain from crushing his aspirations."
+ ipeKAS.2.a: "Allow Saniz Mirza to rule Kashgar."
+ ipeKAS.2.b: "We will not pamper siblings."
+ ipeKAS.3.d: "[KAS.Monarch.GetTitle] [KAS.Monarch.GetName] of Yarkand has chosen to cede the city of Kashgar to his brother Saniz Mirza, maintaining internal peace in his country after it moved its capital to Yarkand. Since we are the overlords of Yarkand, Saniz Mirza in Kashgar has likewise declared his allegiance to us. Hopefully, it will be easier to secure loyalty from the divided monarchs of Yarkand and Kashgar than it would be to deal with one powerful subject state."
+ ipeKAS.3.a: "What an interesting state of affairs."

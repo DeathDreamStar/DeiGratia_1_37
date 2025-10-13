@@ -1,0 +1,3844 @@
+namespace = ipe_inflation
+
+# Rising Inflation from Gold
+country_event = {
+    id = ipe_inflation.1
+    title = ipe_inflation.1.t
+    desc = ipe_inflation.1.d
+    picture = ECONOMY_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # We will soon see how this affects us.
+        name = ipe_inflation.1.a
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.005
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.01
+                    }
+                    has_country_modifier = 005_inflation
+                }
+            }
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 005_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.01
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.015
+                    }
+                    has_country_modifier = 01_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 01_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.015
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.02
+                    }
+                    has_country_modifier = 015_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 015_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.02
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.025
+                    }
+                    has_country_modifier = 02_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 02_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.025
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.03
+                    }
+                    has_country_modifier = 025_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 025_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.03
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.035
+                    }
+                    has_country_modifier = 03_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 03_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.035
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.04
+                    }
+                    has_country_modifier = 035_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 035_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.04
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.045
+                    }
+                    has_country_modifier = 04_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 04_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.045
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.05
+                    }
+                    has_country_modifier = 045_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 045_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.05
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.055
+                    }
+                    has_country_modifier = 05_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 05_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.055
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.06
+                    }
+                    has_country_modifier = 055_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 055_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.06
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.065
+                    }
+                    has_country_modifier = 06_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 06_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.065
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.07
+                    }
+                    has_country_modifier = 065_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 065_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.07
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.075
+                    }
+                    has_country_modifier = 07_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 07_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.075
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.08
+                    }
+                    has_country_modifier = 075_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 075_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.08
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.085
+                    }
+                    has_country_modifier = 08_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 08_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.085
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.09
+                    }
+                    has_country_modifier = 085_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 085_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.09
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.095
+                    }
+                    has_country_modifier = 09_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 09_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.095
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.1
+                    }
+                    has_country_modifier = 095_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 1_inflation
+            add_country_modifier = {
+                name = 095_inflation
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.1
+                }
+                NOT = {
+                    has_country_modifier = 1_inflation
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            add_country_modifier = {
+                name = 1_inflation
+                duration = -1
+            }
+        }
+    }
+}
+
+# Rising Inflation from Silver
+country_event = {
+    id = ipe_inflation.2
+    title = ipe_inflation.2.t
+    desc = ipe_inflation.2.d
+    picture = ECONOMY_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # We will soon see how this affects us.
+        name = ipe_inflation.1.a
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.005
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.01
+                    }
+                    has_country_modifier = 005_inflation_silver
+                }
+            }
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 005_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.01
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.015
+                    }
+                    has_country_modifier = 01_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 01_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.015
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.02
+                    }
+                    has_country_modifier = 015_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 015_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.02
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.025
+                    }
+                    has_country_modifier = 02_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 02_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.025
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.03
+                    }
+                    has_country_modifier = 025_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 025_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.03
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.035
+                    }
+                    has_country_modifier = 03_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 03_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.035
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.04
+                    }
+                    has_country_modifier = 035_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 035_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.04
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.045
+                    }
+                    has_country_modifier = 04_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 04_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.045
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.05
+                    }
+                    has_country_modifier = 045_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 045_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.05
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.055
+                    }
+                    has_country_modifier = 05_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 05_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.055
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.06
+                    }
+                    has_country_modifier = 055_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 055_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.06
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.065
+                    }
+                    has_country_modifier = 06_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 06_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.065
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.07
+                    }
+                    has_country_modifier = 065_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 065_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.07
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.075
+                    }
+                    has_country_modifier = 07_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 07_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.075
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.08
+                    }
+                    has_country_modifier = 075_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 075_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.08
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.085
+                    }
+                    has_country_modifier = 08_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 08_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.085
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.09
+                    }
+                    has_country_modifier = 085_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 085_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.09
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.095
+                    }
+                    has_country_modifier = 09_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 09_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.095
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.1
+                    }
+                    has_country_modifier = 095_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+            add_country_modifier = {
+                name = 095_inflation_silver
+                duration = -1
+            }
+        }
+        if = {
+            limit = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.1
+                }
+                NOT = {
+                    has_country_modifier = 1_inflation_silver
+                }
+            }
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            add_country_modifier = {
+                name = 1_inflation_silver
+                duration = -1
+            }
+        }
+    }
+}
+
+# Declining Inflation
+country_event = {
+    id = ipe_inflation.3
+    title = ipe_inflation.3.t
+    desc = ipe_inflation.3.d
+    picture = ECONOMY_eventPicture
+
+    is_triggered_only = yes
+
+    option = { # Our monetary policy is superior to that of other nations.
+        name = ipe_inflation.3.a
+        remove_country_modifier = 005_inflation
+        remove_country_modifier = 01_inflation
+        remove_country_modifier = 015_inflation
+        remove_country_modifier = 02_inflation
+        remove_country_modifier = 025_inflation
+        remove_country_modifier = 03_inflation
+        remove_country_modifier = 035_inflation
+        remove_country_modifier = 04_inflation
+        remove_country_modifier = 045_inflation
+        remove_country_modifier = 05_inflation
+        remove_country_modifier = 055_inflation
+        remove_country_modifier = 06_inflation
+        remove_country_modifier = 065_inflation
+        remove_country_modifier = 07_inflation
+        remove_country_modifier = 075_inflation
+        remove_country_modifier = 08_inflation
+        remove_country_modifier = 085_inflation
+        remove_country_modifier = 09_inflation
+        remove_country_modifier = 095_inflation
+        remove_country_modifier = 1_inflation
+
+        remove_country_modifier = 005_inflation_silver
+        remove_country_modifier = 01_inflation_silver
+        remove_country_modifier = 015_inflation_silver
+        remove_country_modifier = 02_inflation_silver
+        remove_country_modifier = 025_inflation_silver
+        remove_country_modifier = 03_inflation_silver
+        remove_country_modifier = 035_inflation_silver
+        remove_country_modifier = 04_inflation_silver
+        remove_country_modifier = 045_inflation_silver
+        remove_country_modifier = 05_inflation_silver
+        remove_country_modifier = 055_inflation_silver
+        remove_country_modifier = 06_inflation_silver
+        remove_country_modifier = 065_inflation_silver
+        remove_country_modifier = 07_inflation_silver
+        remove_country_modifier = 075_inflation_silver
+        remove_country_modifier = 08_inflation_silver
+        remove_country_modifier = 085_inflation_silver
+        remove_country_modifier = 09_inflation_silver
+        remove_country_modifier = 095_inflation_silver
+        remove_country_modifier = 1_inflation_silver
+    }
+}
+
+# Rising Inflation from Gold
+country_event = {
+    id = ipe_inflation.4
+    title = ipe_inflation.4.t
+    desc = ipe_inflation.4.d
+    picture = ECONOMY_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        OR = {
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.005
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.01
+                    }
+                    has_country_modifier = 005_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.01
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.015
+                    }
+                    has_country_modifier = 01_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.015
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.02
+                    }
+                    has_country_modifier = 015_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.02
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.025
+                    }
+                    has_country_modifier = 02_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.025
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.03
+                    }
+                    has_country_modifier = 025_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.03
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.035
+                    }
+                    has_country_modifier = 03_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.035
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.04
+                    }
+                    has_country_modifier = 035_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.04
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.045
+                    }
+                    has_country_modifier = 04_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.045
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.05
+                    }
+                    has_country_modifier = 045_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.05
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.055
+                    }
+                    has_country_modifier = 05_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.055
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.06
+                    }
+                    has_country_modifier = 055_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.06
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.065
+                    }
+                    has_country_modifier = 06_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.065
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.07
+                    }
+                    has_country_modifier = 065_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.07
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.075
+                    }
+                    has_country_modifier = 07_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.075
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.08
+                    }
+                    has_country_modifier = 075_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.08
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.085
+                    }
+                    has_country_modifier = 08_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.085
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.09
+                    }
+                    has_country_modifier = 085_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.09
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.095
+                    }
+                    has_country_modifier = 09_inflation
+                }
+            }
+           AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.095
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.1
+                    }
+                    has_country_modifier = 095_inflation
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = gold
+                    value = 0.1
+                }
+                NOT = {
+                    has_country_modifier = 1_inflation
+                }
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 6
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                has_country_flag = show_inflation_events
+            }
+            country_event = {
+                id = ipe_inflation.1
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_country_flag = show_inflation_events
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.005
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.01
+                        }
+                        has_country_modifier = 005_inflation
+                    }
+                }
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 005_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.01
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.015
+                        }
+                        has_country_modifier = 01_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 01_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.015
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.02
+                        }
+                        has_country_modifier = 015_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 015_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.02
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.025
+                        }
+                        has_country_modifier = 02_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 02_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.025
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.03
+                        }
+                        has_country_modifier = 025_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 025_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.03
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.035
+                        }
+                        has_country_modifier = 03_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 03_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.035
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.04
+                        }
+                        has_country_modifier = 035_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 035_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.04
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.045
+                        }
+                        has_country_modifier = 04_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 04_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.045
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.05
+                        }
+                        has_country_modifier = 045_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 045_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.05
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.055
+                        }
+                        has_country_modifier = 05_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 05_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.055
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.06
+                        }
+                        has_country_modifier = 055_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 055_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.06
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.065
+                        }
+                        has_country_modifier = 06_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 06_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.065
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.07
+                        }
+                        has_country_modifier = 065_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 065_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.07
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.075
+                        }
+                        has_country_modifier = 07_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 07_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.075
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.08
+                        }
+                        has_country_modifier = 075_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 075_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.08
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.085
+                        }
+                        has_country_modifier = 08_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 08_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.085
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.09
+                        }
+                        has_country_modifier = 085_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 085_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.09
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.095
+                        }
+                        has_country_modifier = 09_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 095_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 09_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.095
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = gold
+                            value = 0.1
+                        }
+                        has_country_modifier = 095_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 1_inflation
+                add_country_modifier = {
+                    name = 095_inflation
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.1
+                    }
+                    NOT = {
+                        has_country_modifier = 1_inflation
+                    }
+                }
+                remove_country_modifier = 005_inflation
+                remove_country_modifier = 01_inflation
+                remove_country_modifier = 015_inflation
+                remove_country_modifier = 02_inflation
+                remove_country_modifier = 025_inflation
+                remove_country_modifier = 03_inflation
+                remove_country_modifier = 035_inflation
+                remove_country_modifier = 04_inflation
+                remove_country_modifier = 045_inflation
+                remove_country_modifier = 05_inflation
+                remove_country_modifier = 055_inflation
+                remove_country_modifier = 06_inflation
+                remove_country_modifier = 065_inflation
+                remove_country_modifier = 07_inflation
+                remove_country_modifier = 075_inflation
+                remove_country_modifier = 08_inflation
+                remove_country_modifier = 085_inflation
+                remove_country_modifier = 09_inflation
+                remove_country_modifier = 095_inflation
+                add_country_modifier = {
+                    name = 1_inflation
+                    duration = -1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_inflation.4.a
+    }
+}
+
+# Rising Inflation from Silver
+country_event = {
+    id = ipe_inflation.5
+    title = ipe_inflation.5.t
+    desc = ipe_inflation.5.d
+    picture = ECONOMY_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        OR = {
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.005
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.01
+                    }
+                    has_country_modifier = 005_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.01
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.015
+                    }
+                    has_country_modifier = 01_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.015
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.02
+                    }
+                    has_country_modifier = 015_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.02
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.025
+                    }
+                    has_country_modifier = 02_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.025
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.03
+                    }
+                    has_country_modifier = 025_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.03
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.035
+                    }
+                    has_country_modifier = 03_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.035
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.04
+                    }
+                    has_country_modifier = 035_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.04
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.045
+                    }
+                    has_country_modifier = 04_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.045
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.05
+                    }
+                    has_country_modifier = 045_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.05
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.055
+                    }
+                    has_country_modifier = 05_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.055
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.06
+                    }
+                    has_country_modifier = 055_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.06
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.065
+                    }
+                    has_country_modifier = 06_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.065
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.07
+                    }
+                    has_country_modifier = 065_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.07
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.075
+                    }
+                    has_country_modifier = 07_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.075
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.08
+                    }
+                    has_country_modifier = 075_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.08
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.085
+                    }
+                    has_country_modifier = 08_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.085
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.09
+                    }
+                    has_country_modifier = 085_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.09
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.095
+                    }
+                    has_country_modifier = 09_inflation_silver
+                }
+            }
+           AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.095
+                }
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.1
+                    }
+                    has_country_modifier = 095_inflation_silver
+                }
+            }
+            AND = {
+                trading_part = {
+                    trade_goods = silver
+                    value = 0.1
+                }
+                NOT = {
+                    has_country_modifier = 1_inflation_silver
+                }
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 6
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                has_country_flag = show_inflation_events
+            }
+            country_event = {
+                id = ipe_inflation.2
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_country_flag = show_inflation_events
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.005
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.01
+                        }
+                        has_country_modifier = 005_inflation_silver
+                    }
+                }
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 005_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.01
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.015
+                        }
+                        has_country_modifier = 01_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 01_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.015
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.02
+                        }
+                        has_country_modifier = 015_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 015_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.02
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.025
+                        }
+                        has_country_modifier = 02_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 02_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.025
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.03
+                        }
+                        has_country_modifier = 025_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 025_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.03
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.035
+                        }
+                        has_country_modifier = 03_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 03_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.035
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.04
+                        }
+                        has_country_modifier = 035_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 035_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.04
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.045
+                        }
+                        has_country_modifier = 04_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 04_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.045
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.05
+                        }
+                        has_country_modifier = 045_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 045_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.05
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.055
+                        }
+                        has_country_modifier = 05_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 05_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.055
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.06
+                        }
+                        has_country_modifier = 055_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 055_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.06
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.065
+                        }
+                        has_country_modifier = 06_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 06_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.065
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.07
+                        }
+                        has_country_modifier = 065_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 065_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.07
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.075
+                        }
+                        has_country_modifier = 07_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 07_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.075
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.08
+                        }
+                        has_country_modifier = 075_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 075_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.08
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.085
+                        }
+                        has_country_modifier = 08_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 08_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.085
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.09
+                        }
+                        has_country_modifier = 085_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 085_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.09
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.095
+                        }
+                        has_country_modifier = 09_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 09_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.095
+                    }
+                    NOT = {
+                        trading_part = {
+                            trade_goods = silver
+                            value = 0.1
+                        }
+                        has_country_modifier = 095_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 1_inflation_silver
+                add_country_modifier = {
+                    name = 095_inflation_silver
+                    duration = -1
+                }
+            }
+            if = {
+                limit = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.1
+                    }
+                    NOT = {
+                        has_country_modifier = 1_inflation_silver
+                    }
+                }
+                remove_country_modifier = 005_inflation_silver
+                remove_country_modifier = 01_inflation_silver
+                remove_country_modifier = 015_inflation_silver
+                remove_country_modifier = 02_inflation_silver
+                remove_country_modifier = 025_inflation_silver
+                remove_country_modifier = 03_inflation_silver
+                remove_country_modifier = 035_inflation_silver
+                remove_country_modifier = 04_inflation_silver
+                remove_country_modifier = 045_inflation_silver
+                remove_country_modifier = 05_inflation_silver
+                remove_country_modifier = 055_inflation_silver
+                remove_country_modifier = 06_inflation_silver
+                remove_country_modifier = 065_inflation_silver
+                remove_country_modifier = 07_inflation_silver
+                remove_country_modifier = 075_inflation_silver
+                remove_country_modifier = 08_inflation_silver
+                remove_country_modifier = 085_inflation_silver
+                remove_country_modifier = 09_inflation_silver
+                remove_country_modifier = 095_inflation_silver
+                add_country_modifier = {
+                    name = 1_inflation_silver
+                    duration = -1
+                }
+            }
+        }
+    }
+
+    option = {
+        name = ipe_inflation.5.a
+    }
+}
+
+# Declining Inflation
+country_event = {
+    id = ipe_inflation.6
+    title = ipe_inflation.6.t
+    desc = ipe_inflation.6.d
+    picture = ECONOMY_eventPicture
+
+    hidden = yes
+
+    trigger = {
+        OR = {
+            AND = {
+                NOT = {
+                    trading_part = {
+                        trade_goods = gold
+                        value = 0.005
+                    }
+                }
+                OR = {
+                    has_country_modifier = 005_inflation
+                    has_country_modifier = 01_inflation
+                    has_country_modifier = 015_inflation
+                    has_country_modifier = 02_inflation
+                    has_country_modifier = 025_inflation
+                    has_country_modifier = 03_inflation
+                    has_country_modifier = 035_inflation
+                    has_country_modifier = 04_inflation
+                    has_country_modifier = 045_inflation
+                    has_country_modifier = 05_inflation
+                    has_country_modifier = 055_inflation
+                    has_country_modifier = 06_inflation
+                    has_country_modifier = 065_inflation
+                    has_country_modifier = 07_inflation
+                    has_country_modifier = 075_inflation
+                    has_country_modifier = 08_inflation
+                    has_country_modifier = 085_inflation
+                    has_country_modifier = 09_inflation
+                    has_country_modifier = 095_inflation
+                    has_country_modifier = 1_inflation
+                }
+            }
+            AND = {
+                NOT = {
+                    trading_part = {
+                        trade_goods = silver
+                        value = 0.005
+                    }
+                }
+                OR = {
+                    has_country_modifier = 005_inflation_silver
+                    has_country_modifier = 01_inflation_silver
+                    has_country_modifier = 015_inflation_silver
+                    has_country_modifier = 02_inflation_silver
+                    has_country_modifier = 025_inflation_silver
+                    has_country_modifier = 03_inflation_silver
+                    has_country_modifier = 035_inflation_silver
+                    has_country_modifier = 04_inflation_silver
+                    has_country_modifier = 045_inflation_silver
+                    has_country_modifier = 05_inflation_silver
+                    has_country_modifier = 055_inflation_silver
+                    has_country_modifier = 06_inflation_silver
+                    has_country_modifier = 065_inflation_silver
+                    has_country_modifier = 07_inflation_silver
+                    has_country_modifier = 075_inflation_silver
+                    has_country_modifier = 08_inflation_silver
+                    has_country_modifier = 085_inflation_silver
+                    has_country_modifier = 09_inflation_silver
+                    has_country_modifier = 095_inflation_silver
+                    has_country_modifier = 1_inflation_silver
+                }
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 6
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                has_country_flag = show_inflation_events
+            }
+            country_event = {
+                id = ipe_inflation.3
+            }
+        }
+        if = {
+            limit = {
+                NOT = {
+                    has_country_flag = show_inflation_events
+                }
+            }
+            remove_country_modifier = 005_inflation
+            remove_country_modifier = 01_inflation
+            remove_country_modifier = 015_inflation
+            remove_country_modifier = 02_inflation
+            remove_country_modifier = 025_inflation
+            remove_country_modifier = 03_inflation
+            remove_country_modifier = 035_inflation
+            remove_country_modifier = 04_inflation
+            remove_country_modifier = 045_inflation
+            remove_country_modifier = 05_inflation
+            remove_country_modifier = 055_inflation
+            remove_country_modifier = 06_inflation
+            remove_country_modifier = 065_inflation
+            remove_country_modifier = 07_inflation
+            remove_country_modifier = 075_inflation
+            remove_country_modifier = 08_inflation
+            remove_country_modifier = 085_inflation
+            remove_country_modifier = 09_inflation
+            remove_country_modifier = 095_inflation
+            remove_country_modifier = 1_inflation
+
+            remove_country_modifier = 005_inflation_silver
+            remove_country_modifier = 01_inflation_silver
+            remove_country_modifier = 015_inflation_silver
+            remove_country_modifier = 02_inflation_silver
+            remove_country_modifier = 025_inflation_silver
+            remove_country_modifier = 03_inflation_silver
+            remove_country_modifier = 035_inflation_silver
+            remove_country_modifier = 04_inflation_silver
+            remove_country_modifier = 045_inflation_silver
+            remove_country_modifier = 05_inflation_silver
+            remove_country_modifier = 055_inflation_silver
+            remove_country_modifier = 06_inflation_silver
+            remove_country_modifier = 065_inflation_silver
+            remove_country_modifier = 07_inflation_silver
+            remove_country_modifier = 075_inflation_silver
+            remove_country_modifier = 08_inflation_silver
+            remove_country_modifier = 085_inflation_silver
+            remove_country_modifier = 09_inflation_silver
+            remove_country_modifier = 095_inflation_silver
+            remove_country_modifier = 1_inflation_silver
+        }
+    }
+
+    option = {
+        name = ipe_inflation.6.a
+    }
+}

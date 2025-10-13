@@ -1,0 +1,21 @@
+#6722 - Mwali
+
+owner = NDZ
+controller = NDZ
+add_core = NDZ
+add_core = MWA
+culture = comorian
+religion = sunni
+capital = "Mwali"
+native_size = 40
+trade_goods = unknown
+hre = no
+base_tax = 1 
+base_production = 1
+base_manpower = 1
+native_ferocity = 4
+native_hostileness = 9
+discovered_by = east_african
+
+1500.9.1 = { discovered_by = POR } # Diego Dias
+1529.6.1 = { discovered_by = FRA } # Parmentier Brothers

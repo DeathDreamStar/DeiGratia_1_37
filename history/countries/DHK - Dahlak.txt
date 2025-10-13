@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = iqta
+technology_group = muslim
+unit_type = sub_saharan
+religion = sunni
+primary_culture = dahalik
+capital = 6123
+religious_school = shafii_school
+mercantilism = 25
+
+1444.1.1 = { # fictional
+    monarch = {
+        name = "Ahmad"
+        dynasty = "Dahlak"
+        adm = 2
+        dip = 2
+        mil = 2
+    }
+}

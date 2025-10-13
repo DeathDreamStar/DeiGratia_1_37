@@ -1,0 +1,1171 @@
+namespace = ipeTUR
+normal_or_historical_nations = yes
+
+# $YEAR$ Constantinople Earthquake
+country_event = {
+	id = ipeTUR.10
+	title = ipeTUR.10.t
+	desc = ipeTUR.10.d
+	picture = EARTHQUAKE_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		is_year = 1475
+		NOT = {
+			is_year = 1525
+		}
+		owns = 151
+	}
+
+	mean_time_to_happen = {
+		months = 300
+	}
+
+	option = { # We must leave for safety.
+		name = ipeTUR.10.a
+		ai_chance = {
+			factor = 75
+		}
+		add_legitimacy = -25
+		151 = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		add_years_of_income = -0.5
+	}
+
+	option = { # I will not go!
+		name = ipeTUR.10.b
+		ai_chance = {
+			factor = 25
+		}
+		random = {
+			chance = 25
+			kill_ruler = yes
+		}
+		151 = {
+			add_devastation = 25
+			add_permanent_province_modifier = {
+				name = earthquake
+				duration = 730
+			}
+		}
+		add_years_of_income = -0.5
+	}
+}
+
+# Manuel Palaiologos
+country_event = {
+	id = ipeTUR.11
+	title = ipeTUR.11.t
+	desc = ipeTUR.11.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		is_year = 1480
+		NOT = {
+			is_year = 1600
+		}
+		BYZ = {
+			exists = no
+		}
+		owns = 151
+		151 = {
+			is_capital = yes
+			is_core = BYZ
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+
+	option = { # We welcome Manuel Palaiologos!
+		name = ipeTUR.11.a
+		151 = {
+			remove_core = BYZ
+		}
+		add_legitimacy = 10
+		add_years_of_income = -0.1
+	}
+
+	option = { # His wishes are irrelevant.
+		name = ipeTUR.11.b
+		add_prestige = -5
+	}
+}
+
+# Cem's Ambition
+country_event = {
+	id = ipeTUR.12
+	title = ipeTUR.12.t
+	desc = ipeTUR.12.d
+	picture = CIVIL_WAR_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_global_flag = cem_rebels
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					area = rum_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = ankara_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = cukurova_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = western_cukurova_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = dulkadir_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = erzurum_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = karaman_area
+				}
+				add_core = AMS
+			}
+			every_owned_province = {
+				limit = {
+					area = north_kurdistan_area
+				}
+				add_core = AMS
+			}
+			release = AMS
+			AMS = {
+				change_religion = sunni
+				if = {
+					limit = {
+						owns = 1846
+					}
+					set_capital = 1846
+					1846 = {
+						add_building = fort_15th
+					}
+				}
+				change_government = monarchy
+				add_government_reform = ottoman_government
+				adopt_reform_progress = ROOT
+				add_historical_rival = RME
+				add_historical_rival = TEK
+				add_historical_rival = TUR
+				define_ruler = {
+					name = "Cem"
+					dynasty = "Osmanoglu"
+					adm = 2
+					dip = 4
+					mil = 4
+					age = 20
+				}
+				# define_ruler_to_general = {
+				#	fire = 1
+				#	shock = 4
+				#	manuever = 3
+				#	siege = 0
+				# }
+				if = {
+					limit = {
+						has_dlc = "Rights of Man" 
+					}
+					hidden_effect = { add_ruler_personality = bold_fighter_personality }
+				}
+				capital_scope = {
+					build_to_forcelimit = {
+						infantry = 1.6
+						cavalry = 0.4
+					}
+				}
+				random_owned_province = {
+					limit = {
+						has_port = yes
+					}
+					build_to_forcelimit = {
+						light_ship = 0.2
+						galley = 0.6
+						transport = 0.2
+					}
+				}
+				add_manpower = 15
+				add_treasury = 500
+			}
+		}
+	}
+
+	option = { # He will be destroyed!
+		name = ipeTUR.12.a
+		custom_tooltip = ipeTUR.12.a.tooltip
+		hidden_effect = {
+			every_owned_province = {
+				add_core = AMS
+			}
+		}
+		add_historical_rival = AMS
+		declare_war_with_cb = {
+			who = AMS
+			casus_belli = cb_civil_war
+		}
+	}
+}
+
+# Cem's Defeat
+country_event = {
+	id = ipeTUR.13
+	title = ipeTUR.13.t
+	desc = ipeTUR.13.d
+	picture = BATTLE_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = TUR
+		OR = {
+			AND = {
+				OR = {
+					is_in_war = {
+						attacker_leader = TUR
+						defender_leader = AMS
+					}
+					is_in_war = {
+						attacker_leader = AMS
+						defender_leader = TUR
+					}
+				}
+				AMS = {
+					capital_scope = {
+						controlled_by = ROOT
+					}
+				}
+			}
+			AMS = {
+				exists = no
+			}
+		}
+		has_global_flag = cem_rebels
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # Good riddance!
+		name = ipeTUR.13.a
+		if = {
+			limit = {
+				exists = AMS
+			}
+			inherit = AMS
+		}
+		hidden_effect = {
+			every_core_province = {
+				remove_core = AMS
+			}
+		}
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		clr_global_flag = cem_rebels
+		set_global_flag = ottoman_civil_war_possible
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						war_with = KNI
+					}
+					KNI = {
+						owns = 320
+					}
+				}
+				KNI = {
+					country_event = {
+						id = ipeTUR.39
+						days = 180
+					}
+				}
+			}
+		}
+	}
+}
+
+# The Ottoman Succession
+country_event = {
+	id = ipeTUR.14
+	title = ipeTUR.14.t
+	desc = ipeTUR.14.d
+	picture = BATTLE_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = AMS
+		TUR = {
+			capital_scope = {
+				controlled_by = ROOT
+			}
+		}
+		is_subject = no
+		has_global_flag = cem_rebels
+	}
+
+	mean_time_to_happen = {
+		days = 10
+	}
+
+	option = { # The crown goes to those who fight for it!
+		name = ipeTUR.14.a
+		inherit = TUR
+		change_tag = TUR
+		add_stability_or_adm_power = yes
+		add_legitimacy = 25
+		set_government_rank = 3
+		hidden_effect = {
+			every_core_province = {
+				remove_core = AMS
+			}
+		}
+		clr_global_flag = cem_rebels
+		set_global_flag = ottoman_civil_war_possible
+	}
+}
+
+# Cem in Rhodes
+country_event = {
+	id = ipeTUR.39
+	title = ipeTUR.39.t
+	desc = ipeTUR.39.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Ransom him off to the Ottomans.
+		name = ipeTUR.39.a
+		TUR = {
+			country_event = {
+				id = ipeTUR.40
+			}
+		}
+	}
+
+	option = { # Execute this traitor.
+		name = ipeTUR.39.b
+		add_prestige = 10
+		TUR = {
+			add_opinion = {
+				who = KNI
+				modifier = executed_cem
+			}
+		}
+	}
+}
+
+# Cem and the Knights Hospitaller
+country_event = {
+	id = ipeTUR.40
+	title = ipeTUR.39.t
+	desc = ipeTUR.40.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We must pay the ransom.
+		name = ipeTUR.40.a
+		add_treasury = -100
+		add_prestige = -10
+		hidden_effect = {
+			KNI = {
+				country_event = {
+					id = ipeTUR.41
+				}
+			}
+		}
+	}
+
+	option = { # We will not negotiate with pirates!
+		name = ipeTUR.40.b
+		custom_tooltip = ipeTUR.40.b.tooltip
+		hidden_effect = {
+			KNI = {
+				country_event = {
+					id = ipeTUR.42
+				}
+			}
+		}
+	}
+}
+
+# Cem's Ransom (Ottomans Pay)
+country_event = {
+	id = ipeTUR.41
+	title = ipeTUR.41.t
+	desc = ipeTUR.41.d
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Very well.
+		name = ipeTUR.41.a
+		add_treasury = 100
+		add_prestige = 10
+		add_truce_with = TUR
+		TUR = {
+			add_truce_with = KNI
+		}
+	}
+}
+
+# Cem's Ransom (Ottomans Refuse)
+country_event = {
+	id = ipeTUR.42
+	title = ipeTUR.41.t
+	desc = ipeTUR.42.d
+	picture = ACCUSATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipeTUR.41.a
+		custom_tooltip = ipeTUR.42.a.tooltip
+		set_global_flag = cem_comeback
+	}
+}
+
+# The Return of Cem
+country_event = {
+	id = ipeTUR.43
+	title = ipeTUR.43.t
+	desc = ipeTUR.43.d
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = TUR
+		has_global_flag = cem_comeback
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	option = { # Death to Cem!
+		name = ipeTUR.43.a
+		clr_global_flag = cem_comeback
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 3
+				leader = "Cem Osmanoglu"
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 2
+			}
+		}
+		random_owned_province = {
+			limit = {
+				is_capital = no
+			}
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# The Ottoman Throne
+country_event = {
+	id = ipeTUR.44
+	title = ipeTUR.44.t
+	desc = ipeTUR.44.d
+	picture = CIVIL_WAR_eventPicture
+
+	trigger = {
+		tag = AMS
+		TUR = {
+			exists = yes
+		}
+		is_subject = no
+		NOT = {
+			war_with = TUR
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		hidden_effect = {
+			every_core_province = {
+				remove_core = AMS
+			}
+		}
+	}
+
+	option = { # To arms!
+		name = ipeTUR.44.a
+		declare_war_with_cb = {
+			who = TUR
+			casus_belli = cb_civil_war
+		}
+		TUR = {
+			country_event = {
+				id = ipeTUR.45
+			}
+		}
+	}
+}
+
+# The Pretenders Declare War!
+country_event = {
+	id = ipeTUR.45
+	title = ipeTUR.45.t
+	desc = ipeTUR.45.d
+	picture = CIVIL_WAR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They will not escape this time!
+		name = ipeTUR.45.a
+		add_manpower = 5
+	}
+}
+
+# Greek Cores
+country_event = {
+	id = ipeTUR.47
+	title = flavor_gre.1.t
+	desc = flavor_gre.1.d
+	picture = DIPLOMACY_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				tag = GRE
+				NOT = { exists = BYZ }
+			}
+			AND = {
+				NOT = { exists = GRE }
+				NOT = { exists = BYZ }
+				NOT = { has_global_flag = greek_cores }
+				NOT = { primary_culture = greek }
+				NOT = { primary_culture = pontic_greek }
+				adm_tech = 20
+				any_owned_province = {
+					culture = greek
+					OR = {
+						area = morea_area
+						area = northern_greece_area
+						area = macedonia_area
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = {
+		name = flavor_gre.1.a
+		set_global_flag = greek_cores
+		every_province = {
+			limit = {
+				culture = greek
+				OR = {
+					continent = europe
+					continent = asia
+					continent = africa
+				}
+			}
+			add_core = ROOT
+		}
+		every_province = {
+			limit = {
+				is_core = BYZ
+			}
+			remove_core = BYZ
+		}
+		hidden_effect = {
+			every_known_country = {
+				limit = {
+					any_owned_province = {
+						OR = {
+							area = northern_greece_area
+							area = morea_area
+							area = macedonia_area
+							area = ionian_islands_area
+							area = central_greece_area
+							area = thrace_area
+							area = cyprus_area
+						}
+					}
+				}
+				set_country_flag = greek_information
+				country_event = { id = flavor_gre.1 }
+			}
+		}
+	}
+}
+
+# The Gates of Europe
+country_event = {
+	id = ipeTUR.48
+	title = ipeTUR.48.t
+	desc = ipeTUR.48.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # Bow into submission.
+		name = ipeTUR.48.a
+		ai_chance = {
+			factor = 50
+		}
+		every_owned_province = {
+			cede_province = FROM
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeTUR.49
+				}
+			}
+		}
+	}
+
+	option = { # We will resist!
+		name = ipeTUR.48.b
+		ai_chance = {
+			factor = 50
+		}
+		every_owned_province = {
+			limit = {
+				is_core = ROOT
+			}
+			add_core = FROM
+		}
+		grant_independence = yes
+		declare_war_with_cb = {
+			who = FROM
+			casus_belli = cb_independence_war
+		}
+		hidden_effect = {
+			FROM = {
+				country_event = {
+					id = ipeTUR.50
+				}
+			}
+		}
+	}
+}
+
+# The Gates of Europe
+country_event = {
+	id = ipeTUR.49
+	title = ipeTUR.48.t
+	desc = ipeTUR.49.d
+	picture = CONQUEST_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They are wise to not resist.
+		name = ipeTUR.49.a
+		tooltip = {
+			FROM = {
+				every_owned_province = {
+					cede_province = ROOT
+				}
+			}
+		}
+		add_prestige = 5
+	}
+}
+
+# The Gates of Europe
+country_event = {
+	id = ipeTUR.50
+	title = ipeTUR.48.t
+	desc = ipeTUR.50.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Serbia will be destroyed!
+		name = ipeTUR.50.a
+		tooltip = {
+			FROM = {
+				every_owned_province = {
+					limit = {
+						is_core = FROM
+					}
+					add_core = ROOT
+				}
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+}
+
+# The Fate of Greece
+country_event = {
+	id = ipeTUR.51
+	title = ipeTUR.51.t
+	desc = ipeTUR.51.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Greece is ours!
+		name = ipeTUR.51.a
+		if = {
+			limit = {
+				ATH = {
+					is_subject_of = TUR
+					NOT = {
+						num_of_cities = 8
+					}
+				}
+			}
+			ATH = {
+				every_owned_province = {
+					cede_province = TUR
+				}
+			}
+		}
+		if = {
+			limit = {
+				MOE = {
+					is_subject_of = TUR
+					NOT = {
+						num_of_cities = 8
+					}
+				}
+			}
+			MOE = {
+				every_owned_province = {
+					cede_province = TUR
+				}
+			}
+		}
+		if = {
+			limit = {
+				EPI = {
+					is_subject_of = TUR
+					NOT = {
+						num_of_cities = 8
+					}
+				}
+			}
+			EPI = {
+				every_owned_province = {
+					cede_province = TUR
+				}
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# Kiliç alayi
+country_event = {
+	id = ipeTUR.52
+	title = ipeTUR.52.t
+	desc = ipeTUR.52.d
+	picture = ASSASSINATION_eventPicture
+
+	major = yes
+
+	trigger = {
+		has_reform = ottoman_government
+		has_estate = estate_janissaries
+		NOT = {
+			estate_loyalty = {
+				estate = estate_janissaries
+				loyalty = 30
+			}
+		}
+		has_country_flag = janissary_coups_enabled
+	}
+
+	mean_time_to_happen = {
+		months = 24
+		modifier = {
+			factor = 0.5
+			NOT = {
+				estate_loyalty = {
+					estate = estate_janissaries
+					loyalty = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = {
+				estate_loyalty = {
+					estate = estate_janissaries
+					loyalty = 10
+				}
+			}
+		}
+	}
+
+	option = { # We will perhaps never escape the clutches of the Janissaries.
+		name = ipeTUR.52.a
+		if = {
+			limit = { has_heir = yes }
+			kill_heir = { allow_new_heir = no }
+		}
+		define_heir = {
+			dynasty = ROOT
+			male = yes
+			max_random_adm = 3
+			max_random_mil = 3
+			max_random_dip = 3
+		}
+		kill_ruler = yes
+		add_estate_loyalty = {
+			estate = estate_janissaries
+			loyalty = 10
+		}
+		hidden_effect = {
+			add_ruler_modifier = {
+				name = janissary_puppet
+			}
+		}
+	}
+}
+
+# Advancement of the Janissaries
+country_event = {
+	id = ipeTUR.53
+	title = ipeTUR.53.t
+	desc = ipeTUR.53.d
+	picture = MILITARY_CAMP_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_estate = estate_janissaries
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_janissaries
+				modifier = EST_VAL_JANISSARIES_DECLINES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_janissaries
+				modifier = EST_VAL_JANISSARIES_ADVANCES
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Ok.
+		name = ipeTUR.53.a
+		add_estate_influence_modifier = {
+			estate = estate_janissaries
+			desc = EST_VAL_JANISSARIES_ADVANCES
+			influence = 10
+			duration = 5475
+		}
+	}
+}
+
+# Declining Power of the Janissaries
+country_event = {
+	id = ipeTUR.54
+	title = ipeTUR.54.t
+	desc = ipeTUR.54.d
+	picture = MILITARY_CAMP_eventPicture
+	
+	trigger = {
+		has_estate = estate_janissaries
+		estate_influence = {
+			estate = estate_janissaries
+			influence = 15
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_janissaries
+				modifier = EST_VAL_JANISSARIES_DECLINES
+			}
+		}
+		NOT = {
+			has_estate_influence_modifier = {
+				estate = estate_janissaries
+				modifier = EST_VAL_JANISSARIES_ADVANCES
+			}
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = { #Ok.
+		name = ipeTUR.53.a
+		add_estate_influence_modifier = {
+			estate = estate_janissaries
+			desc = EST_VAL_JANISSARIES_DECLINES
+			influence = -10
+			duration = 5475
+		}
+	}
+}
+
+# The Janissary Revolt
+country_event = {
+	id = ipeTUR.55
+	title = ipeTUR.55.t
+	desc = ipeTUR.55.d
+	picture = REVOLUTION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = TUR
+		has_ruler_flag = mehmed_first_rule
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # Simply give the Janissaries what they demand.
+		name = ipeTUR.55.a
+		ai_chance = {
+			factor = 0
+		}
+		add_years_of_income = -1
+		set_country_flag = cem_rebellion
+		set_country_flag = return_of_murad_mission
+	}
+
+	option = { # Summon Murad to deal with them!
+		name = ipeTUR.55.b
+		ai_chance = {
+			factor = 100
+		}
+		set_country_flag = murad_returns
+		set_country_flag = return_of_murad_mission
+		capital_scope = {
+			spawn_rebels = {
+				type = pretender_rebels
+				size = 3
+			}
+		}
+		tooltip = {
+			define_ruler = {
+				name = "Murad"
+				dynasty = "Osmanoglu"
+				claim = 95
+				adm = 6
+				dip = 4
+				mil = 6
+			}
+		}
+		hidden_effect = {
+			define_heir = {
+				name = "Murad"
+				dynasty = "Osmanoglu"
+				birth_date = 1404.6.1
+				claim = 95
+				adm = 6
+				dip = 4
+				mil = 6
+			}
+			set_country_flag = mehmed_exiled
+			exile_ruler_as = { name = mehmed_is_exiled }
+			add_ruler_personality = inspiring_leader_personality
+			add_ruler_personality = conqueror_personality
+			add_ruler_personality = zealot_personality
+		}
+		define_heir = {
+			name = "Mehmed II Fatih"
+			dynasty = "Osmanoglu"
+			birth_date = 1432.3.30
+			adm = 6
+			dip = 4
+			mil = 6
+			block_disinherit = yes
+		}
+		set_heir_flag = mehmed_second_rule
+		clr_country_flag = mehmed_exiled
+		hidden_effect = {
+			add_heir_personality = conqueror_personality
+		}
+		add_estate_loyalty = {
+			estate = estate_janissaries
+			loyalty = -20
+		}
+		add_piety = -0.5
+		add_stability = 2
+	}
+	after = {
+		# define_ruler_to_general = {
+		#	fire = 4
+		#	shock = 5
+		#	manuever = 5
+		#	siege = 3
+		# }
+	}
+}
+
+# The Death of Murad II
+country_event = {
+	id = ipeTUR.56
+	title = ipeTUR.56.t
+	desc = ipeTUR.56.d
+	picture = DEATH_OF_HEIR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # He will be remembered as Ghazi.
+		name = ipeTUR.56.a
+		set_country_flag = cem_rebellion
+		317 = {
+			add_building = temple
+		}
+	}
+}
+
+# The Emirate of Mount Lebanon
+country_event = {
+	id = ipeTUR.57
+	title = ipeTUR.57.t
+	desc = ipeTUR.57.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		owns = 3555 # Beirut
+		3555 = {
+			is_core = LEB
+			religion = druze
+			NOT = {
+				is_capital_of = ROOT
+			}
+		}
+		tag = TUR
+		NOT = {
+			exists = LEB
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = LEB
+			vassalize = LEB
+			LEB = {
+				change_religion = druze
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+                        light_ship = 0.5
+                        galley = 0.5
+                    }
+                }
+				define_ruler = {
+					name = "Fahr ad-Din"
+					dynasty = "Banû Ma‘an"
+					adm = 1
+					dip = 6
+					mil = 3
+				}
+				change_government = monarchy
+				add_government_reform = iqta
+				adopt_reform_progress = ROOT
+				set_government_rank = 1
+			}
+		}
+	}
+
+	option = { # Very well.
+		name = ipeTUR.57.a
+		ai_chance = {
+			factor = 100
+		}
+		tooltip = {
+			release = LEB
+			vassalize = LEB
+		}
+	}
+
+	option = { # Play as Lebanon.
+		name = ipeTUR.57.b
+		ai_chance = {
+			factor = 0
+		}
+		switch_tag = LEB
+	}
+}

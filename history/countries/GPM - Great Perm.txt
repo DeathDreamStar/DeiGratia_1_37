@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = komi
+religion = orthodox
+technology_group = eastern
+capital = 4129	# Ust-Vym
+
+
+1444.1.1 = {
+	monarch = {
+		name = "Vasily"
+		dynasty = "Vymsky"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

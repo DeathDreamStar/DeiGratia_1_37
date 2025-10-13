@@ -1,0 +1,26 @@
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+technology_group = western
+primary_culture = ligurian
+add_accepted_culture = pontic_greek
+religion = catholic
+capital = 285 #Kaffa
+
+mercantilism = 50
+
+historical_friend = GEN
+
+1444.1.1 = {
+	monarch = {
+		name = "Consiglio Generale"
+		adm = 0
+		mil = 0
+		dip = 0
+		regent = yes
+	}
+	set_estate_privilege = estate_burghers_enforced_interfaith_dialogue
+}
+
+
+#History, currently empty.

@@ -1,0 +1,19 @@
+#6890 - Kerry
+
+owner = DMS
+controller = DMS
+culture = irish
+religion = catholic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = copper
+base_manpower = 1
+capital = "Tralee"
+is_city = yes
+add_core = DMS
+fort_15th = yes
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern

@@ -1,0 +1,3 @@
+ayutthayan_reforms = {
+	global_unrest = 2
+}

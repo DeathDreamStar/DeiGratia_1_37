@@ -1,0 +1,92 @@
+league_public_weal = {
+	potential = {
+		tag = FRA
+		NOT = { has_country_flag = had_league_public_weal }
+		is_free_or_tributary_trigger = yes
+		government = monarchy
+		normal_or_historical_nations = yes
+		uses_doom = no
+		NOT = {
+			has_country_flag = edict_of_moulins
+		}
+	}
+	
+
+	can_start = {
+		current_age = age_of_discovery
+		is_at_war = no
+		has_any_disaster = no
+		calc_true_if = {
+			all_subject_country = {
+				OR = {
+					is_subject_of_type = vassal
+					is_subject_of_type = march
+				}
+			}
+			amount = 5
+		}
+		is_subject = no
+		BUR = {
+			mission_completed = emp_bur_league_of_public_weal
+		}
+	}
+
+	can_stop = {
+		OR = {
+			has_any_disaster = yes
+			NOT = {
+				calc_true_if = {
+					all_subject_country = {
+						OR = {
+							is_subject_of_type = vassal
+							is_subject_of_type = march
+						}
+					}
+					amount = 3
+				}
+			}
+			is_subject = yes
+			NOT = { government = monarchy }
+		}
+	}
+
+	progress = {
+		modifier = {
+			factor = 25
+			BUR = {
+				mission_completed = emp_bur_league_of_public_weal
+			}
+		}
+	}	
+
+	can_end = {
+		stability = 1
+		all_subject_country = {
+			NOT = {
+				liberty_desire = 50
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = league_public_weal.tooltip
+			NOT = {
+				is_in_war = {
+					defender_leader = FRA
+					casus_belli = cb_independence_war
+				}
+			}
+		}
+	}
+
+	modifier = {
+		diplomatic_reputation = -3
+	}	
+
+	on_start = league_public_weal.1
+	on_end = league_public_weal.100
+
+	on_monthly = {
+		random_events = { 
+			100 = 0
+		}
+	}
+}

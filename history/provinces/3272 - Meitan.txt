@@ -1,0 +1,19 @@
+#3272 - Meitan
+
+owner = MNG
+controller = MNG
+add_core = MNG
+add_core = CSI
+culture = miao
+religion = animism
+capital = "Meitan"
+trade_goods = tea
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+fort_15th = yes # Hailongtun
+discovered_by = chinese
+discovered_by = nomad_group
+add_local_autonomy = 75

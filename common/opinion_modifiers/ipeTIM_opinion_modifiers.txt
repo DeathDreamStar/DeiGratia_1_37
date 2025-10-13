@@ -1,0 +1,23 @@
+loyal_to_herat = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+kermani_betrayal = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+loyal_to_ajam = {
+    opinion = 50
+    years = 25
+    yearly_decay = 2
+}
+
+supported_jahan_shah = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}

@@ -1,0 +1,22 @@
+# 4383 Ommeland - Groningen, Ommeland & Drenthe
+
+owner = UTR
+controller = UTR
+capital = "Groningen"
+is_city = yes
+culture = low_saxon
+religion = catholic
+hre = yes
+base_tax = 4
+base_production = 4
+base_manpower = 2
+trade_goods = cloth 
+add_core = UTR
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman
+add_province_triggered_modifier = kontor
+fort_15th = yes
+center_of_trade = 1
+extra_cost = 8

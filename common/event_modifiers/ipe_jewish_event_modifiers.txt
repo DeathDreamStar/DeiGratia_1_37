@@ -1,0 +1,8 @@
+# Jews in Poland
+jews_in_poland = {
+	tolerance_heathen = 2
+}
+
+roman_ghetto = {
+	local_development_cost = 0.1
+}

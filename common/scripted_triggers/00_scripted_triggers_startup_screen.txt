@@ -1,0 +1,45 @@
+#These tags use the plural form of their names
+tag_with_plural_name_trigger = {
+	OR = {
+		tag = ABD # Abdallabi
+		tag = ADE # Tahirids
+		tag = AKK
+		tag = ANU
+		tag = AZT
+		tag = BAH
+		tag = BLA
+		tag = BOA # Borana
+		tag = BRN # Barentu
+		tag = CCM
+		tag = CHG
+		tag = CHU
+		tag = CHV
+		tag = GAR # Gabra
+		tag = GED # Gedeo
+		tag = GJI # Guji
+		tag = HWW # Hawwara
+		tag = HOD
+		tag = HUR
+		tag = INC
+		tag = IRO
+		tag = JAL # Jaalin
+		tag = KAC
+		tag = KMC
+		tag = MAM
+		tag = MAR
+		tag = MSY
+		tag = MUG
+		tag = OIR
+		tag = QAR
+		tag = RAS
+		tag = RMA # Orma
+		tag = RMI # Mari
+		tag = RSU # Rasulids
+		tag = SHG # Shaigiya
+		tag = SHK # Shilluk
+		tag = SHY
+		tag = TIM
+		tag = TUR
+		tag = YAS
+	}
+}

@@ -1,0 +1,36 @@
+#3902 - Karsava
+
+owner = RIG
+controller = RIG
+add_core = RIG
+add_core = LVA
+culture = latvian
+religion = catholic
+capital = "Karsava"
+trade_goods = naval_supplies
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+
+discovered_by = western
+discovered_by = eastern
+
+
+1561.1.1 = {
+           owner = LIT
+           controller = LIT
+           add_core = LIT
+           remove_core = RIG
+} # Conquered by Lithuania
+1569.7.1 = {
+           owner = PLC
+           controller = PLC
+           add_core = PLC
+} # Union of Lublin
+1772.9.22 = {
+           owner = RUS
+           controller = RUS
+           add_core = RUS
+} # First partition of Poland

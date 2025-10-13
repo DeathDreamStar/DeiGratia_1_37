@@ -1,0 +1,80 @@
+name = "Lithuanian Civil War"
+war_goal = {
+	type = take_capital_throne
+	casus_belli = cb_claim_throne
+	tag = LIT
+}
+
+1432.1.1 = {
+	add_attacker = VOL
+	add_attacker = KIE
+
+	add_attacker = TEU
+	add_attacker = WRM
+
+	add_attacker = LIV
+	add_attacker = RIG
+	add_attacker = OSW
+	add_attacker = DRP
+	add_attacker = KUR
+	
+	add_attacker = MOL
+
+	add_attacker = GOL
+
+	add_defender = LIT
+	add_defender = VTN
+	add_defender = OKA
+	add_defender = TRB
+	add_defender = ZMG
+	add_defender = PNK
+	add_defender = SKS
+	add_defender = JGA
+	add_defender = ORY
+	add_defender = BLV
+	add_defender = MSV
+	add_defender = MSL
+
+	add_defender = POL
+	add_defender = MAZ
+	add_defender = PCK
+	add_defender = STP
+}
+
+# Creates a truce in game.
+# Conflict ended in 1435 but the agreement was that TEU/LIV recognized the POL/LIT monarch and borders were defined as status quo.
+1440.3.20 = { 
+	rem_attacker = VOL
+	rem_attacker = KIE
+
+	rem_attacker = TEU
+	rem_attacker = WRM
+
+	rem_attacker = LIV
+	rem_attacker = RIG
+	rem_attacker = OSW
+	rem_attacker = DRP
+	rem_attacker = KUR
+
+	rem_attacker = MOL
+
+	rem_attacker = GOL
+
+	rem_defender = LIT
+	rem_defender = VTN
+	rem_defender = OKA
+	rem_defender = TRB
+	rem_defender = ZMG
+	rem_defender = PNK
+	rem_defender = SKS
+	rem_defender = JGA
+	rem_defender = ORY
+	rem_defender = BLV
+	rem_defender = MSV
+	rem_defender = MSL
+
+	rem_defender = POL
+	rem_defender = MAZ
+	rem_defender = PCK
+	rem_defender = STP
+}

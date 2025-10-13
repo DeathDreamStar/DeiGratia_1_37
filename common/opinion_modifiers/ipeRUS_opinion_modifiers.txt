@@ -1,0 +1,5 @@
+proclaimed_third_rome = {
+    opinion = 50
+    years = 50
+    yearly_decay = 1
+}

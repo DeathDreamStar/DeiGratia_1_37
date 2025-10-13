@@ -1,0 +1,2 @@
+#2876 - Patagonia
+discovered_by = south_american

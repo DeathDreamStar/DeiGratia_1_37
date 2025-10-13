@@ -1,0 +1,19 @@
+#6914 - Schwiebus
+
+owner = GLG
+controller = GLG
+culture = polish
+religion = catholic
+capital = "Schwiebus"
+trade_goods = cloth
+hre = yes
+base_tax = 1
+base_production = 1
+is_city = yes 
+base_manpower = 1
+add_core = GLG
+
+discovered_by = western
+discovered_by = eastern
+discovered_by = muslim
+discovered_by = ottoman

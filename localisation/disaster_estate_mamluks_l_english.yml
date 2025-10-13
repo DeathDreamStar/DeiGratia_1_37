@@ -1,0 +1,8 @@
+﻿l_english:
+ estate_mamluks_disaster: "Mamluk Independence"
+ estate_mamluks_disaster_desc: "The Mamluks have grown so powerful that they have broken off to form a country of their own, outside of our control."
+ estate_mamluks_disaster_tooltip: "If this happens, the §YMamluks§! Estate will break free and create their own country!"
+ estate_mamluks_disaster.1.t: "The Mamluks Break Free"
+ estate_mamluks_disaster.1.d: "$MONARCH$ has allowed the Mamluks of the country to grow too powerful and now they have made their move. Their great influence over various regions of the country has allowed them to prepare to break off into an entirely new state."
+ estate_mamluks_disaster.1.a: "We should have seen this coming..."
+ estate_mamluks_disaster.1.b: "The future lies with them!"

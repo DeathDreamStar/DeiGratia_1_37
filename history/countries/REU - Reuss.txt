@@ -1,0 +1,206 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = saxon
+religion = catholic
+technology_group = western
+capital = 3972
+
+1350.1.1 = {
+	monarch = {
+		name = "Heinrich III der Ältere"
+		dynasty = "Reuss"
+		birth_date = 1310.1.1
+		DIP = 3
+		ADM = 3
+		MIL = 3
+	}
+	queen = {
+		country_of_origin = THU
+		name = "Agnes"
+		dynasty = "von Leisnig"
+		birth_date = 1312.1.1
+		death_date = 1363.2.4
+		female = yes
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+	heir = {
+		name = "Heinrich"
+		monarch_name = "Heinrich VI"
+		dynasty = "Reuss"
+		birth_date = 1340.1.1
+		death_date = 1398.12.31
+		claim = 95
+		ADM = 3
+		DIP = 3
+		MIL = 3
+	}
+}
+
+1368.8.18 = {
+	monarch = {
+		name = "Heinrich VI"
+		dynasty = "Reuss"
+		birth_date = 1355.1.1
+		ADM = 3
+		DIP = 3
+		MIL = 3
+	}
+}
+
+1375.2.14 = {
+	queen = {
+		country_of_origin = THU
+		name = "Gaudentia"
+		dynasty = "von Lobdeburg-Elsterberg"
+		birth_date = 1354.1.1
+		death_date = 1395.12.31
+		female = yes
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1410.1.1 = {
+	heir = {
+		name = "Heinrich"
+		monarch_name = "Heinrich IX"
+		dynasty = "Reuss"
+		birth_date = 1410.1.1
+		death_date = 1476.2.28
+		claim = 95
+		ADM = 3
+		DIP = 3
+		MIL = 3
+	}
+}
+
+1449.5.23 = {
+	monarch = {
+		name = "Heinrich IX"
+		dynasty = "Reuss"
+		birth_date = 1410.1.1
+		ADM = 3
+		DIP = 3
+		MIL = 3
+	}
+}
+
+1476.2.28 = {
+	monarch = {
+		name = "Heinrich XI"
+		dynasty = "Reuss"
+		birth_date = 1455.1.1
+		ADM = 3
+		DIP = 3
+		MIL = 3
+	}
+}
+
+1502.7.7 = {
+	monarch = {
+		name = "Heinrich XIII"
+		dynasty = "Reuss"
+		birth_date = 1464.1.1
+		ADM = 3
+		DIP = 3
+		MIL = 3
+	}
+}
+
+1524.1.1   = { set_country_flag = peasant_war }
+
+1526.1.1   = { clr_country_flag = peasant_war }
+
+1535.6.8 = {
+	monarch = {
+		name = "Heinrich I"
+		dynasty = "Reuss"
+		birth_date = 1506.1.1
+		ADM = 3
+		DIP = 3
+		MIL = 3
+	}
+}
+
+1535.6.8 = {
+	queen = {
+		country_of_origin = SAX
+		name = "Barbara"
+		dynasty = "von Schönfeld"
+		birth_date = 1507.1.1
+		death_date = 1580.4.30
+		female = yes
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}
+
+1543.12.12 = {
+	heir = {
+		name = "Heinrich"
+		monarch_name = "Heinrich II"
+		dynasty = "Reuss"
+		birth_date = 1543.12.12
+		death_date = 1608.5.24
+		claim = 95
+		ADM = 3
+		DIP = 3
+		MIL = 3
+	}
+}
+
+1572.3.22 = {
+	monarch = {
+		name = "Heinrich II"
+		dynasty = "Reuss"
+		birth_date = 1543.12.12
+		ADM = 3
+		DIP = 3
+		MIL = 3
+	}
+}
+
+1573.9.21 = {
+	queen = {
+		name = "Judith"
+		dynasty = "von Oettingen"
+		birth_date = 1544.10.3
+		death_date = 1600.11.4
+		female = yes
+		ADM = 2
+		DIP = 2
+		MIL = 2
+		country_of_origin = REU
+	}
+}
+
+1578.12.22 = {
+	heir = {
+		name = "Heinrich"
+		monarch_name = "Heinrich III"
+		dynasty = "Reuss"
+		birth_date = 1578.12.22
+		death_date = 1616.4.24
+		claim = 95
+		ADM = 4
+		DIP = 3
+		MIL = 3
+	}
+}
+
+1608.5.24 = {
+	monarch = {
+		name = "Heinrich III"
+		dynasty = "Reuss"
+		birth_date = 1578.12.22
+		ADM = 4
+		DIP = 3
+		MIL = 3
+	}
+}
+

@@ -1,0 +1,168 @@
+viracocha = {
+	global_institution_spread = 0.25 # god of civilization
+	technology_cost = -0.05 # taught Incas agriculture, mathematics, and astronomy
+
+	potential = { religion = inti }
+	sprite = 27
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_diplomat
+		}
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}	
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist
+		}	
+	}
+}
+
+inti_deity = {
+	legitimacy = 1 # patron of the Inca state
+	republican_tradition = 0.3
+	horde_unity = 1
+	devotion = 1
+	monarch_lifespan = 0.1 # welfare of the Sapa Inca
+
+	potential = { religion = inti }
+	sprite = 28
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+illapa = {
+	global_trade_goods_size_modifier = 0.1 # god of rain
+	hostile_attrition = 1 # god of weather
+
+	potential = { religion = inti }
+	sprite = 29
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+mama_pacha = {
+	development_cost = -0.1 # goddess of fertility
+	shock_damage = 0.1 # goddess of earthquakes
+
+	potential = { religion = inti }
+	sprite = 30
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+# # mama_sara = {
+# #	potential = { religion = inti }
+# #	sprite = 31
+# #
+# #	trigger = {}
+# 	# effect = {}
+# 	# removed_effect = {}
+# 	# ai_will_do = {
+# #		factor = 1
+# #	}
+# # }
+
+# # vichama = {
+# #	potential = { religion = inti }
+# #	sprite = 32
+# #
+# #	trigger = {}
+# 	effect = {}
+# 	removed_effect = {}
+# 	ai_will_do = {
+# #		factor = 1
+# #	}
+# # }
+
+mama_cocha = {
+	navy_tradition = 0.5 # goddess of the sea
+	sailors_recovery_speed = 0.2 # guardian of sailors
+
+	potential = { religion = inti }
+	sprite = 33
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}
+
+mama_quilla = {
+	heir_chance = 0.5 # goddess of marriage and the menstrual cycle
+	stability_cost_modifier = -0.1
+
+	potential = { religion = inti }
+	sprite = 34
+
+	trigger = {}
+	effect = {}
+	removed_effect = {}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 3
+			personality = ai_capitalist
+		}		
+		modifier = {
+			factor = 2
+			personality = ai_colonialist
+		}			
+	}
+}

@@ -1,0 +1,16 @@
+name = "Bosnian Reconquest of Trebinje"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 1831 # Trebinje
+}
+
+1444.1.1 = {
+	add_attacker = BOS
+	add_defender = HRZ
+}
+
+1446.6.1 = {
+	rem_attacker = BOS
+	rem_defender = HRZ
+}

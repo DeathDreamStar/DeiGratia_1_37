@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = aztek
+religion = nahuatl 
+technology_group = mesoamerican 
+capital = 6572
+fixed_capital = 6572
+
+1444.1.1 = {
+	monarch = {
+		name = "Toteotzin Teuctli"
+		dynasty = "Acxotlan"
+		adm = 4
+		dip = 5
+		mil = 5
+	}
+}

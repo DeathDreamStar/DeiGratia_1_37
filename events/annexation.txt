@@ -1,0 +1,2094 @@
+namespace = annexation
+
+# Collapse of the Mamluk Sultanate
+country_event = {
+	id = annexation.1
+	title = annexation.1.t
+	desc = annexation.1.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We shall rule Egypt directly.
+		name = annexation.1.a
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		add_prestige = 50
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = MAM
+				}
+			}
+			white_peace = MAM
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = MAM
+					defender_leader = ROOT
+				}
+			}
+			white_peace = MAM
+		}
+		MAM = {
+			remove_historical_rival = ROOT
+		}
+		remove_historical_rival = MAM
+		custom_tooltip = annexation.1.a.tooltip
+		hidden_effect = {
+			MAM = {
+				every_owned_province = {
+					limit = {
+						is_core = MAM
+					}
+					cede_province = ROOT
+					add_core = ROOT
+				}
+				every_owned_province = {
+					limit = {
+						NOT = {
+							is_core = MAM
+						}
+					}
+					cede_province = ROOT
+				}
+				every_core_province = {
+					limit = {
+						NOT = {
+							region = egypt_region
+							area = lower_nubia_area
+							area = dongola_area
+							area = beja_area
+							area = upper_nubia_area
+							area = sennar_area
+							area = shilluk_area
+							area = kurdufan_area
+							area = darfur_area
+						}
+					}
+					remove_core = MAM
+				}
+			}
+		}
+	}
+
+	option = { # Do not infringe on the authority of the local Mamluks.
+		name = annexation.1.b
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		add_prestige = 50
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = MAM
+				}
+			}
+			white_peace = MAM
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = MAM
+					defender_leader = ROOT
+				}
+			}
+			white_peace = MAM
+		}
+		MAM = {
+			remove_historical_rival = ROOT
+		}
+		remove_historical_rival = MAM
+		custom_tooltip = annexation.1.b.tooltip
+		hidden_effect = {
+			MAM = {
+				every_owned_province = {
+					limit = {
+						is_core = MAM
+						NOT = {
+							region = egypt_region
+							area = lower_nubia_area
+							area = dongola_area
+							area = beja_area
+							area = upper_nubia_area
+							area = sennar_area
+						}
+					}
+					cede_province = ROOT
+					add_core = ROOT
+				}
+				every_owned_province = {
+					limit = {
+						NOT = {
+							is_core = MAM
+							region = egypt_region
+							area = lower_nubia_area
+							area = dongola_area
+							area = beja_area
+							area = upper_nubia_area
+							area = sennar_area
+						}
+					}
+					cede_province = ROOT
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = vassal
+						capital_scope = {
+							NOT = {
+								region = egypt_region
+								area = lower_nubia_area
+								area = dongola_area
+								area = red_sea_coast_area
+								area = beja_area
+								area = upper_nubia_area
+								area = sennar_area
+							}
+						}
+					}
+					ROOT = {
+						vassalize = PREV
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = march
+						capital_scope = {
+							NOT = {
+								region = egypt_region
+								area = lower_nubia_area
+								area = dongola_area
+								area = red_sea_coast_area
+								area = beja_area
+								area = upper_nubia_area
+								area = sennar_area
+							}
+						}
+					}
+					ROOT = {
+						create_march = PREV
+					}
+				}
+				every_subject_country = {
+					limit = {
+						is_subject_of_type = march
+						capital_scope = {
+							OR = {
+								region = egypt_region
+								area = lower_nubia_area
+								area = dongola_area
+								area = red_sea_coast_area
+								area = beja_area
+								area = upper_nubia_area
+								area = sennar_area
+								area = shilluk_area
+								area = kurdufan_area
+								area = darfur_area
+							}
+						}
+					}
+					MAM = {
+						vassalize = PREV
+					}
+				}
+				every_core_province = {
+					limit = {
+						NOT = {
+							owned_by = MAM
+							region = egypt_region
+							area = lower_nubia_area
+							area = dongola_area
+							area = beja_area
+							area = upper_nubia_area
+							area = sennar_area
+							area = shilluk_area
+							area = kurdufan_area
+							area = darfur_area
+						}
+					}
+					remove_core = MAM
+				}
+			}
+		}
+		create_march = MAM
+		MAM = {
+			add_liberty_desire = -1000
+			add_opinion = {
+				who = ROOT
+				modifier = mamluks_allowed_to_rule
+			}
+		}
+		every_subject_country = {
+			limit = {
+				NOT = {
+					tag = MAM
+				}
+			}
+			add_liberty_desire = -100
+		}
+	}
+}
+
+# Muscovite Conquest of Novgorod
+country_event = {
+	id = annexation.2
+	title = annexation.2.t
+	desc = annexation.2.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # Bring the Novgorodian domains into the Muscovite fold!
+		name = annexation.2.a
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = NOV
+				}
+			}
+			white_peace = NOV
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = NOV
+					defender_leader = ROOT
+				}
+			}
+			white_peace = NOV
+		}
+		NOV = {
+            every_owned_province = {
+				limit = {
+					is_core = NOV
+				}
+				cede_province = ROOT
+                add_core = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = NOV
+					}
+				}
+				cede_province = ROOT
+			}
+			every_core_province = {
+				add_core = ROOT
+			}
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Demise of the Qara Qoyunlu (Aq Qoyunlu)
+country_event = {
+    id = annexation.3
+	title = annexation.3.t
+	desc = annexation.3.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+        tag = AKK
+		is_subject = no
+		war_with = QAR
+		is_neighbor_of = QAR
+        QAR = {
+			ai = yes
+			is_subject = no
+			capital_scope = {
+				controlled_by = AKK
+			}
+		}
+		NOT = {
+			has_global_flag = qara_annexed
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_global_flag = qara_annexed
+	}
+
+	option = { # The time of the White Sheep has come!
+		name = annexation.3.a
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = QAR
+				}
+			}
+			white_peace = QAR
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = QAR
+					defender_leader = ROOT
+				}
+			}
+			white_peace = QAR
+		}
+		if = {
+			limit = {
+				IRQ = {
+					is_subject_of = QAR
+				}
+			}
+			QAR = {
+				inherit = IRQ
+			}
+		}
+		QAR = {
+            every_owned_province = {
+				limit = {
+					is_core = QAR
+				}
+				cede_province = ROOT
+                add_core = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = QAR
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+		persia_region = {
+			limit = {
+				NOT = {
+					is_core = ROOT
+				}
+				NOT = {
+					is_permanent_claim = ROOT
+				}
+			}
+			add_permanent_claim = ROOT
+		}
+		if = {
+			limit = {
+				owns = 416
+			}
+			set_capital = 416
+		}
+	}
+}
+
+# The Demise of the Qara Qoyunlu (Ardabil)
+country_event = {
+	id = annexation.4
+	title = annexation.3.t
+	desc = annexation.4.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # This is the beginning of a new Persian Empire!
+		name = annexation.4.a
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = QAR
+				}
+			}
+			white_peace = QAR
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = QAR
+					defender_leader = ROOT
+				}
+			}
+			white_peace = QAR
+		}
+		if = {
+			limit = {
+				IRQ = {
+					is_subject_of = QAR
+				}
+			}
+			QAR = {
+				inherit = IRQ
+			}
+		}
+		QAR = {
+            every_owned_province = {
+				limit = {
+					is_core = QAR
+				}
+				cede_province = ROOT
+                add_core = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = QAR
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+		if = {
+			limit = {
+				owns = 416
+			}
+			set_capital = 416
+		}
+	}
+}
+
+# The Downfall of the Aq Qoyunlu
+country_event = {
+	id = annexation.5
+	title = annexation.5.t
+	desc = annexation.5.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We will become the new rulers of the Middle East!
+		name = annexation.5.a
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = AKK
+				}
+			}
+			white_peace = AKK
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = AKK
+					defender_leader = ROOT
+				}
+			}
+			white_peace = AKK
+		}
+		AKK = {
+            every_owned_province = {
+				limit = {
+					is_core = AKK
+				}
+				cede_province = ROOT
+            	add_core = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = AKK
+					}
+				}
+				cede_province = ROOT
+		    }
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+		if = {
+			limit = {
+				owns = 416
+			}
+			set_capital = 416
+		}
+	}
+}
+
+# The Crumbling of the Qara Qoyunlu
+country_event = {
+    id = annexation.6
+	title = annexation.6.t
+	desc = annexation.6.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+        tag = AKK
+		is_subject = no
+		war_with = QAR
+		is_neighbor_of = QAR
+        QAR = {
+			ai = yes
+			is_subject = no
+		}
+		NOT = {
+			has_global_flag = qara_annexed
+		}
+	}
+
+	immediate = {
+		set_global_flag = qara_annexed
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.75
+			has_heir = no
+		}
+		modifier = {
+			factor = 0.75
+			is_monarch_leader = yes
+		}
+		modifier = {
+			factor = 0.75
+			is_heir_leader = yes
+		}
+		modifier = {
+			factor = 0.85
+			NOT = { war_score = 0 }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { war_score = -25 }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { war_score = -50 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { war_score = -75 }
+		}
+	}
+
+	option = { # The time of the White Sheep has come!
+		name = annexation.3.a
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = QAR
+				}
+			}
+			white_peace = QAR
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = QAR
+					defender_leader = ROOT
+				}
+			}
+			white_peace = QAR
+		}
+		if = {
+			limit = {
+				IRQ = {
+					is_subject_of = QAR
+				}
+			}
+			QAR = {
+				inherit = IRQ
+			}
+		}
+		QAR = {
+			if = {
+				limit = {
+					has_heir = yes
+				}
+				kill_heir = { allow_new_heir = no }
+			}
+			tooltip = {
+				kill_ruler = yes
+			}
+			hidden_effect = {
+				define_ruler = {
+					regency = yes
+				}
+			}
+            every_owned_province = {
+				limit = {
+					is_core = QAR
+				}
+				cede_province = ROOT
+                add_core = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = QAR
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+		persia_region = {
+			limit = {
+				NOT = {
+					is_core = ROOT
+				}
+				NOT = {
+					is_permanent_claim = ROOT
+				}
+			}
+			add_permanent_claim = ROOT
+		}
+		if = {
+			limit = {
+				owns = 416
+			}
+			set_capital = 416
+		}
+	}
+}
+
+# The Conquest of Ajam
+country_event = {
+	id = annexation.7
+	title = annexation.7.t
+	desc = annexation.7.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # Seize the lands of Ajam!
+		name = "annexation.7.a" 
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = QOM
+				}
+			}
+			white_peace = QOM
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = QOM
+					defender_leader = ROOT
+				}
+			}
+			white_peace = QOM
+		}
+		QOM = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = QOM
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = QOM
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Fall of Delhi
+country_event = {
+	id = annexation.10
+	title = annexation.10.t
+	desc = annexation.10.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We will bring India a new dawn.
+		name = annexation.10.a
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = DLH
+				}
+			}
+			white_peace = DLH
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = DLH
+					defender_leader = ROOT
+				}
+			}
+			white_peace = DLH
+		}
+		DLH = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = DLH
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = DLH
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Fall of Jaunpur
+country_event = {
+	id = annexation.11
+	title = annexation.11.t
+	desc = annexation.11.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # Jaunpur will be a worthy addition to our domain.
+		name = annexation.11.a
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = JNP
+				}
+			}
+			white_peace = JNP
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = JNP
+					defender_leader = ROOT
+				}
+			}
+			white_peace = JNP
+		}
+		JNP = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = JNP
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = JNP
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Last of the Mushasha
+country_event = {
+	id = annexation.15
+	title = annexation.15.t
+	desc = annexation.15.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # Annex their lands into our rising empire.
+		name = annexation.15.a
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		add_prestige = 10
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = MSY
+				}
+			}
+			white_peace = MSY
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = MSY
+					defender_leader = ROOT
+				}
+			}
+			white_peace = MSY
+		}
+		MSY = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = MSY
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = MSY
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Fall of Granada
+country_event = {
+	id = annexation.17
+	title = annexation.17.t
+	desc = annexation.17.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # Seize control of the Emirate!
+		name = annexation.17.a
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = GRA
+				}
+			}
+			white_peace = GRA
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = GRA
+					defender_leader = ROOT
+				}
+			}
+			white_peace = GRA
+		}
+		GRA = {
+            every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+	}
+}
+
+# The Conquest of Iraq
+country_event = {
+	id = annexation.18
+	title = annexation.18.t
+	desc = annexation.18.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We wield the swords of Iraq!
+		name = annexation.18.a
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		add_prestige = 10
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = IRQ
+				}
+			}
+			white_peace = IRQ
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = IRQ
+					defender_leader = ROOT
+				}
+			}
+			white_peace = IRQ
+		}
+		IRQ = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = IRQ
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = IRQ
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Fall of Delhi (Sirhind)
+country_event = {
+	id = annexation.20
+	title = annexation.20.t
+	desc = annexation.20.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # Delhi will rise again!
+		name = annexation.20.a
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = DLH
+				}
+			}
+			white_peace = DLH
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = DLH
+					defender_leader = ROOT
+				}
+			}
+			white_peace = DLH
+		}
+		DLH = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = DLH
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+						is_core = DLH
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Fall of the Shirvanshahs
+country_event = {
+	id = annexation.21
+	title = annexation.21.t
+	desc = annexation.21.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # Shirvan is ours!
+		name = annexation.21.a
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		add_prestige = 10
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = SRV
+				}
+			}
+			white_peace = SRV
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = SRV
+					defender_leader = ROOT
+				}
+			}
+			white_peace = SRV
+		}
+		SRV = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = SRV
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = SRV
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Fall of Constantinople
+country_event = {
+	id = annexation.22
+	title = annexation.22.t
+	desc = annexation.22.d
+	picture = MOSQUE_HAGA_SOPHIA_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # I am Kayser-i-Rûm!
+		name = annexation.22.a
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = BYZ
+				}
+			}
+			white_peace = BYZ
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = BYZ
+					defender_leader = ROOT
+				}
+			}
+			white_peace = BYZ
+		}
+		BYZ = {
+			every_owned_province = {
+				cede_province = ROOT
+			}
+		}
+	}
+}
+
+# The Reconquest of Jaunpur
+country_event = {
+	id = annexation.23
+	title = annexation.23.t
+	desc = annexation.23.d
+	picture = BATTLE_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # Delhi is being restored.
+		name = annexation.23.a
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = JNP
+				}
+			}
+			white_peace = JNP
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = JNP
+					defender_leader = ROOT
+				}
+			}
+			white_peace = JNP
+		}
+		JNP = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = JNP
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = JNP
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Capture of Multan
+country_event = {
+	id = annexation.24
+	title = annexation.24.t
+	desc = annexation.24.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # The road to Delhi is open.
+		name = annexation.24.a
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		add_prestige = 10
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = MUL
+				}
+			}
+			white_peace = MUL
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = MUL
+					defender_leader = ROOT
+				}
+			}
+			white_peace = MUL
+		}
+		MUL = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = MUL
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = MUL
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Conquest of Bengal
+country_event = {
+	id = annexation.25
+	title = annexation.25.t
+	desc = annexation.25.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # Bengal will be the heart of an empire.
+		name = annexation.25.a
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = BNG
+				}
+			}
+			white_peace = BNG
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = BNG
+					defender_leader = ROOT
+				}
+			}
+			white_peace = BNG
+		}
+		BNG = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = BNG
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = BNG
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Conquest of Sindh
+country_event = {
+	id = annexation.26
+	title = annexation.26.t
+	desc = annexation.26.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We will restore Sindh to its former glory.
+		name = annexation.26.a
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		add_prestige = 10
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = SND
+				}
+			}
+			white_peace = SND
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = SND
+					defender_leader = ROOT
+				}
+			}
+			white_peace = SND
+		}
+		SND = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = SND
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = SND
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Conquest of Gujarat
+country_event = {
+	id = annexation.27
+	title = annexation.27.t
+	desc = annexation.27.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We will bring Gujarat more trade than ever before.
+		name = annexation.27.a
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = GUJ
+				}
+			}
+			white_peace = GUJ
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = GUJ
+					defender_leader = ROOT
+				}
+			}
+			white_peace = GUJ
+		}
+		GUJ = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = GUJ
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = GUJ
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Conquest of Malwa
+country_event = {
+	id = annexation.28
+	title = annexation.28.t
+	desc = annexation.28.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # This will allow us to move south.
+		name = annexation.28.a
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		add_prestige = 10
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = MLW
+				}
+			}
+			white_peace = MLW
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = MLW
+					defender_leader = ROOT
+				}
+			}
+			white_peace = MLW
+		}
+		MLW = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = MLW
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = MLW
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Conquest of Kashmir
+country_event = {
+	id = annexation.29
+	title = annexation.29.t
+	desc = annexation.29.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We have secured the north.
+		name = annexation.29.a
+		add_adm_power = -50
+		add_dip_power = -50
+		add_mil_power = -50
+		add_prestige = 10
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = KSH
+				}
+			}
+			white_peace = KSH
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = KSH
+					defender_leader = ROOT
+				}
+			}
+			white_peace = KSH
+		}
+		KSH = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = KSH
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = KSH
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Fall of Delhi
+country_event = {
+	id = annexation.30
+	title = annexation.20.t
+	desc = annexation.30.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We will be the new Sultans of Delhi!
+		name = annexation.30.a
+		custom_tooltip = gen_north_india_conquer_delhi.tooltip
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = DLH
+				}
+			}
+			white_peace = DLH
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = DLH
+					defender_leader = ROOT
+				}
+			}
+			white_peace = DLH
+		}
+		DLH = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = DLH
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = DLH
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+		if = {
+			limit = {
+				SRH = {
+					is_subject_of = ROOT
+					dynasty = "Lodi"
+				}
+			}
+			SRH = {
+				grant_independence = yes
+			}
+		}
+	}
+
+	after = {
+		522 = {
+			move_capital_effect = yes
+		}
+		change_tag = DLH
+		swap_non_generic_missions = yes
+		remove_non_electors_emperors_from_empire_effect = yes
+		if = {
+			limit = {
+				NOT = { government_rank = 2 }
+			}
+			set_government_rank = 2
+		}
+		add_country_modifier = {
+			name = centralization_modifier
+			duration = 3650
+		}
+		if = {
+			limit = {
+				NOT = { primary_culture = kanauji }
+			}
+			change_primary_culture = kanauji
+		}
+		delhi_doab_area = {
+			limit = {
+				NOT = { owned_by = DLH }
+				NOT = { is_core = DLH }
+			}
+			add_permanent_claim = DLH
+		}
+		upper_doab_area = {
+			limit = {
+				NOT = { owned_by = DLH }
+				NOT = { is_core = DLH }
+			}
+			add_permanent_claim = DLH
+		}
+		lower_doab_area = {
+			limit = {
+				NOT = { owned_by = DLH }
+				NOT = { is_core = DLH }
+			}
+			add_permanent_claim = DLH
+		}
+		oudh_area = {
+			limit = {
+				NOT = { owned_by = DLH }
+				NOT = { is_core = DLH }
+			}
+			add_permanent_claim = DLH
+		}
+		katehar_area = {
+			limit = {
+				NOT = { owned_by = DLH }
+				NOT = { is_core = DLH }
+			}
+			add_permanent_claim = DLH
+		}
+		sirhind_area = {
+			limit = {
+				NOT = { owned_by = DLH }
+				NOT = { is_core = DLH }
+			}
+			add_permanent_claim = DLH
+		}
+		hisar_area = {
+			limit = {
+				NOT = { owned_by = DLH }
+				NOT = { is_core = DLH }
+			}
+			add_permanent_claim = DLH
+		}
+		lahore_area = {
+			limit = {
+				NOT = { owned_by = DLH }
+				NOT = { is_core = DLH }
+			}
+			add_permanent_claim = DLH
+		}
+		sind_sagar_area = {
+			limit = {
+				NOT = { owned_by = DLH }
+				NOT = { is_core = DLH }
+			}
+			add_permanent_claim = DLH
+		}
+		jech_doab_area = {
+			limit = {
+				NOT = { owned_by = DLH }
+				NOT = { is_core = DLH }
+			}
+			add_permanent_claim = DLH
+		}
+		if = {
+			limit = {
+				has_custom_ideas = no
+				NOT = {
+					was_tag = SRH
+				}
+			}
+			country_event = { id = ideagroups.1 } #Swap Ideas
+		}
+		set_country_flag = formed_delhi
+	}
+}
+
+# The Reconquest of Bengal
+country_event = {
+	id = annexation.31
+	title = annexation.31.t
+	desc = annexation.31.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # We welcome Bengal back to the fold.
+		name = annexation.31.a
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		add_prestige = 25
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = BNG
+				}
+			}
+			white_peace = BNG
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = BNG
+					defender_leader = ROOT
+				}
+			}
+			white_peace = BNG
+		}
+		BNG = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = BNG
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = BNG
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}
+
+# The Reconquest of Multan
+country_event = {
+	id = annexation.32
+	title = annexation.32.t
+	desc = annexation.32.d
+	picture = BATTLE_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	is_triggered_only = yes
+
+	option = { # It is the gateway to India.
+		name = annexation.32.a
+		add_prestige = 10
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = ROOT
+					defender_leader = MUL
+				}
+			}
+			white_peace = MUL
+		}
+		if = {
+			limit = {
+				is_in_war = {
+					attacker_leader = MUL
+					defender_leader = ROOT
+				}
+			}
+			white_peace = MUL
+		}
+		MUL = {
+            every_owned_province = {
+				limit = {
+					is_core = ROOT
+				}
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = ROOT
+					}
+					is_core = MUL
+				}
+				add_core = ROOT
+				cede_province = ROOT
+			}
+            every_owned_province = {
+				limit = {
+					NOT = {
+						is_core = MUL
+						is_core = ROOT
+					}
+				}
+				cede_province = ROOT
+			}
+		}
+		every_subject_country = {
+			add_liberty_desire = -25
+		}
+		add_yearly_manpower = 5
+	}
+}

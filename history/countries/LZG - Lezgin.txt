@@ -1,0 +1,254 @@
+government = monarchy
+add_government_reform = iqta
+government_rank = 1
+primary_culture = lak
+religion = sunni
+technology_group = muslim
+capital = 4306
+religious_school = shafii_school
+
+#Emirate of Kura
+1405.2.18 = {
+	monarch = {
+		name = "Ilchi-Ahmad"
+		dynasty = "Kesrani"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1444.1.1 = {
+	monarch = {
+		name = "Muhammad"
+		dynasty = "Kesrani"
+		adm = 4
+		dip = 3
+		mil = 2
+	}
+}
+1471.1.1 = {
+	monarch = {
+		name = "Hasan"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1478.1.1 = {
+	monarch = {
+		name = "Ahmad"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1488.1.1 = {
+	monarch = {
+		name = "Abbas"
+		dynasty = "Kesrani"
+		adm = 0
+		dip = 3
+		mil = 4
+	}
+}
+1500.1.1 = {
+	monarch = {
+		name = "Huseyn"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1535.1.1 = {
+	monarch = {
+		name = "Eyub"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1546.1.1 = {
+	monarch = {
+		name = "Ali Sultan"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1553.1.1 = {
+	monarch = {
+		name = "Shuai"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1559.1.1 = {
+	monarch = {
+		name = "Orazo"
+		dynasty = "Kesrani"
+		adm = 1
+		dip = 0
+		mil = 6
+	}
+}
+1567.1.1 = {
+	monarch = {
+		name = "Musa"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1571.1.1 = {
+	monarch = {
+		name = "Aslan"
+		dynasty = "Kesrani"
+		adm = 0
+		dip = 3
+		mil = 3
+	}
+}
+#Tabasaran
+1578.1.1 = {
+	monarch = {
+		name = "Zichrara"
+		dynasty = "Kesrani"
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1586.1.1 = {
+	monarch = {
+		name = "Qadit"
+		dynasty = "Kesrani"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+1587.1.1 = {
+	monarch = {
+		name = "Aq Maysum"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 1
+		mil = 3
+	}
+}
+1626.1.1 = {
+	monarch = {
+		name = "Huseyn"
+		dynasty = "Kesrani"
+		adm = 1
+		dip = 5
+		mil = 1
+	}
+}
+1640.1.1 = {
+	monarch = {
+		name = "Herey"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1660.1.1 = {
+	monarch = {
+		name = "Mirza"
+		dynasty = "Kesrani"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1680.1.1 = {
+	monarch = {
+		name = "Muhammad"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1700.1.1 = {
+	monarch = {
+		name = "Murtazali"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 1
+		mil = 0
+	}
+}
+1720.1.1 = {
+	monarch = {
+		name = "Maysum"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1740.1.1 = {
+	monarch = {
+		name = "Ali Qoli"
+		dynasty = "Kesrani"
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1760.1.1 = {
+	monarch = {
+		name = "Muhammad Huseyn"
+		dynasty = "Kesrani"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1780.1.1 = {
+	monarch = {
+		name = "Sohra"
+		dynasty = "Kesrani"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1800.1.1 = {
+	monarch = {
+		name = "Shamkhal"
+		dynasty = "Kesrani"
+		adm = 0
+		dip = 3
+		mil = 1
+	}
+}
+1805.1.1 = {
+	monarch = {
+		name = "Kyrhlark Qoli"
+		dynasty = "Kesrani"
+		adm = 0
+		dip = 0
+		mil = 1
+	}
+}
+1809.1.1 = {
+	monarch = {
+		name = "Muhammad"
+		dynasty = "Kesrani"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}

@@ -1,0 +1,18 @@
+#3738 - West Breifne
+
+owner = IBR
+controller = IBR
+culture = irish
+religion = catholic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = wool
+base_manpower = 1
+capital = "Dromahair"
+is_city = yes
+add_core = IBR
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern

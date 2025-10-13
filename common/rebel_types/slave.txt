@@ -1,0 +1,284 @@
+slave_rebels = {
+
+	color = { 28 32 36 }
+
+	area = nation
+	government = republic
+	defection = none
+	independence = none
+	unit_transfer = yes
+	gfx_type = culture_province
+	will_relocate = no
+
+	resilient = no
+	reinforcing = yes
+	general = yes
+	smart = yes
+
+	infantry = 1
+	cavalry = 0
+	artillery = 0
+
+	morale = 1.1
+
+	handle_action_negotiate = no
+	handle_action_stability = yes
+	handle_action_build_core = yes
+	handle_action_send_missionary = yes		
+
+	spawn_chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = {
+				has_province_modifier = imported_slave_labor
+			}
+		}
+		modifier = {
+			factor = 2
+			is_year = 1700
+		}
+		modifier = {
+			factor = 2
+			is_year = 1740
+		}
+		modifier = {
+			factor = 2
+			is_year = 1780
+		}
+		modifier = {
+			factor = 5.0
+			owner = {
+				has_disaster = aspiration_for_liberty
+			}
+		}
+		modifier = {
+			factor = 5.0
+			owner = { has_disaster = revolution }
+		}
+		modifier = {
+			factor = 1000
+			has_province_modifier = imported_slave_labor
+		}
+	}
+
+	movement_evaluation = {
+		factor = 1
+		modifier = {
+			factor = 0.1
+			units_in_province = 1
+		}
+		modifier = {
+			factor = 0.001
+			controlled_by = REB
+		}
+		modifier = {
+			factor = 100
+			has_province_modifier = imported_slave_labor
+			NOT = {
+				controlled_by = REB
+			}
+		}
+		modifier = {
+			factor = 10
+			is_capital = yes
+		}
+	}
+
+ 	# Province Scope
+ 	siege_won_trigger = {
+		 has_province_modifier = imported_slave_labor
+		 NOT = {
+			 has_province_modifier = slave_uprising
+		 }
+ 	}
+	siege_won_effect = {
+		random = {
+			chance = 20
+			spawn_rebels = {
+				size = 1
+				type = slave_rebels
+			}
+		}
+		add_province_modifier = {
+			name = slave_uprising
+			duration = 730
+		}
+	}
+	
+	# Country scope
+	can_negotiate_trigger = {
+		always = no
+	}
+	
+	# Country scope
+	can_enforce_trigger = {
+		always = yes
+	}
+
+	demands_description = "slave_rebels_demand"
+
+	demands_enforced_effect = {
+		add_prestige = -100
+		if = {
+			limit = {
+				is_colonial_nation = yes
+			}
+			hidden_effect = {
+				overlord = {
+					country_event = {
+						id = ipe_slavery.8
+					}
+				}
+			}
+			country_event = {
+				id = ipe_slavery.12
+			}
+			grant_independence = yes
+		}
+		capital_scope = {
+			if = {
+				limit = {
+					colonial_region = colonial_mexico
+				}
+				ROOT = {
+					change_primary_culture = afro_mexican
+				}
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_the_carribean
+				}
+				ROOT = {
+					change_primary_culture = afro_antillean
+				}
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_cuba
+				}
+				ROOT = {
+					change_primary_culture = afro_cuban
+				}
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_hispaniola
+					NOT = {
+						ROOT = {
+							culture_group = iberian
+						}
+					}
+				}
+				ROOT = {
+					change_primary_culture = afro_haitian
+				}
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_hispaniola
+					ROOT = {
+						culture_group = iberian
+					}
+				}
+				ROOT = {
+					change_primary_culture = afro_dominican
+				}
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_colombia
+				}
+				ROOT = {
+					change_primary_culture = afro_colombian
+				}
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_peru
+				}
+				ROOT = {
+					change_primary_culture = afro_peruvian
+				}
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_la_plata
+				}
+				ROOT = {
+					change_primary_culture = afro_argentine
+				}
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_brazil
+				}
+				ROOT = {
+					change_primary_culture = afro_brazilian
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						colonial_region = colonial_alaska
+						colonial_region = colonial_canada
+						colonial_region = colonial_eastern_america
+						colonial_region = colonial_louisiana
+						colonial_region = colonial_california
+					}
+				}
+				ROOT = {
+					change_primary_culture = african_american
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						OR = {
+							colonial_region = colonial_alaska
+							colonial_region = colonial_canada
+							colonial_region = colonial_eastern_america
+							colonial_region = colonial_louisiana
+							colonial_region = colonial_california
+							colonial_region = colonial_mexico
+							colonial_region = colonial_the_carribean
+							colonial_region = colonial_cuba
+							colonial_region = colonial_hispaniola
+							colonial_region = colonial_colombia
+							colonial_region = colonial_la_plata
+							colonial_region = colonial_chile
+							colonial_region = colonial_peru
+							colonial_region = colonial_brazil
+						}
+					}
+				}
+				ROOT = {
+					change_primary_culture = creole
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = { 
+					government = republic
+				}
+			}
+			change_government = republic
+		}
+		add_government_reform = slave_republic
+		define_ruler = {
+			rebel = yes
+		}
+		if = {
+			limit = { has_disaster = aspiration_for_liberty }
+			end_disaster = aspiration_for_liberty
+		}
+		hidden_effect = {
+			add_country_modifier = {
+				name = just_lost_to_rebels
+				duration = 10
+				hidden = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,46 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = english
+add_accepted_culture = welsh
+religion = catholic
+capital = 3728
+fixed_capital = 3728
+
+
+1403.7.22 = {
+	monarch = {
+		name = "Humphrey"
+		dynasty = "Stafford"
+		birth_date = 1402.12.1
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+
+1424.10.1 = {
+	queen = {
+		name = "Anne"
+		dynasty = "Neville"
+		country_of_origin = ENG
+		female = yes
+		birth_date = 1408.1.1
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}
+
+1425.1.1 = {
+	heir = {
+		name = "Humphery"
+		dynasty = "Stafford"
+		birth_date = 1425.1.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}

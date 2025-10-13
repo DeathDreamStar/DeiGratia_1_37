@@ -1,0 +1,19 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = naxi
+add_accepted_culture = kham
+religion = vajrayana
+technology_group = chinese
+capital = 6835	# Yongning
+fixed_capital = 6835
+
+1423.7.31 = {
+    monarch = {
+        name = "Nanba"
+        dynasty = "A"
+        adm = 2
+        dip = 2
+        mil = 2
+    }
+}

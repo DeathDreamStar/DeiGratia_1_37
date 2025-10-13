@@ -1,0 +1,628 @@
+
+#Country effect
+mal_mansa_musa_visit_effect = {
+	trigger_switch = {
+		on_trigger = has_country_flag
+		mal_journey_to_maghreb = { 			every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = maghreb_region } }			add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+		mal_journey_to_iberia = { 			every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = iberia_region } }			add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+		mal_journey_to_france = { 			every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = france_region } }			add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+		mal_journey_to_italy = { 			every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = italy_region } }			add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+		mal_journey_to_south_germany = { 	every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = south_german_region } }	add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+		mal_journey_to_balkans = { 			every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = balkan_region } }			add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+		mal_journey_to_anatolia = { 		every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = anatolia_region } }		add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+		mal_journey_to_mashriq = { 			every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = mashriq_region } }			add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+		mal_journey_to_egypt = { 			every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = egypt_region } }			add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+		mal_journey_to_arabia = { 			every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = arabia_region } }			add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+		mal_journey_to_horn_of_africa = { 	every_country = { limit = { NOT = { has_country_flag = mal_is_already_getting_visit } capital_scope = { region = horn_of_africa_region } }	add_country_modifier = { name = mal_the_gold_inflation duration = 1825 } } }
+	}
+}
+
+#Country effect
+mal_invest_in_own_provinces_effect = {
+	trigger_switch = {
+		on_trigger = has_country_flag
+		mal_journey_to_maghreb = { 			custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = maghreb_region } }		add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+		mal_journey_to_iberia = { 			custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = iberia_region } }			add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+		mal_journey_to_france = { 			custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = france_region } }			add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+		mal_journey_to_italy = { 			custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = italy_region } }			add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+		mal_journey_to_south_germany = { 	custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = south_german_region } }	add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+		mal_journey_to_balkans = { 			custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = balkan_region } }			add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+		mal_journey_to_anatolia = { 		custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = anatolia_region } }		add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+		mal_journey_to_mashriq = { 			custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = mashriq_region } }		add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+		mal_journey_to_egypt = { 			custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = egypt_region } }			add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+		mal_journey_to_arabia = { 			custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = arabia_region } }			add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+		mal_journey_to_horn_of_africa = { 	custom_tooltip = mal_invest_in_region_tt	hidden_effect = { every_owned_province = { limit = { region = horn_of_africa_region } }	add_province_modifier = { name = mal_investing_in_own_provinces duration = 1825 }} }
+	}
+}
+
+#Country effect
+mal_travel_to_next_area = {
+	if = {
+		limit = { has_country_flag = mal_journey_to_maghreb }
+		clr_country_flag = mal_journey_to_maghreb
+		set_country_flag = mal_journey_to_iberia
+	}
+	else_if = {
+		limit = { has_country_flag = mal_journey_to_iberia }
+		clr_country_flag = mal_journey_to_iberia
+		set_country_flag = mal_journey_to_france
+	}
+	else_if = {
+		limit = { has_country_flag = mal_journey_to_france }
+		clr_country_flag = mal_journey_to_france
+		set_country_flag = mal_journey_to_italy
+	}
+	else_if = {
+		limit = { has_country_flag = mal_journey_to_italy }
+		clr_country_flag = mal_journey_to_italy
+		set_country_flag = mal_journey_to_south_germany
+	}
+	else_if = {
+		limit = { has_country_flag = mal_journey_to_south_germany }
+		clr_country_flag = mal_journey_to_south_germany
+		set_country_flag = mal_journey_to_balkans
+	}
+	else_if = {
+		limit = { has_country_flag = mal_journey_to_balkans }
+		clr_country_flag = mal_journey_to_balkans
+		set_country_flag = mal_journey_to_anatolia
+	}
+	else_if = {
+		limit = { has_country_flag = mal_journey_to_anatolia }
+		clr_country_flag = mal_journey_to_anatolia
+		set_country_flag = mal_journey_to_mashriq
+	}
+	else_if = {
+		limit = { has_country_flag = mal_journey_to_mashriq }
+		clr_country_flag = mal_journey_to_mashriq
+		set_country_flag = mal_journey_to_egypt
+	}
+	else_if = {
+		limit = { has_country_flag = mal_journey_to_egypt }
+		clr_country_flag = mal_journey_to_egypt
+		set_country_flag = mal_journey_to_arabia
+	}
+	else_if = {
+		limit = { has_country_flag = mal_journey_to_arabia }
+		clr_country_flag = mal_journey_to_arabia
+		set_country_flag = mal_journey_to_horn_of_africa
+	}
+	else_if = {
+		limit = { has_country_flag = mal_journey_to_horn_of_africa }
+		clr_country_flag = mal_journey_to_horn_of_africa
+		set_country_flag = mal_journey_to_home
+	}
+	clr_country_flag = mal_has_just_arrived
+	clr_country_flag = mal_visit_foreign_capital
+}
+
+#Country effect
+mal_select_country_for_region = {
+	trigger_switch = {
+		on_trigger = has_country_flag
+		mal_journey_to_maghreb = { 			maghreb_region = {			discover_country = ROOT } select_biggest_country_of_region = { region = maghreb_region } }
+		mal_journey_to_iberia = { 			iberia_region = {			discover_country = ROOT } select_biggest_country_of_region = { region = iberia_region } }
+		mal_journey_to_france = { 			france_region = {			discover_country = ROOT } select_biggest_country_of_region = { region = france_region } }
+		mal_journey_to_italy = { 			italy_region = {			discover_country = ROOT } select_biggest_country_of_region = { region = italy_region } }
+		mal_journey_to_south_germany = { 	south_german_region = {		discover_country = ROOT } select_biggest_country_of_region = { region = south_german_region } }
+		mal_journey_to_balkans = { 			balkan_region = {			discover_country = ROOT } select_biggest_country_of_region = { region = balkan_region } }
+		mal_journey_to_anatolia = { 		anatolia_region = {			discover_country = ROOT } select_biggest_country_of_region = { region = anatolia_region } }
+		mal_journey_to_mashriq = { 			mashriq_region = {			discover_country = ROOT } select_biggest_country_of_region = { region = mashriq_region } }
+		mal_journey_to_egypt = { 			egypt_region = {			discover_country = ROOT } select_biggest_country_of_region = { region = egypt_region } }
+		mal_journey_to_arabia = { 			arabia_region = {			discover_country = ROOT } select_biggest_country_of_region = { region = arabia_region } }
+		mal_journey_to_horn_of_africa = { 	horn_of_africa_region = {	discover_country = ROOT } select_biggest_country_of_region = { region = horn_of_africa_region } }
+	}
+}
+
+# This file contains all effects which are are needed for dynamic effects, but have more than 512 characters in total.
+# It also has the dynamic effect itself too.
+#Use insight_tooltip = INSIGHT_JUST_TOOLTIP if you don't want to have anything specific
+country_event_with_insight = {
+	country_event = {
+		id = $id$
+		[[days] days = $days$]
+		[[random] random = $random$]
+		[[tooltip] tooltip = $tooltip$]
+	}
+	custom_tooltip = EVENT_INSIGHT_INTRO
+	custom_tooltip = $insight_tooltip$
+	[[effect_tooltip] tooltip = { $effect_tooltip$ }]
+}
+
+# "Simple" as in "Do not put too many characters in the input argument or else it will not work"
+# This serves as both an useful effect for small dynamic mission rewards
+# And as a reminder how the template for the dynamic mission rewards should look like
+
+# Use this if you want the rewards / triggers to be exclusive
+# This means if a AND b are fulfilled then the player gets only reward from a
+# IMPORTANT: They do NOT fire events for some reason.
+simple_dynamic_effect = {
+	custom_tooltip = $first_custom_tooltip$
+	if = {
+		limit = {
+			$first_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$first_effect$
+	}
+	custom_tooltip = mission_alternatively_tt
+	[[second_custom_tooltip] custom_tooltip = $second_custom_tooltip$ ]
+	if = {
+		limit = {
+			$second_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$second_effect$
+	}
+	hidden_effect = {
+		if = {
+			limit = { $first_limit$ }
+			$first_effect$
+		}
+		else = {
+			$second_effect$
+		}
+	}
+}
+
+
+# "Complex" as in "if you need this effect then you should rethink your mission reward"
+# Supports up to 10 dynamic effects
+# Will probably result in a grocery list when you hover over the effects though
+complex_dynamic_effect = {
+	custom_tooltip = $first_custom_tooltip$
+	if = {
+		limit = {
+			$first_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$first_effect$
+	}
+
+	[[second_custom_tooltip] 
+	custom_tooltip = mission_alternatively_tt
+	custom_tooltip = $second_custom_tooltip$
+	if = {
+		limit = {
+			$second_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$second_effect$
+	}
+	]
+
+	[[third_custom_tooltip] 
+	custom_tooltip = mission_alternatively_tt
+	custom_tooltip = $third_custom_tooltip$
+	if = {
+		limit = {
+			$third_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$third_effect$
+	}
+	]
+
+	[[fourth_custom_tooltip] 
+	custom_tooltip = mission_alternatively_tt
+	custom_tooltip = $fourth_custom_tooltip$
+	if = {
+		limit = {
+			$fourth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$fourth_effect$
+	}
+	]
+
+	[[fifth_custom_tooltip] 
+	custom_tooltip = mission_alternatively_tt
+	custom_tooltip = $fifth_custom_tooltip$
+	if = {
+		limit = {
+			$fifth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$fifth_effect$
+	}
+	]
+
+	[[sixth_custom_tooltip] 
+	custom_tooltip = mission_alternatively_tt
+	custom_tooltip = $sixth_custom_tooltip$
+	if = {
+		limit = {
+			$sixth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$sixth_effect$
+	}
+	]
+
+	[[seventh_custom_tooltip] 
+	custom_tooltip = mission_alternatively_tt
+	custom_tooltip = $seventh_custom_tooltip$
+	if = {
+		limit = {
+			$seventh_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$seventh_effect$
+	}
+	]
+
+	[[eighth_custom_tooltip] 
+	custom_tooltip = mission_alternatively_tt
+	custom_tooltip = $eighth_custom_tooltip$
+	if = {
+		limit = {
+			$eighth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$eighth_effect$
+	}
+	]
+
+	[[nineth_custom_tooltip] 
+	custom_tooltip = mission_alternatively_tt
+	custom_tooltip = $nineth_custom_tooltip$
+	if = {
+		limit = {
+			$nineth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$nineth_effect$
+	}
+	]
+
+	[[tenth_custom_tooltip] 
+	custom_tooltip = mission_alternatively_tt
+	custom_tooltip = $tenth_custom_tooltip$
+	if = {
+		limit = {
+			$tenth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$tenth_effect$
+	}
+	]
+
+	hidden_effect = {
+		if = {
+			limit = { $first_limit$ }
+			$first_effect$
+		}
+		[[second_custom_tooltip] 
+		else_if = {
+			limit = { $second_limit$ }
+			$second_effect$
+		}
+		]
+		[[third_custom_tooltip] 
+		else_if = {
+			limit = { $third_limit$ }
+			$third_effect$
+		}
+		]
+		[[fourth_custom_tooltip] 
+		else_if = {
+			limit = { $fourth_limit$ }
+			$fourth_effect$
+		}
+		]
+		[[fifth_custom_tooltip] 
+		else_if = {
+			limit = { $fifth_limit$ }
+			$fifth_effect$
+		}
+		]
+		[[sixth_custom_tooltip] 
+		else_if = {
+			limit = { $sixth_limit$ }
+			$sixth_effect$
+		}
+		]
+		[[seventh_custom_tooltip] 
+		else_if = {
+			limit = { $seventh_limit$ }
+			$seventh_effect$
+		}
+		]
+		[[eigth_custom_tooltip] 
+		else_if = {
+			limit = { $eigth_limit$ }
+			$eigth_effect$
+		}
+		]
+		[[nineth_custom_tooltip] 
+		else_if = {
+			limit = { $nineth_limit$ }
+			$nineth_effect$
+		}
+		]
+		[[tenth_custom_tooltip] 
+		else_if = {
+			limit = { $tenth_limit$ }
+			$tenth_effect$
+		}
+		]
+	}
+}
+
+# Use this if you want the rewards / triggers to be additive
+# This means if a AND b are fulfilled then the player gets both
+complex_dynamic_effect_without_alternative = {
+	custom_tooltip = $first_custom_tooltip$
+	if = {
+		limit = {
+			$first_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$first_effect$
+	}
+
+	[[second_custom_tooltip] 
+	custom_tooltip = $second_custom_tooltip$
+	if = {
+		limit = {
+			$second_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$second_effect$
+	}
+	]
+
+	[[third_custom_tooltip] 
+	custom_tooltip = $third_custom_tooltip$
+	if = {
+		limit = {
+			$third_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$third_effect$
+	}
+	]
+
+	[[fourth_custom_tooltip] 
+	custom_tooltip = $fourth_custom_tooltip$
+	if = {
+		limit = {
+			$fourth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$fourth_effect$
+	}
+	]
+
+	[[fifth_custom_tooltip] 
+	custom_tooltip = $fifth_custom_tooltip$
+	if = {
+		limit = {
+			$fifth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$fifth_effect$
+	}
+	]
+
+	[[sixth_custom_tooltip] 
+	custom_tooltip = $sixth_custom_tooltip$
+	if = {
+		limit = {
+			$sixth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$sixth_effect$
+	}
+	]
+
+	[[seventh_custom_tooltip] 
+	custom_tooltip = $seventh_custom_tooltip$
+	if = {
+		limit = {
+			$seventh_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$seventh_effect$
+	}
+	]
+
+	[[eighth_custom_tooltip] 
+	custom_tooltip = $eighth_custom_tooltip$
+	if = {
+		limit = {
+			$eighth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$eighth_effect$
+	}
+	]
+
+	[[nineth_custom_tooltip] 
+	custom_tooltip = $nineth_custom_tooltip$
+	if = {
+		limit = {
+			$nineth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$nineth_effect$
+	}
+	]
+
+	[[tenth_custom_tooltip] 
+	custom_tooltip = $tenth_custom_tooltip$
+	if = {
+		limit = {
+			$tenth_limit$
+		}
+		custom_tooltip = BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = BONUS_REWARD_NO }
+	tooltip = {
+		$tenth_effect$
+	}
+	]
+
+	[[combined_effect]
+	if = {
+		limit = {
+			$first_limit$
+			$second_limit$
+			$third_limit$
+			$fourth_limit$
+			$fifth_limit$
+			$sixth_limit$
+			$seventh_limit$
+			$eigth_limit$
+			$nineth_limit$
+			$tenth_limit$
+		}
+		custom_tooltip = COMBINED_BONUS_REWARD_YES
+	}
+	else = { custom_tooltip = COMBINED_BONUS_REWARD_NO }
+	tooltip = {
+		$combined_effect$
+	}
+	]
+
+	hidden_effect = {
+		if = {
+			limit = { $first_limit$ }
+			$first_effect$
+		}
+		[[second_custom_tooltip] 
+		if = {
+			limit = { $second_limit$ }
+			$second_effect$
+		}
+		]
+		[[third_custom_tooltip] 
+		if = {
+			limit = { $third_limit$ }
+			$third_effect$
+		}
+		]
+		[[fourth_custom_tooltip] 
+		if = {
+			limit = { $fourth_limit$ }
+			$fourth_effect$
+		}
+		]
+		[[fifth_custom_tooltip] 
+		if = {
+			limit = { $fifth_limit$ }
+			$fifth_effect$
+		}
+		]
+		[[sixth_custom_tooltip] 
+		if = {
+			limit = { $sixth_limit$ }
+			$sixth_effect$
+		}
+		]
+		[[seventh_custom_tooltip] 
+		if = {
+			limit = { $seventh_limit$ }
+			$seventh_effect$
+		}
+		]
+		[[eigth_custom_tooltip] 
+		if = {
+			limit = { $eigth_limit$ }
+			$eigth_effect$
+		}
+		]
+		[[nineth_custom_tooltip] 
+		if = {
+			limit = { $nineth_limit$ }
+			$nineth_effect$
+		}
+		]
+		[[tenth_custom_tooltip] 
+		if = {
+			limit = { $tenth_limit$ }
+			$tenth_effect$
+		}
+		]
+		[[combined_effect] 
+		if = {
+			limit = {
+				$first_limit$
+				$second_limit$
+				$third_limit$
+				$fourth_limit$
+				$fifth_limit$
+				$sixth_limit$
+				$seventh_limit$
+				$eigth_limit$
+				$nineth_limit$
+				$tenth_limit$
+			}
+			$combined_effect$
+		}
+		]
+	}
+}

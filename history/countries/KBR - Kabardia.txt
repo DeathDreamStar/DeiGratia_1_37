@@ -1,0 +1,23 @@
+# KBR - Kabardia
+
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+primary_culture = circassian
+religion = orthodox
+technology_group = eastern
+capital = 2197
+
+1444.1.1 = {
+	monarch = {
+		name = "Discheshu"
+		dynasty = "Verzacht"
+		adm = 1
+		dip = 3
+		mil = 2
+	}
+}
+
+1700.1.1 = {
+	religion = sunni
+}

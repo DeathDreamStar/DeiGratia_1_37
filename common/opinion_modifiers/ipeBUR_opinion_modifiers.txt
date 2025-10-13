@@ -1,0 +1,71 @@
+broke_the_treaty_of_arras = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+loyal_to_france = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+betrayed_burgundy = {
+    opinion = -100
+    years = 50
+    yearly_decay = 2
+}
+
+exchanged_pleasantries = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}
+
+pawned_further_austria = {
+	opinion = 50
+	years = 25
+	yearly_decay = 2
+}
+
+kept_further_austria = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}
+
+refused_right_of_repurchase = {
+	opinion = -200
+	years = 100
+	yearly_decay = 2
+}
+
+supported_lotharingia = {
+	opinion = 200
+	years = 100
+	yearly_decay = 1
+}
+
+supported_lotharingia_fra = {
+	opinion = -200
+	years = 100
+	yearly_decay = 1
+}
+
+denied_lotharingia = {
+	opinion = -100
+	years = 50
+	yearly_decay = 2
+}
+
+helped_in_feud = {
+	opinion = 50
+	years = 25
+	yearly_decay = 2
+}
+
+interfered_in_feud = {
+	opinion = -50
+	years = 25
+	yearly_decay = 2
+}

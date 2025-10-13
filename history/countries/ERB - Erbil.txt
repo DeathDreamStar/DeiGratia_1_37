@@ -1,0 +1,138 @@
+government = tribal
+add_government_reform = tribal_federation
+government_rank = 1
+primary_culture = kurdish
+religion = sunni
+technology_group = muslim
+capital = 4293
+fixed_capital = 4293
+religious_school = shafii_school
+
+#Abbasid Cadets
+1335.12.1 = {
+	monarch = {
+		name = "Kulos"
+		dynasty = "Soran"
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}
+1375.1.1 = {
+	monarch = {
+		name = "Isa"
+		dynasty = "Soran"
+		adm = 3
+		dip = 4
+		mil = 3
+	}
+}
+1415.1.1 = {
+	monarch = {
+		name = "‘Alî"
+		dynasty = "Soran"
+		adm = 2
+		dip = 2
+		mil = 0
+	}
+}
+1455.1.1 = {
+	monarch = {
+		name = "Budak"
+		dynasty = "Soran"
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1495.1.1 = {
+	monarch = {
+		name = "Saif ad-Dîn"
+		dynasty = "Soran"
+		adm = 1
+		dip = 0
+		mil = 0
+	}
+}
+1535.1.1 = {
+	monarch = {
+		name = "Saidi"
+		dynasty = "Soran"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1570.1.1 = {
+	monarch = {
+		name = "Saif ad-Dîn"
+		dynasty = "Soran"
+		adm = 2
+		dip = 1
+		mil = 0
+	}
+}
+1605.1.1 = {
+	monarch = {
+		name = "Kulos"
+		dynasty = "Soran"
+		adm = 0
+		dip = 1
+		mil = 3
+	}
+}
+1640.1.1 = {
+	monarch = {
+		name = "Budak"
+		dynasty = "Soran"
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+1675.1.1 = {
+	monarch = {
+		name = "Sulaimân"
+		dynasty = "Soran"
+		adm = 2
+		dip = 1
+		mil = 0
+	}
+}
+1710.1.1 = {
+	monarch = {
+		name = "‘Alî"
+		dynasty = "Soran"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1745.1.1 = {
+	monarch = {
+		name = "Shkali"
+		dynasty = "Soran"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1780.1.1 = {
+	monarch = {
+		name = "Sulaimân"
+		dynasty = "Soran"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1816.1.1 = {
+	monarch = {
+		name = "Khanzad"
+		dynasty = "Soran"
+		female = yes
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}

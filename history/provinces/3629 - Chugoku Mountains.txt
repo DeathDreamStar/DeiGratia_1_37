@@ -1,0 +1,3 @@
+#3629 - Chugoku Mountains
+
+discovered_by = chinese

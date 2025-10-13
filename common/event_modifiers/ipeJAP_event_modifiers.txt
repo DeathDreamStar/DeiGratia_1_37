@@ -1,0 +1,49 @@
+enryaku_ji = {
+	local_defensiveness = 0.25
+	local_tax_modifier = -0.1
+	local_missionary_strength = -0.05
+}
+
+tendai_influences = {
+	tolerance_own = 1
+	tolerance_heretic = 1
+	global_missionary_strength = 0.02
+}
+
+sohei_traditions = {
+	discipline = 0.025
+}
+
+treaty_of_gyehae = {
+	trade_efficiency = 0.20
+	trade_steering = 0.20
+}
+
+fudai_strengthened = {
+	adm_tech_cost_modifier = -0.1
+	global_tax_modifier = 0.1
+}
+
+tozama_strengthened = {
+	dip_tech_cost_modifier = -0.1
+	trade_efficiency = 0.1
+}
+
+shinpan_daimyo = {
+	legitimacy = 1
+	heir_chance = 0.5
+}
+
+centralization_of_the_shogunate = {
+	legitimacy = 1
+	yearly_absolutism = 1
+}
+
+stabilization_of_the_shogunate = {
+	legitimacy = 1
+	stability_cost_modifier = -0.1
+}
+
+decentralization_of_the_shogunate = {
+	diplomatic_reputation = 2
+}

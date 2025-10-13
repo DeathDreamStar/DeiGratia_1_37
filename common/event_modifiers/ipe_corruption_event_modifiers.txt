@@ -1,0 +1,79 @@
+500_corruption = {
+	yearly_corruption = 0.25
+}
+
+1000_corruption = {
+	yearly_corruption = 0.5
+}
+
+1500_corruption = {
+	yearly_corruption = 0.75
+}
+
+2000_corruption = {
+	yearly_corruption = 1
+}
+
+2500_corruption = {
+	yearly_corruption = 1.25
+}
+
+3000_corruption = {
+	yearly_corruption = 1.5
+}
+
+3500_corruption = {
+	yearly_corruption = 1.75
+}
+
+4000_corruption = {
+	yearly_corruption = 2
+}
+
+4500_corruption = {
+	yearly_corruption = 2.25
+}
+
+5000_corruption = {
+	yearly_corruption = 2.5
+}
+
+5500_corruption = {
+	yearly_corruption = 2.75
+}
+
+6000_corruption = {
+	yearly_corruption = 3
+}
+
+6500_corruption = {
+	yearly_corruption = 3.25
+}
+
+7000_corruption = {
+	yearly_corruption = 3.5
+}
+
+7500_corruption = {
+	yearly_corruption = 3.75
+}
+
+8000_corruption = {
+	yearly_corruption = 4
+}
+
+8500_corruption = {
+	yearly_corruption = 4.25
+}
+
+9000_corruption = {
+	yearly_corruption = 4.5
+}
+
+9500_corruption = {
+	yearly_corruption = 4.75
+}
+
+10000_corruption = {
+	yearly_corruption = 5
+}

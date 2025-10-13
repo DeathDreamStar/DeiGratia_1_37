@@ -1,0 +1,18 @@
+#3254 - Hechi
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = zhuang
+religion = animism
+capital = "Hechi"
+trade_goods = livestock
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = CGS
+add_local_autonomy = 75

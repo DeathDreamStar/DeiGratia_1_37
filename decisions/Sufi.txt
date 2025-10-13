@@ -1,0 +1,55 @@
+country_decisions = {
+	
+	join_sufi_order = {
+		potential = {
+			NOT = { has_ruler_modifier = sect_practices }
+			NOT = { has_ruler_modifier = joined_sufi_order }
+			religion_group = muslim
+		}
+		allow = {
+			adm = 3
+			has_regency = no
+			is_female = no
+		}
+		effect = {	
+			add_ruler_modifier = {
+				name = joined_sufi_order
+				duration = -1
+			}
+			add_piety = -0.10
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { 
+				piety = -0.1
+				factor = 0
+			}
+		}
+	}
+
+	tolerate_sect_practices = {
+		potential = {
+			NOT = { has_ruler_modifier = sect_practices }
+			NOT = { has_ruler_modifier = tolerated_sect_practices }
+			religion_group = muslim
+		}
+		allow = {
+			dip = 3
+			has_regency = no
+		}
+		effect = {	
+			add_ruler_modifier = {
+				name = tolerated_sect_practices
+				duration = -1
+			}
+			add_piety = -0.10
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { 
+				piety = -0.1
+				factor = 0
+			}			
+		}
+	}
+}

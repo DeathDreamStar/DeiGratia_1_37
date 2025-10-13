@@ -1,0 +1,19 @@
+#6874 - Monmouthshire
+
+owner = MNM
+controller = MNM
+culture = welsh
+religion = catholic
+hre = no
+base_tax = 1
+base_production = 1
+trade_goods = wool
+base_manpower = 1
+capital = "Monmouth"
+is_city = yes
+add_core = MNM
+fort_15th = yes
+discovered_by = western
+discovered_by = muslim
+discovered_by = ottoman
+discovered_by = eastern

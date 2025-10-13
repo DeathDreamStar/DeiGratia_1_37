@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+technology_group = indian
+religion = hinduism
+primary_culture = oriya
+capital = 4450	# Mayurbhanj
+fixed_capital = 4450
+
+1444.1.1 = {
+	monarch = { # fictional
+		name = "Adi"
+		dynasty = "Bhanj"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

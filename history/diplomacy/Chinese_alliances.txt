@@ -1,0 +1,658 @@
+# Chinese alliance
+alliance = {
+	first = CSH
+	second = CXI
+	start_date = 1643.1.1
+	end_date = 1645.12.31
+}
+
+alliance = {
+	first = CZH
+	second = MNG
+	start_date = 1673.1.1
+	end_date = 1681.12.31
+}
+
+#Manchu vassal
+vassal = {
+	first = QNG
+	second = CZH
+	start_date = 1662.1.1
+	end_date = 1672.12.31
+}
+
+#Manchu vassal
+vassal = {
+	first = MCH
+	second = KOR
+	start_date = 1637.1.1
+	end_date = 1645.6.30
+}
+
+#Manchu vassal
+vassal = {
+	first = QNG
+	second = KOR
+	start_date = 1645.7.1
+	end_date = 1895.1.1
+}
+
+# Seven-Year war
+alliance = {
+	first = MNG
+	second = KOR
+	start_date = 1593.1.1
+	end_date = 1598.1.1
+}
+
+# Tibet and Manchu
+vassal = {
+	first = QNG
+	second = UTS
+	start_date = 1724.1.1
+	end_date = 1792.11.1
+}
+
+vassal = {
+	first = QNG
+	second = KAM
+	start_date = 1724.1.1
+	end_date = 1776.1.1
+}
+
+# Mongol Khanate and the Oirats
+vassal = {
+	first = OIR
+	second = KHA
+	start_date = 1434.1.1
+	end_date = 1454.1.1
+}
+
+vassal = {
+	first = OIR
+	second = HMI
+	start_date = 1435.1.1
+	end_date = 1455.1.1
+}
+
+vassal = {
+	first = OIR
+	second = MHX
+	start_date = 1447.1.1
+	end_date = 1455.1.1
+}
+
+vassal = {
+	first = OIR
+	second = MJZ
+	start_date = 1447.1.1
+	end_date = 1455.1.1
+}
+
+#Ming Tributaries
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = KOR
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = RYU
+	start_date = 1444.1.1
+	end_date = 1609.4.5
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = DAI
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = AYU
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = SYG
+	start_date = 1444.1.1
+	end_date = 1472.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = CHA
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = LXA
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = LNA
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = KHM
+	start_date = 1444.1.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = MMA
+	start_date = 1449.3.1
+	end_date = 1644.4.22
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = MLC
+	start_date = 1444.1.1
+	end_date = 1511.9.10
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = PGS
+	start_date = 1444.1.1
+	end_date = 1521.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = TDO
+	start_date = 1444.1.1
+	end_date = 1521.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = MJZ
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = MJZ
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = MHX
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = MHX
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = HFA
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = HFA
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = ULA
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = ULA
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = YHE
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = YHE
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = DON
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = DON
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = JCN
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = JCN
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = WGY
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = WGY
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = JUS
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = JUS
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = NYN
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = NYN
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = YLU
+	start_date = 1444.1.1
+	end_date = 1447.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = YLU
+	start_date = 1455.1.1
+	end_date = 1618.1.1
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = CEY
+	start_date = 1412.1.1
+	end_date = 1467.1.1
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = GUG
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = PHA
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = KAM
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = LTS
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = QDO
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = CKL
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = NGC
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = CNE
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = LDK
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = SKD
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = GNT
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = HOR
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = PWO
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = RLU
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = TSG
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = BMT
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = SKK
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = PHD
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "guard"
+	first = MNG
+	second = LWA
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = "tributary_state"
+	first = MNG
+	second = MNA
+	start_date = 1444.1.1
+	end_date = 1644.4.25
+}
+
+dependency = {
+	subject_type = tributary_state
+	first = MNG
+	second = KOC
+	start_date = 1444.1.1
+	end_date = 1503.1.1
+}
+
+#Chagatai Subject
+vassal = {
+	first = CHG
+	second = KAS
+	start_date = 1390.1.1
+	end_date = 1462.1.1
+}
+
+# Ashikaga Tributary
+dependency = {
+	subject_type = tributary_state
+	first = MNG
+	second = ASK
+	start_date = 1444.1.1
+	end_date = 1573.9.2
+}
+
+dependency = {
+	subject_type = tributary_state
+	first = MNG
+	second = HSE
+	start_date = 1443.1.1
+	end_date = 1644.4.22
+}
+
+vassal = {
+	first = MNG
+	second = CBZ
+	start_date = 1372.1.1
+	end_date = 1602.1.1
+}
+vassal = {
+	first = MNG
+	second = CSD
+	start_date = 1372.1.1
+	end_date = 1630.1.1
+}
+vassal = {
+	first = MNG
+	second = CSX
+	start_date = 1372.1.1
+	end_date = 1662.1.1
+}
+vassal = {
+	first = MNG
+	second = CLJ
+	start_date = 1382.1.1
+	end_date = 1662.1.1
+}
+vassal = {
+	first = MNG
+	second = CYO
+	start_date = 1382.1.1
+	end_date = 1662.1.1
+}
+vassal = {
+	first = MNG
+	second = CSZ
+	start_date = 1382.1.1
+	end_date = 1662.1.1
+}
+vassal = {
+	first = MNG
+	second = CYN
+	start_date = 1381.1.1
+	end_date = 1662.1.1
+}
+
+alliance = {
+	first = LWA
+	second = PHD
+	start_date = 1444.1.1
+	end_date = 1609.1.1
+}
+
+alliance = {
+	first = JML
+	second = DNG
+	start_date = 1444.1.1
+	end_date = 1786.1.1
+}
+
+alliance = {
+	first = JML
+	second = DTI
+	start_date = 1444.1.1
+	end_date = 1786.1.1
+}
+
+alliance = {
+	first = DNG
+	second = DTI
+	start_date = 1444.1.1
+	end_date = 1786.1.1
+}
+
+vassal = {
+    first = DAI
+    second = MPH
+    start_date = 1434.1.1
+    end_date = 1478.1.1
+}
+
+alliance = {
+    first = LXA
+    second = MPH
+    start_date = 1434.1.1
+    end_date = 1478.1.1
+}

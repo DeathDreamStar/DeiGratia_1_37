@@ -1,0 +1,353 @@
+namespace = ipeVIJ
+normal_or_historical_nations = yes
+
+# The Nayaks of Gingee
+country_event = {
+	id = ipeVIJ.1
+	title = ipeVIJ.1.t
+	desc = ipeVIJ.1.d
+	picture = CITY_VIEW_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+	
+	trigger = {
+		tag = VIJ
+		any_owned_province = {
+			is_core = GNG
+			is_capital = no
+		}
+		NOT = {
+			exists = GNG
+		}
+		is_year = 1500
+		has_reform = nayankara_reform
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { # They will make loyal subjects.
+		name = ipeVIJ.1.a 
+		ai_chance = {
+			factor = 90
+		}
+		release = GNG
+		add_adm_power = 100
+		hidden_effect = {
+			GNG = {
+				change_religion = hinduism
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 0.8
+						cavalry = 0.2
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							light_ship = 0.5
+							transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Muthialu"
+					dynasty = "Tubaki"
+					adm = 2
+					dip = 2
+					mil = 3
+				}
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+		}
+		create_subject = {
+			subject_type = vassal
+			subject = GNG
+		}
+		GNG = {
+			add_opinion = {
+				who = ROOT
+				modifier = released_vassal
+			}
+		}
+	}
+
+	option = { # Gingee will remain under our control.
+		name = ipeVIJ.1.b
+		ai_chance = {
+			factor = 10
+		}
+		every_subject_country = {
+			add_liberty_desire = 50
+		}
+		random_owned_province = {
+			limit = {
+				is_core = GNG
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				friend = GNG
+				size = 1
+				leader = "Muthialu Tubaki"
+			}
+		}
+	}
+}
+
+# The Nayaks of Tanjore
+country_event = {
+	id = ipeVIJ.2
+	title = ipeVIJ.2.t
+	desc = ipeVIJ.2.d
+	picture = CITY_VIEW_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+	
+	trigger = {
+		tag = VIJ
+		any_owned_province = {
+			is_core = TNJ
+			is_capital = no
+		}
+		NOT = {
+			exists = TNJ
+		}
+		is_year = 1500
+		has_reform = nayankara_reform
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { # They will make loyal subjects.
+		name = ipeVIJ.1.a 
+		ai_chance = {
+			factor = 90
+		}
+		release = TNJ
+		add_adm_power = 100
+		hidden_effect = {
+			TNJ = {
+				change_religion = hinduism
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 0.8
+						cavalry = 0.2
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							light_ship = 0.5
+							transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Sevappa"
+					dynasty = "Thanjavuri"
+					adm = 3
+					dip = 4
+					mil = 3
+				}
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+		}
+		create_subject = {
+			subject_type = vassal
+			subject = TNJ
+		}
+		TNJ = {
+			add_opinion = {
+				who = ROOT
+				modifier = released_vassal
+			}
+		}
+	}
+
+	option = { # Tanjore will remain under our control.
+		name = ipeVIJ.2.b
+		ai_chance = {
+			factor = 10
+		}
+		every_subject_country = {
+			add_liberty_desire = 50
+		}
+		random_owned_province = {
+			limit = {
+				is_core = TNJ
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				friend = TNJ
+				size = 1
+				leader = "Sevappa Thanjavuri"
+			}
+		}
+	}
+}
+
+# The Nayaks of Keladi
+country_event = {
+	id = ipeVIJ.3
+	title = ipeVIJ.3.t
+	desc = ipeVIJ.3.d
+	picture = CITY_VIEW_eventPicture
+	
+	fire_only_once = yes
+
+	major = yes
+	
+	trigger = {
+		tag = VIJ
+		any_owned_province = {
+			is_core = KLN
+			is_capital = no
+		}
+		NOT = {
+			exists = KLN
+		}
+		is_year = 1480
+		has_reform = nayankara_reform
+		is_at_war = no
+	}
+	
+	mean_time_to_happen = {
+		months = 300
+	}
+	
+	option = { # They will make loyal subjects.
+		name = ipeVIJ.1.a 
+		ai_chance = {
+			factor = 90
+		}
+		release = KLN
+		add_adm_power = 100
+		hidden_effect = {
+			KLN = {
+				change_religion = hinduism
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 0.8
+						cavalry = 0.2
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							light_ship = 0.5
+							transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Chaudappa"
+					dynasty = "Keladi"
+					adm = 1
+					dip = 0
+					mil = 3
+				}
+				change_government = monarchy
+				add_government_reform = feudalism_reform
+				adopt_reform_progress = ROOT
+			}
+		}
+		create_subject = {
+			subject_type = vassal
+			subject = KLN
+		}
+		KLN = {
+			add_opinion = {
+				who = ROOT
+				modifier = released_vassal
+			}
+		}
+	}
+
+	option = { # Keladi will remain under our control.
+		name = ipeVIJ.3.b
+		ai_chance = {
+			factor = 10
+		}
+		every_subject_country = {
+			add_liberty_desire = 50
+		}
+		random_owned_province = {
+			limit = {
+				is_core = KLN
+			}
+			spawn_rebels = {
+				type = nationalist_rebels
+				friend = KLN
+				size = 1
+				leader = "Chaudappa Keladi"
+			}
+		}
+	}
+}
+
+# The End of the Villarvattom Dynasty
+country_event = {
+	id = ipeVIJ.4
+	title = ipeVIJ.4.t
+	desc = ipeVIJ.4.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = KOC
+		VLV = {
+			is_subject_of = ROOT
+			is_subject_of_type = vassal
+			ai = yes
+			religion = nestorian
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 600
+	}
+
+	option = { # Very well.
+		name = ipeVIJ.4.a
+		inherit = VLV
+		add_prestige = 5
+	}
+}

@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+primary_culture = ruthenian
+religion = orthodox
+technology_group = eastern
+capital = 279	# Volhynia
+
+1440.3.20 = {
+	monarch = {
+		name = "Svitrigaila"
+		dynasty = "Gediminai"
+		culture = lithuanian
+		birth_date = 1370.1.1
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+
+	set_country_flag = this_fief_will_die
+	set_ruler_flag = inheritable_fief
+}

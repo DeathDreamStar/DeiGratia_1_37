@@ -1,0 +1,28 @@
+#6577 - Taximaroa
+
+owner = TXI
+controller = TXI
+add_core = TXI
+culture = purepecha
+religion = purepecha_religion
+capital = "Taximaroa"
+trade_goods = grain
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+is_city = yes
+fort_15th = yes
+
+discovered_by = mesoamerican
+
+1519.1.1 = { discovered_by = SPA }
+1521.8.13 = {
+           owner = SPA
+           controller = SPA
+           add_core = SPA
+           religion = catholic
+           culture = castillian
+} # The last Aztec emperor surrendered, end of the Aztec Empire
+1810.9.16 = { owner = MEX add_core = MEX controller = SPA } # Mexican War of Independence
+1812.8.10 = { controller = MEX } # Conquered by José María Morelos

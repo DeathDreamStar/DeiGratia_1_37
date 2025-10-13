@@ -1,0 +1,55 @@
+alaskan_charter = {
+	global_colonial_growth = 5
+}
+
+canadian_charter = {
+	global_colonial_growth = 5
+}
+
+eastern_american_charter = {
+	global_colonial_growth = 5
+}
+
+louisianan_charter = {
+	global_colonial_growth = 5
+}
+
+californian_charter = {
+	global_colonial_growth = 5
+}
+
+mexican_charter = {
+	global_colonial_growth = 5
+}
+
+cuban_charter = {
+	global_colonial_growth = 5
+}
+
+colombian_charter = {
+	global_colonial_growth = 5
+}
+
+peruvian_charter = {
+	global_colonial_growth = 5
+}
+
+la_platan_charter = {
+	global_colonial_growth = 5
+}
+
+chilean_charter = {
+	global_colonial_growth = 5
+}
+
+brazilian_charter = {
+	global_colonial_growth = 5
+}
+
+australian_charter = {
+	global_colonial_growth = 5
+}
+
+cape_charter = {
+	global_colonial_growth = 5
+}

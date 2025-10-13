@@ -1,0 +1,18 @@
+government_rank = 1
+government = tribal
+add_government_reform = tribal_federation
+primary_culture = gedeo
+religion = shamanism #waaq
+technology_group = east_african
+unit_type = sub_saharan
+capital = 1218
+
+1444.11.11 = {
+      monarch = { # fictional
+           name = "Magarsaa"
+           dynasty = "Gedeo"
+           adm = 2
+           dip = 2
+           mil = 2
+      }
+}

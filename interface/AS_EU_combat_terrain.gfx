@@ -1,0 +1,2284 @@
+spriteTypes = {
+
+
+#############################################
+	
+####### COMBAT TERRAIN PICTURES #########
+	spriteType = {
+		name = "GFX_combat_terrain_1beijing"
+		texturefile = "gfx/interface/china/1beijing.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2nanjing"
+		texturefile = "gfx/interface/china/2nanjing.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_3guangzhou"
+		texturefile = "gfx/interface/china/3guangzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4hangzhou"
+		texturefile = "gfx/interface/china/4hangzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_5xian"
+		texturefile = "gfx/interface/china/5xian.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_6chengdu"
+		texturefile = "gfx/interface/china/6chengdu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_7wuchang"
+		texturefile = "gfx/interface/china/7wuchang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_8xiangyang"
+		texturefile = "gfx/interface/china/8xiangyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_9quanzhou"
+		texturefile = "gfx/interface/china/9quanzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_10yangzhou"
+		texturefile = "gfx/interface/china/10yangzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_11shenyang"
+		texturefile = "gfx/interface/china/11shenyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_12luoyang"
+		texturefile = "gfx/interface/china/12luoyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_13nanchang"
+		texturefile = "gfx/interface/china/13nanchang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_14jinan"
+		texturefile = "gfx/interface/china/14jinan.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_15hefei"
+		texturefile = "gfx/interface/china/15hefei.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_16shaoxing"
+		texturefile = "gfx/interface/china/16shaoxing.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_17lasa"
+		texturefile = "gfx/interface/china/17lasa.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_combat_terrain_19xichangcheng"
+		texturefile = "gfx/interface/china/19xichangcheng.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_20zhongchangcheng"
+		texturefile = "gfx/interface/china/20zhongchangcheng.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_21dongchangcheng"
+		texturefile = "gfx/interface/china/21dongchangcheng.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_22kaifeng"
+		texturefile = "gfx/interface/china/22kaifeng.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_23yunnan"
+		texturefile = "gfx/interface/china/23yunnan.dds"
+	}	
+	spriteType = {
+		name = "GFX_combat_terrain_24xuanhua"
+		texturefile = "gfx/interface/china/24xuanhua.dds"
+	}	
+	spriteType = {
+		name = "GFX_combat_terrain_25datong"
+		texturefile = "gfx/interface/china/25datong.dds"		
+	}	
+	spriteType = {
+		name = "GFX_combat_terrain_26yumen"
+		texturefile = "gfx/interface/china/26yumen.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_27fuzhou"
+		texturefile = "gfx/interface/china/27fuzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_28dunhuang"
+		texturefile = "gfx/interface/china/28dunhuang.dds"	
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_29changsha"
+		texturefile = "gfx/interface/china/29changsha.dds"
+	}	
+	spriteType = {
+		name = "GFX_combat_terrain_30suzhou"
+		texturefile = "gfx/interface/china/30suzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_31huaian"
+		texturefile = "gfx/interface/china/31huaian.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_660xsbn"
+		texturefile = "gfx/interface/china/660xsbn.dds"
+	}	
+	spriteType = {
+		name = "GFX_combat_terrain_661dali"
+		texturefile = "gfx/interface/china/661dali.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_663guangnan"
+		texturefile = "gfx/interface/china/663guangnan.dds"
+	}	
+	spriteType = {
+		name = "GFX_combat_terrain_664lingyun"
+		texturefile = "gfx/interface/china/664lingyun.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_665zhaoqing"
+		texturefile = "gfx/interface/china/665zhaoqing.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_666qiongzhou"
+		texturefile = "gfx/interface/china/666qiongzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2160yazhou"
+		texturefile = "gfx/interface/china/2160yazhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_668aomen"
+		texturefile = "gfx/interface/china/668aomen.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_670ganzhou"
+		texturefile = "gfx/interface/china/670ganzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_672wulin"
+		texturefile = "gfx/interface/china/672wulin.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_673zhenyuan"
+		texturefile = "gfx/interface/china/673zhenyuan.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_674guiyang"
+		texturefile = "gfx/interface/china/674guiyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_675wumeng"
+		texturefile = "gfx/interface/china/675wumeng.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_680chongqing"
+		texturefile = "gfx/interface/china/680chongqing.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_681yichang"
+		texturefile = "gfx/interface/china/681yichang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_686anqing"
+		texturefile = "gfx/interface/china/686anqing.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_687nanyang"
+		texturefile = "gfx/interface/china/687nanyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_689hanzhong"
+		texturefile = "gfx/interface/china/689hanzhong.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_690qingzhou"
+		texturefile = "gfx/interface/china/690qingzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_692huaiqing"
+		texturefile = "gfx/interface/china/692huaiqing.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_693taiyuan"
+		texturefile = "gfx/interface/china/693taiyuan.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_694pingyang"
+		texturefile = "gfx/interface/china/694pingyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_695hejian"
+		texturefile = "gfx/interface/china/695hejian.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_696baoding"
+		texturefile = "gfx/interface/china/696baoding.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_730jilin"
+		texturefile = "gfx/interface/china/730jilin.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_728hrb"
+		texturefile = "gfx/interface/china/728hrb.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_738ck"
+		texturefile = "gfx/interface/china/738ck.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_1824wenzhou"
+		texturefile = "gfx/interface/china/1824wenzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_1833jian"
+		texturefile = "gfx/interface/china/1833jian.dds"
+	}
+
+	spriteType = {
+		name = "GFX_combat_terrain_1840guilin"
+		texturefile = "gfx/interface/china/1840guilin.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2108hunchun"
+		texturefile = "gfx/interface/china/2108hunchun.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2111htal"
+		texturefile = "gfx/interface/china/2111htal.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2112andong"
+		texturefile = "gfx/interface/china/2112andong.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2113gaizhou"
+		texturefile = "gfx/interface/china/2113gaizhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2133dege"
+		texturefile = "gfx/interface/china/2133dege.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2137daming"
+		texturefile = "gfx/interface/china/2137daming.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2138wuding"
+		texturefile = "gfx/interface/china/2138wuding.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2139laizhou"
+		texturefile = "gfx/interface/china/2139laizhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2140yanzhou"
+		texturefile = "gfx/interface/china/2140yanzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2141xuzhou"
+		texturefile = "gfx/interface/china/2141xuzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2143fengyang"
+		texturefile = "gfx/interface/china/2143fengyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2144fuyang"
+		texturefile = "gfx/interface/china/2144fuyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2145zhenjiang"
+		texturefile = "gfx/interface/china/2145zhenjiang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2146ningguo"
+		texturefile = "gfx/interface/china/2146ningguo.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2147huizhou"
+		texturefile = "gfx/interface/china/2147huizhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2149ningbo"
+		texturefile = "gfx/interface/china/2149ningbo.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2150jinhua"
+		texturefile = "gfx/interface/china/2150jinhua.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2151poyang"
+		texturefile = "gfx/interface/china/2151poyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2152jianning"
+		texturefile = "gfx/interface/china/2152jianning.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2153tingzhou"
+		texturefile = "gfx/interface/china/2153tingzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2154jilong"
+		texturefile = "gfx/interface/china/2154jilong.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2155dadu"
+		texturefile = "gfx/interface/china/2155dadu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2156chaozhou"
+		texturefile = "gfx/interface/china/2156chaozhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2157huizhou"
+		texturefile = "gfx/interface/china/2157huizhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2158shaoguan"
+		texturefile = "gfx/interface/china/2158shaoguan.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2159leizhou"
+		texturefile = "gfx/interface/china/2159leizhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2161lianzhou"
+		texturefile = "gfx/interface/china/2161lianzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2162wuzhou"
+		texturefile = "gfx/interface/china/2162wuzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2163liuzhou"
+		texturefile = "gfx/interface/china/2163liuzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2164nanning"
+		texturefile = "gfx/interface/china/2164nanning.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2165puer"
+		texturefile = "gfx/interface/china/2165puer.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2167lijiang"
+		texturefile = "gfx/interface/china/2167lijiang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2168bozhou"
+		texturefile = "gfx/interface/china/2168bozhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2169langzhong"
+		texturefile = "gfx/interface/china/2169langzhong.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2170songqu"
+		texturefile = "gfx/interface/china/2170songqu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2172jingzhou"
+		texturefile = "gfx/interface/china/2172jingzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2173yuanling"
+		texturefile = "gfx/interface/china/2173yuanling.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2174hengyang"
+		texturefile = "gfx/interface/china/2174hengyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2175runing"
+		texturefile = "gfx/interface/china/2175runing.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2176shangqiu"
+		texturefile = "gfx/interface/china/2176shangqiu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2180tianshui"
+		texturefile = "gfx/interface/china/2180tianshui.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2181pingliang"
+		texturefile = "gfx/interface/china/2181pingliang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2184xining"
+		texturefile = "gfx/interface/china/2184xining.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2183taozhou"
+		texturefile = "gfx/interface/china/2183taozhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2190hlhl"
+		texturefile = "gfx/interface/china/2190hlhl.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_2748jianchang"
+		texturefile = "gfx/interface/china/2748jianchang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4194yongping"
+		texturefile = "gfx/interface/china/4194yongping.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4195zhending"
+		texturefile = "gfx/interface/china/4195zhending.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4196haizhou"
+		texturefile = "gfx/interface/china/4196haizhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4197huangzhou"
+		texturefile = "gfx/interface/china/4197huangzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4198fengxiang"
+		texturefile = "gfx/interface/china/4198fengxiang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4199tongren"
+		texturefile = "gfx/interface/china/4199tongren.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4201jianzhou"
+		texturefile = "gfx/interface/china/4201jianzhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4211dazhou"
+		texturefile = "gfx/interface/china/4211dazhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4212jiazhou"
+		texturefile = "gfx/interface/china/4212jiazhou.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_4213luzhou"
+		texturefile = "gfx/interface/china/4213luzhou.dds"
+	}
+	####——————————————jap——————————————————####
+	spriteType = {
+		name = "GFX_combat_terrain_inabayama"
+		texturefile = "gfx/interface/jap/inabayama.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_matsue"
+		texturefile = "gfx/interface/jap/matsue.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_kofu"
+		texturefile = "gfx/interface/jap/kofu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_kawagoe"
+		texturefile = "gfx/interface/jap/kawagoe.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_kiyosu"
+		texturefile = "gfx/interface/jap/kiyosu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_kyoto"
+		texturefile = "gfx/interface/jap/kyoto.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_naniwa"
+		texturefile = "gfx/interface/jap/naniwa.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_kiriyama"
+		texturefile = "gfx/interface/jap/kiriyama.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_hakata"
+		texturefile = "gfx/interface/jap/hakata.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_kumamoto"
+		texturefile = "gfx/interface/jap/kumamoto.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_himeji"
+		texturefile = "gfx/interface/jap/himeji.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_nagasaki"
+		texturefile = "gfx/interface/jap/nagasaki.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_funai"
+		texturefile = "gfx/interface/jap/funai.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_obi"
+		texturefile = "gfx/interface/jap/obi.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_kagoshima"
+		texturefile = "gfx/interface/jap/kagoshima.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_yuzuki"
+		texturefile = "gfx/interface/jap/yuzuki.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_nakamura"
+		texturefile = "gfx/interface/jap/nakamura.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_tokushima"
+		texturefile = "gfx/interface/jap/tokushima.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_yamaguchi"
+		texturefile = "gfx/interface/jap/yamaguchi.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_hamada"
+		texturefile = "gfx/interface/jap/hamada.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_okayama"
+		texturefile = "gfx/interface/jap/okayama.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_tottori"
+		texturefile = "gfx/interface/jap/tottori.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_miyazu"
+		texturefile = "gfx/interface/jap/miyazu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_wakayama"
+		texturefile = "gfx/interface/jap/wakayama.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_nara"
+		texturefile = "gfx/interface/jap/nara.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_takefu"
+		texturefile = "gfx/interface/jap/takefu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_kanazawa"
+		texturefile = "gfx/interface/jap/kanazawa.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_naoetsu"
+		texturefile = "gfx/interface/jap/naoetsu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_okazaki"
+		texturefile = "gfx/interface/jap/okazaki.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_sunpu"
+		texturefile = "gfx/interface/jap/sunpu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_nagano"
+		texturefile = "gfx/interface/jap/nagano.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_mayabashi"
+		texturefile = "gfx/interface/jap/mayabashi.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_kamakura"
+		texturefile = "gfx/interface/jap/kamakura.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_ota"
+		texturefile = "gfx/interface/jap/ota.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_utsunomiya"
+		texturefile = "gfx/interface/jap/utsunomiya.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_aizu"
+		texturefile = "gfx/interface/jap/aizu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_yamagata"
+		texturefile = "gfx/interface/jap/yamagata.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_akita"
+		texturefile = "gfx/interface/jap/akita.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_sannohe"
+		texturefile = "gfx/interface/jap/sannohe.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_katsuyama"
+		texturefile = "gfx/interface/jap/katsuyama.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_shiribeshi"
+		texturefile = "gfx/interface/jap/shiribeshi.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_sakura"
+		texturefile = "gfx/interface/jap/sakura.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_tokachi"
+		texturefile = "gfx/interface/jap/tokachi.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_kamikawa"
+		texturefile = "gfx/interface/jap/kamikawa.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_shuri"
+		texturefile = "gfx/interface/jap/shuri.dds"
+	}
+	
+	#----------------------------------KOR-------------
+	spriteType = {
+		name = "GFX_combat_terrain_Gyeongju"
+		texturefile = "gfx/interface/kor/Gyeongju.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Haeju"
+		texturefile = "gfx/interface/kor/Haeju.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Hanseong"
+		texturefile = "gfx/interface/kor/Hanseong.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Hwangju"
+		texturefile = "gfx/interface/kor/Hwangju.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Jeonju"
+		texturefile = "gfx/interface/kor/Jeonju.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Pyeongyang"
+		texturefile = "gfx/interface/kor/Pyeongyang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Jeju"
+		texturefile = "gfx/interface/kor/Jeju.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Cheongju"
+		texturefile = "gfx/interface/kor/Cheongju.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Wonju"
+		texturefile = "gfx/interface/kor/Wonju.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Jinju"
+		texturefile = "gfx/interface/kor/Jinju.dds"
+	}
+	
+	#-------------------EAST_ASIA-------------------------------
+	spriteType = {
+		name = "GFX_combat_terrain_Palembang"
+		texturefile = "gfx/interface/east_asia/Palembang.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Hami"
+		texturefile = "gfx/interface/east_asia/Hami.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Urumqi"
+		texturefile = "gfx/interface/east_asia/Urumqi.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Yarkant"
+		texturefile = "gfx/interface/east_asia/Yarkant.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_DongKinh"
+		texturefile = "gfx/interface/east_asia/DongKinh.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Hotan"
+		texturefile = "gfx/interface/east_asia/Hotan.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Tsaidam"
+		texturefile = "gfx/interface/east_asia/Tsaidam.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Ayutthaya"
+		texturefile = "gfx/interface/east_asia/Ayutthaya.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Balikul"
+		texturefile = "gfx/interface/east_asia/Balikul.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_Nedong"
+		texturefile = "gfx/interface/east_asia/Nedong.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban"
+		texturefile = "gfx/interface/europa/combat_terrain_urban.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_mediteran"
+		texturefile = "gfx/interface/europa/combat_terrain_urban_mediteran.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_arabic"
+		texturefile = "gfx/interface/europa/gibraltar.dds"
+	}
+	spriteType = {															# added by LOL MNT only
+		name = "GFX_combat_terrain_urban_arabic_2"
+		texturefile = "gfx/interface/europa/arabic.dds"
+	}
+		
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_rome"
+		texturefile = "gfx/interface/europa/combat_terrain_rome.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_venice"
+		texturefile = "gfx/interface/europa/combat_terrain_venice.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_constantinople"
+		texturefile = "gfx/interface/europa/combat_terrain_constantinople.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_paris"
+		texturefile = "gfx/interface/europa/combat_terrain_paris.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_mediteran"
+		texturefile = "gfx/interface/europa/combat_terrain_mediteran.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_jerusalem"
+		texturefile = "gfx/interface/europa/jerusalem2.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_hanseatic"
+		texturefile = "gfx/interface/europa/combat_terrain_hanseatic.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_mecca"
+		texturefile = "gfx/interface/europa/mecca.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_medina"
+		texturefile = "gfx/interface/europa/medina.dds"
+	}
+	
+	spriteType = {															# added by LOL changed pic (choose 1-3)
+		name = "GFX_combat_terrain_urban_london"
+		texturefile = "gfx/interface/europa/london3.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_firenze"
+		texturefile = "gfx/interface/europa/combat_terrain_firenze.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_genoa"
+		texturefile = "gfx/interface/europa/combat_terrain_genoa.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_pyramids"
+		texturefile = "gfx/interface/europa/combat_terrain_pyramids.dds"
+	}
+	
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_hamburg"
+		texturefile = "gfx/interface/europa/combat_terrain_hamburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_tenochtitlan"
+		texturefile = "gfx/interface/europa/combat_terrain_tenochtitlan.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_coast_baltic_sea"
+		texturefile = "gfx/interface/europa/combat_terrain_baltic_sea.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_naples"
+		texturefile = "gfx/interface/europa/combat_terrain_naples.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_coast_north_sea"
+		texturefile = "gfx/interface/europa/combat_terrain_north_sea.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_sevilla"
+		texturefile = "gfx/interface/europa/sevilla.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_toledo"
+		texturefile = "gfx/interface/europa/combat_terrain_toledo.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_athens"
+		texturefile = "gfx/interface/europa/combat_terrain_athens.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_vienna"
+		texturefile = "gfx/interface/europa/combat_terrain_vienna.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_very_drylands"
+		texturefile = "gfx/interface/europa/combat_terrain_very_drylands.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_dresden"
+		texturefile = "gfx/interface/europa/dresden2.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_breslau"
+		texturefile = "gfx/interface/europa/combat_terrain_breslau.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_terrain_brandenburg"
+		texturefile = "gfx/interface/europa/combat_terrain_brandenburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_siena"
+		texturefile = "gfx/interface/europa/siena.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_brugge"
+		texturefile = "gfx/interface/europa/brugge.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_carcassonne"
+		texturefile = "gfx/interface/europa/carcassonne.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_praga"
+		texturefile = "gfx/interface/europa/praga1.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_york"
+		texturefile = "gfx/interface/europa/york.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_danzig"
+		texturefile = "gfx/interface/europa/danzig.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kilwa"
+		texturefile = "gfx/interface/europa/kilwa.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_cracow"
+		texturefile = "gfx/interface/europa/krakau.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_oxford"
+		texturefile = "gfx/interface/europa/oxford.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_edinborough"
+		texturefile = "gfx/interface/europa/edinburgh2.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_nottingham"
+		texturefile = "gfx/interface/europa/nottingham.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_thessaloniki"
+		texturefile = "gfx/interface/europa/thessaloniki.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_milano"
+		texturefile = "gfx/interface/europa/milano.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_moscow"
+		texturefile = "gfx/interface/europa/moscow.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_mantua"
+		texturefile = "gfx/interface/europa/mantua.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_pisa"
+		texturefile = "gfx/interface/europa/pisa.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_berlin"
+		texturefile = "gfx/interface/europa/berlin.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_newcastle"
+		texturefile = "gfx/interface/europa/newcastle.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_lincoln"
+		texturefile = "gfx/interface/europa/lincoln.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_copenhagen"
+		texturefile = "gfx/interface/europa/copenhagen.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_stockholm"
+		texturefile = "gfx/interface/europa/stockholm.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_vilna"
+		texturefile = "gfx/interface/europa/vilna.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kent"
+		texturefile = "gfx/interface/europa/kent2.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_trakai"
+		texturefile = "gfx/interface/europa/trakai.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_antwerp"
+		texturefile = "gfx/interface/europa/antwerp.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_amsterdam"
+		texturefile = "gfx/interface/europa/amsterdam.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_denbosch"
+		texturefile = "gfx/interface/europa/denbosch.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_gelre"
+		texturefile = "gfx/interface/europa/gelre.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_warsaw"
+		texturefile = "gfx/interface/europa/warsaw.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_lyon"
+		texturefile = "gfx/interface/europa/lyon.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_marienburg"
+		texturefile = "gfx/interface/europa/marienburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_gondar"
+		texturefile = "gfx/interface/europa/gondar.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_theodoro"
+		texturefile = "gfx/interface/europa/theodoro.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_utrecht"
+		texturefile = "gfx/interface/europa/utrecht.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_ani"
+		texturefile = "gfx/interface/europa/ani.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kars"
+		texturefile = "gfx/interface/europa/kars.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_terrain_orderland"
+		texturefile = "gfx/interface/europa/orderland.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_smyrna"
+		texturefile = "gfx/interface/europa/smyrna.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_coast_america"
+		texturefile = "gfx/interface/europa/coast_america.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_munich"
+		texturefile = "gfx/interface/europa/munich.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_lisboa"
+		texturefile = "gfx/interface/europa/lisboa.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_havanna"
+		texturefile = "gfx/interface/europa/havanna.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_nassau"
+		texturefile = "gfx/interface/europa/nassau.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_new_orleans"
+		texturefile = "gfx/interface/europa/new_orleans.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_akkon"
+		texturefile = "gfx/interface/europa/akkon.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_mountains_himalaya"
+		texturefile = "gfx/interface/europa/himalaya.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_new_york"
+		texturefile = "gfx/interface/europa/new_york.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_lhasa"
+		texturefile = "gfx/interface/europa/lhasa.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_generic_isle"
+		texturefile = "gfx/interface/europa/generic_isle.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_generic_isle2"
+		texturefile = "gfx/interface/europa/generic_isle2.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_generic_isle3"
+		texturefile = "gfx/interface/europa/generic_isle3.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_koenigsberg"
+		texturefile = "gfx/interface/europa/koenigsberg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_boston"
+		texturefile = "gfx/interface/europa/boston.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_mountains_rocky_mountains"
+		texturefile = "gfx/interface/europa/rocky_mountains.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_mountains_appalachian"
+		texturefile = "gfx/interface/europa/appalachian.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_mountains_appalachian_hills"
+		texturefile = "gfx/interface/europa/appalachian.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_cairo"
+		texturefile = "gfx/interface/europa/cairo.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_salzburg"
+		texturefile = "gfx/interface/europa/salzburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_dublin"
+		texturefile = "gfx/interface/europa/dublin.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_rhodos"
+		texturefile = "gfx/interface/europa/rhodos.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_nicosia"
+		texturefile = "gfx/interface/europa/nicosia.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kyoto"
+		texturefile = "gfx/interface/europa/kyoto.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_ragusa"
+		texturefile = "gfx/interface/europa/ragusa.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_mount_fuji"
+		texturefile = "gfx/interface/europa/mount_fuji.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_japanese_hills"
+		texturefile = "gfx/interface/europa/generic_japanese_temple.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_easter_egg"
+		texturefile = "gfx/interface/europa/easter_egg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_japanese_farmland"
+		texturefile = "gfx/interface/europa/japanese_farmland.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_bursa"
+		texturefile = "gfx/interface/europa/bursa.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_cadiz"
+		texturefile = "gfx/interface/europa/cadiz.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_granada"
+		texturefile = "gfx/interface/europa/granada.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_madrid"
+		texturefile = "gfx/interface/europa/madrid.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_trebizond"
+		texturefile = "gfx/interface/europa/trebizond.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_budapest"
+		texturefile = "gfx/interface/europa/budapest.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_mountains_ural"
+		texturefile = "gfx/interface/europa/ural_mountains.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_nice"
+		texturefile = "gfx/interface/europa/nice.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_heidelberg"
+		texturefile = "gfx/interface/europa/heidelberg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_tunis"
+		texturefile = "gfx/interface/europa/tunis.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_novgorod"
+		texturefile = "gfx/interface/europa/novgorod.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_vladimir"
+		texturefile = "gfx/interface/europa/vladimir.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_rostov"
+		texturefile = "gfx/interface/europa/rostov.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_pleskau"
+		texturefile = "gfx/interface/europa/pleskau.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_suzdal"
+		texturefile = "gfx/interface/europa/suzdal.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_yaroslavl"
+		texturefile = "gfx/interface/europa/yaroslavl.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_mozhaisk"
+		texturefile = "gfx/interface/europa/mozhaisk.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kazan"
+		texturefile = "gfx/interface/europa/kazan.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_smolensk"
+		texturefile = "gfx/interface/europa/smolensk.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_nizhny_novgorod"
+		texturefile = "gfx/interface/europa/nizhny_novgorod.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_tver"
+		texturefile = "gfx/interface/europa/tver.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_rzhev"
+		texturefile = "gfx/interface/europa/rzhev.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_grodno"
+		texturefile = "gfx/interface/europa/grodno.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_minsk"
+		texturefile = "gfx/interface/europa/minsk.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_ustjug"
+		texturefile = "gfx/interface/europa/ustjug.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kasimov"
+		texturefile = "gfx/interface/europa/kasimov.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_vologda"
+		texturefile = "gfx/interface/europa/vologda.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_galich"
+		texturefile = "gfx/interface/europa/galich.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kiev"
+		texturefile = "gfx/interface/europa/kiev.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_tula"
+		texturefile = "gfx/interface/europa/tula.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kolomna"
+		texturefile = "gfx/interface/europa/kolomna.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kostroma"
+		texturefile = "gfx/interface/europa/kostroma.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_ryasan"
+		texturefile = "gfx/interface/europa/pereyeslavl_ryazansky.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_polotsk"
+		texturefile = "gfx/interface/europa/polotsk.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_vitebsk"
+		texturefile = "gfx/interface/europa/vitebsk.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kursk"
+		texturefile = "gfx/interface/europa/kursk.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_lwow"
+		texturefile = "gfx/interface/europa/lwow.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_saint_petersburg"
+		texturefile = "gfx/interface/europa/saint_petersburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_baloozero"
+		texturefile = "gfx/interface/europa/baloozero.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_marseille"
+		texturefile = "gfx/interface/europa/marseille.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_cherdyn"
+		texturefile = "gfx/interface/europa/cherdyn.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_lublin"
+		texturefile = "gfx/interface/europa/lublin.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_beijing"
+		texturefile = "gfx/interface/europa/beijing.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_nanjing"
+		texturefile = "gfx/interface/europa/nanjing.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_canton"
+		texturefile = "gfx/interface/europa/canton.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_valencia"
+		texturefile = "gfx/interface/europa/valencia.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_verona"
+		texturefile = "gfx/interface/europa/verona.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_palermo"
+		texturefile = "gfx/interface/europa/palermo.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_hajitarkhan"
+		texturefile = "gfx/interface/europa/hajitarkhan.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_alexandria"
+		texturefile = "gfx/interface/europa/alexandria2.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_angkor_wat"
+		texturefile = "gfx/interface/europa/angkor_wat.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_pyeongyang"
+		texturefile = "gfx/interface/europa/pyeongyang.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_chinese_mountains"
+		texturefile = "gfx/interface/europa/chinese_hills.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_hangzhou"
+		texturefile = "gfx/interface/europa/hangzhou.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_yangzhou"
+		texturefile = "gfx/interface/europa/yangzhou.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_chengdu"
+		texturefile = "gfx/interface/europa/chengdu.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_cotbus"
+		texturefile = "gfx/interface/europa/cotbus.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_bohemian_forest"
+		texturefile = "gfx/interface/europa/bohemian_forest.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_bohemian_mountains"
+		texturefile = "gfx/interface/europa/bohemian_mountains.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_bohemian_highlands"
+		texturefile = "gfx/interface/europa/bohemian_highlands.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_bohemian_grasland"
+		texturefile = "gfx/interface/europa/bohemian_grasland.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_barcelona"
+		texturefile = "gfx/interface/europa/barcelona.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_litomerice"
+		texturefile = "gfx/interface/europa/litomerice.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_pilsen"
+		texturefile = "gfx/interface/europa/pilsen.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_budweis"
+		texturefile = "gfx/interface/europa/budweis.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_tiflis"
+		texturefile = "gfx/interface/europa/tiflis.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_thuringian_woods"
+		texturefile = "gfx/interface/europa/thuringen.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_amberg"
+		texturefile = "gfx/interface/europa/amberg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_bamberg"
+		texturefile = "gfx/interface/europa/bamberg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_augsburg"
+		texturefile = "gfx/interface/europa/augsburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_baden"
+		texturefile = "gfx/interface/europa/baden.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_freiburg"
+		texturefile = "gfx/interface/europa/freiburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_ingolstadt"
+		texturefile = "gfx/interface/europa/ingolstadt.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_landshut"
+		texturefile = "gfx/interface/europa/landshut.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_mainz"
+		texturefile = "gfx/interface/europa/mainz.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_nuernberg"
+		texturefile = "gfx/interface/europa/nuernberg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_ravensburg"
+		texturefile = "gfx/interface/europa/ravensburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_regensburg"
+		texturefile = "gfx/interface/europa/regensburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_straubing"
+		texturefile = "gfx/interface/europa/straubing.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_stuttgart"
+		texturefile = "gfx/interface/europa/stuttgart.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_swabian_hall"
+		texturefile = "gfx/interface/europa/swabian_hall.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_ulm"
+		texturefile = "gfx/interface/europa/ulm.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_worms"
+		texturefile = "gfx/interface/europa/worms.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_wuerzburg"
+		texturefile = "gfx/interface/europa/wuerzburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_samarkand"
+		texturefile = "gfx/interface/europa/samarkand_2.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_chinese_wall"
+		texturefile = "gfx/interface/europa/chinese_wall.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_datong"
+		texturefile = "gfx/interface/europa/datong.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_mogilyov"
+		texturefile = "gfx/interface/europa/mogilyov.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_mountain_paektusan"
+		texturefile = "gfx/interface/europa/paektusan.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_girin"
+		texturefile = "gfx/interface/europa/girin.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_gyeongju"
+		texturefile = "gfx/interface/europa/gyeongju.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_hanseong"
+		texturefile = "gfx/interface/europa/hanseong.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_luoyang"
+		texturefile = "gfx/interface/europa/luoyang.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_shenyang"
+		texturefile = "gfx/interface/europa/shenyang.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_wuchang"
+		texturefile = "gfx/interface/europa/wuchang.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_xiangyang"
+		texturefile = "gfx/interface/europa/xiangyang.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_yumen"
+		texturefile = "gfx/interface/europa/yumen.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_yunnan"
+		texturefile = "gfx/interface/europa/yunnan.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_braganca"
+		texturefile = "gfx/interface/europa/braganca.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_porto"
+		texturefile = "gfx/interface/europa/porto.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_coimbra"
+		texturefile = "gfx/interface/europa/coimbra.dds"
+	}
+	spriteType = {															# added by LOL		MnT only
+		name = "GFX_combat_terrain_urban_viseu"
+		texturefile = "gfx/interface/europa/viseu.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_strassburg"
+		texturefile = "gfx/interface/europa/strassburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_memmingen"
+		texturefile = "gfx/interface/europa/memmingen.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_neuruppin"
+		texturefile = "gfx/interface/europa/neuruppin.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_prenzlau"
+		texturefile = "gfx/interface/europa/prenzlau.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_landsberg"
+		texturefile = "gfx/interface/europa/landsberg_warthe.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_stendal"
+		texturefile = "gfx/interface/europa/stendal.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_sternberg"
+		texturefile = "gfx/interface/europa/sternberg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_wittenberg"
+		texturefile = "gfx/interface/europa/wittenberg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_lauenburg"
+		texturefile = "gfx/interface/europa/lauenburg.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_lueneburg"
+		texturefile = "gfx/interface/europa/lueneburg_heath.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kiel"
+		texturefile = "gfx/interface/europa/kiel.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_heide"
+		texturefile = "gfx/interface/europa/heide.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_slesvig"
+		texturefile = "gfx/interface/europa/slesvig.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_oldenburg"
+		texturefile = "gfx/interface/europa/oldenburg.dds"
+	}
+	spriteType = {															# added by LOL		MnT only
+		name = "GFX_combat_terrain_terrain_oldenburg"
+		texturefile = "gfx/interface/europa/oldenburger_land.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_emden"
+		texturefile = "gfx/interface/europa/emden.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_bremervoerde"
+		texturefile = "gfx/interface/europa/bremervoerde.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_osnabrueck"
+		texturefile = "gfx/interface/europa/osnabrueck.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_kassel"
+		texturefile = "gfx/interface/europa/kassel.dds"
+	}
+	spriteType = {															# added by LOL
+		name = "GFX_combat_terrain_urban_aachen"
+		texturefile = "gfx/interface/europa/aachen.dds"
+	}
+	spriteType = {															# added by LOL		MnT only
+		name = "GFX_combat_terrain_urban_schwerin"
+		texturefile = "gfx/interface/europa/schwerin.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_trondheim"
+		texturefile = "gfx/interface/europa/trondheim.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_bergen"
+		texturefile = "gfx/interface/europa/bergen.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_christiania"
+		texturefile = "gfx/interface/europa/christiania.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_aachen"
+		texturefile = "gfx/interface/europa/aachen.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_brunswik"
+		texturefile = "gfx/interface/europa/brunswik.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_dessau"
+		texturefile = "gfx/interface/europa/dessau.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_duesseldorf"
+		texturefile = "gfx/interface/europa/duesseldorf.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_greifswald"
+		texturefile = "gfx/interface/europa/greifswald.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_hannover"
+		texturefile = "gfx/interface/europa/hannover.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_hoya"
+		texturefile = "gfx/interface/europa/hoya.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kassel"
+		texturefile = "gfx/interface/europa/kassel.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kleve"
+		texturefile = "gfx/interface/europa/kleve.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_koblenz"
+		texturefile = "gfx/interface/europa/koblenz.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kolberg"
+		texturefile = "gfx/interface/europa/kolberg.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_leipzig"
+		texturefile = "gfx/interface/europa/leipzig.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_luebeck"
+		texturefile = "gfx/interface/europa/luebeck.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_marburg"
+		texturefile = "gfx/interface/europa/marburg.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_meppen"
+		texturefile = "gfx/interface/europa/meppen.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_muenster"
+		texturefile = "gfx/interface/europa/muenster.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_potsdam"
+		texturefile = "gfx/interface/europa/potsdam.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_rostock"
+		texturefile = "gfx/interface/europa/rostock.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_stetin"
+		texturefile = "gfx/interface/europa/stetin.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_stolp"
+		texturefile = "gfx/interface/europa/stolp.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_stralsund"
+		texturefile = "gfx/interface/europa/stralsund.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_trier"
+		texturefile = "gfx/interface/europa/trier.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_wiesbaden"
+		texturefile = "gfx/interface/europa/wiesbaden.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_wismar"
+		texturefile = "gfx/interface/europa/wismar.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_paderborn"
+		texturefile = "gfx/interface/europa/paderborn.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_arnsberg"
+		texturefile = "gfx/interface/europa/arnsberg.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_magdeburg"
+		texturefile = "gfx/interface/europa/magdeburg.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_bremen"
+		texturefile = "gfx/interface/europa/bremen.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_frankfurt"
+		texturefile = "gfx/interface/europa/frankfurt.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_koeln"
+		texturefile = "gfx/interface/europa/koeln.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_luxemburg"
+		texturefile = "gfx/interface/europa/luxemburg.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_sogn"
+		texturefile = "gfx/interface/europa/sogn.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_agder"
+		texturefile = "gfx/interface/europa/agder.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_besancon"
+		texturefile = "gfx/interface/europa/besancon.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_halogaland"
+		texturefile = "gfx/interface/europa/halogaland2.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_easter_island"
+		texturefile = "gfx/interface/europa/easter_island.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_bangkok"
+		texturefile = "gfx/interface/europa/bangkok.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_iverness"
+		texturefile = "gfx/interface/europa/iverness.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_scottish_highlands"
+		texturefile = "gfx/interface/europa/scottish_highlands.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_hebrids"
+		texturefile = "gfx/interface/europa/hebrids.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_fife"
+		texturefile = "gfx/interface/europa/fife.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_orkney"
+		texturefile = "gfx/interface/europa/orkney.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_ayr_glasgow"
+		texturefile = "gfx/interface/europa/ayr_glasgow.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_fyn"
+		texturefile = "gfx/interface/europa/fyn.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_ostjylland"
+		texturefile = "gfx/interface/europa/ostjylland.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_vestjylland"
+		texturefile = "gfx/interface/europa/vestjylland.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_nordjylland"
+		texturefile = "gfx/interface/europa/nordjylland.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kolding"
+		texturefile = "gfx/interface/europa/kolding.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_hordaland"
+		texturefile = "gfx/interface/europa/hordaland.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_bornholm"
+		texturefile = "gfx/interface/europa/bornholm.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kulm"
+		texturefile = "gfx/interface/europa/kulm.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_sweden_forest"
+		texturefile = "gfx/interface/europa/sweden_forest.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_memel"
+		texturefile = "gfx/interface/europa/memel.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_bern"
+		texturefile = "gfx/interface/europa/bern.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_linz"
+		texturefile = "gfx/interface/europa/linz.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_tirol"
+		texturefile = "gfx/interface/europa/tirol.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_steiermark"
+		texturefile = "gfx/interface/europa/steiermark.dds"
+	}# added by LOL
+	
+	spriteType = {
+		name = "GFX_combat_terrain_urban_salisbury"
+		texturefile = "gfx/interface/europa/salisbury.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_bristol"
+		texturefile = "gfx/interface/europa/bristol.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_coventry"
+		texturefile = "gfx/interface/europa/coventry.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_chester"
+		texturefile = "gfx/interface/europa/chester.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_carlisle"
+		texturefile = "gfx/interface/europa/carlisle.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_exeter"
+		texturefile = "gfx/interface/europa/exeter.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_ceuta"
+		texturefile = "gfx/interface/europa/ceuta.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_oesel"
+		texturefile = "gfx/interface/europa/oesel.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kalmar"
+		texturefile = "gfx/interface/europa/kalmar.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_reval"
+		texturefile = "gfx/interface/europa/reval.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_den_haag"
+		texturefile = "gfx/interface/europa/den_haag.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_brussel"
+		texturefile = "gfx/interface/europa/brussel.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_groeningen"
+		texturefile = "gfx/interface/europa/groeningen.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_finnmark_forest"
+		texturefile = "gfx/interface/europa/finnmark.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_gotland"
+		texturefile = "gfx/interface/europa/gotland.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_bilbao"
+		texturefile = "gfx/interface/europa/bilbao.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_malta"
+		texturefile = "gfx/interface/europa/malta.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_corfu"
+		texturefile = "gfx/interface/europa/corfu.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_larissa"
+		texturefile = "gfx/interface/europa/larissa.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_nafplio"
+		texturefile = "gfx/interface/europa/nafplio.dds"
+	}# added by LOL
+	spriteType = {
+		name = "GFX_combat_terrain_urban_creta"
+		texturefile = "gfx/interface/europa/creta.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_edirne"
+		texturefile = "gfx/interface/europa/edirne.dds"
+	}
+
+####### COLONY TERRAIN PICTURES #########
+	spriteType = {
+		name = "GFX_colony_terrain_coast_america"
+		texturefile = "gfx/interface/europa/colony_terrain_coast_america.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_urban_boston"
+		texturefile = "gfx/interface/colony_terrain_woods.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_urban_new_york"
+		texturefile = "gfx/interface/colony_terrain_woods.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_urban_new_orleans"
+		texturefile = "gfx/interface/colony_terrain_marsh.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_urban_new_orleans"
+		texturefile = "gfx/interface/colony_terrain_marsh.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_generic_isle"
+		texturefile = "gfx/interface/colony_terrain_inland_ocean.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_urban_nassau"
+		texturefile = "gfx/interface/colony_terrain_inland_ocean.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_2154jilong"
+		texturefile = "gfx/interface/colony_terrain_grasslands.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_2155dadu"
+		texturefile = "gfx/interface/colony_terrain_grasslands.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_738ck"
+		texturefile = "gfx/interface/colony_terrain_jungle.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_mountains_ural"
+		texturefile = "gfx/interface/europa/colony_ural.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_mountains_rocky_mountains"
+		texturefile = "gfx/interface/europa/colony_rocky_mountains.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_mountains_appalachian"
+		texturefile = "gfx/interface/europa/colony_appalachian.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_easter_island"
+		texturefile = "gfx/interface/europa/colony_easter_island.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_urban_havanna"
+		texturefile = "gfx/interface/colony_terrain_inland_ocean.dds"
+	}
+	spriteType = {
+		name = "GFX_colony_terrain_urban_socotra"
+		texturefile = "gfx/interface/colony_terrain_inland_ocean.dds"
+	}
+
+	spriteType = {
+		name = "GFX_combat_terrain_urban_ceuta"
+		texturefile = "gfx/interface/africa/ceuta.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_constantine"
+		texturefile = "gfx/interface/africa/constantine.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_damietta"
+		texturefile = "gfx/interface/africa/damietta.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_fez"
+		texturefile = "gfx/interface/africa/fez.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_hautesplaines"
+		texturefile = "gfx/interface/africa/hautesplaines.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kef"
+		texturefile = "gfx/interface/africa/kef.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_mitija-algiers"
+		texturefile = "gfx/interface/africa/mitija-algiers.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_mombasa"
+		texturefile = "gfx/interface/africa/mombasa.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_mountsinai"
+		texturefile = "gfx/interface/africa/mountsinai.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_nilefayyum"
+		texturefile = "gfx/interface/africa/nilefayyum.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_ourzazate"
+		texturefile = "gfx/interface/africa/ourzazate.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_sahelianlandscape"
+		texturefile = "gfx/interface/africa/sahelianlandscape.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_sousse"
+		texturefile = "gfx/interface/africa/sousse.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_suakin"
+		texturefile = "gfx/interface/africa/suakin.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_tangiers"
+		texturefile = "gfx/interface/africa/tangiers.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_tetouan"
+		texturefile = "gfx/interface/africa/tetouan.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_timbuktu"
+		texturefile = "gfx/interface/africa/timbuktu.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_tripolitania"
+		texturefile = "gfx/interface/africa/tripolitania.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_zanzibar"
+		texturefile = "gfx/interface/africa/zanzibar.dds"
+	}
+
+	spriteType = {
+		name = "GFX_combat_terrain_urban_aden"
+		texturefile = "gfx/interface/arabworld/aden.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_aleppo"
+		texturefile = "gfx/interface/arabworld/aleppo.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_antioch"
+		texturefile = "gfx/interface/arabworld/antioch.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_aqabah"
+		texturefile = "gfx/interface/arabworld/aqabah.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_baghdad"
+		texturefile = "gfx/interface/arabworld/baghdad.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_basra"
+		texturefile = "gfx/interface/arabworld/basra.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_damascus"
+		texturefile = "gfx/interface/arabworld/damascus.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_gaza"
+		texturefile = "gfx/interface/arabworld/gaza.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_hama"
+		texturefile = "gfx/interface/arabworld/hama.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_homs"
+		texturefile = "gfx/interface/arabworld/homs.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kerak"
+		texturefile = "gfx/interface/arabworld/kerak.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_mosul"
+		texturefile = "gfx/interface/arabworld/mosul.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_muscat"
+		texturefile = "gfx/interface/arabworld/muscat.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_najaf"
+		texturefile = "gfx/interface/arabworld/najaf.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_palmyra"
+		texturefile = "gfx/interface/arabworld/palmyra.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_sanaa"
+		texturefile = "gfx/interface/arabworld/sanaa.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_shatt"
+		texturefile = "gfx/interface/arabworld/shatt.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_socotra"
+		texturefile = "gfx/interface/arabworld/socotra.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_suwayda"
+		texturefile = "gfx/interface/arabworld/suwayda.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_tikrit"
+		texturefile = "gfx/interface/arabworld/tikrit.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_trablussham"
+		texturefile = "gfx/interface/arabworld/trablussham.dds"
+	}
+
+	spriteType = {
+		name = "GFX_combat_terrain_urban_delhi"
+		texturefile = "gfx/interface/asia/delhi.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_dhaka"
+		texturefile = "gfx/interface/asia/dhaka.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_gingee"
+		texturefile = "gfx/interface/asia/gingee.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_gird"
+		texturefile = "gfx/interface/asia/gird.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_goa"
+		texturefile = "gfx/interface/asia/goa.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_golconda"
+		texturefile = "gfx/interface/asia/golconda.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_isfahan"
+		texturefile = "gfx/interface/asia/isfahan.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_jaunpur"
+		texturefile = "gfx/interface/asia/jaunpur.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kabul"
+		texturefile = "gfx/interface/asia/kabul.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kashmir"
+		texturefile = "gfx/interface/asia/kashmir.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kermanshah"
+		texturefile = "gfx/interface/asia/kermanshah.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_kumari"
+		texturefile = "gfx/interface/asia/kumari.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_qom"
+		texturefile = "gfx/interface/asia/qom.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_lahore"
+		texturefile = "gfx/interface/asia/lahore.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_lucknow"
+		texturefile = "gfx/interface/asia/lucknow.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_malacca"
+		texturefile = "gfx/interface/asia/malacca.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_multan"
+		texturefile = "gfx/interface/asia/multan.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_mysore"
+		texturefile = "gfx/interface/asia/mysore.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_shiraz"
+		texturefile = "gfx/interface/asia/shiraz.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_ternate"
+		texturefile = "gfx/interface/asia/ternate.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_westernghats"
+		texturefile = "gfx/interface/asia/westernghats.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_westernghats2"
+		texturefile = "gfx/interface/asia/westernghats2.dds"
+	}
+	spriteType = {
+		name = "GFX_combat_terrain_urban_westernghats2"
+		texturefile = "gfx/interface/asia/westernghats2.dds"
+	}
+}

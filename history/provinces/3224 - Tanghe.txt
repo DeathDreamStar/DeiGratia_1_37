@@ -1,0 +1,17 @@
+#3224 - Tanghe
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = zhongyuan
+religion = confucianism
+capital = "Tanghe"
+trade_goods = wool
+hre = no
+base_tax = 11
+base_production = 11
+base_manpower = 8
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = LNG

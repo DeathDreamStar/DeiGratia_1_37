@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = senegambian
+religion = shamanism
+technology_group = sub_saharan
+unlock_cult = yemoja_cult
+unlock_cult = roog_cult
+unlock_cult = nyame_cult
+capital = 6258
+fixed_capital = 6258
+religious_school = maliki_school
+
+1444.11.11 = { # fictional
+	monarch = {
+		name = "Ndoye Demba"
+		dynasty = "Joos"
+		female = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,13 @@
+﻿l_english:
+ ipeARA.1.t: "Isabella of Castile"
+ ipeARA.1.d: "Although she is not the primary candidate for the throne of Castile, few can deny the talents and virtues of the young princess Isabella. As a daughter of the powerful Trastámara family, she is dearly sought after as a bride by monarchs and sovereigns from all over Europe.\n\nWe can offer that one of our ablest kinsmen, Ferdinand de Trastámara, Isabella's second cousin, take her hand in marriage, with the possibility that such a choice will one day unite the crowns of Castile and Aragon. However, it remains to be seen whether the Castilians would accept our offer."
+ ipeARA.1.a: "Support the marriage of Ferdinand and Isabella."
+ ipeARA.1.a.tooltip: "§YFerdinand will ask for the hand of Isabella. If he succeeds, Isabella will become the heir to the Kingdom of Castile, and we will fall into a personal union under Castile once she takes power.§!"
+ ipeARA.1.b: "Find other suitable spouses for Ferdinand."
+ ipeARA.2.t: "The Marriage of Ferdinand and Isabella"
+ ipeARA.2.d: "With success, Ferdinand has asked for the hand of Isabella of Castile, becoming betrothed to her. In addition, [CAS.Monarch.GetName] has designated Isabella as his heir, rejecting all other candidates. The future of a united Spain draws near."
+ ipeARA.2.a: "We will soon be ruled as one."
+ ipeARA.3.t: "The Catalan Civil War"
+ ipeARA.3.d: "Carlos, the son of Joan II, was immensely popular among the people of Catalonia. Joan II's refusal to allow Carlos to assume rulership over Navarra and accept him as heir to the Crown of Aragon deeply enraged the representatives of the municipal council of Barcelona. However, Carlos' recent death, suspected to have been orchestrated by poisoning, has now driven tensions in Catalonia ever higher. With Catalonia on the brink of anarchy, the municipal council of Barcelona has now declared [ANJ.Monarch.GetTitle] [ANJ.Monarch.GetName] of Anjou as the rightful ruler of Aragon, as [ANJ.Monarch.GetName] is a descendant of Joan I, a 14th-century King of Aragon. Already, [ANJ.Monarch.GetTitle]’s son Jean has arrived in Aragon to provide assistance to the rebels."
+ ipeARA.3.a: "Crush them!"
+ ipeARA.4.a: "We must exploit this opportunity."

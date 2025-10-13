@@ -1,0 +1,70 @@
+graphical_culture = easterngfx
+
+color = { 120 155 80 }
+
+historical_idea_groups = {
+	administrative_ideas
+	plutocracy_ideas
+	trade_ideas
+	religious_ideas
+	offensive_ideas
+	maritime_ideas
+	economic_ideas
+	quality_ideas
+}
+
+historical_units = {
+	bardiche_infantry
+	eastern_knights
+	slavic_stradioti
+	eastern_militia
+	muscovite_musketeer
+	muscovite_caracolle
+	muscovite_soldaty
+	muscovite_cossack
+	russian_petrine
+	russian_lancer
+	russian_green_coat
+	russian_cuirassier
+	eastern_skirmisher
+	eastern_uhlan
+	eastern_carabinier
+	russian_mass
+}
+
+monarch_names = {
+	"Andrei #0" = 10
+	"Lubko #0" = 10
+	"Olgierd #0" = 10
+	"Bryachislav #0" = 10
+	"Vasili #0" = 10
+	"Svyatoslav #0" = 10
+	"Vladimir #0" = 10
+	"Iziaslav #0" = 10
+	"Vseslav #0" = 10
+	"Boris #0" = 10
+	
+	"Gavriila #0" = -1
+	"Larisa #0" = -1
+	"Rogneda #0" = -1
+	"Sophia #0" = -1
+	"Uliana #0" = -1
+	"Hedwig #0" = -1
+	"Euphemia #0" = -1
+	"Agatha #0" = -1
+	"Marija #0" = -1
+	"Anna #0" = -1
+	"Daria #0" = -1
+}
+
+leader_names = { 
+	Vitebsky Iziaslavsky Dursky Galisky Borovsky Vereisky Volotsky Galitsky
+	Mozhaisky Uglisky Shemyakin Satin Aladyin Beznosov Bokeev Burukhin Vnukov Korobyin
+	Zabolotsky Dalmatov Kisleevsky Travin Tsyplyatev Shukalovsky
+}
+
+ship_names = {
+	Velikaya Chudskoye Pskovskoye Polotsk
+	Rakovor Bolotovo Kulikovo Ostrov Izborsk
+	Pechory Porhov "Velikiye Luki" Sebezh
+}

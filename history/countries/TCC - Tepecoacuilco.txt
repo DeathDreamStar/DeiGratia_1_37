@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = matlatzinca 
+religion = nahuatl 
+technology_group = mesoamerican
+fixed_capital = 6576
+capital = 6576
+
+
+1444.1.1 = {
+	monarch = {
+		name = "Xilomantzin"
+		dynasty = "Tepecoacuilco"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

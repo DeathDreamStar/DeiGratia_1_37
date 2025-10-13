@@ -1,0 +1,18 @@
+government_rank = 1
+government = tribal
+add_government_reform = tribal_federation
+primary_culture = oromo
+religion = shamanism #waaq
+technology_group = east_african
+unit_type = sub_saharan
+capital = 6128 #Guji
+
+1444.11.11 = {
+      monarch = { # fictional
+           name = "Jeyna"
+           dynasty = "Guji"
+           adm = 2
+           dip = 2
+           mil = 2
+      }
+}

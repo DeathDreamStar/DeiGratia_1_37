@@ -1,0 +1,186 @@
+government = tribal
+add_government_reform = tribal_despotism
+government_rank = 1
+primary_culture = mari
+religion = tengri_pagan_reformed
+technology_group = eastern
+capital = 3161	# Malmyzh
+
+#Kugyza of Mari
+1054.1.1 = {
+	monarch = {
+		name = "Akpatyr"
+		dynasty = "Malmyz"
+		adm = 4
+		dip = 3
+		mil = 4
+	}
+}
+1100.1.1 = {
+	monarch = {
+		name = "Chumbulat"
+		dynasty = "Malmyz"
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = inspiring_leader_personality
+}
+1150.1.1 = {
+	monarch = {
+		name = "Chotkar"
+		dynasty = "Malmyz"
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+1200.1.1 = {
+	monarch = {
+		name = "Eraltem"
+		dynasty = "Malmyz"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1242.1.1 = {
+	monarch = {
+		name = "Kay"
+		dynasty = "Malmyz"
+		adm = 3
+		dip = 3
+		mil = 0
+	}
+}
+1280.1.1 = {
+	monarch = {
+		name = "Bay"
+		dynasty = "Malmyz"
+		adm = 2
+		dip = 1
+		mil = 4
+	}
+}
+1318.1.1 = {
+	monarch = {
+		name = "Altybay"
+		dynasty = "Malmyz"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1356.1.1 = {
+	monarch = {
+		name = "Ursa"
+		dynasty = "Malmyz"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1395.1.1 = {
+	monarch = {
+		name = "Yamshan"
+		dynasty = "Malmyz"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1435.1.1 = {
+	monarch = {
+		name = "Shaeva"
+		dynasty = "Malmyz"
+		adm = 4
+		dip = 1
+		mil = 1
+	}
+}
+1475.1.1 = {
+	monarch = {
+		name = "Ishko"
+		dynasty = "Malmyz"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1515.1.1 = {
+	monarch = {
+		name = "Akpars"
+		dynasty = "Malmyz"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1546.1.1 = {
+	monarch = {
+		name = "Boldush"
+		dynasty = "Malmyz"
+		adm = 3
+		dip = 3
+		mil = 5
+	}
+}
+1553.4.26 = {
+	monarch = {
+		name = "Mamich"
+		dynasty = "Berdei"
+		adm = 1
+		dip = 4
+		mil = 6
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = inspiring_leader_personality
+}
+1556.1.1 = {
+	monarch = {
+		name = "Kachak"
+		dynasty = "Berdei"
+		adm = 1
+		dip = 3
+		mil = 1
+	}
+}
+1560.1.1 = {
+	monarch = {
+		name = "Aday"
+		dynasty = "Berdei"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1567.1.1 = {
+	monarch = {
+		name = "Toktaush"
+		dynasty = "Berdei"
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+1575.1.1 = {
+	monarch = {
+		name = "Paymas"
+		dynasty = "Berdei"
+		adm = 2
+		dip = 1
+		mil = 1
+	}
+}
+1581.1.1 = {
+	monarch = {
+		name = "Jan-Gali"
+		dynasty = "Berdei"
+		adm = 0
+		dip = 3
+		mil = 0
+	}
+}
+#done 1584.1.1
+

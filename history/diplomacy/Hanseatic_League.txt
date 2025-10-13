@@ -1,0 +1,124 @@
+# Hanseatic League Members
+
+alliance = {
+	first = HSA
+	second = OLD
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1667.1.1
+}
+
+alliance = {
+	first = HSA
+	second = BRE
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1563.1.1
+}
+# Bremen kicked out of the Hansa due to religious conflicts for a few years
+alliance = {
+	first = HSA
+	second = BRE
+	trade_league = 1
+	start_date = 1576.1.1
+	end_date = 1719.9.30
+}
+
+alliance = {
+	first = HSA
+	second = HAM
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1719.9.30
+}
+
+# alliance = { pirate's nest with no commerce, despite being officially part of the League
+#	first = HSA
+#	second = GOT
+#	trade_league = 1
+#	start_date = 1380.1.1
+#	end_date = 1470.1.1
+# }
+
+alliance = {
+	first = HSA
+	second = BRU
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1648.10.24
+}
+
+alliance = {
+	first = HSA
+	second = GOS
+	trade_league = 1
+	start_date = 1267.1.1
+	end_date = 1566.1.1
+}
+
+alliance = {
+	first = HSA
+	second = ERF
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1664.1.1
+}
+
+alliance = {
+	first = HSA
+	second = FRK
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1669.6.1
+}
+
+alliance = {
+	first = HSA
+	second = RVA
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1648.10.24
+}
+
+alliance = {
+	first = HSA
+	second = BSB
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1669.1.1
+}
+
+alliance = {
+	first = HSA
+	second = MKL
+	start_date = 1380.1.1
+	end_date = 1669.1.1
+}
+
+alliance = {
+	first = HSA
+	second = WOL
+	start_date = 1380.1.1
+	end_date = 1669.1.1
+}
+
+alliance = {
+	first = HSA
+	second = STE
+	start_date = 1380.1.1
+	end_date = 1669.1.1
+}
+
+alliance = {
+	first = HSA
+	second = STP
+	start_date = 1380.1.1
+	end_date = 1669.1.1
+}
+
+alliance = {
+	first = HSA
+	second = KMM
+	start_date = 1380.1.1
+	end_date = 1669.1.1
+}

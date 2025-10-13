@@ -1,0 +1,30 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = schlesian
+add_accepted_culture = lower_silesian
+religion = catholic
+capital = 6906
+fixed_capital = 6906
+
+1439.9.10 = {
+	monarch = {
+		name = "Konrad VII"
+		dynasty = "Piast"
+		birth_date = 1398.1.1
+		adm = 0
+		dip = 2
+		mil = 0
+	}
+}
+1450.1.1 = {
+	monarch = {
+		name = "Konrad X"
+		dynasty = "Piast"
+		birth_date = 1420.1.1
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}

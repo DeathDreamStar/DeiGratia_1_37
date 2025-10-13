@@ -1,0 +1,4 @@
+sale_of_cottbus = {
+    opinion = 50
+	yearly_decay = 1
+}

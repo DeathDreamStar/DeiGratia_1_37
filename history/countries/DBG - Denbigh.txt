@@ -1,0 +1,57 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = english
+add_accepted_culture = welsh
+religion = catholic
+capital = 6872
+fixed_capital = 6872
+
+1425.1.18 = {
+    monarch = {
+        name = "Richard"
+        dynasty = "York"
+        birth_date = 1411.9.22
+        death_date = 1460.12.30
+        adm = 5
+        dip = 4
+        mil = 4
+    }
+    leader = {
+        name = "Richard York"
+		type = general
+		fire = 2
+		shock = 4
+		manuever = 4
+		siege = 0
+    }
+	clear_scripted_personalities = yes
+	add_ruler_personality = tactical_genius_personality
+    add_ruler_personality = bold_fighter_personality
+}
+
+1429.10.1 = {
+    queen = {
+        name = "Cecily"
+        dynasty = "Neville"
+        birth_date = 1415.5.3
+        death_date = 1495.5.31
+        adm = 3
+        dip = 4
+        mil = 2
+        country_of_origin = ENG
+    }
+}
+
+1442.4.28 = {
+    heir = {
+        name = "Edward"
+        dynasty = "York"
+        birth_date = 1442.4.28
+        death_date = 1483.4.9
+        adm = 4
+        dip = 3
+        mil = 4
+    }
+}

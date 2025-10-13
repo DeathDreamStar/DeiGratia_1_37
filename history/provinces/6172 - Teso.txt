@@ -1,0 +1,15 @@
+#6172 - Teso
+
+owner = BSG
+controller = BSG
+add_core = BSG
+culture = soga
+religion = shamanism #Fetishism
+capital = "Teso"
+trade_goods = livestock
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+discovered_by = central_african

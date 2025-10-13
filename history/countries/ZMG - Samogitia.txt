@@ -1,0 +1,75 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = eastern
+primary_culture = lithuanian
+religion = animism
+capital = 3909
+
+1300.1.1 = {
+	monarch = {
+		name = "Buseika"
+		dynasty = "Kesgaila"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1343.1.1 = {
+	monarch = {
+		name = "Valimantas"
+		dynasty = "Kesgaila"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1386.1.1 = {
+	monarch = {
+		name = "Rumbaudas"
+		dynasty = "Kesgaila"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1413.1.1 = {
+	religion = catholic
+	monarch = {
+		name = "Mykolas"
+		dynasty = "Kesgaila"
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+#1432.8.31-1440.3.20 LIT
+1450.1.1 = {
+	monarch = {
+		name = "Jonas"
+		dynasty = "Kesgaila"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1485.1.1 = {
+	monarch = {
+		name = "Stanislovas"
+		dynasty = "Kesgaila"
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}
+1527.1.1 = {
+	monarch = {
+		name = "Stanislovas"
+		dynasty = "Kesgaila"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+#Karlenai
+#done 1532.1.1

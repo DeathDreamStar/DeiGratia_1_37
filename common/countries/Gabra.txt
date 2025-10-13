@@ -1,0 +1,102 @@
+#Country Name: Please seefilename.
+
+graphical_culture = africangfx
+
+color = { 97  2  221 }
+
+historical_idea_groups = {
+	defensive_ideas
+	religious_ideas
+	offensive_ideas
+	influence_ideas
+	spy_ideas
+	diplomatic_ideas
+	economic_ideas
+	quality_ideas
+}
+
+historical_units = {
+	african_spearmen
+	african_abyssinian_light_cavalry
+	bantu_tribal_warfare
+	ethiopian_mountain_warfare
+	ethiopian_gunpowder_warfare
+	westernized_ethiopian
+	ethiopian_guerilla_warfare
+	african_somali_cavalry
+	african_abyssinian_cavalry
+	african_mossi_horsemen
+	african_hussar
+	african_dragoon	
+}
+
+monarch_names = {
+	"Liiban #0" = 60
+	"Abbayyii #0" = 60
+	"Jaarsoo #2" = 40
+	"Areeroo #0" = 40
+	"Baabboo #0"= 40
+	"Booroo #0" = 20
+	"Daawwee #1" = 20
+	"Gobbaa #3" = 20
+	"Aagaa #1" = 20
+	"Boruu #0" = 20
+	"Daawwaa #0" = 20
+	"Diida #0" = 20
+	"Tiitillee #0" = 20
+	"Lukkoo #0" = 20
+	"Borbor #0" = 20
+	"Dagalee #0" = 20
+	"Ososa #0" = 20
+	"Bididhoqqee #0" = 20
+	"Orroo #0" = 20
+	"Dooyyoo #0" = 20
+	"Baaco #0" = 20
+	"Urgmeessa #0" = 20
+	"Hindhaalee #0" = 20
+	"Acuu #0" = 20
+	"Aabbuu #0" = 20
+	"Aallee #0" = 5
+	"Wayyuu #0" = 5
+	"Morowwaa #0" = 5
+	"Walee #0" = 5
+	"Soraa #0" = 5
+	"Dhaddacha #0" = 5
+	"Halakee #0" = 5
+	"Guyyoo #1" = 1
+	"Madha #1" = 1
+	"Saaqqoo #0" = 0
+	"Jiloo #0" = 0
+	"Yaayyaa #0" = 0
+	"Gadayoo #0" = 0
+	
+	"Weyzero #0" = -1
+	"Itege #0" = -1
+	"Taitu #0" = -1
+	"Wabi #0" = -1
+}
+
+leader_names = {
+	Chapu
+	Gugssa
+	Aligaz
+	Ali
+	Mareeye
+	Alula
+	Gobena
+	Buko
+	Abdii
+	Baati
+	Bakkalcha
+	Bareentuma
+	Beekan
+	Caalsan
+	Daga
+	Eebbisan
+}
+
+ship_names = {
+	Yodit Shewa "Mara Takla" Lalibela
+	"Yekuno Amlak" Tigray Tatadum Seyum
+	"Kedus Harbe" "Na'akueto La'ab" Yetbarak
+}

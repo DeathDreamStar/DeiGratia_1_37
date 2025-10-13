@@ -1,0 +1,202 @@
+government = tribal
+add_government_reform = tribal_federation
+government_rank = 1
+primary_culture = nakh
+religion = animism
+technology_group = muslim
+capital = 3665
+
+1054.1.1 = {
+	monarch = {
+		name = "Targamos"
+		dynasty = "Dzurdzuki"
+		adm = 1
+		dip = 4
+		mil = 4
+	}
+}
+1090.1.1 = {
+	monarch = {
+		name = "Kavkasos"
+		dynasty = "Dzurdzuki"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1130.1.1 = {
+	monarch = {
+		name = "Movakos"
+		dynasty = "Dzurdzuki"
+		adm = 2
+		dip = 2
+		mil = 3
+	}
+}
+1170.1.1 = {
+	monarch = {
+		name = "Lekos"
+		dynasty = "Dzurdzuki"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1210.1.1 = {
+	monarch = {
+		name = "Tiretis"
+		dynasty = "Dzurdzuki"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1248.1.1 = {
+	monarch = {
+		name = "Durdzuk"
+		dynasty = "Dzurdzuki"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1290.1.1 = {
+	monarch = {
+		name = "Ingush"
+		dynasty = "Dzurdzuki"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1330.1.1 = {
+	monarch = {
+		name = "Nokhcho"
+		dynasty = "Dzurdzuki"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1370.1.1 = {
+	monarch = {
+		name = "Vazzar"
+		dynasty = "Dzurdzuki"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1410.1.1 = {
+	monarch = {
+		name = "Azdin"
+		dynasty = "Dzurdzuki"
+		birth_date = 1395.1.1
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1460.1.1 = {
+	monarch = {
+		name = "Dibir"
+		dynasty = "Dzurdzuki"
+		adm = 1
+		dip = 1
+		mil = 2
+	}
+}
+1500.1.1 = {
+	monarch = {
+		name = "Magomet"
+		dynasty = "Dzurdzuki"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1540.1.1 = {
+	monarch = {
+		name = "Angusht"
+		dynasty = "Dzurdzuki"
+		adm = 1
+		dip = 0
+		mil = 2
+	}
+}
+1580.1.1 = {
+	monarch = {
+		name = "Arshtin"
+		dynasty = "Dzurdzuki"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1620.1.1 = {
+	monarch = {
+		name = "Sholkhi"
+		dynasty = "Dzurdzuki"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1660.1.1 = {
+	monarch = {
+		name = "Alkhaste"
+		dynasty = "Dzurdzuki"
+		adm = 2
+		dip = 1
+		mil = 4
+	}
+}
+1700.1.1 = {
+	monarch = {
+		name = "Ildir"
+		dynasty = "Dzurdzuki"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1738.1.1 = {
+	monarch = {
+		name = "Dzheirkah"
+		dynasty = "Dzurdzuki"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1776.1.1 = {
+	religion = sunni
+	religious_school = shafii_school
+	technology_group = muslim
+	monarch = {
+		name = "Ushurma"
+		dynasty = "Dzurdzuki"
+		birth_date = 1760.1.1
+		adm = 4
+		dip = 4
+		mil = 5
+	}
+}
+1794.4.1 = {
+	monarch = {
+		name = "Beno"
+		dynasty = "Dzurdzuki"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1835.1.1 = {
+	monarch = {
+		name = "Boysangur"
+		dynasty = "Dzurdzuki"
+		adm = 3
+		dip = 4
+		mil = 0
+	}
+}

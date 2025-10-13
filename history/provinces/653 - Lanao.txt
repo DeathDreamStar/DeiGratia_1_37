@@ -1,0 +1,26 @@
+#653 - Lanao
+
+culture = visayan
+religion = animism
+capital = "Marawi"
+trade_goods = spices
+native_size = 70
+native_ferocity = 2
+native_hostileness = 9
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+discovered_by = chinese
+
+1450.1.1 = { religion = sunni }
+1520.1.1 = {
+	owner = LNO
+	controller = LNO
+} #Sultanates of Lanao
+1521.1.1 = { discovered_by = SPA }
+1639.4.1 = {
+	owner = SPA
+	controller = SPA
+	add_core = SPA
+} # Conquest by Spain

@@ -1,0 +1,9 @@
+hee_bav_reconcile_habsburgs = {
+	opinion = 50
+	yearly_decay = 2
+}
+
+hee_bav_against_habsburgs = {
+	opinion = -50
+	yearly_decay = 2
+}

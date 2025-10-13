@@ -1,0 +1,215 @@
+namespace = ipeSCO
+normal_or_historical_nations = yes
+
+# The Rough Wooing
+country_event = {
+	id = ipeSCO.3
+	title = ipeSCO.3.t
+	desc = ipeSCO.3.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = ENG
+		government = monarchy
+		religion_group = christian
+		NOT = { war_with = SCO }
+		SCO = {
+			exists = yes
+			is_subject = no
+			is_neighbor_of = ROOT
+			government = monarchy
+			religion_group = christian
+		}
+		is_subject = no
+		num_of_cities = SCO
+		OR = {
+			AND = {
+				ENG = { is_female = yes }
+				SCO = { is_female = no }
+			}
+			AND = {
+				ENG = { is_female = no }
+				SCO = { is_female = yes }
+			}
+			SCO = {
+				has_regency = yes
+			}
+		}
+		FRA = {
+			OR = {
+				alliance_with = SCO
+				has_guaranteed = SCO
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	
+	option = { # We come to wed!
+		name = ipeSCO.3.a
+		ENG = {
+			add_casus_belli = {	
+				target = SCO
+				type = cb_restore_personal_union
+				months = 300
+			}
+		}
+	}
+}
+
+# The Union of the Crowns
+country_event = {
+	id = ipeSCO.5
+	title = ipeSCO.5.t
+	desc = ipeSCO.5.d
+	picture = KING_SICK_IN_BED_eventPicture
+
+	trigger = {
+		tag = ENG
+		is_subject = no
+		government = monarchy
+		religion_group = christian
+		SCO = {
+			exists = yes
+			is_subject = no
+			government = monarchy
+			religion_group = christian
+			NOT = {
+				is_rival = ENG
+			}
+			ai = yes
+		}
+		num_of_cities = SCO
+		NOT = {
+			war_with = SCO
+			is_rival = SCO
+		}
+		is_year = 1600
+		has_heir = no
+	}
+
+	mean_time_to_happen = {
+		months = 120
+	}
+
+	option = { # May the kingdoms stay united forever.
+		name = ipeSCO.5.a
+		kill_ruler = yes
+		hidden_effect = {
+			define_ruler = {
+				regency = yes
+			}
+		}
+		create_union = SCO
+		SCO = {
+			add_opinion = {
+				who = ENG
+				modifier = union_of_the_crowns
+			}
+		}
+	}
+}
+
+# The Plantations of Ireland
+country_event = {
+	id = ipeSCO.6
+	title = ipeSCO.6.t
+	desc = ipeSCO.6.d
+	picture = BORDER_TENSION_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = ENG
+		primary_culture = english
+		372 = {
+			owned_by = ENG
+			culture = irish
+		}
+		4121 = {
+			owned_by = ENG
+			culture = irish
+		}
+		is_year = 1550
+		NOT = {
+			exists = IRE
+		}
+	}
+
+	option = { # Ireland is for the English!
+		name = ipeSCO.6.a
+		ai_chance = {
+			factor = 75
+		}
+		372 = {
+			change_culture = english
+			change_religion = root
+		}
+		4121 = {
+			change_culture = english
+			change_religion = root
+		}
+		every_owned_province = {
+			limit = {
+				culture = irish
+			}
+			add_province_modifier = {
+				name = plantations_of_ireland
+				duration = -1
+			}
+		}
+	}
+
+	option = { # We cannot take their lands!
+		name = ipeSCO.6.b
+		ai_chance = {
+			factor = 25
+		}
+		add_stability_or_adm_power = yes
+	}
+}
+
+# The Breaking of the Douglases
+country_event = {
+	id = ipeSCO.7
+	title = ipeSCO.7.t
+	desc = ipeSCO.7.d
+	picture = BORDER_TENSION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # We will break Scotland!
+		name = ipeSCO.7.a
+		tooltip = {
+			DOU = {
+				declare_war_with_cb = {
+					who = SCO
+					casus_belli = cb_civil_war
+				}
+			}
+			if = {
+				limit = {
+					LOI = {
+						alliance_with = DOU
+					}
+				}
+				LOI = {
+					join_all_offensive_wars_of = DOU
+				}
+			}
+		}
+		capital_scope = {
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+			infantry = ROOT
+		}
+	}
+}

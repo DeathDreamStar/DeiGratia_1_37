@@ -1,0 +1,711 @@
+# New personalities cannot be added to this file
+# Do not change existing personality names!
+
+human = {
+	chance = {
+		factor = 0
+	}
+	
+	icon = 1
+}
+
+ai_capitalist = {
+	chance = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			NOT = { adm = 1 }
+		}			
+		modifier = {
+			factor = 0.5
+			NOT = { adm = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { adm = 3 }
+		}	
+		modifier = {
+			factor = 1.5
+			adm = 4
+		}		
+		modifier = {
+			factor = 1.5
+			adm = 5
+		}		
+		modifier = {
+			factor = 1.5
+			adm = 6
+		}
+		modifier = {
+			factor = 1.1
+			administrative_ideas = 1
+		}		
+		modifier = {
+			factor = 1.1
+			trade_ideas = 1
+		}			
+		modifier = {
+			factor = 1.1
+			economic_ideas = 1
+		}
+		modifier = {
+			factor = 1.1
+			plutocracy_ideas = 1
+		}
+		modifier = {
+			factor = 1.25 
+			NOT = { total_development = 30 }
+		}
+		modifier = {
+			factor = 2
+			has_government_attribute = is_merchant_republic
+		}	
+		modifier = {
+			factor = 1.5
+			tag = MAM
+		}
+		modifier = {
+			factor = 1.5
+			tag = FRA
+		}		
+		modifier = {
+			factor = 3
+			OR = {
+				tag = ARA
+				tag = CAS
+			}
+			NOT = { is_year = 1500 }
+		}
+		modifier = {
+			factor = 1.5
+			num_of_loans = 3
+		}
+		modifier = {
+			factor = 2
+			num_of_loans = 5
+		}
+		modifier = {
+			factor = 2
+			num_of_loans = 7
+		}
+		modifier = {
+			factor = 2
+			num_of_loans = 10
+		}
+		modifier = {
+			factor = 2
+			num_of_loans = 15
+		}
+	}
+	icon = 2
+}
+
+ai_diplomat = {
+	chance = {
+		factor = 100
+		modifier = {
+			factor = 0.5
+			NOT = { dip = 1 }
+		}			
+		modifier = {
+			factor = 0.5
+			NOT = { dip = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { dip = 3 }
+		}	
+		modifier = {
+			factor = 1.5
+			dip = 4
+		}		
+		modifier = {
+			factor = 1.5
+			dip = 5
+		}		
+		modifier = {
+			factor = 1.5
+			dip = 6
+		}
+		modifier = {
+			factor = 1.1
+			aristocracy_ideas = 1
+		}			
+		modifier = {
+			factor = 1.1
+			spy_ideas = 1
+		}
+		modifier = {
+			factor = 1.1
+			diplomatic_ideas = 1
+		}	
+		modifier = {
+			factor = 1.1
+			innovativeness_ideas = 1
+		}		
+		modifier = {
+			factor = 1.25
+			NOT = { total_development = 30 }
+		}	
+		modifier = {
+			factor = 1.5
+			is_emperor = yes
+			total_development = 50
+		}
+		modifier = {
+			factor = 1.5
+			is_emperor = yes
+			total_development = 100
+		}
+		modifier = {
+			factor = 2
+			tag = HAB
+		}	
+		modifier = {
+			factor = 2
+			tag = STY
+		}			
+		modifier = {
+			factor = 3
+			tag = BYZ
+		}
+		modifier = {
+			factor = 1.5
+			num_of_subjects = 3
+		}
+		modifier = {
+			factor = 5
+			OR = {
+				culture_group = latin
+				culture_group = rhaetian
+			}
+		}		
+		modifier = {
+			factor = 10
+			tag = FRA
+			has_global_flag = hyw_mission_resolution
+			NOT = {
+				is_year = 1490
+			}
+		}
+		modifier = {
+			factor = 10
+			tag = MNG
+		}
+		modifier = {
+			factor = 10
+			tag = PAP
+		}
+		modifier = {
+			factor = 10
+			tag = GEN
+		}
+		modifier = {
+			factor = 10
+			tag = KOR
+		}
+		modifier = {
+			factor = 10
+			tag = ASK
+		}
+		modifier = {
+			factor = 10
+			tag = BOH
+		}
+		modifier = {
+			factor = 10
+			tag = DAN
+		}
+		modifier = {
+			factor = 10
+			tag = GEN
+		}
+		modifier = {
+			factor = 10
+			tag = BRI
+		}
+		modifier = {
+			factor = 10
+			tag = SCO
+		}
+		modifier = {
+			factor = 10
+			tag = SND
+		}
+		modifier = {
+			factor = 10
+			tag = ZAN
+		}
+		modifier = { # Hausa city-states
+			factor = 10
+			OR = {
+				tag = RNO
+				tag = BIR
+				tag = DAA
+				tag = KAN
+				tag = ZZZ
+				tag = ZAM
+				tag = YAU
+				tag = KEB
+				tag = GOB
+				tag = KTS
+			}
+		}
+		modifier = {
+			factor = 10
+			has_country_flag = schmalkaldic_league_leader
+		}
+		modifier = {
+			factor = 3
+			OR = {
+				tag = ARA
+				tag = CAS
+			}
+			NOT = { is_year = 1500 }
+		}
+		modifier = {
+			factor = 100
+			is_part_of_hre = yes
+			government = theocracy
+		}
+		modifier = {
+			factor = 100
+			has_reform = free_city
+		}	
+		modifier = {
+			factor = 100
+			has_reform = hanseatic_capital
+		}	
+		modifier = {
+			factor = 100
+			tag = HSA
+		}	
+		modifier = {
+			factor = 100
+			tag = RAG
+		}
+	}
+	icon = 3
+}
+
+ai_militarist = {
+	chance = {
+		factor = 100
+		modifier = {
+			factor = 0.75
+			NOT = { mil_tech = 9 }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { mil_tech = 11 }
+		}
+		modifier = {
+			factor = 0.75
+			NOT = { mil_tech = 16 }
+		}	
+		modifier = {
+			factor = 0
+			has_regency = yes
+		}	
+		modifier = {
+			factor = 0.5
+			government = republic
+			NOT = { revolution_target_exists = yes }
+		}
+		modifier = {
+			factor = 1.5
+			AND = { 
+				has_border_with_religious_enemy = yes 
+				any_neighbor_country = { is_rival = ROOT }					
+			}
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { mil = 1 }
+		}			
+		modifier = {
+			factor = 0.5
+			NOT = { mil = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { mil = 3 }
+		}
+		modifier = {
+			factor = 0.8
+			is_emperor = yes
+			total_development = 250
+		}
+		modifier = {
+			factor = 0.8
+			is_emperor = yes
+			total_development = 500
+		}		
+		modifier = {
+			factor = 1.5
+			mil = 4
+		}		
+		modifier = {
+			factor = 1.5
+			mil = 5
+		}		
+		modifier = {
+			factor = 1.5
+			mil = 6
+		}	
+		modifier = {
+			factor = 1.1
+			offensive_ideas = 1
+		}			
+		modifier = {
+			factor = 1.1
+			defensive_ideas = 1
+		}
+		modifier = {
+			factor = 1.1
+			quality_ideas = 1
+		}
+		modifier = {
+			factor = 1.1
+			quantity_ideas = 1
+		}			
+		modifier = {
+			factor = 1.1
+			religious_ideas = 1
+		}		
+		modifier = {
+			factor = 1.25
+			any_neighbor_country = {
+				is_rival = ROOT
+			}
+		}
+		modifier = {
+			factor = 2
+			tag = MCH
+		}
+		modifier = {
+			factor = 100
+			invasion_nation = yes
+		}
+		modifier = {
+			factor = 2
+			government = native
+		}
+		modifier = {
+			factor = 2
+			has_reform = steppe_horde
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				has_reform = daimyo
+				has_reform = indep_daimyo
+				has_reform = shogunate
+			}
+			has_global_flag = sengoku_jidai_begins
+		}
+		modifier = {
+			factor = 2
+			is_march = yes
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				tag = MOS
+				tag = RUS
+			}
+		}	
+		modifier = {
+			factor = 5
+			tag = HWW
+		}		
+		modifier = {
+			factor = 5
+			OR = {
+				tag = ARL
+				tag = PER
+				tag = TUR
+				tag = AMS
+				tag = RME
+				tag = TEK
+				tag = CSU
+			}
+		}
+		modifier = {
+			factor = 5
+			tag = ORI
+		}
+		modifier = {
+			factor = 0.5
+			tag = FRA
+		}	
+		modifier = {
+			factor = 0.5
+			tag = ENG
+		}	
+		modifier = {
+			factor = 0.5
+			tag = PAP
+		}		
+		modifier = {
+			factor = 0.75
+			tag = MNG
+		}
+		modifier = {
+			factor = 0.75
+			tag = KOR
+		}	
+		modifier = {
+			factor = 2
+			religion = nahuatl
+			is_religion_reformed = no
+		}
+		modifier = {
+			factor = 0.5
+			num_of_loans = 1
+		}
+		modifier = {
+			factor = 0.5
+			num_of_loans = 3
+		}
+		modifier = {
+			factor = 0.5
+			num_of_loans = 5
+		}
+		modifier = {
+			factor = 0.25
+			num_of_loans = 7
+		}
+		modifier = {
+			factor = 0.25
+			num_of_loans = 10
+		}
+		modifier = {
+			factor = 0.25
+			num_of_loans = 15
+		}
+		modifier = {
+			factor = 5
+			is_revolution_target = yes
+		}
+		modifier = {
+			factor = 1.5
+			any_neighbor_country = { 
+				is_revolution_target = yes
+			}
+		}
+		modifier = {
+			factor = 0.5
+			is_part_of_hre = yes
+			government = theocracy
+		}
+		modifier = {
+			factor = 0.5
+			has_reform = free_city
+		}
+		modifier = {
+			factor = 100
+			has_reform = hanseatic_capital
+		}	
+		modifier = {
+			factor = 0.5
+			tag = HSA
+		}
+		modifier = {
+			factor = 0.5
+			tag = GEN
+		}
+		modifier = {
+			factor = 0.5
+			has_country_flag = schmalkaldic_league_leader
+		}
+	}
+	icon = 4
+}
+
+ai_colonialist = {
+	chance = {
+		factor = 100	
+		modifier = {
+			factor = 0.5
+			has_regency = yes
+		}		
+		modifier = {
+			factor = 0.5
+			NOT = { dip_tech = 10 }
+		}		
+		modifier = {
+			factor = 0.5
+			NOT = { adm = 1 }
+		}			
+		modifier = {
+			factor = 0.5
+			NOT = { adm = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { adm = 3 }
+		}	
+		modifier = {
+			factor = 1.5
+			adm = 4
+		}		
+		modifier = {
+			factor = 1.5
+			adm = 5
+		}		
+		modifier = {
+			factor = 1.5
+			adm = 6
+		}	
+		modifier = {
+			factor = 1.1
+			trade_ideas = 1
+		}			
+		modifier = {
+			factor = 1.1
+			exploration_ideas = 1
+		}			
+		modifier = {
+			factor = 1.1
+			maritime_ideas = 1
+		}
+		modifier = {
+			factor = 1.1
+			expansion_ideas = 1
+		}		
+		modifier = {
+			factor = 0
+			NOT = { num_of_colonists = 1 }
+		}
+		modifier = {
+			factor = 2
+			tag = POR
+		}
+		modifier = {
+			factor = 2
+			tag = CAS
+		}
+		modifier = {
+			factor = 2
+			tag = SPA
+		}
+		modifier = {
+			factor = 0.5
+			tag = FRA
+		}
+		modifier = {
+			factor = 0.5
+			num_of_loans = 3
+		}
+		modifier = {
+			factor = 0.5
+			num_of_loans = 5
+		}
+		modifier = {
+			factor = 0.25
+			num_of_loans = 7
+		}
+		modifier = {
+			factor = 0.25
+			num_of_loans = 10
+		}
+		modifier = {
+			factor = 0.25
+			num_of_loans = 15
+		}	
+	}
+	icon = 5
+}
+
+ai_balanced = {
+	chance = {
+		factor = 100
+		modifier = {
+			factor = 1.25
+			always = yes # higher base chance
+		}	
+		modifier = {
+			factor = 100
+			ai = no
+		}
+		modifier = {
+			factor = 0
+			has_regency = yes
+		}		
+		modifier = {
+			factor = 0.75
+			NOT = {
+				OR = { 
+					adm = 1
+					dip = 1
+					mil = 1
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			NOT = {
+				OR = { 
+					adm = 2
+					dip = 2
+					mil = 2
+				}
+			}
+		}
+		modifier = {
+			factor = 0.75
+			NOT = {
+				OR = { 
+					adm = 3
+					dip = 3
+					mil = 3
+				}
+			}
+		}	
+		modifier = {
+			factor = 1.25
+			OR = { 
+				adm = 4
+				dip = 4
+				mil = 4
+			}
+		}
+		modifier = {
+			factor = 1.25
+			OR = { 
+				adm = 5
+				dip = 5
+				mil = 5
+			}
+		}		
+		modifier = {
+			factor = 1.25
+			OR = { 
+				adm = 6
+				dip = 6
+				mil = 6
+			}
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				tag = MOS
+				tag = RUS
+				tag = TUR
+				tag = TIM
+				tag = MUG
+				tag = CAS
+				tag = SWE
+				tag = FRA
+				tag = PLC
+				tag = SPA
+			}
+		}	
+		modifier = {
+			factor = 1.25
+			is_emperor = yes
+		}
+	}
+	icon = 6
+}

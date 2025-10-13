@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = plutocratic_reform
+government_rank = 1
+technology_group = indian
+religion = nestorian
+primary_culture = malayalam
+capital = 6742	# Villarvattom
+fixed_capital = 6742 # Cannot move capital away from this province & no power cost to move to it
+
+1444.1.1 = {
+	monarch = {
+		name = "Thoma"
+		dynasty = "Villarvattom"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

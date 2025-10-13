@@ -1,0 +1,22 @@
+name = "Gondwani War"
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 550
+}
+
+1439.1.1 = {
+	add_attacker = MLW
+	add_defender = BND
+	add_defender = PAN
+	add_defender = GDW
+	add_defender = BGL
+}
+
+1441.1.1 = {
+	rem_attacker = MLW
+	rem_defender = BND
+	rem_defender = PAN
+	rem_defender = GDW
+	rem_defender = BGL
+}

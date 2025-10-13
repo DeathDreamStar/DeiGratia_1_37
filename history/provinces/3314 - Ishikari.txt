@@ -1,0 +1,16 @@
+#3314 - Ishikari
+
+owner = ANU
+controller = ANU
+culture = ainu
+religion = animism
+capital = "Ishikari"
+trade_goods = fish
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = ANU
+
+discovered_by = chinese

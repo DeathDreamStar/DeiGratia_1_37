@@ -1,0 +1,22 @@
+harmonized_druze = {
+	diplomatic_upkeep = 1
+	religion = yes
+}
+
+harmonized_mesoamerican = {
+	global_unrest = -0.5
+	religion = yes
+}
+
+joined_sufi_order = {
+	prestige = 0.5
+}
+
+tolerated_sect_practices = {
+	global_unrest = -1
+}
+
+harmonized_taoism = {
+	development_cost = -0.05
+	religion = yes
+}

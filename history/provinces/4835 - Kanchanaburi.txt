@@ -1,0 +1,21 @@
+#4835 - Kanchanaburi
+
+owner = AYU
+controller = AYU
+culture = central_thai
+religion = buddhism
+capital = "Kanchanaburi"
+trade_goods = grain
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = AYU
+
+
+
+discovered_by = chinese
+discovered_by = indian
+discovered_by = muslim
+discovered_by = ottoman

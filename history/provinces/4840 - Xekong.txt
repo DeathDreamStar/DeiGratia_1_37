@@ -1,0 +1,17 @@
+# 4840 - Xekong
+
+owner = LXA
+controller = LXA
+add_core = LXA
+add_core = CHK
+culture = bahnar
+religion = animism
+capital = "Xekong"
+trade_goods = tea
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian

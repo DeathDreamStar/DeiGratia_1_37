@@ -1,0 +1,15 @@
+imported_slave_labor = {
+	trade_goods_size = 0.25
+	local_unrest = 2
+	local_tax_modifier = -0.50
+	local_institution_spread = -0.50
+}
+
+hispaniola_plantations = {
+	trade_goods_size = 5
+}
+
+slave_uprising = {
+	trade_goods_size = -0.25
+	local_autonomy = 0.05
+}

@@ -1,0 +1,23 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = swabian
+religion = catholic
+technology_group = western
+capital = 3710
+fixed_capital = 3710
+historical_friend = KMR
+historical_friend = ALS
+historical_friend = MLH
+
+1444.1.1 = {
+	monarch = {
+		name = "Stadtrat"
+		adm = 2
+		dip = 2
+		mil = 2
+		regent = yes
+	}
+	set_country_flag = decapolis_leader
+}

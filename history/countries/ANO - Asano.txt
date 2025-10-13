@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = daimyo
+government_rank = 1
+primary_culture = togoku
+add_accepted_culture = japanese
+religion = shinto
+technology_group = chinese
+capital = 4187
+
+1600.9.13 = {
+	monarch = {
+		name = "Nagamasa"
+		dynasty = "Asano"
+		birth_date = 1547.1.1
+		death_date = 1611.5.29
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}

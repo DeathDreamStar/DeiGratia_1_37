@@ -1,0 +1,20 @@
+# Parliament of Mechelen
+bur_parliament_of_mechelen = {
+	num_accepted_cultures = 2
+}
+
+# The Congress of Arras
+congress_of_arras = {
+	legitimacy = 1
+}
+
+# The Order of the Golden Fleece
+ipe_order_of_golden_fleece = {
+	prestige = 1
+	diplomatic_upkeep = 2
+}
+
+# Flemish Cloth
+flemish_cloth = {
+	trade_goods_size = 5
+}

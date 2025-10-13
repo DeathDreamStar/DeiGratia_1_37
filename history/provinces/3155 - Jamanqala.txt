@@ -1,0 +1,25 @@
+# 3155 - Jamanqala
+
+owner = NOG
+controller = NOG
+culture = bashkir
+religion = sunni
+capital = "Magnitnaya"
+trade_goods = iron
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+add_core = BSH
+add_core = NOG
+
+discovered_by = nomad_group
+discovered_by = ottoman
+discovered_by = muslim
+
+
+1468.1.1 = { controller = KZH owner = KZH remove_core = NOG } # Kazakhs take over
+1622.1.1 = { discovered_by = RUS }
+1740.1.1 = { owner = OIR controller = OIR } # Dzungarian invasion
+1755.1.1 = { owner = KZH controller = KZH }

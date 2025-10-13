@@ -1,0 +1,58 @@
+name = "Fourth War in Lombardy"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 107
+}
+
+1438.9.1 = {
+	# Milan
+	add_attacker = MLO
+
+	# Venice
+	add_defender = VEN
+	add_defender = NAX
+
+	# Florence
+	add_defender = LAN
+	add_defender = PIO
+
+	# Papal States
+	add_defender = PAP
+	add_defender = PGA
+	add_defender = URB
+	add_defender = ANC
+	add_defender = BLG
+	add_defender = CES
+	add_defender = CNO
+	add_defender = FRL
+	add_defender = PSO
+	add_defender = RIM
+	add_defender = OVI
+}
+
+1441.9.20 = {
+	# Milan
+	rem_attacker = MLO
+
+	# Venice
+	rem_defender = VEN
+	rem_defender = NAX
+
+	# Florence
+	rem_defender = LAN
+	rem_defender = PIO
+
+	# Papal States
+	rem_defender = PAP
+	rem_defender = PGA
+	rem_defender = URB
+	rem_defender = ANC
+	rem_defender = BLG
+	rem_defender = CES
+	rem_defender = CNO
+	rem_defender = FRL
+	rem_defender = PSO
+	rem_defender = RIM
+	rem_defender = OVI
+}

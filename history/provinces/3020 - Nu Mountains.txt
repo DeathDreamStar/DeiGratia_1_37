@@ -1,0 +1,4 @@
+#3020 - Nu Mountains
+
+discovered_by = chinese
+discovered_by = indian

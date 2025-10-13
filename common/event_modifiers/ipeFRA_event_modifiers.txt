@@ -1,0 +1,29 @@
+# Inspected Mines
+inspected_mines = {
+	development_cost = -0.1
+}
+
+# Uninspected Mines
+uninspected_mines = {
+	development_cost = 0.1
+}
+
+# Catacombs of Paris
+catacombs_of_paris = {
+	prestige = 0.5
+}
+
+# Reformed the Toll System
+reformed_toll_system = {
+	global_tax_modifier = 0.05
+}
+
+# Harboring the Dauphin
+harboring_the_dauphin = {
+	diplomatic_reputation = 1
+}
+
+# Affair of the Placards
+affair_of_the_placards = {
+	local_unrest = 5
+}

@@ -1,0 +1,6 @@
+government = tribal
+add_government_reform = tribal_despotism
+technology_group = nomad_group
+religion = tengri_pagan_reformed
+primary_culture = mordvin
+capital = 304

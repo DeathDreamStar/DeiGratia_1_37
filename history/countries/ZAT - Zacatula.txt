@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+religion = nahuatl 
+primary_culture = cuitlatec
+technology_group = mesoamerican 
+capital = 851
+fixed_capital = 851
+
+1444.1.1 = {
+	monarch = {
+		name = "Cavujancha"
+		dynasty = "Zacatu"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

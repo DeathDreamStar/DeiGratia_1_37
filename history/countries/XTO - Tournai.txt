@@ -1,0 +1,354 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = picard
+religion = catholic
+technology_group = western
+capital = 3897
+fixed_capital = 3897
+
+1044.1.1 = {
+	monarch = {
+		name = "Baudouin"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1068.1.1 = {
+	monarch = {
+		name = "Radbod II"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1098.1.1 = {
+	monarch = {
+		name = "Baldéric"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1112.5.31 = {
+	monarch = {
+		name = "Lambert"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1122.1.1 = {
+	monarch = {
+		name = "Simon"
+		dynasty = "de Vermandois"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1146.1.1 = {
+	monarch = {
+		name = "Anselme"
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+1149.1.1 = {
+	monarch = {
+		name = "Gérard"
+		dynasty = "de Villers"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1166.1.1 = {
+	monarch = {
+		name = "Gauthier I"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1171.1.1 = {
+	monarch = {
+		name = "Everard"
+		dynasty = "d'Avesnes"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1190.1.1 = {
+	monarch = {
+		name = "Étienne"
+		birth_date = 1128.2.18
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1203.1.1 = {
+	monarch = {
+		name = "Gossuin"
+		dynasty = "de Beaufort"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1219.1.1 = {
+	monarch = {
+		name = "Gauthier II"
+		dynasty = "de Marvis"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1251.1.1 = {
+	monarch = {
+		name = "Gauthier II"
+		dynasty = "de Croix"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1261.1.1 = {
+	monarch = {
+		name = "Jean I"
+		dynasty = "Buchiau"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1266.1.1 = {
+	monarch = {
+		name = "Jean II"
+		dynasty = "d'Enghien"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1274.1.1 = {
+	monarch = {
+		name = "Philippe"
+		dynasty = "Mouskes"
+		birth_date = 1219.1.1
+		adm = 3
+		dip = 5
+		mil = 3
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = scholar_personality
+}
+1282.2.24 = {
+	monarch = {
+		name = "Michael I"
+		dynasty = "von Warenghien"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1291.1.1 = {
+	monarch = {
+		name = "Jean III"
+		dynasty = "de Vassogne"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1300.1.1 = {
+	monarch = { #cambrai
+		name = "Guy I"
+		dynasty = "d'Auvergne"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1324.1.1 = {
+	monarch = {
+		name = "Elie"
+		dynasty = "de Ventadour"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1326.1.1 = {
+	monarch = {
+		name = "Guillaume I"
+		dynasty = "de Ventadour"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1333.1.1 = {
+	monarch = {
+		name = "Thiébaut"
+		dynasty = "de Saussoire"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1334.1.1 = {
+	monarch = {
+		name = "André"
+		dynasty = "Ghini"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1342.1.1 = {
+	monarch = {
+		name = "Jean IV"
+		dynasty = "des Prés"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1349.1.1 = {
+	monarch = {
+		name = "Pierre I"
+		dynasty = "de Forest"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1350.1.1 = {
+	monarch = {
+		name = "Pierre II"
+		dynasty = "d'Arbois"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1377.1.1 = {
+	monarch = {
+		name = "Pierre III"
+		dynasty = "d'Auxy"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1388.1.1 = {
+	monarch = {
+		name = "Louis I"
+		dynasty = "de la Trémouille"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1410.1.1 = {
+	monarch = {
+		name = "Jean V"
+		dynasty = "de Thoisy"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1433.1.1 = {
+	monarch = {
+		name = "Jean VI"
+		dynasty = "d'Harcourt"
+		culture = normand
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1436.11.5 = {
+	monarch = {
+		name = "Jean VII"
+		dynasty = "Chevrot"
+		adm = 4
+		dip = 5
+		mil = 2
+	}
+}
+1460.1.1 = {
+	monarch = {
+		name = "Guillaume II"
+		dynasty = "Filastre"
+		birth_date = 1400.1.1
+		adm = 4
+		dip = 3
+		mil = 3
+	}
+}
+1473.1.1 = {
+	monarch = {
+		name = "Ferry I"
+		dynasty = "de Clugny"
+		birth_date = 1430.1.1
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}
+1483.10.7 = {
+	monarch = {
+		name = "(Vacant)"
+		regent = yes
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1505.1.1 = {
+	monarch = {
+		name = "Charles I"
+		dynasty = "de Hautbois"
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+1513.9.23 = {
+	monarch = {
+		name = "Thomas"
+		dynasty = "Wolsey"
+		birth_date = 1473.3.1
+		culture = english
+		adm = 3
+		dip = 5
+		mil = 5
+	}
+}
+1518.10.4 = {
+	monarch = {
+		name = "Josse"
+		dynasty = "van Clichtove"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1524.1.1 = {
+	monarch = {
+		name = "Charles II"
+		dynasty = "de Cröy"
+		birth_date = 1506.1.1
+		adm = 1
+		dip = 3
+		mil = 1
+	}
+}

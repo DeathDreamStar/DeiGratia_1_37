@@ -1,0 +1,9 @@
+seven_grievances_country = {
+	land_morale = 0.1
+	manpower_recovery_speed = 0.1
+}
+
+seven_grievances_province = {
+	local_unrest = 5
+	local_defensiveness = -0.5
+}

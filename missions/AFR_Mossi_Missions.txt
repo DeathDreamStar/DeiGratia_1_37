@@ -1,0 +1,523 @@
+#First slot
+msi_mission_religion_slot = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Origins"
+	}
+	potential = {
+		has_dlc = "Origins"
+		NOT = { map_setup = map_setup_random }
+		OR = {
+			tag = MSI
+			primary_culture = mossi
+		}
+	}
+	has_country_shield = yes
+
+	msi_balance_of_power = {
+		icon = mission_mal_riches_of_trade
+		required_missions = {  } 
+		position = 1
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				NOT = { has_estate = estate_church }
+				estate_loyalty = {
+					estate = estate_church
+					loyalty = 70
+				}
+			}
+			OR = {
+				NOT = { has_estate = estate_nobles }
+				estate_loyalty = {
+					estate = estate_nobles
+					loyalty = 70
+				}
+			}
+			if = {
+				limit = {
+					has_estate = estate_church
+					has_estate = estate_nobles
+				}
+				custom_trigger_tooltip = {
+					tooltip = msi_balance_of_power_ct
+					OR = {
+						AND = {
+							NOT = { estate_influence = { estate = estate_church influence = 5 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 5 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 5 }
+							estate_influence = { estate = estate_nobles influence = 5 }
+							NOT = { estate_influence = { estate = estate_church influence = 10 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 10 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 10 }
+							estate_influence = { estate = estate_nobles influence = 10 }
+							NOT = { estate_influence = { estate = estate_church influence = 15 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 15 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 15 }
+							estate_influence = { estate = estate_nobles influence = 15 }
+							NOT = { estate_influence = { estate = estate_church influence = 20 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 20 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 20 }
+							estate_influence = { estate = estate_nobles influence = 20 }
+							NOT = { estate_influence = { estate = estate_church influence = 25 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 25 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 25 }
+							estate_influence = { estate = estate_nobles influence = 25 }
+							NOT = { estate_influence = { estate = estate_church influence = 30 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 30 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 25 }
+							estate_influence = { estate = estate_nobles influence = 25 }
+							NOT = { estate_influence = { estate = estate_church influence = 30 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 30 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 30 }
+							estate_influence = { estate = estate_nobles influence = 30 }
+							NOT = { estate_influence = { estate = estate_church influence = 35 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 35 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 35 }
+							estate_influence = { estate = estate_nobles influence = 35 }
+							NOT = { estate_influence = { estate = estate_church influence = 40 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 40 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 40 }
+							estate_influence = { estate = estate_nobles influence = 40 }
+							NOT = { estate_influence = { estate = estate_church influence = 45 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 45 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 45 }
+							estate_influence = { estate = estate_nobles influence = 45 }
+							NOT = { estate_influence = { estate = estate_church influence = 50 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 50 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 50 }
+							estate_influence = { estate = estate_nobles influence = 50 }
+							NOT = { estate_influence = { estate = estate_church influence = 55 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 55 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 55 }
+							estate_influence = { estate = estate_nobles influence = 55 }
+							NOT = { estate_influence = { estate = estate_church influence = 60 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 60 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 60 }
+							estate_influence = { estate = estate_nobles influence = 60 }
+							NOT = { estate_influence = { estate = estate_church influence = 65 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 65 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 65 }
+							estate_influence = { estate = estate_nobles influence = 65 }
+							NOT = { estate_influence = { estate = estate_church influence = 70 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 70 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 70 }
+							estate_influence = { estate = estate_nobles influence = 70 }
+							NOT = { estate_influence = { estate = estate_church influence = 75 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 75 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 75 }
+							estate_influence = { estate = estate_nobles influence = 75 }
+							NOT = { estate_influence = { estate = estate_church influence = 80 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 80 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 80 }
+							estate_influence = { estate = estate_nobles influence = 80 }
+							NOT = { estate_influence = { estate = estate_church influence = 85 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 85 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 85 }
+							estate_influence = { estate = estate_nobles influence = 85 }
+							NOT = { estate_influence = { estate = estate_church influence = 90 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 90 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 90 }
+							estate_influence = { estate = estate_nobles influence = 90 }
+							NOT = { estate_influence = { estate = estate_church influence = 95 } }
+							NOT = { estate_influence = { estate = estate_nobles influence = 95 } }
+						}
+						AND = {
+							estate_influence = { estate = estate_church influence = 95 }
+							estate_influence = { estate = estate_nobles influence = 95 }
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+		}
+	}
+
+	msi_integrate_the_muslims = {
+		icon = mission_mal_jihad_upon_own_population
+		required_missions = { msi_balance_of_power } 
+		position = 2
+		provinces_to_highlight = {
+		}
+		trigger = {
+			theologian = 3
+			if = {
+				limit = {
+					religion_group = pagan
+				}
+				num_of_owned_provinces_with = {
+					religion_group = muslim
+					value = 10
+				}
+			}
+			else = {
+				num_of_owned_provinces_with = {
+					religion_group = pagan
+					value = 10
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = msi_integrate_the_muslims_ct
+			hidden_effect = {
+				every_known_country = {
+					limit = {
+						capital_scope = {
+							OR = {
+								region = guinea_region
+								region = sahel_region
+								region = niger_region
+							}
+						}
+						religion_group = muslim
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = msi_accepts_muslims
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion_group = pagan
+				}
+				custom_tooltip = msi_integrate_the_muslims_at
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							religion_group = muslim
+						}
+						add_province_modifier = {
+							name = msi_integrated_province
+							duration = 9125
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					religion_group = muslim
+				}
+				custom_tooltip = msi_integrate_the_muslims_bt
+				hidden_effect = {
+					every_owned_province = {
+						limit = {
+							religion_group = pagan
+						}
+						add_province_modifier = {
+							name = msi_integrated_province
+							duration = 9125
+						}
+					}
+				}
+			}
+		}
+	}
+
+	msi_invade_the_west = {
+		icon = mission_mal_subjugate_zaf
+		required_missions = { msi_unite_the_kingdoms } 
+		position = 3
+		provinces_to_highlight = {
+			area = jenne_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			jenne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			massina_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			manding_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kong_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+#Second slot
+msi_mission_conquest_slot = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Origins"
+	}
+	potential = {
+		has_dlc = "Origins"
+		NOT = { map_setup = map_setup_random }
+		OR = {
+			tag = MSI
+			primary_culture = mossi
+		}
+	}
+	has_country_shield = yes
+
+	msi_gather_the_troops = {
+		icon = mission_son_military_expertise
+		required_missions = {  } 
+		position = 1
+		provinces_to_highlight = {
+		}
+		trigger = {
+			army_size_percentage = 1
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = msi_prepared_for_war
+				duration = 9125
+			}
+			custom_tooltip = msi_gather_the_troops_ct
+			hidden_effect = {
+				niger_region = {
+					limit = {
+						culture = mossi
+						NOT = { is_core = ROOT }
+						NOT = { is_permanent_claim = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+
+	msi_unite_the_kingdoms = {
+		icon = mission_kon_conquer_ckw
+		required_missions = { msi_gather_the_troops } 
+		position = 2
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			culture = mossi
+		}
+		trigger = {
+			tag = MSI
+			NOT = {
+				any_province = {
+					culture = mossi
+					NOT = { owned_by = ROOT }
+				}
+			}
+		}
+		effect = {
+			jenne_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			niger_bend_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_volta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dendi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			borgu_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_volta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	msi_invade_the_north = {
+		icon = mission_kon_anzikus_copper
+		required_missions = { msi_unite_the_kingdoms } 
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = niger_bend_area
+				area = dendi_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			niger_bend_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dendi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_mil_power = 100
+		}
+	}
+
+	msi_hegemony_of_west_africa = {
+		icon = mission_mal_fighting_musa
+		required_missions = { msi_invade_the_north msi_invade_the_south msi_invade_the_west }
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				region = sahel_region
+				region = niger_region
+				region = guinea_region
+				owned_by = MAL
+			}
+			NOT = { owned_by = ROOT }
+		}
+		trigger = {
+			MAL = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			num_of_owned_provinces_with = {
+				OR = {
+					region = sahel_region
+					region = niger_region
+					region = guinea_region
+				}
+				value = 50
+			}
+		}
+		effect = {
+			if = {
+				limit = { NOT = { government_rank = 3 } }
+				set_government_rank = 3
+			}
+			add_country_modifier = {
+				name = msi_west_african_hegemony
+				duration = -1
+			}
+		}
+	}
+}
+
+msi_mission_invasion_slot = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Origins"
+	}
+	potential = {
+		has_dlc = "Origins"
+		NOT = { map_setup = map_setup_random }
+		OR = {
+			tag = MSI
+			primary_culture = mossi
+		}
+	}
+	has_country_shield = yes
+
+	msi_invade_the_south = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { msi_unite_the_kingdoms } 
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = lower_volta_area
+				area = borgu_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			lower_volta_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			borgu_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = msi_conquerors_of_west_africa
+				duration = 7300
+			}
+		}
+	}
+}

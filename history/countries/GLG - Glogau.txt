@@ -1,0 +1,49 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = schlesian
+add_accepted_culture = lower_silesian
+religion = catholic
+capital = 2966
+
+# Dukes of Olawa/Lubin
+
+1397.3.14 = {
+	monarch = {
+		name = "Henryk IX"
+		dynasty = "Piast"
+		birth_date = 1392.1.1
+		adm = 3
+		dip = 2
+		mil = 3
+	}
+}
+
+1423.1.1 = {
+	queen = {
+		name = "Jadwiga"
+		dynasty = "Piast"
+		country_of_origin = OLS
+		birth_date = 1400.1.1
+		death_date = 1447.6.25
+		female = yes
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+
+1435.1.1 = {
+	heir = {
+		name = "Henryk"
+		monarch_name = "Henryk XI"
+		dynasty = "Piast"
+		birth_date = 1435.1.1
+		death_date = 1476.2.22
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

@@ -1,0 +1,31 @@
+government = tribal
+add_government_reform = steppe_horde
+government_rank = 1
+technology_group = nomad_group
+religion = orthodox
+primary_culture = ruthenian
+capital = 298
+historical_friend = ZAZ
+
+#Khanate of Jagoldai
+1428.1.1 = {
+	monarch = {
+		name = "Cagolday"
+		dynasty = "Saraiva"
+		culture = mishary
+		religion = sunni
+		adm = 3
+		dip = 3
+		mil = 4
+	}
+}
+1463.1.1 = {
+	monarch = {
+		name = "Roman"
+		dynasty = "Saraiva"
+		adm = 1
+		dip = 3
+		mil = 1
+	}
+}
+#done 1494

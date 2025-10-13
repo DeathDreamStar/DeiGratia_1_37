@@ -1,0 +1,34 @@
+#2637 - Chorti
+
+owner = CHT
+controller = CHT
+is_city = yes
+add_core = CHT
+culture = chontales
+religion = mesoamerican_religion
+capital = "Chorti"
+trade_goods = naval_supplies
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 2
+native_size = 5
+native_ferocity = 1
+native_hostileness = 2
+
+
+
+discovered_by = mesoamerican
+
+1502.1.1 = { discovered_by = CAS } # Christopher Columbus 
+1516.1.23 = { discovered_by = SPA }
+
+1524.1.1 = {
+	capital = "Triunfo de la Cruz"
+	owner = SPA 
+	controller = SPA
+	add_core = SPA
+	culture = castillian
+	religion = catholic
+} # Founded by de Olid
+1810.9.16 = { owner = MEX add_core = MEX controller = SPA } # Mexican War of Independence

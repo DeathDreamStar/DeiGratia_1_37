@@ -1,0 +1,5 @@
+luzon_alliance = {
+    opinion = 100
+    years = 50
+    yearly_decay = 2
+}

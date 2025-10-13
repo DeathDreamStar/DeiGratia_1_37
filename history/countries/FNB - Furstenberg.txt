@@ -1,0 +1,356 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = swabian
+religion = catholic
+technology_group = western
+capital = 3980
+fixed_capital = 3980
+
+1245.1.1 = {
+	monarch = {
+		name = "Heinrich I"
+		dynasty = "von Urach"
+		birth_date = 1215.1.1
+		adm = 5
+		dip = 5
+		mil = 3
+	}
+	heir = {
+		name = "Friedrich"
+		monarch_name = "Friedrich I"
+		dynasty = "von Fürstenberg"
+		birth_date = 1245.1.1
+		death_date = 1296.5.1
+		claim = 85
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+}
+1284.1.6 = {
+	monarch = {
+		name = "Friedrich I"
+		dynasty = "von Fürstenberg"
+		birth_date = 1245.1.1
+		adm = 2
+		dip = 4
+		mil = 2
+	}
+	heir = {
+		name = "Heinrich"
+		monarch_name = "Heinrich II"
+		dynasty = "von Fürstenberg"
+		birth_date = 1279.1.1
+		death_date = 1337.12.14
+		claim = 95
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}
+1296.5.1 = {
+	monarch = {
+		name = "Heinrich II"
+		dynasty = "von Fürstenberg"
+		birth_date = 1279.1.1
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}
+1308.1.1 = {
+	heir = {
+		name = "Heinrich"
+		monarch_name = "Heinrich III"
+		dynasty = "von Fürstenberg"
+		birth_date = 1308.1.1
+		death_date = 1367.2.23
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1337.12.14 = {
+	monarch = {
+		name = "Heinrich III"
+		dynasty = "von Fürstenberg"
+		birth_date = 1308.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1367.2.23 = {
+	monarch = {
+		name = "Heinrich IV"
+		dynasty = "von Fürstenberg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1408.1.1 = {
+	monarch = {
+		name = "Heinrich V"
+		dynasty = "von Fürstenberg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1441.1.1 = {
+	monarch = {
+		name = "Konrad I"
+		dynasty = "von Fürstenberg"
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1465.4.3 = {
+	heir = {
+		name = "Wolfgang"
+		monarch_name = "Wolfgang I"
+		dynasty = "von Fürstenberg"
+		birth_date = 1465.4.3
+		death_date = 1509.12.31
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1484.1.1 = {
+	monarch = {
+		name = "Wolfgang I"
+		dynasty = "von Fürstenberg"
+		birth_date = 1465.4.3
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1509.12.31 = {
+	monarch = {
+		name = "Friedrich II"
+		dynasty = "von Fürstenberg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1559.1.1 = {
+	monarch = {
+		name = "Christoph I"
+		dynasty = "von Fürstenberg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+
+1579.1.1 = {
+	monarch = {
+		name = "Albrecht I"
+		dynasty = "von Fürstenberg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1599.1.1 = {
+	monarch = {
+		name = "Christoph II"
+		dynasty = "von Fürstenberg"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1614.1.1 = {
+	monarch = {
+		name = "Egon I" #8
+		dynasty = "von Fürstenberg"
+		birth_date = 1588.3.21
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}
+1627.11.5 = {
+	heir = {
+		name = "Hermann Egon"
+		monarch_name = "Hermann Egon"
+		dynasty = "von Fürstenberg"
+		birth_date = 1627.11.5
+		death_date = 1674.9.10
+		claim = 95
+		adm = 5
+		dip = 5
+		mil = 3
+	}
+}
+1635.8.24 = {
+	monarch = {
+		name = "Hermann Egon"
+		dynasty = "von Fürstenberg"
+		birth_date = 1627.11.5
+		adm = 5
+		dip = 5
+		mil = 3
+	}
+}
+1656.4.23 = {
+	heir = {
+		name = "Anton Egon"
+		monarch_name = "Anton Egon"
+		dynasty = "von Fürstenberg"
+		birth_date = 1656.4.23
+		death_date = 1716.10.10
+		claim = 95
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1674.9.10 = {
+	monarch = {
+		name = "Anton Egon"
+		dynasty = "von Fürstenberg"
+		birth_date = 1656.4.23
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+	heir = {
+		name = "Froben Ferdinand"
+		monarch_name = "Froben Ferdinand"
+		dynasty = "von Fürstenberg"
+		birth_date = 1664.8.6
+		death_date = 1741.4.4
+		claim = 95
+		adm = 3
+		dip = 6
+		mil = 3
+	}
+}
+1716.10.10 = {
+	monarch = {
+		name = "Froben Ferdinand"
+		dynasty = "von Fürstenberg"
+		birth_date = 1664.8.6
+		adm = 3
+		dip = 6
+		mil = 3
+	}
+	heir = {
+		name = "Karl Friedrich"
+		monarch_name = "Karl Friedrich"
+		dynasty = "von Fürstenberg"
+		birth_date = 1714.8.9
+		death_date = 1744.9.7
+		claim = 95
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1741.4.4 = {
+	monarch = {
+		name = "Karl Friedrich"
+		dynasty = "von Fürstenberg"
+		birth_date = 1714.8.9
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1744.9.7 = {
+	monarch = {
+		name = "Josef Wilhelm"
+		dynasty = "von Fürstenberg"
+		birth_date = 1699.4.13
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+	heir = {
+		name = "Josef Wenzel"
+		monarch_name = "Josef Wenzel"
+		dynasty = "von Fürstenberg"
+		birth_date = 1728.3.21
+		death_date = 1783.6.2
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1762.4.29 = {
+	monarch = {
+		name = "Josef Wenzel"
+		dynasty = "von Fürstenberg"
+		birth_date = 1728.3.21
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+	heir = {
+		name = "Josef Maria"
+		monarch_name = "Josef Maria"
+		dynasty = "von Fürstenberg"
+		birth_date = 1758.1.9
+		death_date = 1796.6.24
+		claim = 95
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1783.6.2 = {
+	monarch = {
+		name = "Josef Maria"
+		dynasty = "von Fürstenberg"
+		birth_date = 1758.1.9
+		adm = 3
+		dip = 2
+		mil = 2
+	}
+}
+1796.6.24 = {
+	monarch = {
+		name = "Karl Joachim"
+		dynasty = "von Fürstenberg"
+		birth_date = 1771.3.31
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1796.10.28 = {
+	heir = {
+		name = "Karl Egon"
+		monarch_name = "Karl Egon"
+		dynasty = "von Fürstenberg"
+		birth_date = 1796.10.28
+		death_date = 1854.10.22
+		claim = 95
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+1804.5.17 = {
+	monarch = {
+		name = "Karl Egon"
+		dynasty = "von Fürstenberg"
+		birth_date = 1796.10.28
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+#1806 done

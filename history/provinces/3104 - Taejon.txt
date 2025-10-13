@@ -1,0 +1,16 @@
+#3104 - Taejon
+
+owner = KOR
+controller = KOR
+culture = korean
+religion = confucianism
+capital = "Taejon"
+trade_goods = cloth
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 6
+is_city = yes
+add_core = KOR
+discovered_by = chinese
+discovered_by = nomad_group

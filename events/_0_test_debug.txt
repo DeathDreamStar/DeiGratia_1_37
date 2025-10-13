@@ -1,0 +1,195 @@
+namespace = test
+
+
+############### debug
+
+country_event = {
+	id = test.1
+	title = "cu_lit.1.t"
+	desc = "cu_lit.1.d"
+	picture = ADVISOR_eventPicture
+	hidden = yes
+    is_triggered_only = yes
+	trigger = {
+	    # owner = { NOT = { tag = REB } }
+	}
+	immediate = {
+		hidden_effect = {
+		# 	every_country_including_inactive = {
+		# 		regenerate_government_mechanics = yes
+		# 	}
+		
+			set_variable = {
+				which = asia_dev
+				value = 0
+			}
+			set_variable = {
+				which = europe_dev
+				value = 0
+			}
+			set_variable = {
+				which = africa_dev
+				value = 0
+			}
+			set_variable = {
+				which = north_america_dev
+				value = 0
+			}
+			set_variable = {
+				which = south_america_dev
+				value = 0
+			}
+			set_variable = {
+				which = oceania_dev
+				value = 0
+			}
+			every_province = {
+				limit = {
+					continent = asia
+				}
+				ROOT = {
+					set_variable = {
+						which = asia_dev_t
+						value = 0
+					}		
+					export_to_variable = {
+						which = asia_dev_t
+						value = development
+						who = PREV
+					}
+					change_variable = {
+						which = asia_dev
+						which = asia_dev_t
+					}
+				}
+			}
+			every_province = {
+				limit = {
+					continent = europe
+				}
+				ROOT = {
+					set_variable = {
+						which = europe_dev_t
+						value = 0
+					}		
+					export_to_variable = {
+						which = europe_dev_t
+						value = development
+						who = PREV
+					}
+			change_variable = {
+				which = europe_dev
+				which = europe_dev_t
+			}
+				}
+			}
+			every_province = {
+				limit = {
+					continent = north_america
+				}
+				ROOT = {
+					set_variable = {
+						which = north_america_dev_t
+						value = 0
+					}		
+					export_to_variable = {
+						which = north_america_dev_t
+						value = development
+						who = PREV
+					}
+			change_variable = {
+				which = north_america_dev
+				which = north_america_dev_t
+			}
+				}
+			}
+			every_province = {
+				limit = {
+					continent = south_america
+				}
+				ROOT = {
+					set_variable = {
+						which = south_america_dev_t
+						value = 0
+					}		
+					export_to_variable = {
+						which = south_america_dev_t
+						value = development
+						who = PREV
+					}
+			change_variable = {
+				which = south_america_dev
+				which = south_america_dev_t
+			}
+				}
+			}
+			every_province = {
+				limit = {
+					continent = africa
+				}
+				ROOT = {
+					set_variable = {
+						which = africa_dev_t
+						value = 0
+					}		
+					export_to_variable = {
+						which = africa_dev_t
+						value = development
+						who = PREV
+					}
+					change_variable = {
+						which = africa_dev
+						which = africa_dev_t
+					}
+				}
+			}
+			every_province = {
+				limit = {
+					continent = oceania
+				}
+				ROOT = {
+					set_variable = {
+						which = oceania_dev_t
+						value = 0
+					}		
+					export_to_variable = {
+						which = oceania_dev_t
+						value = development
+						who = PREV
+					}
+					change_variable = {
+						which = oceania_dev
+						which = oceania_dev_t
+					}
+				}
+			}
+		}		
+		set_variable = {
+			which = asia_dev_t
+			which = asia_dev
+		}
+		set_variable = {
+			which = africa_dev_t
+			which = africa_dev
+		}
+		set_variable = {
+			which = north_america_dev_t
+			which = north_america_dev
+		}
+		set_variable = {
+			which = south_america_dev_t
+			which = south_america_dev
+		}
+		set_variable = {
+			which = europe_dev_t
+			which = europe_dev
+		}
+		set_variable = {
+			which = oceania_dev_t
+			which = oceania_dev
+		}
+	}
+	option = {
+		name = "cu_lit.1.a"
+	}
+}

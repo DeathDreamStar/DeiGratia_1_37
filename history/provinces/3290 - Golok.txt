@@ -1,0 +1,17 @@
+#3290 - Golok
+
+owner = LTS
+controller = LTS
+add_core = LTS
+culture = amdo
+religion = vajrayana
+capital = "Golok"
+trade_goods = wool
+hre = no
+base_tax = 1
+base_production = 1
+base_manpower = 1
+is_city = yes
+discovered_by = chinese
+discovered_by = indian
+discovered_by = nomad_group

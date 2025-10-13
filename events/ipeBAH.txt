@@ -1,0 +1,1392 @@
+namespace = ipeBAH
+normal_or_historical_nations = yes
+
+# Influx of the Gharbians (No Ports)
+country_event = {
+	id = ipeBAH.1
+	title = ipeBAH.1.t
+	desc = ipeBAH.1.d
+	picture = HARBOUR_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = BAH
+		religion_group = muslim
+		NOT = {
+			is_year = 1460
+		}
+		NOT = {
+			has_country_flag = influx_of_the_gharbians
+		}
+		NOT = {
+			num_of_ports = 1
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			piety = 0.75
+		}
+	}
+
+	immediate = {
+		set_country_flag = influx_of_the_gharbians
+	}
+	
+	option = {
+		name = ipeBAH.1.a #Let us double our efforts.
+		ai_chance = {
+			factor = 90
+		}
+		custom_tooltip = ipeBAH.1.a.tooltip
+		add_years_of_income = -0.05
+		add_prestige = 10
+		add_country_modifier = {
+			name = gharbian_settlement
+			duration = -1
+		}
+	}
+
+	option = {
+		name = ipeBAH.1.b #Let us make more use of the local expertise.
+		ai_chance = {
+			factor = 10
+		}
+		add_stability = -1
+		add_piety = -0.1
+		add_country_modifier = {
+			name = struggling_government
+			duration = 9125
+		}
+	}
+}
+
+# Influx of the Gharbians (Ports)
+country_event = {
+	id = ipeBAH.2
+	title = ipeBAH.1.t
+	desc = ipeBAH.2.d
+	picture = HARBOUR_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BAH
+		religion_group = muslim
+		NOT = {
+			is_year = 1460
+		}
+		NOT = {
+			has_country_flag = influx_of_the_gharbians
+		}
+		num_of_ports = 1
+	}
+
+	mean_time_to_happen = {
+		months = 30
+		modifier = {
+			factor = 0.5
+			piety = 0.75
+		}
+	}
+
+	immediate = {
+		set_country_flag = influx_of_the_gharbians
+	}
+
+	option = { #Let us double our efforts.
+		name = ipeBAH.1.a
+		ai_chance = {
+			factor = 95
+		}
+		custom_tooltip = ipeBAH.1.a.tooltip
+		add_prestige = 10
+		add_country_modifier = {
+			name = gharbian_settlement
+			duration = -1
+		}
+	}
+
+	option = { #Let us make more use of the local expertise.
+		name = ipeBAH.1.b
+		ai_chance = {
+			factor = 5
+		}
+		add_stability = -1
+		add_piety = -0.1
+	}
+}
+
+# Mahmud Gawan
+country_event = {
+	id = ipeBAH.3
+	title = ipeBAH.3.t
+	desc = ipeBAH.3.d
+	picture = ADVISOR_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = BAH
+		religion_group = muslim
+		is_year = 1450
+		NOT = {
+			is_year = 1480
+		}
+		has_country_modifier = gharbian_settlement
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			piety = 0.75
+		}
+	}
+
+	option = { # This is truly the Prince of Merchants!
+		name = ipeBAH.3.a
+		custom_tooltip = ipeBAH.3.a.tooltip
+		add_adm_power = 100
+		add_dip_power = 100
+		add_meritocracy_effect = yes
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_small_effect = yes
+		}
+		define_advisor = {
+			type = trader
+			name = "Mahmud Gawan"
+			culture = persian
+			religion = shiite
+			skill = 3
+			discount = yes
+		}
+		add_country_modifier = {
+			name = adm_mahmud_gawans_reforms
+			duration = 18250
+		}
+		set_country_flag = mahmud_gawans_reforms
+	}
+
+	option = { # He is the God of Generals!
+		name = ipeBAH.3.b
+		custom_tooltip = ipeBAH.3.a.tooltip
+		add_mil_power = 100
+		add_army_tradition = 20
+		add_meritocracy_effect = yes
+		if = {
+			limit = {
+				NOT = { has_completed_all_reforms_trigger = yes }
+			}
+			add_reform_progress_small_effect = yes
+		}
+		define_general = {
+			name = "Mahmud Gawan"
+			shock = 4
+			fire = 4
+			manuever = 4
+			siege = 4
+		}
+		add_country_modifier = {
+			name = mil_mahmud_gawans_reforms
+			duration = 18250
+		}
+		set_country_flag = mahmud_gawans_reforms
+	}
+
+	option = { # We should avoid angering the Deccani nobles.
+		name = ipeBAH.3.c
+		add_prestige = -10
+	}
+}
+
+# Plight of the Bahmani Pilgrims
+country_event = {
+	id = ipeBAH.4
+	title = ipeBAH.4.t
+	desc = ipeBAH.4.d
+	picture = HAJJ_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BAH
+		religion_group = muslim
+		NOT = {
+			num_of_ports = 1
+		}
+	}
+
+	option = { # We will soon march to the sea.
+		name = ipeBAH.4.a
+		add_years_of_income = -0.025
+		add_piety = -0.1
+	}
+}
+
+# The Centralization of Bahmanis
+country_event = {
+	id = ipeBAH.5
+	title = ipeBAH.5.t
+	desc = ipeBAH.5.d
+	picture = COURT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BAH
+		OR = {
+			has_country_modifier = adm_mahmud_gawans_reforms
+			has_country_modifier = mil_mahmud_gawans_reforms
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			piety = 0.75
+		}
+	}
+
+	option = { # We must remedy the shortcomings of our administration.
+		name = ipeBAH.5.a
+		ai_chance = {
+			factor = 90
+		}
+		if = {
+			limit = {
+				owns = 2035 # Gulbarga
+			}
+			2035 = {
+				remove_province_modifier = local_bahmani_capital
+			}
+		}
+		if = {
+			limit = {
+				owns = 2028 # Mahur
+			}
+			2028 = {
+				remove_province_modifier = local_bahmani_capital
+			}
+		}
+		if = {
+			limit = {
+				owns = 545 # Daulatabad
+			}
+			545 = {
+				remove_province_modifier = local_bahmani_capital
+			}
+		}
+		add_country_modifier = {
+			name = centralization_of_bahmanis
+			duration = 9125
+		}
+		every_owned_province = {
+			limit = {
+				NOT = {
+					is_capital = yes
+				}
+			}
+			add_local_autonomy = -10
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = -20
+		}
+	}
+
+	option = { # Changes are unnecessary.
+		name = ipeBAH.5.b
+		ai_chance = {
+			factor = 10
+		}
+		add_estate_loyalty = {
+			estate = estate_nobles
+			loyalty = 10
+		}
+	}
+}
+
+# Deccanis and Gharbians
+country_event = {
+	id = ipeBAH.6
+	title = ipeBAH.6.t
+	desc = ipeBAH.6.d
+	picture = BAD_WITH_MONARCH_eventPicture
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = BAH
+		religion_group = muslim
+		is_year = 1460
+		NOT = {
+			is_year = 1500
+		}
+		OR = {
+			has_country_modifier = mil_mahmud_gawans_reforms
+			has_country_modifier = adm_mahmud_gawans_reforms
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			has_country_modifier = centralization_of_bahmanis
+		}
+	}
+
+	option = {	# Play these sides against each other.
+		ai_chance = {
+			factor = 20
+		}
+		name = ipeBAH.6.a
+		set_country_flag = bah_deccanis_gharbians_conflict
+		add_country_modifier = {
+			name = "bah_deccanis_gharbians"
+			duration = -1
+		}
+	}
+	
+	option = {	# Favor the Gharbians.
+		name = ipeBAH.6.b
+		ai_chance = {
+			factor = 40 
+		}
+		custom_tooltip = ipeBAH.6.b.tooltip
+		set_country_flag = bah_deccanis_gharbians_conflict
+		add_stability = -1
+		add_country_modifier = {
+			name = "bah_gharbians"
+			duration = -1
+		}
+	}
+	
+	option = {	# Favor the Deccanis.
+		name = ipeBAH.6.c
+		ai_chance = {
+			factor = 40
+		}
+		custom_tooltip = ipeBAH.6.c.tooltip
+		set_country_flag = bah_deccanis_gharbians_conflict
+		add_stability = -1
+		add_country_modifier = {
+			name = "bah_deccanis"
+			duration = -1
+		}
+	}
+}
+
+# A New Arrival in Court
+country_event = {
+	id = ipeBAH.7
+	title = ipeBAH.7.t
+	desc = ipeBAH.7.d
+	picture = ADVISOR_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BAH
+		has_country_modifier = gharbian_settlement
+	}
+
+	option = { # Welcome this individual.
+		name = ipeBAH.7.a
+		custom_tooltip = ipeBAH.7.a.tooltip
+		hidden_effect = {
+			random_list = {
+				5 = {
+					define_advisor = {
+						type = philosopher
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = natural_scientist
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = artist
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = treasurer
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				10 = {
+					define_advisor = {
+						type = theologian
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = master_of_mint
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = statesman
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = naval_reformer
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				10 = {
+					define_advisor = {
+						type = trader
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = spymaster
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = diplomat
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = army_reformer
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = army_organiser
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = commandant
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = quartermaster
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = recruitmaster
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = fortification_expert
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+				5 = {
+					define_advisor = {
+						type = grand_captain
+						skill = 3
+						culture = persian
+						religion = shiite
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = fall_of_bahmanis
+				}
+			}
+			add_legitimacy = -10
+		}
+	}
+
+	option = { # Turn them away.
+		name = ipeBAH.7.b
+		add_piety = -0.1
+	}
+}
+
+# The Anger of the Deccani Nobles
+country_event = {
+	id = ipeBAH.8
+	title = ipeBAH.8.t
+	desc = ipeBAH.8.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BAH
+		has_country_modifier = gharbian_settlement
+		has_country_modifier = bah_gharbians
+		NOT = {
+			has_country_flag = deccanis_gharbians_peace
+		}
+	}
+
+	option = { # Crush them!
+		name = ipeBAH.8.a
+		random_owned_province = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# The Anger of the Gharbians
+country_event = {
+	id = ipeBAH.9
+	title = ipeBAH.9.t
+	desc = ipeBAH.9.d
+	picture = ANGRY_MOB_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		tag = BAH
+		has_country_modifier = gharbian_settlement
+		has_country_modifier = bah_deccanis
+		NOT = {
+			has_country_flag = deccanis_gharbians_peace
+		}
+	}
+
+	option = { # Crush them!
+		name = ipeBAH.8.a
+		random_owned_province = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 1
+			}
+		}
+	}
+}
+
+# Resistance to Mahmud Gawan's Reforms
+country_event = {
+	id = ipeBAH.10
+	title = ipeBAH.10.t
+	desc = ipeBAH.10.d
+	picture = ANGRY_MOB_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = BAH
+		OR = {
+			has_country_modifier = adm_mahmud_gawans_reforms
+			has_country_modifier = mil_mahmud_gawans_reforms
+		}
+		had_country_flag = {
+			flag = mahmud_gawans_reforms
+			days = 5475
+		}
+		NOT = {
+			has_disaster = fall_of_bahmanis
+		}
+		NOT = {
+			has_country_flag = deccanis_gharbians_peace
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			NOT = {
+				stability = 1
+			}
+		}
+	}
+
+	immediate = {
+		clr_country_flag = mahmud_gawans_reforms
+		random_owned_province = {
+			set_province_flag = bah_rebels_1
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					has_province_flag = bah_rebels_1
+				}
+			}
+			set_province_flag = bah_rebels_2
+		}
+		random_owned_province = {
+			limit = {
+				NOT = {
+					has_province_flag = bah_rebels_1
+					has_province_flag = bah_rebels_2
+				}
+			}
+			set_province_flag = bah_rebels_3
+		}
+	}
+
+	option = { # Heed the reactionaries.
+		name = ipeBAH.10.a
+		ai_chance = {
+			factor = 20
+		}
+		if = {
+			limit = {
+				has_country_modifier = adm_mahmud_gawans_reforms
+			}
+			remove_country_modifier = adm_mahmud_gawans_reforms
+		}
+		if = {
+			limit = {
+				has_country_modifier = mil_mahmud_gawans_reforms
+			}
+			remove_country_modifier = mil_mahmud_gawans_reforms
+		}
+		if = {
+			limit = {
+				has_country_modifier = centralization_of_bahmanis
+			}
+			remove_country_modifier = centralization_of_bahmanis
+		}
+		if = {
+			limit = {
+				employed_advisor = {
+					type = trader
+					culture = persian
+					religion = shiite
+				}
+			}
+			kill_advisor = trader
+		}
+		if = {
+			limit = {
+				has_leader = "Mahmud Gawan"
+			}
+			kill_leader = {
+				type = "Mahmud Gawan"
+			}
+		}
+		add_stability = -1
+	}
+
+	option = { # Ignore their demands.
+		name = ipeBAH.10.b
+		ai_chance = {
+			factor = 30
+		}
+		capital_scope = {
+			spawn_rebels = {
+				type = noble_rebels
+				size = 1
+			}
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = bah_rebels_1
+			}
+			spawn_rebels = {
+				type = noble_rebels
+				size = 1
+			}
+			clr_province_flag = bah_rebels_1
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = bah_rebels_2
+			}
+			spawn_rebels = {
+				type = noble_rebels
+				size = 1
+			}
+			clr_province_flag = bah_rebels_2
+		}
+		random_owned_province = {
+			limit = {
+				has_province_flag = bah_rebels_3
+			}
+			spawn_rebels = {
+				type = noble_rebels
+				size = 1
+			}
+			clr_province_flag = bah_rebels_3
+		}
+		add_stability = -1
+	}
+
+	option = { # The Bahmani dynasty must be deposed!
+		name = ipeBAH.10.c
+		trigger = {
+			OR = {
+				employed_advisor = {
+					type = trader
+					culture = persian
+					religion = shiite
+				}
+				has_leader = "Mahmud Gawan"
+			}
+			is_subject = no
+		}
+		ai_chance = {
+			factor = 10
+		}
+		custom_tooltip = ipeBAH.10.c.tooltip
+		add_stability = -6
+		kill_ruler = yes
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			kill_heir = { allow_new_heir = no }
+		}
+		if = {
+			limit = {
+				has_leader = "Mahmud Gawan"
+			}
+			define_ruler = {
+				name = "Mahmud"
+				dynasty = "Gawan"
+				culture = persian
+				religion = shiite
+				adm = 6
+				dip = 6
+				mil = 6
+				claim = 20
+				age = 70
+				attach_leader = "Mahmud Gawan"
+			}
+		}
+		if = {
+			limit = {
+				employed_advisor = {
+					type = trader
+					culture = persian
+					religion = shiite
+				}
+			}
+			define_ruler = {
+				name = "Mahmud"
+				dynasty = "Gawan"
+				culture = persian
+				religion = shiite
+				adm = 6
+				dip = 6
+				mil = 6
+				claim = 20
+				age = 70
+			}
+			remove_advisor = trader
+		}
+		hidden_effect = {
+			add_ruler_personality = lawgiver_personality
+		}
+		set_country_flag = rebellion_against_gawan
+	}
+}
+
+# The Uprising of Ahmadnagar
+country_event = {
+	id = ipeBAH.11
+	title = ipeBAH.11.t
+	desc = ipeBAH.11.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = BID
+		any_owned_province = {
+			is_core = AHM
+			is_capital = no
+		}
+		NOT = {
+			exists = AHM
+		}
+		is_subject = no
+		NOT = {
+			has_global_flag = fall_of_bahmanis
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 180
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = AHM
+            AHM = {
+				change_religion = sunni
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+						cavalry = 0.5
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							heavy_ship = 0.5
+				        	light_ship = 0.5
+                     		transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Ahmad"
+					dynasty = "Nizam Shah"
+					culture = kannada
+					adm = 4
+					dip = 6
+					mil = 4
+				}
+				add_ruler_personality = bold_fighter_personality
+                change_government = monarchy
+                add_government_reform = indian_sultanate_reform
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # Deal with them!
+		name = ipeBAH.11.a
+		ai_chance = {
+			factor = 60
+		}
+		declare_war_with_cb = {
+			who = AHM
+			casus_belli = cb_civil_war
+		}
+		add_legitimacy = 10
+	}
+
+	option = { # We will have to accept this.
+		name = ipeBAH.11.b
+		ai_chance = {
+			factor = 40
+		}
+		add_prestige = -10
+	}
+
+	option = { # Play as Ahmadnagar.
+		name = ipeBAH.11.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_prestige = -10
+		}
+		switch_tag = AHM
+	}
+}
+
+# The Uprising of Bijapur
+country_event = {
+	id = ipeBAH.12
+	title = ipeBAH.12.t
+	desc = ipeBAH.12.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = BID
+		any_owned_province = {
+			is_core = BIJ
+			is_capital = no
+		}
+		NOT = {
+			exists = BIJ
+		}
+		is_subject = no
+		NOT = {
+			has_global_flag = fall_of_bahmanis
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 180
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = BIJ
+            BIJ = {
+				change_religion = shiite
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+						cavalry = 0.5
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							heavy_ship = 0.5
+				        	light_ship = 0.5
+                     		transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Yusuf"
+					dynasty = "Adil Shah"
+					adm = 4
+					dip = 4
+					mil = 5
+					culture = turkish
+				}
+				add_ruler_personality = inspiring_leader_personality
+                change_government = monarchy
+                add_government_reform = indian_sultanate_reform
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # Deal with them!
+		name = ipeBAH.11.a
+		ai_chance = {
+			factor = 60
+		}
+		declare_war_with_cb = {
+			who = BIJ
+			casus_belli = cb_civil_war
+		}
+	}
+
+	option = { # We will have to accept this.
+		name = ipeBAH.11.b
+		ai_chance = {
+			factor = 40
+		}
+		add_prestige = -10
+	}
+
+	option = { # Play as Bijapur.
+		name = ipeBAH.12.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_prestige = -10
+		}
+		switch_tag = BIJ
+	}
+}
+
+# The Uprising of Golkonda
+country_event = {
+	id = ipeBAH.13
+	title = ipeBAH.13.t
+	desc = ipeBAH.13.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = BID
+		any_owned_province = {
+			is_core = GOC
+			is_capital = no
+		}
+		NOT = {
+			exists = GOC
+		}
+		is_subject = no
+		NOT = {
+			has_global_flag = fall_of_bahmanis
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 180
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = GOC
+            GOC = {
+				change_religion = shiite
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+						cavalry = 0.5
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							heavy_ship = 0.5
+				        	light_ship = 0.5
+                     		transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Quli"
+					dynasty = "Qutb Shah"
+					culture = azerbaijani
+					adm = 3
+					dip = 5
+					mil = 6
+				}
+				add_ruler_personality = conqueror_personality
+                change_government = monarchy
+                add_government_reform = indian_sultanate_reform
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # Deal with them!
+		name = ipeBAH.11.a
+		ai_chance = {
+			factor = 60
+		}
+		declare_war_with_cb = {
+			who = GOC
+			casus_belli = cb_civil_war
+		}
+	}
+
+	option = { # We will have to accept this.
+		name = ipeBAH.11.b
+		ai_chance = {
+			factor = 40
+		}
+		add_prestige = -10
+	}
+
+	option = { # Play as Golkonda.
+		name = ipeBAH.13.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_prestige = -10
+		}
+		switch_tag = GOC
+	}
+}
+
+# The Uprising of Berar
+country_event = {
+	id = ipeBAH.14
+	title = ipeBAH.14.t
+	desc = ipeBAH.14.d
+	picture = REFORM_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = BID
+		any_owned_province = {
+			is_core = BRR
+			is_capital = no
+		}
+		NOT = {
+			exists = BRR
+		}
+		is_subject = no
+		NOT = {
+			has_global_flag = fall_of_bahmanis
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 180
+	}
+
+	immediate = {
+		hidden_effect = {
+			release = BRR
+            BRR = {
+				change_religion = shiite
+                capital_scope = {
+                    build_to_forcelimit = {
+                        infantry = 1
+						cavalry = 0.5
+                    }
+                }
+				if = {
+					limit = {
+						any_owned_province = {
+							has_port = yes
+						}
+					}
+					random_owned_province = {
+						limit = {
+							has_port = yes
+						}
+						build_to_forcelimit = {
+							heavy_ship = 0.5
+				        	light_ship = 0.5
+                     		transport = 0.5
+						}
+					}
+				}
+				define_ruler = {
+					name = "Fath Allah"
+					dynasty = "Imad Shah"
+					culture = kannada
+					adm = 3
+					dip = 4
+					mil = 4
+				}
+				add_ruler_personality = architectural_visionary_personality
+                change_government = monarchy
+                add_government_reform = indian_sultanate_reform
+                adopt_reform_progress = ROOT
+            }
+		}
+	}
+
+	option = { # Deal with them!
+		name = ipeBAH.11.a
+		ai_chance = {
+			factor = 60
+		}
+		declare_war_with_cb = {
+			who = BRR
+			casus_belli = cb_civil_war
+		}
+		add_legitimacy = 10
+	}
+
+	option = { # We will have to accept this.
+		name = ipeBAH.11.b
+		ai_chance = {
+			factor = 40
+		}
+		add_prestige = -10
+	}
+
+	option = { # Play as Berar.
+		name = ipeBAH.14.c
+		ai_chance = {
+			factor = 0
+		}
+		hidden_effect = {
+			add_prestige = -10
+		}
+		switch_tag = BRR
+	}
+}
+
+# The Founding of Ahmadnagar
+country_event = {
+	id = ipeBAH.15
+	title = ipeBAH.15.t
+	desc = ipeBAH.15.d
+	picture = CITY_DEVELOPMENT_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = AHM
+		owns = 544
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = { # A glorious new capital!
+		name = ipeBAH.15.a
+		544 = {
+			change_province_name = "Ahmadnagar"
+			rename_capital = "Ahmadnagar"
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+		add_prestige = 10
+	}
+}
+
+# The Rise of Bidar
+country_event = {
+	id = ipeBAH.16
+	title = ipeBAH.16.t
+	desc = ipeBAH.16.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	major = yes
+
+	trigger = {
+		tag = BAH
+		1948 = {
+			owned_by = ROOT
+			is_core = ROOT
+		}
+		NOT = {
+			dynasty = "Bahman"
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # The contributions of the Bahmani dynasty will be remembered.
+		name = ipeBAH.16.a
+		change_tag = BID
+		if = {
+			limit = {
+				1948 = {
+					is_capital = no
+				}
+			}
+			1948 = {
+				move_capital_effect = yes
+			}
+		}
+	}
+}
+
+# The Founding of Hyderabad
+country_event = {
+	id = ipeBAH.17
+	title = ipeBAH.17.t
+	desc = ipeBAH.17.d
+	picture = CITY_VIEW_eventPicture
+
+	fire_only_once = yes
+
+	trigger = {
+		tag = GOC
+		owns = 542
+		controls = 542
+		542 = {
+			is_capital = yes
+		}
+		has_idea = foundation_of_hyderabad
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # We rule from the city of lions.
+		name = ipeBAH.17.a
+		542 = {
+			rename_capital = "Hyderabad"
+			change_province_name = "Hyderabad"
+			add_province_modifier = {
+				name = encouraged_growth_tax
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_production
+				duration = 18250
+			}
+			add_province_modifier = {
+				name = encouraged_growth_manpower
+				duration = 18250
+			}
+		}
+	}
+}

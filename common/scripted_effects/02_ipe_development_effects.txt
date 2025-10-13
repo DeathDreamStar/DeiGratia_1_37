@@ -1,0 +1,22 @@
+
+ipe_add_base_tax_1 = {
+    # add_base_tax = 1
+    add_province_modifier = {
+        name = encouraged_growth_tax
+        duration = 18250
+    }
+}
+ipe_add_base_production_1 = {
+    # add_base_production = 1
+    add_province_modifier = {
+        name = encouraged_growth_production
+        duration = 18250
+    }
+}
+ipe_add_base_manpower_1 = {
+    # add_base_manpower = 1
+    add_province_modifier = {
+        name = encouraged_growth_manpower
+        duration = 18250
+    }
+}

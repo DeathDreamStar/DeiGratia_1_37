@@ -1,0 +1,29 @@
+#6571 - Huexotzinco
+
+culture = aztek
+owner = TLX
+controller = TLX
+add_core = TLX
+is_city = yes
+religion = nahuatl
+capital = "Huexotzinco"
+trade_goods = spices
+hre = no
+base_tax = 7
+base_production = 7
+base_manpower = 6
+native_size = 5
+native_ferocity = 1
+native_hostileness = 2
+
+
+
+discovered_by = mesoamerican
+
+1520.1.1 = {
+           owner = SPA
+           controller = SPA
+           add_core = SPA
+           remove_core = TLX
+} #Form a strong and long-lasting alliance with Spain
+1810.9.16 = { owner = MEX add_core = MEX controller = MEX } # Mexican War of Independence

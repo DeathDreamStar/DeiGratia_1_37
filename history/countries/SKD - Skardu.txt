@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = balti
+religion = vajrayana
+technology_group = indian
+capital = 2073	# Baltistan
+fixed_capital = 2073 # Baltistan
+
+1437.1.1 = {
+	monarch = {
+		name = "Ghota Cho Sange"
+		dynasty = "Maqpon"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

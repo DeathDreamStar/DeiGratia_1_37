@@ -1,0 +1,18 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = zoque 
+religion = zapotec_religion 
+technology_group = mesoamerican 
+fixed_capital = 6568
+capital = 6568
+
+
+1444.1.1 = {
+	monarch = {
+		name = "Cocijopi"
+		dynasty = "Soteapan"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

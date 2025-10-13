@@ -1,0 +1,207 @@
+#Country Name: Please see filename.
+
+graphical_culture = muslimgfx
+
+color = { 129  126  7 } 
+
+historical_score = 100
+
+historical_idea_groups = {
+	maritime_ideas
+	defensive_ideas
+	religious_ideas
+	expansion_ideas
+	administrative_ideas
+	offensive_ideas
+	trade_ideas
+	economic_ideas
+}
+
+historical_units = {
+	mamluk_archer
+	mamluk_cavalry_charge
+	mamluk_duel
+	mamluk_musket_charge
+	muslim_mass_infantry
+	muslim_dragoon
+	ali_bey_reformed_infantry
+}
+
+monarch_names = {
+	"Acaymo #0" = 10
+	"Adjona #0" = 10
+	"Añaterve #0" = 10
+	"Bencomo #0" = 10
+	"Beneharo #0" = 10
+	"Pelicar #0" = 10
+	"Pelinor #0" = 10
+	"Romen #0" = 10
+	"Tegueste #0" = 10
+	"Abentahar #0" = 10
+	"Acaymo #0" = 10
+	"Ache #0" = 10
+	"Adargoma #0" = 10
+	"Aday #0" = 10
+	"Afahe #0" = 10
+	"Afur #0" = 10
+	"Agoney #0" = 10
+	"Airam #0" = 10
+	"Ancor #0" = 10
+	"Arago #0" = 10
+	"Arico #0" = 10
+	"Armiche #0" = 10
+	"Artamy #0" = 10
+	"Asano #0" = 10
+	"Augerón #0" = 10
+	"Axer #0" = 10
+	"Ayoze #0" = 10
+	"Aythami #0" = 10
+	"Badel #0" = 10
+	"Baeta #0" = 10
+	"Baute #0" = 10
+	"Beimaco #0" = 10
+	"Bentagay #0" = 10
+	"Besay #0" = 10
+	"Chede #0" = 10
+	"Chevender #0" = 10
+	"Chimboyo #0" = 10
+	"Chinconayro #0" = 10
+	"Doramas #0" = 10
+	"Echendey #0" = 10
+	"Egonayga #0" = 10
+	"Eiunche #0" = 10
+	"Gaineto #0" = 10
+	"Gaitafa #0" = 10
+	"Ganache #0" = 10
+	"Gaumet #0" = 10
+	"Geneto #0" = 10
+	"Gerad #0" = 10
+	"Geronte #0" = 10
+	"Guaire #0" = 10
+	"Guanareme #0" = 10
+	"Guayasen #0" = 10
+	"Himar #0" = 10
+	"Nauzet #0" = 10
+	"Oto #0" = 10
+	"Pico #0" = 10
+	"Rayco #0" = 10
+	"Tahod #0" = 10
+	"Tigorte #0" = 10
+	"Tinerfe #0" = 10
+	"Ventor #0" = 10
+	"Xitama #0" = 10
+}
+
+leader_names = {
+	Acaymo Adjona Añaterve Bencomo Beneharo Pelicar Pelinor Romen Tegueste
+	Abentahar
+	Acaymo
+	Ache
+	Adargoma
+	Aday
+	Afahe
+	Afur
+	Agoney
+	Airam
+	Ancor
+	Arago
+	Arico
+	Armiche
+	Artamy
+	Asano
+	Augerón
+	Axer
+	Ayoze
+	Aythami
+	Badel
+	Baeta
+	Baute
+	Beimaco
+	Bentagay
+	Besay
+	Chede
+	Chevender
+	Chimboyo
+	Chinconayro
+	Doramas
+	Echendey
+	Egonayga
+	Eiunche
+	Gaineto
+	Gaitafa
+	Ganache
+	Gaumet
+	Geneto
+	Gerad
+	Geronte
+	Guaire
+	Guanareme
+	Guayasen
+	Himar
+	Nauzet
+	Oto
+	Pico
+	Rayco
+	Tahod
+	Tigorte
+	Tinerfe
+	Ventor
+	Xitama
+}
+
+ship_names = {
+	Acaymo Adjona Añaterve Bencomo Beneharo Pelicar Pelinor Romen Tegueste
+	Abentahar
+	Acaymo
+	Ache
+	Adargoma
+	Aday
+	Afahe
+	Afur
+	Agoney
+	Airam
+	Ancor
+	Arago
+	Arico
+	Armiche
+	Artamy
+	Asano
+	Augerón
+	Axer
+	Ayoze
+	Aythami
+	Badel
+	Baeta
+	Baute
+	Beimaco
+	Bentagay
+	Besay
+	Chede
+	Chevender
+	Chimboyo
+	Chinconayro
+	Doramas
+	Echendey
+	Egonayga
+	Eiunche
+	Gaineto
+	Gaitafa
+	Ganache
+	Gaumet
+	Geneto
+	Gerad
+	Geronte
+	Guaire
+	Guanareme
+	Guayasen
+	Himar
+	Nauzet
+	Oto
+	Pico
+	Rayco
+	Tahod
+	Tigorte
+	Tinerfe
+	Ventor
+	Xitama
+}

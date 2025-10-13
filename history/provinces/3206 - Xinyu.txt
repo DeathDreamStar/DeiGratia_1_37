@@ -1,0 +1,17 @@
+#3206 - Xinyu
+
+owner = MNG
+controller = MNG
+add_core = MNG
+culture = gan
+religion = taoism
+capital = "Xinyu"
+trade_goods = livestock
+hre = no
+base_tax = 11
+base_production = 11
+base_manpower = 8
+is_city = yes
+discovered_by = chinese
+discovered_by = nomad_group
+add_core = NNG

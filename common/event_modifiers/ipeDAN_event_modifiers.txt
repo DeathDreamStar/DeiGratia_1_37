@@ -1,0 +1,10 @@
+reconstruction_of_copenhagen = {
+	trade_goods_size_modifier = -0.75
+	local_manpower_modifier = -0.75
+	local_tax_modifier = -0.75
+}
+
+victory_of_denmark = {
+	land_morale = 0.1
+	manpower_recovery_speed = 0.1
+}

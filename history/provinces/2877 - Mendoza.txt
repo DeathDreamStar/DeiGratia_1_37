@@ -1,0 +1,32 @@
+#2877 - Mendoza
+
+owner = HRP
+controller = HRP
+add_core = HRP
+culture = huarpe
+discovered_by = south_american
+religion = animism
+capital = "Mendoza"
+trade_goods = copper
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+is_city = yes
+discovered_by = andean
+tribal_owner = HRP
+
+1561.3.2 = {
+	discovered_by = SPA
+	owner = SPA
+	controller = SPA
+	add_core = SPA
+	culture = castillian
+	religion = catholic
+} # Founded by Pedro del Castillo
+1816.7.9 = {
+	owner = LAP
+	controller = LAP
+	add_core = LAP
+	remove_core = SPA
+} # Argentina is declared independent

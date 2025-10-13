@@ -1,0 +1,17 @@
+government = monarchy
+add_government_reform = autocracy_reform
+religion = zapotec_religion 
+primary_culture = zapotek
+technology_group = mesoamerican 
+capital = 2649
+fixed_capital = 2649
+
+1444.1.1 = {
+	monarch = {
+		name = "Rinijcoxij"
+		dynasty = "Guisíi"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

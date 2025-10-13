@@ -1,0 +1,24 @@
+name = "Ethiopian Reconquest of Gondar"
+war_goal = {
+	type = take_core
+	casus_belli = cb_core
+	province = 1224
+}
+
+1434.1.1 = {
+	add_attacker = ETH
+	add_attacker = ENA
+	add_attacker = HDY
+	add_attacker = MED
+	add_attacker = JJI
+	add_defender = BTI
+}
+
+1450.1.1 = {
+	rem_attacker = ETH
+	rem_attacker = ENA
+	rem_attacker = HDY
+	rem_attacker = MED
+	rem_attacker = JJI
+	rem_defender = BTI
+}

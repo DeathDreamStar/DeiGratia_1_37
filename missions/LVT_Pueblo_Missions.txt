@@ -1,0 +1,325 @@
+pueblo_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Leviathan"
+	}
+	potential = {
+		OR = {
+			primary_culture = pueblo
+			primary_culture = keres
+			primary_culture = zuni
+		}
+		has_dlc = "Leviathan"
+	}
+	has_country_shield = yes
+
+	pue_people_of_the_white_rock = {
+		icon = mission_unite_home_region
+		position = 1
+		required_missions = { }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 880
+				province_id = 2495
+				province_id = 4631
+				province_id = 4632
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {	
+			OR = {
+				AND = {
+					880 = {
+						owned_by = ROOT 
+						is_core = ROOT
+					}
+					2495 = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+					4631 = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+					4632 = {
+						owned_by = ROOT
+						is_core = ROOT
+					}
+				}
+				federation_size = 3
+			}
+		}
+		
+		effect = {
+			add_adm_power = 50
+			add_country_modifier = {
+				name = "pue_the_white_rock"
+				duration = 7300
+			}
+		}
+	}
+	
+	pue_sky_city = {
+		icon = mission_pue_sky_city
+		position = 3
+		required_missions = { pue_people_of_the_white_rock }
+		provinces_to_highlight = {
+			province_id = 2495
+		}
+		
+		trigger = {	
+			2495 = { 
+				NOT = { local_autonomy = 10 }
+				owned_by = ROOT
+				is_core = ROOT
+				development = 10
+			}
+		}
+		
+		effect = {
+			2495 = {
+				add_province_modifier = {
+					name = "pue_city_in_the_sky"
+					duration = -1
+				}
+			}
+			2493 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+							owned_by = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			2494 = {
+				if = {
+					limit = {
+						NOT = {
+							is_permanent_claim = ROOT
+							is_core = ROOT
+							owned_by = ROOT
+						}
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+}
+
+pueblo_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Leviathan"
+	}
+	potential = {
+		OR = {
+			primary_culture = pueblo
+			primary_culture = keres
+			primary_culture = zuni
+		}
+		has_dlc = "Leviathan"
+	}
+	has_country_shield = yes
+	
+	pue_chaco_roads = {
+		icon = mission_pue_chaco_roads
+		position = 1
+		required_missions = {  }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2493
+				province_id = 2494
+				province_id = 2495
+			}
+			NOT = { has_building = native_great_trail }
+			NOT = { has_building = marketplace }
+			NOT = { has_building = trade_depot }
+			NOT = { has_building = stock_exchange }
+		}
+		
+		trigger = {	
+			if = {
+				limit = {
+					government = native
+				}
+				2493 = {
+					owned_by = ROOT 
+					has_building = native_great_trail
+				}
+				2494 = {
+					owned_by = ROOT 
+					has_building = native_great_trail
+				}
+				2495 = {
+					owned_by = ROOT 
+					has_building = native_great_trail
+				}
+			}
+			else = {
+				2493 = {
+					owned_by = ROOT
+					OR = {
+						has_building = marketplace
+						has_building = trade_depot
+						has_building = stock_exchange
+					}
+				}
+				2494 = {
+					owned_by = ROOT
+					OR = {
+						has_building = marketplace
+						has_building = trade_depot
+						has_building = stock_exchange
+					}
+				}
+				2495 = {
+					owned_by = ROOT
+					OR = {
+						has_building = marketplace
+						has_building = trade_depot
+						has_building = stock_exchange
+					}
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = { 
+				name = pue_the_great_north_road
+				duration = 5475
+			}
+		}
+	}
+	
+	pue_irrigation_canals = {
+		icon = mission_pue_irrigation_cannals
+		position = 2
+		required_missions = { pue_chaco_roads }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			NOT = { has_building = native_irrigation }
+			NOT = { has_building = workshop }
+			NOT = { has_building = counting_house }
+		}
+		
+		trigger = {	
+			if = {
+				limit = {
+					government = native
+				}
+				calc_true_if = {
+					all_owned_province = {
+						has_building = native_irrigation
+					}
+					amount = 5
+				}
+			}
+			else = {
+				calc_true_if = {
+					all_owned_province = {
+						OR = {
+							has_building = workshop
+							has_building = counting_house
+						}
+					}
+					amount = 5
+				}
+			}
+			capital_scope = {
+				NOT = {	devastation = 1	}
+			}
+			NOT = { corruption = 1 }
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = "pue_irrigation_system"
+				duration = 7300
+			}
+		}
+	}
+	
+	pue_restore_ancestral_pueblo = { #change name to PUE
+		icon = mission_iroquois_haudenosaunee
+		position = 4
+		required_missions = {
+			pue_sky_city
+		}
+		provinces_to_highlight = {	
+			OR = {
+				province_id = 875
+				province_id = 878
+				province_id = 880
+				province_id = 2493
+				province_id = 2494
+				province_id = 2495
+				province_id = 4631
+				province_id = 4632
+			}
+			NOT = { owned_by = ROOT }
+		}
+		
+		trigger = {
+			OR = {
+				AND = {
+					875 = {
+						owned_by = ROOT 
+						is_core = ROOT
+					}
+					878 = {
+						owned_by = ROOT 
+						is_core = ROOT
+					}
+					880 = {
+						owned_by = ROOT 
+						is_core = ROOT
+					}
+					2495 = {
+						owned_by = ROOT 
+						is_core = ROOT
+					}
+					2493 = {
+						owned_by = ROOT 
+						is_core = ROOT
+					}
+					2494 = {
+						owned_by = ROOT 
+						is_core = ROOT
+					}
+					4631 = {
+						owned_by = ROOT 
+						is_core = ROOT
+					}
+					4632 = {
+						owned_by = ROOT 
+						is_core = ROOT
+					}
+				}
+				federation_size = 5
+				is_federation_leader = yes
+			}			
+		}
+		
+		effect = {
+			country_event = { # name change event
+				id = flavor_pue.1
+			}
+			add_dip_power = 50
+			add_country_modifier = {
+				name = "pue_puebloans_restored"
+				duration = -1
+			}
+		}
+	}	
+}

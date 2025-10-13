@@ -1,0 +1,16 @@
+government = monarchy
+add_government_reform = feudalism_reform
+primary_culture = ossetian
+religion = orthodox
+technology_group = eastern
+capital = 2201
+
+1444.1.1 = {
+	monarch = {
+		name = "Irbeg"
+		dynasty = "Ruslan"
+		adm = 1
+		dip = 3
+		mil = 2
+	}
+}

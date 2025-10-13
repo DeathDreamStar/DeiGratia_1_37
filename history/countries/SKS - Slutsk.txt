@@ -1,0 +1,82 @@
+government = monarchy
+add_government_reform = principality
+government_rank = 1
+primary_culture = byelorussian
+religion = orthodox
+technology_group = eastern
+capital = 4545
+fixed_capital = 4545
+
+1395.1.1 = {
+	monarch = {
+		name = "Vladimiras"
+		dynasty = "Gediminai"
+		culture = lithuanian
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1398.1.1 = {
+	monarch = {
+		name = "Aleksandras"
+		dynasty = "Gediminai"
+		culture = lithuanian
+		birth_date = 1385.1.1
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1443.1.1 = {
+	monarch = {
+		name = "Mikalojus"
+		dynasty = "Gediminai"
+		culture = lithuanian
+		adm = 2
+		dip = 1
+		mil = 4
+	}
+}
+1475.1.1 = {
+	monarch = {
+		name = "Simonas"
+		dynasty = "Gediminai"
+		culture = lithuanian
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1505.1.1 = {
+	monarch = {
+		name = "Jerzis"
+		dynasty = "Gediminai"
+		culture = lithuanian
+		adm = 4
+		dip = 1
+		mil = 1
+	}
+}
+1542.1.1 = {
+	religion = reformed
+	monarch = {
+		name = "Simonas"
+		dynasty = "Gediminai"
+		culture = lithuanian
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1560.1.1 = {
+	monarch = {
+		name = "Jerzis"
+		dynasty = "Gediminai"
+		culture = lithuanian
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+#1569 done

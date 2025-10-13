@@ -1,0 +1,26 @@
+name = "Castilian Civil War"
+war_goal = {
+	type = take_capital_support_rebels
+	casus_belli = cb_support_rebels
+}
+
+1437.6.5 = {
+	add_attacker = NAV
+	add_attacker = ARA
+	add_defender = CAS
+	add_defender = CNI
+}
+
+1442.3.4 = {
+	add_attacker = NAP
+	add_attacker = TRN
+}
+
+1444.9.25 = {
+	rem_attacker = NAV
+	rem_attacker = ARA
+	rem_attacker = NAP
+	rem_attacker = TRN
+	rem_defender = CAS
+	rem_defender = CNI
+}

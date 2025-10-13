@@ -1,0 +1,798 @@
+namespace = ipe_slavery
+
+# Slavery in [From.GetName]
+province_event = {
+	id = ipe_slavery.3
+	title = ipe_slavery.3.t
+	desc = ipe_slavery.3.d
+	picture = COLONIZATION_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		owner = {
+			NOT = {
+				has_country_flag = abolished_slavery
+				has_reform = slave_republic
+			}
+			primitives = no
+			num_of_ports = 1
+			OR = {
+				any_owned_province = {
+					trade_goods = slaves
+					is_city = yes
+				}
+				any_subject_country = {
+					any_owned_province = {
+						trade_goods = slaves
+						is_city = yes
+					}
+				}
+				overlord = {
+					any_owned_province = {
+						trade_goods = slaves
+						is_city = yes
+					}
+				}
+				trading_part = {
+					trade_goods = slaves
+					value = 0.025
+				}
+				any_owned_province = {
+					has_province_modifier = imported_slave_labor
+					is_city = yes
+				}
+				any_subject_country = {
+					any_owned_province = {
+						has_province_modifier = imported_slave_labor
+						is_city = yes
+					}
+				}
+				overlord = {
+					any_owned_province = {
+						has_province_modifier = imported_slave_labor
+						is_city = yes
+					}
+				}
+			}
+		}
+		OR = {
+			trade_goods = coffee
+			trade_goods = cotton
+			trade_goods = sugar
+			trade_goods = tobacco
+			trade_goods = cocoa
+			trade_goods = tropical_wood
+		}
+		OR = {
+			# African American
+			colonial_region = colonial_alaska
+			colonial_region = colonial_canada
+			colonial_region = colonial_eastern_america
+			colonial_region = colonial_louisiana
+			colonial_region = colonial_california
+
+			# Afro-Mexican
+			colonial_region = colonial_mexico
+
+			# Afro-Antillean
+			colonial_region = colonial_the_carribean
+			
+			# Afro-Cuban
+			colonial_region = colonial_cuba
+
+			# Afro-Domincian or Afro-Haitian
+			colonial_region = colonial_hispaniola
+
+			# Afro-Colombian
+			colonial_region = colonial_colombia
+
+			# Afro-Argentine
+			colonial_region = colonial_la_plata
+			colonial_region = colonial_chile
+
+			# Afro-Peruvian
+			colonial_region = colonial_peru
+
+			# Afro-Brazilian
+			colonial_region = colonial_brazil
+
+			province_id = 1096 # Cape Verde
+			province_id = 1097 # Fernando Po
+			province_id = 1098 # Saint Helena
+			province_id = 1100 # Mahe
+			province_id = 1101 # Diego Garcia
+			province_id = 1102 # Mauritius
+			province_id = 1103 # Réunion
+			province_id = 1306 # São Tomé
+		}
+		is_colony = yes
+		NOT = {
+			has_province_flag = slave_event_fired
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	immediate = {
+		set_province_flag = slave_event_fired
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = colonize_with_slaves
+				}
+			}
+			add_permanent_province_modifier = {
+				name = imported_slave_labor
+				duration = -1
+			}
+			if = {
+				limit = {
+					OR = {
+						colonial_region = colonial_alaska
+						colonial_region = colonial_canada
+						colonial_region = colonial_eastern_america
+						colonial_region = colonial_louisiana
+						colonial_region = colonial_california
+					}
+				}
+				change_culture = african_american
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_mexico
+				}
+				change_culture = afro_mexican
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_the_carribean
+				}
+				change_culture = afro_antillean
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_cuba
+				}
+				change_culture = afro_cuban
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_hispaniola
+					NOT = {
+						ROOT = {
+							culture_group = iberian
+						}
+					}
+				}
+				change_culture = afro_haitian
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_hispaniola
+					ROOT = {
+						culture_group = iberian
+					}
+				}
+				change_culture = afro_dominican
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_colombia
+				}
+				change_culture = afro_colombian
+			}
+			if = {
+				limit = {
+					OR = {
+						colonial_region = colonial_la_plata
+						colonial_region = colonial_chile
+					}
+				}
+				change_culture = afro_argentine
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_peru
+				}
+				change_culture = afro_peruvian
+			}
+			if = {
+				limit = {
+					colonial_region = colonial_brazil
+				}
+				change_culture = afro_brazilian
+			}
+			if = {
+				limit = {
+					OR = {
+						province_id = 1096 # Cape Verde
+						province_id = 1097 # Fernando Po
+						province_id = 1098 # Saint Helena
+						province_id = 1100 # Mahe
+						province_id = 1101 # Diego Garcia
+						province_id = 1102 # Mauritius
+						province_id = 1103 # Réunion
+						province_id = 1306 # São Tomé
+					}
+				}
+				change_culture = creole
+			}
+			add_colonysize = 600
+			owner = {
+				add_treasury = -100
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_country_flag = colonize_with_slaves
+					}
+				}
+			}
+			owner = {
+				country_event = {
+					id = ipe_slavery.4
+				}
+			}
+		}
+	}
+
+	option = {
+		name = ipe_slavery.3.a
+	}
+}
+
+# Slavery in [From.GetName]
+country_event = {
+	id = ipe_slavery.4
+	title = ipe_slavery.4.t
+	desc = ipe_slavery.4.d
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # Death is meaningless before profits.
+		name = ipe_slavery.4.a
+		ai_chance = {
+			factor = 100
+		}
+		FROM = {
+			add_permanent_province_modifier = {
+				name = imported_slave_labor
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						colonial_region = colonial_alaska
+						colonial_region = colonial_canada
+						colonial_region = colonial_eastern_america
+						colonial_region = colonial_louisiana
+						colonial_region = colonial_california
+					}
+				}
+			}
+			FROM = {
+				change_culture = african_american
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					colonial_region = colonial_mexico
+				}
+			}
+			FROM = {
+				change_culture = afro_mexican
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					colonial_region = colonial_the_carribean
+				}
+			}
+			FROM = {
+				change_culture = afro_antillean
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					colonial_region = colonial_cuba
+				}
+			}
+			FROM = {
+				change_culture = afro_cuban
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					colonial_region = colonial_hispaniola
+					NOT = {
+						ROOT = {
+							culture_group = iberian
+						}
+					}
+				}
+			}
+			FROM = {
+				change_culture = afro_haitian
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					colonial_region = colonial_hispaniola
+					ROOT = {
+						culture_group = iberian
+					}
+				}
+			}
+			FROM = {
+				change_culture = afro_dominican
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					colonial_region = colonial_colombia
+				}
+			}
+			FROM = {
+				change_culture = afro_colombian
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						colonial_region = colonial_la_plata
+						colonial_region = colonial_chile
+					}
+				}
+			}
+			FROM = {
+				change_culture = afro_argentine
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					colonial_region = colonial_peru
+				}
+			}
+			FROM = {
+				change_culture = afro_peruvian
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					colonial_region = colonial_brazil
+				}
+			}
+			FROM = {
+				change_culture = afro_brazilian
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						province_id = 1096 # Cape Verde
+						province_id = 1097 # Fernando Po
+						province_id = 1098 # Saint Helena
+						province_id = 1100 # Mahe
+						province_id = 1101 # Diego Garcia
+						province_id = 1102 # Mauritius
+						province_id = 1103 # Réunion
+						province_id = 1306 # São Tomé
+					}
+				}
+			}
+			FROM = {
+				change_culture = creole
+			}
+		}
+		FROM = {
+			add_colonysize = 600
+		}
+		add_treasury = -100
+		custom_tooltip = ipe_slavery.4.a.tooltip
+	}
+
+	option = { # I will not fasten chains about the arms of men.
+		name = ipe_slavery.4.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = ipe_slavery.4.b.tooltip
+	}
+}
+
+# Slavery Disappears from [From.GetName]
+province_event = {
+	id = ipe_slavery.5
+	title = ipe_slavery.5.t
+	desc = ipe_slavery.5.d
+	picture = COLONIZATION_eventPicture
+
+	trigger = {
+		has_province_modifier = imported_slave_labor
+		NOT = {
+			OR = {
+				culture = african_american
+				culture = afro_antillean
+				culture = afro_argentine
+				culture = afro_brazilian
+				culture = afro_colombian
+				culture = afro_cuban
+				culture = afro_dominican
+				culture = afro_haitian
+				culture = afro_mexican
+				culture = afro_peruvian
+				culture = creole
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Very well.
+		name = ipe_slavery.5.a
+		remove_province_modifier = imported_slave_labor
+	}
+}
+
+# The Cruelty of Slavery
+country_event = {
+	id = ipe_slavery.6
+	title = ipe_slavery.6.t
+	desc = ipe_slavery.6.d
+	picture = COLONIZATION_eventPicture
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_owned_province = {
+			has_province_modifier = imported_slave_labor
+			has_climate = tropical
+		}
+	}
+
+	option = { # Dead men cannot grow crops.
+		name = ipe_slavery.6.a
+		random_owned_province = {
+			limit = {
+				has_province_modifier = imported_slave_labor
+			}
+			add_devastation = 10
+		}
+	}
+}
+
+# The [From.GetAdjective] Revolution
+country_event = {
+	id = ipe_slavery.8
+	title = ipe_slavery.8.t
+	desc = ipe_slavery.8.d
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = { # They should not have dared to challenge our empire!
+		name = ipe_slavery.8.a
+		FROM = {
+			grant_independence = yes
+			tooltip = {
+				change_government = republic
+				add_government_reform = slave_republic
+			}
+			every_owned_province = {
+				add_core = ROOT
+			}
+		}
+		add_opinion = {
+			who = FROM
+			modifier = slave_revolt
+		}
+	}
+}
+
+# $FROMCOUNTRY$ Abolishes Slavery
+country_event = {
+	id = ipe_slavery.9
+	title = ipe_slavery.9.t
+	desc = ipe_slavery.9.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = ipe_slavery.9.a
+		add_country_modifier = {
+			name = innovative_modifier
+			duration = 3650
+		}
+		add_country_modifier = {
+			name = "the_abolish_slavery_act"
+			duration = -1
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = imported_slave_labor
+				}
+				remove_province_modifier = imported_slave_labor
+			}
+			every_owned_province = {
+				limit = {
+					trade_goods = slaves
+				}
+				change_trade_goods = unknown
+				remove_building = tradecompany
+				if = {
+					limit = { has_province_modifier = slave_entrepot }
+					remove_province_modifier = slave_entrepot
+				}
+			}
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						has_province_modifier = imported_slave_labor
+					}
+					amount = 5
+				}
+			}
+			add_liberty_desire = 25
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						has_province_modifier = imported_slave_labor
+					}
+					amount = 10
+				}
+			}
+			add_liberty_desire = 25
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						has_province_modifier = imported_slave_labor
+					}
+					amount = 15
+				}
+			}
+			add_liberty_desire = 25
+		}
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						has_province_modifier = imported_slave_labor
+					}
+					amount = 20
+				}
+			}
+			add_liberty_desire = 25
+		}
+		set_country_flag = abolished_slavery
+		clr_country_flag = abolishing_slavery
+	}
+}
+
+# Slavery Extinguished in [From.GetName]
+province_event = {
+	id = ipe_slavery.10
+	title = ipe_slavery.10.t
+	desc = ipe_slavery.10.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+
+	trigger = {
+		owner = {
+			has_reform = slave_republic
+		}
+		OR = {
+			has_province_modifier = imported_slave_labor
+			trade_goods = slaves
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # For freedom!
+		name = ipe_slavery.10.a
+		if = {
+			limit = {
+				has_province_modifier = imported_slave_labor
+			}
+			remove_province_modifier = imported_slave_labor
+		}
+		if = {
+			limit = {
+				trade_goods = slaves
+			}
+			change_trade_goods = unknown
+			remove_building = tradecompany
+			if = {
+				limit = { has_province_modifier = slave_entrepot }
+				remove_province_modifier = slave_entrepot
+			}
+		}
+		add_province_modifier = {
+			name = encouraged_growth_manpower
+			duration = 18250
+		}
+	}
+}
+
+# The Conquest of Hispaniola
+country_event = {
+	id = ipe_slavery.11
+	title = ipe_slavery.11.t
+	desc = ipe_slavery.11.d
+	picture = TRADE_GOODS_PLANTATION_GOODS_IN_WAREHOUSE_eventPicture
+
+	major = yes
+
+	fire_only_once = yes
+
+	trigger = {
+		NOT = {
+			has_country_flag = abolished_slavery
+			has_reform = slave_republic
+		}
+		primitives = no
+		num_of_ports = 1
+		OR = {
+			any_owned_province = {
+				trade_goods = slaves
+				is_city = yes
+			}
+			any_subject_country = {
+				any_owned_province = {
+					trade_goods = slaves
+					is_city = yes
+				}
+			}
+			overlord = {
+				any_owned_province = {
+					trade_goods = slaves
+					is_city = yes
+				}
+			}
+			trading_part = {
+				trade_goods = slaves
+				value = 0.025
+			}
+			any_owned_province = {
+				has_province_modifier = imported_slave_labor
+				is_city = yes
+			}
+			any_subject_country = {
+				any_owned_province = {
+					has_province_modifier = imported_slave_labor
+					is_city = yes
+				}
+			}
+			overlord = {
+				any_owned_province = {
+					has_province_modifier = imported_slave_labor
+					is_city = yes
+				}
+			}
+		}
+		hispaniola_area = {
+			type = all
+			owned_by = ROOT	
+		}
+		dominica_area = {
+			type = all
+			owned_by = ROOT	
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 30
+	}
+
+	option = { # Let the sugar flow.
+		name = ipe_slavery.11.a
+		ai_chance = {
+			factor = 100
+		}
+		custom_tooltip = ipe_slavery.11.a.tooltip
+		every_owned_province = {
+			limit = {
+				OR = {
+					area = hispaniola_area
+					area = dominica_area
+				}
+			}
+			change_culture = afro_antillean
+			change_religion = root
+			add_permanent_province_modifier = {
+				name = imported_slave_labor
+				duration = -1
+			}
+			add_permanent_province_modifier = {
+				name = hispaniola_plantations
+				duration = -1
+			}
+			change_trade_goods = sugar
+		}
+		add_treasury = -100
+	}
+
+	option = { # I will not own slaves!
+		name = ipe_slavery.11.b
+		ai_chance = {
+			factor = 0
+		}
+		custom_tooltip = ipe_slavery.11.b.tooltip
+	}
+}
+
+# The [Root.GetAdjective] Revolution
+country_event = {
+	id = ipe_slavery.12
+	title = ipe_slavery.12.t
+	desc = ipe_slavery.12.d
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+
+	major = yes
+
+	option = { # We will not rest until all our compatriots are free.
+		name = ipe_slavery.12.a
+		tooltip = {
+			change_government = republic
+			add_government_reform = slave_republic
+		}
+	}
+}
+
+# Cleanup
+province_event = {
+	id = ipe_slavery.13
+	title = ipe_slavery.13.t
+	desc = ipe_slavery.13.d
+	picture = COLONIZATION_eventPicture
+
+	hidden = yes
+
+	trigger = {
+		is_colony = no
+		has_province_flag = slave_event_fired
+	}
+
+	mean_time_to_happen = {
+		months = 12
+	}
+
+	immediate = {
+		clr_province_flag = slave_event_fired
+	}
+
+	option = {
+		name = ipe_slavery_13.a
+	}
+}

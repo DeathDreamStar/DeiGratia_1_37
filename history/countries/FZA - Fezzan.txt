@@ -1,0 +1,155 @@
+government = tribal
+add_government_reform = tribal_federation
+government_rank = 1
+primary_culture = berber
+religion = sunni
+technology_group = muslim
+capital = 2450	# Ghadames
+fixed_capital = 2450 # Cannot move capital away from this province & no power cost to move to it
+religious_school = maliki_school
+
+1054.1.1 = {
+	monarch = {
+		name = "Huwayt"
+		dynasty = "Banû Ghadames"
+		adm = 1
+		dip = 2
+		mil = 2
+	}
+}
+1099.1.1 = {
+	monarch = {
+		name = "Ibn Huwayt"
+		dynasty = "Banû Ghadames"
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+}
+1150.1.1 = {
+	monarch = {
+		name = "Jazi"
+		dynasty = "Banû Ghadames"
+		adm = 1
+		dip = 1
+		mil = 1
+	}
+}
+1200.1.1 = {
+	monarch = {
+		name = "Anjaddat"
+		dynasty = "Banû Ghadames"
+		adm = 1
+		dip = 3
+		mil = 3
+	}
+}
+1248.1.1 = {
+	monarch = {
+		name = "Ifteneh"
+		dynasty = "Banû Ghadames"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1300.1.1 = {
+	monarch = {
+		name = "Sulaymân"
+		dynasty = "Banû Ghadames"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1350.1.1 = {
+	monarch = {
+		name = "Abû Rabî‘ah"
+		dynasty = "Banû Ghadames"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1399.1.1 = {
+	monarch = {
+		name = "Rabî‘ah"
+		dynasty = "Banû Ghadames"
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}
+1444.1.1 = {
+	monarch = {
+		name = "Hammad"
+		dynasty = "Banû Ghadames"
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}
+1500.1.1 = {
+	monarch = {
+		name = "Ibn Hammad"
+		dynasty = "Banû Ghadames"
+		adm = 2
+		dip = 3
+		mil = 3
+	}
+}
+1550.1.1 = {
+	monarch = {
+		name = "Abû Auda"
+		dynasty = "Banû Ghadames"
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}
+1600.1.1 = {
+	monarch = {
+		name = "Auda"
+		dynasty = "Banû Ghadames"
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+}
+1648.1.1 = {
+	monarch = {
+		name = "Ibn Auda"
+		dynasty = "Banû Ghadames"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}
+1700.1.1 = {
+	monarch = {
+		name = "Abû Tayi"
+		dynasty = "Banû Ghadames"
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}
+1750.1.1 = {
+	monarch = {
+		name = "Tayi"
+		dynasty = "Banû Ghadames"
+		adm = 2
+		dip = 1
+		mil = 2
+	}
+}
+1797.1.1 = {
+	monarch = {
+		name = "Ibn Tayi"
+		dynasty = "Banû Ghadames"
+		adm = 2
+		dip = 0
+		mil = 1
+	}
+}
+#done 1842

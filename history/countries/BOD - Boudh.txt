@@ -1,0 +1,18 @@
+government = tribal
+add_government_reform = tribal_kingdom
+government_rank = 1
+technology_group = indian
+religion = hinduism
+primary_culture = oriya
+capital = 6752	# Boudh
+fixed_capital = 6752
+
+1444.1.1 = {
+	monarch = { # fictional
+		name = "Ananga"
+		dynasty = "Bhanj"
+		adm = 2
+		dip = 2
+		mil = 2
+	}
+}

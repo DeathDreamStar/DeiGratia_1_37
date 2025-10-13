@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+technology_group = western
+primary_culture = english
+add_accepted_culture = welsh
+religion = catholic
+capital = 6875
+fixed_capital = 6875
+
+1414.1.1 = {
+	monarch = {
+		name = "Humphrey"
+		dynasty = "Lancaster"
+		birth_date = 1390.10.3
+		adm = 4
+		dip = 4
+		mil = 2
+	}
+}

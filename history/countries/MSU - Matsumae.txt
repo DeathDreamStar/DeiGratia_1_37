@@ -1,0 +1,19 @@
+government = monarchy
+add_government_reform = daimyo
+government_rank = 1
+primary_culture = togoku
+religion = shinto
+technology_group = chinese
+capital = 4193 # Oshima
+
+1600.9.13 = {
+	monarch = {
+		name = "Yoshihiro"
+		dynasty = "Matsumae"
+		birth_date = 1548.10.4
+		death_date = 1616.11.20
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+}

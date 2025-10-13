@@ -1,0 +1,2 @@
+#6032 - Western Siberia
+discovered_by = nomad_group

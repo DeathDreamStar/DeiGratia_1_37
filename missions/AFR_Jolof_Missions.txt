@@ -1,0 +1,550 @@
+#First slot
+jol_missions_trade_slot = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Origins"
+	}
+	potential = {
+		has_dlc = "Origins"
+		NOT = { map_setup = map_setup_random }
+		tag = JOL
+	}
+	has_country_shield = yes
+	
+	#1st mission: Assemble a Warband
+	jol_the_mali_border = { 
+		icon = mission_mal_fighting_musa
+		required_missions = {  } 
+		position = 1
+		provinces_to_highlight = {
+			is_capital_of = ROOT
+			has_fort_building_trigger = no
+		}
+		trigger = {
+			has_mil_advisor = yes
+			army_size_percentage = 1
+		}
+		effect = { 
+			futa_jallon_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tekrur_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			gambia_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bissau_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			guinea_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	jol_take_over_futa_jallon = { 
+		icon = mission_sw_against_the_desert
+		required_missions = { jol_the_mali_border } 
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = futa_jallon_area
+				area = gambia_area
+				area = bissau_area
+				area = guinea_coast_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			futa_jallon_area = {
+				country_or_non_sovereign_subject_holds = ROOT
+				type = all
+			}
+			gambia_area = {
+				country_or_non_sovereign_subject_holds = ROOT
+				type = all
+			}
+			bissau_area = {
+				country_or_non_sovereign_subject_holds = ROOT
+				type = all
+			}
+			guinea_coast_area = {
+				country_or_non_sovereign_subject_holds = ROOT
+				type = all
+			}
+		}
+		effect = {
+			eastern_manding_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			manding_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			massina_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	jol_gain_ports = { 
+		icon = mission_invade_island
+		required_missions = { jol_take_over_futa_jallon } 
+		position = 3
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			has_discovered = ROOT
+			has_port = yes
+		}
+		trigger = {
+			num_of_ports = 6
+		}
+		effect = { 
+			add_navy_tradition = 20
+		}
+	}
+
+	jol_discover_europe = { 
+		icon = mission_european_church
+		required_missions = { jol_gain_ports } 
+		position = 4
+		provinces_to_highlight = {
+			NOT = { has_discovered = ROOT }
+			continent = europe
+		}
+		trigger = {
+			europe = {
+				has_discovered = ROOT
+			}
+		}
+		effect = { 
+			if = {
+				limit = {
+					any_country = {
+						capital_scope = {
+							continent = europe
+						}
+					}
+				}
+				country_event = {
+					id = flavor_jol.1
+				}
+			}
+			else = {
+				add_mercantilism = 3
+			}
+		}
+	}
+
+	jol_trade_experts = { 
+		icon = mission_dominate_home_trade_node
+		required_missions = { jol_discover_europe } 
+		position = 5
+		provinces_to_highlight = {
+		}
+		trigger = {
+			home_trade_node = {
+				trade_share = {
+					country = ROOT
+					share = 75
+				}
+			}
+		}
+		effect = { 
+			add_country_modifier = {
+				name = jol_dominant_trade
+				duration = 9125
+			}
+		}
+	}
+}
+
+#Second slot
+jol_missions_conquest_slot = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Origins"
+	}
+	potential = {
+		has_dlc = "Origins"
+		NOT = { map_setup = map_setup_random }
+		tag = JOL
+	}
+	has_country_shield = yes
+
+	jol_the_fulani = { 
+		icon = mission_son_fetishist_alliances
+		required_missions = { jol_the_mali_border } 
+		position = 2
+		provinces_to_highlight = {
+			area = tekrur_area
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			tekrur_area = {
+				country_or_non_sovereign_subject_holds = ROOT
+				type = all
+			}
+		}
+		effect = { 
+			add_accepted_culture = fulani
+			add_yearly_manpower = 1
+		}
+	}
+
+	jol_push_further_into_mali = { 
+		icon = mission_mal_restore_the_mali_empire
+		required_missions = { jol_take_over_futa_jallon } 
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = eastern_manding_area
+				area = manding_area
+				area = massina_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			eastern_manding_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			manding_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			massina_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = { 
+			kong_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			jenne_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	jol_replace_mali = { 
+		icon = mission_son_invade_mali
+		required_missions = { jol_push_further_into_mali } 
+		position = 4
+		provinces_to_highlight = {
+			OR = {
+				owned_by = MAL
+				area = kong_area
+				area = jenne_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+				is_empty = yes
+			}
+		}
+		trigger = {
+			MAL = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			kong_area = {
+				type = all
+				OR = {
+					country_or_non_sovereign_subject_holds = ROOT
+					is_empty = yes
+				}
+			}
+			jenne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_prestige = 25
+			niger_bend_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			dendi_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			upper_volta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			lower_volta_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { is_permanent_claim = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	jol_the_songhai_threat = { 
+		icon = mission_unite_home_region
+		required_missions = { jol_replace_mali } 
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				owned_by = SON
+				area = niger_bend_area
+				area = dendi_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			SON = {
+				OR = {
+					exists = no
+					is_subject_of = ROOT
+				}
+			}
+			niger_bend_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			dendi_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = { 
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+			add_country_modifier = {
+				name = jol_imperial_ambitions
+				duration = 9125
+			}
+		}
+	}
+
+	jol_west_african_great_power = { 
+		icon = mission_kon_protector_of_africa
+		required_missions = { 
+			jol_trade_experts
+			jol_the_songhai_threat
+			jol_centralize_the_state
+		} 
+		position = 6
+		trigger = {
+			is_great_power = yes
+		}
+		effect = { 
+			add_country_modifier = {
+				name = jol_west_african_great_power
+				duration = 9125
+			}
+		}
+	}
+}
+
+#Fourth slot
+jol_missions_internal_slot = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Origins"
+	}
+	potential = {
+		has_dlc = "Origins"
+		NOT = { map_setup = map_setup_random }
+		tag = JOL
+	}
+	has_country_shield = yes
+
+	jol_the_tribal_confederacy = { 
+		icon = mission_son_back_to_the_roots
+		required_missions = {  } 
+		position = 1
+		provinces_to_highlight = {
+		}
+		trigger = {
+			WAA = {
+				OR = {
+					AND = {
+						is_subject_of = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 190
+						}
+					}
+					exists = no
+				}
+			}
+			CYR = {
+				OR = {
+					AND = {
+						is_subject_of = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 190
+						}
+					}
+					exists = no
+				}
+			}
+			SNE = {
+				OR = {
+					AND = {
+						is_subject_of = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 190
+						}
+					}
+					exists = no
+				}
+			}
+			SLM = {
+				OR = {
+					AND = {
+						is_subject_of = ROOT
+						has_opinion = {
+							who = ROOT
+							value = 190
+						}
+					}
+					exists = no
+				}
+			}
+		}
+		effect = { 
+			capital_scope = {
+				ipe_add_base_tax_1 = yes
+				ipe_add_base_production_1 = yes
+				ipe_add_base_manpower_1 = yes
+			}
+		}
+	}
+
+	jol_reforms_for_the_state = { 
+		icon = mission_son_military_expertise
+		required_missions = { jol_the_tribal_confederacy } 
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = jolof_area
+				area = western_jolof_area
+			}
+			NOT = {
+				owned_by = ROOT
+			}
+		}
+		trigger = {
+			jolof_area = {
+				type = all
+				owned_by = ROOT
+			}
+			western_jolof_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = { 
+			change_government_reform_progress = 100
+		}
+	}
+
+	jol_centralize_the_state = { 
+		icon = mission_zim_strong_rulership
+		required_missions = { jol_reforms_for_the_state } 
+		position = 5
+		provinces_to_highlight = {
+		}
+		trigger = {
+			OR = {
+				AND = {
+					OR = {
+						current_age = age_of_absolutism
+						current_age = age_of_revolutions
+					}
+					absolutism = 50
+				}
+				AND = {
+					OR = {
+						current_age = age_of_discovery
+						current_age = age_of_reformation
+					}
+					crown_land_share = 75
+				}
+			}
+			if = {
+				limit = {
+					has_estate = estate_nobles
+				}
+				NOT = {
+					estate_influence = {
+						estate = estate_nobles
+						influence = 20
+					}
+				}
+			}
+		}
+		effect = {
+			add_stability_or_adm_power = yes
+			add_legitimacy = 25
+		}
+	}
+}

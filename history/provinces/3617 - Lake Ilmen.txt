@@ -1,0 +1,5 @@
+# 3617 - Lake Ilmen
+
+discovered_by = eastern
+discovered_by = western
+discovered_by = nomad_group

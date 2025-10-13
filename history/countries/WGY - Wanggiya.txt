@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = jurchen_tribe
+technology_group = nomad_group
+primary_culture = manchu
+religion = tengri_pagan_reformed
+secondary_religion = confucianism
+capital = 3124 # Tonghua
+
+1444.1.1 = {
+    monarch = { # name of Qing-era prince descended from this tribe
+        name = "Chuoheluo"
+        dynasty = "Wanyan"
+        adm = 2
+        dip = 2
+        mil = 2
+    }
+}

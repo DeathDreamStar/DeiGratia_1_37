@@ -1,0 +1,17 @@
+government = tribal
+add_government_reform = tribal_kingdom
+primary_culture = kham
+religion = vajrayana
+technology_group = chinese
+capital = 678	# Tachienlu
+government_rank = 2
+
+1444.1.1 = {
+	monarch = {
+		name = "Ngawang Ginseng"
+		dynasty = "Jia"
+		adm = 4
+		dip = 3
+		mil = 1
+	}
+}

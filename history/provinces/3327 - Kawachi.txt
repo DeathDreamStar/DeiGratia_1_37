@@ -1,0 +1,15 @@
+#3327 - Kawachi
+
+owner = HTK
+controller = HTK
+culture = japanese
+religion = shinto
+capital = "Wakae"
+trade_goods = chinaware
+hre = no
+base_tax = 5
+base_production = 5
+base_manpower = 4
+is_city = yes
+add_core = HTK
+discovered_by = chinese

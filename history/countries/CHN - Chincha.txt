@@ -1,0 +1,16 @@
+government = monarchy
+add_government_reform = autocracy_reform
+primary_culture = inca
+religion = inti
+technology_group = andean
+capital = 6481	# Ica
+
+1444.1.1 = { # fictional
+	monarch = {
+		name = "Huama"
+		dynasty = "Chincha"
+		ADM = 2
+		DIP = 2
+		MIL = 2
+	}
+}

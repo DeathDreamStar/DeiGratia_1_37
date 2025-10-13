@@ -1,0 +1,19 @@
+#3105 - Pusan
+
+owner = KOR
+controller = KOR
+culture = korean
+religion = confucianism
+capital = "Pusan"
+trade_goods = fish
+hre = no
+base_tax = 9
+base_production = 9
+base_manpower = 8
+is_city = yes
+add_core = KOR
+discovered_by = chinese
+discovered_by = nomad_group
+center_of_trade = 2
+extra_cost = 16
+fort_15th = yes

@@ -1,0 +1,1079 @@
+namespace = ipe_corruption
+
+# Endemic Corruption in $COUNTRY$
+country_event = {
+	id = ipe_corruption.1
+	title = ipe_corruption.1.t
+	desc = ipe_corruption.1.d
+	picture = CORRUPTION_eventPicture
+
+	trigger = {
+		OR = {
+			AND = {
+				development_in_provinces = {
+					value = 500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 1000
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 500_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 1000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 1500
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 1000_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 1500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 2000
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 1500_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 2000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 2500
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 2000_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 2500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 3000
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 2500_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 3000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 3500
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 3000_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 3500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 4000
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 3500_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 4000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 4500
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 4000_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 4500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 5000
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 4500_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 5000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 5500
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 5000_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 5500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 6000
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 5500_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 6000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 6500
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 6000_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 6500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 7000
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 6500_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 7000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 7500
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 7000_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 7500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 8000
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 7500_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 8000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 8500
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 8000_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 8500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 9000
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 8500_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 9000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 9500
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 9000_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 9500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 10000
+						is_owned_by_trade_company = no
+					}
+					has_country_modifier = 9500_corruption
+				}
+			}
+			AND = {
+				development_in_provinces = {
+					value = 10000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					has_country_modifier = 10000_corruption
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # We will soon see how this affects us.
+		name = ipe_corruption.1.a
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 1000
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 500_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 1000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 1500
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 1000_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 1500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 2000
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 1500_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 2000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 2500
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 2000_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 2500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 3000
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 2500_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 3000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 3500
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 3000_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 3500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 4000
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 3500_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 4000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 4500
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 4000_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 4500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 5000
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 4500_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 5000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 5500
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 5000_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 5500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 6000
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 5500_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 6000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 6500
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 6000_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 6500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 7000
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 6500_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 7000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 7500
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 7000_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 7500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 8000
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 7500_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 8000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 8500
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 8000_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 8500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 9000
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 8500_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 9000
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 9500
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9500_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 9000_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 9500
+					is_owned_by_trade_company = no
+				}
+				NOT = {
+					development_in_provinces = {
+						value = 10000
+						is_owned_by_trade_company = no
+					}
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 10000_corruption
+			add_country_modifier = {
+				name = 9500_corruption
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				development_in_provinces = {
+					value = 10000
+					is_owned_by_trade_company = no
+				}
+			}
+			remove_country_modifier = 500_corruption
+			remove_country_modifier = 1000_corruption
+			remove_country_modifier = 1500_corruption
+			remove_country_modifier = 2000_corruption
+			remove_country_modifier = 2500_corruption
+			remove_country_modifier = 3000_corruption
+			remove_country_modifier = 3500_corruption
+			remove_country_modifier = 4000_corruption
+			remove_country_modifier = 4500_corruption
+			remove_country_modifier = 5000_corruption
+			remove_country_modifier = 5500_corruption
+			remove_country_modifier = 6000_corruption
+			remove_country_modifier = 6500_corruption
+			remove_country_modifier = 7000_corruption
+			remove_country_modifier = 7500_corruption
+			remove_country_modifier = 8000_corruption
+			remove_country_modifier = 8500_corruption
+			remove_country_modifier = 9000_corruption
+			remove_country_modifier = 9500_corruption
+			add_country_modifier = {
+				name = 10000_corruption
+				duration = -1
+			}
+		}
+	}
+}
+
+# Declining Corruption in $COUNTRY$
+country_event = {
+	id = ipe_corruption.2
+	title = ipe_corruption.2.t
+	desc = ipe_corruption.2.d
+	picture = CORRUPTION_eventPicture
+
+	trigger = {
+		NOT = {
+			development_in_provinces = {
+				value = 500
+				is_owned_by_trade_company = no
+			}
+		}
+		OR = {
+			has_country_modifier = 500_corruption
+			has_country_modifier = 1000_corruption
+			has_country_modifier = 1500_corruption
+			has_country_modifier = 2000_corruption
+			has_country_modifier = 2500_corruption
+			has_country_modifier = 3000_corruption
+			has_country_modifier = 3500_corruption
+			has_country_modifier = 4000_corruption
+			has_country_modifier = 4500_corruption
+			has_country_modifier = 5000_corruption
+			has_country_modifier = 5500_corruption
+			has_country_modifier = 6000_corruption
+			has_country_modifier = 6500_corruption
+			has_country_modifier = 7000_corruption
+			has_country_modifier = 7500_corruption
+			has_country_modifier = 8000_corruption
+			has_country_modifier = 8500_corruption
+			has_country_modifier = 9000_corruption
+			has_country_modifier = 9500_corruption
+			has_country_modifier = 10000_corruption
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 6
+	}
+
+	option = { # We are known for clean business.
+		name = ipe_corruption.2.a
+		remove_country_modifier = 500_corruption
+		remove_country_modifier = 1000_corruption
+		remove_country_modifier = 1500_corruption
+		remove_country_modifier = 2000_corruption
+		remove_country_modifier = 2500_corruption
+		remove_country_modifier = 3000_corruption
+		remove_country_modifier = 3500_corruption
+		remove_country_modifier = 4000_corruption
+		remove_country_modifier = 4500_corruption
+		remove_country_modifier = 5000_corruption
+		remove_country_modifier = 5500_corruption
+		remove_country_modifier = 6000_corruption
+		remove_country_modifier = 6500_corruption
+		remove_country_modifier = 7000_corruption
+		remove_country_modifier = 7500_corruption
+		remove_country_modifier = 8000_corruption
+		remove_country_modifier = 8500_corruption
+		remove_country_modifier = 9000_corruption
+		remove_country_modifier = 9500_corruption
+		remove_country_modifier = 10000_corruption
+	}
+}
