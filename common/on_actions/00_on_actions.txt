@@ -4,6 +4,14 @@
 on_startup = {
 	if = {
 		limit = {
+			ai = no
+		}
+		country_event = {
+			id = ipe_setting.1
+		}
+	}
+	if = {
+		limit = {
 			current_age = age_of_discovery
 		}
 		LXA = {

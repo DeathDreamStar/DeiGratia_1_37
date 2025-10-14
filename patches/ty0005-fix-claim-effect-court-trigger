@@ -1,0 +1,16 @@
+Subject: [PATCH] fix give_claims related effect      
+
+give_claim
+give_province_claims
+give_area_claims
+
+
+Subject: [PATCH] fix court related trigger
+
+ruler_total_stats
+ruler_total_stats_target
+heir_total_stats
+heir_total_stats_target
+consort_total_stats
+consort_total_stats_target
+num_of_ruler_traits

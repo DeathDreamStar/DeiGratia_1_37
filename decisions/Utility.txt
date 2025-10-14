@@ -1,7 +1,50 @@
 country_decisions = {
+
+	TurnOffEndemicCorruption = {
+		major = yes
+		potential = {
+			ai = no
+			NOT = {
+				has_global_flag = ipe_setting_enable_early_subject_integration
+			}
+		}
+		allow = {
+		}
+		effect = {
+			set_global_flag = ipe_setting_enable_early_subject_integration
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	TurnOffSubjectIntegrationLimi = {
+		major = yes
+		potential = {
+			ai = no
+			NOT = {
+				has_global_flag = ipe_setting_disable_endemic_corruption
+			}
+		}
+		allow = {
+		}
+		effect = {
+			set_global_flag = ipe_setting_disable_endemic_corruption
+			hidden_effect = {
+				every_country_including_inactive = {
+					remove_corruption_effect = yes
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
 	DevelopmentDisplayOn = {
 		major = yes
 		potential = {
+			ai = no
 			NOT = {
 				has_country_flag = development_display_on
 			}
@@ -19,6 +62,7 @@ country_decisions = {
 	DevelopmentDisplayOff = {
 		major = yes
 		potential = {
+			ai = no
 			has_country_flag = development_display_on
 		}
 		allow = {
@@ -34,6 +78,7 @@ country_decisions = {
 	InflationDisplayOn = {
 		major = yes
 		potential = {
+			ai = no
 			NOT = {
 				has_country_flag = show_inflation_events
 			}
@@ -51,6 +96,7 @@ country_decisions = {
 	InflationDisplayOff = {
 		major = yes
 		potential = {
+			ai = no
 			has_country_flag = show_inflation_events
 		}
 		allow = {

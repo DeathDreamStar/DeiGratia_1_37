@@ -1,0 +1,4 @@
+Subject: [PATCH] fix blank terrain picture
+
+terrain dds format:
+no-mips, color texture (meaning no alpha, pure rgb), linear BC1 4bpp compression (this is DTX1, no alpha channel/max compatibility option), no precompression.

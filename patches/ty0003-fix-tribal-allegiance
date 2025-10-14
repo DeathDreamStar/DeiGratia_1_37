@@ -1,0 +1,3 @@
+Subject: [PATCH] fix yearly_tribal_allegiance 
+
+replace yearly_tribal_allegiance by monthly_tribal_allegiance

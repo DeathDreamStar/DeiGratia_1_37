@@ -1,0 +1,780 @@
+#############################################################
+######################## 1.37.5.0 ###########################
+#############################################################
+
+###################
+# Other
+###################
+  - Integrated DLC´s into the base game
+
+#############################################################
+######################## 1.37.4.0 ###########################
+#############################################################
+
+###################
+# Bugfixes
+###################
+   - Fixed a bug not allowing to split boats into two navies with reorganize window outside of harbors while the game is unpaused as the window disapped when a day passed. 
+   - Fixed land unit types being changed while teching up 
+   - Fixed a crash with countries being full annexed by a 3rd party while at war 
+   - Fixed a crash with auto peace deals 
+   - Removed a cooldown on Ai leaving coalitions. 
+   - Moved the separatist sentiment delay to immediate 
+   - Fixed calling allies to wars 
+
+
+#############################################################
+######################## 1.37.3.0 ###########################
+#############################################################
+
+###################
+# Interface
+###################
+
+# Other
+   - Hovering over the river crossing icon in province view will now highlight all other provinces with river adjacencies.
+
+###################
+# Usermodding
+###################
+
+# Other
+   - Added the on_expanded_infrastructure_removed on_action.
+
+###################
+# Script
+###################
+
+# Decisions
+   - The "Form Great Yuan" decision now removes the Altaic cultures from being accepted.
+   - Georgia can no longer move the capital to Constantinople if the province is not inside a state.
+   - The "Form Austria-Hungary" administrative technology requirement has been changed from 20 to 18.
+   - "Adopt Aztec Traditions" now highlights the province of Mexica and provinces owned by Aztecs.
+   - The “Transfer Nitra” decision is no longer visible if the Slovakia area is directly owned.
+   - The "Unite with the Iberian Crown" decision is now only visible if Castile or Spain are not subjects and they are valid Personal Union targets.
+
+# Events
+   - Separatist sentiment event now has a cooldown of 180 days to discourage keeping the event open instead of clicking the option.
+   - Elections no longer trigger the "Mummification of the Dead" event.   
+   - The Aztec event "Deities of Nahua" does not list the National Unrest for Quetzalcoatl option tooltip.
+   - The Dutch event “The Throne of England” now properly checks for DLC on the first option.
+   - The Dutch event “The Thorne of England” now properly spells “Man Of Wars”.
+   -The Dutch event  "The Throne of England" event now grants a naval reformer advisor.
+   - “The Great Council of the Low Countries” can only fire for Burgundy now.
+   - The “Mongol Peace” event removes previous modifiers and grants “Pax Mongolica” modifiers.
+   - The event "Mongol Peace" now clarifies that only future rulers will gain the Conqueror trait.
+   - Yuan released through the Timurid Event "Yuan Campaign" now inherits technology and ideas from its overlord.
+   - Changing the culture group to Gothic Germanic with the “The Court of Alexis” event, will now change the culture of the ruler and heir as well.
+   - The event "Independence of the Egyptian Eyalet" will now always trigger if Egypt is not an Eyalet under the Ottomans.
+
+# Ideas
+   - Greater Armenian ideas are now properly assigned if the country does not have Armenian ideas.
+
+# Missions
+   - Aztecs, Mayan nations, and Cusco now receive generic American missions without "Winds of Change" DLC.
+   - Random New World tags can no longer randomly get missions of specific American natives.
+   - The Mayan "Punish the Invaders" mission event preview now informs about the ability to convert the player technology group to High American.
+   - The "Expansion of Tenochtitlan" mission now has alternative rewards if the City of Tenochtitlan modifier is already present.
+   - The mission "Fall of the Isles" for the Sunset Invasion Tree will only highlight the Stonehenge province if the player owns 25 provinces in Britain except the one with the Stonehenge.
+   - The mission "La Rose et le Lys" for the Sunset Invasion Tree will only highlight Paris if the player owns 15 provinces in France excluding Paris.
+   - The "Iberian Windmills" mission for the Sunset Invasion Tree will only highlight Madrid if the player owns at least 15 provinces in Iberia excluding Madrid.
+   - The “Aztec Roads” mission will no longer spill out if the player has an estate with a long name.
+   - The mission tree no longer breaks when forming a Nation with High American Tree as an Aztec, Mayan, or Incan nation.
+   - Removed the ability for non-Cusco tags to see the tooltip informing of the Machu Picchu upgrade after the "Ground Shaker" mission
+   - The Dutch mission "Tales of Gold and Spice" now has an improved tooltip fixing an issue with the highlight.
+   - The Dutch mission "Question of the Confederation" now grants rewards properly.
+   - The Dutch mission  "Ending the Sound Toll" requires to be the Netherlands.
+   - Dutch Mission "Ending the Sound Toll" will no longer display the country's name for the "Diplomatic" way of completing the mission.
+   - Forming another nation as Bohemia no longer breaks the Bohemian mission tree.
+   - The Austrian mission "The Imperial Border" now takes into account HRE member subject provinces.
+   - The Austrian mission “Defeat the French” does not create new regiments as soon as the player converts France into a personal union.
+   - The Austrian mission "Iberian Relations” has an alternative trigger if Castile and Spain do not exist.
+   - The Hungarian mission  "Weaken Austria" is now completable when Austria is a subject of Hungary.
+   - The Italian Mission "Befriend Ethiopia" now has a fallback in case no Christian nations exist in the Horn of Africa.
+   - The German mission “Industrialize Rhineland” requires only 250 of development in Rhineland instead of 500.
+   - Forming any country that does not have any branching missions while allowing the preview for branching missions active will now remove the preview buttons properly.
+   - Horde missions now grant claims needed for the mission "Ending the Divine Wind".
+   - Horde missions now grant claims needed for the mission "Hermit Ender".
+   - Tatar missions now give claims on Tibet.
+   - The Moghulistan and Tatar mission tree now contain claims on Tibet.
+   - Horde mission "Into Iran" now gives claims on Persia.
+   - The Mongol mission "Tumu Crisis" now gives claims on Manchuria.
+   - "For the Horde" Hordes’ mission no longer says that it will rename the Clergy estate into the Shamans.
+   - The Mongol mission "Heart of Persia" now mentions the Persia Region instead of just Persia to avoid confusion.
+   - The Horde mission "Into Egypt" now has alternative rewards in case the player is not able to raze.
+   - The Horde mission "Siege Beijing" no longer gives duplicate claims for Mongols.
+   - The Hordes mission "Cross the Caucasus" effect now properly displays Legitimacy equivalents.
+   - Horde Mission "Opening the Dragon's Gate" no longer requires to directly own Ningxia.
+   - The Tatar Mission "Unify the Great State" can now be completed if the Mongol Empire is formed before the Golden Horde.
+   - Yuan mission "Emperor's Guard" now checks for Sino-Altaic cultured provinces.
+   - The Hormuzi/Omani mission "Arabian Thalassocracy" now has alternative rewards in case the player is already a Thalassocracy.
+   - The mission "Exploiting the Coffee's Secret" for Ormuzi/Oman now properly highlights the provinces if the player owns them.
+   - The Omani mission "Forts of Oman" now requires to have ownership of the province of Nizwa.
+   - The Omani mission "Indian Ocean Supremacy" now gives Monthly Arabian Mercantilism.
+   - The Omani mission "Indian Ocean Supremacy" no longer removes the merchant from the "Far East Company" modifier.
+   - The Hormuzi/Omani mission “The Overseas Outpost” mission now properly checks for DLCs and adds the effects for Trade Companies and Center of Trade if are unlocked.
+   - The Omani mission "Indian Ocean Supremacy" does not contain any more unnecessary dash marks in the tooltip.
+   - The "Befriend the Shah" mission of Hisn Kayfa no longer costs 50 of each monarch's power.
+   - Purple Phoenix Byzantine Missions "Restore the Pentarchy" and "The Eternal City" accept subject-owning provinces.
+   - The “Overthrow the Turkmen” mission for Armenia now discovers the Khorasan region instead of Persia, since Persia has already been fully discovered.
+   - Byzantium formed by Morea can keep its mission tree and can utilize branching missions.
+   - Theodorian mission "Basileus of the Balkans" no longer shows Great Projects reward if Leviathan is not enabled.
+   - The Theodorian mission “Return to Gothic Ways” is now applied properly to future provinces.
+   - The Theodorian mission "Russian Aristocracy" no longer shows both conditional rewards as completed.
+   - The Theodorian mission "Rival Genoa" no longer shows favors if the player does not have the correct DLCs.
+   - The Theodorian mission "A Merchant's Family Home" no longer keeps the Greek variant of Gothic culture if the player decides to change the Gothic culture to the Germanic one.
+
+# Modifiers
+   - The Austrian province modifier "Hungarian Nobility Privileges" no longer gives global maluses.
+   - The Hungarian province modifier “Austrian Nobility Privileges”  no longer gives global maluses.
+   - The Austria modifier "Bulwark of Catholicism" can’t be obtained twice.
+
+# Setup
+   - The Theodorian Privilege “Italian Coastal Influence” is no longer present in the setup if the player does not have the Winds of Change DLC.
+   - Ala al-Dawla is now mentioned as a grandson of Gawhar Shad.
+
+# Other
+   - Sunset Colonies can now declare their own wars.  
+   - The Aztec Estate Privilege "Arm Lesser Nobles with Macuahuitl" is no longer removed when switching to High American Technology Group.
+   - Declare War for a Sunset Colonies no longer has unlocalized text.
+   - The Great Project “El Escorial” cannot be rebuilt after completing the "Iberian Windmills" mission.
+   - Old World Nations and Mesoamerican Tributaries no longer can have Mesoamerican Tributaries.
+   - The Austrian Government Reform “Great Council of Mechelen” has a proper localization in the confirmation window.
+   - The Dutch Government Reform “Seven Provinces” lists all the relevant modifiers.
+   - The “Dutch Revolt” disaster no longer requires less than 3 Stability for it to progress faster
+   - The Venetian Government reform “Venetian Government” is available if the player forms Italy as Venice.
+   - "Rekindle the Hussite Wars" aspect of faith is no longer visible when Winds of Change DLC is disabled.
+   - The Timurids' privilege "Promote Ijazah" now prevents the estate from losing loyalty when seizing land.
+   - The “Mongol Brother Realms” subject type has an improved tooltip explaining that it does not cost any diplomatic slots.
+   - The Keshigs Mercenary company no longer costs Army Professionalism.
+   - The Keshigs Mercenary company no longer takes 15% more fire damage.
+   - Propagate Religion can now be maintained without needing a dominant religion if you use the Arabian plutocratic government's ability  "Empower Religious Propagation”.
+   - The Turkoman Government reform “Modernized Turkoman Federation” is now also available for republics and theocracies.
+   - Theodorian Government Reform “Russian Mercenary Guard” has a proper localization in the confirmation window.
+   - The Theodorian diplomatic action requirements for “Recruit Foreign General” are now displayed properly.
+   - Armenian Government Reform "The Sparapet Office" has a proper localization in the confirmation window.
+
+###################
+# Bugfixes
+###################
+
+# CTD
+   - Fixed a CTD when selecting a big amount of treaties in a peace deal.
+   - Fixed a CTD with missing submission_to_emperor triggered modifier.
+   - Fixed a CTD with “Restore dependency” casus belli.
+   - Fixed a CTD with automatic transportation and attached boats.
+   - Fixed a random new world CTD connected with areas.
+
+# Warfare
+   - Units are no longer allowed to attach if they are movement-locked.
+   - Fixed an issue with attached units getting their movement canceled during a battle.
+   -Fixed incorrect display of force limit in different places.
+   - Fixed automatic army transportation bug with boats going to the wrong province.
+   - Fixed military view not showing leader traits in some cases.
+   - Fixed a monthly sailor gain overflow issue.
+   - Made pathfinding want to move through neutral territory more often in certain situations.
+   - Fixed boat attaching system not working.
+
+# Diplomacy
+   - Vassals can no longer create Heathen Royal Marriages.
+   - Declaring war on the subject of a guaranteed nation now correctly calls in the guarantees of the overlord.
+   - Vassalizing a nation that unconditionally surrendered in an offensive war will no longer make said nation stay in the war.
+   - Fixed missing tooltip for AI acceptance of a call to war when declaring on own tributary who is allied to another tributary.
+   - Fixed an uncommon issue for the “Sending gift” action being blocked without any reason.
+   - Removing a guarantee with treaties now properly creates a truce between the two nations.
+   - Fixed mission localization for declaring war on Incorporated Personal Union subjects.
+   - Annexed tags no longer retain their siege objectives.
+   - Fixed issue with the war declaration screen not showing the overlord of a tributary who in turn is the overlord of a vassal player is attacking.
+   - Signing a peace with a Mesoamerican vassal's overlord will no longer end the war with the subject if the subject was the war leader.
+   - Personal union-like subject types now correctly transfer over when their overlord becomes a junior partner in a personal union
+   - Allies now take into consideration land given to them in separate wars when calculating favors given/lost.
+   - Releasing a nation as a country with reformed native religion makes the new vassal also have the religion reformed.
+   - Coalitions now don't suddenly disband after reloading a save.
+   - Coalition members now leave them after reaching low AE.
+   - Countries with elective monarchy can no longer break their personal unions established in a succession war with ruler elections.
+   - Releasing a new nation now sets their unit types correctly.
+   - Full annexing a country now correctly gives negative liberty desire to your subjects if they were given land.
+   - Fixed incorrect description of modifier to enable transfer vassals treaty.
+   - Fixed a rare issue with nations not being able to declare wars because of a pending call to war action against a nonexistent country.
+   - Vassals no longer retain vassal independence support when they are transferred over after a war.
+
+# AI
+   - AI subjects will not try to invade when set to a passive stance.
+   - AI now correctly takes into consideration PU seniors of an overlord of a vassal they want to attack.
+   - AI will no longer desire the land of others' vassals more than if the overlord owned that land.
+   - AI will no longer break a royal marriage after claiming a throne.
+
+# Other
+   - Changing the religion of the HRE emperor to one from a different religious group will no longer dismantle the HRE immediately.
+   - HRE religious peace is now not locked behind Art of War DLC because it can be achieved by passing reform ”Proclaim Erbkaisertum” as well.
+   - Changed the tooltip for enforcing religious unity in HRE action to say that the actor will receive a CB on the recipient.
+   - Missing Art of War DLC will no longer hide the HRE religion icon.
+   - Fixed broken localization for the “Dismantling the Revolution” tooltip.
+   - Austria can no longer form Austria-Hungary while at war to prevent other bugs related to tag switching at war.
+   - Pronoias no longer give land to other nations when integrated.
+   - Tagging into different countries now correctly updates the leader list if there is only one leader in the country.
+   - Landlocked countries can get knowledge sharing again.
+   - Fixed technology screen changing the Institution map mode even when not going into the Institutions tab.
+   - Fixed constructions getting delayed in some specific situations in capitals and trade node capitals.
+   - Fixed incorrect flag being shown in text for colonial nations.
+   - hire_advisor and define_advisor effects are no longer limited to advisor level 3 if Cradle of Civilization is on.
+   - Setting holy order via an effect triggers abandonment and establishes the effects of those orders.
+   - Country Center of Trade modifiers now correctly get removed and added when a country loses or gains provinces.
+   - Scripted diplomatic actions now get updated correctly in the diplomatic window.
+   - Interesting countries now correctly change to new tags when another nation forms a new country.
+   - Revanchism now gets distributed according to the core development lost.
+   - Prestige penalty from signing a separate peace deal no longer takes into account only individual war score against War Leader.
+   - Colonies now don't need a port to allow their overlord to colonize next to them.
+   - Increased rate at which parliament seats are assigned if more than half of the seats is missing.
+   - Fixed custom UI error log spam.
+   - Limited amount of vassals Doom-using countries are getting.
+   - Previously granted permanent claims are now correctly awarded to the tag that was destroyed and re-formed.
+   - Fixed on_thri_yearly_pulses not firing.
+
+#############################################################
+######################## 1.37.2.0 ###########################
+#############################################################
+
+###################
+# Interface
+###################
+
+# Tooltips
+   - Added a missing unlocalized string for when the player enacts the Institutionalized Black Army government reform.
+   - Added a missing localized tooltip for unlocking State Madrasas and Karimi Stations' government reforms for the Mamluks and Egypt.
+   - New modifers icons for cawa_cost_modfier, hussasrs_cost_modifier, territories_governing_cost.
+
+###################
+# Script
+###################
+# Achievements
+   - The achievement "Back to the Piast" now mentions Glogow and Opole instead of Silesia.
+   - The achievement "Kushite Restoration" now mentions that you or your subjects can own Egypt and that they don't have to be core provinces.
+   - The achievement "Land of Eastern Jade" now properly mentions the Mexcio region instead of just Central America.
+   - The "Truly Divine Ruler" achievement now mentions that the ruler can be higher than just a 5/5/5 to count.
+   - The achievement "One Night in Paris" now mentions that the Angevin Kingdom is allowed for the achievement.
+   - The achievement "There Khan only be one!" is no longer blocked by native countries reforming into hordes.
+
+# Decisions
+   - Added a check for LotN when completing relevant missions upon forming Poland.
+   - The decision from "[Root.GetBurghersName] Financial Demand" will now show up even if you don't have any ports. However, you still need at least one port to enact it.
+   - The "Re-form the Golden Horde" decision is no longer blocked from having a subject holding the necessary provinces.
+
+# Events
+   - The "Praxis Pietatis Melica" event can now trigger for Prussia too.
+   - The event "Disagreement over Company Purchases" can no longer give you a claim over a province you own yourself already.
+   - The event "Tribute from <From country>" will now show how much money you gain.
+   - The event "The <Dynasty>" can no longer fire for junior partners.
+   - The event "Complaints about [Root.GetLowLevelOfficialForCountry]" will now have a 4 monthly income cost for Republics if they execute the official.
+   - The event "Hostility to New Production Techniques" now has a goto button.
+   - The event "Cabinet of Curiosities" now has a goto button.
+   - Switched the modifier names from the "National Bank" event.
+   - The Burgundian Inheritance is no longer locked into picking monarchies as the potential senior partner for Burgundy. In other words: if you happen to be a Signora with a lot of land and you marry Burgundy then you become eligible for the Succession, though you have only a 10th chance as a normal monarchy would have.
+   - The event "Emergent Culture in the Colonies" can now appear for Anglois countries too.
+   - The event "The Shadow Kingdom" now mentions that you lose 0.2 IA per development per Italian province which leaves the HRE if you do not have Emperor active.
+   - Updated the tooltip in "Strengthening Our Merchants" for the privilege in the event option so it no longer lies to the player.
+   - The event “Kreditwerk” will no longer fire multiple times.
+   - The event “Our Cause is Just” now fires for the Espionage ideas, not the Influence ideas.
+   - Fixed scoping issues within the event "The Fate of France". In other words, you get mana points, and France gets to destroy its monuments.
+   - The event republic_factions.101 no longer fires for republics with lottery elections.
+   - The “Crown of Rome”'s second option to release the Latin Empire will only appear if Thrace is directly owned by the player.
+   - The event "Intercolonial Disputes" no longer fires for Sunset Colonies.
+   - The event "Campaign into Thessaly" will now properly disable the "Rise of a Pretender" event.
+   - The event "Vengence for Manzikert" now has a proper picture.
+   - The event "Election of a New Ruler" can no longer fire for Integrated PU subjects.
+   - The event "Disaster in Franconia" can no longer fire for Brandenburg if the player does not own the Domination DLC.
+   - "The Italian Military" now properly disables the "Cruelty of Mercenaries" event.
+
+# Missions
+   - For Hungary's "Recover Dalmatia" mission, ships are now only granted if there's no naval construction ongoing. If there is, the player will earn an alternate reward.
+   - Updated the effect tooltip of the Dutch mission "Trade in the Ivory Coast".
+   - The Dutch mission "Ending the Sound Toll" now properly fires its event.
+   - The Dutch mission "University of Leiden" now highlights Den Haag.
+   - The Dutch mission "Fate of the Confederation" now properly applies its reward on all Land Right privileges.
+   - The Dutch mission "Lands of the Generality" no longer checks parliament size if you don't have one.
+   - The Dutch mission "Relations in Britain" no longer requires you to have a spy network in them if England/GB becomes a subject.
+   - The Dutch mission "Lands of the Generality" now properly applies its rewards even if you pick the "Superiority of the State" gov reform.
+   - The Austrian mission "Royal Hungary" will no longer instantly kill Ladislaus if he is still an heir.
+   - The Austrian mission "Defeath the French" now properly splits France even if they are in a PU with you.
+   - The Austrian mission "Emperors of the East" now only gives IA when you are the Emperor.
+   - The Hisn Kayfa mission "Fate of Anatolia" now grants its rewards properly when completed.
+   - The Oman mission "Fall of Baghdad" now properly requires the areas that are highlighted by the mission.
+   - Updated tooltips of Trebizond's missions to emphasize that provinces with their PORT in the Black Sea are counted.
+   - Fixed the Timurid's mission tree branch name display.
+   - The Timurid mission "Ambition in Yuan" now gives proper cores for all the subjects released in the event.
+   - The Mughal mission "Din-i Ilahi" does now properly prevent the Sinner personality from appearing.
+   - The Inca mission "Rule of the Sun" now has a fallback in case the player has already unlocked all reforms before forming the Inca.
+   - The Venice mission wof_ven_destroy_austria now accounts for Austria-Hungary.
+   - Fixed the “Lost Legions” from the Italian mission "Return His Legions" so that they no longer cost the Army Professionalism.
+   - The Theodoro mission "Aegean Supremacy" now properly checks that you own Nasso.
+   - The Theodorian mission "A Russian Aristocracy" no longer mentions "saving a country as russian_ally".
+   - The mission "Tumu Crisis" has now its requirements in an OR section if you are not Oirat.
+   - The mission "Tumu Crisis" now properly highlights Beijing.
+   - The Tatar's mission "Bowed Heads; Bent Knees" now always gives rewards no matter the way you complete it.
+   - The mission yua_printing_press  now correctly grants progress for the institution when that spawns.
+   - Khiva now has access to the Moghulistan missions.
+   - Ferghana now has access to the Moghulistan missions.
+   - Khalkha now has Mongol missions.
+   - Khoshuud now has access to all the Mongol missions.
+   - Kalmyk now has access to all the Tatar missions.
+   - Reforming the Golden Horde now gives the Horde missions properly.
+   - Completing the Persian mission "Expand Our Influence" will now properly show the new cap for the reduction of Persian Influence cost in the government abilities.
+   - The Georgian mission "Patriarchate of All Georgia" now grants proper rewards even if you don't have Third Rome active.
+   - The “Apostolic Church” idea is now gaining its upgrade from the Armenian mission tree properly.
+   - The DLC-locked rewards of the Armenian mission "Proclaim Great Armenia" are no longer mentioned if the needed DLCs are inactive.
+   - The Byzantine mission "Return to Gold" now takes into account whether Trebizond has gold as its raw good.
+   - The Ming mission "Survey the Ocean Shores" will now mention that the power projection is permanent.
+   - The Reform Civil Registration mission of the EoC now correctly grants its alternative reward if the Rights of Man DLC is not active.
+
+# Modifiers
+   - Removed duplicate instances of the ITA_extra_goods_produced_for_colonies modifier.
+   - The modifier hsn_a_sublime_alliance from the "A Sublime Alliance" mission no longer disappears after breaking an alliance.
+   - The “Marine Exercises” modifier reward for Venice is now properly permanent.
+
+# Setup
+   - Orochoni is now eligible to use the mercenary company "Mongol Banner".
+   - The Aztecs no longer start with the Triple Alliance privilege if you do not have Winds of Change.
+
+# Other
+   - The privilege "Outwards Perfection" now reduces max absolutism.
+   - “Scuola Grande” local organizations are now available after you change your tag as Venice.
+   - Hindu rebels now properly give influence to the Brahmins when they enforce their demands.
+   - Forming Silesia will no longer mention that you obtain any new missions as there are no missions for Silesia.
+   - The Burghers Agenda "Discover <Area>" will no longer be given if you don't have any permanent source for new explorers/conquistadors.
+   - The Hungarian/German Revolution can now fire even if Hungary/Austria is a subject nation. However, once Austria-Hungary is formed, the subjected nation automatically joins AH and the former overlord can fight a DEFENSIVE war against AH.
+   - The "Strengthen the Dhimmi" government reform will ensure the Dhimmi estate's existence and prevent the Brahmins from appearing.
+   - Incorporated Vassals / PU now count for Strong Duchies and Integration Policy privileges.
+   - Fixed the alert text for recruiting foreign generals.
+   - Added missing localization explaining that you cannot DoW your own Mongol Brother Realm. There won't be family conflicts under the Mongol roof.
+   - Updated the "has center of trade" trigger so it no longer implies that a province can have more than CoTs with different levels.
+   - Added a missing localization which explains to you that you cannot declare wars on your own Commercial Enterprise subjects.
+   - Fixed an issue with the Porcelain Agenda perpetually increasing its requirements.
+   - The estate privilege "High Altitude Adaptation" now applies its maluses on provinces you gain after having the privilege enacted already.
+   - The Rajput Military Leadership reform is no longer available if you don't have Dharma active.
+   - Sunset Colonies now count towards the "Create a Colonial Empire" Age Objective.
+   - The government mechanic button "Strengthen Overseas Outposts" now has a 10-year cooldown.
+   - The Stadhouder Monarchy reform is now removed when you become a PU subject.
+   - It is no longer possible to replace governors of Sunset Colonies.
+   - It is now possible to seize territories from Sunset Colonies.
+   - Forming Austria-Hungary will now give dip points if there is no slot free for Hungarian / Austrian to accept.
+   - The "Arabian Plutocracy" gov reform now unlocks the Plutocratic Idea Group.
+   - Forming Egypt as Hisn Kayfa will now properly fire the "New Traditions and Ambitions" event.
+   - The Potosi mine will correctly check the conditional reward of the Chinese Emperor's single whip law.
+   - The "Empower Religious Propagation" government mechanic is now properly applied.
+   - Fixed minor typo for Russian Mercenary Guard gov reform.
+   - The VOC will now automatically adopt the technology group of its overlord.
+   - removed the "has_unlocked_government_reform_tooltip" scripted trigger, the base has_unlcoked_government_reform trigger now supports the custom tooltip baseline.
+   - The Dutch Republic government reforms now count for events that are supposed to trigger for countries capable of forming Personal Unions (in other words: missions/events that grant PU CBS are now eligible for the Netherlands too).
+   - Fixed an unlocalized string when enacting the Wagenburg Tactics government reform.
+   - Fixed an unlocalized string when enacting the Bohemian Elective Monarchy government reform.
+   - Fixed an unlocalized string when enacting the Imperial Hungarian Monarchy government reform.
+   - Fixed unlocalized string when enacting the Crusader Nobility reform.
+   - Fixed an unlocalized string when enacting any of the Germany specific government reforms.
+   - Fixed an unlocalized string when enacting the Bergordnung Reform.
+
+###################
+3D
+###################
+   - Theodoro retains its unit sprites after switching cultures from Gothic (Byzantine) to Gothic (Germanic).
+   - Weapon for Umbrian Tier 1 infantry/artillery is held with both hands
+   - Mercenary Company "Gascon Musket Company "based in Armagnac (175 ) uses Southern French unit sprites instead of the French sprites
+   - Uzbek unit models from the Great Horde Unit Pack are useful for all the Altaic cultures instead of being replaced by Timurid units from the Great Horde Unit Pack.
+   - After completing geo_throne_of_the_romans, Georga start using the Byzantine sprite
+   - Yi and Miao use now the Dali Unit Sprites.
+
+###################
+# Bugfixes
+###################
+   - Fixed an issue with Eunuch rebels not spawning.
+   - Fixed an issue with duplicate effect after centralizing a state while having the French Absolutist Monarchy.
+   - Fixed an issue with the has_any_ongoing_construction trigger.
+   - Fixed AI taking defender of faith regardless of the scripted AI weights.
+
+#############################################################
+######################## 1.37.1.0 ###########################
+#############################################################
+
+###################
+# Gamebalance
+###################
+
+# Governments
+   - The government 'Seven Provinces' now also grants 15% manpower in primary culture provinces.
+
+# War & Peace
+   - Mesoamerican Tributaries can no longer ally independent nations.
+
+# Units
+   - The VOC interaction "increase_voc_eastindiamen_construction" now properly grants the VOC Indiamen special unit allowed fraction.
+
+# Other
+   - The VOC interaction increase_voc_eastindiamen_construction now grants properly the VOC Indiamen special unit allowed fraction.
+   - The 3 canals can now be built by subjects.
+
+###################
+# Interface
+###################
+
+# Tooltips
+   - Fixed a typo in the first option of the 'Fate of the Chinese Emperor' event.
+   - Fixed an error in the reward tooltip of the "Regiment de Marine" mission.
+   - rewrote the decision requirements for Venture into Tribal Lands.
+   - The Dutch mission "Glorious Revolution" no longer mentions "Man o War" special units if the Domination DLC is not active.
+   - Improved the tooltip of the reward for the Dutch "Low Countries Universities" universities.
+   - The Arabian Trade Influence mechanic is no longer mentioned if players do not own the Winds of Change DLC.
+   - Fixed an issue with the tooltip for "Fugger Family Privileges" Burghers privilege.
+   - Fixed a typo in the declare war tooltip for the Mesoamerican Tributary Casus Belli. 
+
+# Other
+   - Removed a duplicate entry of the mission_hussite_empire icon from its .gfx file.
+
+###################
+# Script
+###################
+# Achievements
+   - "Mayapahit" no longer requires you to own or have a subject own Madura as it is technically not part of the Java island even though it is part of the same in-game areas.
+   - Removed an unnecessary requirement from the Hungarian Games which asks you to have been in Hungary at any point in time as it is only visible to you if you started as Hungary anyway.
+   - "Timurizz" now makes it clearer that the allies with 100 Trust and with 150 opinion to you are the same.
+   - The achievement "Mayapahit" now allows you to form any other tag than just Maya. As long you have formed the Mayas at some point, the achievement can be earned.
+   - "There Khan only be one!" now requires you to be a horde or the Great Mongol State at the end too. In other words, if you start as a horde and reform into a monarchy before killing all other hordes the achievement would not trigger until you return to being a horde.
+   - Improved the description of "There Khan only be one!" so it is clear that every country (except for you) cannot be a horde.
+   - Changed the visibility requirement for "Veritas Vincit" from owning "Winds of Change" to owning "Art of War" and "Emperor" as the mechanics required to fulfill this achievement are behind these two DLCs.
+   - Improved the visibility of the following achievements so you no longer have to form the specific country to see the achievement: "It's all coming together", "Baborg" and "Get out of my swamp!".
+   - The achievement "The Hungarian Games" now counts won battles against the same country up to 3 times. A 4th won battle against the same country will no longer count for the achievement though.
+   - "The League of Mayapan" will no longer disappear from the list of achievements after it's completed.
+   - "Great Moravia" achievement now accounts for Great Moravia's cores.
+   - Updated the achievements' descriptions of "The Pen is Mightier than the Sword", "Take that, von Habsburgs!", and "The Ostenders" to properly adjust with their script.
+   - The "Gothic Invasion" now accounts for the new Gothic culture that is part of the Germanic culture group.
+
+# Decisions
+   - Made it so you can't form AUH whilst in the relevant disasters.
+   - Reward from NED_glorious_revolution is now kept after forming the United Crowns.
+   - Great Moravia can now be formed through indirect ownership of the required provinces and the decision to form it is visible from the start.
+   - The "Reform into Prussia" decision will now mention the "Prussian Path" instead of the "Prussian Kingdom Path" in the trigger tooltip.
+   - The "Reform into Prussia" decision now requires you to have one of the Reformation religions when you don't have Lions of the North.
+   - "Reform into Prussia" has no longer unlocalized text in it.
+   - Improved the trigger tooltip for "Venture into Tribal Lands" so you no longer have to look at the effects to get an idea of what you have to do to colonize the neighboring provinces.
+   - The decision to "Expand the VOC" is no longer available to every country that has territory in India. This removes the ability for Indian states to commit suicide at the press of a single button.
+   - Players no longer have access to the "Form Austria-Hungary" decision while the events "The End of the Hungarian Revolution" and "The End of the Austrian Revolution" are actively on the screen.
+
+# Events
+   - The event Raabisation now properly grants its rewards.
+   - The Russian events regarding the peasantry now remove ALL serfdom-related estate privileges with every step before applying the new privilege. This should cover rare cases where some serfdom privilege was "stuck" on the player even though they progressed through the event chain already, but should by default not change much for the normal experience.
+   - Fixed an issue with the "Muhammad Juki Seizes Initiative" (flavor_tim.20) event.
+   - The event "Gold Mine Discovered!" has now a goto button.
+   - The event "Heir needed in <Theocracy Country>" has now a 40-day cooldown between each instance. This should remove the cases where the event triggers twice for a country.
+   - Refined the descriptions of the "End of the Tatar Yoke" further in case Muscovy devs its way out of the yoke...
+   - Added a special event text for the case that Muscovy grows too powerful to be influenced by the Tatar Yok while Sarai has never fallen.
+   - Fixed missing ruler name and dynasty for the "Hungary wishes to join the Empire" incident events.
+   - The Polish event about the Election of Kasimir will no longer display certain tooltips that have no effect without the "Lions of the North" DLC.
+
+# Missions
+   - The mission mongols_tumu_crisis can no longer be instantly completed.
+   - Made it so the azt_unify_mexico mission's title does not overflow out of the UI if you are a theocracy.
+   - The "Emperors of Rome" mission now gives rewards according to the chosen path.
+   - The mission Refine the Condottieri will no longer grant Mercenary Leader Army Tradition.
+   - Sarig Yogir is now granted the basic Mongol missions.
+   - The "Statists and Orangists" mission can now be completed after manually switching to reform with the Dutch Election.
+   - The mission tre_trapezunite_pride now has an alternative requirement if the province Trebizond produces Gold.
+   - The Dutch mission "Hansa Relations" now always rewards you regardless of how you complete it.
+   - The owner of Kyoto now gains 100 Dip Power from the Dutch mission "Japanese Trade" if the mission is completed via relations.
+   - The Dutch mission "Japanese Trade" now grants the reward of both options if both a true at the same time.
+   - The Dutch mission "Teachings of Erasmus" now gives 1 stability or 100 ADM if you have already 3 stability if you do not have a clergy present and you are NOT Reformed.
+   - The mission "Humiliate Austria" is no longer automatically completable when you start a game without the Rights of Man.
+   - The Theodoran mission "Into the Steppes" will no longer mention a reward for your Cossacks estate if you do not have the Cossacks estate.
+   - The Aztec mission "Telpochcalli Academies" will no longer enable the "Telpochcalli Academy" Local Organization if you don't own Golden Century.
+   - The Austrian mission "Surpass the Poles" now gives the PU CB against Poland until they have more than 400 total development instead of 300 total development.
+   - The Dutch mission "Ending the Sound Toll" has its reward now properly available for Holland, and not just the Netherlands.
+   - The Timurid mission "Mamluk Delusions" now requires 40 instead of 50 provinces, no longer demanding the player to make up 4 additional provinces in these areas.
+   - The Austrian mission "Italian Ambition" has its rewards no longer exclusive to each other.
+   - The event from the mission "Question of Azov" now properly triggers for Genoa instead of Theodoro.
+   - The Bohemian mission "The Golden City" no longer allows you to achieve Leviathan-levels of Development in a province any more, limiting the maximum amount of dev gain to 3 times (so +9 development in total).
+   - Forming Prussia as the Teutonic Order before completing "Defeat Poland" will now automatically complete the mission and select for you the Prussian Path.
+   - The Russian mission "The Fate of the Peasantry" is no longer blocked if the player goes a weird path of crushing the peasants just to liberate them later on anyway.
+   - The mission "Endthe Regency" now automatically gives you the Hussite branch as long you finish it while NOT being Catholic. Updated the tooltip too to reflect this change.
+   - Deccan now has religion after being released through the MUG_viceroyalty_of_deccan mission.
+   - Forming Yuan while being a horde will no longer lock players out of the mission "Four Great Schools".
+   - Fixed inconsistency for the Church estate naming in the Yuan "Inward Perfection" / yua_inward_perfection mission, as it referred to twice as "Clergy" and once as "Shizu".
+   - Fixed the reward of the "OMA_buffing_outposts" mission that was dependent on Trade Companies for non-Dharma owners.
+   - The Byzantine mission "Return to Gold" now takes into account if Trebizond has gold as its raw good.
+
+# Modifiers
+   - Fixed an issue with the modifier Vegvar System not applied correctly to border forts, for Hungary.
+   - The modifier hun_avenge_varna is removed from Hungary if the Ottomans are annexed or subjugated.
+   - The privilege estate_nobles_ITA_military_governors  now grants state governing cost instead of territories governing cost.
+
+# Setup
+   - The disaster 'Austrian Revolution' will now only show up if Austria does not exist.
+   - The Austrian reform "Imperial Austrian Monarchy" is now properly granted via the Multicultural Empire mission.
+   - The "Land Reform" (development_of_infrastructure) parliament issue is increased by having Infrastructure ideas.
+   - The capital of Moghulistan is now Ilian.
+
+# Other
+   - Minor text improvement of horde event.
+   - The modifier name in French now properly says yearly.
+   - Fixed Lake Chad name.
+   - Changed mention of Chagatai to Moghulistan in the startup screen text.
+   - Added missing declaration of war string for the Mesoamerican Tributary subject.
+   - The government reforms "Roman Empire" and "Roman Republic" now require you to be either the Roman Empire, Byzantium, or a custom nation atop of the normal Roman culture requirement. This should avoid the weird cases where the Client States would call themselves the "Nth Rome" by enacting the reform.
+   - The Sich Rade government reform has now - 75 % Capital Movement Cost to synergize better with its Itinerant Capital mechanic.
+   - "Expanded Black Army" will no longer show that mercenaries are free of Army Professionalism cost if you do not own Cradle of Civilization.
+   - You no longer have the "Start War in Colony" button for Sunset Colonies subjects as it cannot work outside of Colonial regions anyway.
+   - Fixed an issue with the 'Compromise with the Hungarians / Austrians' decision.
+   - "Return of the Hussites!" will no longer trigger "Election of a New Ruler". Additionally to this, Jan is now always a 25 year old one Czech.
+   - The event "New Government!" for former colonies will now properly make you into a Republic in the 2nd option.
+
+###################
+# Bugfixes
+###################
+   - Great Moravia's achievement now accounts for Great Moravia's cores.
+   - Fixed an issue that fired the Unprofitable Trade event for the Netherlands after creating the VOC.
+   - The reform imperial_hungarian_government now has a proper icon assigned to it.
+   - Updated the achievements' descriptions of "The pen is mightier than the sword", "Take that, von Habsburgs!", and "The Ostenders" to properly adjust with their script.
+   - Fixed some overflowing texts of the Spanish localization.
+
+#############################################################
+######################## 1.37.0.0 ###########################
+#############################################################
+
+###################
+# Expansion Features
+###################
+   - Incas: A mission tree for the Incas with 40 missions in total, 12 for Cusco to unify the region and form the Incas, and 28 missions for the Incan Empire; 1 new Government Mechanic, the ‘Divine Authority’; 1 new Government Reform, the 'Andean Empire'; 11 new Events; and additional content such as new decisions, mercenary companies, balancing and improvements for the Inti religion, and then Incan National Ideas.
+   - Aztecs: A mission tree for the Aztecs with 42 missions in total;1 new government mechanic, the ‘Tonalli’; 6 new Government Reforms; 3 new Estate Privileges; 6 new Events; a new Subject type, ‘Nahuatl Tributary’; and additional content such as a new local organization ‘Telpochcalli Academy’, updated National ideas, and new types of peace offers.
+   - Mayan: A mission tree for the Mayans with 40 missions in total; 2 new Government Reforms, the ‘Divine Kingship’ and ‘Mayan Confederation’; 5 new Estate Privileges; new province modifier for Obsidian in the Yucatan peninsula; and additional content such as new decisions, mercenary companies, and updated religious triggers for the Mayan religion.
+   - Sunset Invasion: A mission tree for Aztecs / Incas / Mayans with 34 missions in total; 2 new Estate Privileges; 8 new Events; 2 new CB types, ‘Sunset Invasion’ and ‘Sunrise Invasion’; a new subject type, ‘European Colonies’, allowing the creation of subjects in the Old World; and additional content such as naval doctrines, diplomatic actions, and more.
+   - Netherlands: A mission tree for the Netherlands with 64 missions in total; 4 new Government Reforms, like ‘Seven Provinces’ or ‘Modern Economics’; 5 new Estate Privileges, 12 new Events; and 2 new decisions, ‘Unite Two Crowns’, and ‘Overthrow Statist Stadholder’.
+   - Austria: A new mission tree for Austria with 53 missions in total, Including 6 branching missions about the ‘Legacy of Charlemagne’, and 6 more about the ‘German Conquest’; 3 new Government Reforms; 9 new Estate Privileges; 12 new Events; 2 new decisions, The ‘Iberian Union’ and the ‘Habsburg Land’; 2 new subject Types ‘Core Vassal’, and ‘Core Personal Union’; a decision to form Austria-Hungary; and additional content such as Diplomatic actions, mercenaries, Imperial Incidents, and disasters.
+   - Germany: A revamped German mission tree with 30 missions, of which 9 are new, and 21 are updated from the Emperor mission tree; 12 new Government Reforms; a new Government Mechanic, ‘Cultural Unity’; 2 new estate privileges; 15 new events; 2 new CB types, ‘Scramble for Africa’, and ‘Claim a piece’; and a new subject type, ‘Incorporated Vassal’.
+   - Venice: A new Venetian mission tree with 52 new missions in total; a new government mechanic, ‘The Council of Ten’; 2 new Government Reforms, ‘Promissione Ducale’, and ‘Merchant representation’; 15 new Events; and additional content such as new National Ideas for the ‘Golden Republic’, and a new Local organization, the ‘Scuola Grande’.
+   - Italy: A revamped Italian mission tree with 46 missions in total, of which 21 are new, and 25 are updated from the Emperor mission tree; 3 new Estate Privileges; 12 new Events; 3 new CB types, ‘Roman Ambition’, ‘Scramble for America’, and ‘Dismantle HRE’; and 1 type of mercenary company, the ‘Lost legion’.
+   - Bohemia: A new mission tree with 33 new Bohemian missions, including 6 branching missions covering different paths for a Hussite or a Catholic Bohemia; a new formable nation, Great Moravia, with its branching mission tree, with 9 missions in total; 2 new Government Reforms, including ‘Bergordnung Reforms’ and ‘Wagenburg Tactics’; 1 new Estate Privilege; 10 new Events; and additional content such as new decisions, updates of the Hussite Religion, and Imperial Incidents.
+   - Hungary: A new Hungarian mission tree with 42 missions in total; 5 new Government Reforms, like the ‘Apostolic Kingdom’ and the ‘Cuman Lancers’; 2 new Estate Privileges, ‘Vegvar System’ and ‘Hungarian Royal cities’; 15 new Events; 1 new Local Organization, ‘The Order of the Dragon’; and a decision to form Austria-Hungary.
+   - Theodoro: A new mission tree for Theodoro with 20 new missions, including 4 branching missions about the paths of ‘Russian Alliances’ or ‘Russian Rivalry’; 3 new Government Reforms; 2 new Estate Privileges; 9 new Events; and additional content such as a new Diplomatic Action for Theodoro allowing them to request Foreign Generals from other nations, a new cosmetic country name, ‘Gothia’, and a new CB type, ‘Gothic Invasion’.
+   - Trebizond: A new mission tree for Trebizond with 20 new missions; 2 new Government Reforms, ‘Empire of Trebizond’. Crusader Nobility; 6 new Events; a new diplomatic action called ‘Heathen royal marriage’.
+   - Hisn Kayfa: A new mission tree for Hisn Kayfa with 38 new missions in total, including 4 branching missions on the ‘Conquest’ or ‘Alliances’ paths to decide the fate of Anatolia and Persia; 1 new Government Reform, the ‘Ayyubid Dynasty’; 8 new Events; and additional content such as a new flag, the new cosmetic country name ‘Ayyubids’, and more.
+   - Hormuz & Oman: A new mission tree for Hormuz and Oman with 36 new missions in total, with 18 shared missions, 10 unique missions for Hormuz, and 8 unique missions for Oman; a new Government Mechanic, the ‘Arabic trade influence’; 1 new Government Reform; 2 new Estate privileges, ‘Arabian traders’, and ‘Omani Marines’; 5 new Events; and a new cosmetic country name, ‘Zanzibar’.
+   - Timurids: A new Mission Tree for the Timurids with 50 missions in total; 2 new Government Reforms; 6 new Estate Privileges; 11 new Events; 1 new CB Type, ‘Reconquest of China’; additional content such as new decisions, a new Subject Type, the ‘Soyurghal’.
+   - Mughals: A new Mughal Mission Tree with 53 missions in total; 7 new Events; 6 new Estate Privileges; and additional content such as new decisions, and mercenary companies.
+   - Hordes: 3 new mission trees for the Hordes with 54 missions in total, covering the conquest path of the Tatars, Moghulistan, and the Mongols. 43 are shared missions for all the Hordes, 5 are unique missions for the Tartars, 3 unique missions for Moghulistan, and 3 unique missions for the Mongols, plus 6 Religious branching missions, covering the Devout, Tolerance, and Confucian paths; a new Government Reform; 9 new Estate Privileges; 10 new Events; 1 new Subject Type, the ‘Mongol Brother Realm’.
+   - 8 new Unit Packs, for the Umbrian, Romagnol, Croatian, Dalmatian, Slovakian, Renish, Westphalian, and Moldavian cultures, with 32 new sprites in total.
+   - 3 new Music Packs, of Pre-Columbian, Central European, and Central Asian flavors, with 9 new songs in total, plus an additional Music Pack with 3 songs for those Pre-Ordering the DLC.
+
+###################
+# Gamebalance
+###################
+
+# Governments
+   - The Venetian Government no longer allows switching to a Monarchy or a Theocracy.
+   - It's no longer possible to go over the special unit force limit with the Cossack government interactions.
+   - The Great Mongol Horde government reform now allows to recruit banners in all of the primary culture provinces regardless of what culture they are of.
+   - Government reforms which have the Iqta mechanics are now only usable by Muslims. This affects the Barbery Sultanate and the Ajuuraan Theocracy.
+   - Meritocracy mechanics can now be used correctly with Republic and Theocracy government types.
+   - The government reform "Royal Marines" is now available to Great Britain and Angevin regardless of their primary culture.
+   - The Great Mongol Empire reform now grants you the Siberian Frontier ability.
+
+# Other
+   - Vassals contributing negative force limit are no longer affected by Vassals Force limit Contribution modifiers.
+   - The "Seize Court Resources" subject interaction has its cooldown increased from 5 to 10 years.
+   - The Mayan religion now gives -10% Cost of Advisors with Ruler's Religion instead of +1 Possible Advisors.
+   - The Chan Chan Citadel now starts at level 2 instead of 1.
+   - The Tenochtitlan monument now gives 0.5/1/2 yearly doom reduction instead of 1/2/3.
+
+###################
+# Interface
+###################
+
+# Icons/Art
+   - Rajputs will no longer have different banner colors in the army view window.
+
+# Tooltips
+   - Added a tooltip for has_term_election = yes/no.
+
+# Other
+   - Shift-clicking max accepted gold for a peace offer no longer puts the amount above 100 war score cost total.
+   - Fixed so that the court view refreshes when there's a new monarch.
+   - Fixed so game options in the game lobby start at their positions instead of moving to them.
+   - Cultures that are promoted for free now have an indication.
+   - Great Project construction progress added to the outliner.
+
+###################
+# Usermodding
+###################
+
+# Effects
+   - Added round_variable, second value > 0 gives Ceiling, second value = 0 gives Round and second value < 0 gives Floor.
+   - Added a force_create_marriage effect which allows to creation of royal marriages between nations with religions disallowing it.
+   - add_accepted_culture_or_dip_power takes in culture slots from tech correctly. Is no longer a scripted effect.
+
+# Modifiers
+   - Added reverse_relation_with_heretic_religion and reverse_relation_with_heathen_religion modifiers.
+
+# Other
+   - Added frame_variable for custom icons to avoid many frame clauses.
+   - Added custom GUI to colonization view.
+   - Added custom GUI to siege view.
+   - Added custom GUI to the topbar interface.
+   - Added a custom_window to the custom_gui.
+   - Added "on_state_edict_enacted", "on_state_edict_removed", "set_state_edict" effects.
+
+###################
+# Script
+###################
+# Achievements
+   - Trade Protectorates now count for achievements.
+   - Great Moravia's achievement now accounts for Great Moravia's cores.
+
+# Decisions
+   - The decision to form Tuscany will no longer display the “Swap your missions” if your missions will not swap.
+   - All Adm Tech 20 Formable countries will now require Adm Tech 18.
+   - Forming the LPC will no longer change your Lithuanian primary culture to Polish and the latter will just be an accepted culture.
+   - The "Thalassocracy" Decision now may be completed with Trade Ideas.
+   - You no longer need to have direct control over the Chinese cities, Central Asia, Crimea, and Urals to form the Mongol Empire.
+   - Forming Japan will now grant claims on Korea if the Domination DLC is active.
+
+
+# Events
+   - The event "The Destruction of the Persian Embassy" now properly refers to Persia.
+   - The Mamluk mission Naval Enterprise's event reward will offer a choice for players without the Rule Britannia or Golden Century DLCs.
+   - Added a second option in the Rebirth of Great Armenia event to allow keeping your old idea set.
+   - The event "A Very Strategic Marriage" can no longer trigger while either Castile/Spain or Austria are at war.
+   - The End of the Tatar Yoke event has now a different description if it breaks when the Horde owner changes its government reform.
+   - The event "The Milanese Succession" will grant a vassal instead of a union CB if Milan is ineligible for a union.
+   - The event Feast of the Dead will no longer fire for non-Dakota culture countries.
+   - The event Porcelain in Meissen will now correctly grant a Mill or upgrade the Production building if possible.
+   - The event "Fall of the Mamluk Sultanate" will not trigger if Egypt already exists.
+   - The Persian event 'Weaving Gold & Silk' now properly gives prestige or mana.
+
+# Ideas
+   - The Aztec idea of "Imperial Tribute" now gives 1 Monarch Power Tribute from the Tributary States and -10% Liberty Desire of Subjects instead of 10% Tax Efficiency, the Aztec idea of "Pochtecayotl" now also gives +10% Burgher loyalty equilibrium.
+   - The Incan idea of "Machu Picchu" now gives -10% Great Project Upgrade Cost; the Incan idea of "Quipu" now gives -5% Administrative Tech Cost.
+   - Tuscan Traditions now offer Reformed and Protestant alternatives to Papal Influence.
+
+# Missions
+   - Fixed some wrong highlighting for the "The Eyalet of Persia" Ottoman mission.
+   - Fixed a broken tooltip for the requirements of the tur_venetian_relations Ottoman mission.
+   - The Russian Mission mos_rus_conquer_persia will no longer mismatch the requirement religion with the effect of the potential ally it requires.
+   - The Qing mission "Expel Foreign Merchants" will now correctly grant its reward.
+   - The Russian mission "Appease the Patriarchate'' makes it now extra clear that the reward does NOT remove the state maintenance from consecrated Metropolitans. It just slaps a 10% local state maintenance on the modifier which negates the extra cost.
+   - The Ottoman mission "The Eyalet of Persia" will no longer give claims on the Khorasan region as the previous mission already gave these claims before.
+   - Georgia AI will no longer vassalize the Trebizond player by completing "Deal with the Komnenids".
+   - The mission "Modernize the Banners" for Qing, now has a fallback if the EoC does not exist.
+   - The Polish mission Varna Aftermath will no longer check for the Emperor DLC for one of its effects.
+   - The Songhaian mission "Army Professionalism" can now be completed even if you don't own Cradle of Civilization.
+   - Generic missions now have generally more flavorful and interesting rewards.
+   - The Ottoman mission 'Defeat the Mamluks' now grants the Ottoman Invasion CB against Egypt, if the Mamluks do not exist.
+
+# Setup
+   - Renamed Chagatai to Moghulistan.
+   - The starting ruler of Oirat now has his birth year set to 1407.
+   - Venice now has Thessaloniki (ID: 148) at the game start.
+   - Replaced all mentions of "Tarascan" with "Purépecha" due to the former being a derogatory term.
+   - Tarija is now a mountain province, and Camana is now a Coastal Desert province.
+
+# Other
+   - Renamed the "Imperial Ban" cb from incidents to "Imperial Campaign".
+   - Added AI logic to the new policies from 1.35, allowing them to pick those policies.
+   - Added dynamic province names for Austrian and Bavarian cultures.
+   - The Great Mongol Horde government reform can now recruit banners in all of their primary culture provinces regardless of what culture they are of.
+   - The Anglican church action "Reformation Diplomacy" now also affects Hussites.
+   - The government reform "Royal Marines" is now available to Great Britain and Angevin regardless of their primary culture.
+   - Improved the tooltiping of the Burgundian Inheritance, notifying the player that they will declare war on Burgundy in 10 days.
+   - The Burgundian Succession will now properly tell you what provinces you release when the Emperor demands the Lowlands. Additionally, you no longer release provinces that are NOT part of the HRE and are NOT Dutch, Flemish or Frisian.
+   - The Burgundian Succession will no longer trigger when Burgundy has already fallen into a PU under somebody else before.
+   - It is now possible to be eligible for the Burgundian Succession by accepting a royal marriage by Burgundy too. In other words, you are no longer forced to be the one sending the Royal Marriage to Burgundy.
+   - Modernizing as a native country will now properly replace your buildings with an adequate new building (said replacement cannot be from a higher tech than tech 10 though, and manufactories are excluded).
+   - The Technotitlan monument now gives 0.5/1/2 yearly doom reduction instead of 1/2/3.
+   - The capitals of Theodoro and Hisn Kayfa are now treated by the AI as fixed.
+   - Orthodox rebels can no longer convert your provinces when you give in to the Pope's pressure and form the Latin Empire.
+   - The circumnavigation event now gives monarch power if you have already 100 Prestige.
+
+###################
+# Bugfixes
+###################
+   - Fixed heir and consort names for Janissary countries.
+   - province_trade_power_modifier is now called "Local Trade Power Modifier" instead of just "Local Trade Power", a name that is already used by province_trade_power_value.
+   - AI will now want to form Spain Diplomatically.
+   - Fixed the issue of being able to declare war on someone transferring trade power to you when either you or the recipient are subjects.
+   - Fixed issue where music would start playing when paused and locked windows.
+   - Fixed an issue that allowed Russia to gain modernization from countries that are technologically not any more advanced than Russia.
+   - Fixed tax increase not being displayed in confirmation popup when the development of temple privileges is active.
+   - Fixed so “Strong Duchies” and better integration estate privileges don't get removed when tag switching.
+   - Spy network now correctly transfers over when the target forms a new country.
+   - Fixed parliament seat map mode tooltip.
+   - Fixed the issue with having to double-click the trade node button in the province view.
+   - Fixed how we decide what government icons to show for tribes.
+   - Fixed issue with not being able to cancel construction of annexed subjects.
+   - Fixed an issue where monastic orders could generate female heirs.
+   - Fixed so loading from in-game resets province highlights.
+   - Fixed a hot join desync related to the tariff being set to 0.
+   - Fixed a CTD related to AI attempting to claim RNW state.
+   - Fixed potential crashes when annexing countries that have hereditary pronoiars.
+   - Fixed missing tooltips for scripted GUI in the celestial empire view.
+   - Fixed custom GUI not working in the parliament view.
+   - Fixed a crash when using custom GUI scripted boxes when they aren't defined in custom GUI files.
+   - Pathfinding will now correctly take into account open seas when finding a sea path greatly penalizing moving through them.
+   - Changed the description of the Warned popup to mention only bordering countries, not all countries.
+   - Decisions linked with estates now show their names correctly in the statistics and history window.
+   - Fixed a bug with the Grown by development trigger which was making the French mission Shield of Outremer harder after a reload.
+   - Colonies will no longer use colonial region colors when playing without Leviathan DLC.
+   - Greatly shortened the vassal modifier description tooltip.
+   - Fixed weird indentation for separatism effects.
+   - Getting an upgraded default trade policy will now correctly set all merchants to it.
+   - Provinces no longer get bonus trade power from “Promote Investment” action when they are not in a trade company.
+   - Fixed one missing new line in trade power modifiers.
+   - Changed description of the Spread Revolution peace treaty to no longer say the revolution will be spread only on one continent as it is no longer true.
+   - The music player will now correctly display the pause button when the music is playing.
+   - Annexing a subject will no longer use up more diplomatic power than needed.
+   - Placate ruler can no longer be used when the modifier is at -100% LD.
+   - Breaking alliances with Favours is now possible without the Rights of Man DLC.
+   - Fixed areas appearing in the claim area diplomatic action menu even though there are no provinces to be claimed.
+   - Flagship modifiers given to a country now are correctly applied to the flagships owned by that country.
+   - Fixed a gray window appearing when trying to build boats in a landlocked country.
+   - Fixed a bug that disallowed giving away province occupations in some cases.
+   - The Tooltip for not being able to build a building in a province now correctly displays the reason when it's due to a missionary or cultural conversion.
+   - AI will no longer be able to declare a war on the date a truce ends making the player unable to declare a war themselves.
+   - Attacking vassals will now correctly call in a coalition that their overlord is part of.
+   - AI will no longer be able to cancel the movement of a unit if it is not allowed to stay in a province. AI will no longer be able to hide boats in occupied provinces.
+   - type = random will no longer crash the game due to wrong Province ID calculation.
+   - Imperial incidents do not refer to the wrong countries.
+   - Macrobuilder now correctly shows special unit constructions in the special unit force limit number.
+   - Fixed inconsistent displayed values for force limit with special mercenaries not contributing to force limit.
+   - Ai will now take Defender of Faith when possible.
+   - Fixed framerate drop in the economy tab while playing as a big nation.
+   - Fixed a bug where attaching units to already moving units causes the attached units to desync with the main army.
+   - Removed the ability to cancel any movement with automatic ship transportation.
+   - Fixed modifiers in reforms for players with missing DLCs.
+   - Fixed overextension events not firing at all as well as on_overrun on action not firing any events.
+   - Calling an ally who is also a defender of faith into an offensive war won't cause the tooltip to display wrong information.
+   - Chance to inherit personal unions modifier now adds correctly to the overall chance.
+   - Centers of Reformation will now use the owner's heathen missionary strength when converting heathen provinces.
+   - Army maintenance will no longer influence mercenary morale damage.
+   - Added a missing new line after a change of siege effect.
+   - Fixed missing localization for mechanic_heirs.
+   - Changing the name of an heir will no longer speed up personality gain timers for the ruling monarch.
+   - "Establish the Qizilbash Regiments" privilege's modifiers are no longer hidden until it is enacted.
+   - Scripted triggers with estate_influence no longer fail trigger validation.
+   - Fixed custom attributes not appearing in government reform tooltips.
+   - Knowledge-sharing actions now correctly calculate colonial range.
+   - Imperial Mercenaries will no longer cost negative money when hired with enough negative modifiers.
+   - Strict Drillmaster and Inspirational Leader leader personality traits now work correctly giving modifiers to armies.
+   - Subjects not costing a diplomatic relation no longer cause royal marriages with them to cost a relation slot.
+   - The 'Cannot combine with' tooltip for peace options now correctly displays the one for annul treaties.
+   - Outliner now correctly shows that vassal annexation is halted when their provinces are occupied.
+   - Personal Union calculations are no longer different for nations with more than 1000 development.
+   - It is no longer possible to rival yourself after forming a nation.
+   - It is no longer possible to mothball and move ships at the same time, locking them forever in a sea tile.
+   - Fixed incorrect localization for Rajput regiments in tooltips.
+   - Regency ending notification no longer appears with Leviathan DLC disabled.
+   - Disband ship tooltip and message no longer displays max sailor count incorrectly.
+   - Upgrade trade center notification no longer appears with Dharma DLC disabled.
+   - Fixed the chat channel kick button and added tooltips.
+   - Fixed issues with independence support war declarations when multiple subjects are involved.
+   - Fixed issue with tooltipping past incident of Hanseatic League Decline not mentioning who got embargoed.
+   - Fixed a bug where the capture of the Ming emperor event would trigger for the Ming heir instead of the ruler.
+   - Fixed an issue that fired the starting Georgian events when reloading the savefile as a custom nation Georgia.
+   - The Nizwa Fort Great project will now grant attrition in the area, in the third tier.
+   - Fixed an issue with the Mamluk agenda 'Develop Military Infrastructure.
+   - The 'Mercantile Relationship' Mamluk mission will no longer reference Galleas special units if you don't own 'Domination.
+   - The event 'Heirs of the Romans' will no longer remove the 'Armenian Union' modifier for Georgia.
+   - Zoroastrian Theocracy now has a proper icon.

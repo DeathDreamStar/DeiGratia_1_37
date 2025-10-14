@@ -8,6 +8,9 @@ country_event = {
 	picture = CORRUPTION_eventPicture
 
 	trigger = {
+		NOT = {
+			has_country_flag = ipe_setting_disable_endemic_corruption
+		}
 		OR = {
 			AND = {
 				development_in_provinces = {

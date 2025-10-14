@@ -1,0 +1,33 @@
+﻿l_english:
+ ipe_setting.1.t: "Dei Gratia Configuration"
+ ipe_setting.1.d: "Welcome to the §YDei Gratia (Unofficial 1.37 Update)§!.\nThis setup event allows you to tailor your experience for the most stable and enjoyable gameplay.\n\nThe §G'Recommended Mode'§! offers the intended balance and features for most players — ideal if you're experiencing Dei Gratia for the first time.\nAlternatively, you can manually configure each gameplay option to suit your preferences. Each choice will provide a brief explanation of its effects.\n\nThank you for keeping this classic mod alive — and all credit goes to §YNguyên§! for the original masterpiece."
+ ipe_setting.1.a: "Enable §GRecommended§! Mode"
+ ipe_setting.1.c: "Let me configure each option manually"
+ 
+
+ ipe_setting.2.t: "Specific Settings"
+ ipe_setting.2.d: "Select which category of settings you wish to adjust. Each group contains different gameplay options that affect balance, performance, and immersion.\n\nClosing the settings will apply all selected options to your current campaign. §RThis action cannot be undone.§!"
+ # country creation?
+ ipe_setting.2.b: "§GGameplay Settings§!" #ipe_setting.3 - Gameplay settings
+ ipe_setting.2.c: "§YClose Settings§!" #Close and Apply settings
+
+ ipe_setting.3.t: "Gameplay Settings"
+ ipe_setting.3.d: "Here you may adjust optional gameplay mechanics introduced or modified in Dei Gratia."
+ ipe_setting.3.ay: "§YEarly Subject Integration Limitation§! §GON§!"
+ ipe_setting.3.an: "§YEarly Subject Integration Limitation§! §ROFF§!"
+ ipe_setting.3.by: "§YEndemic Corruption§! §GON§!"
+ ipe_setting.3.bn: "§YEndemic Corruption§! §ROFF§!"
+ ipe_setting.3.cy: "§YEmperor of China Isolation§! §GON§!"
+ ipe_setting.3.cn: "§YEmperor of China Isolation§! §ROFF§!"
+ ipe_setting.3.q: "Return"
+
+
+ endemic_corruption: "Endemic Corruption increases naturally as a country grows in size. Larger realms accumulate administrative inefficiency, raising corruption over time unless countered by strong governance and reform"
+ EMPEROR_CHINA_ISOLATION_TOOLTIP: "The Emperor of China stands above foreign entanglements. Alliances with non-tributary states are forbidden, and favors are withheld from those who do not submit. This preserves imperial dignity and internal harmony, but limits diplomatic flexibility and external influence."
+
+#  decision
+ TurnOffEndemicCorruption_title: "Disable Endemic Corruption. §RThis is IREVERSIBLE§!"
+ TurnOffEndemicCorruption_desc: "Disables the Endemic Corruption mechanic. Country will no longer be affected by corruption generated from total development."
+
+ TurnOffSubjectIntegrationLimit_title: "Disable Early Subject Integration Limitation. §RThis is IREVERSIBLE§!"
+ TurnOffSubjectIntegrationLimit_desc: "Removes restrictions on early vassal and subject integration, allowing annexation as in vanilla gameplay."

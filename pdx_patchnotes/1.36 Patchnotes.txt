@@ -1,0 +1,502 @@
+#############################################################
+######################## 1.36.2.0 ###########################
+#############################################################
+
+###################
+# Usermodding
+###################
+
+# Other
+   - Added the custom_desc trait for estates which works exactly like custom_names, but shows the custom description for the estate instead.
+
+###################
+# Script
+###################
+# Achievements
+   - "Legacy of Saint George" is now doable with either England OR Great Britain.
+   - "Legacy of Saint George" now accounts for countries reforming into others as well.
+   - Improved the description of the "Basileus" achievement so it is clear that the Eastern Roman Empire's borders are meant.
+   - The achievement "Norwegian Wood" is no longer blocked when you form Scandinavia.
+   - "This Is Persia" now can be completed if you are Eranshahr.
+
+# Decisions
+   - Restoring the Byzantine Empire will now make you into a monarchy and grant you the Byzantine Autocracy government reform.
+   - The decision to form Rûm will now rename you to the Seljuk Empire if you do it as AQ or QQ. Atop of this, you will now keep your AQ / QQ missions when you have formed into the Seljuk Empire.
+   - Fixed a decimal error for the "Contribute Warriors" Estate Decision.
+
+# Events
+   - The event "Parsi Sanctuary in Sanjan" now no longer locked behind having an advisor who has the Parsi culture.
+   - MEE_Byzantine_Events.33 about the Ottomans building a castle that would no longer fire if Byzantium won a war against them.
+   - Fixed a bug where the event "Ottoman Troops Haul Ships" had the wrong event option text.
+   - The event "The Tripolitanian Rebellion" will now correctly trigger with Tripoli as the revolter tag, not Trier.
+   - Fixed a small typo for the Teutonic event effects which explains the mission paths.
+   - Removed reference to 'nodynasty' in the event consort_events.56's description.
+
+#Government
+   - Enabled the government reform "Karimi Merchants" for King of Kings DLC, as originally intended.
+   - The government reform "Persian Government" is now available to Zoroastrian Custom Nations.
+   - The "Legacy of the Safavid" government reform is now linked to the Feudal Theocracy Mechanic. This means gaining the Caliphate will no longer automatically remove the Safavid reform.
+   - The government reform "Reform the Pronoia System" is now only available to you if you have King of Kings, as intended; the modifiers do not make sense otherwise.
+   - The government reform "Reform the Pronoia System" is now exclusively available to those who have the Pronoia Mechanic active.
+   - The government reform "Reform the Pronoia" is available to Roman countries too.
+   - Fixed missing localization for when you hover over the Pronoia icon to see what effects they have.
+
+# Ideas
+   - Fixed a typo for the Eranshahr ideas which mentioned a "Zoro" and his infamous religion of "Zoroastrian".
+
+# Missions
+   - Mamluk's "Center of the Islamic World" mission now takes colonial subjects into account when measuring cultural unification.
+   - Mamluks no longer receive ex machina cash by canceling the Suez Canal.
+   - The "Highway of an Empire" Mamluk mission now checks for control and siege.
+   - The Mamluk Mission "Highway of an Empire" now requires at least 5 buildings in the Sharqiya province and no free building slots.
+   - Fixed a bug for the Persian "Restore the Avesta" mission where the core was not correctly applied to the province of Daman.
+   - The Persian mission "Restore the Avesta" will no longer block you from converting your own heretic/heathen provinces to the true faith via Trade Policies.
+   - Fixed the province highlighting of "A New Eranshahr" / "Indomitable Lion".
+   - The Persian mission "Protect the West Iranian" now requires 8 Kurdish provinces instead of 10. It also has a fallback in case there are no more Kurdish provinces in the world.
+   - The second option of the mission reward event "Future of the Pronoia System" will now only trigger the Crownland gain from inheritances every 5 years.
+   - The estate privilege unlocked by the Byzantine mission "Recover Authority" is no longer locked behind the Byzantine tag.
+   - Reduced the number of province requirements for the mission geo_catholicos_patriarch.
+   - Reduced the Patriarch Authority gain per advisor level from the geo_cathedral_living_pillar mission.
+   - The Byzantine mission "Church in Distress" now requires 20% Patriarch Authority instead of 2000.
+   - Completing the 'Reorganize the State' mission as Aq Qoyunlu no longer removes the 'Tribal Unity' government reform.
+   - The AQ and QQ mission "Repopulate Iran" now only requires 500 instead of 600 total development in Persia and only 5 instead of 10 provinces with 15 dev.
+   - The AQ and QQ mission "Turco-Persian Architecture" now requires you to have 15 Temples, 15 Workshops and 5 Market Places instead of 20 of each.
+   - The AQ and QQ mission "Legacy of the Seljuk" now only requires you to own 10 provinces in the Khorasan region instead of the whole region.
+   - The AQ and QQ missions "Break Timur's Bloodline" no longer require you to own Herat. Instead, they will now require you that the Timurids have no provinces in the Persia region.
+   - Fixed a bug for the Yemen mission "Expel the Sunni" which showed the wrong number of wars to win.
+   - Added a fallback requirement for the mission "Uniting the Tribes" for NA natives.
+   - Fixed an issue that prevented Dakota's mission 'Village to the End' from being completed.
+   - Added a helpful tip in Pegu's mission "Reconquer Dvaravati" to indicate possible rewards if AYU is a subject.
+   - Fixed an error with the Hungarian and Bohemian missions for Poland.
+   - Fixed a bug with removing Ming's "Monopoly on Horses" when a subject no longer controls Lhasa.
+   - Simplified the mission rewards of the EoC mission "Examination System".
+   - The EoC mission "Examination System" now highlights Xi'An.
+   - Lubeck's "Organize Hanseatic Diets" mission should now scope to trade league members and subjects in the requirements.
+   - Crusader missions will now require the tag to be independent or a subject of another Catholic nation.
+   - Fixed a tooltip bug for the Swedish mission "The German Coastline" where it promises -15% CCR instead of -10%.
+   - Fixed the missing modifier "Germanic Alliance" for the Swedish mission "The German Coastline".
+   - Added a helpful tip for the reward of the Restore Hariphunchai mission for Pegu.
+   - The event Diplomacy with the Emperor of China now correctly appears for the owner of Kyoto.
+
+# Setup
+   - Fixed a small typo for the startup screen for Byzantium.
+   - Renamed the Georgian Culture of the Byzantine Culture Group into "Greco-Georgian".
+   - As a native, you can no longer get the "Push Back the Colonizers" CB against other natives or their tribal land.
+   - Shirvan no longer starts with a Shia school as a Sunni country.
+   - Fixed a dynasty typo for Shirvan. Now their rulers are of the dynasty Derbendi instead of the Derbendid.
+
+# Other
+   - Eyalets, Sphere of Cultural Influence subjects and Pronoias get turned into vassals if their overlord gets annexed by a country that cannot support these subject types.
+   - Fixed the missing number of Zoroastrian Invitations in the UI if you have no invitations set yet.
+   - Fixed missing localization for the description of the Zoroastrian Holy Sites.
+   - Adjusted the localization for the "Supremacy over the Aristocracy" privilege if you are Zoroastrian as Persia.
+   - The Qizilbash estate has now an Aswaran description should you become Zoroastrian. Also replaced some Qizilbash mentions with the dynamic Aswaran name in case you are Zoroastrian. Note: the unit name is static and cannot be adjusted...
+   - Fixed the weird adjective for Eranshahr to Iranian.
+   - The naval doctrine "Tactica" is now available to countries of the Roman primary culture too.
+   - Releasing Sapmi via Return Province will now spawn them as Catholics instead of Fetishists (they are not Animist to avoid making the Norse events easier to get).
+   - The estate privilege "Promote Single Market" now benefits from Court Ideas' absolutism penalty reduction.
+   - The peace treaty "Claim the Norwegian Throne" will no longer mention that Denmark becomes a subject.
+   - Fixed missing localization for the Ahmudan System once you are attacked/attacking somebody.
+
+###################
+# Bugfixes
+###################
+   - Landing a Pronoia no longer clears accumulated liberty desire effects.
+   - Ottoman decadence no longer influenced by yearly government power modifier.
+   - Fixed the issue where you would get 25 karma per enemy when honoring a call to arms.
+   - Fixed an issue where special units would require double manpower to reinforce.
+   - Fixed issue for custom nation ideas modifiers missing labels.
+   - Fixed issue with the "For The Glory" achievement.
+   - Fixed issue with "End Latin Favouritism" decision checking monthly trade income.
+   - Fixed crashes related to technology specifying unit types that don't have files specified for them.
+   - Fixed crash related to modifiers for subunits not belonging to a unit.
+   - Fixed crash related to assigning holy orders while changing UI.
+   - Fixed a CTD related to the carpet siege army mission.
+   - Fixed CTDs related to threading if one of the tasks takes too long.
+
+
+#############################################################
+######################## 1.36.1.0 ###########################
+#############################################################
+
+###################
+# Interface
+###################
+
+# Other
+   - Fixed a typo for the Themata event.
+   - Added special unit modifiers to the country modifier list.
+
+###################
+# Script
+###################
+# Achievements
+   - Fixed a bug that prevented the achievement "King of Kings" from being earned when you chose the Zoroastrian path.
+   - The achievements "This is Persia", "The Zoro-Austrians" and "Shahanshah" are now achievable when you form Eranshahr instead of Persia.
+   - The achievements "The Zoro-Austrians", "Breadbasket of the World" and "Desert Power" now only show up if you have King of Kings enabled as they are not possible to achieve otherwise.
+   - Fixed the highlighting for "Mehmet's Ambition" so it properly shows the needed provinces.
+   - The achievement "Around the world in 80 years" now properly requires San Francisco.
+
+# Events
+   - Fixed the modifier for the "Grand Vizier: Inquisitor" from the event "Appointment of the State Minister", triggered by the Persian decision "Select Grand Vizier". Now it increases instead of reducing the Warscore from Battles.
+   - The Zoroastrian event chain for Persia now puts a bigger punch against you as there will be significantly more rebels during the event chain.
+   - Reduced the art progress penalties for the Art Promotion events. The rule of thumb is now that around after 10 events the art is done.
+   - The event "Parsi Sanctuary in Sanjan" now only fires once per country, but has now a higher chance to trigger.
+   - The event "A Questions of Faith" will no longer fire for Persia while it is going through the Zoroastrian religion event chain.
+   - The event "Imereti Declares Independence" will now only trigger during the disaster and when you are not a vassal.
+   - Fixed a rare bug where pretender rebels can trigger the 10 Imperial Authority event if they enforce their demands.
+   - The Event "Refusal to Pay Taxes" now has a go-to button.
+   - Added go-to buttons to several events about Company Investments.
+   - Added custom tooltips for the event “The Valladolid Debate”.
+
+# Missions
+   - The Persian mission "Caucasian Conquest" no longer requires you to own direct control over provinces.
+   - The Persian mission "Expand our Influence" now considers accepted cultures and cultures within your group.
+   - Fixed a bug that removed the counter of provinces you have culturally converted for the Persian "Language of Poetry" mission.
+   - Completing the Georgian mission "Throne of the Romans" no longer removes Armenian as an accepted culture. Atop of this, you won't have Georgian as both an accepted and as the primary culture at the same time.
+   - The Georgian mission "Vakhtang's Succession" can no longer be completed before accepting the starting event.
+   - The Georgian mission "Preventing the Collapse" now gives the correct reward relating to Estate Loyalty.
+   - Changed the mission icon for the Armenian mission "The Office of Sparapet".
+   - Added legitimacy equivalent requirements for Aq Qoyunlu and Qara Qoyunlu missions.
+   - King of Kings and base-game Aq Qoyunlu missions no longer intersect if Domination is not active.
+   - Qara Qoyunlu's mission 'Break Timur's Bloodline' now correctly grants the PP reward.
+   - Added alternative for Ardabil"s 'Establish the Safaviyya' mission in case Golden Century is not active.
+   - Fixed a trigger for Egypt that prevented the 'Center of the Islamic World' requirement from counting Westernization.
+   - Mamluks' "The Northern Territories" mission now only gives claims on key states across Anatolia instead of the whole region.
+   - Adjusted the icons of the default Timurid missions to remove repetition.
+   - Mission rewards which give an accepted culture and a culture slot alongside it will now mention that you gain +100 Dip points when you have the culture accepted already.
+   - Added the GUI for more flexible previews, allowing you to preview up to 3 batches of branching missions at the same time.
+   - The branching missions of Songhai, Sweden, Denmark, Norway, the Ottomans, Ming, Qing, the France missions related to the HRE, and the Japanese missions related to the military have now preview buttons. The branching missions of Mali, Kongo, Poland, Gotland, the religious branch of Japan, the Italian branch of France, and the mission tree of England/GB/Angevin will continue without them for a while due to their mission tree structures, which need a deeper future fix.
+   - The Aragonese mission "Consulate of the Sea" can now be completed with any trade building.
+   - Taking the Mandate of Heaven will no longer reset missions in certain outliner cases.
+   - The Kongo mission "A proper Kingdom" now has its legitimacy requirement only when they are a monarchy.
+   - Removed a duplicate permanent claim from the Songhai "Conquer Timbuktu" mission.
+   - Maori mission "Perform a Haka" no longer requires the mission "Gain Mana" for Custom Nations compatibility.
+   - Enabled Franconian missions for Coburg.
+   - The Chinese Kingdom mission "Fall of the Great Ming" now properly grants the +1 Tech increase.
+
+# Setup
+
+   - The Narikala Fortress monument will now have no culture requirements.
+   - Syria now has a proper starting ruler.
+   - The decision to declare the Hanseatic League no longer depends on having fewer than 20 provinces.
+
+# Other
+   - Aq Qoyunlu can now form Persia without the King of Kings DLC.
+   - Fixed some mission titles not appearing correctly in the German and Spanish translations.
+   - The Persian Age Ability is not available for Eranshahr.
+   - The Qizilbash agenda "Win a Glorious Battle" now scales in its conditions and Army Tradition rewards with age.
+   - Fixed unit description typos for Stratioti cavalry.
+   - The Pronoiar Monarchy is now only available to custom nations that pick it in the first place.
+   - The Byzantine Tier 3 government reform 'Restore the Master of Offices' now provides the proper Global Autonomy Reduction scaling with your Statesman's skills.
+   - The estate privilege "Development of Temples" for the Brahmins now properly applies the modifier whenever a tax building is built.
+   - Subjects of the Cultural Sphere of Influence type now count as autonomous subjects (in other words: triggers like "is_subject_other_than_tributary_trigger" and "is_free_or_tributary_trigger" now contain this new subject type too).
+   - Added fallback for Local Organizations and Holy Orders in King of Kings and Domination, for players who do not own Golden Century.
+   - The White House monument is now available to all former colonial subjects and countries with their capital in North or South America.
+
+###################
+# Bugfixes
+###################
+   - Fixed crash when shift right-clicking multiple alerts.
+   - Fixed crash related to 0-size navies.
+   - Fixed overextension impact modifier to scale the effect of overextension.
+   - Fixed flickering confirmation when attempting to remove subject buildings you haven't built.
+   - Tooltips saying an advisor is -100% cheaper now say it's 100% more expensive.
+   - Modifier icons and collected/transferred value text are no longer shown when selecting merchants in the trade node view.
+   - Fixed a missing modifier icon for the influence_to_vassal_elevation_cost modifier.
+   - Fixed the icon for the "has_marines" modifier.
+   - Fixed a privilege icon where the legitimacy icon is way too low.
+
+#############################################################
+######################## 1.36.0.0 ###########################
+#############################################################
+
+###################
+# Expansion Features
+###################
+ 
+   - Persia: Added a new Mission Tree for Persia with 77 Missions in total (of which 31 Mission depend on Religion - Sunni, Shiite, Zoroastrian; and 8 Missions depend on Origin - Ardabil, post-Timurid, Mazandarani). A new mission tree for Ardabil with 12 Missions; 2 new government mechanics ('Persian Influence' for a Muslim Persia, and 'The Three Royal Fires for a Zoroastrian one'); 2 new Estates ('Ghilman' and 'Qizilbash) with their own set of agendas and disasters; 20 new estate privileges; 6 government reforms; 1 new special unit, the 'Qizilbash', which can be recruited either as Infantry or as Cavalry units; 68 new events; and more additional content like Diplomatic Actions, Subject Types, CBs, and Local Organizations.
+   - Mamluks: Added a new mission tree for the Mamluks with 39 missions; 1 new government mechanic, 'Egyptian Westernization' (either by forming Egypt through the Mamluk Mission Tree, or independently as another Nation); 7 new government reforms; 13 new estate privileges; 1 new Holy Order, 'Kashifs'; 4 new Naval Doctrines, 'Mamluk Galleys', 'Mamluk Light Ships', 'Mamluk Warships', and 'Mamluk Transports'; 1 new special unit, 'Mamluks'; 16 new events; and more additional content like new hirable Mercenaries, Diplomatic Actions, and Estate Agendas for the Nobility centered around the Mamluk ruling class.
+   - Byzantium: Added a new mission tree for Byzantium with 55 missions; 6 new government reforms; 6 new Estate Privileges; 57 new events; 10 new decisions; a new Type of Subject, 'Pronoia'; and new Decisions and hireable Mercenaries.
+   - Arabia: Added a new mission tree for Arabian Minors with 34 Missions (making it possible to form Arabia using the Mission Tree); 1 New Estate Privilege, 'Oasis Development'; 9 new events; 1 new CB, 'Spread Islam'; and a new Decision for Arabia.
+   - Yemen: Added a new mission tree for Yemeni Nations with 26 Missions, plus 5 extra missions for the Rassids; 1 new Estate Privilege, 'Monopoly on Coffee'; and 7 new events.
+   - Georgia: Added a new mission tree for Georgia with 30 missions in total; 1 new disaster, 'Georgian Crisis', with 4 new related events; 1 new Estate Privilege, 'Highland Fortifications'; and 7 new events.
+   - Armenia: Added a new mission tree for Karabakh/Armenia with 30 missions in total; 2 new government reforms, 'Nakharar Title' and 'Sparapet Office'; and 4 new events.
+   - Turkomen: Added new mission trees for Aq Qoyunlu (31 missions in total) and Qara Qoyunlu (30 missions in total); Aq Qoyunlu and Qara Qoyunlu can now access Janissaries and Pashas through the mission tree; 1 new government reform, 'Turkmen Ottoman Institutions'; 2 new Estate Privilege, 'Emirs of Baghdad' and 'Great Works of Iran'; and 11 new events.
+   - 8 new Unit Packs, including Cyprus, Trebizond, Karaman, Israel, Tlemcen, Syria, Armenia and Georgia, with 32 new sprites in total.
+   - 3 new Music Packs (Persia, Egypt, Caucasus), with 12 new songs in total.
+
+###################
+# Free Features
+###################
+   - Added 9 new achievements.
+   - Added 8 new Monuments accessible through the Leviathan DLC.
+   - Added the Savayyid Order for Ardabil and Shia Persia accessible through the Golden Century DLC.
+   - Added 25 events for Persia which fire during a playthrough.
+   - Added a new Georgian culture and a new setup for the Georgian area in the base game.
+   - Added the Turco-Iranian culture in the base game.
+   - The Teuton and Livonian Order mission trees now have buttons to preview branching missions.
+
+###################
+# Gamebalance
+###################
+
+# Governments
+   - The government reform "Millennialist Theocracy" no longer grants Monarch Power per dev when converting a country. Instead, you will gain devotion per dev. Additionally, the gov reform now grants +1 Monthly Church Power, +0.25 Monthly Fervor, -25% Enforce Religion Cost, +10% Morale Damage and -2 Yearly Devotion.
+   - The government reform "Elite Mercenaries" now only decreases merc cost by -15% instead of  -25%.
+   - The government reform "Mercenary Leadership" now only decreases merc cost by -10% instead of -25%.
+   - The government reform "Cavalry Warfare" now decreases Cav Cost by -10% instead of -15%.
+   - The government reform "Expand Temple Rights" no longer decreases Admin Advisor Cost.
+   - The 'Land of the Christian Sun' reform now turns Japan into a monarchy to avoid script complications with overlapping reforms.
+   - The 'Land of the Christian Sun' reform will no longer allow for heirs since generals become rulers.
+   - Added two new government reforms for Byzantium and one reform exclusively for Custom Nations so they could play with the Byzantine subject too.
+   - Added a new government reform for Tier 6 which is available for countries that completed Court Ideas. The reform allows you to seize and sell crownland to targeted estates.
+   - Fixed government power bars not working properly with values different from -100 and 100.
+   - Militaristic Divine State (Theocracy) no longer shows an evolution to Prussian Gov. Mechanics that are meant for Monarchies only.
+
+# Units
+   - Added more sources of Revolutionary Guard special unit.
+
+# Other
+   - Removed Manpower reward from the Brandenburg Gate via the Prussian mission 'Balance of Power'.
+   - Appanages have now the subject interactions "Seize Court Resources" and "Request Extra Levies".
+   - The Ottoman holy order "Mevlevi" now only decreases local dev cost by -5% instead of by -10%.
+   - The Eyalets now only provide 10% of their force limit/manpower to their overlord instead of 20%. Core Eyalets now only provide 20% of their force limit/manpower to their overlord instead of 33%.
+   - The Ottoman mission reward of the mission "The Eyalet of Al-Andalus" no longer reduces Warscore Cost vs Other Religions.
+   - The Ottoman mission reward of the mission "A Sunni Empire" will no longer increase Tolerance of Own Faith and will no longer decrease Warscore Cost vs other Religions.
+   - The Ottoman mission reward of the mission "Spread the True Faith" no longer decreases Warscore Cost against other Religions.
+   - The Janissary estate privilege "Strict Devshirme System" now only local Manpower Modifier by 10%, nerfing it down from 20% Local Manpower Modifier and +15% Fort Defense.
+   - The Janissary privilege "Ensure Disciplined Training" now increases the discipline of Janissaries by 2.5% instead of 5%.
+   - The Janissary estate privilege "Professional Soldiers" now reduces the Reinforce Cost Modifier of Janissaries by -10% instead of by -20%.
+   - The permanent Ottoman modifier "Expanded Imperial Administration" from the "Expansion of the Imperial Bureaucracy" event no longer decreases CCR.
+   - The Devshirme ability "Assign Local Pashas" now only decreases CCR by 5% instead of 10%.
+   - The Devshirme Action "Conscript Heathen Recruits" will now only increase the Vassal Manpower Contribution by 15%, nerfing it down from +25% Vassal Manpower Contribution and +10% Manpower Recovery Speed.
+   - The modifier "The Ottoman Rule" from the event "The Internal Power Structure" now only gives -25% Autonomy Change Time, removing the passive War Exhaustion reduction from it entirely.
+   - The Ottoman government reform "Expanded Devshirme System" will now decrease only the Reinforce Cost of Janissaries by 10%, nerfing it down from its previous -20% and +25% Reinforce Speed.
+   - The Tripitaka Koreana now gives +100% Local Institution Spread instead of a passive Institution bonus. The tall Empire of Korea will be slowed down by it, but should still be a force to reckon with even if they do not conquer a single province.
+   - The Provincial Government System will now only increase the local tax by 20% instead of by 33% and giving -1 Local Unrest.
+   - Recruitment by Merit now increases the Janissary Infantry Combat by 10% at 100% crownland instead of by 20%.
+   - The Janissary Estate privilege "Sultan-Appointed Aghas" no longer grants +0.3 Yearly Army Tradition.
+   - Taking the Great Council of Mechelen reform will now disable the Dutch Revolt even after it started making progress. It will NOT stop the disaster once it has fired though.
+
+###################
+# Interface
+###################
+
+# Icons/Art
+   - Added an icon showing mutually exclusive reforms for the empire of China.
+
+# Tooltips
+   - Improved tooltipable area for estate factors in grant privilege view.
+   - Improved the tooltip for introducing a new heir.
+   - Fixed a typo in the decision to form Yuan.
+   - Renamed a Qing mission so it fits better in the UI.
+   - Changed the description of the 'David the Builder' Achievement to reflect changes in the map during 1.36.
+
+# Other
+   - Added Development-based information in the tooltip of the Religion pie chart in the Ledger.
+   - Added sort buttons for Autonomy Macrobuilder. Provinces that can have their autonomy Increased/Decreased will be now grouped.
+   - Added an alert for State Edicts that are no longer needed. For example, the Missionary Strength Edict if all provinces are converted.
+   - It's now possible to click on names in State View to view that province.
+   - You are now able to transfer multiple province occupations to one ally by selecting provinces with Shift + Left Click beforehand.
+   - It's now possible to merge normal armies without needing to deselect mercenaries. The mercenary armies won't be merged but they won't block the button to merge.
+   - Added a sort by the giver in the peace deal screen.
+   - Fixed so diplomacy map mode gets updated as states and cores are added/removed.
+   - Improved the coring list height and button positioning when having a height resolution greater than 1080.
+   - Added the ability to remove buildings via right-click in the macrobuilder.
+   - The Metropolitan map mode is now renamed into the "Local Organisation" map mode and its tooltip now reflects its changed purpose.
+
+###################
+# Usermodding
+###################
+
+# Effects
+   - Added 'effect' and 'removed_effect' clauses to Ideas, Institutions (only 'effect'), Hegemons, Fetishits Cults, and Technologies (only 'effect').
+   - Added play_sound effect.
+   - Added transfer_papal_controller which will change the controller without killing the current Pope.
+   - Added random_in_area and random_in_region effect scopes.
+   - on_actions are now additive.
+   - Added a scripted effect that changes provinces to Greek names, to save space in game files.
+
+# Modifiers
+   - Added has_marines modifier.
+   - Added Manpower and Sailors Percentage static modifiers.
+   - Added "reverse_under_governing_capacity_modifier" static modifier.
+
+# Other
+   - Added on_overrun on action.
+   - Added can_join_hre and can_leave_hre scripted functions.
+   - base_tax, base_production, base_manpower, development and development_discounting_tribal now accept scopes as value.
+
+###################
+# Script
+###################
+# Achievements
+   - The Achievement "David the Builder" no longer requires you to start as Imereti.
+   - The "Mehmet's Ambition" achievement has now been updated to reflect the changes to the Roman Empire decision.
+
+# Decisions
+   - Timurids can now form Persia.
+   - Forming Persia as the Timurids will now require that every single subject nation of the Timurids as well as Ajam and its subjects not exist.
+   - Barbary Iqtas can now form the Mamluks too.
+   - You now have to be Muslim to form Arabia.
+   - Countries of the Byzantine culture group (except the Goths) can now restore Byzantium.
+   - Forming a country will now always reset your name and color to the default name of the newly formed country.
+   - The decision to form Siam as anybody but Ayutthaya will now require you to complete 2 non-estate disasters to mirror the difficulty Ayutthaya has to overcome to form Siam.
+   - The decision to convert to Islam will no longer be taken by the AI immediately if they are a Theocracy, Jewish or Zoroastrian. Additionally, it now demands that Theocracies have less than 80 devotion to be picked, making it impossible to have Sunni Jerusalem on day one after they are released.
+   - Forming Rome will no longer require you to own the entirety of the highlighted regions. Instead, it will require you to own 425 provinces of these regions (for comparison: before this change, you were required to own at least 328 provinces, but you were obligated to own everything of France, Italy, Balkans, Anatolia and Mashriq). The highlighted provinces are the ones the real Roman Empire owned at any point in time.
+
+# Events
+   - The Ottoman AI will now try to make Mamluks to their Eyalet should they declare on the Mamluks with the right cb and occupy their capital for one year.
+   - The events of Purple Phoenix have now all an MTTH of 72 months as they tended to be very spammy.
+   - Added a line to all the Eyalet events emphasizing that the cores on regions are only applied to the provinces already owned by the Ottomans.
+   - The event "Collapse of the Mamluk Sultanate" can now also trigger if a subject (which is not a tributary state) of the Ottomans occupies the capital of the Mamluks.
+   - Added several missing "Go To" buttons in events.
+   - The flavor_nor.23 now no longer mentions if Oslo was your capital or not as it can fire for countries that are not Norway.
+   - The Propagate Religion events now fire only when a Muslim country propagates religion in a trade node.
+   - The flavor_eth.14 "An ambassador from the Mameluks"  now grants a diplomatic insult CB for 10 years, not 15.
+
+# Ideas
+   - The Persian ideas now give +10% Production Efficiency instead of 5%, +15% Manpower Recovery Speed instead of +10% Manpower Recovery Speed, +15% Global Tax instead of +10% Global Tax and additionally -5% Dev Cost Modifier.
+   - Added ideas for the nation of Arabia.
+   - Added ideas for the nation of Egypt.
+   - The Byzantine Ideas now give +20% Improve Relations, +10% Goods Produced Modifier instead of +5%, +25% Core-Creation Cost instead of the Mercenary Maintenance, +0.3 Yearly Patriarch Authority, +20% Reform Progress Growth instead of the National tax modifier, +15% Fort Defense instead of the -10% Stability cost modifier, +15% National Manpower Modifier instead of +10%. Global Trade Power and Yearly Prestige have been removed from the ideas.
+   - The game will now properly subscribe to LPC ideas when the Commonwealth is formed by Lithuania.
+   - The first idea of Court Ideas now gives +1 Dip Rep.
+
+# Missions
+   - The Polish mission that extends your Golden Era, will now do so for 50 years, instead of 30.
+   - The Daimyo mission "Regulate the Social Order" now offers an alternative requirement to Absolutism, so you can complete it before the Age of Absolutism.
+   - The timed challenge around the Franconian Succession will now only be available to Brandenburg.
+   - The Spanish mission 'Rein in France' now grants 10 Power Projections instead of 25.
+   - 'The Varna Aftermath' mission for Poland will now grant 1 PU CB instead of 2, and claims instead of the 2nd PU CB, depending on the choice in the Jagiellon event.
+   - Streamlined the Polish missions 'Protect Hungary', 'Throne of Bohemia' and 'Balance the Princely Lands'.
+   - The Polish mission "Leverage the Magnates" will now require fewer than 4 privileges, instead of fewer than 2 for the nobles.
+   - The Mughals missions are available if you own King of Kings. They have been added due to an event for Persia which allows forming the Mughals later on.
+   - Fixed a bug where the default missions for England without all DLCs are disconnected.
+   - Added DLC checks for some missions in Iberia that require flagships.
+   - Punjabi missions can now be properly obtained.
+   - Economic ideas now properly grant the development from constructing manufactories once the idea set is completed.
+   - Economic ideas now grant their mechanic rewards at proper times.
+   - Fixed a localization error with the PLC mission 'Golden Liberty'.
+   - Fixed an incorrect scope for Pagan faiths in the EoC missions.
+   - Qing's 'Three Feudatories' no longer gives Subjugation CB towards the wrong country.
+   - 'The Examination System' mission for the Emperor of China will no longer cost more government reform progress than it should.
+   - Added checks for Leviathan in many missions that require trust because the latter is hard to attain without the DLC despite being a base game feature.
+   - Completing the Japanese mission 'Balance of Power' via Absolutism will now grant the proper reform as a reward.
+   - The Qing mission "Expel Foreign Merchants" now gives proper effects for the trade nodes of Ragusa and Aleppo.
+   - The Ming mission "End the Sengoku Jidai" now properly gives a fallback reward in case you don't own the Mandate of Heaven.
+   - The conditions for the Manchurian mission "Reorganize the Tribes" now properly checks for the primary cultures of the countries.
+   - The highlighting for the French mission "House of God" now works properly if you decide to align with the Pope.
+   - The conditions for the French mission "The Peninsula War" now properly checks for local autonomy.
+   - The fallback for the Spanish mission "Holy See Politics" will now properly check if you have an inquisitor.
+   - Fixed an issue where the Chinese mission "Fortify the Coast" would not grant any reward whatsoever.
+   - Simplified the requirements of the Japanese mission "Spread the Christian Faith".
+   - The descendants of Tamerlane have finally learned how to read a map and have the directions in the names of Timurid missions "Control East Khorasan" and "Control West Khorasan" swapped.
+   - Fixed several mismatched checks that accidentally turned permanent claims into temporary ones.
+   - Added missing claims for the English mission "Found the Royal Navy".
+
+# Modifiers
+   - Fixed an issue with 3 French religious wars modifiers granting local unrest instead of global.
+   - Added scaled_with_gain_modifier option to add_government_power and add_government_power_scaled_to_seats.
+
+# Setup
+   - Timurids and the Ottomans are now historical rivals.
+   - Added proper names for the Tabriz and Azerbaijan areas.
+   - France will no longer integrate Burgundy if the latter is a player.
+   - Syria starts as a subject to the Mamluks.
+   - Changed the bonuses of the Pyramids Great project to better co-exist with the new Great project in Cairo.
+   - Added Krakow in the european_trade_node_scope scripted trigger.
+   - The province of Daman now starts as a religious center for Zoroastrianism.
+   - Most of the provinces in Persia now start as Sunni instead of Shia.
+   - Konstantinos Palaiologos, the starting heir of Byzantium, is now a 5/2/3 instead of a 3/2/2 but has only 60 Claims on the throne.
+   - The province of Burgas belongs to Byzantium in 1444 instead of the Ottomans.
+   - Byzantine provinces in the Morea area now start with +25% Local Autonomy.
+   - Fixed an issue that prevented some Iberian culture group provinces from building Galleons and Caravels.
+   - Christian nations in the Caucasus can see Persia now.
+
+# Other 
+   - AI is now actually inclined to form Arabia when they reach ADM tech 19.
+   - Removed some immersion-breaking military reforms from the 5th tier for Tribal nations.
+   - Forming Arabia now allows you to place your capital in one of the 3 important Islamic cities.
+   - Added a disclaimer to the scripted effect for Innovativeness or Monarch Power gain from Events, which emphasizes that you do not gain extra monarch power from Innovativeness Gain modifiers.
+   - The decision "Promote Sojunghwa" now is usable even after the Mandate has been destroyed.
+   - Persia and Eranshahr (the Zoroastrian Persia tag) are now Endgame Tags.
+   - Prussian militarization evolution rewards will now only show up if you are Prussia / Germany and have the Prussian Monarchy reform.
+   - The "Cathedral" building is now called "Great Synagogue" and "Great Fire Temple" for Jewish and Zoroastrian countries respectively.
+   - The Edinburgh monument no longer tells you that you could use it from a mission reward as such mission reward does not exist in the game.
+   - The Zoroastrian religion can now propagate their religion via the trading policy.
+   - Changed the Zoroastrian blessings a bit: Replaced the Yearly Corruption with +10% Improve Relations.
+   - Replaced the "Shirvan" and the "Sabzevarian" holy sites with the provinces of "Zanjan" and "Tun" respectively. The achievement "Keep the Flame Burning" has been updated to reflect this change, and as such requires the 5 Holy Sites AND atop of it the monument in Shirvan.
+   - Added tooltip_potential to conditional modifiers allowing them to hide their tooltips in special cases.
+   - Tribal Allegiance is gained by a 6 to 1 ratio of Tribal Allegiance to Prestige from Battles.
+   - Few European monuments are now available to countries of the Roman culture.
+   - Forming the Angevin Kingdom after completing the Claim the Empire mission will no longer reset your name.
+   - Creating eyalets via the fabricated CB against countries that have a unique name for their eyalet form will now take this unique name. Additionally, eyalets through this CB will now have the same shade of green as eyalets created by events.
+   - Fixed an issue that would allow Muscovy to get rid of the Tatar Yoke by just loading it into a save file after 1480.
+
+###################
+# Bugfixes
+###################
+   - Advisor's death now correctly fires on_x_advisor_fired on the action.
+   - Fixed a crash when using trigger values.
+   - Fixed attached units moving in different directions in some cases.
+   - Curia Power Cost is now capped at 10%.
+   - In the Trade Favors for Trust menu the values are now displayed correctly.
+   - Ifs in Scripted triggers now correctly assign values to triggers. Added a post-validation function to IfTrigger to assign values in the limit.
+   - Fixed a missing "is" in a tooltip for several monuments.
+   - add_province_triggered_modifier will no longer show errors when used in different places.
+   - Removed a bug that allowed a ruler to be immortal if Ottomans were in a disaster and without an heir.
+   - Added a new line in the description of trade company investments modifier.
+   - Added a check if a human ally can join a war in the war declaration screen. It will now show an X instead of a question mark.
+   - The Russian AI will no longer bankrupt itself by purchasing Modern Ideas.
+   - The Estate Action "Ask for Contribution" from the Vaishyas now actually scales with their influence.
+   - Fixed an issue that caused estates to have their loyalty and influence reduced while they were in power.
+   - Changing trade goods to Coal now properly subtracts 1 base production from the province if the province had Manufactory and Economic ideas.
+   - Placing a relative on the throne in a subject now correctly calls the on_new_monarch and on_monarch_death on actions.
+   - Government reforms now display Special Unit force limit modifiers in gray when that unit isn't available yet instead of being hidden.
+   - Fixed tooltips for State Edicts in the Macrobuilder.
+   - Added replacements for Mandate of Heaven modifiers when playing without that expansion.
+   - Ming no longer starts with more boats than their force limit allows.
+   - Overlords can now request maps from their subjects. Subjects can request maps from their overlords or subjects under the same overlord.
+   - Fixed Revolutionary text not being hidden when creating a Client State before Revolutions are available.
+   - Removed an unnecessary new line in the Annexation tooltip.
+   - Fixed remove_trade_modifier tooltip having the color "spill out".
+   - Expand the Empire peace treaty no longer allows for full annexation.
+   - Fixed blockade capacity tooltip showing half of the development that can be blockaded.
+   - extend_golden_age now adds to the month counter, using it two times will result in a sum instead of only one value.
+   - Force Religion Warscore cost modifier is now capped at -90%.
+   - AI will no longer send privateers to Trade Nodes they can't reach.
+   - Fixed Fervors not being updated correctly with their potential trigger.
+   - Fixed a CTD when start_debate effect is used on a country without a Parliament.
+   - Regiment Discipline from mercenary modifiers and special unit modifiers is now accounted for when calculating Military Tactics during a battle.
+   - Fixed a crash when hovering over a building on a technology screen.
+   - Made it so the core_all button in the state view doesn't get enabled if we can't core due to war.
+   - Parliament issue modifiers are now tied to the duration of the issue which can be changed with modifiers.
+   - Fixed so the disinherit button becomes visible immediately without having to reopen the court view.
+   - Fixed issues with DLC-only modifiers applying wrong values.
+   - Moving the date from a bookmark will no longer cause the interesting countries' shields to show wrong information.
+   - Fixed issue where tribal rebels are more likely to spawn than separatists before coring a province.
+   - Nonexisting countries will be automatically removed from tribal federations.
+   - Unconditional surrender now isn't applied to provinces that are sieged by 3rd party nations in different wars.
+   - AI will buy trade company investments more often.
+   - Fixed an issue with non-reinforcing rebels using only the relocation movement.
+   - Set the minimum trade power transferred between nations to 0.
+   - Changed local_unrest in reset_parliament_debate_modifier to global since it's applied to a country, not provinces.
+   - Raise Cossack Host no longer grants 50% of the force limit but 5%.
+   - Fixed parliament issues being initially backed by too few seats, because the wrong definition was used.
+   - Establish Eyalet peace treaty no longer allows to take War Reparations as well.
+   - Fixed Government Reform switch confirmation window showing the wrong potential.
+   - Provence now properly integrates Lorraine in the 'House de Valois' event for France.
+   - The Eunuch Agenda 'Appease Eunuch Quotas' will no longer require you to embrace undiscovered institutions.
+   - Swapped the power level calculations of Eyalets and Core Eyalets. Core Eyalets are now much easier to keep loyal while Eyalets themselves consider the power of all subjects instead of just their own now.
+   - Only Eyalets are now allowed to gather favor towards their overlord.
+   - Fixed an issue where the name "Nouvelle-Écrosse" could not appear for Colonial Canada.
+   - Fixed a bug with the Polish disaster "Struggle for Royal Power".
+   - Improved the quality of the Japanese History lesson's audio.
+   - Advisor's death now correctly fires on_x_advisor_fired on action.
+   - Changed the active forts text to be centered below the fort icon.
+   - Fixed unnecessary new lines when using random scopes.
+   - Fixed Razing Mapmode not showing provinces that can be razed.
+   - Applied community feedback on Grain action.
+   - Removed a rogue % appearing in the loyalty tooltip for the new estates.

@@ -1,0 +1,154 @@
+namespace = ipe_setting
+
+# setup event
+country_event = {
+    id = ipe_setting.1
+    title = ipe_setting.1.t
+    desc = ipe_setting.1.d
+    picture = CITY_VIEW_eventPicture
+
+    fire_only_once = yes
+
+    trigger = {
+        has_game_started = yes
+        ROOT = {
+            ai = no
+        }
+    }
+
+    immediate = {
+    }
+
+    option = {
+        name = ipe_setting.1.a
+        #Reccommended Mode, mod settings remained
+    }
+    option = {
+        name = ipe_setting.1.c
+        country_event = {
+            id = ipe_setting.2
+        }
+
+    }
+}
+# option categories?
+country_event = {
+    id = ipe_setting.2
+    title = ipe_setting.2.t
+    desc = ipe_setting.2.d
+    picture = MILITARY_CAMP_eventPicture
+    is_triggered_only = yes
+    option = {
+        #Specific Gameplay options
+        name = ipe_setting.2.b
+        country_event = {
+            id = ipe_setting.3
+        }
+    }
+    option = {
+        #Apply and close options
+        name = ipe_setting.2.c
+        if = {
+            limit = {
+                has_global_flag = ipe_setting_disable_endemic_corruption
+            }
+            hidden_effect = {
+                every_country  = {
+                    remove_corruption_effect = yes
+					add_corruption = -100
+                }
+            }
+        }
+    }
+}
+
+
+# gameplay options
+country_event = {
+    id = ipe_setting.3
+    title = ipe_setting.3.t
+    desc = ipe_setting.3.d
+    picture = DIPLOMACY_eventPicture
+
+    option = {
+        #Turn OFF Early Subject Integration Limitation
+        name = ipe_setting.3.ay
+        trigger = {
+            NOT = {
+                has_global_flag = ipe_setting_enable_early_subject_integration
+            }
+        }
+		custom_tooltip = CANNOT_ANNEX_VASSAL
+        hidden_effect = {
+            set_global_flag = ipe_setting_enable_early_subject_integration
+        }
+    }
+    option = {
+        #Turn ON Early Subject Integration Limitation
+        name = ipe_setting.3.an
+        trigger = {
+            has_global_flag = ipe_setting_enable_early_subject_integration
+        }
+		# custom_tooltip = CANNOT_ANNEX_VASSAL
+        hidden_effect = {
+            clr_global_flag = ipe_setting_enable_early_subject_integration
+        }
+    }
+    option = {
+        #Turn OFF Endemic Corruption
+        name = ipe_setting.3.by
+        trigger = {
+            NOT = {
+                has_global_flag = ipe_setting_disable_endemic_corruption
+            }
+        }
+		custom_tooltip = endemic_corruption
+        hidden_effect = {
+            set_global_flag = ipe_setting_disable_endemic_corruption
+        }
+    }
+    option = {
+        #Turn ON Endemic Corruption
+        name = ipe_setting.3.bn
+        trigger = {
+            has_global_flag = ipe_setting_disable_endemic_corruption
+        }
+		# custom_tooltip = endemic_corruption
+        hidden_effect = {
+            clr_global_flag = ipe_setting_disable_endemic_corruption
+        }
+    }
+    option = {
+        #Turn OFF EOC Isolation
+        name = ipe_setting.3.cy
+        trigger = {
+            NOT = {
+                has_global_flag = ipe_setting_disable_eoc_isolation
+            }
+        }
+		custom_tooltip = EMPEROR_CHINA_ISOLATION_TOOLTIP
+        hidden_effect = {
+            set_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
+    option = {
+        #Turn ON EOC Isolation
+        name = ipe_setting.3.cn
+        trigger = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+		# custom_tooltip = EMPEROR_CHINA_ISOLATION_TOOLTIP
+        hidden_effect = {
+            clr_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
+    option = {
+        #Return back
+        name = ipe_setting.3.q
+    }
+    after = {
+        country_event = {
+            id = ipe_setting.2
+        }
+    }
+}

@@ -89,2189 +89,2192 @@
 
 
 royal_marriage = {
-	condition = {
-		tooltip = MARWAR
-		potential = {
-		}
-		allow = {
-			NOT = { war_with = FROM }
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_NON_GUARD
-		potential = {
-			is_subject = yes
-			overlord = {
-				is_subject_of_type = guard
-			}
-			FROM = {
-				is_subject = no
-				OR = {
-					overlord = {
-						NOT = {
-							overlord_of = ROOT
-						}
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_NON_GUARD
-		potential = {
-			FROM = {
-				is_subject = yes
-				overlord = {
-					is_subject_of_type = guard
-				}
-			}
-			OR = {
-				is_subject = no
-				overlord = {
-					NOT = {
-						overlord_of = FROM
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			is_subject = yes
-			NOT = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_rivalry
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			is_subject = yes
-			NOT = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_outraged
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			is_subject = yes
-			NOT = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_hostile
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			is_subject = yes
-			NOT = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_threatened
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			is_subject = yes
-			NOT = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_domineering
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			is_subject = yes
-			NOT = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_disloyal
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			is_subject = yes
-			NOT = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_rebellious
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				is_subject = yes
-				NOT = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_rivalry
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				is_subject = yes
-				NOT = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_hostile
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				is_subject = yes
-				NOT = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_threatened
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				is_subject = yes
-				NOT = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_outraged
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				is_subject = yes
-				NOT = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_domineering
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				is_subject = yes
-				NOT = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_disloyal
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				is_subject = yes
-				NOT = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_rebellious
-						}
-					}
-				}
-			}
-		}
-	}
+    condition = {
+        tooltip = MARWAR
+        potential = {
+        }
+        allow = {
+            NOT = { war_with = FROM }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_NON_GUARD
+        potential = {
+            is_subject = yes
+            overlord = {
+                is_subject_of_type = guard
+            }
+            FROM = {
+                is_subject = no
+                OR = {
+                    overlord = {
+                        NOT = {
+                            overlord_of = ROOT
+                        }
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_NON_GUARD
+        potential = {
+            FROM = {
+                is_subject = yes
+                overlord = {
+                    is_subject_of_type = guard
+                }
+            }
+            OR = {
+                is_subject = no
+                overlord = {
+                    NOT = {
+                        overlord_of = FROM
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            is_subject = yes
+            NOT = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_rivalry
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            is_subject = yes
+            NOT = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_outraged
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            is_subject = yes
+            NOT = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_hostile
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            is_subject = yes
+            NOT = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_threatened
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            is_subject = yes
+            NOT = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_domineering
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            is_subject = yes
+            NOT = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_disloyal
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            is_subject = yes
+            NOT = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_rebellious
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                is_subject = yes
+                NOT = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_rivalry
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                is_subject = yes
+                NOT = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_hostile
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                is_subject = yes
+                NOT = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_threatened
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                is_subject = yes
+                NOT = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_outraged
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                is_subject = yes
+                NOT = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_domineering
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                is_subject = yes
+                NOT = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_disloyal
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                is_subject = yes
+                NOT = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_rebellious
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 allianceaction = {
-	condition = {
-		tooltip = CANNOT_ALLY_NON_GUARD
-		potential = {
-			is_subject = yes
-			overlord = {
-				is_subject_of_type = guard
-			}
-			FROM = {
-				is_subject = no
-				OR = {
-					overlord = {
-						NOT = {
-							overlord_of = ROOT
-						}
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_NON_GUARD
-		potential = {
-			FROM = {
-				is_subject = yes
-				overlord = {
-					is_subject_of_type = guard
-				}
-			}
-			OR = {
-				is_subject = no
-				overlord = {
-					NOT = {
-						overlord_of = FROM
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = CONGRESS_OF_ARRAS_CANNOT_ALLY
-		potential = {
-			tag = BUR
-			has_ruler_modifier = congress_of_arras
-			FROM = {
-				tag = ENG
-				NOT = {
-					was_tag = YRK
-				}
-				NOT = {
-					was_tag = LNC
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = CONGRESS_OF_ARRAS_CANNOT_ALLY
-		potential = {
-			tag = ENG
-			NOT = {
-				was_tag = YRK
-			}
-			NOT = {
-				was_tag = LNC
-			}
-			FROM = {
-				tag = BUR
-				has_ruler_modifier = congress_of_arras
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_HISTORICAL_RIVAL
-		potential = {
-			OR = {
-				FROM = {
-					historical_rival_with = ROOT
-				}
-				historical_rival_with = FROM
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_ALLIANCE
-		potential = {
-			is_emperor_of_china = yes
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_ALLIANCE
-		potential = {
-			FROM = {
-				is_emperor_of_china = yes
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = HERMIT_KINGDOM
-		potential = {
-			ai = yes
-			FROM = {
-				tag = KOR
-				ai = yes
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = HERMIT_KINGDOM
-		potential = {
-			tag = KOR
-			ai = yes
-			FROM = {
-				ai = yes
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = WILL_NOT_ALLY_BYZANTIUM
-		potential = {
-			tag = BYZ
-			ai = yes
-			FROM = {
-				ai = yes
-			}
-			NOT = {
-				is_year = 1500
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = WILL_NOT_ALLY_BYZANTIUM
-		potential = {
-			ai = yes
-			FROM = {
-				tag = BYZ
-				ai = yes
-			}
-			NOT = {
-				is_year = 1500
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = NO_BOHEMIAN_TEUTONIC_ALLIANCE
-		potential = {
-			tag = TEU
-			ai = yes
-			FROM = {
-				tag = BOH
-				ai = yes
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = NO_BOHEMIAN_TEUTONIC_ALLIANCE
-		potential = {
-			tag = BOH
-			ai = yes
-			FROM = {
-				tag = TEU
-				ai = yes
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_INWARDS_PERFECTION
-		potential = {
-			OR = {
-				has_estate_privilege = estate_church_inwards_perfection
-				FROM = {
-					has_estate_privilege = estate_church_inwards_perfection
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			OR = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-				is_subject_of_type = puppet_bishopric
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_rivalry
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			OR = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-				is_subject_of_type = puppet_bishopric
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_outraged
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			OR = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-				is_subject_of_type = puppet_bishopric
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_hostile
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			OR = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-				is_subject_of_type = puppet_bishopric
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_threatened
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			OR = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-				is_subject_of_type = puppet_bishopric
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_domineering
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			OR = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-				is_subject_of_type = puppet_bishopric
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_disloyal
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = SUBJECT_LIMITED_DIPLOMACY
-		potential = {
-			OR = {
-				is_subject_of_type = vassal
-				is_subject_of_type = march
-				is_subject_of_type = puppet_bishopric
-			}
-		}
-		allow = {
-			NOT = {
-				ROOT = {
-					overlord = {
-						ai_attitude = {
-							who = FROM
-							attitude = attitude_rebellious
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				OR = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-					is_subject_of_type = puppet_bishopric
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_rivalry
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				OR = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-					is_subject_of_type = puppet_bishopric
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_hostile
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				OR = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-					is_subject_of_type = puppet_bishopric
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_threatened
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				OR = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-					is_subject_of_type = puppet_bishopric
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_outraged
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				OR = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-					is_subject_of_type = puppet_bishopric
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_domineering
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				OR = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-					is_subject_of_type = puppet_bishopric
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_disloyal
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_SUBJECT
-		potential = {
-			FROM = {
-				OR = {
-					is_subject_of_type = vassal
-					is_subject_of_type = march
-					is_subject_of_type = puppet_bishopric
-				}
-			}
-		}
-		allow = {
-			NOT = {
-				FROM = {
-					overlord = {
-						ai_attitude = {
-							who = ROOT
-							attitude = attitude_rebellious
-						}
-					}
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = AI_SCOTLAND_SMART
-		potential = {
-			tag = SCO
-			ai = yes
-			FROM = {
-				tag = FRA
-				ai = yes
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = AI_SCOTLAND_SMART
-		potential = {
-			tag = FRA
-			ai = yes
-			FROM = {
-				tag = SCO
-				ai = yes
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_ALLY_NON_GUARD
+        potential = {
+            is_subject = yes
+            overlord = {
+                is_subject_of_type = guard
+            }
+            FROM = {
+                is_subject = no
+                OR = {
+                    overlord = {
+                        NOT = {
+                            overlord_of = ROOT
+                        }
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_NON_GUARD
+        potential = {
+            FROM = {
+                is_subject = yes
+                overlord = {
+                    is_subject_of_type = guard
+                }
+            }
+            OR = {
+                is_subject = no
+                overlord = {
+                    NOT = {
+                        overlord_of = FROM
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = CONGRESS_OF_ARRAS_CANNOT_ALLY
+        potential = {
+            tag = BUR
+            has_ruler_modifier = congress_of_arras
+            FROM = {
+                tag = ENG
+                NOT = {
+                    was_tag = YRK
+                }
+                NOT = {
+                    was_tag = LNC
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = CONGRESS_OF_ARRAS_CANNOT_ALLY
+        potential = {
+            tag = ENG
+            NOT = {
+                was_tag = YRK
+            }
+            NOT = {
+                was_tag = LNC
+            }
+            FROM = {
+                tag = BUR
+                has_ruler_modifier = congress_of_arras
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_HISTORICAL_RIVAL
+        potential = {
+            OR = {
+                FROM = {
+                    historical_rival_with = ROOT
+                }
+                historical_rival_with = FROM
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_ALLIANCE
+        potential = {
+            is_emperor_of_china = yes
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_ALLIANCE
+        potential = {
+            FROM = {
+                is_emperor_of_china = yes
+            }
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
+    condition = {
+        tooltip = HERMIT_KINGDOM
+        potential = {
+            ai = yes
+            FROM = {
+                tag = KOR
+                ai = yes
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = HERMIT_KINGDOM
+        potential = {
+            tag = KOR
+            ai = yes
+            FROM = {
+                ai = yes
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = WILL_NOT_ALLY_BYZANTIUM
+        potential = {
+            tag = BYZ
+            ai = yes
+            FROM = {
+                ai = yes
+            }
+            NOT = {
+                is_year = 1500
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = WILL_NOT_ALLY_BYZANTIUM
+        potential = {
+            ai = yes
+            FROM = {
+                tag = BYZ
+                ai = yes
+            }
+            NOT = {
+                is_year = 1500
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = NO_BOHEMIAN_TEUTONIC_ALLIANCE
+        potential = {
+            tag = TEU
+            ai = yes
+            FROM = {
+                tag = BOH
+                ai = yes
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = NO_BOHEMIAN_TEUTONIC_ALLIANCE
+        potential = {
+            tag = BOH
+            ai = yes
+            FROM = {
+                tag = TEU
+                ai = yes
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_INWARDS_PERFECTION
+        potential = {
+            OR = {
+                has_estate_privilege = estate_church_inwards_perfection
+                FROM = {
+                    has_estate_privilege = estate_church_inwards_perfection
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            OR = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+                is_subject_of_type = puppet_bishopric
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_rivalry
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            OR = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+                is_subject_of_type = puppet_bishopric
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_outraged
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            OR = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+                is_subject_of_type = puppet_bishopric
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_hostile
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            OR = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+                is_subject_of_type = puppet_bishopric
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_threatened
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            OR = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+                is_subject_of_type = puppet_bishopric
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_domineering
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            OR = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+                is_subject_of_type = puppet_bishopric
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_disloyal
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = SUBJECT_LIMITED_DIPLOMACY
+        potential = {
+            OR = {
+                is_subject_of_type = vassal
+                is_subject_of_type = march
+                is_subject_of_type = puppet_bishopric
+            }
+        }
+        allow = {
+            NOT = {
+                ROOT = {
+                    overlord = {
+                        ai_attitude = {
+                            who = FROM
+                            attitude = attitude_rebellious
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                OR = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                    is_subject_of_type = puppet_bishopric
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_rivalry
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                OR = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                    is_subject_of_type = puppet_bishopric
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_hostile
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                OR = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                    is_subject_of_type = puppet_bishopric
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_threatened
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                OR = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                    is_subject_of_type = puppet_bishopric
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_outraged
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                OR = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                    is_subject_of_type = puppet_bishopric
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_domineering
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                OR = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                    is_subject_of_type = puppet_bishopric
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_disloyal
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_SUBJECT
+        potential = {
+            FROM = {
+                OR = {
+                    is_subject_of_type = vassal
+                    is_subject_of_type = march
+                    is_subject_of_type = puppet_bishopric
+                }
+            }
+        }
+        allow = {
+            NOT = {
+                FROM = {
+                    overlord = {
+                        ai_attitude = {
+                            who = ROOT
+                            attitude = attitude_rebellious
+                        }
+                    }
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = AI_SCOTLAND_SMART
+        potential = {
+            tag = SCO
+            ai = yes
+            FROM = {
+                tag = FRA
+                ai = yes
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = AI_SCOTLAND_SMART
+        potential = {
+            tag = FRA
+            ai = yes
+            FROM = {
+                tag = SCO
+                ai = yes
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 annexationaction = {
-	condition = {
-		tooltip = ANNEX_TOO_LOW
-		potential = {
-			FROM = {
-				vassal_of = ROOT
-			}
-		}
-		allow = {
-			FROM = {
-				has_opinion = {
-					who = ROOT
-					value = 190
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ANNEX_VASSAL
-		potential = {
-			FROM = {
-				is_subject_of = ROOT
-				is_subject_of_type = vassal
-			}
-			NOT = {
-				culture_group = east_slavic
-				has_reform = grand_duchy_reform
-			}
-		}
-		allow = {
-			OR = {
-				adm_tech = 18
-				FROM = {
-					government = native
-				}
-				AND = {
-					FROM = {
-						government = tribal
-					}
-					government = tribal
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ANNEX_VASSAL_GRAND_DUCHY
-		potential = {
-			FROM = {
-				is_subject_of = ROOT
-				is_subject_of_type = vassal
-			}
-			has_reform = grand_duchy_reform
-		}
-		allow = {
-			OR = {
-				adm_tech = 18
-				FROM = {
-					OR = {
-						government = tribal
-						government = native
-					}
-				}
-				FROM = {
-					culture_group = east_slavic
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ANNEX_VASSAL_PRINCE_OF_RUS
-		potential = {
-			FROM = {
-				is_subject_of = ROOT
-				is_subject_of_type = vassal
-			}
-			culture_group = east_slavic
-		}
-		allow = {
-			OR = {
-				adm_tech = 18
-				FROM = {
-					OR = {
-						government = tribal
-						government = native
-					}
-				}
-				AND = {
-					FROM = {
-						culture_group = east_slavic
-					}
-					has_country_modifier = prince_of_rus
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = HISTORICAL_ANNEX
-		potential = {
-			ai = yes
-			OR = {
-				AND = {
-					tag = TUR
-					FROM = {
-						tag = CRI
-					}
-				}
-				AND = {
-					tag = TUR
-					FROM = {
-						tag = WAL
-					}
-				}
-				AND = {
-					tag = TUR
-					FROM = {
-						tag = MOL
-					}
-				}
-				AND = {
-					tag = TUR
-					FROM = {
-						tag = TRA
-					}
-				}
-				AND = {
-					tag = TUR
-					FROM = {
-						tag = TUN
-					}
-				}
-				AND = {
-					tag = TUR
-					FROM = {
-						tag = ALG
-					}
-				}
-				AND = {
-					tag = MAM
-					FROM = {
-						tag = HWW
-					}
-				}
-				AND = {
-					tag = MAM
-					FROM = {
-						tag = FAD
-					}
-				}
-				AND = {
-					tag = ORI
-					FROM = {
-						government = tribal
-					}
-				}
-				AND = {
-					OR = {
-						technology_group = ottoman
-						technology_group = muslim
-					}
-					FROM = {
-						primary_culture = kurdish
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	#condition = {
-	#	tooltip = ANNEXINVALID
-	#	potential = {
-	#		FROM = {
-	#			vassal_of = ROOT
-	#		}
-	#	}
-	#	allow = {
-	#		FROM = {
-	#			years_in_vassalage_under = {
-	#				who = ROOT
-	#				years = 10
-	#			}
-	#		}
-	#	}
-	#}
+    condition = {
+        tooltip = ANNEX_TOO_LOW
+        potential = {
+            FROM = {
+                vassal_of = ROOT
+            }
+        }
+        allow = {
+            FROM = {
+                has_opinion = {
+                    who = ROOT
+                    value = 190
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ANNEX_VASSAL
+        potential = {
+            FROM = {
+                is_subject_of = ROOT
+                is_subject_of_type = vassal
+            }
+            NOT = {
+                culture_group = east_slavic
+                has_reform = grand_duchy_reform
+            }
+        }
+        allow = {
+            OR = {
+                adm_tech = 18
+                FROM = {
+                    government = native
+                }
+                AND = {
+                    FROM = {
+                        government = tribal
+                    }
+                    government = tribal
+                }
+                has_global_flag = ipe_setting_enable_early_subject_integration
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ANNEX_VASSAL_GRAND_DUCHY
+        potential = {
+            FROM = {
+                is_subject_of = ROOT
+                is_subject_of_type = vassal
+            }
+            has_reform = grand_duchy_reform
+        }
+        allow = {
+            OR = {
+                adm_tech = 18
+                FROM = {
+                    OR = {
+                        government = tribal
+                        government = native
+                    }
+                }
+                FROM = {
+                    culture_group = east_slavic
+                }
+                has_global_flag = ipe_setting_enable_early_subject_integration
+            }
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ANNEX_VASSAL_PRINCE_OF_RUS
+        potential = {
+            FROM = {
+                is_subject_of = ROOT
+                is_subject_of_type = vassal
+            }
+            culture_group = east_slavic
+        }
+        allow = {
+            OR = {
+                adm_tech = 18
+                FROM = {
+                    OR = {
+                        government = tribal
+                        government = native
+                    }
+                }
+                AND = {
+                    FROM = {
+                        culture_group = east_slavic
+                    }
+                    has_country_modifier = prince_of_rus
+                }
+                has_global_flag = ipe_setting_enable_early_subject_integration
+            }
+        }
+    }
+    condition = {
+        tooltip = HISTORICAL_ANNEX
+        potential = {
+            ai = yes
+            OR = {
+                AND = {
+                    tag = TUR
+                    FROM = {
+                        tag = CRI
+                    }
+                }
+                AND = {
+                    tag = TUR
+                    FROM = {
+                        tag = WAL
+                    }
+                }
+                AND = {
+                    tag = TUR
+                    FROM = {
+                        tag = MOL
+                    }
+                }
+                AND = {
+                    tag = TUR
+                    FROM = {
+                        tag = TRA
+                    }
+                }
+                AND = {
+                    tag = TUR
+                    FROM = {
+                        tag = TUN
+                    }
+                }
+                AND = {
+                    tag = TUR
+                    FROM = {
+                        tag = ALG
+                    }
+                }
+                AND = {
+                    tag = MAM
+                    FROM = {
+                        tag = HWW
+                    }
+                }
+                AND = {
+                    tag = MAM
+                    FROM = {
+                        tag = FAD
+                    }
+                }
+                AND = {
+                    tag = ORI
+                    FROM = {
+                        government = tribal
+                    }
+                }
+                AND = {
+                    OR = {
+                        technology_group = ottoman
+                        technology_group = muslim
+                    }
+                    FROM = {
+                        primary_culture = kurdish
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    #condition = {
+    #	tooltip = ANNEXINVALID
+    #	potential = {
+    #		FROM = {
+    #			vassal_of = ROOT
+    #		}
+    #	}
+    #	allow = {
+    #		FROM = {
+    #			years_in_vassalage_under = {
+    #				who = ROOT
+    #				years = 10
+    #			}
+    #		}
+    #	}
+    #}
 }
 
 integrationaction = {
-	condition = {
-		tooltip = INTEGRATETOOLOWDESC
-		potential = {
-			senior_union_with = FROM
-		}
-		allow = {
-			FROM = {
-				has_opinion = {
-					who = ROOT
-					value = 190
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = HISTORICAL_INTEGRATE
-		potential = {
-			ai = yes
-			OR = {
-				AND = {
-					tag = FOI
-					FROM = {
-						tag = NAV
-					}
-				}
-				AND = {
-					tag = FOI
-					FROM = {
-						tag = ADR
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	#condition = {
-	#	tooltip = INTEGRATEINVALID
-	#	potential = {
-	#		senior_union_with = FROM
-	#	}
-	#	allow = {
-	#		FROM = {
-	#			years_in_union_under = {
-	#				who = ROOT
-	#				years = 50
-	#			}
-	#		}
-	#	}
-	#}
+    condition = {
+        tooltip = INTEGRATETOOLOWDESC
+        potential = {
+            senior_union_with = FROM
+        }
+        allow = {
+            FROM = {
+                has_opinion = {
+                    who = ROOT
+                    value = 190
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = HISTORICAL_INTEGRATE
+        potential = {
+            ai = yes
+            OR = {
+                AND = {
+                    tag = FOI
+                    FROM = {
+                        tag = NAV
+                    }
+                }
+                AND = {
+                    tag = FOI
+                    FROM = {
+                        tag = ADR
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    #condition = {
+    #	tooltip = INTEGRATEINVALID
+    #	potential = {
+    #		senior_union_with = FROM
+    #	}
+    #	allow = {
+    #		FROM = {
+    #			years_in_union_under = {
+    #				who = ROOT
+    #				years = 50
+    #			}
+    #		}
+    #	}
+    #}
 }
 
 vassalaction = {
-	condition = {
-		tooltip = VASSALINVALID
-		potential = {
-		}
-		allow = {
-			alliance_with = FROM
-			FROM = {
-				has_opinion = {
-					who = ROOT
-					value = 190
-				}
-			}
-			FROM = { is_at_war = no }
-		}
-	}
+    condition = {
+        tooltip = VASSALINVALID
+        potential = {
+        }
+        allow = {
+            alliance_with = FROM
+            FROM = {
+                has_opinion = {
+                    who = ROOT
+                    value = 190
+                }
+            }
+            FROM = { is_at_war = no }
+        }
+    }
 }
 
 abandon_union_action = {
-	condition = {
-		potential = {
-		}
-		allow = {
-			ROOT = {
-				senior_union_with = FROM
-				is_at_war = no
-			}
-		}
-	}
+    condition = {
+        potential = {
+        }
+        allow = {
+            ROOT = {
+                senior_union_with = FROM
+                is_at_war = no
+            }
+        }
+    }
 }
 
 form_coalition = {
-	condition = {
-		tooltip = MINAGGRESSIVEEXPANSION
-		potential = {	
-		}
-		allow = {
-			has_opinion_modifier = {
-				modifier = aggressive_expansion
-				who = FROM
-			}		
-			NOT = {
-				has_opinion_modifier = {
-					modifier = aggressive_expansion
-					who = FROM
-					value = -50
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_ALLIANCE
-		potential = {
-			is_emperor_of_china = yes
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = MINAGGRESSIVEEXPANSION
+        potential = {
+        }
+        allow = {
+            has_opinion_modifier = {
+                modifier = aggressive_expansion
+                who = FROM
+            }
+            NOT = {
+                has_opinion_modifier = {
+                    modifier = aggressive_expansion
+                    who = FROM
+                    value = -50
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_ALLIANCE
+        potential = {
+            is_emperor_of_china = yes
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
 }
 
 request_to_join_trade_league = {
-	condition = {
-		tooltip = NOT_RELEVANT_TRADE_REGION_FROM
-		potential = {
-		}
-		allow = {
-			home_trade_node = {
-				trade_share = {
-					country = FROM
-					share = 1
-				}
-			}
-		}
-	}
+    condition = {
+        tooltip = NOT_RELEVANT_TRADE_REGION_FROM
+        potential = {
+        }
+        allow = {
+            home_trade_node = {
+                trade_share = {
+                    country = FROM
+                    share = 1
+                }
+            }
+        }
+    }
 }
 
 invite_to_trade_league = {
-	condition = {
-		tooltip = NOT_RELEVANT_TRADE_REGION
-		potential = {
-		}
-		allow = {
-			FROM = {
-				home_trade_node = {
-					trade_share = {
-						country = ROOT
-						share = 1
-					}
-				}
-			}
-		}
-	}
+    condition = {
+        tooltip = NOT_RELEVANT_TRADE_REGION
+        potential = {
+        }
+        allow = {
+            FROM = {
+                home_trade_node = {
+                    trade_share = {
+                        country = ROOT
+                        share = 1
+                    }
+                }
+            }
+        }
+    }
 }
 
 knowledge_sharing = {
-	condition = {
-		tooltip = CANNOT_KNOWLEDGE_SHARE_HISTORICAL_RIVAL
-		potential = {
-			OR = {
-				FROM = {
-					historical_rival_with = ROOT
-				}
-				historical_rival_with = FROM
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_RELIGION_CANT_KNOWLEDGE_SHARE_NOMAD_1
-		potential = {
-			technology_group = nomad_group
-			FROM = {
-				NOT = {
-					technology_group = nomad_group
-				}
-			}
-		}
-		allow = {
-			FROM = {
-				has_matching_religion = ROOT
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_RELIGION_CANT_KNOWLEDGE_SHARE_NOMAD_2
-		potential = {
-			NOT = {
-				technology_group = nomad_group
-			}
-			FROM = {
-				technology_group = nomad_group
-			}
-		}
-		allow = {
-			FROM = {
-				has_matching_religion = ROOT
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_WEST
-		potential = {
-			technology_group = western
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = western
-					technology_group = eastern
-					technology_group = nomad_group
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_EAST
-		potential = {
-			technology_group = eastern
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = western
-					technology_group = eastern
-					technology_group = ottoman
-					technology_group = muslim
-					technology_group = nomad_group
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_ANATOLIAN
-		potential = {
-			technology_group = ottoman
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = eastern
-					technology_group = ottoman
-					technology_group = muslim
-					technology_group = nomad_group
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_MUSLIM
-		potential = {
-			technology_group = muslim
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = eastern
-					technology_group = ottoman
-					technology_group = muslim
-					technology_group = indian
-					technology_group = east_african
-					technology_group = sub_saharan
-					technology_group = macaronesian
-					technology_group = nomad_group
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_INDIAN
-		potential = {
-			technology_group = indian
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = muslim
-					technology_group = indian
-					technology_group = east_african
-					technology_group = chinese
-					technology_group = nomad_group
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_EAST_AFRICAN
-		potential = {
-			technology_group = east_african
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = muslim
-					technology_group = indian
-					technology_group = east_african
-					technology_group = sub_saharan
-					technology_group = central_african
-					technology_group = nomad_group
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_WEST_AFRICAN
-		potential = {
-			technology_group = sub_saharan
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = muslim
-					technology_group = east_african
-					technology_group = sub_saharan
-					technology_group = central_african
-					technology_group = nomad_group
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_CENTRAL_AFRICAN
-		potential = {
-			technology_group = central_african
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = east_african
-					technology_group = sub_saharan
-					technology_group = central_african
-					technology_group = nomad_group
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_CHINESE
-		potential = {
-			technology_group = chinese
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = indian
-					technology_group = chinese
-					technology_group = nomad_group
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_AMERICAN
-		potential = {
-			OR = {
-				technology_group = north_american
-				technology_group = mesoamerican
-				technology_group = south_american
-				technology_group = andean
-				technology_group = caribbean
-				technology_group = nomad_group
-				technology_group = polynesian_tech
-			}
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = north_american
-					technology_group = mesoamerican
-					technology_group = south_american
-					technology_group = andean
-					technology_group = caribbean
-					technology_group = nomad_group
-					technology_group = polynesian_tech
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_MACARONESIAN
-		potential = {
-			technology_group = macaronesian
-		}
-		allow = {
-			FROM = {
-				OR = {
-					technology_group = muslim
-					technology_group = macaronesian
-					technology_group = nomad_group
-				}
-			}
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_FAVORS
-		potential = {
-			is_emperor_of_china = yes
-			FROM = {
-				NOT = {
-					is_subject_of = ROOT
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_KNOWLEDGE_SHARE_HISTORICAL_RIVAL
+        potential = {
+            OR = {
+                FROM = {
+                    historical_rival_with = ROOT
+                }
+                historical_rival_with = FROM
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_RELIGION_CANT_KNOWLEDGE_SHARE_NOMAD_1
+        potential = {
+            technology_group = nomad_group
+            FROM = {
+                NOT = {
+                    technology_group = nomad_group
+                }
+            }
+        }
+        allow = {
+            FROM = {
+                has_matching_religion = ROOT
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_RELIGION_CANT_KNOWLEDGE_SHARE_NOMAD_2
+        potential = {
+            NOT = {
+                technology_group = nomad_group
+            }
+            FROM = {
+                technology_group = nomad_group
+            }
+        }
+        allow = {
+            FROM = {
+                has_matching_religion = ROOT
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_WEST
+        potential = {
+            technology_group = western
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = western
+                    technology_group = eastern
+                    technology_group = nomad_group
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_EAST
+        potential = {
+            technology_group = eastern
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = western
+                    technology_group = eastern
+                    technology_group = ottoman
+                    technology_group = muslim
+                    technology_group = nomad_group
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_ANATOLIAN
+        potential = {
+            technology_group = ottoman
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = eastern
+                    technology_group = ottoman
+                    technology_group = muslim
+                    technology_group = nomad_group
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_MUSLIM
+        potential = {
+            technology_group = muslim
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = eastern
+                    technology_group = ottoman
+                    technology_group = muslim
+                    technology_group = indian
+                    technology_group = east_african
+                    technology_group = sub_saharan
+                    technology_group = macaronesian
+                    technology_group = nomad_group
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_INDIAN
+        potential = {
+            technology_group = indian
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = muslim
+                    technology_group = indian
+                    technology_group = east_african
+                    technology_group = chinese
+                    technology_group = nomad_group
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_EAST_AFRICAN
+        potential = {
+            technology_group = east_african
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = muslim
+                    technology_group = indian
+                    technology_group = east_african
+                    technology_group = sub_saharan
+                    technology_group = central_african
+                    technology_group = nomad_group
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_WEST_AFRICAN
+        potential = {
+            technology_group = sub_saharan
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = muslim
+                    technology_group = east_african
+                    technology_group = sub_saharan
+                    technology_group = central_african
+                    technology_group = nomad_group
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_CENTRAL_AFRICAN
+        potential = {
+            technology_group = central_african
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = east_african
+                    technology_group = sub_saharan
+                    technology_group = central_african
+                    technology_group = nomad_group
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_CHINESE
+        potential = {
+            technology_group = chinese
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = indian
+                    technology_group = chinese
+                    technology_group = nomad_group
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_AMERICAN
+        potential = {
+            OR = {
+                technology_group = north_american
+                technology_group = mesoamerican
+                technology_group = south_american
+                technology_group = andean
+                technology_group = caribbean
+                technology_group = nomad_group
+                technology_group = polynesian_tech
+            }
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = north_american
+                    technology_group = mesoamerican
+                    technology_group = south_american
+                    technology_group = andean
+                    technology_group = caribbean
+                    technology_group = nomad_group
+                    technology_group = polynesian_tech
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = NOT_SAME_TECH_GROUP_CANT_KNOWLEDGE_SHARE_MACARONESIAN
+        potential = {
+            technology_group = macaronesian
+        }
+        allow = {
+            FROM = {
+                OR = {
+                    technology_group = muslim
+                    technology_group = macaronesian
+                    technology_group = nomad_group
+                }
+            }
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_FAVORS
+        potential = {
+            is_emperor_of_china = yes
+            FROM = {
+                NOT = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
 }
 
 support_rebels = {
-	condition = {
-		tooltip = CANNOT_SUPPORT_REBELS_WITH_TEN_LOANS
-		potential = {
-			num_of_loans = 10
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_ALLIANCE
-		potential = {
-			is_emperor_of_china = yes
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
-		potential = {
-			FROM = {
-				home_trade_node = {
-					NOT = {
-						trade_range = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_SUPPORT_REBELS_WITH_TEN_LOANS
+        potential = {
+            num_of_loans = 10
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_ALLIANCE
+        potential = {
+            is_emperor_of_china = yes
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
+    condition = {
+        tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
+        potential = {
+            FROM = {
+                home_trade_node = {
+                    NOT = {
+                        trade_range = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 takeondebt = {
-	condition = {
-		tooltip = CANNOT_TAKE_ON_DEBT_WITH_TEN_LOANS
-		potential = {
-			num_of_loans = 10
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
-		potential = {
-			FROM = {
-				home_trade_node = {
-					NOT = {
-						trade_range = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_FAVORS
-		potential = {
-			is_emperor_of_china = yes
-			FROM = {
-				NOT = {
-					is_subject_of = ROOT
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_TAKE_ON_DEBT_WITH_TEN_LOANS
+        potential = {
+            num_of_loans = 10
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
+        potential = {
+            FROM = {
+                home_trade_node = {
+                    NOT = {
+                        trade_range = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_FAVORS
+        potential = {
+            is_emperor_of_china = yes
+            FROM = {
+                NOT = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
 }
 
 giftaction = {
-	condition = {
-		tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
-		potential = {
-			FROM = {
-				home_trade_node = {
-					NOT = {
-						trade_range = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_FAVORS
-		potential = {
-			is_emperor_of_china = yes
-			FROM = {
-				NOT = {
-					is_subject_of = ROOT
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
+        potential = {
+            FROM = {
+                home_trade_node = {
+                    NOT = {
+                        trade_range = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_FAVORS
+        potential = {
+            is_emperor_of_china = yes
+            FROM = {
+                NOT = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
 }
 
 warsubsidy = {
-	condition = {
-		tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
-		potential = {
-			FROM = {
-				home_trade_node = {
-					NOT = {
-						trade_range = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_FAVORS
-		potential = {
-			is_emperor_of_china = yes
-			FROM = {
-				NOT = {
-					is_subject_of = ROOT
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
+        potential = {
+            FROM = {
+                home_trade_node = {
+                    NOT = {
+                        trade_range = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_FAVORS
+        potential = {
+            is_emperor_of_china = yes
+            FROM = {
+                NOT = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
 }
 
 offerloan = {
-	condition = {
-		tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
-		potential = {
-			FROM = {
-				home_trade_node = {
-					NOT = {
-						trade_range = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_FAVORS
-		potential = {
-			is_emperor_of_china = yes
-			FROM = {
-				NOT = {
-					is_subject_of = ROOT
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
+        potential = {
+            FROM = {
+                home_trade_node = {
+                    NOT = {
+                        trade_range = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_FAVORS
+        potential = {
+            is_emperor_of_china = yes
+            FROM = {
+                NOT = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
 }
 
 support_independence_action = {
-	condition = {
-		tooltip = CANNOT_SUPPORT_INDEPENDENCE_LESS_LIB_DESIRE_THAN_50
-		potential = {
-			OR = {
-				AND = {
-					is_subject = yes
-					NOT = {
-						liberty_desire = 50
-					}
-				}
-				FROM = {
-					is_subject = yes
-					NOT = {
-						liberty_desire = 50
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_ALLIANCE
-		potential = {
-			OR = {
-				is_emperor_of_china = yes
-				FROM = {
-					is_emperor_of_china = yes
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_SUPPORT_INDEPENDENCE_LESS_LIB_DESIRE_THAN_50
+        potential = {
+            OR = {
+                AND = {
+                    is_subject = yes
+                    NOT = {
+                        liberty_desire = 50
+                    }
+                }
+                FROM = {
+                    is_subject = yes
+                    NOT = {
+                        liberty_desire = 50
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_ALLIANCE
+        potential = {
+            OR = {
+                is_emperor_of_china = yes
+                FROM = {
+                    is_emperor_of_china = yes
+                }
+            }
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
 }
 
 enforce_peace = {
-	condition = {
-		tooltip = EMPEROR_CHINA_FAVORS
-		potential = {
-			is_emperor_of_china = yes
-			FROM = {
-				NOT = {
-					is_subject_of = ROOT
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = CANNOT_ALLY_HISTORICAL_RIVAL
-		potential = {
-			OR = {
-				FROM = {
-					historical_rival_with = ROOT
-				}
-				historical_rival_with = FROM
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = EMPEROR_CHINA_FAVORS
+        potential = {
+            is_emperor_of_china = yes
+            FROM = {
+                NOT = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
+    condition = {
+        tooltip = CANNOT_ALLY_HISTORICAL_RIVAL
+        potential = {
+            OR = {
+                FROM = {
+                    historical_rival_with = ROOT
+                }
+                historical_rival_with = FROM
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 intervene_in_war = {
-	condition = {
-		tooltip = EMPEROR_CHINA_FAVORS
-		potential = {
-			is_emperor_of_china = yes
-			FROM = {
-				NOT = {
-					is_subject_of = ROOT
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = EMPEROR_CHINA_FAVORS
+        potential = {
+            is_emperor_of_china = yes
+            FROM = {
+                NOT = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
 }
 
 influence_nation = {
-	condition = {
-		tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
-		potential = {
-			FROM = {
-				home_trade_node = {
-					NOT = {
-						trade_range = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EMPEROR_CHINA_FAVORS
-		potential = {
-			is_emperor_of_china = yes
-			FROM = {
-				NOT = {
-					is_subject_of = ROOT
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_SEND_MONEY_TO_NATIONS_OUTSIDE_OF_YOUR_TRADE_RANGE
+        potential = {
+            FROM = {
+                home_trade_node = {
+                    NOT = {
+                        trade_range = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = EMPEROR_CHINA_FAVORS
+        potential = {
+            is_emperor_of_china = yes
+            FROM = {
+                NOT = {
+                    is_subject_of = ROOT
+                }
+            }
+        }
+        allow = {
+            has_global_flag = ipe_setting_disable_eoc_isolation
+        }
+    }
 }
 
 grant_freecity = {
-	condition = {
-		tooltip = CANNOT_GRANT_FREE_CITY_ITALIAN
-		potential = {
-			NOT = {
-				has_global_flag = italians_leave_hre
-			}
-			FROM = {
-				culture_group = latin
-				NOT = {
-					has_country_flag = reined_in_for_shadow_kingdom
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_GRANT_FREE_CITY_ITALIAN
+        potential = {
+            NOT = {
+                has_global_flag = italians_leave_hre
+            }
+            FROM = {
+                culture_group = latin
+                NOT = {
+                    has_country_flag = reined_in_for_shadow_kingdom
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 grant_electorate = {
-	condition = {
-		tooltip = CANNOT_GRANT_ELECTORATE_ITALIAN
-		potential = {
-			NOT = {
-				has_global_flag = italians_leave_hre
-			}
-			FROM = {
-				culture_group = latin
-				NOT = {
-					has_country_flag = reined_in_for_shadow_kingdom
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = CANNOT_GRANT_ELECTORATE_NOT_MONARCHY_THEOCRACY
-		potential = {
-			FROM = {
-				NOT = {
-					government = monarchy
-					government = theocracy
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_GRANT_ELECTORATE_ITALIAN
+        potential = {
+            NOT = {
+                has_global_flag = italians_leave_hre
+            }
+            FROM = {
+                culture_group = latin
+                NOT = {
+                    has_country_flag = reined_in_for_shadow_kingdom
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = CANNOT_GRANT_ELECTORATE_NOT_MONARCHY_THEOCRACY
+        potential = {
+            FROM = {
+                NOT = {
+                    government = monarchy
+                    government = theocracy
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 threaten_war = {
-	condition = {
-		tooltip = CANNOT_THREATEN_WAR_HRE
-		potential = {
-			is_part_of_hre = yes
-			FROM = {
-				is_part_of_hre = yes
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_THREATEN_WAR_HRE
+        potential = {
+            is_part_of_hre = yes
+            FROM = {
+                is_part_of_hre = yes
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 tributary_state_action = {
-	condition = {
-		tooltip = EMPEROR_WILL_NOT_TRIBUTARY
-		potential = {
-			is_emperor_of_china = yes
-			ai = yes
-			FROM = {
-				any_owned_province = {
-					OR = {
-						region = north_china_region
-						region = south_china_region
-						region = xinan_region
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EXPANSION_WILL_NOT_TRIBUTARY
-		potential = {
-			ai = yes
-			FROM = {
-				any_owned_province = {
-					OR = {
-						is_claim = ROOT
-						is_permanent_claim = ROOT
-						is_core = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = EMPEROR_WILL_NOT_TRIBUTARY
+        potential = {
+            is_emperor_of_china = yes
+            ai = yes
+            FROM = {
+                any_owned_province = {
+                    OR = {
+                        region = north_china_region
+                        region = south_china_region
+                        region = xinan_region
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = EXPANSION_WILL_NOT_TRIBUTARY
+        potential = {
+            ai = yes
+            FROM = {
+                any_owned_province = {
+                    OR = {
+                        is_claim = ROOT
+                        is_permanent_claim = ROOT
+                        is_core = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 ask_for_tributary_state_action = {
-	condition = {
-		tooltip = EMPEROR_WILL_NOT_TRIBUTARY
-		potential = {
-			FROM = {
-				is_emperor_of_china = yes
-			}
-			ai = yes
-			any_owned_province = {
-				OR = {
-					region = north_china_region
-					region = south_china_region
-					region = xinan_region
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
-	condition = {
-		tooltip = EXPANSION_WILL_NOT_TRIBUTARY
-		potential = {
-			ai = yes
-			any_owned_province = {
-				OR = {
-					is_core = FROM
-					is_permanent_claim = FROM
-					is_core = FROM
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = EMPEROR_WILL_NOT_TRIBUTARY
+        potential = {
+            FROM = {
+                is_emperor_of_china = yes
+            }
+            ai = yes
+            any_owned_province = {
+                OR = {
+                    region = north_china_region
+                    region = south_china_region
+                    region = xinan_region
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
+    condition = {
+        tooltip = EXPANSION_WILL_NOT_TRIBUTARY
+        potential = {
+            ai = yes
+            any_owned_province = {
+                OR = {
+                    is_core = FROM
+                    is_permanent_claim = FROM
+                    is_core = FROM
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 designate_march = {
-	condition = {
-		tooltip = CANNOT_ASK_FOR_MARCH_IS_MARCH
-		potential = {
-			is_march = yes
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_ASK_FOR_MARCH_IS_MARCH
+        potential = {
+            is_march = yes
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 ask_for_march = {
-	condition = {
-		tooltip = CANNOT_ASK_FOR_MARCH_IS_MARCH
-		potential = {
-			overlord = {
-				is_march = yes
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_ASK_FOR_MARCH_IS_MARCH
+        potential = {
+            overlord = {
+                is_march = yes
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 milaccess = {
-	condition = {
-		tooltip = CANNOT_ASK_FOR_MIL_ACCESS_SUBJECT_OF_RIVAL
-		potential = {
-			FROM = {
-				is_subject = yes
-				overlord = {
-					OR = {
-						historical_rival_with = ROOT
-						is_rival = ROOT
-					}
-					ROOT = {
-						OR = {
-							historical_rival_with = PREV
-							is_rival = PREV
-						}
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_ASK_FOR_MIL_ACCESS_SUBJECT_OF_RIVAL
+        potential = {
+            FROM = {
+                is_subject = yes
+                overlord = {
+                    OR = {
+                        historical_rival_with = ROOT
+                        is_rival = ROOT
+                    }
+                    ROOT = {
+                        OR = {
+                            historical_rival_with = PREV
+                            is_rival = PREV
+                        }
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 fleet_access = {
-	condition = {
-		tooltip = CANNOT_ASK_FOR_FLEET_ACCESS_SUBJECT_OF_RIVAL
-		potential = {
-			FROM = {
-				is_subject = yes
-				overlord = {
-					OR = {
-						historical_rival_with = ROOT
-						is_rival = ROOT
-					}
-					ROOT = {
-						OR = {
-							historical_rival_with = PREV
-							is_rival = PREV
-						}
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_ASK_FOR_FLEET_ACCESS_SUBJECT_OF_RIVAL
+        potential = {
+            FROM = {
+                is_subject = yes
+                overlord = {
+                    OR = {
+                        historical_rival_with = ROOT
+                        is_rival = ROOT
+                    }
+                    ROOT = {
+                        OR = {
+                            historical_rival_with = PREV
+                            is_rival = PREV
+                        }
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 offer_fleet_access = {
-	condition = {
-		tooltip = CANNOT_OFFER_FLEET_ACCESS_SUBJECT_OF_RIVAL
-		potential = {
-			is_subject = yes
-			overlord = {
-				OR = {
-					historical_rival_with = FROM
-					is_rival = FROM
-				}
-				FROM = {
-					OR = {
-						historical_rival_with = PREV
-						is_rival = PREV
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_OFFER_FLEET_ACCESS_SUBJECT_OF_RIVAL
+        potential = {
+            is_subject = yes
+            overlord = {
+                OR = {
+                    historical_rival_with = FROM
+                    is_rival = FROM
+                }
+                FROM = {
+                    OR = {
+                        historical_rival_with = PREV
+                        is_rival = PREV
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 offermilaccess = {
-	condition = {
-		tooltip = CANNOT_OFFER_MIL_ACCESS_SUBJECT_OF_RIVAL
-		potential = {
-			is_subject = yes
-			overlord = {
-				OR = {
-					historical_rival_with = FROM
-					is_rival = FROM
-				}
-				FROM = {
-					OR = {
-						historical_rival_with = PREV
-						is_rival = PREV
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_OFFER_MIL_ACCESS_SUBJECT_OF_RIVAL
+        potential = {
+            is_subject = yes
+            overlord = {
+                OR = {
+                    historical_rival_with = FROM
+                    is_rival = FROM
+                }
+                FROM = {
+                    OR = {
+                        historical_rival_with = PREV
+                        is_rival = PREV
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 insultaction = {
-	condition = {
-		tooltip = HRE_AI_DIPLOMATIC_INSULT
-		potential = {
-			is_part_of_hre = yes
-			ai = yes
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = HRE_AI_DIPLOMATIC_INSULT
+        potential = {
+            is_part_of_hre = yes
+            ai = yes
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 guaranteeaction = {
-	condition = {
-		tooltip = CANNOT_GUARANTEE_OUTSIDE_OF_TRADE_RANGE
-		potential = {
-			FROM = {
-				home_trade_node = {
-					NOT = {
-						trade_range = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_GUARANTEE_OUTSIDE_OF_TRADE_RANGE
+        potential = {
+            FROM = {
+                home_trade_node = {
+                    NOT = {
+                        trade_range = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 warningaction = {
-	condition = {
-		tooltip = CANNOT_GUARANTEE_OUTSIDE_OF_TRADE_RANGE
-		potential = {
-			FROM = {
-				home_trade_node = {
-					NOT = {
-						trade_range = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_GUARANTEE_OUTSIDE_OF_TRADE_RANGE
+        potential = {
+            FROM = {
+                home_trade_node = {
+                    NOT = {
+                        trade_range = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 tributary_state_action = {
-	condition = {
-		tooltip = CANNOT_GUARANTEE_OUTSIDE_OF_TRADE_RANGE
-		potential = {
-			FROM = {
-				home_trade_node = {
-					NOT = {
-						trade_range = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_GUARANTEE_OUTSIDE_OF_TRADE_RANGE
+        potential = {
+            FROM = {
+                home_trade_node = {
+                    NOT = {
+                        trade_range = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }
 
 ask_for_tributary_state_action = {
-	condition = {
-		tooltip = CANNOT_GUARANTEE_OUTSIDE_OF_TRADE_RANGE
-		potential = {
-			FROM = {
-				home_trade_node = {
-					NOT = {
-						trade_range = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			always = no
-		}
-	}
+    condition = {
+        tooltip = CANNOT_GUARANTEE_OUTSIDE_OF_TRADE_RANGE
+        potential = {
+            FROM = {
+                home_trade_node = {
+                    NOT = {
+                        trade_range = ROOT
+                    }
+                }
+            }
+        }
+        allow = {
+            always = no
+        }
+    }
 }

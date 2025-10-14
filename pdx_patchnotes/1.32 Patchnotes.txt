@@ -1,0 +1,1090 @@
+#############################################################
+######################## 1.32.2.0 ###########################
+#############################################################
+
+###################
+# Script
+###################
+# Achievements
+  - The achievement "Knights of the Caribbean" will now ask for the entirety of Sardinia.
+  - The achievement "One nation to rule them all" now correctly checks if your subjects are vassals.
+  - Fixed a script issue regarding the global unrest for the achievement "This is Fine".
+  - Fixed an issue which made the achievement "Fugger Banking" impossible.
+  - The achievement "Prestor John" can now be completed even after forming Aksum as Ethiopia.
+  
+# Decisions
+  - The decision "Build the Third Temple" will be now hidden if you have the event "The Third Temple" open.
+  - The Mamluks can no longer form Israel.
+  - Reforming Bulgaria will now update the mission tree.
+  - Forming Kurland now allows you to be Anglican or Hussite too.
+  - The "Form Italian Nation" decision will no longer tell you twice that you leave the HRE when you form Italy.
+  - Forming Somalia will now colonize the provinces Dawa and Ewaso Ngiro.
+  
+# Events
+  - Re-added the Institution message event. This changes everything...
+  - Added a goto button for the event "Growth of the business of <Province Name>".
+  - Added a goto button for the event "Stagnation and Drought in <Province Name>".
+  - Added a goto button for the event "Mysore Revolts!".
+  - Fixed issues related to the event "Where the Legend Begins".
+  - Fixed event target issues for the event "Pirate Stronghold in Angoche".
+  - The event "The Great Mosque of Djenné" now has a goto option.
+  - The event which end the "Decline of Mali" disaster now gives +100 ADM, +100 DIP and +100 MIL as the +1 Stability was most of the time not needed at this point anymore.
+  - The event "Isabella of Castille" now has a mean time to happen of 200 months instead of 1000 months.
+  - The explorer from the event "Unexpected Explorer" is now always a female explorer with 10 Tradition.
+  - Reformed events will now properly check that the country has the Reformed religion too, and not only the Fervor mechanic.
+  - Muslim School events will now properly check that the country has a Muslim religion too, and not only the School mechanic.
+  - Orthodox events will now properly check that the country has the Orthodox religion too, and not only the Patriach Authority mechanic.
+  
+# Ideas
+  - The Plains Native Ideas no longer conflict with the Southeastern Woodlands Ideas.
+  
+# Missions
+  - The mission "Gideon's Revolt" now checks if you actually own the provinces of Semien.
+  - The mission "Destroy Majapahit" now highlights the Surabaya area even if Majapahit is already dead.
+  - The Songhain mission "Develop Salt and Cloth" no longer has the awkward custom tooltip in the triggers.
+  - The modifier "Expansion into the Cape" from the mission "Expand Kilwa" now has a duration of 50 years instead of 30 years.
+  - The Kilwan mission "Expand Kilwa" can now be completed if the monument in Kilwa has tier 3 too.
+  - The Songhain mission "Reform the Army" no longer requests you to be ahead in military tech compared to all other countries in the western tech group.
+  - The Kongolese mission "Unite the Congo Tribes" now counts provinces owned by your subjects too and does no longer request you to have cores on them. This means creating colonies will no longer make the mission impossible.
+  - The progress for the mission "Temples of Stone" no longer gets reset if you switch your tag.
+  - The Dithmarscher mission "The Peasants' War" will now properly check for the victory of the Peasants' War.
+  - The Papal mission "New St. Peter's Basilica" now gives +2 Base Tax to Rome if the monument is already on Tier 3.
+  
+# Setup
+  - The province Zacatecas is now guaranteed to have gold.
+  - Bunyoro now starts with the Acholi culture as an accepted culture.
+  - The primary culture of Darfur is now Tunjur.
+  - Ogaadeen now has cores on the provinces Degehabur and Werder.
+  - The provinces Korofan, Medwa and Kobbe have now the Tunjur culture.
+  - The country Geledi has now cores on the Ajuuraan provinces Afgooye, Bardera and Gedo.
+  - Changed the name of the province Kosti to Waylula.
+  
+# Modifiers
+  - The modifier "The Third Temple is built" now gives normal missionary strength instead of missionary strength against Heretics.
+  - The modifier "Expansion into the Cape" from Kilwa's mission tree now also increases Global Settler Increase by +25.
+  - The modifier "Adalan-Ethiopian War" now gives +0.1 Monthly Piety instead +1. Also fixed the tooltip issue with it, showing the wrong number.
+  - The modifier "Prime Herding Rights" from the privilege now gives +25% Local Manpower Modifier instead of 100%.
+  - The modifier "Authority Asserted" now increases max absolutism instead of reducing it.
+  - Fixed an issue where the modifier "Hegemon of Southern Africa" affected the West African culture group instead of the Southern African culture group.
+  - The modifier "Hegemon of Southern Africa" now gives +33% Sailor Modifier instead of 0.33 Sailors.
+  
+# Other
+  - Added missing dynamic, Greek names for a few provinces.
+  - Removed the Razing Power Gain modifier from the Buryat Band merc company.
+  - The estates have now learned to check if you can build manufactories in the first place before giving you the task to build manufactories.
+  - The estate privilege "Embrace Singular Cult" will no longer add a stability when the regency dies.
+  - The Malbork Castle Monument now has its garrison size modifier in the correct global modifiers scope.
+  - The Great Walls of China Monument now has its garrison size modifier in the correct global modifiers scope.
+  - The Heddal Stave Church Monument now requires the owner to be Christian too in order to have access to its modifiers.
+  - The estate privilege "Religious Society" now also affects syncretic and harmonized religions.
+  
+###################
+# AI
+###################
+# Economy
+  - Improved AI powerspending priorities to primarily encourage lowering inflation and prioritize ideas higher.
+
+# War
+  - Improved AI for considering terrain for threat evaluation.
+  - Fixed so AI is less afraid or rebels and more afraid of non-rebels.
+  - The Ethopian AI will no longer move its capital while being at war.
+  
+###################
+# Bugfixes
+###################
+  - Fixed a CTD related to tooltip of core creation.
+  - Fixed a CTD related to mercenaries when using random new world.
+  - Fixed a CTD related to removing lifted FoW.
+  - Fixed a CTD related to increasing great project tier.
+  - Fixed exploit of concentrating development with the game paused.
+  - Fixed a bug where condottieri would not deal morale damage.
+  - Fixed issues with displaying the monthly piety modifier.
+  - Fixed a few wrong localizations for the provinces "Wadai", "Mayika", "Sulaimaniyah" as well as a localization issue with the country name "Karabakh".
+  - The opinion modifier of the Torah Aspect "Abrahamic Roots" no longer gets removed and re-applied periodically.
+  - Fixed a bug where [Trigger.name] freezes the game, if used inside a sub section (e.g. OR).
+  - Fixed issue with federation names when federation countries form federations.
+  - Culture and religion of colony changed correctly in TC region.
+  - Fixed bug where stated territorial cores would cost less governing capacity than unstated territorial cores.
+  - Fixed OOS related to variable_arithmetic_trigger.
+  - Fixed OOS related to army exploration mission.
+  - Fixed issue with navy size trigger not displaying properly.
+  - Forming a nation with different estates now removes the old estates' privilege modifiers from provinces.
+  - No longer possible to colonize provinces cut off from the capital instead of it being reported as a 20,000+ days travel time for the colonist.
+  - Fixed an issue being unable to recall a working merchant, also can now right click him on the outliner to cancel.
+  
+#############################################################
+######################## 1.32.1.0 ###########################
+#############################################################
+
+###################
+# Gamebalance
+###################
+# Governments
+  - The Shogunate can no longer switch their primary culture.
+
+# War & Peace
+  - Reduced AE gained from PU. Austria no longer gets coalition when enforcing PU with Bohemia.
+
+###################
+# Script
+###################
+# Achievements
+  - The achievement "Knights of the Caribbean" does no longer require you to stay as the Knights to complete it.
+  - The achievement "Surfing USA" can now be achieved if your country moves the capital to the new world and form the USA manually instead of using a former colonial nation to do so.
+
+# Decisions
+  - The decision "Build the Third Temple" now highlights Jerusalem if the conditions are not met to enact this decision.
+  - United Hawai can now see the "Form American Nation" decision if they have their capital in North or South America. This change is mostly made for the achievement.
+
+# Events
+  - The AI will now always choose +1 Stability from the event "The Kingdom Semien" and the Jewish provinces gain a hidden modifier for 25 years, which remove the religious unity contribution. This change was made in order to give players a bigger tine window to conquer these provinces before the AI converts them.
+  - The event "The Papal State" will no longer trigger for the united Holy Roman Empire.
+
+# Ideas
+  - The idea "Devoutness" from the Religious Ideas now gives +0.1 Monthly Piety, +0.5 Yearly Patriarch Authority, +0.1 Yearly Karma Decay, +1 Yearly Doom Reduction and +0.15 Yearly Authority (I doubt the last two modifiers will make a big difference though, but who knows.).
+  - The idea "Local Traditions" from the Humanist Ideas now increases Religious Harmonization Speed by +25%.
+
+# Missions
+  - The Ajuuraan mission "Hydraulic Expertise" can now be completed if you drop the Ajuuraan ideas.
+  - The Ethiopian mission "Unite the Horn" no longer requires you to have the province Fazughli colonized.
+  - The Kilwan mission "The Uncharted South" and the Mutapan mission "Uncover the South" have now an additional mission requirement in order to hinder the African AI to colonize the Cape frequently.
+
+# Modifiers
+  - Being over the Governing Capacity now decreases Tribal Development Growth (-100% at 100% over the capactiy).
+  - The modifier "Crushed Local Authority" from Court and Country now gives +20 Max Absolutism instead of -20.
+  - The modifier "Rome Reborn" now gives +1.5 more Prestige, 1 Diplomatic Upkeep, +0.25 Legitimacy, +1 Tolerance of the True Faith, +1% Global Missionary Strength and -25% Mercenary Cost.
+
+# Other
+  - The government reform "Tribal Confederacy" is no longer available for other tribes unless they start with it.
+  - Removed Hampi monument requirement for Hindu country with Buddha as personal cult, as it already has Dharmic religious groups as a requirement.
+  - Removed Ellora Caves monument requirement for Hindu country with Buddha as personal cult, as it already has Dharmic religious groups as a requirement.
+  - Changed Brandenburg Gate monument Tier 3 Militarization of State to 0.05.
+  - Changed Baiturrahman Grand Mosque Tier 3 Area Local unrest to -2.
+  - Added Global ship trade power and Prestige from naval battles modifiers to Cartagena de Indias monument.
+  - Added Devotion modifier to Malbork Castle monument.
+
+###################
+# Bugfixes
+###################
+  - Improved great project UI to show GPs that can be built if all criteria are fulfilled other than cost.
+  - Game will not crash when Mod is lacking icons for the unit tab. There will be entry in error.log instead.
+  - The achievement "KHAAAAAAN" is no longer locked behind starting as one of three formables, which don't even exist at the game start.
+  - The achievement "One nation to rule them all" does no longer require you to start as Saruhan as they don't exist in 1444.
+  - The achievement "Fugger Banking" has no longer a double negative check for the amount of provinces you own.
+  - The achievement "Where are the Penguins?" will no longer try to highlight provinces in Iberia.
+  - The estate rebel events of Mali's disaster now spawn as many rebels as the tooltip says.
+  - The event "The King of Kongo Converts!" now triggers properly for Kongo and not for anyone else.
+  - The event "Tribal Succession Crisis" will now give you an heir of your dynasty instead one of your consort's dynasty.
+  - Army Tradition will no longer decrease Tribal Development Growth.
+  - Unrest caused by seizing from the estates does no longer stack for 10 years after the land has been seized.
+  - Assam has now the proper Indian unit types instead of the Chinese units.
+  - The policy "Faith Advisors" now has a monthly piety bonus of +0.1 instead of +10.
+  - City of Prague vanished after taking province.
+  - Imperial City of Hue only gives 1/1.5% karma decay.
+  - Changed Fuerte del Morro monument Blockade force required modifier from country to provincial scope.
+  - Changed Cartagena de Indias monuemnt modifiers Blockade force required and Hostile fleet attrition from country to province scope.
+  - Fixed Malta Forts Hostile disembark speed modifier scope, so now it's provincial instead of global.
+  - Fixed bug of Kashi Vishwanath monument (changed 'Keep' trigger requirements to 'Can use' trigger).
+  - Repair ships mission will choose province with maximum repair speed when faced with a choice of several that are the same number of days away.
+  - Fixed crash when hovering over units integrated from a country with units in TI.
+  - FIxed crash for the Yearly Authority modifier.
+
+#############################################################
+######################### 1.32 ##############################
+#############################################################
+
+###################
+# Expansion Features
+###################
+  - Added a new mission tree for Mali.
+  - Added a new mission tree for Songhai.
+  - Added a new mission tree for Jolof.
+  - Added a new mission tree for the countries of the Mossi culture.
+  - Added a new mission tree for countries of the Hausa culture.
+  - Added a new mission tree for Oyo.
+  - Added a new mission tree for Kongo.
+  - Added a new mission tree for Ethiopia.
+  - Added a new mission tree for Adal.
+  - Added a new mission tree for Ajuuraan.
+  - Added a new mission tree for Kilwa.
+  - Added a new mission tree for Mutapa.
+  - Added Generic Missions for West Africa nations.
+  - Added Generic Missions for Central Africa nations.
+  - Added Generic Missions for Horn of Africa nations.
+  - Added Generic Missions for East Africa nations.
+  - Added mechanics and flavor events for Judaism.
+  - Added 11 new estate privileges (some generic, some specific for Songhai, Oyo, Ethiopia and Ajuuraan).
+  - Added 16 new sprites (in 4 levels) for African culture groups (Congo, Great Lakes, East Bantu, Southern Africa).
+  - Added 2 new missionary models (African Coptic, African Fetishist).
+  - Added 2 music packs of 10 minutes each (West Africa and East Africa).
+  - Added 3 new advisor portrait sets for Polynesian, Australian Aboriginal and South East Asian.
+
+###################
+# Free Features
+###################
+  - Added 9 new government reforms for African countries.
+  - Added 8 additional free estate privileges.
+  - Added 8 new formable countries (Israel, Aksumite Empire, Great Zimbabwe, Kitara, Kush, Nubia, Somalia and Rozwi).
+  - Reworked 3 already existing formable countries (Mossi, Hausa, Sokoto).
+  - Reworked 4 already existing countries as reformables (Mali, Macina, Kongo and Ethiopia).
+  - Added 1 spawnable country: Zulu.
+  - Added new sets of ideas for all the new formable countries (except for Rozwi), Jolof, Oyo, Adal, Kilwa, and generic for Horn of Africa countries.
+  - Added 52 new monuments for Leviathan DLC owners.
+
+###################
+# Performance
+###################
+  - Fixed a lot of the performance degradation introduced in Leviathan.
+  - Increased usage of the country's military access cache.
+  - Fabricate claims and claim states actions don't need to run through every province.
+  - Stopped "Create States" notification alert from causing significant performance issues.
+  - Improved macrobuilder performance when a gigantic nation.
+
+###################
+# Gamebalance
+###################
+# Economy
+  - Concentrate development: changed algorithm to convert dev stolen to monarch points in the pillaged province, then use those monarch points to buy dev at the capital so that after a point it won't buy you anything. 
+  - Fixed the "pillage state, release vassal, pillage it again" exploit.
+  - Now you know what trade goods are in tribal land so you can't keep migrating around in your land until gold shows up.
+
+# Governments
+  - Being over the Government Capacity now decreases the Tribal Development Growth (at 100% over capacity, the Tribal Development Growth is decreased by 100%).
+  - Increased the settlement costs through Tribal Development, making it cost now 50 ADM, 50 DIP and 50 MIL.
+  - Reforming into monarchies, theocracies or republics as a Totemistic horde will now swap your technology group with the North American tech instead of the Chinese tech. This also applies for Inti, Mayan, Nahuatla and Alcheringa countries, which will get their respective technology groups back.
+  - Tribal reform into Kingdom, Theocracy or Republic require Feudalism to be embraced.
+  - Tribal reform into the Horde requires Military Technology level 6.
+  - Reduced Native tribal development gain.
+  - HRE: Changed requirements for declaring Reichskrieg: development doesn't matter any more; can declare on countries with a neighbour country that is in the HRE not necessarily a neighbouring province.
+  - Institutions effect on tech cost is now based on tech level instead of time.
+  - Added a new government reform for the fith tier of the Native governments, which let the nation remain being a native instead of reforming into a monarchy or any other of the governments. This government is the default reform AI picks, making them a lot less likely to become a proper government.
+  - Reduced tribal development growth, the growth will be now reduced by current tribal development. 
+  - Replacing the government reform "Settle Down" will now cause a Stab Hit.
+  - The government reform "Settle Down" now reduces the Governing Capacity by 25%.
+  - The government reforms "Seasonal Travel" and "War Band" can only be selected if you own only 1 province (Tribal Land does not count).
+  - Militarists in power in Theocratic Open Public Elections do not cause elections.
+
+# Religion
+  - Bless Ruler now gives additional +10% Morale of Armies.
+  - Catholicism gives now +1% Missionary Strength against Heathens instead of -1 Tolerance of Heretics.
+  - Fetishist provinces no longer have +2% Local Missionary Strength as they were historically not easier to convert than other religions.
+  - Forgive Usury now gives -0.05 Yearly Corruption.
+  - Indulgence for Sin is now available for every kind of government, increasing Devotion, Horde Unity and Republican Tradition too. Additionally, it now gives +10% Improve Relations.
+  - Levy Church Tax for Catholics now gives additional -10% Building Cost.
+  - Proclaim Holy War now gives additional -5% Army Maintenance.
+  - Send Papal Legate now gives additional -10% Diplomatic Annexation Cost.
+  - Shintoism now gives +1 Tolerance for Heathens so they too have two modifiers.
+  - The relation penalty / benefit to Heretics during the Council of Trent has been halved.
+  - The reformation speed of the Protestant, Hussite and Reformed reformation center has been increased by 25% in order to balance the reformation in HRE out due to the removed Tolerance of Heretics penalty of the Catholics
+
+# Units
+  - Made it possible to turn Male consorts into generals.
+  - Tweaked disembark speed modifier usage so hostile_disembark_speed and movement_speed_onto_off_boat_modifier stack multiplicatively.
+
+# War & Peace
+  - Added feature to pillage capital to allow just malicious pillaging with no gain if what you're pillaging doesn't buy you anything at your capital.
+  - Infiltrate Administration applies to allies in War.
+  - Empire: HRE reform Geteilte Macht now prevents other HRE members from accumulating AE against the Emperor when they take non-HRE provinces.
+  - Nations released through peace treaty will be guaranteed by the winning peace treaty negotiator for the duration of their.
+  - Scaled back war score, AE and overextension to reflect the fact that there are many more provinces than there were when these things were first balanced. Allows taking slightly bigger chunks of land.
+  - Currying favours made slower if you're militarily weaker than the target.
+
+# Other
+  - Increased Kaaba's Prestige modifier.
+  - Increased Potosí's interest per annum.
+  - Ethiopia and Mali are now an Endgame Tags.
+  - Lucky Nations gain additional +25% Governing Capacity Modifier.
+  - The base Monthly Heir Claim has been reduced from 0.417 to 0.208 in order to make heirs with low and average claims more common.
+  - The diplomatic policy "Faith Advisors" now gives +0.5% Yearly Patriach Authority instead of +50.0% and +0.05 Yearly Karma Decay instead of +0.5 Yearly Karma Decay.
+  - The disaster "Crisis of the Ming Dynasty" is now much more lethal. It now cripples Ming's economy and increases the size of rebels spawned through the disaster.
+  - The modifier "Rome Reborn" from uniting the Holy Roman Empire now has all the modifiers the Emperor would have kept the the vassal swarm.
+  - The native building "Earthwork" now reduces Hostile Movement Speed by 25%.
+  - The native building "Fortified House" now only increases the Land Force Limit by 5 down from 10.
+  - The native building "Longhouse" now reduces the local Province Governing Cost by -25%.
+  - Changed the requirements for the Imperial City of Hue + changed the name of the Potomsi monument.
+  - Changed Jerusalem and Mecca max prestige to 0.5, as it was too easy for a muslim countries to stack +2 yearly prestige at max level coming from these two monuments.
+  - Dishonoring call to arms from defender of faith now a -15 trust loss.
+  - Chance of new countries being monarchies now depends on absolute number of institutions, not technology cost penalty.
+  - Corruption gained from lagging tech no longer discounts with tech cost penalty (but situation should be more managable with new system).
+  - Great Power score calculation changed accordingly to the changes in the Institutions.
+  - Immunity from instant (10:1) stack wipe now requires 2 institutions ahead of enemy (previously 80% less tech cost penalty).
+  - Maximum power storage is now based on tech cost penalty for the next tech level of given type.
+  - Rebels no longer reinforce slower in countries with tech cost penalties.
+  - Removed incorrect warning of losing monarch points when embracing institutions.
+  - Trade League no longer disallowed for being behind > 4 institutions.
+  - Forming Tibet while having Tibetan Ideas will no longer remove Tibetan ideas.
+  - Favors actions are way too harsh if you miss them. Stab hit now 0 and opinion lost is minimal and capped.
+  - Reduced migration cooldown
+  - Removed ability to pillage capital on behalf of your subjects.
+  - Subject type interaction fixes: can now rescind the upgrades for 100 ducats; fixed up script so that liberty desire isn't added as an effect; admin power taken from overlord, not subject.
+  - Added a Buddhism alternative for the Imperial City of Hue monument.
+  - Added +50% Monument cost when in Bankruptcy.
+  - Changed Forbidden City requirement to having Celestial Empire government reform.
+  - City of Khami religious requirement now works properly.
+  - Cologne Cathedral religious requirement now works properly.
+  - Heddal Stave Church religious requirement now works properly.
+  - Increased Monument manpower speeding up cost to 10K.
+  - Removed Alhambra requirements.
+  - Swapped Himeji Castle and Sankin Kotai Palaces requirements.
+  - Updated Culture requirements for all Monuments, so now it will always be required to have the same culture of the monument's province as a country's primary or accepted culture.
+  - Countries inside HRE don't get relations penalty with Emperor if he is a Hegemon.
+  - Player can now move monument from his subject's provinces to his own capital.
+  - The Monument Sun Temple in Konârak gives now -0.5% / -1% Prestige Decay instead of -50% / -100%. 
+
+###################
+# AI
+###################
+# Diplomacy
+  - Fixed bug where subsidies were being given far too much budget for no reason
+  - Possible to have AI nation subsidise your new nation by playing as a former colonial nation.
+
+# Economy
+  - Fixed bug where advisors were always budgeted for, even when not required
+  - Fixed AI budgeting of the forts
+  - AI no longer gives budget for corruption when it's at 0
+  - Made AI less interested in buildings without concrete value.
+  - Added a mechanism to recall AI colonists promoting settlement growth if there's no budget for it.
+  - Fixed AI countries with very low income and loans clinging on to forts they can't afford.
+  - AI can now protect trade if they do not have any warships.
+
+# War
+  - Made AI more likely to chase your armies.
+  - AI more competent at hunting down smaller armies.
+  - Better understanding of terrain effects on combat.
+  - Fixed AI exiled armies could stand idle instead of going to a province that would clear the exile.
+  - AI can now pick up and drop off troops in port.
+  - Fixed bugs preventing AI from completing troop transports and invasions.
+  - Made AI better at prioritizing between invasions.
+  - Made AI better at sticking to sieges.
+  - AI recruitment/disbanding issues - was disbanding regular troops before mercs.
+
+# Other
+  - AI for settling and adding tribal land added.
+  - Improved AI monarch point handling (tech).
+  - Optimized Add/Remove strategy.
+  - Added a few more modifiers for the AI to be more likely to take the Land Rights privileges.
+  - Further improved AI fort building so that incremental improvements can be made to upgrade forts and improve the forts mapmode.
+  - Toned down releasing of vassals from governing capacity. Now tolerates 50% over instead of 20% over, and won't release anything that gives way more of a reduction than it needs.
+  - Some AI changes to consider using reform progress or estate privileges to boost governing capacity before releasing vassals.
+  - AI can no longer take blessings assigned to a different religion.
+  - Improved the AI decision making for Orthodox events, so they will be more likely to get authority.
+  - Made AI less eager to select icons when at low Authority.
+
+###################
+# Interface
+###################
+# Country
+  - Subject details displayed properly on lower resolutions.
+  - Refusal to do favor actions is now defaulted to popup and pause to show you that you've done it.
+  - Allow seeing ¨Sue for peace¨ window without needing a free diplomat.
+  - Added Perpetual Diet location to HRE interface and mapmode.
+  - HRE member shields now have a blue outline if they support the latest reform.
+  - Added Centers of Trade page to the ledger.
+  - New Filtering option called War Allies added in the Ledger.
+  - Hovering over a shield of an non-existent nation on the cores list will now highlight all the cores that this nation still have.
+  - Added new institution icons to tech view. Changed description of institution spawn event.
+  - Add space for extra edict on the edicts list.
+  - Condottieri while at peace alert doesn't need to popup if the price I'm paying is 0 ducats anyway.
+  - Added an alert for when federation cohesion maxes out.
+
+# Icons/Art
+  - Added the flag for the Alcheringa rebels.
+  - Added new icon for Jewish mechanics.
+  - Added icon for "global_rebel_suppression_efficiency.
+  - Added new modifiers for "yearly_authority", "overlord_naval_forcelimit" and "all_estate_loyalty_equilibrium".
+  - Added new UI Gfx for the new cawa regiments.
+  - Added new icon for the institutions inside the great powers window.
+  - Fixed social buttons for lower resolutions.
+  - Fixed Sicily (SIC) and Two Sicilies (TTS) have mistakenly swapped flags.
+  - Added new different institution icons for the technology window.
+  - Added new alert icon for "Armies on missions too scared to engage Enemies".
+  - Added new icons for auto-improve relations in the outliner.
+  - Added new icon for "Convert consort to general".
+  - Added more "consistency" to the papacy dip bonus icon.
+  - Added new icons for disabled settlement growth.
+  - Added new icon for waiting human response in war window.
+  - Added new row to the edicts background.
+  - Added new message icons for favor actions.
+  - Added new icons for different cloud save states.
+  - Added exceptions to lower resolutions in the Subject statics window.
+  - Fixed great projects ledger background.
+  - Recolored "Absolute Reichstabilität" icon for better reading.
+  - Adjusted Hostile and maximize profit icons in the outliner.
+  - Added New siege iamges to polynesian cities.
+  - Added New alert icon for "Enemies sieging our provinces".
+  - Added new Icons for "move_capital_cost_modifier" and "local_gold_depletion_chance_modifier".
+  - Added new GFX for "Queen Nzingha Mbande of Ndongo and Matamba".
+
+# Mapmodes
+  - Included nations that support a subject's independence on the diplomatic map mode.
+  - Added stripes to provinces with separatism in unrest map mode.
+  - Changed Development mapmode to use median as the colour anchor.
+  - Modified the "Coalition" mapmode to be more useful. Reds = enough AE and low enough opinion to join coalition; Ambers = enough AE but not low enough opinion, so full Amber = improve opinion NOW; Greens = not enough AE to join a coalition.
+  - Improved development mapmode so that yellow is still the median but now green is maximum instead of median x 2.
+  - When hovering over rebel progress provinces affected are now highlighted. 
+  - Added Tribal Development to ledger and development mapmode.
+  - The Jewish religion has now a blue map color instead of the red it used to have.
+
+# Tooltips
+  - set_ruler effect shows the ruler's age.
+  - The tooltip for faith tolerance tells precisely what Tolerance does now.
+  - The tooltip of the banners has been adjusted and now mentions Jurchen culture and the Great Mongol State.
+  - The tooltip on disasters lists "possible" progress increasing factors so you know what to avoid.
+  - Fixed a missing tooltip for the demands of the Alcheringa rebels.
+  - Fixed non-translated tooltip in suppress rebels interface.
+  - Added a tooltip in outliner for kick players.
+  - Improved building tooltips.
+  - The army action tooltips have been tidied up.
+
+# Unitmodels
+  - Florence and Venice keep their unique units while dynamic color versions are given to minors with Tuscan and Venetian/Dalmatian cultures.
+  - French models from the Evangelical Union and Evangelical Majors unit packs no longer override Colonial French units in the Americas.
+  - Savoy keeps its unique units even if you change to Occitan culture in the mission trees.
+  - Tweaked some African country colors to fit the new unit models.
+  - Mothballed fleets now have an icon next to the location name so you can see mothballed fleets in a stack.
+  - Display a missionary model based on graphical culture AND religion.
+
+# Other
+  - Malay, Tai, and Mon-Khmer culture groups given southeastasiangfx primary graphical culture, and their original asiangfx has been relegated to their secondary graphical culture.
+  - Added a pop up for the first time you get an institution.
+  - Added sound to Hussite and Alcheringa conversion and religion tab as well as sound for claiming the Defender of Faith for Hussite.
+  - Don't set window to collidable at show if it is already collidable.
+  - Added option for showing region names for parts of your country in other regions (e.g. 'Swedish Kongo' instead of 'Sweden').
+  - Added "Your forts are under siege" alert.
+  - Added an alert if your armies doing Rebel Suppression or Carpet Siegeing do not dare to engage Rebels.
+  - Added a chat message from the system when a player is kicked.
+  - Outliner: Added little Icon to show what Auto-improve relations task a diplomat is on.
+  - Outliner: Added subject revolt progress in Outliner and Alert bar.
+  - Added keyboard shortcuts to some often-used buttons.
+  - Macrobuilder: Show Military Tech for each Mercenary Company on hiring list.
+  - MP: added Mod and Version filter.
+  - Trade favours for trust is now just auto-accepted.
+  - Don't show claim shield if it's a core. The claim still being there is valid, but it just adds clutter.
+  - The UI was just doing its own thing, not using any of the combatant's engaged ships data. Also took the opportunity to add some sanity to the inland sea/coastal sea/open sea types and make sure it was accounted for when assessing naval strength.
+
+###################
+# Usermodding
+###################
+# Commands
+  - Console command ai can now be used to enable single country's AI again.
+
+# Effects
+  - Added removed_effect for subject type upgrades.
+  - Define ruler/heir to general supports traits.
+  - Added add_favors effect { who = <tag> amount = <tag> }.
+  - Added add_great_project { type = <tag> } can now use instant = yes/no; move_great_project added { type = <tag> province = <id> instant = yes/no }; destroy_great_project added { type = <tag> }.
+  - Added female = yes/no to the create leader effects (instead of using negative tradition).
+  - Added set_defender_of_the_faith and remove_defender_of_the_faith (both can take a who = <tag> and religion = <tag>).
+  - Added define_consort country_of_origin works with tags and scopes.
+  - Fixed add to war effect not working when trying to add your overlord to a war.
+  - Added set_emperor = yes/no on current scope. yes sets it, no clears the emperor.
+  - Added change_national_focus = ADM/DIP/MIL/none; changes the national focus for the country to either of these 4.
+  - Added cawa_infantry = <country_scope>; adds a cawa infantry in the province for country scope.
+
+# Modifiers
+  - Added global_rebel_suppression_efficiency - a modifier, which increases the efficiency of unrest reduced by the presence of a unit in a province or in an area if the "Manage Autonomous Rebel Suppression" is used.
+  - Added cawa_cost_modifier - a modifier, which increases/decreases the mil power cost of conscripting Cawa regiments.
+  - Added monthly_gold_inflation_modifier - allows to change the amount of inflation generated by gold mining. 
+  - Added gold_depletion_chance_modifier - allows to change gold depletion chance for a province.
+  - Added global_monthly_devastation -  increases or decreases the devastation of all owned provinces.
+  - Added global_prosperity_growth - increases the prosperity of the country.
+  - Added local_prosperity_growth - increases the prosperity of the province's area.
+  - Added monthly_favor_modifier - increased amount of favour gained by the country.
+  - Added tolerance_of_heretics_capacity - increases the maximum amount of tolerance you can have for heretics. 
+  - Added tolerance_of_heathens_capacity - increases the maximum amount of tolerance you can have for heathens.
+  - Added move_capital_cost_modifier - reduces the amount of admin power needed to move the capital in %.
+  - Can now use movement_speed_in_fleet_modifier as a country global modifer.
+  - Added yearly_authority - allows to affect amount of yearly authority gained. 
+  - Added overlord_naval_forcelimit - extra force limit that goes to your overlord.
+  - Added all_estate_loyalty_equilibrium - loyatly equilibrium applied to all estates.
+
+# Triggers
+  - For custom_trigger_tooltip text, you can now add [Trigger.trigger_name] and it will replace it with the value in that trigger. Only works for simple triggers and there may well be cases where it's not implemented.
+  - Added num_of_cawa which returns true if the country scope has at least x cawa troops.
+  - Country Trigger Scope: has_cultural_union = yes/no.
+  - Added current_war_losses trigger { who_with = <Tag>[optional] type = infantry/artillery/cavalry/heavy_ship/light_ship/transport/galley/men/ships/all[optional] cause = attrition/battle/capture[optional] amount = <number> }.
+  - can_have_colonial_nations has province ID in the scope too.
+  - on_mercenary_recruited can distinguish of what kind of merc has been recruited; ROOT is set to the usit id, and new trigger mercenary_company can be used to match to a merc company tag.
+
+# Other
+  - Idea descriptions can have custom localizations.
+  - can_change_primary_culture added to government reforms.
+  - province_triggered_modifiers now uses on_activation and on_deactivation correctly.
+  - can_be_established removed from subject_types files as it didn't do anything.
+  - Added '&' to localisation system. & will act like % but won't multiply the value by 100.
+  - Include .map files when uploading mod to Steam.
+  - "supported_version" now requires at least 2 version numbers (e.g. 1.10 or 1.10.*).
+  - Added CLEAR_PROVINCE_VARIABLES_ON_CLEAR_OWNER, CLEAR_PROVINCE_FLAGS_ON_CLEAR_OWNER and CLEAR_PROVINCE_SAVED_NAMES_ON_CLEAR_OWNER so modders can choose whether or not province variables/flags/saved names get cleared when a province loses its owner (old modder request from 2018).
+  - Added a "on_force_conversion" on_action.
+  - Added defines CAWA_STARTING_STRENGTH and CAWA_STARTING_MORALE
+  - Fixed limit on number of electors
+
+###################
+# Script
+###################
+# Achievements
+  - The Achievement "No Trail of Tears" can now be achieved even after forming a federation.
+  - Added 16 new achievements.
+
+# Decisions
+  - Sokoto is now easier to form and does no longer require an event if you form them as Hausa.
+  - The decision "Embrace Islam" can only be taken if the country is free or a tributary.
+  - Canada can now be formed by Quebec, Alaska and Cascadia.
+  - The USA can now be formed by Texas, Florida, California, Alaska, Louisiana, Illinois and Vermont.
+
+# Events
+  - Added an AI chance for upgrading their monument.
+  - The Imperial Reconquest and the Reintegration peace treaty give now proper amount of prestige.
+  - Added a new, special casus belli for the Emperor in the Switzerland incident, which allows the Emperor to force Switzerland back into the Empire with no warscore issue.
+  - Added a tooltip for the third option of the event "The Emperor Demands the Lowlands" which subjects gain their independence.
+  - Coptic events do no longer trigger for Zoroastrian countries.
+  - France now considers the strength of the Emperor and its subjects before suiciding themselves in the Burgundian Inheritance Incident.
+  - The Portugese event "The Tower of Belem" will now charge 250 Ducats, but will now upgrade the Monument "Belem Tower" by one level. The event behaves as usual when Leviathan is not enabled.
+  - The Slave Entrepot event will not fire for a country which abolished slavery or has the reform "War Against the World Doctrine".
+  - The amount of rebels spawned by events "Deteriorating Relations with Clergy" and "Deteriorating Relations with the Nobility" will now consider twice the amount of your owned provinces.
+  - The event "Convert Hagia Sophia into a Mosque" will now set the level of Hagia Sophia to level 2 instead (no effect if it is level 2 or higher already). However, the cost has been increased to 0.5 Years Worth of Income if Leviathan is enabled.
+  - The event "Estate's Leadership Challenged" has now 1 year of cooldown before its intervals.
+  - The event "Machu Picchu" will now set the level of Machu Picchu to level 2 instead of upgrading it (no effect if it is level 2 or higher already).
+  - The event "More Repairs for the Great Wall" will now set the level of The Great Wall of China to level 2 (no effect if it is level 2 or higher already). Additionally, it will now apply +15% Locale Defensiveness for 50 years.
+  - The event "Repairing the Great Wall" will now grant +15% Locale Defensiveness for 50 years to the province Ningxia and convert the culture to Xibei.
+  - The event "The Alhambra Decree" will now grant you -25% Great Project Upgrade Cost if you decide against expelling the minorities.
+  - The event "The Commissioning of Versailles" will now set the level of Versailles to level 2 instead of upgrading it (no effect if it is level 2 or higher already).
+  - The event "The Commissioning of the Saint Peter's Basilica" will now set the level of Saint Peter's Basilica to level 1 instead of upgrading it (no effect if it is level 1 or higher already).
+  - The event "The Tower of Belem" will now set the level of the Tower of Belem to level 1 (no effect if it is level 1 or higher already). Additionally, it will also apply the permanent modifier, which grants +25% Locale Defensiveness.
+  - The event "Two of a Kind" triggers now only once per advisor category per consort life.
+  - The event "Damarwulan's Victory" now correctly checks if Damarwulan has been involved in the battles.
+  - Your armies will no longer sack your own cities. Took a while to teach them some manners.
+  - Adjusted the localization of the Privilege Revoked events so it covers HRE empresses too.
+  - lubeck_trade_power is now global event target. This change has been done in order to avoid awkward situations where the country, which should be embargoed, has no name.
+  - Heavily lowered the MTTH of the Beatification of Joan of Arc event for Orleans players.
+  - Swapped the Dhimmi loyalty effect for the options of the event "Popular Religion".
+
+# Ideas
+  - Forming a federation will no longer swap your ideas if you already have the ideas of the tag you are forming into.
+
+# Missions
+  - The English mission "Subjugate France" now gives +1/+1/+1 AMD/DIP/MIL stats to Henry VI if he has an heir, has subjugated France and is still alive.
+  - The Korean mission "Freedom from Factional Strife" will now always remove the modifier "Factional Upheaval".
+  - The Scottish mission "Central Belt Coal Mining" now gives +6 Base Production instead of +6 Base Tax to Ayshire.
+  - Added flag "war_of_the_roses_ended" to events war_of_the_roses.101, war_of_the_roses.102 and war_of_the_roses.106 so that they allow to trigger the mission finishing the War of the Roses as it should.
+
+# Setup
+  - Dai Viet's starting ruler is now a proper consort regent instead of a regency council. This change will allow Dai Viet to declare wars now without having to wait for their heir to grow up.
+  - Added "City of Four Hundred and One Deities", a new triggered province modifier, to the province Ife.
+  - Added the Tunjur culture for the provinces Waddai and Al-Junaynah.
+  - Adjusted the setup of West Africa.
+  - Arendaronon and Pekuakamiulnuatsh do no longer have the Arctic climate.
+  - Changed the Climate and the Terrain of some provinces of the Horn of Africa.
+  - One of the Noquet provinces has been renamed into La Pointe.
+  - Zara Yakob of Ethiopia starts now with the Just personality instead of the Zealot personality.
+  - Added a historical capital to Kilwa for consistency sake.
+  - Kilwa now starts as a monarchy with the Eastern Plutocracy.
+  - Increased the starting development of Adal to give them a better fighting chance against Ethiopia.
+  - Added cores for Segu for a few provinces at game start.
+
+# Other
+  - The greek names of the Turkish provinces are now dynamic instead of being locked behind Byzantium's mission tree.
+  - Fixed an issue, which made the usage of the Feudal Theocracy unusable if you switch from Muslim to Zoroastrian.
+  - Added and fixed ruler and consort names for the different governments.
+  - Added more flavor names to the estates.
+  - Added more flavor names to the parliaments.
+  - Added the missing Alcheringa rebels.
+  - All Modify Subject Relationship will now consider the admin power of the overlord instead of the subject as it is not very player friendly to have to wait for your subject to accumulate admin power.
+  - Propagate Religion after finishing the mission "The Porch of Mecca" can now target Muslim, Christian and Jewish provinces.
+  - The Subject Relationship "Increase Religious Control" will now motivate the colony to use their missionary to convert their provinces.
+  - The province Weskarini will now named "Wright's Town" instead of "Hull" if a country with English as primary culture holds it.
+  - Renamed the sea region "West African Coast" to "West African Sea".
+  - The institution spread bonus from Innovativeness for Industrialization has been nerfed from 2 to 1.
+  - Update country units when changing primary culture.
+
+###################
+# Bugfixes
+###################
+  - AI can't use annul treaties on nation about to be a subject again during independence war.
+  - AI will send a colonist to speed up the colonizing process of colonies that don't currently have one.
+  - After PU'ing someone at war, nothing happens although peace deal said that you will join the war incorrectly. You'll only join the war if they're the defender. Fixed that text.
+  - After becoming Emperor of China, changing tag doesn't reset the reforms.
+  - Ajam mission wasn't completed after scornfully insulting Timurids, but it is now.
+  - Ally doesn't count another ally's diplomatic reputation and favours for offensive war.
+  - Army can train on subjects' land.
+  - Break Alliance calculation does now includes Great Power subject's casus belli.
+  - Can no longer raid your own coast even if it's occupied by someone else.
+  - Changed AI Acceptance for Cede Province treaty so that if it will make them go over governing capacity they won't choose it.
+  - Colony no longer keeps switching between revolutionary and crown colony; colonies can't embrace the revolution any more.
+  - Countries with harem now fulfill 'government = monarchy' trigger.
+  - Custom Setup Random Values for Development don't give only 1, 1, 1 Provinces after reloading front end any more.
+  - Dai Viet Defy Ming mission no longer wrongly checks if the player's country is a vassal or a march instead of Yue.
+  - Defender of the Faith shown in dialog as being called into war but isn't.
+  - Diplomatic and Divine policy 'Faith Advisors' show correct tooltips.
+  - Disbanding special units with Army Professionalism over 60% can't be used to get manpower.
+  - Discounted advisor's hire cost no longer lower than it should be.
+  - Drilling now works on actual troop levels rather than regiments so you can't get loads of professionalism from drilling empty regiments.
+  - Electors' support for the Imperial Reforms is now shown even after proclaiming Erbkaisertum.
+  - Fixed Farsi ruler's name + Bohemia, added better tooltips so you can see who's got an interregnum or regent.
+  - Fixed attached army on an auto transport mission disappearing if unit it's attached to boards a navy on a different transport mission.
+  - Fixed being unable to change the path of a unit when currently moving to a fort you don't have access to.
+  - Fixed separatists enforcing their demands sometimes losing out on occupied provinces not connected to their target country's capital.
+  - Great Powers can't use Influence when they have loans.
+  - Helped AI collect their and their allies' units together to coordinate attacks.
+  - Hordes don't get non-flat terrain penalties while attacking in savanna.
+  - If being annexed the dip power tooltip no longer looks as if you're annexing yourself.
+  - If you're not eligible for being Emperor, voting tooltips now say why.
+  - Insults and scornful insults don't stack power projection.
+  - It is no longer possible to negotiate with subject's rebels through the shields on the province view.
+  - It is no longer possible to support heir to throne of player's personal union partner.
+  - Knowledge sharing dialog no longer always says it's accepted.
+  - Loading from front end didn't initialise governing capacity; loading from in game did. Now both do.
+  - Made sure that great peasants' war variable is stored regardless of value.
+  - Making Client State into a Client March doesn't raise liberty desire.
+  - Maya doesn't get released as part of nation-collapso when doing religious reforms.
+  - Mulsim theocracies can't use Aristocratic ideas any more.
+  - Protect Trade mission doesn't cancel with no explanation.
+  - Refresh Rate and resolution no longer changeable in-game when they shouldn't be.
+  - Releasing a colony now cancels any subsidies you'd given it.
+  - Republican Tradition doesn't grow during dictatorship.
+  - Stopped AI buying useless overseas provinces that aren't upstream of its trade nodes.
+  - Stopped multiple nations getting 'New Guru' event at the same time.
+  - Stopped the AI moving monuments to provinces that can't use them.
+  - Subjects of Subjects no longer hate you if you're a Hegemon.
+  - Syncretic Religion button works properly when you don't border someone from start, becoming active when you can choose one.
+  - Vassal armies which were in overlord's Terra Incognita are no longer stuck when vassal is annexed.
+  - Vassalising countries in wars will make them join your wars and quit their own even if you're already at war with the same countries.
+  - War of Roses won't fire with Tudors on the throne after historical start.
+  - When ruler's death triggers Personal Union the ruler no longer remains a general.
+  - annexed nations don't retain their corruption.
+  - Can change control of a province from PU's colony as well as your own.
+  - Can no longer select provinces in peace treaty that can't be cored.
+  - Can't spawn historical nations in random nations setup by pressing enter on the ironman screen any more.
+  - Can't use threaten war to bypass invalid CB.
+  - Colonies have their religion and culture converted by colonists if the colonists outnumber the natives; or in the new world always, and in the old world if trade companies don't exist (Dharma/WoN). It's all now in script under on_colonist_boosting_colony.
+  - Fixed issues with Siamese Revolution disaster's tooltips.
+  - Message from unknown nation now won't let you click on the shield as it does nothing.
+  - Negative goods produced efficiency can't go below -100%.
+  - Prevent selecting provinces in a peace treaty that aren't corable.
+  - Removed canal decisions, they're superseded by the great project alert.
+  - Support rebels cost now reported correctly, also allows you to support rebels who would have a chance of revolting only with your help but wouldn't do otherwise.
+  - When declaring war on a subject, UI shows overlord's other subjects are called in.
+  - Fixed a scope issue for AI likeliness of building courthouses and town halls.
+  - Fixed duplicate localizations and removed the pesky ^ from some German localizations.
+  - Fixed save being loaded after restart if game was started via resume from launcher.
+  - Fixed some province adjective IDs for French, German and Spanish localization so they can be seen in the game now.
+  - Subject devotion and legitimacy displayed correctly on lower resolutions.
+  - "Attach to a fleet" button is no longer greyed out when trying to use our ally's ship that has "allow allies on board" selected.
+  - "Incompatible saved games" text no longer overlaps with top save when starting from save in SP.
+  - "Innovation from Ideas" notification now has an "about to expire" notification.
+  - "Intervene in war" alert shows up even if you don't have a free diplomat.
+  - "On Monarch Death" tooltip shows correct dynasty if married to a country led by a consort regency.
+  - "Special Interest" countries were poorly selected in some circumstances.
+  - "The Pioneer Policy" policy land reveal ability works upon establishing a colony instead of colonist arrival.
+  - "go_to" in messages no longer refers to wrong interface.
+  - Prestige -100 displayed correctly on the UI.
+  - 100% Artillery mercs are now possible to script.
+  - A Large City: Golden era tracking number shows the correct progress numbers now (x/30 instead of x+2/32).
+  - Added country modifier for "Unlawful Imperial Territory" in Government tab.
+  - Added info about the number of favours you owe other countries to Diplomatic Feedback flavours slider.
+  - Added info on average autonomy and average home autonomy to development tooltip in economy view.
+  - Added text for sitting_in_my_tribal_land_opinion and sitting_in_my_friends_tribal_land_opinion modifiers.
+  - Added tooltip explanation of the percentage in the support rebels dialog.
+  - Adding a map mode to map mode quick bar and selecting a different hotkey no longer reverts previous map to first map on list.
+  - Armies no longer stop before reaching enemy forts.
+  - Army travel time is now correctly displayed.
+  - Assaulting fort siege option no longer divides damage taken by attacking regiments to a whole army.
+  - At start date, for unscripted personalities, 3rd personality is now selected instead of waiting for the next monthly tick if ruler in place for more than 25 years already.
+  - Attacking army casualties are no longer covered by the army UI.
+  - Attrition losses in home territory are now counted in the war screen.
+  - Battles Results now Chronological on first opening (Warscore Overview).
+  - Blocked renew influence popup when there are no diplomats to enable you to do it.
+  - Bonus for members of the same Culture as the Leader no longer applies to negative values.
+  - Bonuses to manpower are now applied correctly.
+  - Borgia Pope can no longer be "incorruptible".
+  - Building cost no longer differs between map and macro builder for a colony...
+  - Call to Arms asking ally to purge heresy of own religion is not going to happen.
+  - Call to arms through the diplomacy tab now costs favors.
+  - Can Detach Siege when you have 1000 more units than needed (was a > needed to be a >=).
+  - Can no longer GP Intervene against my ally with CtA open.
+  - Can no longer form a Personal Union between Shia & Coptic nations.
+  - Can no longer send multiple merchants to same node via the trade node interface.
+  - Can no longer voluntarily black flag yourself using military access and abusing Fort ZOC rules.
+  - Can view/edit monument build/upgrade progress after a tag change.
+  - Cavalry to Infantry ratio calculated for each country in the battle.
+  - Central Doab Center of Trade Modifier Icon is no longer overlapped by Center of Trade.
+  - Christiaan Huygens is now a Natural Scientist.
+  - Claim fabrication no longer results in display of a misleading text.
+  - Clicking "Exit" in tutorial interface no longer minimizes the interface.
+  - Closed select buildings view if we change provinces.
+  - Co-belligerent war ally now calls to arms his overlord.
+  - Cobelligerent allies not always showing quite the correct reasons for war acceptance/rejection is fixed.
+  - Colonial nation changes colour on tag switch of overlord.
+  - Control of besieged province no longer given to overlord who is not in the same war as the siege winner.
+  - Converting religion removes Brahmins modifier "Guaranteed Brahmin Autonomy" from provinces.
+  - Coring Cost reduction from temporary claims is now applied when upgrading Territorial Core to Full Core.
+  - Correct tooltip on HRE interface when a country is backing themselves.
+  - Countries belonging to religions that cannot get PUs do not take dynasties from RM countries either.
+  - Countries no longer release Historical Rivals as vassals.
+  - Country Economy view, War Reparations are now included in Total Expenses.
+  - Crash fixes for missing GUI elements in unit reorder view.
+  - Cristobal Columbus name display error fixed.
+  - Crush Peasantry cb no longer allows the Emperor to enforce Peasant Rule on peasant republics.
+  - Culture change tooltips now have info on who will be angered.
+  - Custom Nation can no longer be present in the game with the "Nations" option set to Historical Setup.
+  - Custom country rulers and heirs can no longer have the name "No Heir" if unset at the start.
+  - Custom nation Theocracy cannot have custom heir.
+  - Custom nation ideas use their customized description.
+  - Custom nation monarchs match user-set culture/religion.
+  - Custom nations unit sprites are of correct culture.
+  - Date when edict can be changed or removed is displayed.
+  - Decision to form Aotearoa is no longer present after forming said country.
+  - Declaring an independence war reduces stability but now warns you about it first.
+  - Declaring on colonies as a tributary state no longer calls their overlords even if my capital is in the new world.
+  - Defenders desert siege status displays correct value.
+  - Defensive call to arms from HRE emperor gives favors.
+  - Demand Unlawful Territory is now sent to the overlord of a country which gained a non-core imperial province.
+  - Demanding "cede colonial region" that wipes out the main defender then cede provinces from other defenders now works properly.
+  - Dhimmi Building Restrictions modifier is removed after removal of Dhimmi estate.
+  - Disabled native spawning for all tribal nations.
+  - Disloyal colonies no longer help in wars by transferring manpower to overlord.
+  - Dutch Colombia can declare Conquest war on natives; the Start War in Colony subject action now recognizes that as a Casus Belli.
+  - Edicts turned off for Natives.
+  - Enforcing Protestant Faith on to the HRE results in Protestant Emperor.
+  - Enforcing a union on a rival gives Power Projection.
+  - Enforcing religion on subject country now wipes out rebels of that religion in that subject.
+  - Estate statutory rights privilege shows lower autonomy in provinces as soon as it happens instead of after monthly tic.
+  - Event culture_religion_events.15 has a go to function.
+  - Event trade_policy_event.1 has a go to function.
+  - Events increasing province development no longer briefly change development needed to unlock next building slot.
+  - Expected arrival date for fleets corrected.
+  - Federation advancedment "United Warbands" can no longer be used by federation member to force federation to attack its leader.
+  - Fixed "Large Nation in Empire" modifier for exactly 200 development.
+  - Fixed AI calculation of how hard a rebel army is to beat.
+  - Fixed Burgundy succession tooltip wrong color.
+  - Fixed Governing capacity in province and state view.
+  - Fixed Iberian wedding cancelling PU mid-independence war.
+  - Fixed Production tutorial.
+  - Fixed a CTD when clicking the trade company investments alert.
+  - Fixed a bug which prevented Pattani to get full access to Pirate missions after accepting the event "The Lin Daoqian Band".
+  - Fixed a bug which prevented Potosi from being upgraded in the Spanish mission "Potosi Silver".
+  - Fixed annexation cost for province of a Tribal Vassal.
+  - Fixed another instance of Shift + add money not quite working in peace deal, when you have less than 100% war score.
+  - Fixed apply_sprite_pack effect not persisting in savegames.
+  - Fixed client side crash on joining multiplayer game on Linux.
+  - Fixed crash at specific point in Ottoman save.
+  - Fixed crash playing random new world.
+  - Fixed crash when tooltipping siege in outliner.
+  - Fixed cultural reason tooltip for not joining a federation.
+  - Fixed inconsistency in native institutions behaviour.
+  - Fixed incorrect usage of any_neighbor_province in script for native_land_tradition_reform.
+  - Fixed ingame lobby playerlist kick button overlap.
+  - Fixed issue with fort level modifier not taking into account extra fort levels from modifiers.
+  - Fixed message filter defaults for neighbours, enemies.
+  - Fixed monopoly extension tooltip.
+  - Fixed move capital effect in the event "The Completion of Borobudur".
+  - Fixed native tribes in NA getting too much reform progress.
+  - Fixed ships on naval missions getting beat, going to port to repair then leaping straight back out again into another battle.
+  - Fixed some missing localizations for some culture group assamilizations.
+  - Fixed some modifiers displaying without the correct DLC.
+  - Fixed some province history typos.
+  - Fixed text missing with CB war "revendicate throne" + the future PU is at war with something.
+  - Fixed the "can't change unit route when going to a fort" bug.
+  - Fixed the Central Algonquian calg_teaching_scrolls idea.
+  - Fixed tooltip for Captivate the Terra Firma.
+  - Fixed tooltips that displayed incorrect end date of religion conversion and duplicated messages about coring a province.
+  - Fixed using return core on vassals.
+  - Fixed wrong message in cancel mission dialog.
+  - Fixed yearly opinion change tooltip when you have Enemy of my Enemy.
+  - Fleets split from larger fleets inherit Mission Settings.
+  - Forming new tag during summon the diet no longer blocks summon the diet mechanic.
+  - Freeze after pasting multi-line text twice in the input field on Game Browser screen fixed.
+  - Game doesn't crash after using command "reload countryreligionview.gui" twice.
+  - Game forces capital to remain inside the HRE if a HRE member if possible.
+  - Gamma and reflection settings properly reverted when leaving the options menu.
+  - Gamma is disabled as an option when it does nothing.
+  - Give Subsidies dialog shows correct opinion change for large amounts of money.
+  - Gold production is affected by autonomy, now shown on tooltip.
+  - Government Reform progress displays correct date about possibility to enact next reforms.
+  - Grazing enemy territories gives Tribal Development.
+  - Hot spot for units fixed in Denmark Sea and Eastern Coast of Greenland.
+  - If Emperor and his underage heir die on the same month the Empress will no longer become the Emperor, elections will be held instead.
+  - If the host of a multiplayer game lose, he can spectate, but commands are blocked.
+  - If you dismiss alerts, they should reappear more easily if, say, you get a bunch more states able to be created.
+  - Ignore Game Over and keep playing after being defeated after loading a game from Observer mode - not any more.
+  - Improve relations diplomat popup message arrives on time instead of 1 month late.
+  - In a peace deal, giving a province to an ally and releasing a nation that has a core on the same province used to result in a loss of trust.
+  - In sue for peace view stopped the coalition warning icon overlapping with nation shields.
+  - Increasing Isolationism for non-Shinto vassals no longer possible.
+  - Influence Nation plays money out sound effect.
+  - Inland bonus in the interface updates correctly and shows the correct thing.
+  - Instant truce no longer created when starting at a bookmark with country in superiority_crusade war.
+  - Interface for Policies updates properly for observer.
+  - Iron Man mode Achivements menu no longer contains unlocalized strings of text in non-English versions.
+  - Isabella of Castile event grants personality trait to Isabella instead of current ruler.
+  - Join HRE checks for a path to the capital.
+  - Large colonial nations give force limit bonus without Leviathan.
+  - Last siege status is displayed correctly after loading game from save.
+  - Legal document browser is now closed after 10s if not showing intended page (could otherwise get stuck in some cases).
+  - Liberating large colonies no longer overflows window.
+  - Limit Junior Partner in Personal Union from Ranking up above their Senior Partner.
+  - List of Holy Roman Emperors in the ledger no longer includes regents.
+  - Loading RB-enabled save into RB-disabled game allows cancelling trade steering.
+  - Loading a save when fleet docked to a colonized province leaves after the colony has been burned no longer deletes the fleet.
+  - Loading the game with Music Volume set to 0: Main Theme will now start playing regardless.
+  - Long text on startup screen for Indian nations in French now fits.
+  - Lubeckian mission "A Base in Scotland" reduces separatism in Scottish provinces.
+  - Lucrezia Borgia event creates an actual woman advisor.
+  - Lübeck mission "Subjugate Norway" highlights Trondelag on map.
+  - Macrobuilder courthouse sort by improvement now toggles.
+  - Manchu and Vietnamese culture now count for "Empire of China in Name" disaster.
+  - Map mode scroll lists now remember location of scroll pointer.
+  - Militarists in power in Theocratic Open Public Elections now cause elections.
+  - Missing "e" in Andre Hercule de Fleury French event tooltip fixed.
+  - Modifier Dhimmi Building Restrictions is removed if country changes religion to non-Muslim religion.
+  - Modifier granted by the third Indigenous Idea "The Great Law" is applied after reforming from a tribe.
+  - Morale bar is no longer green when drilling armies rented as condottieri.
+  - Mothballed fleet now becomes unmothballed when coastal Tribe migrate inland.
+  - Names of the Sea Regions are no longer displaced.
+  - Napoleon Bonaparte comes from the right Dynasty in the revolution event.
+  - Native Advancements no longer show up as string tags in modifiers.
+  - Nieszawa Privileges event now has the tooltip for the first option.
+  - No longer get notifications about new Trade League leaders about an unknown country.
+  - No overflow in AI choice of idea groups.
+  - Number of rebels in the text ("Rebels" list) now matches the actual number of rebels.
+  - Offer Vassalization tooltip includes -1000 modifier for cases when player cannot vassalize a country (i.e. Free City).
+  - Offer loan button is no longer grayed out.
+  - On the day the rebels demand go through, you can now open province windows where rebels were present.
+  - Opening leader menu for more than one army no longer sometimes causes window to not close.
+  - Option of succession war is available after loading a save.
+  - PU Subject Liberty Desire no longer ignores Senior Partners Army Size.
+  - Peace offer: "concede colonal region" now scrolls to the region itself when selected.
+  - Pie charts in trade nodes no longer show incorrect proportions compared to values.
+  - Pirate nations get their Ideas and Traditions from events.
+  - Player can add islands to existing Client States.
+  - Player is no longer able to join imbalanced GP war even if he does not see capital of any country taking part in the war.
+  - Playing with Random New World Enabled, Polynesian Triangle Trade Node no longer becomes broken.
+  - Polynesian and Siberian migratory tribes can no longer colonize one province and then migrate with their capital.
+  - Pop up message about a new guru no longer has two OK buttons.
+  - Pop-up no longer indicates you have been kicked when you have been banned.
+  - Pressing arrows in Custom Nation subtab no longer closes the tab.
+  - Printing Press spread tooltip shows the correct institution.
+  - Promoted Settlement Growth notification no longer lacks goto button.
+  - Proper prestige penalty for breaking a royal marriage.
+  - Province Maui no longer has position of flag and city sprawl under water.
+  - Province search partial match improved.
+  - Provinces converted by the center of the reformation have their privileges updated.
+  - Provinces of a subject undiscovered by the overlord are now revealed upon subjugation.
+  - Provinces required to form the Roman Empire as Byzantium are no longer inside of the terra incognita for BYZ.
+  - Prussian "add militarization" button now tells you why you might want to do that.
+  - RNW no longer fails to assign colonial regions correctly (with some tiles).
+  - Random Countries generated by the Random New World now consider chances for their random ideas.
+  - Rebels spawned by using new_flavour_nap.4 are now friendly towards the Player.
+  - Rebuild Sadhuim mission upgrades centre of trade.
+  - Recruiting generals/admirals from the units interface now makes a sound!.
+  - Redundant Select Culture window no longer opened through Production Interface.
+  - Reformation center uses additional modifiers for missionary strength.
+  - Relationship bonus from subsidies no longer disappears immediately when the subsidies end.
+  - Releasing and playing pirates event "pirate.2" event now gives TI from overlord nation when triggered for a colonial nation.
+  - Reloading game with pending loan payment will no longer break repayment.
+  - Removed the "Persecution of the Hussites" modifier set when converting to Hussitism as Bohemia.
+  - Republican Tradition increases Government Reform Speed.
+  - Restoration of CB peace option has correct tooltip.
+  - Revoke the Privilegia tooltip explanation improved to show why nations will become vassals or leave.
+  - Revolution Target tooltip now opening properly in Government Reform window.
+  - Same religion opinion from harmonization is mutual.
+  - Saxon mission "Claim the Borderlands" reduces separatism.
+  - Second requirement for mission "Trade Dominance" has correct highlight.
+  - Sharing knowledge now ends when the capital state provinces all have the institution, ignoring provinces owned by other countries.
+  - Sharing maps tooltip shows points for "Coloniser" correctly.
+  - Shortcut "v" was set to both Detach Transport Fleets and closing fleet/army window.
+  - Sisterhood government type gives female heirs.
+  - Sorting great projects by tier working as expected.
+  - Starting German idea uses right icon.
+  - Starting a coalition between daimyo now calls in the other coalition members.
+  - Stopped AI allies from having human responses on declare war screen when declaring war on a human in MP.
+  - Stopped Totemist tribe Chiefs from getting level two personality bonuses.
+  - Stopped Zoros getting Coptic events.
+  - Stopped merc companies causing AI to freeze.
+  - Stopped suicidal conquistadors.
+  - Subjects of Subjects no longer have FoW.
+  - Subjects released from Tribes get the right amount of reform progress and free reforms.
+  - Switching away from "Imperial" mapmode during relevant tutorial, then back, no longer puts the user into the "Diplomatic" mapmode.
+  - Switching map modes while in Land Units and Land Templates sub-tabs in Land units tab is displayed permanently.
+  - TI no longer has ambient sound.
+  - Tags no longer appearing twice in "release nations" box when two different nations can release the same nation.
+  - Taking native lands in peace treaties no longer makes them undergo endless colonization.
+  - The Central Algonquian Idea "Teaching Scrolls" now decreases ideas cost instead of increasing it.
+  - The Holy See interface no longer shows papal influence when you play as the Papal State.
+  - The event "The Succession of [Root.Monarch.GetName]"(culture_religion_events.20) can no longer happen to a junior partner.
+  - Trade Goods label sorting buttons are now aligned with the text.
+  - Trade companies are no longer revoked after forming Prussia from Teutonic Order.
+  - Tribal Lands for Susquehannock.
+  - Tributaries can no longer enforce peace on overlord.
+  - Tributary subjects with Nahuatl religion now use doom.
+  - Trigger all_trade_node_member_province has a proper tooltip.
+  - Tutorial explains corruption.
+  - Tweaked AI strength factor to disregard subunits outside max combat width.
+  - Units are now displayed in the middle of the province (ID 4896).
+  - Units on full strength now cost ducats to reinforce from attrition.
+  - Unknown attitude should make AI less likely to accept alliance offers.
+  - Upgrading a navy when you sailor pool is full no longer loses you sailors - they just get added on top of the max.
+  - Upgrading monument manually and instantly by mission will upgrade monument.
+  - Vassalizing a country breaks its royal marriages with other countries.
+  - Vassals not fabricating claims fixed (they were considering fabricating on provinces the overlord wanted, but not prioritising them anywhere above provinces they wanted for themselves).
+  - Venetian reform "Disperse Power Across the Cities" triggers elections.
+  - Warning shown when changing trading policy to "Maximize Profit" matches behavior of game.
+  - We now have mercenary companies in the RNW.
+  - Yearly Patriarch Authority is shown properly.
+  - You can no longer end up fighting your own colonial nation if integrating a PU with a colony at war with your colony.
+  - You no longer lose spy network progress on a nation, when it switches its tag.
+  - Made it possible to start panama canal project.
+  - Added scroll bar to info popups in case of overflow.
+  - Added warning to declare war screen if target is fighting an independence war.
+  - Adjusted bankruptcy penalty for colonial maintenance so it applies after everything else.
+  - Allow female Defenders of the Faith for Anglican religion.
+  - Ally that is allied with enemy but unwilling to join on their side gets green checkmark and can now be called as co-belligerent.
+  - Army position in sawokli centered in province.
+  - Becoming a subject of a rival will add 25% liberty desire.
+  - Building regiment templates in subject which still has some TI no longer gets them stuck.
+  - Calls to arms remembered on save.
+  - Can autobuild galleys to fleets on hunt pirates mission.
+  - Can now close the battle view with esc.
+  - Can now rescing colonial subject relationship modifiers.
+  - Changed odd tooltips on buttons in trade tab.
+  - Clicking on empty privilege slot no longer closes privilege window if already open.
+  - Conform to template now persisted.
+  - Countries transferring trade power have correct tooltip on trade screen.
+  - Culture conversion modifiers are used properly.
+  - Death of heir no longer produces 2 heirs immediately after each other.
+  - Declaring war and calling in allies only calls them in for that war.
+  - define_heir and define_ruler events can now fix stats (adm, dip, mil) and provide a stats offset (change_adm, change_dip, change_mil) (e.g. for the talented and ambitious daughter) depending on what they want.
+  - Elevated a few message types when war has started to default to on.
+  - Fixed "Rising Shogunate Authority" conditions bug.
+  - Fixed Hidden requirement in Milan mission Renaissance City.
+  - Fixed Typo in a Ottoman mission description Conquer Greece.
+  - Fixed changing culture tooltip repetition.
+  - Fixed commission_some_rock_art decision broken localisation.
+  - Fixed crash autosaving RNW game.
+  - Fixed crash on 1st June while playing as Manipur.
+  - Fixed crazy state where a nation had over 100000 loans causing game to freeze.
+  - Fixed galley bonus indicator on combat view for coastal seas.
+  - Fixed getting the wrong numeral for monarchs when using custom names or the dice button.
+  - Fixed government rank displayed on vassalisation tooltips.
+  - Fixed insane amount of improve relations bonus available as a custom idea without CoP.
+  - Fixed message filter including unknown countries.
+  - Fixed message log entry with blank name for new heir.
+  - Fixed misaligned text in Spanish and French Options in Main Menu.
+  - Fixed missing French word in edict interface.
+  - Fixed missing creditor on loan repayment message.
+  - Fixed missing royal marriage outcome with republics.
+  - Fixed native migration cost out of your own tribal land.
+  - Fixed occasional placeholder data in budget panel.
+  - Fixed order of releasing nations so that all the ones you ordered get released in that order.
+  - Fixed peace deal summary cutting off if length is too long.
+  - Fixed privilege estate_church_clerical_ministers giving nothing when playing as muslim nation.
+  - Fixed province highlighting on stiff upper lippe achievement.
+  - Fixed recommended nations of user-selected days to be the last set of interesting nations from whatever the previous bookmark is.
+  - Fixed repeating Theatinerkirche event.
+  - Fixed some issues with tribal land not being given correctly in peace deals.
+  - Fixed some issues with trigger_switch and trade_goods/has_province_modifier.
+  - Fixed sorting by religious unity in Country religion view.
+  - Fixed the "core all" button occasionally misreporting what can't be cored.
+  - Fixed typos in Turkish ship names.
+  - Fixed unreadable numbers in trade part of a province windows.
+  - Fixed wrong missionary end date shown in tooltip on the "Make core" button.
+  - Forming Florida now annexes your colonial nations.
+  - Innovativeness adjustment happens dec->jan.
+  - is_subject_of_type = colony is used properly.
+  - keep_trigger of monuments no longer crashes the game.
+  - Improved history formatting.
+  - Loading a custom nation save no longer moves the screen display to new zealand.
+  - Losing Court and Country disaster to rebels now penalises rather then rewarding you.
+  - Made the Blockade Capacity tooltip on Navies clearer.
+  - Made the consequences of "Request Relative as Heir" clearer.
+  - No longer get Negative Crownland after selling the titles.
+  - No longer impossible to cancel exiting the game if in Tutorial.
+  - No more Global Trade institution spam messages when starting later games.
+  - No more deterministic rulers from changing away from states general.
+  - No more infinite ruler generals if a consort regent becomes the ruler.
+  - Prevent stateless society from being picked by released nations if they have more than one province.
+  - Prevented selling ships multiple times on one day.
+  - Prevented use of console in MP.
+  - Province events now have a goto button for the province.
+  - Raised papal influence threshold so you can actually excommunicate countries.
+  - Reform progress cost applied correctly.
+  - Removed "To the ground" policy in non dlc game.
+  - Removed dip cost for giving vassal their claims in a conquest cb.
+  - Removed notices for hidden province modifiers expiring.
+  - Removed terrain type from some non-relevant map mode tooltips.
+  - Sharing maps no longer prevented by being at war.
+  - Solved at least one method of creating phantom "0,0,0" armies.
+  - Sorted the shield lists in the HRE and mission tree interfaces by name.
+  - Stopped Jerusalem from getting event meant for The Knights.
+  - Stopped a coalition forming against a country with only three members.
+  - Stopped estate_regency_events.1 from firing continuously if option 2 is picked.
+  - Stopped goto province with the camera sometimes flying up to the arctic.
+  - Stopped infantry/cavalry deploying to back line when enough artillery is available.
+  - Stopped re-designating colony type making colonies leave wars.
+  - Suppress error message for exploring without El Dorado.
+  - Threat evaluation modified to take account of acceptable threat.
+  - Tidied up macrobuilder buildings UI and tooltips.
+  - Tooltip for Siamese Revolution includes all prerequisites.
+  - Tooltips now happen when opening institutions window in state view.
+  - Removed ability to send fleets to hunt pirates outside of your trade range.
+  - Fix for MP CTD when starting game.
+  - Fixed issues with GFX with digits in the name
+  - Fixed OOS caused by removing a leader from it's federation.
+  - AI will control the player's country after being kicked out.
+  - Rebel suppressing armies are specified in areas' tooltips in the Unrest Map Mode.
+  - Fixed animations not always being run
+  - Invite to Trade League tooltip had some issues when there was more than one reason why you couldn't send it.
+  - Modifiers no longer added if empty.
+  - Fixed game failed to launch on EGS.
+  - Fixed some typos and corrected the unit / tech types Inti / Nahuatl countries get when reforming into monarchies.
+  - Fix CTD on start when corrupt save is in save folder.
+  - Fixed saves marked as incompatible when saved with free dlc.
+  - Fixed CTD when scanning for internet-servers.
+  - CB granted by Reichskrieg allows player to integrate big countries to the HRE.
+  - Regency queen cannot become a general in personality event - so excluded her from the event.
+  - native_land_tradition_reform script ai trigger fixed.
+  - The mission "Prelate Power" for Italian minors now works if you are catholic.
+  - The regency event "No Hard Feelings" and its event chain can now trigger more than once per game.
+  - Fixed RNW oos at the start of the game related to Monarch generation.
+  - Fixed an issue with not removing players when kicking them from the outliner.
+  - Fixed an issue with showing a kicked player in the outliner.
+  - Fixed crash related to the UI and controlling OOS when duplicating Personal Deities both encountered using mods.
+  - Fixed interacting with server list in Cross Platform Multiplayer will result in selecting all servers at once.
+  - Fixed randomlog oos when using different languages.
+  - Fixed bug: "Popup Info opens with double click in other interfaces" keyup events could tunnel through.
+  - Icon: Fixed issue with changing sprite resulting in the wrong state.
+  - Fixed "AMD Radeon display adapter crimson edition driver hides necessary combat interface graphics".
+  - Fixed an issue where the Dhimmi Guarantee would be not removed if the Muslim country changes its religion.
+  - Fixed tooltip turning all yellow.
+  - Fixed broken on_mercenary_recruited on_action.
+  - Fixed bug where Tribes development could be negative.
+  - Fixed estate privileges view so it closes if you click on the same thing again
+  - Fixed issue in savegame due to pending events not fired
+  - Fixed nepotism mechanic to use offsets instead of absolutes for ruler attributes.
+  - Fixed up African great power power projection entry.
+  - Fixed Repairing flag so it doesn't trigger when mothballing.
+  - Fixed map update on load.
+  - Fixed tooltip and added another in case you have no merchants at all operating.
+  - Fixed text incorrectly saying that policies are for free.
+  - Fixed so macro builder properly opens when being opened right after closing.
+  - Don't allow adding duplicate federation members or invalid country tags.
+  - Don't allow setting the federation leader to a non federation member.
+  - Name availibility-check now works with hotjoin as well.
+  - Fixed OOS_119 caused by a log.
+  - Check if connection is valid when processing received data, join/leave callbacks with Nakama.
+  - Fixed issue with units not animating near the map wrapping line.
+  - Fixed has_estate_loan trigger.
+  - Font mods missing animatedtexttypes will no longer crash but get an error log entry.
+  - Speed up macrobuilder building list generation.
+
+###################
+# Other
+###################
+  - You can now see which Paradox Account you are logged in to ingame.
+  - Fixed icon not displayed for Epic Games Store
+  - Changed Synagogue to Faith for power references.
+<<<<<<< HEAD
+  - Subscription window will not be displayed when user has all DLC's
+=======
+  - Subscription window will not be displayed when user has all DLC's
+>>>>>>> release_1.32.2

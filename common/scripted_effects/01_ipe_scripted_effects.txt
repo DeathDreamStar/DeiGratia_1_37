@@ -1,0 +1,23 @@
+remove_corruption_effect = {
+    remove_country_modifier = 500_corruption
+    remove_country_modifier = 1000_corruption
+    remove_country_modifier = 1500_corruption
+    remove_country_modifier = 2000_corruption
+    remove_country_modifier = 2500_corruption
+    remove_country_modifier = 3000_corruption
+    remove_country_modifier = 3500_corruption
+    remove_country_modifier = 4000_corruption
+    remove_country_modifier = 4500_corruption
+    remove_country_modifier = 5000_corruption
+    remove_country_modifier = 5500_corruption
+    remove_country_modifier = 6000_corruption
+    remove_country_modifier = 6500_corruption
+    remove_country_modifier = 7000_corruption
+    remove_country_modifier = 7500_corruption
+    remove_country_modifier = 8000_corruption
+    remove_country_modifier = 8500_corruption
+    remove_country_modifier = 9000_corruption
+    remove_country_modifier = 9500_corruption
+    remove_country_modifier = 10000_corruption
+
+}
