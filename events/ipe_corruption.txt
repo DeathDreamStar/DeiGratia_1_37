@@ -9,7 +9,7 @@ country_event = {
 
 	trigger = {
 		NOT = {
-			has_country_flag = ipe_setting_disable_endemic_corruption
+			has_global_flag = ipe_setting_disable_endemic_corruption
 		}
 		OR = {
 			AND = {

@@ -8,6 +8,7 @@ country_event = {
     picture = CITY_VIEW_eventPicture
 
     fire_only_once = yes
+	is_triggered_only = yes
 
     trigger = {
         has_game_started = yes
@@ -22,6 +23,16 @@ country_event = {
     option = {
         name = ipe_setting.1.a
         #Reccommended Mode, mod settings remained
+    }
+    option = {
+        name = ipe_setting.1.b
+        #Vanilla Mode, mod settings changed to vanilla
+        custom_tooltip = dg_vanilla_mode_desc
+        hidden_effect = {
+            set_global_flag = ipe_setting_enable_early_subject_integration
+            set_global_flag = ipe_setting_disable_endemic_corruption
+            set_global_flag = ipe_setting_disable_eoc_isolation
+        }
     }
     option = {
         name = ipe_setting.1.c
@@ -69,6 +80,7 @@ country_event = {
     title = ipe_setting.3.t
     desc = ipe_setting.3.d
     picture = DIPLOMACY_eventPicture
+    is_triggered_only = yes
 
     option = {
         #Turn OFF Early Subject Integration Limitation

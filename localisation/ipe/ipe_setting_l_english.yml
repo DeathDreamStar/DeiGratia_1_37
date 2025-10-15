@@ -1,9 +1,10 @@
 ﻿l_english:
  ipe_setting.1.t: "Dei Gratia Configuration"
- ipe_setting.1.d: "Welcome to the §YDei Gratia (Unofficial 1.37 Update)§!.\nThis setup event allows you to tailor your experience for the most stable and enjoyable gameplay.\n\nThe §G'Recommended Mode'§! offers the intended balance and features for most players — ideal if you're experiencing Dei Gratia for the first time.\nAlternatively, you can manually configure each gameplay option to suit your preferences. Each choice will provide a brief explanation of its effects.\n\nThank you for keeping this classic mod alive — and all credit goes to §YNguyên§! for the original masterpiece."
+ ipe_setting.1.d: "Welcome to the §YDei Gratia (Unofficial 1.37 Update)§!.\nThis setup event allows you to tailor your experience for the most stable and enjoyable gameplay.\n\nThe §G'Recommended Mode'§! offers the intended balance and features for most players — ideal if you're experiencing Dei Gratia for the first time.\nAlternatively, you can manually configure each gameplay option to suit your preferences. Each choice will provide a brief explanation of its effects.\n\nThank you for keeping this classic mod alive — and all credit goes to §YNguyen§! for the original masterpiece."
  ipe_setting.1.a: "Enable §GRecommended§! Mode"
+ ipe_setting.1.b: "Enable §TVanilla§! Mode" #All the (Performance) options when available, 
  ipe_setting.1.c: "Let me configure each option manually"
- 
+ dg_vanilla_mode_desc: "Disables all Dei Gratia specific mechanics and reverts to a more vanilla-like experience. This mode is ideal for players seeking a classic gameplay style without the additional features introduced by Dei Gratia."
 
  ipe_setting.2.t: "Specific Settings"
  ipe_setting.2.d: "Select which category of settings you wish to adjust. Each group contains different gameplay options that affect balance, performance, and immersion.\n\nClosing the settings will apply all selected options to your current campaign. §RThis action cannot be undone.§!"
