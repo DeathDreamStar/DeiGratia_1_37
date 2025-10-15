@@ -144,6 +144,7 @@ prussian_republic_reform = {
 					have_had_reform = prussian_republic_reform
 				}
 			}
+			has_unlocked_government_reform = { government_reform = prussian_republic_reform }
 		}
 	}
 	trigger = {
@@ -153,6 +154,7 @@ prussian_republic_reform = {
 			religion = reformed
 			religion = hussite
 			religion = anglican
+			has_unlocked_government_reform = { government_reform = prussian_republic_reform }
 		}
 	}
 	valid_for_nation_designer = yes
@@ -171,7 +173,9 @@ prussian_republic_reform = {
 	
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }
-		militarised_society = yes
+		government_abilities = {
+			militarization_mechanic
+		}
 	}
 	
 	custom_attributes = {

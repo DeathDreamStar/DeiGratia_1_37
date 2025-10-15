@@ -4,7 +4,6 @@ monarchy_mechanic = {
 	heir = yes
 	queen = yes
 	basic_reform = yes # = invisible/does not take up a slot
-	is_eligible_for_hre_emperor = yes
 	valid_for_nation_designer = no
 	custom_attributes = {
 		enables_aristocratic_idea_group = yes
@@ -949,7 +948,6 @@ prussian_monarchy = {
 				is_playing_custom_nation = yes
 				have_had_reform = prussian_monarchy
 			}
-			has_unlocked_government_reform = { government_reform = prussian_monarchy }
 		}
 	}
 	trigger = {
@@ -958,7 +956,6 @@ prussian_monarchy = {
 			religion = protestant
 			religion = reformed
 			religion = hussite
-			has_unlocked_government_reform = { government_reform = prussian_monarchy }
 		}
 	}
 	valid_for_nation_designer = yes
@@ -975,29 +972,8 @@ prussian_monarchy = {
 
 	conditional = {
 		allow = { has_dlc = "Rights of Man" }
-		government_abilities = {
-			militarization_mechanic
-		}
+		militarised_society = yes
 	}
-	# domination added wait for finetuning
-	# conditional = {
-	# 	allow = { has_dlc = "Domination" }
-	# 	government_abilities = {
-	# 		prussian_militarization_mechanic_1
-	# 	}
-	# }
-	# conditional = {
-	# 	allow = { has_dlc = "Domination" }
-	# 	government_abilities = {
-	# 		prussian_militarization_mechanic_2
-	# 	}
-	# }
-	# conditional = {
-	# 	allow = { has_dlc = "Domination" }
-	# 	government_abilities = {
-	# 		prussian_militarization_mechanic_3
-	# 	}
-	# }
 }
 
 austrian_dual_monarchy = {
