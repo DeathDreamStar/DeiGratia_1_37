@@ -27,8 +27,10 @@
  EMPEROR_CHINA_ISOLATION_TOOLTIP: "The Emperor of China stands above foreign entanglements. Alliances with non-tributary states are forbidden, and favors are withheld from those who do not submit. This preserves imperial dignity and internal harmony, but limits diplomatic flexibility and external influence."
 
 #  decision
- TurnOffEndemicCorruption_title: "Disable Endemic Corruption. §RThis is IREVERSIBLE§!"
+ 
+ TurnOffEndemicCorruption_title: "Disable Endemic Corruption"
  TurnOffEndemicCorruption_desc: "Disables the Endemic Corruption mechanic. Country will no longer be affected by corruption generated from total development."
 
- TurnOffSubjectIntegrationLimit_title: "Disable Early Subject Integration Limitation. §RThis is IREVERSIBLE§!"
+ TurnOffSubjectIntegrationLimit_title: "Disable Early Subject Integration Limitation."
  TurnOffSubjectIntegrationLimit_desc: "Removes restrictions on early vassal and subject integration, allowing annexation as in vanilla gameplay."
+ IREVERSIBLE_tooltip: "§RThis is IREVERSIBLE§!"

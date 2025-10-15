@@ -11,6 +11,7 @@ country_decisions = {
 		allow = {
 		}
 		effect = {
+			custom_tooltip = IREVERSIBLE_tooltip
 			set_global_flag = ipe_setting_enable_early_subject_integration
 		}
 		ai_will_do = {
@@ -29,6 +30,7 @@ country_decisions = {
 		allow = {
 		}
 		effect = {
+			custom_tooltip = IREVERSIBLE_tooltip
 			set_global_flag = ipe_setting_disable_endemic_corruption
 			hidden_effect = {
 				every_country_including_inactive = {
