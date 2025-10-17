@@ -131,7 +131,7 @@ age_of_discovery = {
 
 		ab_transfer_vassal_wargoal = 
 		{
-			rule = {
+			modifier = {
 				can_chain_claim = yes
 			}
 			ai_will_do = {
@@ -467,7 +467,8 @@ age_of_absolutism = {
 		increase_autonomy_command = -2
 		debase_currency = -1
 		execute_rebel_acceptance_command = -10
-		seat_in_parliament = -3
+		automatic_seat_in_parliament = -3
+		manual_seat_in_parliament = -3
 		war_exhaustion = -1
 	}
 	
@@ -654,7 +655,8 @@ age_of_revolutions = {
 		increase_autonomy_command = -2
 		debase_currency = -1
 		execute_rebel_acceptance_command = -10
-		seat_in_parliament = -3
+		automatic_seat_in_parliament = -3
+		manual_seat_in_parliament = -3
 		war_exhaustion = -1
 	}
 	
@@ -718,7 +720,7 @@ age_of_revolutions = {
 
 		ab_napoleonic_warfare = {
 			modifier = {
-				artillery_bonus_vs_fort = 2
+				artillery_levels_available_vs_fort = 2
 			}
 			ai_will_do = {
 				factor = 10
@@ -728,7 +730,7 @@ age_of_revolutions = {
 
 		
 		ab_force_march = {
-			rule = {
+			modifier = {
 				force_march_free = yes
 			}
 			ai_will_do = {
@@ -744,7 +746,7 @@ age_of_revolutions = {
 			}
 		}
 		ab_no_distance_for_core = {
-			rule = {
+			modifier = {
 				ignore_coring_distance = yes
 			}
 			ai_will_do = {
