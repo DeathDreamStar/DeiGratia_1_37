@@ -1070,6 +1070,16 @@ has_fort_building_trigger = {
 	}
 }
 
+has_coast_defense_building_trigger = {
+	custom_trigger_tooltip = {
+		tooltip = has_coast_defense_building_trigger_tt
+		OR = {
+			has_building = coastal_defence
+			has_building = naval_battery
+		}
+	}
+}
+
 has_been_insulted_by_root = {
 	custom_trigger_tooltip = {
 		tooltip = has_been_insulted_by_root
@@ -1952,7 +1962,7 @@ num_of_ruler_traits = {
 		ruler_has_personality = malevolent_personality
 		ruler_has_personality = immortal_personality
 		# ruler_has_personality = legendary_pirate_personality
-		# ruler_has_personality = reformist_personality
+		ruler_has_personality = reformist_personality
 		# ruler_has_personality = legendary_conqueror_personality
 		# ruler_has_personality = great_engineer_personality
 		# ruler_has_personality = patron_of_arts_personality
@@ -1976,4 +1986,9 @@ has_generic_maya_missions = {
 		tag = ITZ #Itza
 		tag = HST #Huastec
 	}
+}
+
+is_eligible_for_trade_good = {
+	# NOT = { trade_goods = $trade_goods$ }
+	# NOT = { is_not_eligible_for_trade_good_$trade_goods$ = yes }
 }
