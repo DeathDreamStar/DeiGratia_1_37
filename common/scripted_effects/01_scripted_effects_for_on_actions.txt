@@ -954,3 +954,126 @@ on_change_tag_effect = {
 		update_mission_previews = yes
 	}
 }
+
+on_parliament_abolished_effect = {
+	custom_tooltip = on_parliament_abolished_effect_tt
+	hidden_effect = {
+
+	}
+}
+
+set_parliament_action_flag = {
+	hidden_effect = {
+		set_country_flag = $parliament_action$_flag
+	}
+}
+# parliament wait fin-tuing
+on_parliament_debate_reset_effect = {
+	add_country_modifier = {
+		name = reset_parliament_debate_modifier
+		duration = 3650
+	}
+	add_corruption = 2
+	# if = {
+	# 	limit = {
+	# 		has_government_mechanic = parliament_vs_monarchy_mechanic
+	# 	}
+	# 	add_government_power = { 
+	# 		mechanic_type = parliament_vs_monarchy_mechanic
+	# 		power_type = governmental_power
+	# 		value = 20
+	# 	}
+	# }
+}
+
+on_parliament_seat_given_effect = {
+	# owner = {
+	# 	if = { 
+	# 		limit = { has_country_flag = fra_powerful_parliament_flag } 
+	# 		change_government_reform_progress = 5
+	# 		random_list = {
+	# 			1 = { add_adm_power = 10 }
+	# 			1 = { add_dip_power = 10 }
+	# 			1 = { add_mil_power = 10 }
+	# 		}
+	# 	}
+	# 	if = {
+	# 		limit = {
+	# 			has_government_mechanic = parliament_vs_monarchy_mechanic
+	# 		}
+	# 		add_government_power = { 
+	# 			mechanic_type = parliament_vs_monarchy_mechanic
+	# 			power_type = governmental_power
+	# 			value = -5
+	# 		}
+	# 	}
+	# 	if = {
+	# 		limit = {
+	# 			has_government_attribute = parliament_seat_bonus
+	# 		}
+	# 		add_estate_loyalty = {
+	# 			estate = all
+	# 			loyalty = 1
+	# 		}
+	# 	}
+	# }
+	# if = {
+	# 	limit = {
+	# 		owner = {
+	# 			has_government_attribute = parliament_seat_bonus
+	# 		}
+	# 	}
+	# 	add_province_modifier = {
+	# 		name = gov_buffed_parliament_seat
+	# 		duration = -1
+	# 	}
+	# }
+}
+on_parliament_seat_lost_effect = {
+	# owner = {
+	# 	if = {
+	# 		limit = {
+	# 			has_government_mechanic = parliament_vs_monarchy_mechanic
+	# 		}
+	# 		add_government_power = { 
+	# 			mechanic_type = parliament_vs_monarchy_mechanic
+	# 			power_type = governmental_power
+	# 			value = 5
+	# 		}
+	# 	}
+	# }
+	# if = {
+	# 	limit = {
+	# 		has_province_modifier = gov_buffed_parliament_seat
+	# 	}
+	# 	remove_province_modifier = gov_buffed_parliament_seat
+	# }
+}
+on_parliament_debate_failed_effect = {
+	# if = {
+	# 	limit = {
+	# 		has_government_mechanic = parliament_vs_monarchy_mechanic
+	# 	}
+	# 	add_government_power = { 
+	# 		mechanic_type = parliament_vs_monarchy_mechanic
+	# 		power_type = governmental_power
+	# 		value = 33
+	# 	}
+	# }
+}
+on_parliament_debate_succeeded_effect = {
+	# if = {
+	# 	limit = {
+	# 		has_government_mechanic = parliament_vs_monarchy_mechanic
+	# 	}
+	# 	add_government_power = { 
+	# 		mechanic_type = parliament_vs_monarchy_mechanic
+	# 		power_type = governmental_power
+	# 		value = -20
+	# 	}
+	# }
+	# if = {
+	# 	limit = { has_government_attribute = gain_rt_from_parliament }
+	# 	add_republican_tradition = 5
+	# }
+}

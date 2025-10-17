@@ -243,6 +243,13 @@ guiTypes = {
 				position = { x = 73 y = 1 }
 			}
 
+			guiButtonType =
+			{
+				name = "remove_parliament"
+				quadTextureSprite = "GFX_remove_parliament_icon"
+				position = { x = 73 y = 1 }
+			}
+
 			iconType =
 			{
 				name = "have_capital"

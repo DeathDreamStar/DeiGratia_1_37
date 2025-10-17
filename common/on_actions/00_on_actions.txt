@@ -6827,11 +6827,29 @@ on_province_owner_change = {
 }
 
 # country
+on_parliament_debate_reset = {
+	on_parliament_debate_reset_effect = yes
+}
+
+#province
+on_parliament_seat_given = {
+	on_parliament_seat_given_effect = yes
+}
+
+#province
+on_parliament_seat_lost = {
+	on_parliament_seat_lost_effect = yes
+}
+
+# country
 on_parliament_debate_failed = {
+	on_parliament_debate_failed_effect = yes
 }
 
 # country
 on_parliament_debate_succeeded = {
+	on_parliament_debate_succeeded_effect = yes
+	increase_issue_passed_counter = yes
 }
 
 # country

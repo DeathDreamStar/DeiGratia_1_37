@@ -7000,6 +7000,10 @@ dyn_newborn_daughter = {
 	global_unrest = 3
 }
 
+reset_parliament_debate_modifier = {
+	global_unrest = 1
+}
+
 #Parliament Events
 withdrawn_parliamentary_seat = {
 	local_unrest = 3
