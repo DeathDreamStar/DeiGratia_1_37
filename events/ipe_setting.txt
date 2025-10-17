@@ -27,7 +27,6 @@ country_event = {
     option = {
         name = ipe_setting.1.b
         #Vanilla Mode, mod settings changed to vanilla
-        custom_tooltip = dg_vanilla_mode_desc
         hidden_effect = {
             set_global_flag = ipe_setting_enable_early_subject_integration
             set_global_flag = ipe_setting_disable_endemic_corruption

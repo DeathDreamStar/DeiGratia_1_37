@@ -1,4 +1,101 @@
 ﻿l_english:
+# custom_ideas
+
+ ###CUSTOM NATION IDEAS###### ADM Category
+ custom_idea_same_religion_advisor_cost:0 "Faithful Counsel"
+ custom_idea_same_religion_advisor_cost_desc:0 "Those who share our faith better understand our traditions and values. Their wisdom comes more easily to us, and they require fewer worldly rewards for their service."
+
+ custom_idea_great_project_upgrade_time:0 "Streamlined Masterworks"
+ custom_idea_great_project_upgrade_time_desc:0 "By organizing our workforce and supplies, we accelerate the construction of our greatest monuments, completing them in record time."
+
+ custom_idea_yearly_innovativeness:0 "Spirit of Discovery"
+ custom_idea_yearly_innovativeness_desc:0 "An atmosphere of curiosity and daring ideas thrives in our lands, driving constant progress in science, art, and governance."
+
+ custom_idea_loyalty_change_on_revoked:0 "Careful Negotiations"
+ custom_idea_loyalty_change_on_revoked_desc:0 "We have learned the art of soothing bruised egos, cushioning the blow when privileges must be withdrawn from powerful estates."
+
+ custom_idea_estate_interaction_cooldown_modifier:0 "Swift Diplomacy with Estates"
+ custom_idea_estate_interaction_cooldown_modifier_desc:0 "Our bureaucracy excels at handling the estates efficiently, shortening the time before new bargains can be struck."
+
+ custom_idea_all_estate_possible_privileges:0 "Expansive Charters"
+ custom_idea_all_estate_possible_privileges_desc:0 "By broadening the privileges available to the estates, we can secure their loyalty through more varied and flexible means."
+
+ ### DIP Category
+ custom_idea_chance_to_inherit:0 "Dynastic Strength"
+ custom_idea_chance_to_inherit_desc:0 "Strong dynastic traditions ensure our lines of succession are respected, giving us a greater chance of inheriting foreign crowns."
+
+ custom_idea_culture_conversion_time:0 "Cultural Integration"
+ custom_idea_culture_conversion_time_desc:0 "Through patient education and incentives, new cultures are woven into the fabric of our society more swiftly."
+
+ custom_idea_reverse_relation_with_same_religion:0 "Faithful Rivalries"
+ custom_idea_reverse_relation_with_same_religion_desc:0 "Shared religion does not always mean shared interests; rivalry between the faithful can burn just as fiercely."
+
+ custom_idea_max_flagships:0 "Pride of the Fleet"
+ custom_idea_max_flagships_desc:0 "Our navy is not content with a single flagship; more mighty vessels can bear our banners across the seas."
+
+ custom_idea_hull_size_modifier:0 "Reinforced Keels"
+ custom_idea_hull_size_modifier_desc:0 "Improved ship designs grant our vessels stronger hulls, allowing them to endure heavier seas and battle damage."
+
+ custom_idea_number_of_cannons_modifier:0 "Broadside Tradition"
+ custom_idea_number_of_cannons_modifier_desc:0 "We've adopted new gunnery standards that allow our ships to mount more cannons, making them deadlier in naval engagements."
+
+ custom_idea_vassal_manpower_bonus:0 "Subject Levies"
+ custom_idea_vassal_manpower_bonus_desc:0 "Our vassals are compelled to contribute more of their manpower, bolstering our armies without weakening our own reserves."
+
+ custom_idea_vassal_sailors_bonus:0 "Tributary Mariners"
+ custom_idea_vassal_sailors_bonus_desc:0 "Ports under our dominion provide us with a steady stream of sailors, swelling the ranks of our navy."
+
+ custom_idea_vassal_naval_forcelimit_bonus:0 "Fleet Integration"
+ custom_idea_vassal_naval_forcelimit_bonus_desc:0 "We coordinate with our vassals to ensure their shipyards and docks contribute directly to our naval force limit."
+
+ custom_idea_annexation_relations_impact:0 "Diplomatic Soothing"
+ custom_idea_annexation_relations_impact_desc:0 "We have refined our methods of annexation, reducing the diplomatic strain that it places on our relations."
+
+ ### MIL Category
+ custom_idea_artillery_barrage_cost:0 "Efficient Bombardments"
+ custom_idea_artillery_barrage_cost_desc:0 "Our artillery officers use powder and shot sparingly but effectively, reducing the cost of devastating barrages."
+
+ custom_idea_warscore_from_battles_modifier:0 "Glorious Victories"
+ custom_idea_warscore_from_battles_modifier_desc:0 "Our triumphs on the battlefield are widely celebrated, lending greater weight to our cause at the peace table."
+
+ custom_idea_enable_forced_march:0 "Endless March"
+ custom_idea_enable_forced_march_desc:0 "Our soldiers are hardened to push themselves beyond their limits, covering ground with relentless determination."
+
+ custom_idea_janissary_cost_modifier:0 "Disciplined Corps"
+ custom_idea_janissary_cost_modifier_desc:0 "Reforms in the recruitment and training of our elite units reduce the cost of maintaining their formidable presence."
+
+ custom_idea_allow_mercenary_drill:0 "Mercenary Standards"
+ custom_idea_allow_mercenary_drill_desc:0 "Even mercenaries under our banner drill with the same rigor as our regular troops, making them more reliable in war."
+
+ custom_idea_merc_independent_from_trade_range:0 "Distant Banners"
+ custom_idea_merc_independent_from_trade_range_desc:0 "Our mercenary networks stretch far beyond traditional trade routes, giving us access to distant warriors."
+
+ custom_idea_allow_mercenaries_to_split:0 "Flexible Contracts"
+ custom_idea_allow_mercenaries_to_split_desc:0 "Mercenaries in our service enjoy looser contractual obligations, allowing them to split into smaller, more nimble companies."
+
+ custom_idea_merc_leader_army_tradition:0 "Hardened Captains"
+ custom_idea_merc_leader_army_tradition_desc:0 "The seasoned commanders of our mercenaries bring with them invaluable traditions of war, enriching our own leadership."
+
+ custom_idea_can_recruit_cawa:0 "Auxiliary Cavalry"
+ custom_idea_can_recruit_cawa_desc:0 "We can call upon the Cawa horsemen, renowned for their swift raids and fierce loyalty to our banners."
+
+ custom_idea_can_recruit_cossacks:0 "Frontier Riders"
+ custom_idea_can_recruit_cossacks_desc:0 "The Cossacks, hardened by life on the frontier, are eager to serve in our armies as fierce cavalry."
+
+ custom_idea_can_recruit_rajputs:0 "Rajput Warriors"
+ custom_idea_can_recruit_rajputs_desc:0 "The Rajputs, proud and martial, lend their strength to our armies in times of need."
+
+ custom_idea_can_recruit_revolutionary_guards:0 "Revolutionary Guards"
+ custom_idea_can_recruit_revolutionary_guards_desc:0 "Fanatical defenders of the revolution, these soldiers fight with unmatched zeal for liberty and equality."
+
+ custom_idea_garrison_damage:0 "Sapper Traditions"
+ custom_idea_garrison_damage_desc:0 "Our engineers specialize in undermining walls and fortifications, making our assaults far more destructive to garrisons."
+
+ custom_idea_assault_fort_cost_modifier:0 "Storming Tactics"
+ custom_idea_assault_fort_cost_modifier_desc:0 "Through practice and innovation, our armies have learned to storm forts with less expenditure of lives and resources."
+
+
+# country_ideas
  # Uzbek
  SHY_ideas: "Uzbek Ideas"
  SHY_ideas_start: "Uzbek Traditions"
