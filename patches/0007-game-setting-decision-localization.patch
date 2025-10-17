@@ -1,0 +1,50 @@
+From 0a1cfe6d7f584d4f224fecbe92298e472fffb015 Mon Sep 17 00:00:00 2001
+From: Tyler Yi <tyler_yi@yahoo.com.tw>
+Date: Thu, 16 Oct 2025 00:19:07 +0800
+Subject: [PATCH 07/14] game setting decision localization
+
+---
+ decisions/Utility.txt                      | 2 ++
+ localisation/ipe/ipe_setting_l_english.yml | 6 ++++--
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/decisions/Utility.txt b/decisions/Utility.txt
+index 4ec4ee6..921d49d 100644
+--- a/decisions/Utility.txt
++++ b/decisions/Utility.txt
+@@ -11,6 +11,7 @@ country_decisions = {
+ 		allow = {
+ 		}
+ 		effect = {
++			custom_tooltip = IREVERSIBLE_tooltip
+ 			set_global_flag = ipe_setting_enable_early_subject_integration
+ 		}
+ 		ai_will_do = {
+@@ -29,6 +30,7 @@ country_decisions = {
+ 		allow = {
+ 		}
+ 		effect = {
++			custom_tooltip = IREVERSIBLE_tooltip
+ 			set_global_flag = ipe_setting_disable_endemic_corruption
+ 			hidden_effect = {
+ 				every_country_including_inactive = {
+diff --git a/localisation/ipe/ipe_setting_l_english.yml b/localisation/ipe/ipe_setting_l_english.yml
+index 29efc8f..a2dc3ca 100644
+--- a/localisation/ipe/ipe_setting_l_english.yml
++++ b/localisation/ipe/ipe_setting_l_english.yml
+@@ -27,8 +27,10 @@
+  EMPEROR_CHINA_ISOLATION_TOOLTIP: "The Emperor of China stands above foreign entanglements. Alliances with non-tributary states are forbidden, and favors are withheld from those who do not submit. This preserves imperial dignity and internal harmony, but limits diplomatic flexibility and external influence."
+ 
+ #  decision
+- TurnOffEndemicCorruption_title: "Disable Endemic Corruption. §RThis is IREVERSIBLE§!"
++ 
++ TurnOffEndemicCorruption_title: "Disable Endemic Corruption"
+  TurnOffEndemicCorruption_desc: "Disables the Endemic Corruption mechanic. Country will no longer be affected by corruption generated from total development."
+ 
+- TurnOffSubjectIntegrationLimit_title: "Disable Early Subject Integration Limitation. §RThis is IREVERSIBLE§!"
++ TurnOffSubjectIntegrationLimit_title: "Disable Early Subject Integration Limitation."
+  TurnOffSubjectIntegrationLimit_desc: "Removes restrictions on early vassal and subject integration, allowing annexation as in vanilla gameplay."
++ IREVERSIBLE_tooltip: "§RThis is IREVERSIBLE§!"
+-- 
+2.51.0.windows.2
+

@@ -1,0 +1,95 @@
+From ebfe6b70f214a15ae855093dc756cb1b39be5f59 Mon Sep 17 00:00:00 2001
+From: Tyler Yi <tyler_yi@yahoo.com.tw>
+Date: Wed, 15 Oct 2025 23:52:14 +0800
+Subject: [PATCH] fix startup option and decision
+
+---
+ decisions/Utility.txt                      |  2 +-
+ events/ipe_corruption.txt                  |  2 +-
+ events/ipe_setting.txt                     | 12 ++++++++++++
+ localisation/ipe/ipe_setting_l_english.yml |  5 +++--
+ 4 files changed, 17 insertions(+), 4 deletions(-)
+
+diff --git a/decisions/Utility.txt b/decisions/Utility.txt
+index d6f76ae..4ec4ee6 100644
+--- a/decisions/Utility.txt
++++ b/decisions/Utility.txt
+@@ -18,7 +18,7 @@ country_decisions = {
+ 		}
+ 	}
+ 
+-	TurnOffSubjectIntegrationLimi = {
++	TurnOffSubjectIntegrationLimit = {
+ 		major = yes
+ 		potential = {
+ 			ai = no
+diff --git a/events/ipe_corruption.txt b/events/ipe_corruption.txt
+index 98b70d2..bac1dfc 100644
+--- a/events/ipe_corruption.txt
++++ b/events/ipe_corruption.txt
+@@ -9,7 +9,7 @@ country_event = {
+ 
+ 	trigger = {
+ 		NOT = {
+-			has_country_flag = ipe_setting_disable_endemic_corruption
++			has_global_flag = ipe_setting_disable_endemic_corruption
+ 		}
+ 		OR = {
+ 			AND = {
+diff --git a/events/ipe_setting.txt b/events/ipe_setting.txt
+index 0b35309..1469ee0 100644
+--- a/events/ipe_setting.txt
++++ b/events/ipe_setting.txt
+@@ -8,6 +8,7 @@ country_event = {
+     picture = CITY_VIEW_eventPicture
+ 
+     fire_only_once = yes
++	is_triggered_only = yes
+ 
+     trigger = {
+         has_game_started = yes
+@@ -23,6 +24,16 @@ country_event = {
+         name = ipe_setting.1.a
+         #Reccommended Mode, mod settings remained
+     }
++    option = {
++        name = ipe_setting.1.b
++        #Vanilla Mode, mod settings changed to vanilla
++        custom_tooltip = dg_vanilla_mode_desc
++        hidden_effect = {
++            set_global_flag = ipe_setting_enable_early_subject_integration
++            set_global_flag = ipe_setting_disable_endemic_corruption
++            set_global_flag = ipe_setting_disable_eoc_isolation
++        }
++    }
+     option = {
+         name = ipe_setting.1.c
+         country_event = {
+@@ -69,6 +80,7 @@ country_event = {
+     title = ipe_setting.3.t
+     desc = ipe_setting.3.d
+     picture = DIPLOMACY_eventPicture
++    is_triggered_only = yes
+ 
+     option = {
+         #Turn OFF Early Subject Integration Limitation
+diff --git a/localisation/ipe/ipe_setting_l_english.yml b/localisation/ipe/ipe_setting_l_english.yml
+index 7e2f192..29efc8f 100644
+--- a/localisation/ipe/ipe_setting_l_english.yml
++++ b/localisation/ipe/ipe_setting_l_english.yml
+@@ -1,9 +1,10 @@
+ ﻿l_english:
+  ipe_setting.1.t: "Dei Gratia Configuration"
+- ipe_setting.1.d: "Welcome to the §YDei Gratia (Unofficial 1.37 Update)§!.\nThis setup event allows you to tailor your experience for the most stable and enjoyable gameplay.\n\nThe §G'Recommended Mode'§! offers the intended balance and features for most players — ideal if you're experiencing Dei Gratia for the first time.\nAlternatively, you can manually configure each gameplay option to suit your preferences. Each choice will provide a brief explanation of its effects.\n\nThank you for keeping this classic mod alive — and all credit goes to §YNguyên§! for the original masterpiece."
++ ipe_setting.1.d: "Welcome to the §YDei Gratia (Unofficial 1.37 Update)§!.\nThis setup event allows you to tailor your experience for the most stable and enjoyable gameplay.\n\nThe §G'Recommended Mode'§! offers the intended balance and features for most players — ideal if you're experiencing Dei Gratia for the first time.\nAlternatively, you can manually configure each gameplay option to suit your preferences. Each choice will provide a brief explanation of its effects.\n\nThank you for keeping this classic mod alive — and all credit goes to §YNguyen§! for the original masterpiece."
+  ipe_setting.1.a: "Enable §GRecommended§! Mode"
++ ipe_setting.1.b: "Enable §TVanilla§! Mode" #All the (Performance) options when available, 
+  ipe_setting.1.c: "Let me configure each option manually"
+- 
++ dg_vanilla_mode_desc: "Disables all Dei Gratia specific mechanics and reverts to a more vanilla-like experience. This mode is ideal for players seeking a classic gameplay style without the additional features introduced by Dei Gratia."
+ 
+  ipe_setting.2.t: "Specific Settings"
+  ipe_setting.2.d: "Select which category of settings you wish to adjust. Each group contains different gameplay options that affect balance, performance, and immersion.\n\nClosing the settings will apply all selected options to your current campaign. §RThis action cannot be undone.§!"
+-- 
+2.51.0.windows.2
+

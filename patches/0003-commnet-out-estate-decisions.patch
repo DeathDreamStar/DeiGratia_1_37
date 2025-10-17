@@ -1,0 +1,3073 @@
+From 7b2e2b0a7976f0f3721e8492b45413a53fba56e8 Mon Sep 17 00:00:00 2001
+From: Tyler Yi <tyler_yi@yahoo.com.tw>
+Date: Wed, 15 Oct 2025 00:39:46 +0800
+Subject: [PATCH 3/5] commnet out estate decisions
+
+---
+ decisions/EstateActionsBrahmins.txt      | 256 +++++++++++++++++++
+ decisions/EstateActionsBurghers.txt      | 300 ++++++++++++++++++++++
+ decisions/EstateActionsChuch.txt         | 305 +++++++++++++++++++++++
+ decisions/EstateActionsCossacks.txt      | 287 +++++++++++++++++++++
+ decisions/EstateActionsDhimmi.txt        | 225 +++++++++++++++++
+ decisions/EstateActionsGhulams.txt       |  63 +++++
+ decisions/EstateActionsJains.txt         | 225 +++++++++++++++++
+ decisions/EstateActionsMaratha.txt       | 190 ++++++++++++++
+ decisions/EstateActionsNobles.txt        | 262 +++++++++++++++++++
+ decisions/EstateActionsNomadicTribes.txt | 279 +++++++++++++++++++++
+ decisions/EstateActionsQizilbash.txt     |  63 +++++
+ decisions/EstateActionsRajputs.txt       | 267 ++++++++++++++++++++
+ decisions/EstateActionsVaisyas.txt       | 223 +++++++++++++++++
+ 13 files changed, 2945 insertions(+)
+ create mode 100644 decisions/EstateActionsBrahmins.txt
+ create mode 100644 decisions/EstateActionsBurghers.txt
+ create mode 100644 decisions/EstateActionsChuch.txt
+ create mode 100644 decisions/EstateActionsCossacks.txt
+ create mode 100644 decisions/EstateActionsDhimmi.txt
+ create mode 100644 decisions/EstateActionsGhulams.txt
+ create mode 100644 decisions/EstateActionsJains.txt
+ create mode 100644 decisions/EstateActionsMaratha.txt
+ create mode 100644 decisions/EstateActionsNobles.txt
+ create mode 100644 decisions/EstateActionsNomadicTribes.txt
+ create mode 100644 decisions/EstateActionsQizilbash.txt
+ create mode 100644 decisions/EstateActionsRajputs.txt
+ create mode 100644 decisions/EstateActionsVaisyas.txt
+
+diff --git a/decisions/EstateActionsBrahmins.txt b/decisions/EstateActionsBrahmins.txt
+new file mode 100644
+index 0000000..d9368a5
+--- /dev/null
++++ b/decisions/EstateActionsBrahmins.txt
+@@ -0,0 +1,256 @@
++# #Brahmins
++# country_decisions = {
++# 	estate_brahmins_make_generous_donation = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = MAKE_GENEROUS_DONATION_BRAHMINS
++# 			}
++# 			has_estate = estate_brahmins
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = MAKE_GENEROUS_DONATION_BRAHMINS
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = MAKE_GENEROUS_DONATION_BRAHMINS
++# 			}
++# 			estate_action = {
++# 				estate_action = MAKE_GENEROUS_DONATION_BRAHMINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_brahmins
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = { years_of_income = 0.5 }				
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_brahmins
++# 					loyalty = 40
++# 				}
++# 			}	
++# 		}
++# 	}
++# 	estate_brahmins_make_support_of_brahmins = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = SEEK_SUPPORT_OF_BRAHMINS
++# 			}
++# 			has_estate = estate_brahmins
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = SEEK_SUPPORT_OF_BRAHMINS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = SEEK_SUPPORT_OF_BRAHMINS
++# 			}
++# 			estate_action = {
++# 				estate_action = SEEK_SUPPORT_OF_BRAHMINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_brahmins
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_brahmins
++# 					loyalty = 30
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_brahmins
++# 					}
++# 				}					
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_brahmins
++# 					influence = 60
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_brahmins
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 100
++# 				has_estate_agenda_of_estate = {
++# 					estate = estate_brahmins
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_brahmins_recruit_minister = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_MINISTER_BRAHMINS
++# 			}
++# 			has_estate = estate_brahmins
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_shared_cooldown = {
++# 				estate_action = RECRUIT_ADVISOR_BRAHMINS
++# 				days = 10950
++# 			}
++# 			estate_influence = {
++# 				estate = estate_brahmins
++# 				influence = 40
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_ADVISOR_BRAHMINS
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_MINISTER_BRAHMINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_brahmins
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 0
++# 		}
++# 	}
++# 	estate_brahmins_recruit_inquisitor = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_INQUISITOR_BRAHMINS
++# 			}
++# 			has_estate = estate_brahmins
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_ADVISOR_BRAHMINS
++# 				days = 10950
++# 			}
++# 			estate_influence = {
++# 				estate = estate_brahmins
++# 				influence = 40
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_ADVISOR_BRAHMINS
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_INQUISITOR_BRAHMINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_brahmins
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 0
++# 		}
++# 	}
++# 	estate_brahmins_demand_support_brahmin = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = DEMAND_SUPPORT_BRAHMINS
++# 			}
++# 			has_estate = estate_brahmins
++# 			NOT = { has_estate = estate_church }
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_brahmins
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_brahmins
++# 				influence = 25
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_BRAHMINS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_BRAHMINS
++# 			}
++# 			estate_action = {
++# 				estate_action = DEMAND_SUPPORT_BRAHMINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_brahmins
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 0
++# 		}
++# 	}
++# 	estate_brahmins_seek_brahmin_legitimacy = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = SEEK_BRAHMIN_LEGITIMACY_BRAHMINS
++# 			}
++# 			has_estate = estate_brahmins
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_brahmins
++# 				influence = 20
++# 			}
++# 			estate_loyalty = {
++# 				estate = estate_brahmins
++# 				loyalty = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = SEEK_BRAHMIN_LEGITIMACY_BRAHMINS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = SEEK_BRAHMIN_LEGITIMACY_BRAHMINS
++# 			}
++# 			estate_action = {
++# 				estate_action = SEEK_BRAHMIN_LEGITIMACY_BRAHMINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_brahmins
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_brahmins
++# 					influence = 70
++# 				}						
++# 			}
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsBurghers.txt b/decisions/EstateActionsBurghers.txt
+new file mode 100644
+index 0000000..52929dc
+--- /dev/null
++++ b/decisions/EstateActionsBurghers.txt
+@@ -0,0 +1,300 @@
++# #Burghers
++# country_decisions = {	
++# 	estate_burghers_ask_for_contribution = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = ASK_FOR_CONTRIBUTION_BURGHERS
++# 			}
++# 			has_estate = estate_burghers
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_burghers
++# 				loyalty = 30
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = ASK_FOR_CONTRIBUTION_BURGHERS
++# 				days = 3650
++# 			}
++# 			num_of_ports = 1
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = ASK_FOR_CONTRIBUTION_BURGHERS
++# 			}
++# 			estate_action = {
++# 				estate_action = ASK_FOR_CONTRIBUTION_BURGHERS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_burghers
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = {
++# 					estate_loyalty = {
++# 						estate = estate_burghers
++# 						loyalty = 50
++# 					}	
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				treasury = 1
++# 			}
++# 		}
++# 	}
++# 	estate_burghers_demand_support = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = DEMAND_SUPPORT_BURGHERS
++# 			}
++# 			has_estate = estate_burghers
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_burghers
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_burghers
++# 				influence = 25
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_BURGHERS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_BURGHERS
++# 			}
++# 			estate_action = {
++# 				estate_action = DEMAND_SUPPORT_BURGHERS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_burghers
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 10
++# 		}
++# 	}
++# 	estate_burghers_grant_monopoly_charter = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = GRANT_MONOPOLY_CHARTER_BURGHERS
++# 			}
++# 			has_estate = estate_burghers
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = GRANT_MONOPOLY_CHARTER_BURGHERS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = GRANT_MONOPOLY_CHARTER_BURGHERS
++# 			}
++# 			estate_action = {
++# 				estate_action = GRANT_MONOPOLY_CHARTER_BURGHERS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_burghers
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_burghers
++# 					influence = 60
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_burghers
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_burghers
++# 					loyalty = 30
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_burghers
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 100
++# 				has_estate_agenda_of_estate = {
++# 					estate = estate_burghers
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_burghers_recruit_ministers = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_MINISTER_BURGHERS
++# 			}
++# 			has_estate = estate_burghers
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_burghers
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_BURGHERS
++# 				days = 10950
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_BURGHERS
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_MINISTER_BURGHERS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_burghers
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 0
++# 		}
++# 	}
++# 	estate_burghers_grant_admiralship = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = GRANT_ADMIRALSHIP_BURGHERS
++# 			}
++# 			has_estate = estate_burghers
++# 			num_of_ports = 1
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_burghers
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_burghers
++# 				influence = 40
++# 			}		
++# 			estate_action_off_shared_cooldown = {
++# 				estate_action = ADMIRAL_FROM_ESTATE
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = ADMIRAL_FROM_ESTATE
++# 			}
++# 			estate_action = {
++# 				estate_action = GRANT_ADMIRALSHIP_BURGHERS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_burghers
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 0
++# 		}
++# 	}
++# 	estate_burghers_grant_new_world_charter = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = GRANT_NEW_WORLD_CHARTER_BURGHERS
++# 			}
++# 			has_estate = estate_burghers
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_burghers
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_burghers
++# 				influence = 40
++# 			}
++# 			estate_action_off_shared_cooldown = {
++# 				estate_action = ADMIRAL_FROM_ESTATE
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = ADMIRAL_FROM_ESTATE
++# 			}
++# 			estate_action = {
++# 				estate_action = GRANT_NEW_WORLD_CHARTER_BURGHERS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_burghers
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_burghers_comission_merchant_ships_for_war = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = COMISSION_MERCHANT_SHIPS_FOR_WAR_BURGHERS
++# 			}
++# 			has_estate = estate_burghers
++# 			num_of_ports = 1
++# 			primitives = no
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_burghers
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_burghers
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = COMISSION_MERCHANT_SHIPS_FOR_WAR_BURGHERS
++# 				days = 10950
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = COMISSION_MERCHANT_SHIPS_FOR_WAR_BURGHERS
++# 			}
++# 			estate_action = {
++# 				estate_action = COMISSION_MERCHANT_SHIPS_FOR_WAR_BURGHERS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_burghers
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsChuch.txt b/decisions/EstateActionsChuch.txt
+new file mode 100644
+index 0000000..0d1e0cc
+--- /dev/null
++++ b/decisions/EstateActionsChuch.txt
+@@ -0,0 +1,305 @@
++# #Clergy
++# country_decisions = {
++# 	estate_church_make_generous_donation = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = MAKE_GENEROUS_DONATION_CHURCH
++# 			}
++# 			has_estate = estate_church
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = MAKE_GENEROUS_DONATION_CHURCH
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = MAKE_GENEROUS_DONATION_CHURCH
++# 			}
++# 			estate_action = {
++# 				estate_action = MAKE_GENEROUS_DONATION_CHURCH
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_church
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = { years_of_income = 0.5 }	
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_church
++# 					loyalty = 40
++# 				}
++# 			}	
++# 		}
++# 	}
++# 	estate_church_recruit_minister = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_MINISTER_CHURCH
++# 			}
++# 			has_estate = estate_church
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_shared_cooldown = {
++# 				estate_action = RECRUIT_ADVISOR_CHURCH
++# 				days = 10950
++# 			}
++# 			estate_influence = {
++# 				estate = estate_church
++# 				influence = 40
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_ADVISOR_CHURCH
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_MINISTER_CHURCH
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_church
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 0
++# 		}
++# 	}
++# 	estate_church_recruit_inquisitor = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_INQUISITOR_CHURCH
++# 			}
++# 			has_estate = estate_church
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_shared_cooldown = {
++# 				estate_action = RECRUIT_ADVISOR_CHURCH
++# 				days = 10950
++# 			}
++# 			estate_influence = {
++# 				estate = estate_church
++# 				influence = 40
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_ADVISOR_CHURCH
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_INQUISITOR_CHURCH
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_church
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 0
++# 		}
++# 	}
++# 	estate_church_religious_delegation_action = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RELIGIOUS_DELEGATION_CHURCH
++# 			}
++# 			has_estate = estate_church
++# 			NOT = { tag = PAP }
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = RELIGIOUS_DELEGATION_CHURCH
++# 				days = 7300
++# 			}
++# 			estate_influence = {
++# 				estate = estate_church
++# 				influence = 40
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RELIGIOUS_DELEGATION_CHURCH
++# 			}
++# 			estate_action = {
++# 				estate_action = RELIGIOUS_DELEGATION_CHURCH
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_church
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_church
++# 					influence = 60
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_church_demand_support = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = DEMAND_SUPPORT_CHURCH
++# 			}
++# 			has_estate = estate_church
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_church
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_church
++# 				influence = 25
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_CHURCH
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_CHURCH
++# 			}
++# 			estate_action = {
++# 				estate_action = DEMAND_SUPPORT_CHURCH
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_church
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				adm_power = 700
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_church
++# 					loyalty = 50
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_church_seek_support_of_clergy = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = SEEK_SUPPORT_OF_CLERGY_CHURCH
++# 			}
++# 			has_estate = estate_church
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = SEEK_SUPPORT_OF_CLERGY_CHURCH
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = SEEK_SUPPORT_OF_CLERGY_CHURCH
++# 			}
++# 			estate_action = {
++# 				estate_action = SEEK_SUPPORT_OF_CLERGY_CHURCH
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_church
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_church
++# 					loyalty = 30
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_church
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_church
++# 					influence = 60
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_church
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 100
++# 				has_estate_agenda_of_estate = {
++# 					estate = estate_church
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_church_new_world_mission_action = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = NEW_WORLD_MISSION_CHURCH
++# 			}
++# 			has_estate = estate_church
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = NEW_WORLD_MISSION_CHURCH
++# 				days = 7300
++# 			}
++# 			has_idea_group = exploration_ideas
++# 			estate_influence = {
++# 				estate = estate_church
++# 				influence = 40
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = NEW_WORLD_MISSION_CHURCH
++# 			}
++# 			estate_action = {
++# 				estate_action = NEW_WORLD_MISSION_CHURCH
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_church
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_church
++# 					influence = 60
++# 				}
++# 			}
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsCossacks.txt b/decisions/EstateActionsCossacks.txt
+new file mode 100644
+index 0000000..c7ebd90
+--- /dev/null
++++ b/decisions/EstateActionsCossacks.txt
+@@ -0,0 +1,287 @@
++# #Cossacks
++# country_decisions = {
++# 	estate_cossacks_expand_cossack_registry = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = EXPAND_COSSACK_REGISTRY_COSSACKS
++# 			}
++# 			has_estate = estate_cossacks
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = EXPAND_COSSACK_REGISTRY_COSSACKS
++# 				days = 7300
++# 			}
++# 			any_owned_province = {
++# 				has_terrain = steppe
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = EXPAND_COSSACK_REGISTRY_COSSACKS
++# 			}
++# 			estate_action = {
++# 				estate_action = EXPAND_COSSACK_REGISTRY_COSSACKS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_cossacks
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_cossacks
++# 					influence = 60
++# 				}				
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_cossacks
++# 					loyalty = 30
++# 				}				
++# 			}
++# 		}
++# 	}
++# 	estate_cossacks_raise_cossack_host = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RAISE_COSSACK_HOST_COSSACKS
++# 			}
++# 			has_estate = estate_cossacks
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			NOT = { army_size_percentage = 1 }
++# 			estate_loyalty = {
++# 				estate = estate_cossacks
++# 				loyalty = 50
++# 			}
++# 			estate_influence = {
++# 				estate = estate_cossacks
++# 				influence = 40
++# 			}
++# 			any_owned_province = {
++# 				has_terrain = steppe
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = RAISE_COSSACK_HOST_COSSACKS
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RAISE_COSSACK_HOST_COSSACKS
++# 			}
++# 			estate_action = {
++# 				estate_action = RAISE_COSSACK_HOST_COSSACKS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_cossacks
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_cossacks
++# 					influence = 70
++# 				}				
++# 			}
++# 		}
++# 	}
++# 	estate_cossacks_cossack_conquistador = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = COSSACK_CONQUISTADOR_COSSACKS
++# 			}
++# 			has_estate = estate_cossacks
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_cossacks
++# 				loyalty = 50
++# 			}
++# 			estate_influence = {
++# 				estate = estate_cossacks
++# 				influence = 40
++# 			}
++# 			estate_action_off_shared_cooldown = {
++# 				estate_action = GENERAL_FROM_ESTATES
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = GENERAL_FROM_ESTATES
++# 			}
++# 			estate_action = {
++# 				estate_action = COSSACK_CONQUISTADOR_COSSACKS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_cossacks
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_cossacks_recruit_minister = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_MINISTER_COSSACKS
++# 			}
++# 			has_estate = estate_cossacks
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_cossacks
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_COSSACKS
++# 				days = 10950
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_COSSACKS
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_MINISTER_COSSACKS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_cossacks
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_cossacks_conscript_cossack_elite = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = CONSCRIPT_COSSACK_ELITE_COSSACKS
++# 			}
++# 			has_estate = estate_cossacks
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			any_owned_province = {
++# 				has_terrain = steppe
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = CONSCRIPT_COSSACK_ELITE_COSSACKS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = CONSCRIPT_COSSACK_ELITE_COSSACKS
++# 			}
++# 			estate_action = {
++# 				estate_action = CONSCRIPT_COSSACK_ELITE_COSSACKS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_cossacks
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = {
++# 					estate_loyalty = {
++# 						estate = estate_cossacks
++# 						loyalty = 60
++# 					}
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_cossacks_supply_arms_cossacks = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = SUPPLY_ARMS_COSSACKS
++# 			}
++# 			has_estate = estate_cossacks
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = SUPPLY_ARMS_COSSACKS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = SUPPLY_ARMS_COSSACKS
++# 			}
++# 			estate_action = {
++# 				estate_action = SUPPLY_ARMS_COSSACKS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_cossacks
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 10
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_cossacks
++# 					influence = 60
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_cossacks_permit_self_governance = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = PERMIT_SELF_GOVERNANCE_COSSACKS
++# 			}
++# 			has_estate = estate_cossacks
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = PERMIT_SELF_GOVERNANCE_COSSACKS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = PERMIT_SELF_GOVERNANCE_COSSACKS
++# 			}
++# 			estate_action = {
++# 				estate_action = PERMIT_SELF_GOVERNANCE_COSSACKS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_cossacks
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_cossacks
++# 					loyalty = 40
++# 				}
++# 			}
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsDhimmi.txt b/decisions/EstateActionsDhimmi.txt
+new file mode 100644
+index 0000000..6403dbd
+--- /dev/null
++++ b/decisions/EstateActionsDhimmi.txt
+@@ -0,0 +1,225 @@
++# #Dhimmi
++# country_decisions = {	
++# 	estate_dhimmi_recruit_minister = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_MINISTER_DHIMMI
++# 			}
++# 			has_estate = estate_dhimmi
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_dhimmi
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_DHIMMI
++# 				days = 10950
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_DHIMMI
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_MINISTER_DHIMMI
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_dhimmi
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 0
++# 		}
++# 	}
++# 	estate_dhimmi_lighten_dhimmi_tax_burden = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = LIGHTEN_DHIMMI_TAX_BURDEN_DHIMMI
++# 			}
++# 			has_estate = estate_dhimmi
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_dhimmi
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = LIGHTEN_DHIMMI_TAX_BURDEN_DHIMMI
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = LIGHTEN_DHIMMI_TAX_BURDEN_DHIMMI
++# 			}
++# 			estate_action = {
++# 				estate_action = LIGHTEN_DHIMMI_TAX_BURDEN_DHIMMI
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_dhimmi
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_dhimmi
++# 					loyalty = 30
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_dhimmi_promote_dhimmi_nobles = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = PROMOTE_DHIMMI_NOBLES_DHIMMI
++# 			}
++# 			has_estate = estate_dhimmi
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_dhimmi
++# 				influence = 40
++# 			}
++# 			estate_loyalty = {
++# 				estate = estate_dhimmi
++# 				loyalty = 30
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = PROMOTE_DHIMMI_NOBLES_DHIMMI
++# 				days = 10950
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = PROMOTE_DHIMMI_NOBLES_DHIMMI
++# 			}
++# 			estate_action = {
++# 				estate_action = PROMOTE_DHIMMI_NOBLES_DHIMMI
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_dhimmi
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 0
++# 		}
++# 	}
++# 	estate_dhimmi_recruit_from_the_dhimmi = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_FROM_THE_DHIMMI_DHIMMI
++# 			}
++# 			has_estate = estate_dhimmi
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_dhimmi
++# 				influence = 40
++# 			}
++# 			estate_loyalty = {
++# 				estate = estate_dhimmi
++# 				loyalty = 30
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_FROM_THE_DHIMMI_DHIMMI
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_FROM_THE_DHIMMI_DHIMMI
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_FROM_THE_DHIMMI_DHIMMI
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_dhimmi
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = {
++# 					estate_loyalty = {
++# 						estate = estate_dhimmi
++# 						loyalty = 50
++# 					}	
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_dhimmi
++# 					influence = 60
++# 				}
++# 			}			
++# 			modifier = {
++# 				factor = 0
++# 				manpower_percentage = 0.25				
++# 			}
++# 		}
++# 	}
++# 	estate_dhimmi_demand_contribution = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = DEMAND_CONTRIBUTION_DHIMMI
++# 			}
++# 			has_estate = estate_dhimmi
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_dhimmi
++# 				influence = 20
++# 			}
++# 			estate_loyalty = {
++# 				estate = estate_dhimmi
++# 				loyalty = 30
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = DEMAND_CONTRIBUTION_DHIMMI
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = DEMAND_CONTRIBUTION_DHIMMI
++# 			}
++# 			estate_action = {
++# 				estate_action = DEMAND_CONTRIBUTION_DHIMMI
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_dhimmi
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = {
++# 					estate_loyalty = {
++# 						estate = estate_dhimmi
++# 						loyalty = 50
++# 					}	
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				treasury = 1
++# 			}
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsGhulams.txt b/decisions/EstateActionsGhulams.txt
+new file mode 100644
+index 0000000..6391546
+--- /dev/null
++++ b/decisions/EstateActionsGhulams.txt
+@@ -0,0 +1,63 @@
++# #Vaisyas
++# country_decisions = {
++# 	estate_ghulams_promote_caucasian_troops = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = PROMOTE_CAUCASIAN_TROOPS
++# 			}
++# 			has_estate = estate_ghulams
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = PROMOTE_CAUCASIAN_TROOPS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = PROMOTE_CAUCASIAN_TROOPS
++# 			}
++# 			estate_action = {
++# 				estate_action = PROMOTE_CAUCASIAN_TROOPS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_ghulams
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_ghulams
++# 					influence = 60
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_ghulams
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_ghulams
++# 					loyalty = 30
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_ghulams
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 100
++# 				has_estate_agenda_of_estate = {
++# 					estate = estate_ghulams
++# 				}
++# 			}
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsJains.txt b/decisions/EstateActionsJains.txt
+new file mode 100644
+index 0000000..a0a2545
+--- /dev/null
++++ b/decisions/EstateActionsJains.txt
+@@ -0,0 +1,225 @@
++# #Jains
++# country_decisions = {	
++# 	estate_jains_procure_loans = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = PROCURE_LOANS_JAINS
++# 			}
++# 			has_estate = estate_jains
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			is_bankrupt = no
++# 			estate_influence = {
++# 				estate = estate_jains
++# 				influence = 15
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = PROCURE_LOANS_JAINS
++# 				days = 1825
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = PROCURE_LOANS_JAINS
++# 			}
++# 			estate_action = {
++# 				estate_action = PROCURE_LOANS_JAINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_jains
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_jains_investigate_corruption = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = INVESTIGATE_CORRUPTION_JAINS
++# 			}
++# 			has_estate = estate_jains
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			corruption = 2
++# 			estate_loyalty = {
++# 				estate = estate_jains
++# 				loyalty = 40
++# 			}
++# 			estate_influence = {
++# 				estate = estate_jains
++# 				influence = 60
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = INVESTIGATE_CORRUPTION_JAINS
++# 				days = 10950
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = INVESTIGATE_CORRUPTION_JAINS
++# 			}
++# 			estate_action = {
++# 				estate_action = INVESTIGATE_CORRUPTION_JAINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_jains
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_jains_patronize_jain_families = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = PATRONIZE_JAIN_FAMILIES_JAINS
++# 			}
++# 			has_estate = estate_jains
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = PATRONIZE_JAIN_FAMILIES_JAINS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = PATRONIZE_JAIN_FAMILIES_JAINS
++# 			}
++# 			estate_action = {
++# 				estate_action = PATRONIZE_JAIN_FAMILIES_JAINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_jains
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_jains
++# 					influence = 60
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_jains
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_jains
++# 					loyalty = 30
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_jains
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 100
++# 				has_estate_agenda_of_estate = {
++# 					estate = estate_jains
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_jains_commision_jain_scriptures = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = COMMISSION_JAIN_SCRIPTURES_JAINS
++# 			}
++# 			has_estate = estate_jains
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_jains
++# 				influence = 30
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = COMMISSION_JAIN_SCRIPTURES_JAINS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = COMMISSION_JAIN_SCRIPTURES_JAINS
++# 			}
++# 			estate_action = {
++# 				estate_action = COMMISSION_JAIN_SCRIPTURES_JAINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_jains
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_jains
++# 					influence = 70
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_jains
++# 					loyalty = 30
++# 				}				
++# 			}
++# 		}
++# 	}
++# 	estate_jains_demand_support = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = DEMAND_SUPPORT_JAINS
++# 			}
++# 			has_estate = estate_jains
++# 			NOT = { has_estate = estate_burghers }
++# 			NOT = { has_estate = estate_vaisyas }
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_jains
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_jains
++# 				influence = 25
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_JAINS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_JAINS
++# 			}
++# 			estate_action = {
++# 				estate_action = DEMAND_SUPPORT_JAINS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_jains
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsMaratha.txt b/decisions/EstateActionsMaratha.txt
+new file mode 100644
+index 0000000..90126da
+--- /dev/null
++++ b/decisions/EstateActionsMaratha.txt
+@@ -0,0 +1,190 @@
++# #Maratha
++# country_decisions = {
++# 	estate_maratha_promote_maratha_nobility = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = PROMOTE_MARATHA_NOBILITY_MARATHA
++# 			}
++# 			has_estate = estate_maratha
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = PROMOTE_MARATHA_NOBILITY_MARATHA
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = PROMOTE_MARATHA_NOBILITY_MARATHA
++# 			}
++# 			estate_action = {
++# 				estate_action = PROMOTE_MARATHA_NOBILITY_MARATHA
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_maratha
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_maratha
++# 					influence = 60
++# 				}				
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_maratha
++# 					loyalty = 30
++# 				}				
++# 			}
++# 		}
++# 	}
++# 	estate_maratha_recruit_minister = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_MINISTER_MARATHA
++# 			}
++# 			has_estate = estate_maratha
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_maratha
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_MARATHA
++# 				days = 10950
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_MARATHA
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_MINISTER_MARATHA
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_maratha
++# 			}
++# 			if = {
++# 				limit = {
++# 					has_estate = estate_nobles
++# 				}
++# 				add_estate_loyalty = {
++# 					estate = estate_nobles
++# 					loyalty = -5
++# 				}
++# 			}
++# 			#add_estate_influence_modifier = {
++# 			#	estate = estate_maratha
++# 			#	desc = EST_VAL_MARATHA_MINISTER
++# 			#	influence = 15
++# 			#	duration = 10950
++# 			#}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_maratha_recruit_marathi_troops = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_MARATHI_TROOPS_MARATHA
++# 			}
++# 			has_estate = estate_maratha
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_maratha
++# 				loyalty = 30
++# 			}
++# 			estate_influence = {
++# 				estate = estate_maratha
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_MARATHI_TROOPS_MARATHA
++# 				days = 9125
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_MARATHI_TROOPS_MARATHA
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_MARATHI_TROOPS_MARATHA
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_maratha
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = {
++# 					estate_loyalty = {
++# 						estate = estate_maratha
++# 						loyalty = 50
++# 					}	
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				NOT = { army_size_percentage = 0.8 }
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				is_at_war = no
++# 			}
++# 		}
++# 	}
++# 	estate_maratha_demand_support = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = DEMAND_SUPPORT_MARATHA
++# 			}
++# 			has_estate = estate_maratha
++# 			NOT = { has_estate = estate_nobles }
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_maratha
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_maratha
++# 				influence = 25
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_MARATHA
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_MARATHA
++# 			}
++# 			estate_action = {
++# 				estate_action = DEMAND_SUPPORT_MARATHA
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_maratha
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsNobles.txt b/decisions/EstateActionsNobles.txt
+new file mode 100644
+index 0000000..7f9be08
+--- /dev/null
++++ b/decisions/EstateActionsNobles.txt
+@@ -0,0 +1,262 @@
++# #Nobility
++# country_decisions = {
++# 	estate_nobles_call_diet = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = CALL_DIET_NOBLES
++# 			}
++# 			has_estate = estate_nobles
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = CALL_DIET_NOBLES
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = CALL_DIET_NOBLES
++# 			}
++# 			estate_action = {
++# 				estate_action = CALL_DIET_NOBLES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nobles
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_nobles
++# 					influence = 60
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_nobles
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_nobles
++# 					loyalty = 30
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_nobles
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 100
++# 				has_estate_agenda_of_estate = {
++# 					estate = estate_nobles
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_nobles_grant_generalship = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = GRANT_GENERALSHIP_NOBLES
++# 			}
++# 			has_estate = estate_nobles
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_nobles
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_nobles
++# 				influence = 40
++# 			}
++# 			estate_action_off_shared_cooldown = {
++# 				estate_action = GENERAL_FROM_ESTATES
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = GENERAL_FROM_ESTATES
++# 			}
++# 			estate_action = {
++# 				estate_action = GRANT_GENERALSHIP_NOBLES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nobles
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 10
++# 			modifier = {
++# 				factor = 0
++# 				is_at_war = no
++# 			}
++# 		}
++# 	}
++# 	estate_nobles_recruit_conquistador_estates = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_CONQUISTADOR_ESTATES_NOBLES
++# 			}
++# 			has_estate = estate_nobles
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_shared_cooldown = {
++# 				estate_action = GENERAL_FROM_ESTATES
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = GENERAL_FROM_ESTATES
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_CONQUISTADOR_ESTATES_NOBLES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nobles
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_nobles_demand_support = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = DEMAND_SUPPORT_NOBLES
++# 			}
++# 			has_estate = estate_nobles
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_nobles
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_nobles
++# 				influence = 25
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_NOBLES
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_NOBLES
++# 			}
++# 			estate_action = {
++# 				estate_action = DEMAND_SUPPORT_NOBLES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nobles
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_nobles_recruit_minister = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_MINISTER_NOBLES
++# 			}
++# 			has_estate = estate_nobles
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_nobles
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_NOBLES
++# 				days = 10950
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_NOBLES
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_MINISTER_NOBLES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nobles
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_nobles_demand_more_troops = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = DEMAND_MORE_TROOPS_NOBLES
++# 			}
++# 			has_estate = estate_nobles
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_nobles
++# 				loyalty = 30
++# 			}
++# 			estate_influence = {
++# 				estate = estate_nobles
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = DEMAND_MORE_TROOPS_NOBLES
++# 				days = 9125
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = DEMAND_MORE_TROOPS_NOBLES
++# 			}
++# 			estate_action = {
++# 				estate_action = DEMAND_MORE_TROOPS_NOBLES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nobles
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = {
++# 					estate_loyalty = {
++# 						estate = estate_nobles
++# 						loyalty = 50
++# 					}	
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				NOT = { army_size_percentage = 0.8 }
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				is_at_war = no
++# 			}
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsNomadicTribes.txt b/decisions/EstateActionsNomadicTribes.txt
+new file mode 100644
+index 0000000..b2e2e89
+--- /dev/null
++++ b/decisions/EstateActionsNomadicTribes.txt
+@@ -0,0 +1,279 @@
++# #Nomadic Tribes
++# country_decisions = {
++# 	estate_nomadic_tribes_support_tribes = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = SUPPORT_TRIBES_NOMADIC_TRIBES
++# 			}
++# 			has_estate = estate_nomadic_tribes
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = SUPPORT_TRIBES_NOMADIC_TRIBES
++# 				days = 3650
++# 			}
++# 			years_of_income = 0.25
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = SUPPORT_TRIBES_NOMADIC_TRIBES
++# 			}
++# 			estate_action = {
++# 				estate_action = SUPPORT_TRIBES_NOMADIC_TRIBES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nomadic_tribes
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = { years_of_income = 0.5 }	
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_nomadic_tribes
++# 					loyalty = 30
++# 				}				
++# 			}
++# 		}
++# 	}
++# 	estate_nomadic_tribes_contribute_warriors = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = CONTRIBUTE_WARRIORS_NOMADIC_TRIBES
++# 			}
++# 			has_estate = estate_nomadic_tribes
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = CONTRIBUTE_WARRIORS_NOMADIC_TRIBES
++# 				days = 3650
++# 			}
++# 			estate_loyalty = {
++# 				estate = estate_nomadic_tribes
++# 				loyalty = 50
++# 			}
++# 			estate_influence = {
++# 				estate = estate_nomadic_tribes
++# 				influence = 40
++# 			}
++# 			NOT = { manpower_percentage = 0.99 }
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = CONTRIBUTE_WARRIORS_NOMADIC_TRIBES
++# 			}
++# 			estate_action = {
++# 				estate_action = CONTRIBUTE_WARRIORS_NOMADIC_TRIBES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nomadic_tribes
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = { army_size_percentage = 0.8 }
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				NOT = {
++# 					estate_loyalty = {
++# 						estate = estate_nomadic_tribes
++# 						loyalty = 50
++# 					}			
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				is_at_war = no
++# 			}
++# 		}
++# 	}
++# 	estate_nomadic_tribes_raise_host = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RAISE_HOST_NOMADIC_TRIBES
++# 			}
++# 			has_estate = estate_nomadic_tribes
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = RAISE_HOST_NOMADIC_TRIBES
++# 				days = 3650
++# 			}
++# 			capital_scope = {
++# 				controlled_by = ROOT
++# 			}
++# 			estate_loyalty = {
++# 				estate = estate_nomadic_tribes
++# 				loyalty = 50
++# 			}
++# 			estate_influence = {
++# 				estate = estate_nomadic_tribes
++# 				influence = 40
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RAISE_HOST_NOMADIC_TRIBES
++# 			}
++# 			estate_action = {
++# 				estate_action = RAISE_HOST_NOMADIC_TRIBES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nomadic_tribes
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				army_size_percentage = 0.5
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_nomadic_tribes
++# 					influence = 50
++# 				}			
++# 			}	
++# 			modifier = {
++# 				factor = 0
++# 				is_at_war = no
++# 			}
++# 		}
++# 	}
++# 	estate_nomadic_tribes_recruit_minister = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_MINISTER_NOMADIC_TRIBES
++# 			}
++# 			has_estate = estate_nomadic_tribes
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_NOMADIC_TRIBES
++# 				days = 10950
++# 			}
++# 			estate_influence = {
++# 				estate = estate_nomadic_tribes
++# 				influence = 40
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_NOMADIC_TRIBES
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_MINISTER_NOMADIC_TRIBES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nomadic_tribes
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 0
++# 		}
++# 	}
++# 	estate_nomadic_tribes_strengthen_tribal_autonomy = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = STRENGTHEN_TRIBAL_AUTONOMY
++# 			}
++# 			has_estate = estate_nomadic_tribes
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = STRENGTHEN_TRIBAL_AUTONOMY
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = STRENGTHEN_TRIBAL_AUTONOMY
++# 			}
++# 			estate_action = {
++# 				estate_action = STRENGTHEN_TRIBAL_AUTONOMY
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nomadic_tribes
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_nomadic_tribes
++# 					influence = 60
++# 				}				
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_nomadic_tribes
++# 					loyalty = 30
++# 				}				
++# 			}
++# 		}
++# 	}
++# 	estate_nomadic_tribes_redistribute_horde_authority_tribes = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = REDISTRIBUTE_HORDE_AUTHORITY_TRIBES
++# 			}
++# 			has_estate = estate_nomadic_tribes
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = REDISTRIBUTE_HORDE_AUTHORITY_TRIBES
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = REDISTRIBUTE_HORDE_AUTHORITY_TRIBES
++# 			}
++# 			estate_action = {
++# 				estate_action = REDISTRIBUTE_HORDE_AUTHORITY_TRIBES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_nomadic_tribes
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_nomadic_tribes
++# 					influence = 60
++# 				}				
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_nomadic_tribes
++# 					loyalty = 30
++# 				}				
++# 			}
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsQizilbash.txt b/decisions/EstateActionsQizilbash.txt
+new file mode 100644
+index 0000000..cf14e0c
+--- /dev/null
++++ b/decisions/EstateActionsQizilbash.txt
+@@ -0,0 +1,63 @@
++# #Qizilbash
++# country_decisions = {
++# 	estate_qizilbash_grant_qizilbash_horses = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = GRANT_QIZILBASH_HORSES
++# 			}
++# 			has_estate = estate_qizilbash
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = GRANT_QIZILBASH_HORSES
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = GRANT_QIZILBASH_HORSES
++# 			}
++# 			estate_action = {
++# 				estate_action = GRANT_QIZILBASH_HORSES
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_qizilbash
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_qizilbash
++# 					influence = 60
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_qizilbash
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_qizilbash
++# 					loyalty = 30
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_qizilbash
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 100
++# 				has_estate_agenda_of_estate = {
++# 					estate = estate_qizilbash
++# 				}
++# 			}
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsRajputs.txt b/decisions/EstateActionsRajputs.txt
+new file mode 100644
+index 0000000..50bbfd5
+--- /dev/null
++++ b/decisions/EstateActionsRajputs.txt
+@@ -0,0 +1,267 @@
++# #Rajput
++# country_decisions = {
++# 	estate_rajput_recruit_rajput_general = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_RAJPUT_GENERAL_RAJPUT
++# 			}
++# 			has_estate = estate_rajput
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_rajput
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_rajput
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = GENERAL_FROM_ESTATES
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = GENERAL_FROM_ESTATES
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_RAJPUT_GENERAL_RAJPUT
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_rajput
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_rajput_look_up_purbias_action = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = LOOK_UP_PURBIAS_RAJPUT
++# 			}
++# 			has_estate = estate_rajput
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_rajput
++# 				loyalty = 50
++# 			}
++# 			estate_influence = {
++# 				estate = estate_rajput
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = LOOK_UP_PURBIAS_RAJPUT
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = LOOK_UP_PURBIAS_RAJPUT
++# 			}
++# 			estate_action = {
++# 				estate_action = LOOK_UP_PURBIAS_RAJPUT
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_rajput
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = { years_of_income = 0.5 }				
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				is_at_war = no				
++# 			}
++# 		}
++# 	}
++# 	estate_rajput_demand_support = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = DEMAND_SUPPORT_RAJPUT
++# 			}
++# 			has_estate = estate_rajput
++# 			NOT = { has_estate = estate_nobles }
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_rajput
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_rajput
++# 				influence = 25
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_RAJPUT
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_RAJPUT
++# 			}
++# 			estate_action = {
++# 				estate_action = DEMAND_SUPPORT_RAJPUT
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_rajput
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_rajput_exempt_from_jizya = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = EXEMPT_FROM_JIZYA_RAJPUT
++# 			}
++# 			has_estate = estate_rajput
++# 			religion_group = muslim
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_rajput
++# 				influence = 20
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = EXEMPT_FROM_JIZYA_RAJPUT
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = EXEMPT_FROM_JIZYA_RAJPUT
++# 			}
++# 			estate_action = {
++# 				estate_action = EXEMPT_FROM_JIZYA_RAJPUT
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_rajput
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_rajput
++# 					loyalty = 30
++# 				}				
++# 			}
++# 		}
++# 	}
++# 	estate_rajput_promote_rajput_nobility = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = PROMOTE_RAJPUT_NOBILITY_RAJPUT
++# 			}
++# 			has_estate = estate_rajput
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = PROMOTE_RAJPUT_NOBILITY_RAJPUT
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = PROMOTE_RAJPUT_NOBILITY_RAJPUT
++# 			}
++# 			estate_action = {
++# 				estate_action = PROMOTE_RAJPUT_NOBILITY_RAJPUT
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_rajput
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_rajput
++# 					influence = 60
++# 				}				
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_rajput
++# 					loyalty = 30
++# 				}				
++# 			}
++# 		}
++# 	}
++# 	estate_rajput_recruit_rajput_troops = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_RAJPUT_TROOPS_RAJPUT
++# 			}
++# 			has_estate = estate_rajput
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_rajput
++# 				loyalty = 30
++# 			}
++# 			estate_influence = {
++# 				estate = estate_rajput
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_RAJPUT_TROOPS_RAJPUT
++# 				days = 9125
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_RAJPUT_TROOPS_RAJPUT
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_RAJPUT_TROOPS_RAJPUT
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_rajput
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = {
++# 					estate_loyalty = {
++# 						estate = estate_rajput
++# 						loyalty = 50
++# 					}	
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				NOT = { army_size_percentage = 0.8 }
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				is_at_war = no
++# 			}
++# 		}
++# 	}
++# }
+\ No newline at end of file
+diff --git a/decisions/EstateActionsVaisyas.txt b/decisions/EstateActionsVaisyas.txt
+new file mode 100644
+index 0000000..345135d
+--- /dev/null
++++ b/decisions/EstateActionsVaisyas.txt
+@@ -0,0 +1,223 @@
++# #Vaisyas
++# country_decisions = {
++# 	estate_vaisyas_ask_for_contribution = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = ASK_FOR_CONTRIBUTION_VAISYAS
++# 			}
++# 			has_estate = estate_vaisyas
++# 			num_of_ports = 1
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_vaisyas
++# 				loyalty = 30
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = ASK_FOR_CONTRIBUTION_VAISYAS
++# 				days = 3650
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = ASK_FOR_CONTRIBUTION_VAISYAS
++# 			}
++# 			estate_action = {
++# 				estate_action = ASK_FOR_CONTRIBUTION_VAISYAS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_vaisyas
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				NOT = {
++# 					estate_loyalty = {
++# 						estate = estate_vaisyas
++# 						loyalty = 50
++# 					}	
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				treasury = 1
++# 			}
++# 		}
++# 	}
++# 	estate_vaisyas_demand_support = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = DEMAND_SUPPORT_VAISYAS
++# 			}
++# 			has_estate = estate_vaisyas
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_vaisyas
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_vaisyas
++# 				influence = 25
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_VAISYAS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = DEMAND_SUPPORT_VAISYAS
++# 			}
++# 			estate_action = {
++# 				estate_action = DEMAND_SUPPORT_VAISYAS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_vaisyas
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_vaisyas_seek_guild_support = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = SEEK_GUILD_SUPPORT_VAISYAS
++# 			}
++# 			has_estate = estate_vaisyas
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_action_off_cooldown = {
++# 				estate_action = SEEK_GUILD_SUPPORT_VAISYAS
++# 				days = 7300
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = SEEK_GUILD_SUPPORT_VAISYAS
++# 			}
++# 			estate_action = {
++# 				estate_action = SEEK_GUILD_SUPPORT_VAISYAS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_vaisyas
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 			modifier = {
++# 				factor = 0
++# 				estate_influence = {
++# 					estate = estate_vaisyas
++# 					influence = 60
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_vaisyas
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 0
++# 				estate_loyalty = {
++# 					estate = estate_vaisyas
++# 					loyalty = 30
++# 				}
++# 				NOT = {
++# 					has_estate_agenda_of_estate = {
++# 						estate = estate_vaisyas
++# 					}
++# 				}
++# 			}
++# 			modifier = {
++# 				factor = 100
++# 				has_estate_agenda_of_estate = {
++# 					estate = estate_vaisyas
++# 				}
++# 			}
++# 		}
++# 	}
++# 	estate_vaisyas_recruit_minister = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = RECRUIT_MINISTER_VAISYAS
++# 			}
++# 			has_estate = estate_vaisyas
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_influence = {
++# 				estate = estate_vaisyas
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_VAISYAS
++# 				days = 10950
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = RECRUIT_MINISTER_VAISYAS
++# 			}
++# 			estate_action = {
++# 				estate_action = RECRUIT_MINISTER_VAISYAS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_vaisyas
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# 	estate_vaisyas_commision_merchant_ships_for_war = {
++# 		color = { 195 160 20 }
++# 		potential = {
++# 			has_enabled_estate_action = {
++# 				estate_action = COMISSION_MERCHANT_SHIPS_FOR_WAR_VAISYAS
++# 			}
++# 			has_estate = estate_vaisyas
++# 			num_of_ports = 1
++# 			primitives = no
++# 		}
++# 		allow = {
++# 			has_not_any_estate_disaster_active = yes
++# 			estate_loyalty = {
++# 				estate = estate_vaisyas
++# 				loyalty = 30
++# 			}	
++# 			estate_influence = {
++# 				estate = estate_vaisyas
++# 				influence = 40
++# 			}
++# 			estate_action_off_cooldown = {
++# 				estate_action = COMISSION_MERCHANT_SHIPS_FOR_WAR_VAISYAS
++# 				days = 10950
++# 			}
++# 		}
++# 		effect = {
++# 			set_estate_action_cooldown = {
++# 				estate_action = COMISSION_MERCHANT_SHIPS_FOR_WAR_VAISYAS
++# 			}
++# 			estate_action = {
++# 				estate_action = COMISSION_MERCHANT_SHIPS_FOR_WAR_VAISYAS
++# 			}
++# 			increase_estate_action_counter = {
++# 				estate = estate_vaisyas
++# 			}
++# 		}
++# 		ai_will_do = {
++# 			factor = 1
++# 		}
++# 	}
++# }
+\ No newline at end of file
+-- 
+2.51.0.windows.2
+
