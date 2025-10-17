@@ -273,6 +273,15 @@ adm_idea_modifiers = {
 			}
 		}
 	}
+	custom_idea_enemy_core_creation = {
+		enemy_core_creation = 0.15
+		level_cost_2 = 3
+		level_cost_3 = 9
+		level_cost_4 = 18
+		chance = {
+			factor = 0
+		}
+	}	
 	custom_idea_core_creation = {
 		core_creation = -0.05
 		chance = {
