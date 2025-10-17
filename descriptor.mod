@@ -1,4 +1,4 @@
-version="4.0.3"
+version="4.0.4"
 replace_path="missions"
 tags={
 	"Balance"
