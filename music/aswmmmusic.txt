@@ -12,187 +12,187 @@
 
 ############VOICES OF BYZANTIUM##################
 song = {
-	name = "MercyofPeace" 		
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			OR = {
-				religion = orthodox
-				religion = coptic
-				religion = nestorian
-			}
-		}		
-		modifier = {
-			factor = 1.25
-			tag = BYZ
-		}
-		modifier = {
-			factor = 0
-			NOT = { 
-				OR = {
-					religion = orthodox
-					religion = coptic
-					religion = nestorian
-				}
-			}
-		}		
-	}
+    name = "MercyofPeace"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            OR = {
+                religion = orthodox
+                religion = coptic
+                religion = nestorian
+            }
+        }
+        modifier = {
+            factor = 1.25
+            tag = BYZ
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion = orthodox
+                    religion = coptic
+                    religion = nestorian
+                }
+            }
+        }
+    }
 }
 
 
 
 song = {
-	name = "ItisTrulyMeet" 		 
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			OR = {
-				religion = orthodox
-				religion = coptic
-				religion = nestorian
-				}
-		}		
-		modifier = {
-			factor = 1.25
-			tag = BYZ
-		}
-		modifier = {
-			factor = 0
-			NOT = { 
-				OR = {
-					religion = orthodox
-					religion = coptic
-					religion = nestorian
-				}
-			}
-		}		
-	}
+    name = "ItisTrulyMeet"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            OR = {
+                religion = orthodox
+                religion = coptic
+                religion = nestorian
+            }
+        }
+        modifier = {
+            factor = 1.25
+            tag = BYZ
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion = orthodox
+                    religion = coptic
+                    religion = nestorian
+                }
+            }
+        }
+    }
 }
 
 
 
 song = {
-	name = "HolyGod" 		
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			OR = {
-				religion = orthodox
-				religion = coptic
-				religion = nestorian
-				}
-		}		
-		modifier = {
-			factor = 1.25
-			tag = BYZ
-		}
-		modifier = {
-			factor = 0
-			NOT = { 
-				OR = {
-					religion = orthodox
-					religion = coptic
-					religion = nestorian
-				}
-			}
-		}		
-	}
+    name = "HolyGod"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            OR = {
+                religion = orthodox
+                religion = coptic
+                religion = nestorian
+            }
+        }
+        modifier = {
+            factor = 1.25
+            tag = BYZ
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion = orthodox
+                    religion = coptic
+                    religion = nestorian
+                }
+            }
+        }
+    }
 }
 
 
 
 song = {
-	name = "GreatLitany" 		 
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			OR = {
-				religion = orthodox
-				religion = coptic
-				religion = nestorian
-				}
-		}		
-		modifier = {
-			factor = 1.25
-			tag = BYZ
-		}
-		modifier = {
-			factor = 0
-			NOT = { 
-				OR = {
-					religion = orthodox
-					religion = coptic
-					religion = nestorian
-				}
-			}
-		}		
-	}
+    name = "GreatLitany"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            OR = {
+                religion = orthodox
+                religion = coptic
+                religion = nestorian
+            }
+        }
+        modifier = {
+            factor = 1.25
+            tag = BYZ
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion = orthodox
+                    religion = coptic
+                    religion = nestorian
+                }
+            }
+        }
+    }
 }
 
 
 
 song = {
-	name = "CherubicHymn" 		 
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			OR = {
-				religion = orthodox
-				religion = coptic
-				religion = nestorian
-				}
-		}		
-		modifier = {
-			factor = 1.25
-			tag = BYZ
-		}
-		modifier = {
-			factor = 0
-			NOT = { 
-				OR = {
-					religion = orthodox
-					religion = coptic
-					religion = nestorian
-				}
-			}
-		}		
-	}
+    name = "CherubicHymn"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            OR = {
+                religion = orthodox
+                religion = coptic
+                religion = nestorian
+            }
+        }
+        modifier = {
+            factor = 1.25
+            tag = BYZ
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion = orthodox
+                    religion = coptic
+                    religion = nestorian
+                }
+            }
+        }
+    }
 }
 
 
 
 song = {
-	name = "AgniPartheneHymn" 		  
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			OR = {
-				religion = orthodox
-				religion = coptic
-				religion = nestorian
-				}
-		}		
-		modifier = {
-			factor = 1.25
-			tag = BYZ
-		}
-		modifier = {
-			factor = 0
-			NOT = { 
-				OR = {
-					religion = orthodox
-					religion = coptic
-					religion = nestorian
-				}
-			}
-		}		
-	}
+    name = "AgniPartheneHymn"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            OR = {
+                religion = orthodox
+                religion = coptic
+                religion = nestorian
+            }
+        }
+        modifier = {
+            factor = 1.25
+            tag = BYZ
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion = orthodox
+                    religion = coptic
+                    religion = nestorian
+                }
+            }
+        }
+    }
 }
 
 
@@ -201,169 +201,169 @@ song = {
 
 ##############AMBIENT and Peace###################
 song = {
-	name = "Greensleeves" 		  
-	
-	chance = {
-		modifier = {
-			factor = 1
-			is_at_war = no
-		}
-		modifier = {
-			factor = 0
-			is_at_war = yes
-		}		
-	}
+    name = "Greensleeves"
+
+    chance = {
+        modifier = {
+            factor = 1
+            is_at_war = no
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
 }
 
 
 
 song = {
-	name = "MistressWintersJump" 		  
-	
-	chance = {
-		modifier = {
-			factor = 1
-			is_at_war = no
-		}
-		modifier = {
-			factor = 0
-			is_at_war = yes
-		}		
-	}
+    name = "MistressWintersJump"
+
+    chance = {
+        modifier = {
+            factor = 1
+            is_at_war = no
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
 }
 
 
 
 song = {
-	name = "ItsOkaytobeAfraid" 		
-	
-	chance = {
-		modifier = {
-			factor = 1
-			is_at_war = no
-		}
-		modifier = {
-			factor = 0
-			is_at_war = yes
-		}		
-	}
+    name = "ItsOkaytobeAfraid"
+
+    chance = {
+        modifier = {
+            factor = 1
+            is_at_war = no
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
 }
 
 
 song = {
-	name = "HymnForConstantinople" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1
-			is_at_war = no
-		}
-		modifier = {
-			factor = 0
-			is_at_war = yes
-		}		
-	}
-}
+    name = "HymnForConstantinople"
 
-
-
-song = {
-	name = "PeaceofAugsburg" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			is_at_war = no
-		}
-		modifier = {
-			factor = 0
-			is_at_war = yes
-		}		
-	}
-}
-
-
-song = {
-	name = "TheKingisDead" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			is_at_war = no
-		}
-		modifier = {
-			factor = 0
-			is_at_war = yes
-		}		
-	}
+    chance = {
+        modifier = {
+            factor = 1
+            is_at_war = no
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
 }
 
 
 
 song = {
-	name = "TheHuntingTrip" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1
-			is_at_war = no
-		}
-		modifier = {
-			factor = 0
-			is_at_war = yes
-		}		
-	}
+    name = "PeaceofAugsburg"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            is_at_war = no
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
+}
+
+
+song = {
+    name = "TheKingisDead"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            is_at_war = no
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
 }
 
 
 
 song = {
-	name = "IntheShadowofTime" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1
-			is_at_war = no
-		}
-		modifier = {
-			factor = 0
-			is_at_war = yes
-		}		
-	}
+    name = "TheHuntingTrip"
+
+    chance = {
+        modifier = {
+            factor = 1
+            is_at_war = no
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
 }
 
 
 
 song = {
-	name = "NewLandsNewBeginnings" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1
-			is_at_war = no
-		}
-		modifier = {
-			factor = 0
-			is_at_war = yes
-		}		
-	}
+    name = "IntheShadowofTime"
+
+    chance = {
+        modifier = {
+            factor = 1
+            is_at_war = no
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
 }
 
 
 
 song = {
-	name = "BlessedistheMan" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1
-			is_at_war = no
-		}
-		modifier = {
-			factor = 0
-			is_at_war = yes
-		}		
-	}
+    name = "NewLandsNewBeginnings"
+
+    chance = {
+        modifier = {
+            factor = 1
+            is_at_war = no
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
+}
+
+
+
+song = {
+    name = "BlessedistheMan"
+
+    chance = {
+        modifier = {
+            factor = 1
+            is_at_war = no
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
 }
 
 
@@ -371,590 +371,824 @@ song = {
 
 #############WAR########################
 song = {
-	name = "ChargeoftheHussars" 		
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			is_at_war = yes
-		}
-		modifier = {
-			factor = 0
-			is_at_war = no
-		}		
-	}
+    name = "ChargeoftheHussars"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            is_at_war = yes
+        }
+        modifier = {
+            factor = 0
+            is_at_war = no
+        }
+    }
 }
 
 
 
 
 song = {
-	name = "SiegeofVienna" 		
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			is_at_war = yes
-		}
-		modifier = {
-			factor = 0
-			is_at_war = no
-		}		
-	}
+    name = "SiegeofVienna"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            is_at_war = yes
+        }
+        modifier = {
+            factor = 0
+            is_at_war = no
+        }
+    }
 }
 
 
 song = {
-	name = "PeasantsRebellion"	
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			is_at_war = yes
-		}
-		modifier = {
-			factor = 0
-			is_at_war = no
-		}		
-	}
+    name = "PeasantsRebellion"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            is_at_war = yes
+        }
+        modifier = {
+            factor = 0
+            is_at_war = no
+        }
+    }
 }
 
 
 song = {
-	name = "Tamerlane"		
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			is_at_war = yes
-		}
-		modifier = {
-			factor = 0
-			is_at_war = no
-		}		
-	}
+    name = "Tamerlane"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            is_at_war = yes
+        }
+        modifier = {
+            factor = 0
+            is_at_war = no
+        }
+    }
 }
 
 
 song = {
-	name = "LastMarchoftheCrusaders"		
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			is_at_war = yes
-		}
-		modifier = {
-			factor = 0
-			is_at_war = no
-		}		
-	}
+    name = "LastMarchoftheCrusaders"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            is_at_war = yes
+        }
+        modifier = {
+            factor = 0
+            is_at_war = no
+        }
+    }
 }
 
 
 song = {
-	name = "WrathoftheNorthmen"		
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			is_at_war = yes
-		}
-		modifier = {
-			factor = 0
-			is_at_war = no
-		}		
-	}
+    name = "WrathoftheNorthmen"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            is_at_war = yes
+        }
+        modifier = {
+            factor = 0
+            is_at_war = no
+        }
+    }
 }
 
 
 song = {
-	name = "Danger"		
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			is_at_war = yes
-		}
-		modifier = {
-			factor = 0
-			is_at_war = no
-		}		
-	}
+    name = "Danger"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            is_at_war = yes
+        }
+        modifier = {
+            factor = 0
+            is_at_war = no
+        }
+    }
 }
 
 song = {
-	name = "NationUnderSiege" 		
-	
-	chance = {
-		modifier = {
-			factor = 1.25
-			is_at_war = yes
-		}
-		modifier = {
-			factor = 0
-			is_at_war = no
-		}		
-	}
+    name = "NationUnderSiege"
+
+    chance = {
+        modifier = {
+            factor = 1.25
+            is_at_war = yes
+        }
+        modifier = {
+            factor = 0
+            is_at_war = no
+        }
+    }
 }
 ###############GENERAL################################
 song = {
-	name = "maintheme"
-	
-	chance = {
-		modifier = {
-			factor = 0			#"The Sun Never Sets", composed specially as a theme for MEIOU And Taxes
-		}		
-	}
+    name = "maintheme"
+
+    chance = {
+        modifier = {
+            factor = 0			#"The Sun Never Sets", composed specially as a theme for MEIOU And Taxes
+        }
+    }
 }
 
 
 
 
 song = {
-	name = "AgeofExploration" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1
-		}		
-	}
+    name = "AgeofExploration"
+
+    chance = {
+        modifier = {
+            factor = 1
+        }
+    }
 }
 
 
 
 song = {
-	name = "Cantabile" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1
-		}		
-	}
+    name = "Cantabile"
+
+    chance = {
+        modifier = {
+            factor = 1
+        }
+    }
 }
 
 
 
 song = {
-	name = "avemaria"		  	  
-	
-	chance = {
-		modifier = {
-			factor = 1
-		}		
-	}
+    name = "avemaria"
+
+    chance = {
+        modifier = {
+            factor = 1
+        }
+    }
 }
 
 ############EAST ASIA######################
 song = {
-	name = "CherryBlossoms" 	 
-	
-	chance = {
-		modifier = {
-			factor = 1
-		}
-		modifier = {
-			factor = 5
-			OR = {
-				culture_group = east_asian
-				culture_group = japanese_g
-				culture_group = korean_g
-				culture_group = malay
-				culture_group = burman
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = {
-				OR = {
-					culture_group = east_asian
-					culture_group = japanese_g
-					culture_group = korean_g
-					culture_group = malay
-					culture_group = burman
-				}
-			}
-		}		
-	}
+    name = "CherryBlossoms"
+
+    chance = {
+        modifier = {
+            factor = 1
+        }
+        modifier = {
+            factor = 5
+            OR = {
+                culture_group = east_asian
+                culture_group = japanese_g
+                culture_group = korean_g
+                culture_group = malay
+                culture_group = burman
+                culture_group = mon_khmer
+                culture_group = mongolic
+                culture_group = evenks
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    culture_group = east_asian
+                    culture_group = japanese_g
+                    culture_group = korean_g
+                    culture_group = malay
+                    culture_group = burman
+                    culture_group = mon_khmer
+                    culture_group = mongolic
+                    culture_group = evenks
+                }
+            }
+        }
+    }
 }
 
 
 
 song = {
-	name = "GazingRiver" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1
-		}
-		modifier = {
-			factor = 5
-			OR = {
-				culture_group = east_asian
-				culture_group = japanese_g
-				culture_group = korean_g
-				culture_group = malay
-				culture_group = burman
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = {
-				OR = {
-					culture_group = east_asian
-					culture_group = japanese_g
-					culture_group = korean_g
-					culture_group = malay
-					culture_group = burman
-				}
-			}
-		}
-	}
+    name = "GazingRiver"
+
+    chance = {
+        modifier = {
+            factor = 1
+        }
+        modifier = {
+            factor = 5
+            OR = {
+                culture_group = east_asian
+                culture_group = japanese_g
+                culture_group = korean_g
+                culture_group = malay
+                culture_group = burman
+                culture_group = mon_khmer
+                culture_group = mongolic
+                culture_group = evenks
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    culture_group = east_asian
+                    culture_group = japanese_g
+                    culture_group = korean_g
+                    culture_group = malay
+                    culture_group = burman
+                    culture_group = mon_khmer
+                    culture_group = mongolic
+                    culture_group = evenks
+                }
+            }
+        }
+    }
 }
 
 
 
 song = {
-	name = "HighMountainFlowingWater" 	  
-	
-	chance = {
-		modifier = {
-			factor = 1
-		}	
-		modifier = {
-			factor = 5
-			OR = {
-				culture_group = east_asian
-				culture_group = japanese_g
-				culture_group = korean_g
-				culture_group = malay
-				culture_group = burman
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = {
-				OR = {
-					culture_group = east_asian
-					culture_group = japanese_g
-					culture_group = korean_g
-					culture_group = malay
-					culture_group = burman
-				}
-			}
-		}		
-	}
+    name = "HighMountainFlowingWater"
+
+    chance = {
+        modifier = {
+            factor = 1
+        }
+        modifier = {
+            factor = 5
+            OR = {
+                culture_group = east_asian
+                culture_group = japanese_g
+                culture_group = korean_g
+                culture_group = malay
+                culture_group = burman
+                culture_group = mon_khmer
+                culture_group = mongolic
+                culture_group = evenks
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    culture_group = east_asian
+                    culture_group = japanese_g
+                    culture_group = korean_g
+                    culture_group = malay
+                    culture_group = burman
+                    culture_group = mon_khmer
+                    culture_group = mongolic
+                    culture_group = evenks
+                }
+            }
+        }
+    }
 }
 
 
 
 song = {
-	name = "TamerlaneGoesEast" 	 
-	
-	chance = {
-		modifier = {
-			factor = 1
-		}
-		modifier = {
-			factor = 5
-			OR = {
-				culture_group = east_asian
-				culture_group = japanese_g
-				culture_group = korean_g
-				culture_group = malay
-				culture_group = burman
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = {
-				OR = {
-					culture_group = east_asian
-					culture_group = japanese_g
-					culture_group = korean_g
-					culture_group = malay
-					culture_group = burman
-				}
-			}
-		}		
-	}
+    name = "TamerlaneGoesEast"
+
+    chance = {
+        modifier = {
+            factor = 1
+        }
+        modifier = {
+            factor = 5
+            OR = {
+                culture_group = east_asian
+                culture_group = japanese_g
+                culture_group = korean_g
+                culture_group = malay
+                culture_group = burman
+                culture_group = mon_khmer
+                culture_group = mongolic
+                culture_group = evenks
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    culture_group = east_asian
+                    culture_group = japanese_g
+                    culture_group = korean_g
+                    culture_group = malay
+                    culture_group = burman
+                    culture_group = mon_khmer
+                    culture_group = mongolic
+                    culture_group = evenks
+                }
+            }
+        }
+    }
 }
 
 
+### Specifics ###
+song = {
+    name = "FolkChinese"
+    chance = {
+        modifier = {
+            factor = 3
+            culture_group = east_asian
+        }
+        modifier = {
+            factor = 2
+            NOT = { culture_group = east_asian }
+            OR = {
+                culture_group = korean_g
+                culture_group = japanese_g
+                culture_group = mongolic
+                culture_group = evenks
+                culture_group = mon_khmer
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                culture_group = korean_g
+                culture_group = east_asian
+                culture_group = japanese_g
+                culture_group = mongolic
+                culture_group = evenks
+                culture_group = mon_khmer
+            }
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
+}
 
+song = {
+    name = "YellowEmperor"
+    chance = {
+        modifier = {
+            factor = 3
+            culture_group = east_asian
+        }
+        modifier = {
+            factor = 2
+            NOT = { culture_group = east_asian }
+            OR = {
+                culture_group = korean_g
+                culture_group = japanese_g
+                culture_group = mongolic
+                culture_group = evenks
+                culture_group = mon_khmer
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                culture_group = korean_g
+                culture_group = east_asian
+                culture_group = japanese_g
+                culture_group = mongolic
+                culture_group = evenks
+                culture_group = mon_khmer
+            }
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
+}
+
+song = {
+    name = "KoreanFestival"
+    chance = {
+        modifier = {
+            factor = 3
+            OR = {
+                culture_group = korean_g
+                # culture = sino_korean
+            }
+        }
+        modifier = {
+            factor = 2
+            # NOT = { culture = sino_korean }
+            OR = {
+                culture_group = east_asian #Chinese
+                culture_group = japanese_g
+                culture_group = mongolic
+                culture_group = evenks
+                culture_group = mon_khmer
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                culture_group = korean_g
+                culture_group = east_asian
+                culture_group = japanese_g
+                culture_group = mongolic
+                culture_group = evenks
+                culture_group = mon_khmer
+            }
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
+}
+
+song = {
+    name = "SuyangsPlay"
+    chance = {
+        modifier = {
+            factor = 3
+            OR = {
+                culture_group = korean_g
+                # culture = sino_korean
+            }
+        }
+        modifier = {
+            factor = 2
+            # NOT = { culture = sino_korean }
+            OR = {
+                culture_group = east_asian #Chinese
+                culture_group = japanese_g
+                culture_group = mongolic
+                culture_group = evenks
+                culture_group = mon_khmer
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                culture_group = korean_g
+                culture_group = east_asian
+                culture_group = japanese_g
+                culture_group = mongolic
+                culture_group = evenks
+                culture_group = mon_khmer
+                is_at_war = yes #Not at War
+            }
+        }
+    }
+}
+
+song = {
+    name = "HalongBay"
+    chance = {
+        modifier = {
+            factor = 3
+            culture = vietnamese
+        }
+        modifier = {
+            factor = 2
+            NOT = { culture = vietnamese }
+            OR = {
+                culture_group = east_asian #Chinese
+                culture_group = mon_khmer
+                culture_group = korean_g
+                culture_group = japanese_g
+                culture_group = mongolic
+                culture_group = evenks
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                culture_group = korean_g
+                culture_group = mon_khmer
+                culture_group = east_asian
+                culture_group = japanese_g
+                culture_group = mongolic
+                culture_group = evenks
+            }
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
+}
+
+song = {
+    name = "TuvanAnthem"
+    chance = {
+        modifier = {
+            factor = 3
+            OR = {
+                culture_group = mongolic
+                culture_group = karluk
+                culture_group = oghuz
+                culture_group = kipchak
+                # culture = sino_mongol
+            }
+        }
+        modifier = {
+            factor = 2
+            OR = {
+                culture = manchu
+                culture = manchu_new
+            }
+        }
+        modifier = {
+            factor = 0
+            is_at_war = yes
+        }
+    }
+}
 
 ##########NATIVE AMERICA#########
 song = {
-	name = "AmongtheTrees"
-	
-	chance = {
-		modifier = {
-			factor = 2
-			OR = {
-				religion_group = pagan
-				religion_group = new_world_pagan
-				any_owned_province = {
-					OR = {
-						continent = north_america
-						continent = south_america
-					}
-				}
-				any_subject_country = {
-					is_colonial_nation = yes
-					capital_scope = {
-						OR = {
-							continent = north_america
-							continent = south_america
-						}
-					}
-				}
-				government = native_council
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = {
-				OR = {
-					religion_group = pagan
-					religion_group = new_world_pagan
-					any_owned_province = {
-						OR = {
-							continent = north_america
-							continent = south_america
-						}
-					}
-					any_subject_country = {
-						is_colonial_nation = yes
-						capital_scope = {
-							OR = {
-								continent = north_america
-								continent = south_america
-							}
-						}
-					}
-					government = native_council
-					}
-				}
-			}
-	}
+    name = "AmongtheTrees"
+
+    chance = {
+        modifier = {
+            factor = 2
+            OR = {
+                religion_group = pagan
+                religion_group = new_world_pagan
+                any_owned_province = {
+                    OR = {
+                        continent = north_america
+                        continent = south_america
+                    }
+                }
+                any_subject_country = {
+                    is_colonial_nation = yes
+                    capital_scope = {
+                        OR = {
+                            continent = north_america
+                            continent = south_america
+                        }
+                    }
+                }
+                government = native_council
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion_group = pagan
+                    religion_group = new_world_pagan
+                    any_owned_province = {
+                        OR = {
+                            continent = north_america
+                            continent = south_america
+                        }
+                    }
+                    any_subject_country = {
+                        is_colonial_nation = yes
+                        capital_scope = {
+                            OR = {
+                                continent = north_america
+                                continent = south_america
+                            }
+                        }
+                    }
+                    government = native_council
+                }
+            }
+        }
+    }
 }
 
 song = {
-	name = "CountdowntoDoomsday"
-	
-	chance = {
-		modifier = {
-			factor = 2
-			OR = {
-				religion_group = pagan
-				religion_group = new_world_pagan
-				any_owned_province = {
-					OR = {
-						continent = north_america
-						continent = south_america
-					}
-				}
-				any_subject_country = {
-					is_colonial_nation = yes
-					capital_scope = {
-						OR = {
-							continent = north_america
-							continent = south_america
-						}
-					}
-				}
-				government = native_council
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = {
-				OR = {
-					religion_group = pagan
-					religion_group = new_world_pagan
-					any_owned_province = {
-						OR = {
-							continent = north_america
-							continent = south_america
-						}
-					}
-					any_subject_country = {
-						is_colonial_nation = yes
-						capital_scope = {
-							OR = {
-								continent = north_america
-								continent = south_america
-							}
-						}
-					}
-					government = native_council
-				}
-			}
-		}
-	}
+    name = "CountdowntoDoomsday"
+
+    chance = {
+        modifier = {
+            factor = 2
+            OR = {
+                religion_group = pagan
+                religion_group = new_world_pagan
+                any_owned_province = {
+                    OR = {
+                        continent = north_america
+                        continent = south_america
+                    }
+                }
+                any_subject_country = {
+                    is_colonial_nation = yes
+                    capital_scope = {
+                        OR = {
+                            continent = north_america
+                            continent = south_america
+                        }
+                    }
+                }
+                government = native_council
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion_group = pagan
+                    religion_group = new_world_pagan
+                    any_owned_province = {
+                        OR = {
+                            continent = north_america
+                            continent = south_america
+                        }
+                    }
+                    any_subject_country = {
+                        is_colonial_nation = yes
+                        capital_scope = {
+                            OR = {
+                                continent = north_america
+                                continent = south_america
+                            }
+                        }
+                    }
+                    government = native_council
+                }
+            }
+        }
+    }
 }
 
 song = {
-	name = "JaguarWarriors"
-	
-	chance = {
-		modifier = {
-			factor = 2
-			OR = {
-				religion_group = pagan
-				religion_group = new_world_pagan
-				any_owned_province = {
-					OR = {
-						continent = north_america
-						continent = south_america
-					}
-				}
-				any_subject_country = {
-					is_colonial_nation = yes
-					capital_scope = {
-						OR = {
-							continent = north_america
-							continent = south_america
-						}
-					}
-				}
-				government = native_council
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = {
-				OR = {
-					religion_group = pagan
-					religion_group = new_world_pagan
-					any_owned_province = {
-						OR = {
-							continent = north_america
-							continent = south_america
-						}
-					}
-					any_subject_country = {
-						is_colonial_nation = yes
-						capital_scope = {
-							OR = {
-								continent = north_america
-								continent = south_america
-							}
-						}
-					}
-					government = native_council
-				}
-			}
-		}
-	}
+    name = "JaguarWarriors"
+
+    chance = {
+        modifier = {
+            factor = 2
+            OR = {
+                religion_group = pagan
+                religion_group = new_world_pagan
+                any_owned_province = {
+                    OR = {
+                        continent = north_america
+                        continent = south_america
+                    }
+                }
+                any_subject_country = {
+                    is_colonial_nation = yes
+                    capital_scope = {
+                        OR = {
+                            continent = north_america
+                            continent = south_america
+                        }
+                    }
+                }
+                government = native_council
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion_group = pagan
+                    religion_group = new_world_pagan
+                    any_owned_province = {
+                        OR = {
+                            continent = north_america
+                            continent = south_america
+                        }
+                    }
+                    any_subject_country = {
+                        is_colonial_nation = yes
+                        capital_scope = {
+                            OR = {
+                                continent = north_america
+                                continent = south_america
+                            }
+                        }
+                    }
+                    government = native_council
+                }
+            }
+        }
+    }
 }
 
 song = {
-	name = "TempleoftheSunandMoon"
-	
-	chance = {
-		modifier = {
-			factor = 2
-			OR = {
-				religion_group = pagan
-				religion_group = new_world_pagan
-				any_owned_province = {
-					OR = {
-						continent = north_america
-						continent = south_america
-					}
-				}
-				any_subject_country = {
-					is_colonial_nation = yes
-					capital_scope = {
-						OR = {
-							continent = north_america
-							continent = south_america
-						}
-					}
-				}
-				government = native_council
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = {
-				OR = {
-					religion_group = pagan
-					religion_group = new_world_pagan
-					any_owned_province = {
-						OR = {
-							continent = north_america
-							continent = south_america
-						}
-					}
-					any_subject_country = {
-						is_colonial_nation = yes
-						capital_scope = {
-							OR = {
-								continent = north_america
-								continent = south_america
-							}
-						}
-					}
-					government = native_council
-				}
-			}
-		}
-	}
+    name = "TempleoftheSunandMoon"
+
+    chance = {
+        modifier = {
+            factor = 2
+            OR = {
+                religion_group = pagan
+                religion_group = new_world_pagan
+                any_owned_province = {
+                    OR = {
+                        continent = north_america
+                        continent = south_america
+                    }
+                }
+                any_subject_country = {
+                    is_colonial_nation = yes
+                    capital_scope = {
+                        OR = {
+                            continent = north_america
+                            continent = south_america
+                        }
+                    }
+                }
+                government = native_council
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion_group = pagan
+                    religion_group = new_world_pagan
+                    any_owned_province = {
+                        OR = {
+                            continent = north_america
+                            continent = south_america
+                        }
+                    }
+                    any_subject_country = {
+                        is_colonial_nation = yes
+                        capital_scope = {
+                            OR = {
+                                continent = north_america
+                                continent = south_america
+                            }
+                        }
+                    }
+                    government = native_council
+                }
+            }
+        }
+    }
 }
 
 song = {
-	name = "VillageElder"
-	
-	chance = {
-		modifier = {
-			factor = 2
-			OR = {
-				religion_group = pagan
-				religion_group = new_world_pagan
-				any_owned_province = {
-					OR = {
-						continent = north_america
-						continent = south_america
-					}
-				}
-				any_subject_country = {
-					is_colonial_nation = yes
-					capital_scope = {
-						OR = {
-							continent = north_america
-							continent = south_america
-						}
-					}
-				}
-				government = native_council
-			}
-		}
-		modifier = {
-			factor = 0
-			NOT = {
-				OR = {
-					religion_group = pagan
-					religion_group = new_world_pagan
-					any_owned_province = {
-						OR = {
-							continent = north_america
-							continent = south_america
-						}
-					}
-					any_subject_country = {
-						is_colonial_nation = yes
-						capital_scope = {
-							OR = {
-								continent = north_america
-								continent = south_america
-							}
-						}
-					}
-					government = native_council
-				}
-			}
-		}
-	}
+    name = "VillageElder"
+
+    chance = {
+        modifier = {
+            factor = 2
+            OR = {
+                religion_group = pagan
+                religion_group = new_world_pagan
+                any_owned_province = {
+                    OR = {
+                        continent = north_america
+                        continent = south_america
+                    }
+                }
+                any_subject_country = {
+                    is_colonial_nation = yes
+                    capital_scope = {
+                        OR = {
+                            continent = north_america
+                            continent = south_america
+                        }
+                    }
+                }
+                government = native_council
+            }
+        }
+        modifier = {
+            factor = 0
+            NOT = {
+                OR = {
+                    religion_group = pagan
+                    religion_group = new_world_pagan
+                    any_owned_province = {
+                        OR = {
+                            continent = north_america
+                            continent = south_america
+                        }
+                    }
+                    any_subject_country = {
+                        is_colonial_nation = yes
+                        capital_scope = {
+                            OR = {
+                                continent = north_america
+                                continent = south_america
+                            }
+                        }
+                    }
+                    government = native_council
+                }
+            }
+        }
+    }
 }

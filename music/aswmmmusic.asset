@@ -146,3 +146,27 @@ music = {
 	name = "NationUnderSiege"
 	file = "NationUnderSiege.ogg"
 }
+music = {
+	name = "FolkChinese"
+	file = "FolkChinese.ogg"
+}
+music = {
+	name = "YellowEmperor"
+	file = "YellowEmperor.ogg"
+}
+music = {
+	name = "KoreanFestival"
+	file = "korean_festival.ogg"
+}
+music = {
+	name = "SuyangsPlay"
+	file = "SuyangsPlay.ogg"
+}
+music = {
+	name = "HalongBay"
+	file = "HalongBay.ogg"
+}
+music = {
+	name = "TuvanAnthem"
+	file = "tuva.ogg"
+}
